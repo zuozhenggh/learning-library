@@ -38,7 +38,7 @@ The following files <if type="external">referenced in [Lab: Initialize Environme
 - *** use the dva here ***
 
 ## **Task 1:** Data exploration
-1. From the browser session you started in the  Initialize environment lab, **click** on the **Page Menu** icon identified by the ![Page menu icon](./images/page-menu.png " ") symbol located in the upper right-hand corner.
+1. From the browser session you started in the  Initialize environment lab, **click** on the **Page Menu** icon located in the upper right-hand corner.
     ![Page menu icon](./images/introp.png " ")
 
 2. **Click** on **Import Project/Flow...** to upload the file we will be using.
@@ -61,7 +61,7 @@ Oracle Analytics Server includes its own light weight data preparation capabilit
 ## **Task 2:** Discover insights
 The data visualization capabilities in Oracle Analytics Server are extensive, include things like mapping and custom calculations. In this exercise we will use both capabilities: we will create custom calculations based on two available metrics, and we will then display the results on a map.
 
-1. In this first exercise we will create our first visual. Lets view sales by location. Using the visualizations menu on the left side of the pane,
+1. In this first exercise we will create our first visual. Lets view sales by location. Using the visualizations menu on the left side of the pane:
     - **Control select** and choose **'State'** and **'Sales'** in the **"region1"** dataset.
     - **Right click**, select **'Pick Visualization'**.
 
@@ -75,7 +75,7 @@ The data visualization capabilities in Oracle Analytics Server are extensive, in
 
     ![sales by region on the map](./images/sales-by-region.png " ")
 
-    Right away we can see that the north east region sales is severely behind the rest of the country. We will dig deeper and find out why that is in the next lab. For now lets continue to build out our main dashboard.
+    Right away we can see that the north east region sales is severely behind the rest of the country. We will dig deeper and find out why that is in the next lab. For now let's continue to build out our main dashboard.
 
 4. Next we want to create individual 'cards' for the different KPIs we are going to be measuring. **Click** and **drag** the **'Sales'** measure from the **"regions1"** dataset above the map visual you just created. A dark blue line appears.  It identifies the location of your visualization. You may drop the visualization to the left, right, top or bottom. In our case we will **drop the visual on top** of the one we just created.
 
@@ -107,7 +107,7 @@ The data visualization capabilities in Oracle Analytics Server are extensive, in
 
     ![picking the filters](./images/pick-filters.png " ")
 
-10. To create our "Card", **Click** and drag the **'On Time Delivery'** measure from the **"Supply Chain Underlying Dashboard Data"** dataset so that the blue bar appears **above** the new visual.
+10. To create our 'card', **click** and drag the **'On Time Delivery'** measure from the **"Supply Chain Underlying Dashboard Data"** dataset so that the blue bar appears **above** the new visual.
 
 
     ![create card](./images/create-supply-chain-card.png " ")
@@ -123,7 +123,7 @@ The data visualization capabilities in Oracle Analytics Server are extensive, in
 
     ![creating calculation](./images/creating-calculation.png " ")
 
-13. Now we will **create a new metric** called **"Previous Year - Salary & Wage"**. Notice there are a wide range of functions available for creating custom calculations using the expression builder. **We are going to use the code snippet below**. Feel free explore the expression builder and create the calculation that way. In the box below the name of our new calculation, click the **copy** button and paste it into the calculation box.
+13. Now we will **create a new metric** called **"Previous Year - Salary & Wage"**. Notice there are a wide range of functions available for creating custom calculations using the expression builder. **We are going to use the code snippet below**, click the copy button and paste it into the calculation box on OAS. Feel free explore the expression builder and create more calculations.
 
         <copy>(FILTER(XSA('weblogic'.'Financial (1)')."Columns"."Previous Year - Operating Expenses" USING XSA('weblogic'.'Financial (1)')."Columns"."Account Group"='Salary & Wage'))</copy>
 
@@ -153,7 +153,7 @@ The data visualization capabilities in Oracle Analytics Server are extensive, in
 
 18. For our last card we are going to analyze Headcount by Quarter to compare with our Salary & Wage by Quarter analysis.
     - **Control select** the **'Date'** and **'Headcount'** measures from the **"Underlying HR Dashboard copy"** dataset
-    - **Right click**, select **'Pick Visual'** and select **'Line'*
+    - **Right click**, select **'Pick Visual'** and select **'Line'**
 
     ![creating headcount visual](./images/headcount-visual.png " ")
     ![creating the line visual](./images/line-visual.png " ")
