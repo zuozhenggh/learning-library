@@ -28,14 +28,14 @@ Start Cloud Shell
 
 ![Start Cloud Shell](./images/cloudshell-open.png " ")
 
-From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs_example.py
+From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs-df.py
 
 ```
 <copy>
-vi live_labs_example.py
+vi livelabs-df.py
 </copy>
 ```
-Copy the following script and insert it into the live\_labs\_example.py file you are currently editing in Cloud Shell:
+Copy the following script and insert it into the livelabs-df.py file you are currently editing in Cloud Shell:
 
 ```
 <copy>
@@ -44,15 +44,18 @@ import sys
 
 def oracle_datasource_example(spark):
     # Wallet  information.
-    properties = {"adbId": "replacewithADBID","user" : "replacewithUSER","password": "replacewithPASSWORD"}
+    properties = {"adbId": ADB_ID,"user" : USERNAME,"password": PASSWORD}
 
-    print("Reading data from autonomous database.")
-    df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
-
+    ##print("Reading data from autonomous database.")
+    ##df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
+    
+    print("Reading data from json file in object storage")
+    df = spark.read.json("oci://data_lakehouse@c4u04/export-stream-2020-custid-genreid.json")
+    
     df.printSchema()
 
     print("Filtering recommendation.")
-    df.filter(df.RECOMMENDED == "Y")
+    df.filter(df."recommended" == "Y")
 
     print("Writing to autonomous database.")
     df.write.format("oracle").mode("overwrite").option("dbtable",TARGET_TABLE).options(**properties).save()
@@ -64,7 +67,7 @@ if __name__ == "__main__":
         .getOrCreate()
 
     # TODO: PROVIDE THE ARGUMENTS 
-    ABD_ID = "replacewithADBID"
+    ADB_ID = "replacewithADBID"
     SRC_TABLE = "ADMIN.EXPORT_STREAM_2020_UPDATED" 
     TARGET_TABLE = "ADMIN.MOVIE_GENRE" 
     USERNAME = "replacewithUSER"
@@ -76,23 +79,23 @@ if __name__ == "__main__":
 </copy>
 ```
 
-After pasting the above script, replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it stats replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shell in both places where it states "replacewithADBID".
+After pasting the above script, in the TODO section at bottom of the script a few of the variables need values. Replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it states replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shellwhere it states "replacewithADBID".
 
 ![Get the ADB ID](./images/getadbid.png " ")
 
-Edit the replacewithXXXXX text with the correct information (paste with right click between the quotation marks:
+Edit the replacewithXXXXX text with the correct information (paste with right click between the quotation marks):
 
 ![Paste ADB ID](./images/editfilepaste.png " ")
 
 ![Edited File](./images/editedfile.png " ")
 
-See the edited file for the two places there are edits. When finished editing press **esc** **:wq** to save the file and your changes.
+See the edited file above for the three areas to edit. When finished editing press **esc** **:wq** to save the file and your changes.
 
-Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAME with your actual namespace name (Namespace name can be found in OCI tenancy:
+Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAMESPACE with your actual namespace name (Namespace name can be found in OCI tenancy:
 
 ```
 <copy>
-oci os object put --file live_labs_example.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
+oci os object put --file livelabs-df.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
 </copy>
 ```
 
@@ -110,10 +113,11 @@ For creating the application, you need to have the python code and we are provid
 
 ![Create Data Flow](./images/createsparkapp.png " ")
 
-For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live\_labs\_example.py
+For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
 
 ![Create Data Flow](./images/createappconfigure.png " ")
 
+The Application Log location is the dataflow-logs bucket that was created. Output logs and error messages will go into this bucket.
 Click on Show advanced options. And enter in the Spark configuration properties the key: spark.oracle.datasource.enabled and the value: true
 
 ![Advanced Options](./images/createappadvoptions.png " ")
@@ -158,44 +162,59 @@ Select the custsales_custsales-2020-01.csv file from your downloaded folder and 
 
 Navigate from the Hamburger menu to Analytics & AI, select Data Integration, and from the left menu select **Workspaces**. Here we will see our Workspace Lakehouse that we created as part of our configuration. We are going to then create a data loader task.
 
-![Load Data Task](./images/load-data-task.png " ")
+![Load Data Task](./images/create-data-loader-task.png " ")
 
 Lets give this task the name of LoadCustomerCSV, and before we create we need to select the project - Project_lakehouse.
 
-![Create Load Data Task](./images/create-load-data-task.png " ")
+![Create Load Data Task](./images/create-data-loader-task2.png " ")
 
+Now we have to just put in the Source, any transformations and Target for the load process. Click on Source and provide the data asset, dataflow\_warehouse\_bucket, and default connection, bucket would be the dataflow-warehouse, and finally the file type is CSV.
+
+![Create Load Data Source](./images/create-data-loader-task3.png " ")
+
+![Create Select File](./images/create-data-loader-task5.png " ")
+
+![Create Load Data Type of Source](./images/create-data-loader-task4.png " ")
+
+Now click on Configure Transformations, and here we are going to filter out, extract all of the APPs that are like chrome. This will then pull in just the data for those choices and if you wanted you can also exclude columns here.
+
+![Create Extract Data](./images/create-data-loader-task6.png " ")
+
+Before you select Target to fill in the details about the file, you want to **check** Create new data entity. After this first time, the target is created and when scheduling you will just need to either choose insert or overwrite, but the box only needs to be checked the first time loading a new entity.
+
+![Create New Target](./images/create-data-loader-task7a.png " ")
+
+Finally, select Target and here we are going to put the file back into object storage so that we can use it in an analytics query as an external table. 
+
+![Create Load Data Target](./images/create-data-loader-task7.png " ")
+
+Create and close the data loader task. We will put it into an application to run the job and load the data as part of the data integration tasks.
 
 ## Task 3: Create an application for automation
 
-Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application.
+Now you are going to navigate back to the data integration workspace, and click on Application. Click on create application. Enter a name for the application, LAKEHOUSEAPP.
 
-![Create Application](./images/create_app.png " ")
+![Create Application](./images/create-app.png " ")
 
-Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application.
+Click on Save and Close. It is just a shell of an application where you can now publish tasks to be scheduled and run through the application. Navigate to the Project_lakehouse, from the menu select Tasks. LoadCustomerCSV will be seen in the list and you will need to expand the three dot menu and add it to the application.
 
-![Create Application](./images/create_app.png " ")
+![Add Task to Application](./images/create-app2.png " ")
 
-## Task 4: Create and schedule OCI Data Flow apps for automation
+![Publish to application](./images/create-app3.png " ")
 
-Now you are going to navigate back to the project. Click on Task under Details and click on Create Task and choose Integration Task. This task is going to be included in the application.
+Select the application name, lakehouseapp:
 
-![Create Data Flow](./images/integrationtask_a.png " ")
+![Select Application and Publish](./images/create-app4.png " ")
 
-Under Data Flow, you are going to click Select and add the Data Flow that you just finished creating in the previous task. Then click Save and Close.
+## Task 4: Run and schedule apps for automation
 
-![Create Data Flow](./images/integrationtask.png " ")
+Now under the application select the menu at the end of the LoadCustomerCSV task. 
 
-Click on the menu for the task and select Publish to Application.
+![View Task Added](./images/create-app5.png " ")
 
-![Add Task](./images/add_task.png " ")
+Now select **Run** task. After this runs successfully, you can return here to schedule the task to run regularly.
 
-Choose the application that was just created in Task 2.
-
-![Add Task](./images/publish_to_app.png " ")
-
-After the task has been added you will see run task or schedule, and you can navigate to the application. For regular loads of this data and automation, you are going to want to schedule the job to run. Again, to see how this is working now, click on Run.
-
-![Run App](./images/run_app.png " ")
+![Run Task](./images/create-app6.png " ")
 
 You may now proceed to the next lab.
 
