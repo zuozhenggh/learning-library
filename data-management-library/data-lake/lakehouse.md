@@ -31,7 +31,6 @@ You can just simply query the MOVIE GENRE table to view data, or create a view t
 
 ```
 <copy>
-CREATE or REPLACE VIEW MOVIE_VW as
 SELECT
    "genreid",name,country, count("custid")
 FROM
@@ -80,24 +79,13 @@ Create an external table to view the data transformation in the object storage f
 <copy>
 BEGIN
 DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
-table_name => 'customersales_ext2',
-file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/w2EI-pmpE8AccgP0U_fgQImDCFP6kDi-DfJlWuemCIAgcEUHShafHn2tgejRgUfl/n/c4u04/b/data_lakehouse/o/customersales_custsales-2020-02.csv',
- format => json_object('type' value 'csv', 'skipheaders' value '1',   'dateformat' value 'mm/dd/yy'),
-  column_list => 'DAY_ID DATE,
-  GENRE_ID NUMBER,
-  MOVIE_ID NUMBER,
-  CUST_ID NUMBER,
-APP VARCHAR2(100),
-DEVICE VARCHAR2(100),
-OD VARCHAR2(100),
-PAYMENT_METHOD VERCHAR2(100),
-LIST_PRICE number,
-DISCOUNT_TYPE VARCHAR2(100),
-DISCOUNT_PERCENT number,
-ACTUAL_PRICE number'
+table_name => 'json_cust_sales_ext',
+file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/VC9qoX7jN3Ld4Sm9pwey9mP-ovT4WbJp5BBsD3FXMKjra9locCKFcpKvwcZm1reg/n/id05dmgeno0f/b/dataflow-warehouse/o/customersales.json',
+column_list => 'doc varchar2(32000)',
+field_list => 'doc char(30000)',
+format => json_object('delimiter' value '\n')
 );
 END;
-/
 </copy>
 ```
 
@@ -105,22 +93,16 @@ Join the data to the existing customer data:
 
 ```
 <copy>
-SELECT
-    DAY_ID,
-    GENRE.NAME,
-    CUSTSALES.CUST_ID,
-    AGE,
-    GENDER, 
-    STATE_PROVINCE
-FROM
-    ADMIN.customersales_ext custsales, 
-    ADMIN.CUSTOMER_EXTENSION, 
-    ADMIN.CUSTOMER_CONTACT,
-    ADMIN.GENRE
-    where customer_extension.CUST_ID=custsales.cust_id
-    and customer_extension.CUST_ID=customer_contact.CUST_ID
-    and COUNTRY_CODE='US'
-    and genre.genre_id=custsales.genre_id;    
+select GENRE_ID,MOVIE_ID,CUSTSALES.CUST_ID,AGE,GENDER,STATE_PROVINCE
+from CUSTOMER_CONTACT, CUSTOMER_EXTENSION,
+(select CUST_ID,GENRE_ID,MOVIE_ID
+FROM JSON_MOVIE_DATA_EXT,
+JSON_TABLE("DOC", '$[*]' COLUMNS
+"CUST_ID" number path '$.CUST_ID',
+"GENRE_ID" number path '$.GENRE_ID',
+"MOVIE_ID" number path '$.MOVIE_ID')) CUSTSALES
+where CUSTOMER_EXTENSION.CUST_ID=CUSTSALES.CUST_ID and CUSTOMER_EXTENSION.CUST_ID=CUSTOMER_CONTACT.CUST_ID
+and COUNTRY_CODE='US'   
 </copy>    
 ```
 
