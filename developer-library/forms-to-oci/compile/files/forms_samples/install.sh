@@ -1,10 +1,11 @@
 . ./env.sh
 
 # Install the scott schema
-sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS
+sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS @dept.sql $DB_PASSWD $DB_TNS
 
 # Add the sample to formsweb.cfg
 cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg
+mv formsweb.cfg.template formsweb.cfg.template.done
 
 # create the schema in the database
 sqlplus $DB_USER/$DB_PASSWD@$DB_TNS @$ORACLE_HOME/forms/create_webutil_db.sql
@@ -39,9 +40,15 @@ cp extensions.jnlp extensions.jnlp.orig
 sed -i 's#<!-- <jar href="jacob.jar"/> -->#<jar href="jacob.jar"/>#g' extensions.jnlp
 diff extensions.jnlp extensions.jnlp.orig
 # To make it work, there are additional steps needed:
-# - Or go in the java console tab security and add https://lb.url in the list of exceptions
+# - Or go in the java console tab security and add https://url.that.you.use.to.access.forms/ (ex http://localhost:9001) in the list of exceptions 
 # - Or import /u01/oracle/selfAlias.cer in java console tab security
 # Ideally, it would be nice to create a certificate (with let's encrypt?) and use it to sign instead
+
+# Copy the Webutil.pll and .olb the formmodule directory to compile it 
+# and move the one from $ORACLE_HOME/forms to avoid using wrong library.
+mkdir $ORACLE_HOME/forms/orig
+cp $ORACLE_HOME/forms/webutil.* $HOME/oracle/formsmodules
+mv $ORACLE_HOME/forms/webutil.* $ORACLE_HOME/forms/orig/webutil.*
 
 # Compile
 ./compile.sh
