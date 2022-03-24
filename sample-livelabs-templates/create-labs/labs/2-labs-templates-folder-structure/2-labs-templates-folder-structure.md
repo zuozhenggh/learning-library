@@ -17,9 +17,9 @@ The following image shows a folder structure of the **sample-workshop** that is 
 
 ## Task 2: Understand the Components of the Workshop and Lab Folders
   The following describes the components of the above example:
-  * The root folder of this example is the name of the workshop, **/sample-livelabs-templates/sample-workshop/workshops/**. Direct links to the workshop files will be coming soon.
+  * The root folder of this example is the name of the workshop, **sample-workshop**. Direct links to the workshop files will be coming soon.
 
->**Note:** You will be creating your project folder anywhere within your cloned repository. Please look into learning-library to see different libraries of workshops and decide a library for your workshop. If no existing libraries fit your workshop, please contact our LiveLabs team. See more details about this in Lab 3 → Task 4.)
+>**Note:** You will be creating your project folder anywhere within your cloned repository. Please look into learning-library to see different libraries of workshops and decide a library for your workshop. If no existing libraries fit your workshop, please contact our LiveLabs team. (See more details about this in Lab 3 → Task 4.)
 
   * Each lab has its own folder, for example, **data-load**, **introduction**, **provision**, etc., each containing:
     * a **files** folder (optional) that contains the files used in this lab.
