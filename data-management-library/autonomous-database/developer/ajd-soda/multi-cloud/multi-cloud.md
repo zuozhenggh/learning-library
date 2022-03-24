@@ -17,38 +17,52 @@ In this lab, you will:
 * MongoDB Cloud account (or Google account)
 * Deploy Atlas document store on MongoDB Cloud before the workshop (run Lab 2 Task 1)
 
+We are providing a basic reference to create a Mongo DB account, we are not pretending to be MongoDB experts or provide MongoDB best practices. We are using MongoDB account as user for the workshop purpose not experts level on the matter. If you need support on this process, contact your MongoDB support contact.
+
+Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/8mPUcFqASM0awq5qKFU9mD6occf83Z5vxeOrWC38CEU2nC-15wusaIY6aCehDVW6/n/fruktknlrefu/b/workshop-ajson-mongodb/o/MongoDB%20Developers%20Full%20Python%20App%20Development%20with%20Autonomous%20JSON%20-%20Prerequisites.pdf) where you can find support to crete the Oracle Cloud account and MongoDB account.
+
 
 ## Task 1: Deploy Atlas document store on MongoDB Cloud
 
+> **This task can be done from your local machine.**
+
 One of the objectives of this workshop is to show the integration of Oracle Autonomous JSON Database with existing document stores like MongoDB. This is why you need an existing MongoDB database, and if you don't have one, you can provision it quickly on MondoDB Cloud.
 
-1. Access MongoDB Cloud at [https://cloud.mongodb.com](https://cloud.mongodb.com), and create an account. You can login using your Google account.
+1. **Access MongoDB Cloud** at [https://cloud.mongodb.com](https://cloud.mongodb.com), and **create an account.** You can login using your Google account.
     
     ![MongoDB Sign In](./images/task1/mongodb_sign_in.png)
 
-2. Click Build a Database. Select the Free option, choose a Cloud Provider and Region. Create the new Cluster using the default settings. Name it **Cluster0**.
+2. Click **Build a Database**. Select the **Free option**, choose a Cloud Provider and Region. Create the **new Cluster** using the default settings. Name it **Cluster0**.
 
     ![MongoDB Free Option](./images/task1/mongodb_free_option.png)
     ![MongoDB CloudProvider](./images/task1/mongodb_cloud_provider.png)
     
+> Note: If you get a **Quick Start wizard**, please feel out the information skip step 3. Add Public IP addess (Step 4 of this Task). Add Database User (Step 5 of this Task).
 
-3. Once your Cluster is up and running, on the **overview page**, click **Connect**.
+    ![MongoDB Quick Start](./images/task1/mongodb_quick_start.png)
+
+3. Once your **Cluster** is up and running, on the **overview page**, click **Connect**.
 
     ![MongoDB Connect](./images/task1/mongodb_connect.png)
 
-4. Click **Add a Different IP Address**, and use the **Public IP address** of your DEVM Compute Node. To add more or change this IP address, go to Security > Network Access on the left side menu.
+4. Click **Add a Different IP Address**, and use the **Public IP address** of your **DEVM** Compute Node. To add more or change this IP address, go to Security > Network Access on the left side menu.
 
     ![MongoDB Network](./images/task1/mongodb_network.png)
 
     ![MongoDB Network IP Address](./images/task1/mongodb_network_ip_address.png)
 
-5. Create a Database User: **mongoUser/DBlearnPTS#22_**. To add or edit users, click Security > Database Access on the left side menu.
+5. Create a Database User: 
+    - Username: <copy>mongoUser</copy>
+    - Password: <copy>DBlearnPTS#22_</copy>
+    
+    To add or edit users, **click Security > Database Access** on the left side menu.
 
     ![MongoDB User](./images/task1/mongodb_user.png)
 
     ![Add MongoDB User](./images/task1/add_mongodb_user.png)
     
     > Note: Save the **username** and the **password** in your notes.
+    > We recomend you to use the password as later on, it will be use for running Python scripts. If you consider changing it, remember that later on, you will need to modify the Python scripts manually.
 
 6. On the Cluster Overview Page, Click **Connect**.
 
@@ -87,6 +101,8 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 ## Task 2: Develop dual document store micro-service
 
+> **This task has to be done from the virtual machine.**
+
 1. Create a new Python micro-service application to connect to both Oracle Autonomous document store and MongoDB, performing the same tasks. Use the **gEdit** text editor on Remote Desktop to create a file for the **double-app** micro-service code.
 
     ````
@@ -98,11 +114,8 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![Double app](./images/task2/double_app.png)
 
 
-2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor. This micro-service has 2 URLs: 
+2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and `[sub_domain_name]` is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor. 
 
-    - base-URL/**oracle**/ for Oracle Autonomous Database
-    - base-URL/**mongo**/ for MongoDB
-        
     ````
     <copy>
     # import the required modules
@@ -262,6 +275,11 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![Microservice Company Five, Six, Seven & Eight](./images/task2/microservice_company_five_six_seven_eight.png)
 
+    > This micro-service has 2 URLs. We already had used the Oracle one on Lab 1, Task 5. Here you have the two URLS:
+
+        - http://[DEVM public-ip address]:5000/oracle/ -> for Oracle Autonomous Database
+        - http://[DEVM public-ip address]:5000/mongo/ -> for MongoDB
+
 7. Go to the first Terminal window where the micro-service is running and press CTRL+C to stop it.
             
     ````
@@ -279,6 +297,8 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 ## Task 3: Develop document store migration application
 
+> **This task has to be done from the virtual machine.**
+
 1. Create a new Python application to connect to MongoDB document store and migrate JSON documents to Oracle Autonomous Database. Use the **gEdit** text editor on Remote Desktop to create a file for the **migrate-app** Python code.
     
     ````
@@ -288,7 +308,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ````
     ![Migrate app](./images/task3/migrate_app.png)
 
-2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor.
+2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and `[sub_domain_name]` is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor.
     
     ````
     <copy>
@@ -374,7 +394,9 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![Double App Stop](./images/task3/double_app_stop.png)
 
 ## Task 4: Final Results in Companies App built with Apex
-      
+
+> **This task can be done from your local machine.**
+
 1. Execute **Companies Application**. 
 
     ![Run App](./images/task4/run_app.png)
