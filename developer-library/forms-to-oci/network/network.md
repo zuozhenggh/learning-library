@@ -57,10 +57,12 @@ You need to run these steps to:
 - (optional) connect a Forms Builder on Windows to the other servers
 
 You should be in the details of the Virtual Cloud Network.
+   
+1. Click **Security Lists**
 
-1. Click **Security List**
+   ![](./images/forms-vcn-seclist.png)
 
-2. Choose the **Security List Form Private Subnet-forms-vcn**
+2. Choose the **Security List for Private Subnet-forms-vcn**
 
    ![](./images/forms-private-seclist.png)
 
