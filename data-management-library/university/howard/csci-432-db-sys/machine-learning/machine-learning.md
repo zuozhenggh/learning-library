@@ -237,7 +237,7 @@ This step demonstrates how to create the OML4Py Classification notebook based on
 
 	![Notebook listed](images/notebook-listed.png)
 
-This completes the task of creating a notebook from an Example template.
+This sample notebook contains all the python code we will be running in Task 4 to learn about machine learning and python. You can look through and run all the code in this notebook by clicking on the “Run all paragraphs” button. This is the fast way to do this lab. We suggest running through each step of the lab as detailed in Task 4 to better learn about machine learning and python.
 
 ## Task 4: Machine Learning for Python
 
@@ -247,7 +247,9 @@ For this section of the lab we will be using the iris data set as the source dat
 
 1. To get started we will create a new notebook. From the hamburger menu on the top left of the OML page select **Notebooks**
 
-	![Click Notebooks](images/click-notebooks.png)
+	![hamburger](images/hamburger-gen.png)
+
+	![Notebooks in left navigation menu](images/notebooks-left-nav-pane.png)
 
 2. When the Notebooks page appears, click on **+Create**
 
@@ -363,7 +365,7 @@ In this example, use shape, describe and crosstab functions to explore and view 
 		</copy>
 		```
 	![Statistical details of DEMO.](images/statistical-data-demo.png)
-3. Use the crosstab function to perform cross-column analysis of an `oml.DataFrame` object. The crosstab method computes a cross-tabulation of two or more columns. By default, it computes a frequency table for the columns unless a column and an aggregation function have been passed to it.  In this example, the crosstab function displays the distribution of `AFFINITY_CARD` responders.
+3. Use the crosstab function to perform cross-column analysis of an `oml.DataFrame` object. The crosstab method computes a cross-tabulation of two or more columns. By default, it computes a frequency table for the columns unless a column and an aggregation function have been passed to it.  In this example, the crosstab function displays the distribution of `AFFINITY_CARD` responders. To view the results in bar chart format click on the **Bar Chart** icon located on the icon row between your code and the result set.
 	```
 	<copy>
 	%python
@@ -855,11 +857,9 @@ You can score data and make similar predictions using the SQL interface. The tes
  
  **Access Oracle Machine Learning AutoML UI**
 
-To access AutoML UI, you must sign into the Oracle Machine Learning User Interface, which also includes Oracle Machine Learning notebooks, on Autonomous Database:
-
 Click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the home page to open the left navigation menu. Click **AutoML**. This opens the AutoML Experiments page.
 
-	![home page](images/hamburger-automl.png)
+![home page](images/hamburger-automl.png)
 
 **Create an Experiment**
 
@@ -975,9 +975,4 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![View Confusion Matrix](images/confusion-matrix.png)
 
-21. To go back to the AutoML Experiments page, scroll up the page and click **<-Experiments**.
-
-	![Go to Experiments page](images/goto_exp.png)
-
-	Alternatively, you can click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the experiment page and click **AutoML** on the left navigation menu.
 
