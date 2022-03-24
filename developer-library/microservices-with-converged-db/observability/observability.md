@@ -218,7 +218,7 @@ for an more in-depth look at this topic including details of the metrics, logs, 
 7. Click the `Jaeger` to view the corresponding trace information and drill down into detail.
       ![Jaeger trace](images/traceinfo.png " ")
 
-You may now **proceed to the next lab.**
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist

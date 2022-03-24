@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will provision and setup the resources to execute microservices in your environment.
+In this lab, we will provision and setup the resources to execute microservices in your environment.
 
 Estimates Lab Time - 20 minutes
 
@@ -41,33 +41,34 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    ![Open Cloud Shell](images/open-cloud-shell.png " ")
 
-   NOTE: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+ >**Note**: Cloud Shell uses websockets to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
 
 ## Task 3: Make a Clone of the Workshop Setup Script and Source Code
 
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```
-    <copy>git clone -b 22.2.3 --single-branch https://github.com/oracle/microservices-datadriven.git
+    <copy>
+    git clone -b 22.3.1 --single-branch https://github.com/oracle/microservices-datadriven.git
     </copy>
     ```
 
-   You should now see the directory `microservices-datadriven` in the current directory.
+    You should now see the directory `microservices-datadriven` in the current directory.
 
 ## Task 4: Start the Setup
 
 1. Execute the following sequence of commands to start the setup.  
+ 
+    ```
+    <copy>
+    source microservices-datadriven/workshops/dcms-oci/source.env
+    <setup
+    </copy>
+    ```
 
-  ```
-  <copy>
-  source microservices-datadriven/workshops/dcms-oci/source.env
-  setup
-  </copy>
-  ```
+    > **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run the same command again to resume.
 
-   Note, cloud shell may disconnect after a period of inactivity. If that happens, you may reconnect and then run the same command again to resume.
-
-   The setup process will typically take around 20 minutes to complete.  
+    The setup process will typically take around 20 minutes to complete.  
 
 2. The setup will ask for you to enter your Compartment OCID. This is included in the workshop reservation page console.
 
@@ -101,41 +102,45 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin".
 
-**Note**: The passwords typed are not displayed.
+> **Note:** The passwords typed are not displayed.
 
 5. The setup will also ask you to enter a UI password that is used to enter the microservice frontend user interface. Make a note of the password as you will need it later. The UI password must be 8 to 30 characters.
 
 ## Task 5: Complete the Setup
 
-The setup will provide a summary of the setup status as it proceeds. Once everything has completed you will see the message: **SETUP COMPLETED**.
+1. The setup will provide a summary of the setup status as it proceeds. Once everything has completed you will see the message: **SETUP COMPLETED**.
 
-While the background setup jobs are running you can monitor their progress with the following command.
+2. While the background setup jobs are running you can monitor their progress with the following command.
 
-```
-<copy>
-ps -ef
-</copy>
-```
+    ```
+    <copy>
+    ps -ef
+    </copy>
+    ```
 
-Their log files are located in the $GRABDISH_LOG directory.
+3. You can monitor log files located in the $GRABDISH_LOG directory.
 
-```
-<copy>
-ls -al $GRABDISH_LOG
-</copy>
-```
+    ```
+    <copy>
+    ls -al $GRABDISH_LOG
+    </copy>
+    ```
 
-Once the setup has completed you are ready to [move on to Lab 2](#next).
+    Once the setup has completed you are ready to [move on to Lab 2](#next).
 
-Note, builds may continue to run even after the setup has completed. The status of the builds can be monitored with this command:
+    > **Note:** Builds may continue to run even after the setup has completed. 
 
-```
-<copy>
-status
-</copy>
-```
+4. The status of the builds can be monitored with this command:
 
-Note, Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+    ```
+    <copy>
+    status
+    </copy>
+    ```
+
+   > **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+  
+You may now proceed to the next lab.
 
 ## Acknowledgements
 
