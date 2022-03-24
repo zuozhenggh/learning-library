@@ -40,7 +40,7 @@ Go to **SQL** menu once you logged in as the **ADMIN** user.
 
 ![](images/ADB_SQLDevWebHome.jpg)
 
-## Task 3: Create a database user
+## Task 2: Create a database user
 
 Now create the **CUSTOMER_360** user and provide Database Actions access for this user.
 
