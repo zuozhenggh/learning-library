@@ -153,7 +153,7 @@ In this lab, we are going to install the *development profile of Verrazzano*, wh
 * It has a lightweight installation.
 * It is for evaluation purposes.
 * No persistence.
-* Single-node Elasticsearch cluster topology.
+* Single-node OpenSearch cluster topology.
 
 The following image describes the Verrazzano components that are installed with each profile.
 
