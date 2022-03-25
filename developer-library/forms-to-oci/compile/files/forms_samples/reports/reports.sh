@@ -11,7 +11,7 @@
 $ORACLE_HOME/oracle_common/common/bin/wlst.sh extend_domain_report.py
 
 cd $ORACLE_HOME/reports/admin/sql
-sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS @$HOME/forms_samples/reports/reports.sql $DB_PASSWD $DB_TNS
+sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @$HOME/forms_samples/reports/reports.sql $DB_PASSWORD $DB_TNS
 cd -
 
 # $DOMAIN_HOME/config/fmwconfig/servers/WLS_REPORTS/applications/reports_12.2.1/configuration/rwserver.conf

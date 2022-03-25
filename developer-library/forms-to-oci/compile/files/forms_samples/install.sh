@@ -1,14 +1,14 @@
 . ./env.sh
 
 # Install the scott schema
-sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS @dept.sql $DB_PASSWD $DB_TNS
+sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS
 
 # Add the sample to formsweb.cfg
 cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg
 mv formsweb.cfg.template formsweb.cfg.template.done
 
 # create the schema in the database
-sqlplus $DB_USER/$DB_PASSWD@$DB_TNS @$ORACLE_HOME/forms/create_webutil_db.sql
+sqlplus $DB_USER/$DB_PASSWORD@$DB_TNS @$ORACLE_HOME/forms/create_webutil_db.sql
 
 cd /tmp
 # Download jacob.jar and dlls

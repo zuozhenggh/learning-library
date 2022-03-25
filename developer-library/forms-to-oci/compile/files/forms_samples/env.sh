@@ -30,5 +30,5 @@ export TERM=vt220
 # Connection used during compilation
 export DB_ADMIN=system
 export DB_USER=scott
-export DB_PASSWD=LiveLab__123
+export DB_PASSWORD=LiveLab__123
 export DB_TNS=orcl

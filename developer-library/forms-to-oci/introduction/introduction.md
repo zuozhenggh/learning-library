@@ -11,11 +11,16 @@ In this workshop, you install Oracle Forms on Oracle Cloud Infrastruture. And co
 ### Objectives
 
 In this workshop, you will learn how to:
-- Setup Oracle Forms Server and a Database in the cloud
-- Import tables in the database
-- Install and compile an existing Oracle Forms program
-- Deploy and run it 
-- Optional: Install an Oracle Forms Forms Builder on Windows
+- Install Forms Server
+- Install a Database:
+    - Option 1: Local Database
+    - Option 2: Database Cloud Service
+    - Option 3: Autonomous Database (not described in this lab)
+- Explore the installation and its main files and URLs
+- Install a Database schema
+- Compile Forms Samples
+- Run them 
+- Optionally, Install Forms Builder on Windows
 
 ### Prerequisites (Optional)
 

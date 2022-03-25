@@ -63,7 +63,7 @@ export TERM=vt220
 
 # Connection used during compilation
 export DB_USER=scott
-export DB_PASSWD=LiveLab__123
+export DB_PASSWORD=LiveLab__123
 export DB_TNS=orcl
 ```
 
@@ -115,7 +115,7 @@ Let's create the schema.
 ```
 cd $HOME/forms_samples
 . ./env.sh 
-sqlplus $DB_ADMIN/$DB_PASSWD@$DB_TNS @dept.sql $DB_PASSWD $DB_TNS
+sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS
 ```
 
 Output:
@@ -151,7 +151,7 @@ cat compile.sh
 for FILE in `ls $FMB_PATH/*.pll`; do
   OUTPUT=${FILE/pll/plx}
   echo "PLL: $FILE -> $OUTPUT"
-  $FORMS_INSTANCE/bin/frmcmp_batch.sh $FILE $DB_USER/$DB_PASSWD@$DB_TNS \
+  $FORMS_INSTANCE/bin/frmcmp_batch.sh $FILE $DB_USER/$DB_PASSWORD@$DB_TNS \
     module_type=library batch=yes output_file=$OUTPUT compile_all=special
 done
 
@@ -159,7 +159,7 @@ done
 for FILE in `ls $FMB_PATH/*.mmb`; do
   OUTPUT=${FILE/mmb/mmx}
   echo "MMB: $FILE -> $OUTPUT"
-  $FORMS_INSTANCE/bin/frmcmp_batch.sh $FILE $DB_USER/$DB_PASSWD@$DB_TNS \
+  $FORMS_INSTANCE/bin/frmcmp_batch.sh $FILE $DB_USER/$DB_PASSWORD@$DB_TNS \
     module_type=menu batch=yes output_file=$OUTPUT compile_all=special
 done
 
@@ -167,7 +167,7 @@ done
 for FILE in `ls $FMB_PATH/*.fmb`; do
   OUTPUT=${FILE/fmb/fmx}
   echo "FMB: $FILE -> $OUTPUT"
-  $FORMS_INSTANCE/bin/frmcmp_batch.sh $FILE $DB_USER/$DB_PASSWD@$DB_TNS \
+  $FORMS_INSTANCE/bin/frmcmp_batch.sh $FILE $DB_USER/$DB_PASSWORD@$DB_TNS \
     module_type=form batch=yes output_file=$OUTPUT compile_all=special
   ERR=${FILE/fmb/err}
   echo --- FMB Compilation output -------------------------------------------
@@ -233,7 +233,7 @@ cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg
 ## Task 5: Test
 
 You should have a SSH connection from your laptop to the server forwarding port 9001.
-Check **Lab 2 - Task 4: Port Forwarding** for the command.
+Check **Lab 4 - Task 1: Port Forwarding** for the command.
 
 Try this URL. You will need to have Java Runtime installed on your laptop to do this.
 

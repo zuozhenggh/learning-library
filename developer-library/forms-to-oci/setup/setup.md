@@ -17,7 +17,23 @@ In this lab, you will:
 This lab assumes you have:
 * All previous labs successfully completed
 
-## Task 1: Check the Main Files and Directories
+
+## Task 1: Port Forwarding
+
+Since we use a Bastion, we do not have direct access to the Forms machine. We will use port forwarding to access
+the different ports of the installation.
+
+```
+With port forwarding:
+ssh -J opc@&lt;bastion-ip&gt; opc@&lt;Forms Private IP&gt; -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
+
+Ex:
+ssh -J opc@130.131.132.133 opc@10.0.1.130 -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
+```
+
+Run the above command and let the ssh connection opened. 
+
+## Task 2: Check the Main Files and Directories
 
 Let's look at the important files and directories.
 
@@ -198,7 +214,7 @@ Version 19.3.0.0.0
 SQL> 
 ```
 
-## Task 2: Test the URLs.
+## Task 3: Test the URLs.
 
 Notice that the installation has created the following URLs:
 

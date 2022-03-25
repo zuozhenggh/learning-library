@@ -23,18 +23,26 @@
         {
             "title": "Lab 2: Install Oracle Forms",
             "description": "Install Oracle Forms",
-            "filename": "../../provision/provision.md"
+            "filename": "../../forms-instance/forms-instance.md"
         },
         {
-            "title": "Lab 3: Explore the Installation ",
+            "title": "Lab 3: Option 1: Local Database",
+            "filename": "../../db-local/db-local.md"
+        },
+        {
+            "title": "Lab 3: Option 2: Database Cloud Service",
+            "filename": "../../db-dbcs/db-dbcs.md"
+        },
+        {
+            "title": "Lab 4: Explore the Installation ",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 4: Compile and Run Forms",
+            "title": "Lab 5: Compile and Run Forms",
             "filename": "../../compile/compile.md"
         },
         {
-            "title": "Lab 5: Optional - Install Forms Builder on Windows",
+            "title": "Lab 6: Optional - Install Forms Builder on Windows",
             "filename": "../../windows/windows.md"
         },
         {
