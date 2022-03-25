@@ -128,56 +128,6 @@ Learn how to
 
    ![ALT text is not available for this image](./images/db-actions-user-created.png " ")   
 
-   **Note:** *The UI steps above can be instead done by executing the following sql commands listed below when logged in as ADMIN. So Step 5 below is not necessary. It shows an alternate way of creating and enabling GRAPHUSER.*
-   
-1. Allocate a desired table space quota to the newly created user. Open the SQL page and issue the alter command.  
-
-   For example, 
-   `ALTER USER GRAPHUSER QUOTA UNLIMITED ON DATA;`   
-   will allocate a quota the user `GRAPHUSER` in the tablespace named `DATA`.  
-   Copy and paste the following command into the SQL worksheet.  
-   Substitute the correct values for  `<username>` and `<quota>` and then click on Run to execute it.
-
-      ```
-      <copy>
-      -- Optional statement to use in place of the UI of the Administration page
-      ALTER USER <username> QUOTA <quota> ON DATA;
-      </copy>
-      ```
-
-      ```
-      <copy>
-      -- Optional statements to use in place of the UI of the Administration page
-      GRANT GRAPH_DEVELOPER TO <username> ;
-      ALTER USER <username> GRANT CONNECT THROUGH "GRAPH$PROXY_USER";
-      </copy>
-      ``` 
-
-   The screenshots below show an example of executing the ALTER USER statement.
-
-   ![ALT text is not available for this image](./images/alter-user.png " ")  
-
-   ![ALT text is not available for this image](./images/run-sql.png " ")  
-
-   ![ALT text is not available for this image](./images/user-altered.png " ") 
- 
- 1. You can similarly use SQL statements to verify that GRAPHUSER has been set up correctly.  
-    
-    You must be logged into Data Actions SQL as `ADMIN` then enter the following SQL statements and execute them. 
-     
-    ```
-    <copy>
-    select * from dba_role_privs where grantee='GRAPHUSER';
-
-    select * from dba_proxies where client='GRAPHUSER';
-    </copy>
-    ```
-    The results should be the same as in the screenshots below.
-
-    ![ALT text is not available for this image](images/graphuser-role-privs.png " ")
-
-    ![ALT text is not available for this image](images/graphuser-proxy-grant.png " ")
-
 ## Task 3: Graph Studio: Load data from CSV files into tables
 
 ### Introduction
@@ -375,7 +325,7 @@ Learn how to
    Then click **Create**.  
    ![ALT text is not available for this image](images/modeler-create-button.png " ")  
 
-   >**Note: If you clicked on `Start Modeling` button instead then you'll see the screen shown in the next step.**
+   **Note: If you clicked on `Start Modeling` button instead then you'll see the screen shown in the next step.**
 
 2. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
 ![ALT text is not available for this image](./images/select-tables.png " ")
@@ -535,23 +485,27 @@ First **import** the sample notebook and then execute the relevant paragraph for
    The code snippet in that paragraph is:    
    
 	```
+   <copy>
    %java-pgx
 	// The first step is to load the graph into the in-memory server
 	// To do this we use the builtin session object 
 	// We specify the graph by its name. The second argument to readGraphByName indicates that the graph is defined as a view on underlying database tables or views
 	// And we store a handle to it in a PgxGraph object
 	PgxGraph bankgraph = session.readGraphByName("BANK_GRAPH", GraphSource.PG_VIEW);
+   </copy>
 	```
    ![ALT text is no available for this image](images/1-java-read-graph.png " ")  
 
-2. Next execute the paragraph which queires and displays 100 elements of the graph.    
+2. Next execute the paragraph which queries and displays 100 elements of the graph.    
    
 	```
+   <copy>
 	%pgql-pgx
 	/* Query and visualize 100 elements (nodes and edges) of BANK_GRAPH */
 	select * 
 	from match (s)-[t]->(d) on bank_graph 
 	limit 100
+   </copy>
 
 	```
 
@@ -576,9 +530,9 @@ Steps required for customizing the visualization:
    Click the visualization `settings` icon 
    ![ALT text is not available for this image](images/sliders.svg "") (the fourth icon from the left at the top of the visualization panel).  
 
-   ![ALT text is not available for this image](images/31-viz-open-settings.png " ")   
-
-    In this `Settings` dialog, click the **Customization** tab. Then scroll down and pick `ACCT_ID` from the `Labeling`, `Vertex Label` drop-down list.  
+   ![ALT text is not available for this image](images/31-viz-open-settings.png " ") 
+   
+   In this `Settings` dialog, click the **Customization** tab. Then scroll down and pick `ACCT_ID` from the `Labeling`, `Vertex Label` drop-down list.  
 
    ![ALT text is not available for this image](images/choose-viz-settings-label.png " ")  
 
@@ -615,12 +569,14 @@ Now open the visualization settings again, click the **Customization** tab, and 
 	PGQL has built-in functions `IN_DEGREE` and `OUT_DEGREE` which return the number of incoming and outgoing edges of a node. So we can use them in this query.   
 	Run the paragraph with the following query.  
 	```
+   <copy>
 	%pgql-pgx
 	/* List 10 accounts with the most number of transactions (that is, incoming + outgoing edges) */
 	select a.acct_id, (in_degree(a) + out_degree(a)) as num_transactions 
 	from match (a) on bank_graph 
 	order by num_transactions desc 
-	limit 10 
+	limit 10
+   </copy>
 	```
 
 	![ALT text is not available for this image](images/35-num-transfers-top-10-query.png " ")  
@@ -639,11 +595,13 @@ Now open the visualization settings again, click the **Customization** tab, and 
 5.  Now check if there are any circular transfers originating and terminating at account 934.   
 	Execute the following query.  
 	```
+   <copy>
 	%pgql-pgx
 	/* Check if there are any circular payment chains of length 5 from acct 934 */
 	select *
 	from match (a)-/:TRANSFERS{5}/->(a) on bank_graph 
 	where a.acct_id=934
+   </copy>
 	```
 
 	![ALT text is not available for this image](images/37-3rd-query-5-hops-from-934.png " ")
@@ -668,11 +626,13 @@ Now open the visualization settings again, click the **Customization** tab, and 
 6. We can change the above query to include the node which made the deposit into account 934. This will display all the paths.   
 	Execute the following query.  
 	```
+   <copy>
 	%pgql-pgx
 	/* Show the account that deposited into acct 934 in the 5-hop circular payment chain */
 	select *
 	from match (a)-/:TRANSFERS{4}/->(d)-[t]->(a) on bank_graph 
 	where a.acct_id=934
+   </copy>
 	```
 
 	![ALT text is not available for this image](images/39-4th-query-show-last-account-in-5-hop-chain.png " ")  
@@ -689,11 +649,13 @@ Now open the visualization settings again, click the **Customization** tab, and 
 	
 	  
 	```
+   <copy>
 	%pgql-pgx
 	/* Show the account that deposited into acct 934 in the 5-hop circular payment chain */
 	select *
 	from match (a)-/:TRANSFERS{5}/->(d)-[t]->(a) on bank_graph 
 	where a.acct_id=934
+   </copy>
 	```
 
 	![ALT text is not available for this image](images/42-5th-query-6-hops.png " ")  
@@ -706,11 +668,13 @@ Now open the visualization settings again, click the **Customization** tab, and 
 
 	Let's do that for the 5-hop case.   
 	```
+   <copy>
 	%pgql-pgx
 	/* Show all the transfers in 5-hop circular payment chains starting from acct 934 */
 	select a, t1, i1, t2, i2, t3, i3, t4, i4, t5 
 	from match (a)-[t1]->(i1)-[t2]->(i2)-[t3]->(i3)-[t4]->(i4)-[t5]->(a) on bank_graph
 	where a.acct_id=934
+   </copy>
 	```
 	![ALT text is not available for this image](images/44-6th-query-show-all-5-hops.png " ")  
 
@@ -734,37 +698,25 @@ Then
 - Click the **+** icon next to `Condition` to add a selection criterion for the vertex.
 - Select `ACCT_ID` from the first drop-down list, `=` from the second, and `934.0` from the third to specify the criterion `ACCT_ID=934`.
 	
-	![ALT text is not available for this image](images/48-query-6-highlight-vertex-size.png " ")  
+![ALT text is not available for this image](images/48-query-6-highlight-vertex-size.png " ")  
 
-	The result will be similar to the following screenshot.  
+The result will be similar to the following screenshot.  
 
-	![ALT text is not available for this image](images/49-query-6-highlight-resulting-viz.png " ")
+![ALT text is not available for this image](images/49-query-6-highlight-resulting-viz.png " ")
 
 9. The remainder of this lab illustrates more query features and the use of the JAVA API to execute graph algorithms.  
-
-<!---    
-    Add a new Markdown paragraph, enter the following text, and exceute the paragraph.  
-
-	```
-	<copy>
-	%md
-	The queries above looked for paths of a specific length.  
-	The next query looks for paths of length between 3 and 5 hops and let's the user enter the account number (that is, the source account in the circular chain) ay runtime.
-	</copy>
-	```
-
-    ![ALT text is not available for this image](images/50-md-bind-params.png " ")
---->
 
 10. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
    **Enter 534 as the account id**, and then execute the paragraph.  
 
 	```
+   <copy>
 	%pgql-pgx
 	/* Check if there are any circular payment chains of between 3 and 5 hops starting from the user-supplied account # */
 	select * 
 	from match (a)-/:TRANSFERS{2,4}/->(d)-[t]->(a) on bank_graph
 	where a.acct_id=${account_id}
+   </copy>
 	```
 
     ![ALT text is not available for this image](images/51-bind-params-in-query.png " ")
@@ -780,9 +732,11 @@ Then
 
     Execute the paragrah containing the following code snippet.  
 	```
+   <copy>
 	%java-pgx
 	// PgxGraph bgraph = session.getGraph("BANK_GRAPH");
 	analyst.pagerank(bankgraph);
+   </copy>
 	```
 
 	![ALT text is not available for this image](images/53-java-pagerank.png " ")
@@ -792,11 +746,13 @@ Then
  Execute the paragraph with the following query which finds the 6-hop transfers starting at account #934.  
     
 	```
+   <copy>
 	%pgql-pgx
 	/* Add highlights to symbolize account nodes by pagerank values. This shows that 934 is connected to other accounts with higher PageRank values. */
 	SELECT *
 	FROM MATCH(n)-/:Transfers{1,6}/->(m) on bank_graph
 	WHERE n.acct_id = 934 limit 100
+   </copy>
 	```
 
 **Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*   
@@ -820,11 +776,13 @@ Steps required for customizing the visualization:
 Execute the paragraph with the following query to show the top ten accounts by PageRank.  
 
     ```
+    <copy>
     %pgql-pgx
     /* List top ten accounts by pagerank */
     select a.acct_id, a.pagerank
     from match (a) on bank_graph 
     order by a.pagerank desc limit 10
+    </copy>
     ```
     Click the **Table** icon to visualize the results as a table, if necessary.  
 
@@ -833,23 +791,27 @@ Execute the paragraph with the following query to show the top ten accounts by P
 14.  And the one which shows top ten accounts by number of transfers.  
 
     ```
+    <copy>
 	%pgql-pgx
 	/* List 10 accounts with the most number of edges (that is, transfers) */
 	select a.acct_id, in_degree(a) + out_degree(a) as num_transfers 
 	from match (a) on bank_graph 
 	order by num_transfers desc limit 10
+   </copy>
 	```
 
 	![ALT text is not available for this image](images/58-top-ten-num-transfers.png " ")    
 
-14. Account #222 is in the top ten by PageRank but not by # of transfers. So let us look at that account and its immediate neighbors in the graph.  
+15. Account #222 is in the top ten by PageRank but not by # of transfers. So let us look at that account and its immediate neighbors in the graph.  
  
    Execute the paragraph which queries and displays account 222 and its neighbors. 
 
     ```
+    <copy>
 	%pgql-pgx
 	/* show the transactions for acct id 222 */
 	select * from match (v1)-[e1]->(a)-[e2]->(v2) on bank_graph where a.acct_id=222
+   </copy>
 	```
 
 **Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*   
@@ -861,17 +823,19 @@ Add a new highlight with pagerank >= 0.0035 as the condition, size = 3X as the v
 	 
 ![ALT text is not available for this image](images/60-account-222-and-neighbors.png " ")    
     
-15.  Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.  
+16.  Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.  
  
    So let us look at those two and their neighbors.  
 
    Execute the paragraph which queries the neighbors of accounts #4 and #380.  
 
     ```
+    <copy>
 	%pgql-pgx
 	/* Query and visualize elements (nodes and edges) of BANK_GRAPH for accts 4 and 380 */
 	select * 
 	from match (s)-[t]->(d) on bank_graph where s.acct_id = 4 or s.acct_id = 380 or d.acct_id = 4 or d.acct_id = 380
+   </copy>
     ```
 
 **Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*   

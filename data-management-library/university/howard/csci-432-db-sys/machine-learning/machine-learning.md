@@ -853,6 +853,8 @@ You can score data and make similar predictions using the SQL interface. The tes
 	The output is similar to the following:
 	![Illustration of prediction of model on materialized test data and its greatest attribute influence on the prediction.](images/score-predict-sql-interface.png)
 
+This concludes the Python portion of the lab. In the next section we will learn about the AutoML UI.
+
 ## Task 5: Machine Learning AutoML UI
  
  **Access Oracle Machine Learning AutoML UI**
@@ -975,4 +977,9 @@ The Leader Board displays the top performing models relative to the model metric
 
 	![View Confusion Matrix](images/confusion-matrix.png)
 
+## Task 6: Homework
 
+- Complete the Machine Learning Lab
+- Submit screenshots of the following (one is from the python section and one is from the AutoML section, you need to find them)
+	- From Task 4 (Python): The prediction output of running the topN\_attrs on CUST\_ID
+	- From Taks 5 (AutoML): The Confusion Matrix for the Naïve Bayes Algorithm found under the “Metrics” for your Leader Board
