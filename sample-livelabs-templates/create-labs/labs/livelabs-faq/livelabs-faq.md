@@ -2,7 +2,7 @@
 
 ## Introduction
 
-For questions related to LiveLabs please review this FAQ. If you don't see an answer listed here, please visit the LiveLabs slack channel - #livelabs-authors-help or email your respective admins, you can view the email in [LWMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) under the support link section of your workshop. For example, database - [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
+For questions related to LiveLabs please review this FAQ. If you don't see an answer listed here, please visit the LiveLabs slack channel - #workshop-authors-help or email your respective admins, you can view the email in [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) under the support link section of your workshop. For example, database - [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
 
 ## **General FAQ**
 
@@ -27,7 +27,7 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	Don’t share the github.io links, we do not track this URL and that may change.
 7.	How to look for a specific workshop to run?
     -	Search in [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1). It is self-service.
-    -	Or click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Or click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to WMS.
     -	Look through the catalog or search the workshop using the Search bar on the top.
     -	If the status of the workshop is in production on the tile, click on the tile.
     -	Look for the production link field to navigate to the workshop and run.
@@ -70,17 +70,17 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     - Delete the same repo you just deleted on Github on your local machine as well.
     - After the successful deletion of repo on Github and local machine, follow the instructions from step 7 in lab 1 - Get Started with Git and Set up the GitHub Environment to rebuilt the repo.
 8.	Any questions related to Github?
-    -	Join the Slack channel: #livelabs-authors-help and ask the question in the channel.
+    -	Join the Slack channel: #workshop-authors-help and ask the question in the channel.
 
 ## **Workshops FAQ**
 
-1.	Do I need to be on a VPN to access LiveLabs Workshop Management System (LWMS)?
-    - Yes, you need to be on VPN to access LWMS.
+1.	Do I need to be on a VPN to access the Workshop Management System (WMS)?
+    - Yes, you need to be on VPN to access WMS.
 2.	Who can submit a workshop?
     -	Anyone within Oracle can submit a workshop.
     -	If a partner is interested in submitting a workshop, an employee within Oracle needs to submit the workshop on their behalf.
 3.	How to submit a workshop?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	First, search if there is already existing content in the catalog using the Search Bar on the top. If yes, contact the authors of that workshop - Click on the workshop tile and then click on Ask Workshop Contacts a Question. Write a message in the description box, click Send Mail.
     -	If no, proceed to submit a workshop.
     -	On the left menu, click on Submit a New Workshop.
@@ -89,24 +89,24 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	If you want to run your workshop on LiveLabs tenancy, fill in the necessary details in the Green Button Requirements and Paid Policies page.
     -	Click the Create button on the right corner of the page.
 4.	How to edit my workshop?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	On the left menu, click on Edit My Workshop.
     -	Click on the Id of the workshop you want to edit.
     -	Make the necessary changes to the workshop and ensure to fill in the required fields.
     -	Click the Apply Changes button on the right corner of the page.
 5.	How to update the status of my workshop?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	On the left menu, click on Edit My Workshop.
     -	Double click on the Workshop Status column of the workshop to see the drop-down list.
     -	Select the status you want to update and click on Save.
 6.	How to contact the author of a workshop?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	Look through the catalog or search the workshop using the Search bar on the top.
     -	Click on the workshop tile of the workshop author you want to contact.
     -	Then click on Ask Workshop Contacts a Question.
     -	Write a message in the description box, click Send Mail.
 7.	How to request for a green button?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	If your workshop is already in the system - On the left menu, click on Edit My Workshop.
     -	Click on the Id of the workshop you want to edit.
     -	Fill in the necessary details on the Green Button Requirements and Paid Policies page.
@@ -119,13 +119,13 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	LiveLabs - We have a tenancy dedicated to run the workshops. An environment is preconfigured for the workshops to run. You just supply the public key.
     -	Freetier, Always Free, and Paid are called Brown button whereas LiveLabs tenancy is called green button.
 9.	How to know/update the support forum of a workshop?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	On the left menu, click on Edit My Workshop.
     -	Double click on the Support column of the workshop to see the drop-down list.
     -	Select the status you want to update and click on Save.
     -	Click on the Id of that workshop and scroll down to the Support Link field to see the support forum link of the workshop.
 10.	How do I see the status of other workshops?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	Look through the catalog or search the workshop using the Search bar on the top.
     -	You can see the status of the workshop on the tile.
 11.	What is the process and ETA to hear from LiveLabs team about the status change from submitted to approved?
@@ -136,7 +136,7 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 12.	Can we restrict the pool of regions where our lab runs to a subset of the supported regions – Green Button workshop?
     -	Yes, we can limit a workshop to specific regions for the workshops that run on LiveLabs tenancy.
 13.	How to download the list of all the workshops in production?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	Click on Report: View All Workshops on the left menu Report.  
     -	Click on Production flg column and select 1 from the dropdown list to filter the workshops in production.
     -	Click Actions -> Download -> Excel Download.
@@ -147,11 +147,11 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	An Event code is a fully customizable way to run a customized set of focused labs for your target audience. We now fully support hidden workshops for Oracle sales/PM and marketing purposes. They won’t be accessible to the general audience, cannot be indexed by search engines, the user must login with Oracle SSO and have the code to proceed.
 2.	Can anyone create an event code?
     -	Only those with an oracle.com account
-3.	How to request an event code in LWMS?
-    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+3.	How to request an event code in WMS?
+    -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
     -	Click on Request an Event Code and fill the required fields then click Save Event, then click OK and then click Next.
     -	Fill in the description boxes that you want to customize and click Request Event.
-4.	Can I edit my event code once requested in LWMS?
+4.	Can I edit my event code once requested in the WMS?
     -	No, write a message in the description box and click submit. We make the changes.
 5.	Who is an event code ambassador?
     -	Event code ambassador represent an Org within Oracle to create event codes.
@@ -228,10 +228,10 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
         - Navigate to My reservations on [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1) homepage.
         - Click on Launch Workshop of the active reservation workshop that you want to extend.
         - Click on Extend Workshop Reservation button available on the last row of the Workshop Details section.
-6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in LWMS and want to add more content to the existing workshop?
+6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in WMS and want to add more content to the existing workshop?
     -	Click on the Support forum Link in the Need Help section of the lab. You will be navigated to the community forum of the workshop and post your question there.
     -	Or, contact the author of the workshop listed in the acknowledgments section of the workshop through slack or write an email.
-    -	Or, click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to LWMS.
+    -	Or, click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to WMS.
     -	Look through the catalog or search the workshop using the Search bar at the top.
     -	Click on the workshop tile of the workshop author you want to contact.
     -	Then click on Ask Workshop Contacts a Question.
@@ -241,4 +241,4 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 
 * **Author:** Anoosha Pilli, Product Manager, Database Product Management
 * **Reviewed by:** Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Lauran Serhal, November 2021
+* **Last Updated By/Date:** Kamryn Vinson, March 2022

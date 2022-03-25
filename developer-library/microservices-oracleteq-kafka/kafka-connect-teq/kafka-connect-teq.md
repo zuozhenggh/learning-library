@@ -1,8 +1,8 @@
-# Deploy and Test Kafka Broker and Kafka Producer and Consumer Microservices
+# Setup the connection between Kafka and Oracle Transactional Event Queues
 
 ## Introduction
 
-This lab will show you the interoperability of Transactional Event Queue with Apache Kafka. Oracle Transactional Event Queue (TEQ) makes it easy to implement event-based applications, as we experienced in the previous lab. It is also highly integrated with Apache Kafka supporting bi-directional information flow between TEQ and Kafka so that changes are available in TEQ or Kafka as soon as possible in near-real-time.
+This laboratory will show you the interoperability of Transactional Event Queues with Apache Kafka. Oracle Transactional Event Queues (TEQ) makes it easy to implement event-based applications, as we experienced in the previous lab. It is also highly integrated with Apache Kafka supporting bi-directional information flow between TEQ and Kafka so that changes are available in TEQ or Kafka as soon as possible in near-real-time.
 
 Estimated Time: 10 minutes
 
@@ -15,14 +15,14 @@ Estimated Time: 10 minutes
 
 ### Prerequisites
 
-- This lab assumes you have already completed the earlier labs.
-  - Kafka Broker: Confluent Platform 3.3.0 or above, or Kafka 0.11.0 or above
-  - Oracle Transactional Event Queue
+- This laboratory assumes you have already completed the earlier laboratories.
+    1. Kafka Broker: Confluent Platform 3.3.0 or above, or Kafka 0.11.0 or above
+    2. Oracle Transactional Event Queues
 - Connect: Confluent Platform 4.1.0 or above, or Kafka 1.1.0 or above
-- Java 1.8
+- Java 1.8+
 - Oracle TEQ JMS 1.1+ Client Jars
 
-## Task 1: Setup Kafka Connect
+## **Task 1:** Setup Kafka Connect
 
 This task will use the Apache Kafka Connect, a framework included in Apache Kafka that integrates Kafka with other systems. Oracle TEQ will provide a standard JMS package and related JDBC, Transaction packages to establish the connection and complete the transactional data flow.
 
@@ -30,7 +30,13 @@ To simplify the deployment of a Kafka Connect, as done in Lab 2, we are using th
 
 You will configure the connection between the Kafka broker and the Oracle TEQ submitting the setup to Kafka [Connect REST API](https://docs.confluent.io/platform/current/connect/references/restapi.html).
 
-The kafka2teq-connect-configuration.json file below has the configuration required to create a Connect Sync agent. The topics is already filled with Kafka Topic created during Lab 2, if it was changed, you need change here too.
+The kafka2teq-connect-configuration.json file below has the configuration required to create a Connect Sync agent. The topics is already filled with Kafka Topic created during Lab 2, if it was changed, you need change this configuration too.
+
+```bash
+<copy>
+cat $LAB_HOME/kafka-connect-teq/kafka2teq-connect-configuration.json
+</copy>
+```
 
 ```json
 {
@@ -52,11 +58,16 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 }
 ```
 
-1. First, verify if Kafka Components are still running:
+1. First, verify if Kafka Components are still running. Execute the following commands:
 
     ```bash
     <copy>
     cd $LAB_HOME/cloud-setup/confluent-kafka
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./docker-compose ps
     </copy>
     ```
@@ -65,13 +76,18 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
 
     ![Kafka Components status](images/kafka-containers-ps.png " ")
 
-    If the Kafka components are not running, you will need to rebuild them following instructions from Task 4 at the end of this page.
+    > **Note:** If the Kafka components are not running, you have to rebuild them executing the instructions from [Task 4](#task4reinstallkafkacomponentsoptional).
 
 2. Execute the following command providing the Oracle Database password. It will fill the parameters based on your previous created assets and set up the Connect Sync between the Kafka Topic from Lab 2 and Oracle TEQ from Lab 3:
 
     ```bash
     <copy>
     cd $LAB_HOME/kafka-connect-teq
+    </copy>
+    ```
+
+    ```bash
+    <copy>
     ./setup-kafka2teq-connect.sh 
     </copy>
     ```
@@ -129,7 +145,7 @@ The kafka2teq-connect-configuration.json file below has the configuration requir
     }
     ```
 
-## Task 2: Enqueueing messages on Kafka Broker
+## **Task 2:** Enqueueing messages on Kafka Broker
 
 Now that you have the Connector running, you can produce some messages and test the message transfer. The messages would be enqueued by the Kafka Producer and dequeued from the Oracle TEQ. We can use the Kafka Producer Microservice built during Lab 2 or operate Kafka producer inside the container to enqueue messages.
 
@@ -139,14 +155,17 @@ Now that you have the Connector running, you can produce some messages and test 
 
     ```bash
         <copy>
-            curl -X POST -H "Content-Type: application/json" -d '{ "id": "sync1", "message": "Sync Message from Kafka to TEQ #1" } ' http://localhost:8080/placeMessage
+            curl -X POST -H "Content-Type: application/json" -d '{ "id": "sync1", "message": "Sync Message from Kafka to TEQ #1" } ' http://localhost:8080/placeMessage | jq
         </copy>
     ```
 
     The result should be like
 
     ```bash
-        {"id":"3","statusMessage":"Successful"}%
+        {
+            "id": "1",
+            "statusMessage": "Successful"
+        }
     ```
 
 2. Enqueueing with Kafka Producer inside container.
@@ -164,13 +183,12 @@ Now that you have the Connector running, you can produce some messages and test 
     You will get the prompt to write your messages and to finish your should press CTRL+D:
 
     ```bash
-    >LAB8022 - Sync Message from Kafka to TEQ 1
-    >LAB8022 - Sync Message from Kafka to TEQ 2
-    >LAB8022 - Sync Message from Kafka to TEQ 3
-    >LAB8022 - Sync Message from Kafka to TEQ 4
+    >Sync Message from Kafka to TEQ #2
+    >Sync Message from Kafka to TEQ #3
+    >Sync Message from Kafka to TEQ #4
     ```
 
-## Task 3: Dequeue messages from Oracle TEQ
+## **Task 3:** Dequeue messages from Oracle TEQ
 
 After produce some messages, the expected behavior is the Connect Sync agent consume messages from Kafka Topic and enqueue them on Oracle TEQ. And, you will be able to dequeue them from Oracle TEQ using okafka consumer microservice or a PL/SQL procedure, for example.
 
@@ -181,6 +199,11 @@ After produce some messages, the expected behavior is the Connect Sync agent con
     ```bash
         <copy>
         cd $LAB_HOME/kafka-connect-teq
+        </copy>
+    ```
+
+    ```bash
+        <copy>
         source dequeue_oracle_teq.sh
         </copy>
     ```
@@ -188,7 +211,13 @@ After produce some messages, the expected behavior is the Connect Sync agent con
     As a result you will something like this:
 
     ```bash
-    JMS message: LAB8022 - Sync Message from Kafka to TEQ 1
+    TEQ message: {"id": "0", "message": "message1"}
+
+    PL/SQL procedure successfully completed.
+    ```
+
+    ```bash
+    TEQ message: {"id": "1", "message": "Sync Message from Kafka to TEQ #1"}
 
     PL/SQL procedure successfully completed.
     ```
@@ -212,16 +241,21 @@ After produce some messages, the expected behavior is the Connect Sync agent con
 
     SQL> select MSGID, ENQUEUE_TIME from LAB8022_TOPIC WHERE ROWNUM<20 ORDER BY ENQUEUE_TIME DESC;
 
-                                MSGID                           ENQUEUE_TIME 
+                                MSGID                           ENQUEUE_TIME
+
     ___________________________________ ______________________________________
-    01000000000000000000000001661400    25-JAN-22 03.44.03.005846000 PM GMT
-    01000000000000000000000001661300    25-JAN-22 03.43.47.184700000 PM GMT
-    01000000000000000000000001661200    25-JAN-22 03.32.27.958987000 PM GMT
-    01000000000000000000000001661100    25-JAN-22 03.32.22.928905000 PM GMT
+    00000000000000000200000001660400    21-MAR-22 08.50.38.953964000 PM GMT
+    00000000000000000200000001660300    21-MAR-22 08.50.31.738645000 PM GMT
+    00000000000000000200000001660200    21-MAR-22 08.50.29.545642000 PM GMT
+    00000000000000000200000001660100    21-MAR-22 08.49.04.080323000 PM GMT
+    00000000000000000200000001660000    21-MAR-22 08.47.47.158314000 PM GMT
+    00000000000000000000000001660000    21-MAR-22 08.42.29.565761000 PM GMT
+
+    6 rows selected.
 
     ```
 
-## Task 4: Reinstall Kafka Components (optional)
+## **Task 4:** Reinstall Kafka Components (optional)
 
 If you disconnect from Cloud Shell for a long time, you may need to reinstall Kafka components because the local docker was cleaned up. This task helps you to perform this rebuild.
 
@@ -264,37 +298,39 @@ If you disconnect from Cloud Shell for a long time, you may need to reinstall Ka
 
 5. Connect broker to Lab8022 Network (Docker internal)
 
-    First, check if lab8022network exist
+    1. check if lab8022network exist
 
-    ```bash
-    <copy>
-    docker network ls
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network ls
+        </copy>
+        ```
 
-    if network not exist, execute the following command to create it.
+    2. if network not exist, execute the following command to create it.
 
-    ```bash
-    <copy>
-    docker network create lab8022network
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network create lab8022network
+        </copy>
+        ```
 
-    And, finally, connect broker to lab8022 network
+    3. And, finally, connect broker to lab8022 network
 
-    ```bash
-    <copy>
-    docker network connect lab8022network broker
-    </copy>
-    ```
+        ```bash
+        <copy>
+        docker network connect lab8022network broker
+        </copy>
+        ```
 
 ## Wrap up
 
 In this Lab, you learned how to build a bridge between two different event brokers, expanding the possibilities of your decoupled architecture enabling the processing of messages per best-of-the-breed tools. That is the getting start of the Event Mesh concept.
 
-In a graphical view, what we did was described [here](https://youtu.be/wDRIMzlYh9U).
+The following animation describe what we builded in this workshop especially in this laboratory.
 
-You may now **proceed to the next lab...**
+[](youtube:wDRIMzlYh9U)
+
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 
