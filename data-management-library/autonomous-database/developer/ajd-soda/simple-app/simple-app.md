@@ -55,7 +55,7 @@ In this lab, you will:
     - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
     - Click **Next**
 
-    ![vcnName & Compartment](./images/task1/vcn_name_compartment.png)
+    ![vcnName & Compartment](./images/task1/vcn_name_compartment.png
 
 6. Review the information in the 'Review and Create Page' and Click **Create**.
 
@@ -152,7 +152,7 @@ In this lab, you will:
     
     ![Marketplace Compute Instance Creation No Trial](./images/task2/marketplace_compute_instance_creation_no_trial.png)
 
-    - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit the information
+    - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit the information:
 
         - Virtual cloud network: **DEVCN**
         - Subnet: **Public Subnet-DEVCN (regional)**
@@ -207,7 +207,7 @@ On the Instance Details page, copy Public IP Address in your notes.
 
     ![Create AJSON](./images/task3/create_ajson.png)
 
-3. Provide the following information
+3. Provide the following information:
 
     - Comparment: Be sure you have selected the correct one for this workshop purpose. *Root* is the recommended one
     - Display name: AJDEV
@@ -325,7 +325,7 @@ On the Instance Details page, copy Public IP Address in your notes.
  
     ![Apex Login DEMO](./images/task4/apex_log_in_demo.png)
  
-7. Click **Sign In** Page using the following information.
+7. Click **Sign In** Page using the following information:
 
     - Workspace: demo
     - Username: demo
@@ -543,7 +543,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     ![Terminal New Tab](./images/task5/terminal_new_tab.png)
 
 
-9. Use the **new tab** to perform two POST request with CURL client.
+9. Use the **new tab** to perform two **POST** request with **CURL** client.
 
     ````
     <copy>
@@ -634,7 +634,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Microservice Company One, Two, Three & Four](./images/task5/microservice_company_one_two_three_four.png)
 
-14. **Go** to the first Terminal window where the micro-service is running on port 5000, and press CTRL+C to stop it.
+14. **Go to the first Terminal window** where the micro-service is running on port 5000, and press **CTRL+C** to stop it.
 
     ````
     <copy>
