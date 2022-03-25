@@ -6,10 +6,6 @@ Here we will create our OCI Data Catalog and OCI Data Integration workspace firs
 
 Estimated Time: 15 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:D0Y8chE7kJg)
-
 ### About Product
 
 In this lab, we will learn more about the OCI Data Catalog which is used in enterprises to manage technical, business and operational metadata - see the [documentation](https://docs.oracle.com/en-us/iaas/data-catalog/home.htm) for more information.
@@ -30,7 +26,7 @@ From the home navigation menu, click Analytics & AI and then click Data Integrat
 
 ![Data Integration](./images/nav_dataintegration.png " ")
 
-From the Data Integration Service we will create a Workspace which will allow for diagramming the data flows with filters and create execution plans for data into the data assets. First, we must create the workspace and a couple more policies for the workspace to access the object storage and use and update the data in the data lake.
+Here you will create a Workspace which will allow for diagramming the data flows with filters and create execution plans for data into the data assets. First, we must create the workspace and a couple more policies for the workspace to access the object storage and use and update the data in the data lake.
 
 Click on Create Workspace. Name it Workspace Lakehouse, uncheck the Enable the Private Network option and click the Create button.
 
