@@ -47,7 +47,40 @@ Ex: ssh-add ssh-key-2022-03-21.key
 
 Let's look at the important files and directories.
 
-### 1. DOMAIN_HOME
+### 1. README
+
+There is a README in the Desktop directory. It is a good idea to go though it first.
+
+```
+cd $HOME/Desktop
+vi ReadMe
+```
+```
+...
+------------------------------------------------
+Using this Environment
+------------------------------------------------
+
+All software has been installed and is owned by the "opc" user.
+
+o Software locations:
+  o  Database software is installed only if you choose to have a local database during provisioning.
+  o  Database ORACLE_HOME:  /u01/oracle/database/base/Oracle_Home
+       o Database connect string: orcl
+
+  o  Middleware ORACLE_HOME:  /u01/oracle/middleware/Oracle_Home
+  o  Middleware DOMAIN_HOME:  /u01/oracle/middleware/user_projects/domains/base_domain
+
+       o WebLogic Server repository (RCU) schema prefix: FRM
+       o WebLogic Server Administrator username:  weblogic
+
+  o  JDK 8 HOME: /u01/oracle/jdk
+
+  o  FORMS_PATH in frmbld.sh and default.env includes:  /home/opc/oracle/formsmodules
+... 
+```
+
+### 2. DOMAIN_HOME
 
 A Forms server is a Weblogic (Java Server) with Forms installed on top of it. The Weblogic configuration files are installed in a **Domain**. You can find the domain here.
 
@@ -66,7 +99,7 @@ common         fileRealm.properties  original       startWebLogic.sh
 config         generated_classes     pending        store
 ```
 
-### 2. Oracle Forms Runtime configuration
+### 3. Oracle Forms Runtime configuration
 
 The main files to configure Oracle Forms Runtime are: 
 - formsweb.cfg : who contains the list of configurations to start your Forms programs

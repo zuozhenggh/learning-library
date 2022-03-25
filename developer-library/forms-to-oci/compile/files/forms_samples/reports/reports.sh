@@ -1,4 +1,6 @@
-# Reports Builder tools
+# Reports Server and Builder Installation on top of Forms OCI
+# Author: Marc Gueury / March 2022
+# 
 # https://docs.oracle.com/middleware/1221/formsandreports/install-fnr/install.htm#CIHBEADE
 # http://dirknachbar.blogspot.com/2016/09/configure-jobstatusrepository-in-oracle.html
 # https://www.oracle.com/technetwork/developer-tools/forms/documentation/formsreportsintegration-12c-3014203.pdf
@@ -9,7 +11,7 @@
 # Oracle Reports Tools [ReportsToolComponent]
 # Oracle Reports Server [ReportsServerComponent]
 
-# Create the schema and table with the Reports Queue
+# Create the schema and table for the Reports Queue
 cd $ORACLE_HOME/reports/admin/sql
 sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @$HOME/forms_samples/reports/reports.sql $DB_PASSWORD $DB_TNS
 cd -
@@ -20,8 +22,8 @@ cd -
 # - reportsServer
 $ORACLE_HOME/oracle_common/common/bin/wlst.sh extend_domain_report.py
 
-# Make reports cache
-/u01/oracle/middleware/repcache
+# Make Reports cache
+mkdir -p /u01/oracle/middleware/repcache
 
 # Change the configuration
 export REPORTS_CONFIG=$DOMAIN_HOME/config/fmwconfig/servers/WLS_REPORTS/applications/reports_12.2.1/configuration
@@ -33,11 +35,11 @@ cp rwserver.conf $REPORTS_CONFIG/.
 cp $REPORTS_CONFIG/rwserver.conf $REPORTS_CONFIG/rwserver.conf.orig
 sed -i -e '\#<inprocess>#a <webcommandaccess>L2</webcommandaccess>' rwservlet.properties
 
-# Sample
+# Copy Reports Sample (test.rdf/emp.rdf)
 mkdir -p ${ORACLE_HOME}/reports/samples/demo
 cp *.rdf ${ORACLE_HOME}/reports/samples/demo
 
-# start the Reports Server
+# Start the Reports Server
 $DOMAIN_HOME/bin/startComponent.sh reportsServer
 
 ## Forms -> Repors
@@ -51,7 +53,15 @@ echo "COMPONENT_CONFIG_PATH=$DOMAIN_HOME/config/fmwconfig/components/ReportsTool
 # http://localhost:9002/reports/rwservlet?server=reportsServer&module=test.rdf&destype=cache&desformat=html
 # http://localhost:9002/reports/rwservlet?server=reportsServer&module=emp.rdf&destype=cache&desformat=html&userid=scott/LiveLab__123@orcl
 #
+# Call Reports From Forms
+# - Be sure to restart WLS_FORMS after this setup
+# - Then http://localhost:9001/forms/frmservlet?config=forms_reports
+# - Click on Show Document
+#
+# Command to debug reports:
 # cd $DOMAIN_HOME/servers/reportsServer/logs/
 # vi rwserver_diagnostic.log
 # cd $DOMAIN_HOME/reports/bin
 # ./rwdiag.sh -findall
+# $DOMAIN_HOME/bin/stopComponent.sh reportsServer
+# $DOMAIN_HOME/bin/startComponent.sh reportsServer
