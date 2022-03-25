@@ -1,6 +1,7 @@
 # Reports Builder tools
 # https://docs.oracle.com/middleware/1221/formsandreports/install-fnr/install.htm#CIHBEADE
 # http://dirknachbar.blogspot.com/2016/09/configure-jobstatusrepository-in-oracle.html
+# https://www.oracle.com/technetwork/developer-tools/forms/documentation/formsreportsintegration-12c-3014203.pdf
 #
 # cd $ORACLE_HOME/oracle_common/common/bin/config.sh
 # -> add the 
@@ -38,6 +39,10 @@ cp *.rdf ${ORACLE_HOME}/reports/samples/demo
 
 # start the Reports Server
 $DOMAIN_HOME/bin/startComponent.sh reportsServer
+
+## Forms -> Repors
+# Add COMPONENT_CONFIG_PATH to Forms Server (Allow Forms to call Reports)
+echo "COMPONENT_CONFIG_PATH=$DOMAIN_HOME/config/fmwconfig/components/ReportsToolsComponent/reportsTools" >> $FORMS_CONFIG/default.env
 
 # Test:
 #

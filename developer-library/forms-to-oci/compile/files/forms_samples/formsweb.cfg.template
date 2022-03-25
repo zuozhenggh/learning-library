@@ -19,11 +19,11 @@ userid=scott/LiveLab__123@orcl
 form=dept_emp.fmx
 # webstart_codebase=https://LOADBALANCER_HOSTNAME/forms/java
 
-[form_report]
+[forms_reports]
 basejnlp=base.jnlp
 webstart=enabled
 userid=scott/LiveLab__123@orcl
-form=form_report.fmx
+form=forms_reports.fmx
 # webstart_codebase=https://LOADBALANCER_HOSTNAME/forms/java
 
 [slow]
