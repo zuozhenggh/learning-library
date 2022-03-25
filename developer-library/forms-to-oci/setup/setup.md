@@ -49,7 +49,7 @@ Let's look at the important files and directories.
 
 ### 1. README
 
-There is a README in the Desktop directory. It is a good idea to go though it first.
+There is a README in the Desktop directory. It is a good idea to read it first.
 
 ```
 cd $HOME/Desktop
