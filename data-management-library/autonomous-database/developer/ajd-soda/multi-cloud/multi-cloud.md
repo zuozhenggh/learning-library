@@ -51,7 +51,11 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
     ![MongoDB Network IP Address](./images/task1/mongodb_network_ip_address.png)
 
-5. Create a Database User: **mongoUser/DBlearnPTS#22_**. To add or edit users, **click Security > Database Access** on the left side menu.
+5. Create a Database User: 
+    - Username: <copy>mongoUser</copy>
+    - Password: <copy>DBlearnPTS#22_</copy>
+    
+    To add or edit users, **click Security > Database Access** on the left side menu.
 
     ![MongoDB User](./images/task1/mongodb_user.png)
 
@@ -110,7 +114,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![Double app](./images/task2/double_app.png)
 
 
-2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor. 
+2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and `[sub_domain_name]` is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor. 
 
     ````
     <copy>
@@ -304,7 +308,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ````
     ![Migrate app](./images/task3/migrate_app.png)
 
-2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and [sub_domain_name] is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor.
+2. Verify all connection variables are correct, MongoDB cluster name is hard-coded having the default value **cluster0**, and `[sub_domain_name]` is a 5 characters string (under set MongoDB connection variables). Click **Save**, and close the editor.
     
     ````
     <copy>
