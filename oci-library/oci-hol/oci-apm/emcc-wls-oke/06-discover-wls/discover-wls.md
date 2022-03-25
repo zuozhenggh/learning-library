@@ -9,7 +9,11 @@ Estimated time: 20 minutes
 * Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
 * Completion of the preceding tutorials in this workshop
 
-## Task 1: Discover WebLogic Domain
+### Objectives
+* Discover WebLogic Servers as managed targets
+
+## **Task 1**: Discover WebLogic Domain
+
 
 1.  From the menu bar in the EM console, select **Targets** (A double ring icon) > **Middleware** to navigate to the Middleware home page.
 
@@ -50,7 +54,9 @@ Estimated time: 20 minutes
 
 
 
-## Task 2: Validate the WebLogic Server metrics
+
+## **Task 2**: Validate the WebLogic Server metrics
+
 
 1.  In the **Middleware** home page, confirm the WebLogic Domain, WebLogic Servers and the WebLogic cluster were added to the Target section. Refresh the page to see the status updated. It may take few minutes to see the targets fully in the running status.
 
@@ -86,7 +92,8 @@ Estimated time: 20 minutes
 
    ![EM Console, WLS Domain target home page, All Metrics page, JVM heap Usage](images/2-7-emcc.png " ")
 
-## Task 3: Verify the configuration data collected from the WebLogic target
+
+## **Task 3**: Verify the configuration data collected from the WebLogic target
 
 1. Next, let’s review the configuration metrics of the WebLogic target. Select **WebLogic Server** > **Configurations**.
 
@@ -100,7 +107,9 @@ Estimated time: 20 minutes
 
 
 
-You may now [proceed to the next tutorial](#next).
+
+You may now **proceed to the next tutorial**.
+
 
 ## Acknowledgements
 
