@@ -39,58 +39,38 @@ Estimated Time: 5 minutes
 ## **TASK 2:** Create PHP MySQL Application
 
 Estimated Time: 20 minutes
-Subtask 1 – Add HTTP port for Web Application
 
-1. Navigation Menu > Networking > Virtual Cloud Networks
-
-2. Open MDS-VCN
-
-3. Click  Public Subnet-MDS-VCN
-
-4. Click Default Security List for mds_vcn
-
-18.	Click Add Ingress Rules page under Ingress Rule 1
-
- Add an Ingress Rule with Source CIDR
-    ````
-    <copy>0.0.0.0/0</copy>
-    ````
- Destination Port Range
-     ````
-    <copy>80</copy>
-     ````
-    Description
-     ````
-    <copy>HTTP port</copy>
-     ````
-
-    ![VCN](./images/03vcn12.png " ")
-
-Subtask 2 – Install App Server (APACHE)
+Subtask 1 – Install App Server (APACHE)
 
 1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH ... be sure replace the  "private key file"  and the "new compute instance ip"
-
 
      ````
     <copy>ssh -i private_key_file opc@new_compute_instance_ip</copy>
      ````
 2.	Install app server
 
+    a. Install Apache
+    
     ````
     <copy>sudo yum install httpd -y </copy>
     ````
+    b. Enable Apache
 
     ````
     <copy>sudo systemctl enable httpd</copy>
     ````
+    c. Start Apache
 
     ````
     <copy>sudo systemctl restart httpd</copy>
     ````
+    d. Setup firewall
 
     ````
     <copy>sudo firewall-cmd --permanent --add-port=80/tcp</copy>
     ````
+    
+    e. Reload firewall
 
     ````
     <copy>sudo firewall-cmd --reload</copy>
@@ -98,30 +78,35 @@ Subtask 2 – Install App Server (APACHE)
 
 3.	From a browser test apache from your loacal machine using the Public IP Address of your Compute Instance
 
-    Example: http://129.213....
+    **Example: http://129.213....**
 
-Subtask 3 – Install PHP    
+Subtask 2 – Install PHP    
 
 1.	Install php:
+
+    a. Install php:7.4
 
     ````
     <copy> sudo dnf module install php:7.4 -y</copy>
     ````
-    ````
-    <copy>php -v</copy>
-    ````
-    ````
-    <copy>php -m |grep mysql</copy>
-    ````
+     
+    b. Install associated php libraries
+
     ````
     <copy>sudo yum install php-cli php-mysqlnd php-zip php-gd php-mbstring php-xml php-json -y</copy>
     ````
+ 
+    c. View  php / mysql libraries
+
     ````
     <copy>php -m |grep mysql</copy>
     ````
+    d. View php version
+
     ````
     <copy>php -v</copy>
     ````
+    e. Restart Apache
 
     ````
     <copy>sudo systemctl restart httpd</copy>
@@ -143,7 +128,7 @@ phpinfo();
 
    Example: http://129.213.167.../info.php
 
-Subtask 4 – Create MDS / PHP connect app
+Subtask 3 – Create MDS / PHP connect app
 
 1.	Security update"   set SELinux to allow Apache to connect to MySQL
 

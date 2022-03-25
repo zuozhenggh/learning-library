@@ -184,7 +184,11 @@ You will need a MySQL client tool to connect to your new MySQL DB System from yo
     ```
     ![CONNECT](./images/06connect02-shell.png " ")
 
-     
+ 3. View the installed MySQL Shell version 
+
+      ```
+    <copy>mysqlsh -V</copy>
+    ```   
 **You may now proceed to the next lab**
 
 ## Acknowledgements

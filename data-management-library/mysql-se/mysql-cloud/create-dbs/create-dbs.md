@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will create and configure a MySQL DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.  Finally you will add a HeatWave Cluster comprise of two or more HeatWave nodes.  
+In this lab, you will create and configure the three MySQL HeatWave DB Systems. 
 
 _Estimated Time:_ 20 minutes
 
@@ -23,7 +23,7 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create a MySQL DB System - Standalone.
 
-In this lab, you will create and configure a MySQL Standalone DB System.
+In this Task, you will create and configure a MySQL Standalone DB System.
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -115,7 +115,7 @@ In this lab, you will create and configure a MySQL Standalone DB System.
 
 ## Task 2: Create a MySQL DB System - High Availability.
 
-In this lab, you will create and configure a MySQL High Availability DB System.
+In this Task, you will create and configure a MySQL High Availability DB System.
 
 1. Open the navigation menu. Under Databases ->MySQL, click DB Systems
     ![MDS](./images/04mysql01.png " ")
@@ -148,7 +148,7 @@ In this lab, you will create and configure a MySQL High Availability DB System.
     <copy>MySQL Database Service High Availability instance</copy>
     ````
 
- Select **Standalone** to specify a High Availability DB System
+ Select **High Availability** to specify a High Availability DB System
     ![MDS](./images/04mysql03-2.png " ")
 
 6. Create Administrator credentials
@@ -210,7 +210,7 @@ In this lab, you will create and configure a MySQL High Availability DB System.
 
 ## Task 3: Create a MySQL DB System - HeatWave  with sample data (airportdb)
 
-In this lab, you will create and configure a MySQL HeatWave DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.
+In this Task, you will create and configure a MySQL HeatWave DB System. The creation process will use a provided object storage link to create the airportdb schema and load data into the DB system.
 
 1. Go to Navigation Menu
          Databases
@@ -248,13 +248,20 @@ In this lab, you will create and configure a MySQL HeatWave DB System. The creat
  Select **HeatWave** to specify a HeatWave DB System
     ![MDS](./images/04mysql03-3.png " ")
 
-5. Create Administrator Credentials
+5. Create Administrator credentials
 
- **Enter Username** (write username to notepad for later use)
-
- **Enter Password** (write password to notepad for later use)
-
- **Confirm Password** (value should match password for later use)
+ Enter Username
+    ````
+    <copy>admin</copy>
+    ````
+ Enter Password
+    ````
+    <copy>Welcome#12345</copy>
+    ````   
+ Confirm Password
+    ````
+    <copy>Welcome#12345</copy>
+    ````
 
     ![MDS](./images/04mysql04.png " ")
 
@@ -289,13 +296,18 @@ In this lab, you will create and configure a MySQL HeatWave DB System. The creat
 
 10. Click on Show Advanced Options
 
-11. Select Data Import tab.
+11. Go to the Networking tab, in the Hostname field enter (same as DB System Name):
 
-12. Use the Image below identify your OCI Region.
+	```
+	<copy>mdshw</copy> 
+	```
+12. Select Data Import tab.
+
+13. Use the Image below to identify your OCI Region.
 
     ![MDS](./images/regionSelector.png " ")
 
-13. Click on your localized geographic area
+14. Click on your localized geographic area
 
     ## North America (NA)  
     **Tenancy Regions** Please select the same region that you are creating MDS in  
@@ -549,21 +561,21 @@ In this lab, you will create and configure a MySQL HeatWave DB System. The creat
     ```
     </details>
 
-14. Your PAR Source URL entry should look like this:
+15. Your PAR Source URL entry should look like this:
     ![MDS](./images/04mysql08-2.png " ")
 
-15. Review **Create MySQL DB System**  Screen
+16. Review **Create MySQL DB System**  Screen
 
     ![MDS](./images/04mysql09-3.png " ")
 
     Click the '**Create**' button
 
-16. The New MySQL DB System will be ready to use after a few minutes
+17. The New MySQL DB System will be ready to use after a few minutes
 
     The state will be shown as 'Creating' during the creation
     ![MDS](./images/04mysql10-3.png" ")
 
-17. The state 'Active' indicates that the DB System is ready for use
+18. The state 'Active' indicates that the DB System is ready for use
 
     On MDS-HW Page, check the MySQL Endpoint (Private IP Address)
 
@@ -571,10 +583,10 @@ In this lab, you will create and configure a MySQL HeatWave DB System. The creat
 
 ## Task 4: Add a HeatWave Cluster to MySQL HeatWave Database System
 
-1. Open the navigation menu  
-    Databases
-    MySQL
-    DB Systems
+In this Task, you will add a HeatWave Cluster to your MySQL HeatWave DB system
+
+1. Open the navigation Menu > Databases > MySQL >  DB Systems
+
 2. Choose the root Compartment. A list of DB Systems is displayed.
     ![Connect](./images/10addheat01.png " ")
 3. In the list of DB Systems, click the **MDS-HW** system. click **More Action ->  Add HeatWave Cluster**.
