@@ -128,15 +128,17 @@ After your pull request is complete, wait a few minutes and perform the steps be
 
 1.  Replace your GitHub pages site from Step 3 -> #5 with oracle.github.io.  This will take you to the full path of your workshop.  
 
-  ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
-
 2. This workshop for example is located in the link below.
 
-  https://github.com/oracle/learning-library/tree/master/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
+    https://github.com/oracle/learning-library/tree/master/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
 
 3. The published version becomes:
 
-  https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
+    https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
 
 ## Task 7: Change your status
 Now that your workshop is in the learning library, set your workshop status in WMS to the appropriate status: **In Development** or **Self QA**.
