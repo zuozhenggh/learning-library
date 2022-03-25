@@ -45,6 +45,16 @@ Refer to Lab 3a -> Task 2 to use conditional formatting for event's content.
 
 Refer to Lab 4 -> Task 9 to request to publish the workshop of type *Event*.
 
+## (Optional) Task 4: Multiple Workshops Use the Same Lab Files
+
+![Multiple Workshops Use the Same Lab Files](./images/multiple-workshops.png)
+
+If you have multiple workshops that use the same lab files except common labs (in this example, *install-spatial-studio-mp* and *intro-to-spatial-studio* both use the lab *create-project*), you should use the multiple workshop folder structure above.
+
+Under the `workshops` folder, you will create a `workshop 1` folder (in this example, *install-spatial-studio-mp*). That `workshop 1` folder will contain a desktop, freetier, and/or livelabs folder, each containing an index.html, a manifest.json file, and an introduction Markdown file (if you have different introductions for freetier and livelabs versions). If you have the same introduction for freetier and livelabs versions, then you can have an introduction folder just like in Task 1 and Task 2.
+
+Refer to Lab 3a -> Task 2 to use conditional formatting for different versions of the workshop.
+
 ## Acknowledgements
 
 * **Author:**
