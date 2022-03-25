@@ -229,10 +229,7 @@ GROUP BY firstname , lastname;</copy>
 
     ![RUN](./images/final-result.png " ")
 
-## Learn More
-
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
-* [MySQL Database Documentation](https://www.MySQL.com)
+**You may now proceed to the next lab**
 
 ## Acknowledgements
 

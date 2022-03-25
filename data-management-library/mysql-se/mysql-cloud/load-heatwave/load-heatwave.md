@@ -55,10 +55,8 @@ In this lab, you will be guided through the following task:
     ```
     ![Connect](./images/heatwave-load-04.png " ")
 
-## Learn More
 
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/MySQL-database)
-* [MySQL Database Documentation](https://www.MySQL.com)
+**You may now proceed to the next lab**
 
 ## Acknowledgements
 

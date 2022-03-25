@@ -128,7 +128,8 @@ Description
 6.	On Security List for Default Security List for mds_vcn page, the new Ingress Rules will be shown under the Ingress Rules List
     ![VCN](./images/03vcn13.png " ")
 
-You successfully made it to the end this lab Interval Partitions. You may now [proceed to the next lab](#next)
+
+**You may now proceed to the next lab**
 
 
 ## Acknowledgements

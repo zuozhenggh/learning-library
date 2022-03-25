@@ -594,6 +594,10 @@ algorithm, it will predict the number of nodes needed.
 10. HeatWave creation will take about 10 minutes. From the DB display page scroll down to the Resources section. Click the **HeatWave** link. Your completed HeatWave Cluster Information section will look like this:
     ![Connect](./images/10addheat07.png " ")
 
+
+**You may now proceed to the next lab**
+
+
 ## Acknowledgements
 
 * **Author** - Perside Foster, MySQL Solution Engineering, Harsh Nayak , MySQL Solution Engineering

@@ -138,7 +138,8 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
         ![Connect](./images/07switch04.png " ")  
 
     
-You may now proceed to the next lab.
+**You may now proceed to the next lab**
+
 
 ## Learn More
 

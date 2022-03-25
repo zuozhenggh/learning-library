@@ -393,10 +393,7 @@ LIMIT 10;</copy>
 16.	Click the dataset icon and move the nbpeople field to Y-axis and airlinename field to Category
 17.	Set project name to customernationsbargraph
 
-## Learn More
 
-* [Oracle Cloud Infrastructure MySQL Database Service Documentation ](https://docs.cloud.oracle.com/en-us/iaas/mysql-database)
-* [MySQL Database Documentation](https://www.mysql.com)
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering, Harsh Nayak , MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
