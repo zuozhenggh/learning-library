@@ -256,11 +256,12 @@ If you reached this point. CONGRATULATION !!
 ## Next Steps
 
 You could improve this setup by:
-- using a Oracle Database Service or an Autonomous Database 
-- using a Devops Git repository to store source Forms files to share between the Forms Builder and Server
 - using several Forms servers and a Load Balancer in front of them for High Availability
 - using Dataguard to replicate the database in another datacenter for Disaster and Recovery
+- using a Devops Git repository to store source Forms files to share between the Forms Builder and Server
 - using Terraform and "Infrastructure As Code" to create the setup automatically
+- add Reports Server to the installation
+- install Webutil
 - ...
 
 ## Learn More
