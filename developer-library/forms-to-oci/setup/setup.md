@@ -23,14 +23,19 @@ This lab assumes you have:
 Since we use a Bastion, we do not have direct access to the Forms machine. We will use port forwarding to access
 the different ports of the installation.
 
+Ports:
+- 5901 is the VNC port for :1
+- 7001 is the port of WebLogic
+- 9001 is the port of Forms
+- 9002 is the port of Reports 
+
 ```
 With port forwarding:
 ssh -J opc@&lt;bastion-ip&gt; opc@&lt;Forms Private IP&gt; -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
 
 Ex:
-ssh -J opc@130.131.132.133 opc@10.0.1.130 -L5901:localhost:5901 -L9001:0.0.0.0:9001 -L7001:0.0.0.0:7001
+ssh -J opc@130.131.132.133 opc@10.0.1.130 -L5901:localhost:5901 -L7001:0.0.0.0:7001 -L9001:0.0.0.0:9001 -L9002:0.0.0.0:9002
 ```
-
 Run the above command and let the ssh connection opened. 
 
 Note: this command assumes that the SSH Private Key has been added to your ssh-agent. It was normally done after the Forms installation. 
