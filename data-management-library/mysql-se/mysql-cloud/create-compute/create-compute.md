@@ -1,5 +1,4 @@
 # Create Linux Compute Instance
-![INTRO](./images/00-mds-image.png " ") 
 
 
 ## Introduction

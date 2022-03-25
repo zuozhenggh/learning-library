@@ -1,6 +1,4 @@
 # Connect to Standalone and High Availability Db Systems
-![INTRO](./images/00_mds_heatwave_2.png " ") 
-
 
 ## Introduction
 

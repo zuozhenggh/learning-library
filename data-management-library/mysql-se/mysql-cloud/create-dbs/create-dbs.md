@@ -1,5 +1,4 @@
 # Create MySQL Database System and HeatWave Cluster
-![INTRO](./images/00_mds_heatwave_2.png " ")
 
 ## Introduction
 

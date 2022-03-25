@@ -1,5 +1,4 @@
 # Create your Virtual Cloud Network and Related Components
-![INTRO](./images/00-mds-image.png" ") 
 
 
 ## Introduction

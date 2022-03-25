@@ -1,5 +1,4 @@
 # Load HeatWave cluster in MySQL Database System  
-![INTRO](./images/00_mds_heatwave_2.png " ")
 
 ## Introduction
 

@@ -30,27 +30,27 @@
           },
                    
           {
-            "title": "Lab 3: Connect to Standalone and High Availability Db Systems",
+            "title": "Lab 4: Connect to Standalone and High Availability Db Systems",
             "filename": "../../launchmds-sa-ha/launchmds-sa-ha.md"
           },
              
           {
-              "title": "Lab 4: Load HeatWave cluster",
+              "title": "Lab 5: Load HeatWave cluster",
               "filename": "../../load-heatwave/load-heatwave.md"
           },
           
           {
-              "title": "Lab 5: Run Queries in HeatWave and MySQL ",
+              "title": "Lab 6: Run Queries in HeatWave and MySQL ",
               "filename": "../../run-queries/run-queries.md"
           },
           
           {
-              "title": "Lab 6: (Bonus) Run MySQL Autopilot",
+              "title": "Lab 7: (Bonus) Run MySQL Autopilot",
               "filename": "../../run-autopilot/run-autopilot.md"
           },
           
           {
-            "title": "Lab 7: Use MySQL HeatWave For Development",
+            "title": "Lab 8:  (Bonus) Use MySQL HeatWave For Development",
             "filename": "../../develop/develop.md"
           }, 
   

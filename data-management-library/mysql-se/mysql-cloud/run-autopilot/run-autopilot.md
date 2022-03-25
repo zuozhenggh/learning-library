@@ -1,5 +1,4 @@
 # Run MySQL Autopilot
-![INTRO](./images/00_mds_heatwave_2.png " ")
 
 ## Introduction
 
