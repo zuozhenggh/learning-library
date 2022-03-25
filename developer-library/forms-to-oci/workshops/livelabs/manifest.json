@@ -13,21 +13,34 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Provision an Instance",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
+            "title": "Lab 1: Configure the Network",
+            "description": "Configure the network",
+            "filename": "../../network/network.md"
+        },        
+        {
+            "title": "Lab 2: Install Oracle Forms",
+            "description": "Install Oracle Forms",
+            "filename": "../../forms-instance/forms-instance.md"
         },
         {
-            "title": "Lab 2: Setup the Environment",
+            "title": "Lab 3: Option 1: Local Database",
+            "filename": "../../db-local/db-local.md"
+        },
+        {
+            "title": "Lab 3: Option 2: Database Cloud Service",
+            "filename": "../../db-dbcs/db-dbcs.md"
+        },
+        {
+            "title": "Lab 4: Explore the Installation ",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "Lab 3: Load Data into an Instance",
-            "filename": "../../data-load/data-load.md"
+            "title": "Lab 5: Compile and Run Forms",
+            "filename": "../../compile/compile.md"
         },
         {
-            "title": "Lab 4: Query Data",
-            "filename": "../../query/query.md"
+            "title": "Lab 6: Optional - Install Forms Builder on Windows",
+            "filename": "../../windows/windows.md"
         },
         {
             "title": "Need Help?",
