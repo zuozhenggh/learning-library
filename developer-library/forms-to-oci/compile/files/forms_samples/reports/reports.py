@@ -11,7 +11,8 @@ createReportsServerInstance(instanceName='reportsServer',machine='AdminServerMac
 
 # create a credential for the password of the RWADMIN database user (with the Reports queue tables)
 v_dbPwd=os.environ['DB_PASSWORD']
-createCred(map="reports, key="repjobs", user="rwadmin",  password=v_dbPwd", desc="Reports queue tables")
-
+v_wlsPwd=os.environ['WLS_PASSWORD']
+connect("weblogic",v_wlsPwd)
+createCred(map="reports", key="reports_repository", user="rwadmin", password=v_dbPwd)
 exit()
-createCred(map="myMap, key="myKey", user="myUsr", password="myPassw", desc="updated usr name and passw to connect to app xyz")
+

@@ -32,3 +32,6 @@ export DB_ADMIN=system
 export DB_USER=scott
 export DB_PASSWORD=LiveLab__123
 export DB_TNS=orcl
+
+# Weblogic Password
+export WLS_PASSWORD=LiveLab1
