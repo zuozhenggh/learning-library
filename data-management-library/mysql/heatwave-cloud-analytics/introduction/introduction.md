@@ -7,8 +7,7 @@ This workshop will cover the flexibility of using popular open-source tools such
 * Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
 * Deploying open-source analytics tools (Superset, Grafana, Zeppelin) to analyze data in MySQL HeatWave
 
-
-[](youtube:oU5p-MztPCA)
+[](youtube:pexH2tqI_0E)
 
 Estimated Time: 90 minutes
 

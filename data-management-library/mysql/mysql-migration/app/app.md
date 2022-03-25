@@ -25,15 +25,15 @@ This lab assumes you have:
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
 
-![Navigate to OKE](images/navigate-to-oke.png)
+    ![Navigate to OKE](images/navigate-to-oke.png)
 
 2. Select the Compartment (e.g. PHP-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
 
-![Locate OKE](images/locate-oke-instance.png)
+    ![Locate OKE](images/locate-oke-instance.png)
 
 3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
 
-![Verify OKE](images/oke-worker-nodes.png)
+    ![Verify OKE](images/oke-worker-nodes.png)
 
 ## Task 2: Connect to **oke-operator** compute instance
 
@@ -57,7 +57,7 @@ This lab assumes you have:
 	</copy>
 	```
 
-For example, if the IP address of your MDS instance is "10.0.30.41", your script should be:
+	For example, if the IP address of your MDS instance is "10.0.30.41", your script should be:
 
 	```
 	<copy>
@@ -74,7 +74,7 @@ For example, if the IP address of your MDS instance is "10.0.30.41", your script
 	</copy>
 	```
 
-For example, if your new password is "MySQL#12345", your script should be:
+	For example, if your new password is "MySQL#12345", your script should be:
 
 	```
 	<copy>
@@ -90,7 +90,7 @@ For example, if your new password is "MySQL#12345", your script should be:
 	</copy>
 	```
 
-![Update MDS Connection](images/mds-connection.png)
+    ![Update MDS Connection](images/mds-connection.png)
 
 
 5. Create Kubernetes configmap and secret to store MySQL connection metadata.
@@ -101,7 +101,7 @@ For example, if your new password is "MySQL#12345", your script should be:
 	</copy>
 	```
 
-![Apply MDS Connection](images/apply-mds-connection.png)
+	![Apply MDS Connection](images/apply-mds-connection.png)
 
 6. Download yaml deployment file [deploy_webapp.yaml](deploy_webapp.yaml).
 
@@ -119,7 +119,7 @@ For example, if your new password is "MySQL#12345", your script should be:
 	</copy>
 	```
 
-![Apply WebApp](images/apply-webapp.png)
+	![Apply WebApp](images/apply-webapp.png)
 
 8. Check the status of pods and wait until all pods are up and running
 
@@ -129,7 +129,7 @@ For example, if your new password is "MySQL#12345", your script should be:
 	</copy>
 	```
 
-![Get Pod](images/get-pod.png)
+	![Get Pod](images/get-pod.png)
 
 9. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
 
@@ -139,15 +139,15 @@ For example, if your new password is "MySQL#12345", your script should be:
 	</copy>
 	```
 
-Once you have the External IP provisioned, you can execute CTL+C to kill the command
+	Once you have the External IP provisioned, you can execute CTL+C to kill the command
 
-![Get Service](images/get-service.png)
+   ![Get Service](images/get-service.png)
 
 ## Task 4: Access the Application 
 
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:5000/index.php). You will get a page to submit SQL statement against MySQL.
 
-![Access App](images/access-app.png)
+	![Access App](images/access-app.png)
 
 2. Submit a SQL statement to verify that PHP application connects well with MySQL.
 
@@ -174,7 +174,7 @@ Once you have the External IP provisioned, you can execute CTL+C to kill the com
  
 3. After a while, you should get the query result together with the execution time. Note down the execution time, you will see performance improvement in next lab after HeatWave is enabled.
 
-![Query Result](images/query-result.png)
+	![Query Result](images/query-result.png)
 
 You may now **proceed to the next lab.**
 

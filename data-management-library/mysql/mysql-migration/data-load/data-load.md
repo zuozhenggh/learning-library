@@ -25,19 +25,19 @@ This lab assumes you have:
 
 1. Log in to **OCI** and click on the <a href="#menu">&#9776; hamburger menu</a> at the top left corner of the OCI console, and select **Compute**, anc click on **Instances**
 
-![Compute Menu](images/compute-menu.png)
+	![Compute Menu](images/compute-menu.png)
 
 2. In the Compute>Instance page, select the right compartment under “Compartment” > “PHP-Compartment” at the right hand side. The list of instances will be showed. Then, find out the **Public IP** of the compute instance **oke-operator**, we will need this to connect to the compute instance to load the data into **MySQL Database Service**
 
-![Compute ip](images/compute-ip.png)
+	![Compute ip](images/compute-ip.png)
 
-3. Launch OCI Cloud Shell to connect to **oke-operator** compute instance
-Click on the icon on the top right corner of OCI Console to launch the Cloud Shell. 
-![Cloud Shell](images/cloud-shell.png)
+3. Launch OCI Cloud Shell to connect to **oke-operator** compute instance. Click on the icon on the top right corner of OCI Console to launch the Cloud Shell. 
 
-OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console to access various OCI services including OCI Compute instances. 
+   ![Cloud Shell](images/cloud-shell.png)
 
-![Launch Cloud Shell](images/cloud-shell-launch.png)
+	OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console to access various OCI services including OCI Compute instances. 
+
+	![Launch Cloud Shell](images/cloud-shell-launch.png)
 
 4. Follow the steps below to download the private key for connecting to oke-operator compute instance. Please use the public IP address of oke-operator in Step 2
 
@@ -49,7 +49,7 @@ OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud
 	</copy>
 	```
 
-![Cloud Shell Connect](images/cloud-shell-connect.png)
+	![Cloud Shell Connect](images/cloud-shell-connect.png)
 
 ## Task 2: Load airportdb data into MDS
 
@@ -65,7 +65,7 @@ OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud
 	wget -O airport-db.zip https://bit.ly/3pZ1PiW
 	</copy>
 	```
-![Download airportdb Dataset](images/download-airportdb.png)
+	![Download airportdb Dataset](images/download-airportdb.png)
 
 2. Unpack the downloaded zip file
 
@@ -80,16 +80,16 @@ OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud
 	ls
 	</copy>
 	```
-![Unzip airportdb](images/unzip-airportdb.png)
+	![Unzip airportdb](images/unzip-airportdb.png)
 
 3. Next we need to connect to the provisioned MDS instance. Click on the <a href="#menu">&#9776; hamburger menu</a> at the top left corner of the OCI console, and select **Databases**, anc click on **DB Systems**
-![MySQL Menu](images/mds-menu.png)
+	![MySQL Menu](images/mds-menu.png)
 
 4. Select the provisioned MDS instance, **MDSInstance**
-![MySQL Details](images/mds-details.png)
+	![MySQL Details](images/mds-details.png)
 
 5. If you did not note down the private ip of **MDSInstance**
-![MySQL Private IP](images/mds-ip.png)
+	![MySQL Private IP](images/mds-ip.png)
 
 6. Connect to MDS instance. Update password (default: Oracle#123) and host (same as MDS host private IP address). 
 
@@ -100,34 +100,35 @@ OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud
 	```
 
 7. Load data 
+	We will first simulate the data loading to make sure that we are able to load the data without any errors. Note the flag **dryRun** to simulate the data loadning without executing the actual data loading
 
-We will first simulate the data loading to make sure that we are able to load the data without any errors. Note the flag **dryRun** to simulate the data loadning without executing the actual data loading
+		```
+		<copy>
+		util.loadDump("/home/opc/airport-db", {dryRun: true, threads: 8, resetProgress:true, ignoreVersion:true})
+		</copy>
+		```
 
-	```
-	<copy>
-	util.loadDump("/home/opc/airport-db", {dryRun: true, threads: 8, resetProgress:true, ignoreVersion:true})
-	</copy>
-	```
-![Load DryRun](images/load-dryrun.png)
+   ![Load DryRun](images/load-dryrun.png)
 
-If the command completes without any error, we will execute the data loading by setting the **dryRun** flag to false
+	If the command completes without any error, we will execute the data loading by setting the **dryRun** flag to false
 
-	```
-	<copy>
-	util.loadDump("/home/opc/airport-db", {dryRun: false, threads: 8, resetProgress:true, ignoreVersion:true})
-	</copy>
-	```
-![Load Data](images/load-data.png)
+		```
+		<copy>
+		util.loadDump("/home/opc/airport-db", {dryRun: false, threads: 8, resetProgress:true, ignoreVersion:true})
+		</copy>
+		```
 
-![Load Done](images/load-done.png)
+   ![Load Data](images/load-data.png)
 
-It will take about 5-10 minutes to complete the data loading on our provisioned compute instance. 
+   ![Load Done](images/load-done.png)
+
+	It will take about 5-10 minutes to complete the data loading on our provisioned compute instance. 
 
 ## Task 3: Verify the database import
 
 1. Execute query on MDS
 
-Now that we have imported the airportdb data, lets verify the database
+	Now that we have imported the airportdb data, lets verify the database
 
 	```
 	<copy>
@@ -150,9 +151,9 @@ Now that we have imported the airportdb data, lets verify the database
 	</copy>
 	```
   
-![Check Database](images/check-db.png)
+   ![Check Database](images/check-db.png)
 
-Execute the following query to find per-company average age of passengers from Germany, Spain and Greece. This query will take about 12-13s to complete
+	Execute the following query to find per-company average age of passengers from Germany, Spain and Greece. This query will take about 12-13s to complete
 
 	```
 	<copy>
@@ -174,7 +175,7 @@ Execute the following query to find per-company average age of passengers from G
 	LIMIT 10;
 	</copy>
 	```
-You may now **proceed to the next lab.**
+	You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
