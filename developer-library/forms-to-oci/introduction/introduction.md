@@ -4,7 +4,7 @@ Estimated Lab Time: 90 minutes
 
 ## About this Workshop
 
-In this workshop, you install Oracle Forms on Oracle Cloud Infrastruture. And compile and run Oracle Forms samples. 
+In this workshop, you install Oracle Forms on Oracle Cloud Infrastruture. Then compile and run Oracle Forms samples. 
 
   ![architecture](images/forms-architecture.png)
 
