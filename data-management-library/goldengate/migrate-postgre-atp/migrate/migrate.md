@@ -35,7 +35,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![](/images/oggadmin.png)
+	![Output showing credential.](/images/oggadmin.png)
 
 2. Good practice is to keep it in your notepad. You will use it very often in the next steps.
 
@@ -43,7 +43,7 @@ For a technical overview of this lab step, please watch the following video:
 
 1. Open your web browser and point to `https://your_microservices_ip_address`. Provide oggadmin in username and password which you copied, then log in.
 
-	![](/images/gg_oggadmin.png)
+	![Microservices webc onsole login.](/images/gg_oggadmin.png)
 
 ## Task 4: Open Target Receiver Server
 
