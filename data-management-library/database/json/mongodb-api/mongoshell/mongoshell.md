@@ -168,7 +168,9 @@ You should now be in Mongo Shell. This is a command-line utility to interact wit
 
     ![QBE to find salary greater than 50000](./images/find-salary.png)
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
-- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
+- **Last Updated By/Date** - Roger Ford, March 2022
