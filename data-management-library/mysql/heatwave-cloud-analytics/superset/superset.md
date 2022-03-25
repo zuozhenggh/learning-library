@@ -53,17 +53,21 @@ This lab assumes you have:
     ```
     <copy>
     curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
+    </copy>
+    ```
+    ![Install helm cli](images/helm-cli-install.png) 
+    
+    ```
+    <copy>
     helm repo add superset https://apache.github.io/superset
     </copy>
     ```
-
-    ![Install helm cli](images/helm-cli-install.png)  
     ![Add superset repo to helm ](images/helm-add-repo.png)
 
-2. Generate superset-custom-values.yaml (if neede, to update any specific variables) and Install superset package.
+2. Generate superset-custom-values.yaml (if needed, to update any specific variables) and Install superset package.
     ```
     <copy>
-    helm show values superset/superset > superset-custom-values.yaml
+    helm show values superset/superset  > superset-custom-values.yaml
     kubectl create ns superset
     helm upgrade --install --values superset-custom-values.yaml superset superset/superset -n superset
     </copy>
@@ -73,7 +77,7 @@ This lab assumes you have:
 3. Check deployment
     ```
     <copy>
-    helm list
+    helm list -n superset
     kubectl get all -n superset
     </copy>
     ```
