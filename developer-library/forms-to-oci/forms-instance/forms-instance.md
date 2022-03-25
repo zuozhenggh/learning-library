@@ -52,9 +52,9 @@ Here you have several choices. Install the Forms Server with
 - a Database Cloud Service (with automatic backup, easy dataguard setup ...)
 - Autonomous database (not contained in this document)
 
-Choose the next Lab accordingly.
+  ![architecture](../introduction/images/forms-architecture.png)
 
-  ![architecture](../forms-instance/images/forms-architecture.png)
+Choose your next Lab accordingly.
 
 ## Learn More
 

@@ -33,6 +33,11 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130 -L5901:localhost:5901 -L9001:0.0.0.0:9
 
 Run the above command and let the ssh connection opened. 
 
+Note: this command assumes that the SSH Private Key has been added to your ssh-agent. It was normally done after the Forms installation. 
+```
+Ex: ssh-add ssh-key-2022-03-21.key
+```
+
 ## Task 2: Check the Main Files and Directories
 
 Let's look at the important files and directories.
@@ -221,6 +226,10 @@ Notice that the installation has created the following URLs:
 - Test forms URL: [http://localhost:9001/forms/frmservlet?config=webstart](http://localhost:9001/forms/frmservlet?config=webstart)
 - Weblogic Console: [http://localhost:7001/console](http://localhost:7001/console) ( weblogic / LiveLab1 )
 - FADS console: [http://localhost:7001/fadsui](http://localhost:7001/fadsui) ( weblogic / LiveLab1 )
+
+VNC is also accessible on port 5901. Start your favorite VNC viewer and connect to **localhost:1**
+
+![](images/forms-vnc.png)
 
 ## Learn More
 
