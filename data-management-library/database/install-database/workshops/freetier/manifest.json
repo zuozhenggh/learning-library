@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "How to install an Oracle Database",
+    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
+                "sample.json":"../../data-load/files/sample.json",
+                "step2.md":"../../data-load/files/step2.md"},
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create compute instance",
+            "filename": "../../create-instance/create-instance.md"
+        },
+        {
+            "title": "Lab 2: Setup Graphical Remote Desktop on Compute Instance",
+            "description": "This lab will show you how to deploy and configure noVNC Graphical Remote Desktop on an Oracle Enterprise Linux (OEL) instance.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/sample-livelabs-templates/create-labs/labs/6-labs-setup-graphical-remote-desktop/6-labs-setup-graphical-remote-desktop.md"
+        },
+        {
+            "title": "Lab 3: Install Oracle Database 19c",
+            "filename": "../../db-install/db-install.md"
+        },
+        {
+            "title": "Lab 4: Install Tools and Services",
+            "filename": "../../tools-install/tools-install.md"
+        },
+        {
+            "title": "Lab 5: Create Custom Compute Image for OCI Marketplace",
+            "description": "This lab will show you how to prepare a host for custom image capture and create the custom image that meets stringent OCI marketplace requirements.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/sample-livelabs-templates/create-labs/labs/7-labs-create-custom-image-for-marketplace/7-labs-create-custom-image-for-marketplace.md"
+        },
+        {
+            "title": "Lab 6: Publish Custom Compute Image to OCI Marketplace",
+            "description": "This lab will show you how to create an OCI marketplace compute based artifact from your custom image, and use it to create a private listing on marketplace exclusively dedicated to your LiveLabs workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/sample-livelabs-templates/create-labs/labs/8-labs-publish-custom-image-to-marketplace/8-labs-publish-custom-image-to-marketplace.md"
+        } 
+    ]
+}
