@@ -29,15 +29,15 @@ This lab assumes you have:
 
 1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
 
-![Navigate to OKE](images/navigate-to-oke.png)
+    ![Navigate to OKE](images/navigate-to-oke.png)
 
 2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
 
-![Locate OKE](images/locate-oke-instance.png)
+    ![Locate OKE](images/locate-oke-instance.png)
 
 3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
 
-![Verify OKE](images/oke-worker-nodes.png)
+    ![Verify OKE](images/oke-worker-nodes.png)
 
 ## Task 2: Connect to **oke-operator** compute instance
 
@@ -167,12 +167,12 @@ Once you have the External IP provisioned, you can press **CTL+C** to terminate 
 
 ## Task 4: Access the Grafana Application 
 
-1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). 
-  - You can login using admin/admin as username/password 
+1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). Login using admin/admin as username/password 
 
   ![Grafana Login](images/GrafanaLogin.png)
 
-  - And you change the password accordingly.
+2. You can change the password accordingly
+  
   ![Grafana Login](images/grafana-login-change-password.png)
   
 ## Task 5: Add MySQL Datasource
@@ -208,23 +208,23 @@ Once you have the External IP provisioned, you can press **CTL+C** to terminate 
 
 3. Import MySQL Dashboard
   - Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
-  ![Import](images/import7991.png)
+    ![Import](images/import7991.png " ")
 
   - Choose the Datasource and click "Import"
-  ![Import](images/import7991-Import.png)
+    ![Import](images/import7991-Import.png)
 
 2. Checking the Dashboard
-  ![Dashboard](images/MySQLDashboard7991.png)
+    ![Dashboard](images/MySQLDashboard7991.png)
 
 ## Task 7: Add heatwave table panel to MySQL Dashboard
 1. Click on the add panel icon as shown
-  ![Dashboard](images/grafana-add-panel-menu.png)
+    ![Dashboard](images/grafana-add-panel-menu.png)
 
 2. Click on 'Add Empty Panel' and the panel will show.  
-  ![Dashboard](images/grafana-panel-add.png)
+    ![Dashboard](images/grafana-panel-add.png)
 
 Click on the **Edit SQL** button
-  ![Dashboard](images/grafana-panel-edit-sql.png)
+    ![Dashboard](images/grafana-panel-edit-sql.png)
 
 
 3. Paste the SQL to the query text field and Change the format to **Table**.
@@ -240,13 +240,14 @@ where mytable_load.id = mytable.id
   ![Dashboard](images/grafana-edit-sql-table.png)
 
 4. Change the Visualization using Table as shown and putting the Panel title as "Table loaded to Heatwave"
-  ![Dashboard](images/grafana-change-panel-settings.png)
+  
+    ![Dashboard](images/grafana-change-panel-settings.png)
 
 5. Click "Apply" and return to dashboard
-  ![Dashboard](images/grafana-panel-apply.png)
+    ![Dashboard](images/grafana-panel-apply.png)
 
 6. Finally click the "disk" icon to save
-  ![Dashboard](images/grafana-save-dashboard.png)
+    ![Dashboard](images/grafana-save-dashboard.png)
 
 
 You may now **proceed to the next lab.**
