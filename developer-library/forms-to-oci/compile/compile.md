@@ -27,7 +27,7 @@ wget https://marcgueury.github.io/learning-library/developer-library/forms-to-oc
 unzip forms_samples.zip
 cd forms_samples
 # Copy the Forms files in the FORMS_PATH
-cp *.fmb ../oracle/formsmodules/.
+cp forms/* ../oracle/formsmodules/.
 ```
 
 Check the script to set the environment variables:
