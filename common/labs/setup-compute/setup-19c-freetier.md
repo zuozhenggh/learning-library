@@ -79,6 +79,13 @@ If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 2. Look for the instance you just created and jot down the public IP address.
     
+    <if type="freetier">
+    If you are running the workshop on your own tenancy, the instance you just created is *Workshop*.
+    ![Instance Public IP](images/instance-public-ip.png " ")
+
+    Otherwise, you will see the screen as below:
+    </if>
+
     ![Create a stack](images/workshop-012.png " ")
 
 ## Task 4: Connect to your instance
@@ -172,9 +179,9 @@ Once you deploy your compute instance, tail the log to determine when the databa
     tail -10 /u01/ocidb/buildsingle1.log
     </copy>
     ````
-    ![](./images/workshop-014.png " ")
+    ![Result of Tail 10](./images/tail.png " ")
 
-*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+    >**Note:** If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 2. Run the following command to verify the database with the SID **ORCL** is up and running
 
@@ -220,7 +227,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     </copy>
     ````
     ![](./images/sqlplus.png " ")
-*Note:  If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
+    >**Note:** If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix. 
 
 7.  Exit the sqlplus session and switch back to the opc user.  Verify that you are now the opc user.
 
@@ -230,7 +237,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     ````
 
     ```` 
-    [oracle@server ~]$ <copy>exit
+    [oracle@workshop ~]$ <copy>exit
     whoami
     </copy>
     ````
@@ -238,7 +245,7 @@ Once you deploy your compute instance, tail the log to determine when the databa
     
 Congratulations!  You now have a fully functional Oracle Database 19c instance (ORCL) running on Oracle Cloud Compute.  
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Appendix:  Teraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.
@@ -335,6 +342,5 @@ Reload your browser
 
 ## Acknowledgements
 - **Author** - LiveLabs Team
-- **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Jeffrey Malcolm Jr.
-- **Last Updated By/Date** - Kamryn Vinson, June 2021
-
+- **Contributors** - Sanjay Narvekar, Troy Anthony, Anoosha Pilli, Arabella Yao, Kamryn Vinson, Jeffrey Malcolm Jr.
+- **Last Updated By/Date** - Arabella Yao, March 2022
