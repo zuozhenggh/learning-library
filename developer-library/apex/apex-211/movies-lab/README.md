@@ -48,7 +48,7 @@ In this lab, you will:
 
 ### Downloads
 
-- [Click here](./files/movies-watchlist.sql) to download the completed application.
+- [Click here](./intro/files/movies-watchlist.sql) to download the completed application.
 
 ## Learn More - *Useful Links*
 

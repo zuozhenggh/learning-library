@@ -365,7 +365,7 @@ The last task in this lab is linking your Add a Movie button on the Watchlist pa
 
 	![](images/3-5-12-dev-bar.png " ")
 
-You now know how to create a new page in your APEX application and add regions, buttons, and actions to link pages and define the content and behavior in Page Designer. You may now **proceed to the next lab**.
+You now know how to create a new page in your APEX application and add components to define content in Page Designer. You may now **proceed to the next lab**.
 
 ## Resources
 
