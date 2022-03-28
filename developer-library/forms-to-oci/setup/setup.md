@@ -55,6 +55,7 @@ There is a README in the Desktop directory. It is a good idea to read it first.
 cd $HOME/Desktop
 vi ReadMe
 ```
+
 ```
 ...
 ------------------------------------------------
