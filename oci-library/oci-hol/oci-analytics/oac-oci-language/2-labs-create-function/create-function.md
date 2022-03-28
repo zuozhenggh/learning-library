@@ -28,8 +28,7 @@ This lab assumes you have:
 ## **Task 1**: Background
 
 Currently, OCI Language works on a single record at a time, as shown in the example below:
-
-		**OCI Language sample input**
+	**OCI Language sample input**
 
     <copy>		
 		{
@@ -38,8 +37,8 @@ Currently, OCI Language works on a single record at a time, as shown in the exam
 		}</copy>
 
 
-
-		**OCI Language sample output**
+The sample output would be:
+	**OCI Language sample output**
 
 
     <copy>{
@@ -198,7 +197,7 @@ We will now create the function in the application. The function will do sentime
 
    ![Create Sentiment Function](./images/createsentimentfunction.png " ")
 
-2.	Notice that this will generate three files for you. Modify the files with the content shown below. You can use an editor like **vi** to do so.
+2.	Notice that this will generate three files for you (**func.yaml**, **requirements.txt** and **func.py** ). Modify the files with the content shown below. You can use an editor like **vi** [URL](https://docs.oracle.com/cd/E19683-01/806-7612/6jgfmsvqn/index.html) to do so.
 
 3. 	**func.yaml**
 
@@ -266,13 +265,18 @@ We will now create the function in the application. The function will do sentime
 		    return str
 		</copy>
 
+6. Verify your 3 files look exactly as above with no spaces, additional code and etc.
 
 
 ## **Task 4**: Deploy the Function
 
-Once you have edited the files in **Task 3**, deploy the function to your application , by running this cloud shell command. If successful you can see it listed under Functions in your Application
+Once you have edited the files in **Task 3**, deploy the function to your application , by running this cloud shell command. Make sure to replace **app-name** for the name of your application
 
-  fn -v deploy -app **app-name**
+  	<copy>fn -v deploy -app app-name</copy>
+
+![Deploy Function](./images/deployfunccommand.png " ")
+
+If successful you can see it listed under Functions in your Application
 
   ![Login Docker](./images/deployfunction.png " ")
 
@@ -284,7 +288,7 @@ Once you have edited the files in **Task 3**, deploy the function to your applic
 
 2. The output should be JSON with aspect level sentiment information as below:
 
-	[{"id":1,"length":15,"offset":137,"scores":{"Negative":0.9999850187,"Neutral":0.0000149813,"Positive":0.0},"sentiment":"Negative","text":"government debt"}]
+		<copy>[{"id":1,"length":15,"offset":137,"scores":{"Negative":0.9999850187,"Neutral":0.0000149813,"Positive":0.0},"sentiment":"Negative","text":"government debt"}]</copy>
 
 3. Note that the function is registered in your container registry
   	*	From the Console, click **Developer Services** > **Container Registry**
@@ -329,20 +333,30 @@ We need to map your newly created function to an API endpoint that is accessible
 
 9.	Click **Deployments**.
 
+	![Verify Gateway](images/verifygatewayone.png)
+
 10.	Select the deployment you just created (**language**)
 
 11.	This view will show you any metrics and calls made to these APIs.
 
 12.	In the **Deployment Information** section, you can click on the **Endpoint** to show the actual endpoint you can hit using Postman.
 
+	![Verify API Endpoint](images/verifyapimetrics.png)
+
 13.	Copy the endpoint, it will look something like this:
-    https://ingszpbimsiu7cr4e6t3o4xhcq.apigateway.us-ashburn-1.oci.customer-oci.com/language
 
-14.	Append your route information to hit the endpoint, for example try making this Post call from Postman or any other tool that allows you to issue **POST** commands.
+		<copy>https://ingszpbimsiu7cr4e6t3o4xhcq.apigateway.us-ashburn-1.oci.customer-oci.com/language</copy>
 
-   POST https://ingszpbimsiu7cr4e6t3o4xhcq.apigateway.us-ashburn-1.oci.customer-oci.com/language/sentiment
+14.	Append your route information to hit the endpoint, for example try making this Post call from [Postman](https://www.postman.com/downloads/) or any other tool that allows you to issue **POST** commands.
 
-	 	Body: <copy>{"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}}</copy>
+   For **POST** command
+
+	 	<copy>https://ingszpbimsiu7cr4e6t3o4xhcq.apigateway.us-ashburn-1.oci.customer-oci.com/language/sentiment</copy>
+
+
+	For **Body** command
+
+		<copy>{"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}}</copy>
 
   **Note** If you get an internal server error, most likely something is wrong with your permissions. In that case, make sure that
 	- You have enabled an Ingress rule for destination port 443 (see Section 2)
