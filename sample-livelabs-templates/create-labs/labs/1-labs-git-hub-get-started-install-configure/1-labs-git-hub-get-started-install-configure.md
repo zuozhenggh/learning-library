@@ -25,15 +25,20 @@ Before getting started, you should submit your LiveLabs workshop request to the 
 2.  Access the **Oracle Workshop Management System (WMS)** page.
     > **Note:** This page is only accessible to Oracle Employees.
 
-3.  Click **Submit a New Workshop**.
+3.  Click **Submit a New Workshop Request**.
 
-4.  Fill in the required fields including the **Workshop Abstract** field *thoroughly*.  Failure to do so will prevent your workshop from being approved.
+4.  Fill in required *Workshop Basic Information*. Select the *Stakeholder*, *Workshop Council*, and *Workshop Owner Group* for your workshop. Fill in the *Workshop Abstract* **thoroughly**, *Workshop Outline*, and *Workshop Prerequisites*. Click **?** besides those fields to see more details.
 
-5.  Click **Create**.
+  ![Submit Workshop](images/submit_workshop.png " ")
+  ![Detailed Workshop Information](images/detailed_info.png " ")
+
+5.  Click the *Tags* tab, and select proper tags for your workshop. You should select a *Level* tag, and at least one tag for *Role*, *Focus Area*, and *Product* respectively. Failure to do so will prevent your workshop from being approved. Click **Create**.
+
+  ![Select tags](images/tags.png " ")
 
 6.  We recommend you don't start working on your workshop until your workshop has been approved by a council member.
 
-Once your workshop is submitted, it will be sent to the workshop council.  The workshop council will approve your workshop or ask for more details.  Once approved, you will be entered into the workflow and given additional steps to progress through to production.
+Once your workshop is submitted, it will be sent to the workshop council.  The workshop council will approve your workshop or ask for more details within 2 business days. If you have not heard back from your council group after 2 business days, please message them via WMS. Once approved, you will be entered into the workflow and given additional steps to progress through to production.
 
 > **Note:** If you are a developer, QA, or PM, you can create and publish a Custom image of the on-premises product to OCI Market place. See the [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop) LiveLabs workshop.
 
@@ -177,8 +182,9 @@ This concludes this lab. You may now proceed to the next lab.
 ## Want to Learn More?
 
 <!-- * [Setting Up Environment](https://otube.oracle.com/media/Setting+Up+GitHub/0_93stcjpb) -->
-* [Download and Install Git for Windows and Mac](https://git-scm.com/download/win)
+* [Download and Install Git for Windows](https://git-scm.com/download/win)
 <!-- * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf) -->
+* [Download and Install Git for Mac](https://git-scm.com/download/mac)
 
 ## Acknowledgements
 
@@ -190,4 +196,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Madhusudhan Rao, Principal Product Manager, Database
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
 
-* **Last Updated By/Date:** Lauran Serhal and Anuradha Chepuri, November 2021
+* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, March 2022
