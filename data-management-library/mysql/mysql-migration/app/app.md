@@ -177,13 +177,14 @@ This lab assumes you have:
 
   You may now **proceed to the next lab.**
 
+## Acknowledgements
 * **Author**
-  * Rayes Huang, Cloud Solution Architect, OCI APAC
-  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Rayes Huang, Cloud Solution Architect, OCI APAC
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 
 * **Contributors**
 
-  * Perside Foster, MySQL Solution Engineering
-  * Howie Owi, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering
+	* Howie Owi, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022

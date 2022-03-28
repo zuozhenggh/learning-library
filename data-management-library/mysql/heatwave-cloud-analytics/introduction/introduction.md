@@ -2,7 +2,8 @@
 
 ## About this Workshop
 
-This workshop will cover the flexibility of using popular open-source tools such as Superset, Grafana and Zepplin with MySQL HeatWave to leverage the cloud-scale capabilities of Oracle Cloud Infrastructure to implement cloud-native analytics. We will walk you through the process of 
+This workshop will cover the flexibility of using popular open-source tools such as Superset, Grafana and Zepplin with MySQL HeatWave to leverage the cloud-scale capabilities of Oracle Cloud Infrastructure to implement cloud-native analytics. We will walk you through the process of
+
 * Creating Oracle Kubernetes Engine and MySQL HeatWave
 * Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
 * Deploying open-source analytics tools (Superset, Grafana, Zeppelin) to analyze data in MySQL HeatWave
@@ -20,10 +21,10 @@ Estimated Time: 90 minutes
 
 HeatWave is a distributed, scalable, shared-nothing, in-memory, hybrid columnar, query processing engine designed for extreme performance. It is enabled when you add a HeatWave cluster to a MySQL DB System. To know more about HeatWave Cluster <a href="https://dev.mysql.com/doc/heatwave/en/heatwave-introduction.html" target="\_blank">**Click Here**</a>
 
-
 ### Objectives
 
 In this workshop, you will learn how to:
+
 * Creating Oracle Kubernetes Engine and MySQL HeatWave
 * Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
 * Deploying open-source analytics tools (Superset, Grafana and Zeppelin) to analyze data in MySQL HeatWave
@@ -37,9 +38,13 @@ The following is the OCI architecture with all the components deployed
 * You have an Oracle account
 * You have enough privileges to use OCI
 
-
 ## Acknowledgements
-* **Author** 
-			 - Ivan Ma, MySQL Solutions Engineer, MySQL JAPAC, Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
-* **Contributors** 
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+
+* **Author**
+	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+* **Contributors**
+	* Perside Foster, MySQL Solution Engineering
+	* Rayes Huang, OCI Solution Specialist, OCI APAC
+
+* **Last Updated By/Date** - Ryan Kuan, March 2022

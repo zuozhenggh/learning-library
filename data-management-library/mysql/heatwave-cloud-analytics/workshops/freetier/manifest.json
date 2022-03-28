@@ -1,14 +1,9 @@
 {
-    "workshoptitle": "Open-source Data Engineering with MySQL HeatWave",
-    "include": {
-        "starter-file.sql": "../../data-load/files/starter-file.sql",
-        "sample.json": "../../data-load/files/sample.json",
-        "step2.md": "../../data-load/files/step2.md"
-    },
+    "workshoptitle": "Cloud-native analytics using Open-source tools with MySQL HeatWave",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [{
             "title": "Introduction",
-            "description": "Building cloud native solution using popular open-source data engineering tools such as Superset, Grafana with MySQL HeatWave",
+            "description": "Building cloud native solution using popular open-source data engineering tools such as Superset, Grafana and Zeppelin with MySQL HeatWave",
             "filename": "../../introduction/introduction.md"
         },
         {
@@ -32,27 +27,27 @@
             "filename": "../../enable-heatwave-cluster/enable-heatwave-cluster.md"
         },
         {
-            "title": "Lab 4: Deploy ingress controller to OCI Kubernetes",
+            "title": "Lab 4: Deploy ingress-controller",
             "description": "Deploy ingress controller to OCI Kubernetes",
-            "filename": "../../ingress-controller/readme.md"
+            "filename": "../../ingress-controller/ingress-controller.md"
         },
         {
-            "title": "Lab 5: Manage MySQL with phpMyAdmin",
+            "title": "Lab 5: Deploy phpMyAdmin",
             "description": "Manage MySQL with phpMyAdmin",
             "filename": "../../phpmyadmin/phpmyadmin.md"
         },
         {
-            "title": "Lab 6: Monitor MySQL HeatWave with Grafana",
+            "title": "Lab 6: Deploy Grafana dashboard",
             "description": "Deploy Grafana Dashboard for MySQL to OCI Kubernetes",
             "filename": "../../grafana/grafana.md"
         },
         {
-            "title": "Lab 7: Build analytics dashboard with Superset on MySQL HeatWave",
+            "title": "Lab 7: Deploy Superset dashboard",
             "description": "Build analytics dashboard with Superset on MySQL HeatWave",
             "filename": "../../superset/superset.md"
         },
         {
-            "title": "Lab 8: Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
+            "title": "Lab 8: Deploy Zeppelin notebook",
             "description": "Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
             "filename": "../../zeppelin/zeppelin.md"
         },

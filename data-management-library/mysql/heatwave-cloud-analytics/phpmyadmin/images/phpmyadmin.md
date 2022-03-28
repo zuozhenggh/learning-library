@@ -22,7 +22,7 @@ In this lab, you will:
 
 ## Task 1: Verify OKE cluster
 
-1. Click the **Hamburger Menu** ![](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
+1. Click the **Hamburger Menu** in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
 
     ![Navigate to OKE](images/navigate-to-oke.png)
 
@@ -155,8 +155,6 @@ In this lab, you will:
 	![PhpMyAdmin](images/phpmyadmin.png)
 
   You may now **proceed to the next lab.**
-
-## Acknowledgements
 
 * **Author**
 	* Ivan Ma, MySQL Solution Engineer, MySQL APAC

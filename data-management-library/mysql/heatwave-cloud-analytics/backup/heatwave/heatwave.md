@@ -15,17 +15,16 @@ Estimated Time: 30 minutes
 
 ### About Oracle MySQL Database Service
 
-
 ### Objectives
 
 In this lab, you will provision the following resources:
+
 * MySQL HeatWave instance
 
 ### Prerequisites (Optional)
 
 * You have an Oracle account
 * You have enough privileges to use OCI
-* All previous labs successfully completed
 
 ## Task 1: Create MySQL HeatWave instance
 
@@ -61,10 +60,14 @@ In this lab, you will provision the following resources:
 
 ![MySQL Completed](images/mds-completed.png)
 
-## Acknowledgements
-* **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC
-			 - Ryan Kuan, Cloud Engineer, MySQL APAC
-* **Contributors** 
-			 - Perside Foster, MySQL Solution Engineering 
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+* **Author**
+
+  * Ivan Ma, MySQL Solution Engineer, MySQL APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+
+* **Contributors**
+
+  * Perside Foster, MySQL Solution Engineering
+  * Rayes Huang, OCI Solution Specialist, OCI APAC
+
+* **Last Updated By/Date** - Ryan Kuan, March 2022

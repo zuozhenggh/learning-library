@@ -35,11 +35,33 @@ In this lab, you will:
 
     ![Verify OKE](images/oke-worker-nodes.png)
 
+1. Log in to **OCI** and select **Developer Services**, and **Kubernetes Clusters (OKE)** to access to your OKE cluster created
+
+    ![OKE](images/oke-cluster.png)
+
+2. Click on the **oke-cluster**
+
+    ![oke cluster](images/click-cluster.png)
+
+3. Click on the **Access Cluster** 
+
+    ![oke cluster detail](images/click-cluster.png)
+
+4. Click on the **Access Cluster** to look for the kubectl script to access the cluster
+
+    ![Access Cluster](images/access-cluster.png)
+
+5. Copy the kubectl script
+
+    ![kubectl script](images/copy-kubectl-script.png)
+
+6. On OCI Console, clik on the cloud shell to launch cloud shell
+
+    ![Cloud Shell](images/cloud-shell.png)
+
 ## Task 2: Deploy Zeppelin to OKE
 
-1. Connect to **oke-operator** using OCI Cloud Shell
-
-2. Download the zeppelin yaml scripts
+1. Download the zeppelin yaml scripts
 
 ```
 <copy>
@@ -52,7 +74,7 @@ wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-mana
 </copy>
 ```
 
-3. Execute the kubectl commands to create a namespace
+2. Execute the kubectl commands to create a namespace
 
 ```
 <copy>
@@ -60,7 +82,7 @@ kubectl create namespace zeppelin
 </copy>
 ```
 
-4. Deploy Zeppelin
+3. Deploy Zeppelin
 
 ```
 <copy>
@@ -73,7 +95,7 @@ kubectl apply -f zeppelin-ing.yaml -n zeppelin
 </copy>
 ```
 
-5. Find out the public IP of OKE Ingress Controller
+4. Find out the public IP of OKE Ingress Controller
 
 ```
 <copy>
@@ -82,13 +104,14 @@ kubectl get all -n ingress-nginx
 ```
    ![Ingress IP](images/ingress.png)
 
-6. Access the deployed Zeppelin application. Point your browser to **http://<PUBLIC_IP_ADDRESS>/zeppelin**
+5. Access the deployed Zeppelin application. Point your browser to **http://<PUBLIC_IP_ADDRESS>/zeppelin**
 
     ![Zeppelin](images/zeppelin.png)
 
+
 Task 3: Connect to MySQL HeatWave
 
-1. Create a JDBC interpreter for MySQL HeatWave in Zeppelin.
+1. Create a JDBC interpreter for MySQL HeatWave in Zeppelin. 
 
     ![Interpreter](images/interpreter.png)
 
@@ -106,18 +129,14 @@ Replace the private ip address of your MySQL instance in the **JDBC URL**
     ![New Notebook](images/new-notebook.png)
 
 5. You can now start working with MySQL HeatWave!
-
+    
 	![Interactive Query](images/notebook-query.png)
 
-  Congratulations! You have completed all the labs
+You may now **proceed to the next lab.**
 
 ## Acknowledgements
-
-* **Author**
-	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
-	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
-* **Contributors**
-	* Perside Foster, MySQL Solution Engineering
-	* Rayes Huang, OCI Solution Specialist, OCI APAC
-
-* **Last Updated By/Date** - Ryan Kuan, March 2022
+* **Author** 
+			 - Ivan Ma, MySQL Solutions Engineer, MySQL JAPAC, Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+* **Contributors** 
+			 - Perside Foster, MySQL Solution Engineering 
+* **Last Updated By/Date** - Ryan Kuan, March 2021

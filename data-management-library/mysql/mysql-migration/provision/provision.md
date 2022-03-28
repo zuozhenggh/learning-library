@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you install, configure, and manage resources through the "infrastructure-as-code" model.
+Resource Manager is an Oracle Cloud Infrastructure service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager help you install, configure, and manage resources through the "infrastructure-as-code" model.
 
 Estimated Time: 30 minutes
 
@@ -55,14 +55,14 @@ In this lab, you will provision the following OCI resources using Resource Manag
 
   ![Stack Complete](images/resource-manager-stack-complete.png)
 
+## Acknowledgements
 * **Author**
-
-  * Rayes Huang, Cloud Solution Architect, OCI APAC
-  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Rayes Huang, Cloud Solution Architect, OCI APAC
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 
 * **Contributors**
 
-  * Perside Foster, MySQL Solution Engineering
-  * Howie Owi, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering
+	* Howie Owi, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022

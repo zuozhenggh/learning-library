@@ -21,7 +21,6 @@ This lab assumes you have:
 * An Oracle account
 * You have enough privileges to use OCI
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
-* All previous labs successfully completed
 
 ## Task 1: Connect to oke-operator compute instance
 
@@ -53,7 +52,7 @@ This lab assumes you have:
 
 	![Cloud Shell Connect](images/cloud-shell-connect.png)
 
-## Task 2: Load airportdb data into MDS
+## Task 2: Load airportdb data into MySQL
 
 1. Download the database (airportdb) export required by the PHP application
 
@@ -84,16 +83,16 @@ This lab assumes you have:
 	```
 	![Unzip airportdb](images/unzip-airportdb.png)
 
-3. Next we need to connect to the provisioned MDS instance. Click on the **Hamburger Menu** ![](images/hamburger.png) at the top left corner of the OCI console, and select **Databases**, anc click on **DB Systems**
+3. Next we need to connect to the provisioned MySQL instance. Click on the **Hamburger Menu** ![](images/hamburger.png) at the top left corner of the OCI console, and select **Databases**, anc click on **DB Systems**
 	![MySQL Menu](images/mds-menu.png)
 
-4. Select the provisioned MDS instance, **MDSInstance**
+4. Select the provisioned MySQL instance, **MDSInstance**
 	![MySQL Details](images/mds-details.png)
 
 5. If you did not note down the private ip of **MDSInstance**
 	![MySQL Private IP](images/mds-ip.png)
 
-6. Connect to MDS instance. Update password (default: Oracle#123) and host (same as MDS host private IP address).
+6. Connect to MySQL instance. Update password (default: Oracle#123) and host (same as MySQL host private IP address).
 
 	```
 	<copy>
@@ -128,7 +127,7 @@ This lab assumes you have:
 
 ## Task 3: Verify the database import
 
-1. Execute query on MDS
+1. Execute query on MySQL
 
   Now that we have imported the airportdb data, lets verify the database
 
@@ -179,14 +178,14 @@ This lab assumes you have:
 	```
   You may now **proceed to the next lab.**
 
+## Acknowledgements
 * **Author**
-
-  * Rayes Huang, Cloud Solution Architect, OCI APAC
-  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Rayes Huang, Cloud Solution Architect, OCI APAC
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 
 * **Contributors**
 
-  * Perside Foster, MySQL Solution Engineering
-  * Howie Owi, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering
+	* Howie Owi, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022

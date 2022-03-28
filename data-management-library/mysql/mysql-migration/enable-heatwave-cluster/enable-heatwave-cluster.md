@@ -10,7 +10,7 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-* Be able to enable **MySQL HeatWave** Cluster to MySQL Database System in Oracle Cloud.
+* Enable **MySQL HeatWave** Cluster to MySQL Database System in Oracle Cloud.
 
 ### Prerequisites
 
@@ -43,7 +43,7 @@ This lab assumes you have:
 
 ## Task 2: Accelerate long running queries on HeatWave
 
-1. Before we can explore all the cool features of MySQL HeatWave, we need to load the data from MDS into the HeatWave Cluster so that the data is distributed to the memory of the 2 HeatWave cluster nodes we just added
+1. Before we can explore all the cool features of MySQL HeatWave, we need to load the data from MySQL into the HeatWave Cluster so that the data is distributed to the memory of the 2 HeatWave cluster nodes we just added
 
 	```
 	<copy>
@@ -51,7 +51,7 @@ This lab assumes you have:
 	</copy>
 	```
 
-   We will use this AutoPilot feature, **heatwave_load** function to offload the data from MDS to HeatWave cluster
+   We will use this AutoPilot feature, **heatwave_load** function to offload the data from MySQL to HeatWave cluster
 
 	```
 	<copy>
@@ -60,7 +60,7 @@ This lab assumes you have:
 	```
 	![HeatWave Load](images/heatwave-load.png)
 
-2. We can verify the data offloading from MDS to HeatWave cluster
+2. We can verify the data offloading from MySQL to HeatWave cluster
 
       ```
       <copy>
@@ -74,7 +74,7 @@ This lab assumes you have:
       ```
       ![HeatWave Load Check](images/heatwave-load-check.png)
 
-3. By default, MDS will offload SELECT queries to HeatWave. There is a magic switch, **use_secondary_engine** that is enabled.
+3. By default, MySQL will offload SELECT queries to HeatWave. There is a magic switch, **use&#95;secondary&#95;engine** that is enabled.
 
       ```
       <copy>
@@ -116,7 +116,7 @@ This lab assumes you have:
 
   Now that we have enabled HeatWave cluster, lets test our migrated PHP application
 
-1. Access your PHP application via http://xxx.xxx.xxx.xxx:5000/index.php (replace xxx.xxx.xxx.xxx with your IP address). Once HeatWave cluster is enabled on MDS, all the SELECT SQL statements will be offloaded to HeatWave automatically via the default **"use_secondary_engine=ON"** setting. First, we will test the PHP application by executing the SQL on MDS, we will use an optimizer hint (to set the **"use_secondary_engine=OFF"** so that we will force the SELECT SQL to execute in MDS)
+1. Access your PHP application via http://xxx.xxx.xxx.xxx:5000/index.php (replace xxx.xxx.xxx.xxx with your IP address). Once HeatWave cluster is enabled on MDS, all the SELECT SQL statements will be offloaded to HeatWave automatically via the default **use&#95;secondary&#95;engine=ON** setting. First, we will test the PHP application by executing the SQL on MDS, we will use an optimizer hint (to set the **use&#95;secondary&#95;engine=OFF** so that we will force the SELECT SQL to execute in MDS)
 
 	![php-mds-query](images/php-mds-query.png)
 
@@ -144,7 +144,7 @@ This lab assumes you have:
 
 	![php-mds](images/php-mds.png)
 
-2. Next, we will execute the query against the HeatWave cluster without the optimizer hint (/*+ SET_VAR(use_secondary_engine=OFF) */))
+2. Next, we will execute the query against the HeatWave cluster without the optimizer hint (/*+ SET_VAR(use&#95;secondary&#95;engine=OFF) */))
 
 	```
 	<copy>
@@ -175,15 +175,13 @@ This lab assumes you have:
   You may now **proceed to the next lab.**
 
 ## Acknowledgements
-
 * **Author**
-
-  * Rayes Huang, Cloud Solution Architect, OCI APAC
-  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Rayes Huang, Cloud Solution Architect, OCI APAC
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 
 * **Contributors**
 
-  * Perside Foster, MySQL Solution Engineering
-  * Howie Owi, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering
+	* Howie Owi, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022
