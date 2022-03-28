@@ -1,4 +1,4 @@
-#Channel Sales
+# Analyze channel sales
 
 ## Introduction
 
@@ -36,7 +36,7 @@ This lab assumes you have:
 3. First, let’s see how sales are split across the different channels within the **'Underlying DashBoard Data - 1.'**
 
 
-    * **Control select** and choose **'Sales by Channel'** and then navigate to **'Quarter'** within Date
+    * **Control select** and choose **'Sales'** by **'Channel'** and then navigate to **'Quarter'** within Date
 
     * **Right click** and select **'Stacked Bar Chart.'**
 
@@ -44,7 +44,7 @@ This lab assumes you have:
 
     ![Choose Chart Type](images/select-metrics.png")
 
-    Now we can see the sales broken down by each individual channel for the past couple of quarters. In Store and Delivery seem to be the biggest contributors to sales, but we need to investigate these values further.
+    Now, we can see the sales broken down by each individual channel for the past couple of quarters. In Store and Delivery seem to be the biggest contributors to sales, but we need to investigate these values further.
 
     ![Bar Chart](images/bar.png")
 
@@ -52,21 +52,21 @@ This lab assumes you have:
 
     ![Filter](images/filtered-bar.png")
 
-    Now we have the correct stacked bar chart of sales by channel!
+    Now, we have the correct stacked bar chart of sales by channel!
 
 ## **Task 2:** Create a Treemap
 
 1. On the same dashboard, let's continue visualizing the dataset by inspecting survey data that was collected.
 
     * **Control select** and choose **'Menu Items by Survey Count'**, the same way we did previously.
-    * **Right click** and Select **'Treemap'**.
+    * **Right click** and choose **'Treemap'**.
     * Make sure to also drag "Menu Items" to color in order to color code the top responses.
 
     ![Survey](images/survey.png")
 
     ![Image alt text](images/treemap.png")
 
-    Now we have a visual that breaks down the different surveys we collect by menu items. We can see that our top 5 menu categories, where fries and hamburger meals top the list - not surprising as this QSR is known for their fries.
+    We now have a visual that breaks down the different surveys we collect by menu items. We can see that our top 5 menu categories, where fries and hamburger meals top the list - not surprising as this QSR is known for their fries.
 
 ## **Task 3:** Create a Bar Chart
 
@@ -79,7 +79,7 @@ This lab assumes you have:
 
     ![Analyze Sentiment](images/sentiment.png")
 
-    Now we have a visual that breaks down the different instances of each sentiment.
+    Now, we have a visual that breaks down the different instances of each sentiment.
 
     ![Bar Chart](images/bar-chart.png")
 
@@ -88,7 +88,7 @@ This lab assumes you have:
 1.  Let's finish up by creating a tag cloud to summarize the leading responses to each customer sentiment.
 
     * **Control select** and choose **'Survey Count'** and **'Actual Sentiment.'**
-    * **Select** the **Tag Cloud** option.
+    * **Select** 'pick visualization' and choose **Tag Cloud**.
 
     ![Color Code](images/responses.png")
 
@@ -96,7 +96,7 @@ This lab assumes you have:
 
     ![Sentiment](images/top-responses.png")
 
-    In order to also have accurate representations of color sentiment we can **select** "Manage Assignments."
+    In order to also have accurate representations of color sentiment, we can **select** "Manage Assignments."
 
     ![Manage Color Assignments](images/manage-assignments.png")
 
@@ -104,7 +104,7 @@ This lab assumes you have:
 
     ![Colors](images/colors.png")
 
-    Now we have a visual that breaks down the top responses of customer surveys such as "Always Out of Fries, Long Wait Time, and Beats My Cooking" by sentiment.
+    Now, we have a visual that breaks down the top responses of customer surveys such as 'Always Out of Fries', 'Long Wait Time', and 'Beats My Cooking' by sentiment.
 
     ![Tag Cloud](images/tag-cloud.png")
 
@@ -117,15 +117,15 @@ This lab assumes you have:
 
     ![Use As Filter](images/filter.png")
 
-2. Next we can **select** "Negative" bar to bring up only negative sentiment results from the dashboard. This shows all the relevant information within the dashboard that has a negative sentiment, revealing the key responses for it - **"Long Wait Time and Always Out of Fries."**
+2. Next we can **select** 'Negative' bar to bring up only negative sentiment results from the dashboard. This shows all the relevant information within the dashboard that has a negative sentiment, revealing the key responses for it - **'Long Wait Time'** and **'Always Out of Fries'**.
 
     ![Negative Sentiment](images/negatives.png")
 
-    **In Summary** - Customer survey responses are displayed in the bottom two visualizations within the dashboard. The detail on the left showing the leading indicators of customer sentiment from the 1100 survey responses in the last week - fortunately, as we see on the right, the majority are positive or neutral, but there are also a large amount of negative responses mostly around long wait times and being out of fries, not good. But, glad to see people prefer our cooking over their own in our retail stores!
+    **In Summary** - Customer survey responses are displayed in the bottom two visualizations within the dashboard. The detail on the left showing the leading indicators of customer sentiment from the 1100 survey responses in the last week - fortunately, as we see on the right most surveys are positive or neutral, but there are also a large amount of negative responses mostly around long wait times and being out of fries, not good. But, glad to see people prefer our cooking over their own in our retail stores!
 
     ![Channel Sales Dashboard](images/dashboard.png")
 
-4. Now that we have completed our Channel Sales Dashboard, we can name it "Channel Sales." You may now **proceed to the next lab.**
+4. Now that we have completed our Channel Sales Dashboard, we can name it 'Analyze Channel Sales.' You may now **proceed to the next lab**.
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)

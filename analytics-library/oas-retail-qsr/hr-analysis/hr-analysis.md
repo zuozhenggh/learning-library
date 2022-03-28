@@ -1,4 +1,4 @@
-# HR Payroll and Attrition Analysis
+# HR payroll and attrition analysis
 
 ## Introduction
 
@@ -140,7 +140,7 @@ In this exercise, we are going to create a 12 month forecast using OAS's built i
   Our executives now need to put together a strategy to retain existing employees and fill the open positions as soon as possible. By doing so, payroll costs will be normalized, headcount will be restored, and her customers won't experience long wait times anymore.
 
 You have now finished the HR Analysis dashboard creation. Next we will take a closer look at our On Time Delivery. You may now **proceed to the next Lab.**
-  
+
 
 
 ## Learn More
