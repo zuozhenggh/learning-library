@@ -81,28 +81,28 @@ end moviestream_exec;
 declare
     l_owner     varchar2(100) := 'martygubar';
     l_repo_name varchar2(100) := 'learning-library';
-    l_file_path varchar2(200) := 'data-management-library/autonomous-database/shared/movie-stream-story-lite/add-data-scripts/lab_setup.sql';
 BEGIN
-    dbms_cloud_repo.install_file(
-        repo => dbms_cloud_repo.init_github_repo(                 
-                 repo_name       => l_repo_name,
-                 owner           => l_owner
-                ),
-        file_path     =>     l_file_path,
-        stop_on_error => false
-  );
-
+  -- Loop over the list of labs and install the script
   for rec in (
-            select table_name
-            from user_tables
-            where table_name in ('MOVIESTREAM_LABS', 'MOVIESTREAM_LOG')
+            select  lab_num,
+                    script
+            from (
+                select  to_number(m.doc.lab_num) as lab_num,
+                        m.doc.script as script
+                from moviestream_labs m
+                )
+            order by lab_num asc
             )
     loop
-        dbms_output.put_line('drop ' || rec.table_name);
-        execute immediate 'drop table ' || rec.table_name;
+        dbms_cloud_repo.install_file(
+            repo => dbms_cloud_repo.init_github_repo(                 
+                     repo_name       => l_repo_name,
+                     owner           => l_owner
+                    ),
+            file_path     =>     rec.script,
+            stop_on_error => false
+          );
+
     end loop;
-
-
-
 END;
 /
