@@ -120,7 +120,30 @@ You learned how to use the Create User dialog to create a new user. You can also
     grant graph_developer to moviestream;
     alter user moviestream grant connect through GRAPH$PROXY_USER;
     grant console_developer to moviestream;
+    grant execute on dbms_cloud to moviestream;
+    grant execute on dbms_cloud_repo to moviestream;
+    grant read,write on directory data_pump_dir to moviestream;
 
+    -- These privileges are required to use PLSQL to create and manage objects
+    grant   ALTER  SESSION,
+            CONNECT,
+            RESOURCE,
+            CREATE ANALYTIC VIEW,
+            CREATE ATTRIBUTE DIMENSION,
+            CREATE HIERARCHY,
+            CREATE ANY INDEX, 
+            CREATE JOB,
+            CREATE MATERIALIZED VIEW,
+            CREATE MINING MODEL,
+            CREATE PROCEDURE,
+            CREATE SEQUENCE,
+            CREATE SESSION,
+            CREATE SYNONYM,
+            CREATE TABLE,
+            CREATE TRIGGER,
+            CREATE TYPE,
+            CREATE VIEW to moviestream;
+            
     -- Enable access to SQL Tools
     begin
         ords_admin.enable_schema (
