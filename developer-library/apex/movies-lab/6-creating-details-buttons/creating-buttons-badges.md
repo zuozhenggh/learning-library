@@ -415,4 +415,4 @@ Stuck on a step or struggling with the lab? You can download a copy of the Movie
 
 - **Author** - Paige Hanssen
 - **Additional Contributors** - Kay Jasanya, Shakeeb Rahman, Steve Muench, Monica Godoy, Eli Feuerstein, Carlos Maciel, Dalia Vazquez
-- **Last Updated By/Date** - Paige Hanssen, November 2021
+- **Last Updated By/Date** - Paige Hanssen, March 2022
