@@ -1,4 +1,4 @@
-#Predict On Time Delivery
+#Predict on-time delivery
 
 ## Introduction
 
@@ -10,7 +10,7 @@ Estimated Time: XXXX
 
 In this lab, we will be taking a deeper look into On-Time Delivery by channel to understand why some channels have lower on-time delivery rates than the other.
 
-We will be utilizing Oracle Analytics Server's ability to pull cross-functional data together from different lines business and to report on it in a single place.
+We will be utilizing Oracle Analytics Server's ability to pull cross-functional data together from different lines business and report on it in a single place.
 
 This lab will also utilize Oracle Analytic Server's machine learning capabilities to predict future delivery rates.
 
@@ -41,7 +41,7 @@ This lab assumes you have:
 
 ## **Task 1**: Utilizing One-Click Explain
 
-  Lets drill into visibility to on-time delivery performance from the various nodes across our distribution network — perhaps we can uncover some insights into why some of our distribution channels are low.
+Let’s drill into on-time delivery performance from the various nodes across our distribution network, perhaps we can uncover some insight on why some of our distribution channels are low.
 
   1. **Navigate back to the main dashboard** and locate the KPI card that displays **'On-Time Delivery by Channel'**.
 
@@ -56,7 +56,7 @@ This lab assumes you have:
 
   ![empty canvas](images/empty-dashboard-red-box.png)
 
-  3. **Rename** the canvas by tapping the arrow, and hitting 'rename'. Rename the canvas to **'On Time Delivery Analysis'**
+  3. **Rename** the canvas by tapping the arrow, and hitting 'rename.' Rename the canvas to **'On Time Delivery Analysis.'**
 
   ![rename canvas](images/rename-canvas.png)
 
@@ -76,7 +76,7 @@ This lab assumes you have:
 
   ![one click explain further output](images/explain-on-time-delivery-display-two.png)
 
-  These insights are machine generated in real time. Here we can see which states, dates, months, shipping modes and product names bring in late results that way we can begin investigating.
+  These insights are machine generated in real time. Here we can see which states, dates, months, shipping modes, and product names often result in on-time (or late) deliveries and can begin investigating.
 
   You can also select the visualization, then click 'add selected' and immediately begin to use Data Visualizations project editor to customize to drill further.
 
@@ -89,12 +89,12 @@ This lab assumes you have:
 Now we can start building our self-service visualization canvas that breaks down on-time delivery statistics.
 
 
-  1. View the empty canvas named **'On Time Delivery Analysis'** Let's begin creating our first visual.
+  1. View the empty canvas named **'On Time Delivery Analysis.'** Let's begin creating our first visual.
 
   ![view empty canvas](images/empty-dashboard-two.png)
 
 
-  2. **Navigate** to the visualizations menu on the left side of the screen and expand the files named **"Supply Chain Underlying Dashboard Data"** and **"Underlying Dashboard Data 5"**
+  2. **Navigate** to the visualizations menu on the left side of the screen and expand the files named **"Supply Chain Underlying Dashboard Data"** and **"Underlying Dashboard Data 5."**
 
   ![view visualizations menu](images/visual-data-one.png)
 
@@ -103,24 +103,24 @@ Now we can start building our self-service visualization canvas that breaks down
   ![drag value to canvas](images/order-quantity-tile.png)
 
 
-  4. **Click to View Visualization Types** and select **'combo'**
+  4. **Click to View Visualization Types** and select **'combo.'**
 
   ![select combo graph](images/choose-combo-graph.png)
 
 
-  5. Now expand 'date' under **"Supply Chain Underlying Dashboard Data"**. **Click and Drag** the variable **'Quarter'** to the **'X-Axis'**.
+  5. Now expand 'date' under **"Supply Chain Underlying Dashboard Data."** **Click and drag** the variable **'Quarter'** to the **X-Axis.**.
 
   ![add quarter](images/quarter-in-visual.png)
 
-  6. Now **Click and Drag** the variable **'Quarter'** to the **Filters** tab. Filter to display all quarters except for '<NULL>', 'Q1 2019', and 'Q3 2021'. This will remove the quarters that are not as important to us.
+  6. Now **Click and drag** the variable **'Quarter'** to the **Filters** tab. Filter to display all quarters except for '<NULL>', 'Q1 2019', and 'Q3 2021.' This will remove the quarters that are not as important to us.
 
   ![add filter](images/add-filter.png)
 
-  7. **Navigate** to the file named **"Underlying Dashboard Data 5"** and click and drag **'On-Time Delivery'** into the **'Y-Axis'**.
+  7. **Navigate** to the file named **"Underlying Dashboard Data 5"** and click and drag **'On-Time Delivery'** into the **Y-Axis.**
 
   ![drag variables to canvas](images/combo-visual-before-change.png)
 
-  8. **Format** the visual by right clicking on **'Ordered Quantity'** and selecting **Bar** and right clicking on **'On Time Delivery'** and selecting **Line**
+  8. **Format** the visual by right clicking on **'Ordered Quantity'** and selecting **bar** and right clicking on **'On Time Delivery'** and selecting **Line**
 
   ![format visual](images/combo-visual-select-bar.png)
 
@@ -128,17 +128,17 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![combination bar chart](images/combination-line-and-bar.png)
 
-  9. Now, let's change the color assignments for this visual. **Right Click** on the visual on canvas, and hover over **'color'** and select **'manage assignments'**.
+  9. Now, let's change the color assignments for this visual. **Right click** on the visual on canvas, and hover over **'color'** and select **'manage assignments.'**
 
   ![change color assignments](images/change-combo-color.png)
 
 
-  10. **Scroll Down** to find **'On Time Delivery'** variable.
+  10. **Scroll down** to find **'On Time Delivery'** variable.
 
   ![find on time delivery](images/find-variable-color-combo.png)
 
 
-  11. **Change the Color** assignment of 'On Time Delivery' to **green**.
+  11. **Change the color** assignment of 'On Time Delivery' to **green**.
 
   ![change color assignment to green](images/combo-change-color-green.png)
 
@@ -147,14 +147,14 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![created combo bar chart](images/combo-visualization-complete.png)
 
-  Here we see the green on-time delivery trendline has been steadily declining over the last few quarters.
+  Here we see the green on-time delivery by quarter line has been trending downwards.
 
 
 ## **Task 3**: Create a Bar Chart to view On-Time Delivery by Channel
 
-  Now, let's create a bar chart to view On Time Delivery quantity by Channel
+  Now, let's create a bar chart to view On time delivery quantity by channel.
 
-  1. **Navigate** to **"Supply Chain Underlying Dashboard Data"**. Hold Ctrl/Cmmnd and Select **'On Time Delivery'** and **'Channel'**. Then right click the highlighted variables and select **'Pick Visualization...'**
+  1. **Navigate** to **"Supply Chain Underlying Dashboard Data"**. Hold control (for Windows users) or command (for Mac users) and select **'On Time Delivery'** and **'Channel'**. Then right click the highlighted variables and select **'Pick Visualization.'**
 
   ![pick visualization from options](images/create-bar-chart-visual.png)
 
@@ -168,7 +168,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![channel into filter](images/channel-filter.png)
 
-  4. Select **'DC'**, **'Distributor'**, and **'Supplier'** as the only channels to display on this bar chart.
+  4. Select **'DC'**, **'Distributor'**, and **'Supplier'** as the only channels to display on this bar chart. (DC stands for 'Direct Channel')
 
   ![select channels](images/filters-selected-bar-chart.png)
 
@@ -180,7 +180,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   Now, let's create a Visual Map Layer to view Ship Late Quantity by State.
 
-  1. **Navigate** to **"Supply Chain Underlying Dashboard Data"**. Hold Ctrl/Cmmnd and Select **'State'** and **'Ship Late Quantity'**. Then right click the highlighted variables and select **'Pick Visualization...'**
+  1. **Navigate** to **"Supply Chain Underlying Dashboard Data."** Hold control (for Windows users) or command (for Mac users) and select **'State'** and **'Ship Late Quantity.'** Then right click the highlighted variables and select **'Pick Visualization.'**
 
   ![pick new visualization](images/pick-visual-map.png)
 
@@ -204,7 +204,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   Now, let's create a Pie Chart to view late shipment distributions by delivery channel.
 
-  1. **Navigate** to **"Underlying Dashboard Data 5"**. Hold Ctrl/Cmmnd and Select **'Channel'** and **'Ship Late Quantity'**. Then right click the highlighted variables and select **'Pick Visualization...'**
+  1. **Navigate** to **"Underlying Dashboard Data 5"**. Hold control (for Windows users) or command (for Mac users) and select **'Channel'** and **'Ship Late Quantity.'** Then right click the highlighted variables and select **'Pick Visualization.'**
 
   ![pick new visualization](images/variable-pick-pie.png)
 
@@ -230,11 +230,11 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![ship late percentage](images/rename-calc.png)
 
-  3. In the field, begin typing **'Ship Late Quantity'** and select the variable that is located in **"Supply Chain Underlying Dashboard Data"**.
+  3. In the large text field below the name, begin typing **'Ship Late Quantity'** and select the variable that is located in **"Supply Chain Underlying Dashboard Data."**
 
   ![select ship late quantity](images/ship-late-quantity-calc.png)
 
-  4. Now, add the division opperand '/'. In the field, begin typing **'Ordered Quantity'** and select the variable that is located in **"Supply Chain Underlying Dashboard Data"**. Here we are Dividing Ship Late Quantity by Order Quantity.
+  4. Now, add the division opperand '/'. In the field, begin typing **'Ordered Quantity'** and select the variable that is located in **"Supply Chain Underlying Dashboard Data".** Here we are Dividing Ship Late Quantity by Order Quantity.
 
   ![select ordered quantity](images/ordered-quantity-calc.png)
 
@@ -242,7 +242,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![validate](images/create-calculation-formula.png)
 
-  6. **Navigate** to **'My Calculations'**. Hold Ctrl/Cmmnd and Select **'Ship Late Percentage'** and **'Product Name'** from **"Underlying Dashboard Data 5"**. Then right click the highlighted variables and select **'Pick Visualization...'**
+  6. **Navigate** to **'My Calculations.'** Hold control (for Windows users) or command (for Mac users) and select **'Ship Late Percentage'** and **'Product Name'** from **"Underlying Dashboard Data 5."** Then right click the highlighted variables and select **'Pick Visualization.'**
 
   ![pick new visualization](images/select-horizontal-bar.png)
 
@@ -256,7 +256,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![ship late in color pane](images/color-ship-late.png)
 
-  9. Now, let's sort the graph based on highest ship late Percentage. **Right Click** the horizontal bar graph, hover over **'Sort by'** and then hover over **'Ship Late Percentage'**.
+  9. Now, let's sort the graph based on highest ship late Percentage. **Right Click** the horizontal bar graph, hover over **'Sort by,'** and then hover over **'Ship Late Percentage'**.
 
   ![sort horizontal](images/sort-horizontal.png)
 
@@ -274,7 +274,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   Now, let's create a Pivot Table to view ship late percentage by delivery channel as well as product.
 
-  1. **Navigate** to **'My Calculations'**. Hold Ctrl/Cmmnd and Select **'Ship Late Percentage'** and **'Product Name'** + **'Channel'** from **"Underlying Dashboard Data 5"**. Then right click the highlighted variables and select **'Pick Visualization...'**
+  1. **Navigate** to **'My Calculations.'** Hold control (for Windows users) or command (for Mac users) and select **'Ship Late Percentage'** and **'Product Name'** + **'Channel'** from **"Underlying Dashboard Data 5."** Then right click the highlighted variables and select **'Pick Visualization.'**
 
   ![pick new visualization pivot](images/select-variables-pivot.png)
 
@@ -284,15 +284,15 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![pivot table on file](images/pivot-on-canvas.png)
 
-  3. **Drag 'Product Name'** to **'Rows'** section so we can view ship late percentage by product via each distribution center.
+  3. **Drag 'product name'** to the **'rows'** section in the grammar panel so we can view ship late percentage by product for each distribution center.
 
   ![ship late percentage by product](images/channel-product-same-row.png)
 
-  4. **Drag 'Ship Late Percentage'** to **'Color'** section to view ship late percentage by color.
+  4. **Drag 'Ship Late Percentage'** to **'color'** section to view ship late percentage by color.
 
   ![ship late to color](images/pivot-with-color.png)
 
-  5. Now **Tap the down arrow** on the **'Ship Late Percentage'** column to **sort from highest to lowest** ship late percentage.
+  5. Now **tap the down arrow** on the **'Ship Late Percentage'** column to **sort from highest to lowest** ship late percentage.
 
   ![ship late sort highest to lowest](images/sort-pivot.png)
 
@@ -300,7 +300,8 @@ Now we can start building our self-service visualization canvas that breaks down
 
   You have now successfully created a pivot table to visualize ship late quantities by product and channel.
 
-  We can see Fries have the highest late shipping - this is not a good sign given that we know Potato French Fries are one of the most popular items on the menu. We need to meet with the Direct Channel, Pennsylvania, to work out an improvement strategy regarding Fries. Let’s navigate back to the main dashboard to continue our analysis.
+  We can see fries have the highest rate of late shipments; this is not a good sign given that we know potato french fries are one of the most popular items on the menu. We need to meet with Pennsylvania, the direct channel seeing the most late shipments, to work out an improvement strategy regarding fry shipments. Let’s navigate back to the main dashboard to continue our analysis.”
+
 
 ## **Task 8**: Build a Machine Learning Model to Predict On-Time Delivery
 
@@ -322,7 +323,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![tap menu create dataflow](images/home-screen-create-df.png)
 
-  4. **Upload the dataset** named **"bobbysburgerdataset.csv"** into the DataFlow Editor then **unselect** variables **'Date'** and **'Year'**.
+  4. **Upload the dataset** named **"bobbysburgerdataset.csv"** into the Data Flow Editor then **unselect** variables **'Date'** and **'Year.'**
 
   ![create data set](images/create-dataset-df.png)
 
@@ -354,7 +355,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![name model](images/save-df.png)
 
-  9. Navigate back to the Oracle Analytics Server home page. Tap the menu in the top left corner, and tap **'Machine Learning'**
+  9. Navigate back to the Oracle Analytics Server home page. Tap the menu in the top left corner, and tap **'Machine Learning.'**
 
   ![navigate to homepage](images/main-screen-menu.png)
 
@@ -364,7 +365,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![inspect model](images/inspect-model.png)
 
-  11. Here we can view the **Quality, details, and outputs**. Navigate to **Click on Quality** - We see that the Coefficient of Determination or R^2 is 43% showing us this model has a decent fit.
+  11. Here we can view the **Quality, details, and outputs** of our machine learning model. Navigate to **Click on Quality**. We see that the Coefficient of Determination or R^2 is 43% showing us this model has a decent fit.
 
   ![view general details](images/view-details.png)
 
@@ -409,21 +410,21 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![save data](images/save-data-output.png)
 
-  20. Save the outputted dataset as **'bobbysburgersMLoutputdata'** and press **'Play'** to run the DataFlow. Save the dataflow as **'bobbysburgersMLoutputDF'**
+  20. Save the outputted dataset as **'bobbysburgersMLoutputdata'** and press **'play'** to run the Data Flow. Save the Data Flow as **'bobbysburgersMLoutputDF.'**
 
   ![outputted dataset from ML](images/save-ml-output.png)
 
-  21. **Navigate Back to Home** and select the menu icon in the top left, and Select **'Data'**
+  21. **Navigate Back to Home** and select the menu icon in the top left, and Select **'data'.**
 
   ![Navigate to home](images/view-data.png)
 
-  22. Locate the saved dataset **'bobbysburgerMLoutputdata'** and right click select **'Create Project'**
+  22. Locate the saved dataset **'bobbysburgerMLoutputdata'** and right click select **'Create Project'.**
 
   ![locate dataset](images/ml-output.png)
 
   ![create project from dataset](images/create-project.png)
 
-  23. Hold Ctrl/Command and select **'Predicted On Time Delivery'**, **'Channel'**, **'Product Name'**, **'State'** and select **'Bar'**. Add **'State'** to Trellis Rows, **'Predicted On Time Delivery'** to **'Y Values'**, **'Channel'** to **'X Axis'**, and **'Product Name'** to **'Color'**. This will display the predictions for On Time Delivery from our model.
+  23. Hold control (for Windows users) or command (for Mac users) and select **'Predicted On Time Delivery'**, **'Channel'**, **'Product Name'**, **'State'** and select the **'bar'** visualization. Add **'State'** to Trellis Rows, **'Predicted On Time Delivery'** to **Y Values**, **'Channel'** to **X Axis**, and **'Product Name'** to **color**. This will display the predictions for On Time Delivery from our model.
 
   ![select variable](images/ml-project-bar.png)
 
@@ -432,7 +433,7 @@ Now we can start building our self-service visualization canvas that breaks down
   ![view Ml output visual](images/ml-visualization-incomplete.png)
 
 
-  24. Now let's filter out our unwanted values. **Click and Drag** the **'Channel'** variable to the **'Filter'** section. Select all the channels except for '<NULL>'
+  24. Now let's filter out our unwanted values. **Click and drag** the **'Channel'** variable to the **filter** section. Select all the channels except for '<NULL>.'
 
   ![select variable](images/ml-channel-filter.png)
 
@@ -443,7 +444,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![select grid line icon](images/click-gridline.png)
 
-  26. Expand the **'Value Axis'** and scroll down to **'Start'**. Set this value to 50 and press enter. This only shows us values from 50 and beyond.
+  26. Expand the **'Value Axis'** and scroll down to **'Start'**. Set this value to 50 and press enter. This only shows us values that are greater or equal to 50.
 
   ![set start value to 50](images/final-viz.png)
 
@@ -455,7 +456,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   ![select low to high sort](images/final-viz-four.png)
 
-  Here we can see a distribution of the centers, states, and products and which are predicted to have the lowest ship ontime delivery percentages. This is especially useful if management wants to catch products that have lower on-time ship quantities resulting in more late shipments.
+  Here we can see a distribution of the distribution centers, states, and products and which are predicted to have the lowest ontime delivery percentages. This is useful if management wants to catch products that have lower on-time ship quantities resulting in more late shipments.
 
   We have now successfully created a machine learning model and applied it's results to our project.
 
