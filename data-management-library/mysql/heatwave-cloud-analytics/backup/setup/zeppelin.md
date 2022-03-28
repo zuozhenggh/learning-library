@@ -27,13 +27,9 @@ In this lab, you will:
 
     ![Navigate to OKE](images/navigate-to-oke.png)
 
-2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify the status of **oke_cluster** is **Active**
 
-    ![Locate OKE](images/locate-oke-instance.png)
-
-3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster
-
-    ![Verify OKE](images/oke-worker-nodes.png)
+    ![Verify OKE](images/click-cluster.png)
 
 1. Log in to **OCI** and select **Developer Services**, and **Kubernetes Clusters (OKE)** to access to your OKE cluster created
 

@@ -27,83 +27,81 @@ In this lab, you will:
 
     ![Navigate to OKE](images/navigate-to-oke.png)
 
-2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify the status of **oke_cluster** is **Active**
 
-    ![Locate OKE](images/locate-oke-instance.png)
-
-3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster
-
-    ![Verify OKE](images/oke-worker-nodes.png)
+    ![Verify OKE](images/click-cluster.png)
 
 ## Task 2: Deploy Zeppelin to OKE
 
 1. Connect to **oke-operator** using OCI Cloud Shell
 
+    ![Connect to VM](images/connect-to-vm.png)
+
 2. Download the zeppelin yaml scripts
 
-```
-<copy>
-wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-server.yml
-</copy>
-```
-```
-<copy>
-wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-ing.yml
-</copy>
-```
+    ```
+    <copy>
+    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-server.yml
+    </copy>
+    ```
+    ```
+    <copy>
+    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-ing.yml
+    </copy>
+    ```
 
 3. Execute the kubectl commands to create a namespace
 
-```
-<copy>
-kubectl create namespace zeppelin
-</copy>
-```
+	```
+    <copy>
+    kubectl create namespace zeppelin
+    </copy>
+    ```
 
 4. Deploy Zeppelin
 
-```
-<copy>
-kubectl apply -f zeppelin-server.yaml -n zeppelin
-</copy>
-```
-```
-<copy>
-kubectl apply -f zeppelin-ing.yaml -n zeppelin
-</copy>
-```
+    ```
+    <copy>
+    kubectl apply -f zeppelin-server.yaml -n zeppelin
+    </copy>
+    ```
+    ```
+    <copy>
+    kubectl apply -f zeppelin-ing.yaml -n zeppelin
+    </copy>
+    ```
 
 5. Find out the public IP of OKE Ingress Controller
 
-```
-<copy>
-kubectl get all -n ingress-nginx
-</copy>
-```
-   ![Ingress IP](images/ingress.png)
+    ```
+    <copy>
+    kubectl get all -n ingress-nginx
+    </copy>
+    ```
+	![Ingress IP](images/ingress.png)
 
 6. Access the deployed Zeppelin application. Point your browser to **http://<PUBLIC_IP_ADDRESS>/zeppelin**
 
-    ![Zeppelin](images/zeppelin.png)
+	![Zeppelin](images/zeppelin.png)
 
 Task 3: Connect to MySQL HeatWave
 
 1. Create a JDBC interpreter for MySQL HeatWave in Zeppelin.
 
-    ![Interpreter](images/interpreter.png)
+	![Interpreter](images/interpreter.png)
 
 2. Click on **Create** to create a new JDBC driver for MySQL HeatWave. Fill up the details as indicated in the diagram
 Replace the private ip address of your MySQL instance in the **JDBC URL**
 
-    ![MySQL JDBC](images/mysql-jdbc.png)
+   ![MySQL JDBC](images/mysql-jdbc.png)
 
 3. Scroll to the bottom of the page and specify the MySQL JDBC driver, **mysql:mysql-connector-java:8.0.28**
 
-    ![MySQL JDBC Driver](images/mysql-jdbc-driver.png)
+	![MySQL JDBC Driver](images/mysql-jdbc-driver.png)
 
 4. Create a new notebook to start connecting to MySQL HeatWave. Specify the name of the notebook, for example, **airportdb**, and select **mysql** as the JDBC interpreter, click on **Create**
 
-    ![New Notebook](images/new-notebook.png)
+	![New Notebook](images/new-notebook.png)
 
 5. You can now start working with MySQL HeatWave!
 

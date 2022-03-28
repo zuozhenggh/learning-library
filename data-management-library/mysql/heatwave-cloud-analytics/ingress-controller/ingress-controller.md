@@ -36,42 +36,40 @@ This lab assumes you have:
 
     ![Locate OKE](images/locate-oke-instance.png)
 
-3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
+3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster, ensure the status is **Active**
 
-    ![Verify OKE](images/oke-worker-nodes.png)
+    ![Verify OKE](images/click-cluster.png)
 
 ## Task 2: Access OKE Cluster
 
-1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
-
-2. Log in to **OCI** and select **Developer Services**, and **Kubernetes Clusters (OKE)** to access to your OKE cluster created
+1. Log in to **OCI** and select **Developer Services**, and **Kubernetes Clusters (OKE)** to access to your OKE cluster created
 
     ![OKE](images/oke-cluster.png)
 
-3. Click on the **oke-cluster**
+2. Click on the **oke-cluster**
 
     ![oke cluster](images/click-cluster.png)
 
-4. Click on the **Access Cluster**
-
-    ![oke cluster detail](images/click-cluster.png)
-
-5. Click on the **Access Cluster** to look for the kubectl script to access the cluster
+3. Click on the **Access Cluster** to look for the kubectl script to access the cluster
 
     ![Access Cluster](images/access-cluster.png)
 
-6. Copy the kubectl script
+4. Copy the kubectl script
 
     ![kubectl script](images/copy-kubectl-script.png)
 
-7. On OCI Console, click on the cloud shell to launch cloud shell
+5. On OCI Console, click on the cloud shell to launch cloud shell
 
     ![Cloud Shell](images/cloud-shell.png)
 
-8. Paste the command copied in Step 6 in the command line and hit **Enter** to set up the access to OKE
+6. Connect to the **oke-operator** compute instance using OCI Cloud Shell
+
+	![Connect to VM](images/connect-to-vm.png)
+
+7. Paste the command copied in Step 6 in the command line and hit **Enter** to set up the access to OKE
 	![Set up access to OKE](images/oke-setup-access-vm.png)
 
-## Task 3: Deploy Ingress Controller to OKE
+## Task 3: Deploy ingress-controller to OKE
 
 1. Apply the ingress controller deployment yaml to **OKE**
 

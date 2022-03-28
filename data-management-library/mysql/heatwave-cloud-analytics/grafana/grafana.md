@@ -33,17 +33,15 @@ This lab assumes you have:
 
 2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
 
-    ![Locate OKE](images/locate-oke-instance.png)
+    ![Locate OKE](images/click-cluster.png)
 
-3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
-
-    ![Verify OKE](images/oke-worker-nodes.png)
-
-## Task 2: Deploy Application to OKE
+## Task 2: Deploy Grafana to OKE
 
 1. Connect to the **oke-operator** compute instance again using OCI Cloud Shell
 
-2. Create Name Space 'grafana'
+	![Connect to VM](images/connect-to-vm.png)
+
+2. Create 'grafana' namespace
 
     ```
     <copy>
@@ -51,7 +49,7 @@ This lab assumes you have:
     </copy>
     ```
 
-3. Deploy grafana deployment with LoadBalancer service
+3. Deploy Grafana application with Load Balancer service
 
 	```
 	<copy>
@@ -142,7 +140,7 @@ This lab assumes you have:
 	</copy>
 	```
 
-4. Check the status of pods and wait until all pods are up and running
+4. Check the status of pods and wait until all the pods are up and running
 
 	```
 	<copy>
@@ -150,7 +148,7 @@ This lab assumes you have:
 	</copy>
 	```
 
-5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready.
+5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready
 
 	```
 	<copy>
@@ -160,7 +158,7 @@ This lab assumes you have:
 
   Once you have the External IP provisioned, you can press **CTL+C** to terminate the command
 
-## Task 3: Access the Grafana Application
+## Task 3: Access Grafana dashboard
 
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). Login using admin/admin as username/password
 
@@ -170,24 +168,27 @@ This lab assumes you have:
 
     ![Grafana Login](images/grafana-login-change-password.png)
 
-## Task 4: Add MySQL Datasource
+## Task 4: Add MySQL data source
 
-1. Select Datasource from Settings left menu
+1. Select **Data Sources** from the **Settings** on the left menu
 
     ![Add Datasource](images/AddDatasource.png)
 
-2. Click "Add Data source" button
+2. Click **Add data source** button
     ![Add Datasource](images/AddDatasource-1.png)
 
-3. Type in mysql in the filter textbox and click the MySQL Datasource
+3. Enter **mysql** in the filter textbox and select the **MySQL** Datasource
     ![Choose MySQL](images/AddDatasource-3.png)
 
-4. Fill in the Datasource details based on the MDS ip/port and username/password details.
+4. Fill in the **MySQL Connection** details with MySQL's IP address, port, username and password details
     ![Fill MySQL](images/AddDatasource-4.png)
 
-## Task 5: Download dashboard creation script
+## Task 5: Execute dashboard script
 
-1. Connect to **operator-oke** VM via OCI
+1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
+
+	![Connect to VM](images/connect-to-vm.png)
+
 2. Create my2 database for dashboard using script
 
     ```
@@ -204,7 +205,7 @@ This lab assumes you have:
     </copy>
     ```
 
-## Task 6: Import MySQL Dashboard
+## Task 6: Import MySQL dashboard
 
 1. Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
 	![Import](images/import7991.png " ")
@@ -212,10 +213,10 @@ This lab assumes you have:
 2. Choose the Datasource and click "Import"
 	![Import](images/import7991-Import.png)
 
-3. Checking the Dashboard
+3. Check the Dashboard
 	![Dashboard](images/MySQLDashboard7991.png)
 
-## Task 7: Add widget to MySQL Dashboard
+## Task 7: Add panel widget to MySQL dashboard
 
 1. Click on the add panel icon as shown
 	![Dashboard](images/grafana-add-panel-menu.png)
@@ -226,7 +227,7 @@ This lab assumes you have:
 3. Click on the **Edit SQL** button
 	![Dashboard](images/grafana-panel-edit-sql.png)
 
-4. Paste the SQL to the query text field and Change the format to **Table**
+4. Paste the SQL to the query text field and change the format to **Table**
 
 	```
 	<copy>
@@ -238,14 +239,14 @@ This lab assumes you have:
 
 	![Dashboard](images/grafana-edit-sql-table.png)
 
-5. Change the Visualization using Table as shown and putting the Panel title as "Table loaded to Heatwave"
+5. Change the visualization to **Table** as shown and specify the the Panel title as "Table loaded to Heatwave"
 
 	![Dashboard](images/grafana-change-panel-settings.png)
 
 6. Click "Apply" and return to dashboard
 	![Dashboard](images/grafana-panel-apply.png)
 
-7. Finally click the "disk" icon to save
+7. Finally, click the "disk" icon to save
 	![Dashboard](images/grafana-save-dashboard.png)
 
   You may now **proceed to the next lab.**

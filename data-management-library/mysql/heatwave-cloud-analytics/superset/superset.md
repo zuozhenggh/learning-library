@@ -34,19 +34,17 @@ This lab assumes you have:
 
     ![Navigate to OKE](images/navigate-to-oke.png)
 
-2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+2. 2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify the status of **oke_cluster** is **Active**
 
-    ![Locate OKE](images/locate-oke-instance.png)
-
-3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
-
-    ![Verify OKE](images/oke-worker-nodes.png)
+    ![Verify OKE](images/click-cluster.png)
 
 ## Task 2: Deploy Superset to OKE
 
 1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
 
-2. Install helm cli client 'helm' to the operator VM and add superset repo.
+	![Connect to VM](images/connect-to-vm.png)
+
+2. Install helm cli client 'helm' to the **oke-operator** compute instance and add superset to helm repository
 
     ```
     <copy>
@@ -64,7 +62,7 @@ This lab assumes you have:
 
     ![Add superset repo to helm ](images/helm-add-repo.png)
 
-3. Generate superset-custom-values.yaml (if needed, to update any specific variables) and Install superset package
+3. Generate superset-custom-values.yaml (update any specific variables if required) and install Superset package
 
     ```
     <copy>
@@ -76,7 +74,7 @@ This lab assumes you have:
 
     ![Install superset ](images/superset-install.png)
 
-4. Verify Superset deployment
+4. Verify the deployment of status of Superset application
 
     ```
     <copy>
@@ -87,7 +85,7 @@ This lab assumes you have:
 
     ![Check resources in namespace superset ](images/superset-get-all.png)
 
-5. Disable firewalld in oke-operator COMPUTE VM (make sure you are on oke-operator)
+5. Disable the **firewalld** service in **oke-operator** compute instance
 
     ```
     <copy>
@@ -95,6 +93,7 @@ This lab assumes you have:
     sudo systemctl disable firewalld
     </copy>
     ```
+    > **Note** You should not disable the firewalld service in production. THe purpose of this step is to simplify and allow port-forwarding service to the **oke-operator** compute instance
 
 6. Start port-forward to service/superset.  If the testing finishes, press **CTRL-C** to terminate port-forward service.
 

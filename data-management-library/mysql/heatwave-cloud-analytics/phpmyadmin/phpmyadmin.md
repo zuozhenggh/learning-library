@@ -26,17 +26,15 @@ In this lab, you will:
 
     ![Navigate to OKE](images/navigate-to-oke.png)
 
-2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify the status of **oke_cluster** is **Active**
 
-    ![Locate OKE](images/locate-oke-instance.png)
-
-3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster
-
-    ![Verify OKE](images/oke-worker-nodes.png)
+    ![Verify OKE](images/click-cluster.png)
 
 ## Task 2: Deploy PhpMyAdmin to OKE
 
 1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
+
+	![Connect to VM](images/connect-to-vm.png)
 
 2. Create the phpMyAdmin yaml deployment script
 
@@ -78,11 +76,11 @@ In this lab, you will:
 	</copy>
 	```
 
-3. Specify your MySQL private IP address in the yaml file, replace **MYSQL_IP_ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
+3. Specify your MySQL private IP address in the yaml file, replace **MYSQL&#95;PRIVATE&#95;IP&#95;ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
 
 	```
 	<copy>
-	sed -i -e 's/MYSQL_HOST/<MYSQL_IP_ADDRESS>/g' phpmyadmin.yaml 
+	sed -i -e 's/MYSQL_HOST/<MYSQL_PRIVATE_IP_ADDRESS>/g' phpmyadmin.yaml 
 	</copy>
 	```
 

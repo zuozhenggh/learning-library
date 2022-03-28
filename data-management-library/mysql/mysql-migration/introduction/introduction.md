@@ -9,6 +9,7 @@ This workshop will cover the migration of a conventional LAMP stack application 
 * Loading data into MySQL HeatWave using MySQL shell utility and Autopilot features
 * Speeding up SQL queries with MySQL HeatWave
 
+
 [](youtube:pexH2tqI_0E)
 
 Estimated Time: 90 minutes
@@ -31,11 +32,24 @@ In this workshop, you will learn how to:
 * Load data into MySQL HeatWave
 * Improve query performance with MySQL HeatWave
 
+### Architecture Overview
+
+The following OCI architecture diagram depicts all the resources to be created as part of this lab that consists of
+
+* Compute Instance
+* Virtual Cloud Network
+* Oracle Container Engine for Kubernetes
+* MySQL HeatWave
+
+	![OCI Architecture](images/oci-architecture.png)
+
 ### Prerequisites (Optional)
 
 * You have an Oracle account
 * You have enough privileges to use OCI
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
+
+## Acknowledgements
 
 * **Author**
 
