@@ -22,7 +22,7 @@ We are taking the quick option, but there is also a custom option to create reso
 
 1. Select the cloud services hamburger menu on the top left corner and select Networking
 
-    ![](./images/forms-hamburger-vcn.png)
+    ![VCN](./images/forms-hamburger-vcn.png)
 
 2. Select **Virtual Cloud Networks**
 
@@ -30,21 +30,21 @@ We are taking the quick option, but there is also a custom option to create reso
 
 4. Click **Start VCN Wizard**
 
-  ![](./images/forms-vcn-start.png)
+  ![VCN Start](./images/forms-vcn-start.png)
 
 5. Enter a unique name for your VCN. Ex: **forms-vcn**
 
- ![](./images/forms-vcn-name.png)
+ ![VCN Name](./images/forms-vcn-name.png)
 
 6. Check the VCN CIDR block of 10.0.0.0/16.  Note: The CIDR Block is the range of IP addresses that can be used.
 
 7. Click **Next** 
 
-  ![](./images/forms-vcn-create.png)
+  ![VNC Create](./images/forms-vcn-create.png)
 
 8. Then **Create**
 
-  ![](./images/forms-vcn-end.png)
+  ![VNC end](./images/forms-vcn-end.png)
 
   A summary is displayed. 
 
@@ -60,15 +60,15 @@ You should be in the details of the Virtual Cloud Network.
    
 1. Click **Security Lists**
 
-   ![](./images/forms-vcn-seclist.png)
+   ![Seclist](./images/forms-vcn-seclist.png)
 
 2. Choose the **Security List for Private Subnet-forms-vcn**
 
-   ![](./images/forms-private-seclist.png)
+   ![Seclist 2](./images/forms-private-seclist.png)
 
 3. Add a rule for the Oracle Database listener. Click **Add Ingress Rule**
 
-   ![](./images/forms-private-ingress-rule.png)
+   ![Ingress Rule](./images/forms-private-ingress-rule.png)
 
 - In Source CIDR, type **10.0.0.0/16**
 - In Destination port, **1521-1522**
@@ -76,7 +76,7 @@ You should be in the details of the Virtual Cloud Network.
 
 4.. Add a rule for Windows Remote Desktop. Click a second time **Add Ingress Rule**
 
-   ![](./images/forms-private-ingress-rule-remote-desktop.png)
+   ![Remote Desktop Rule](./images/forms-private-ingress-rule-remote-desktop.png)
 
 - In Source CIDR, type **10.0.0.0/16**
 - In Destination port, **3389**
@@ -90,26 +90,26 @@ For this sample, we will use a Bastion host that is easier to set up. But for su
 1. In the Hamburger menu, choose **Compute / Instance**
 2. Then click **Create Instance**
 
-   ![](./images/forms-instance.png)
+   ![Forms Instance](./images/forms-instance.png)
 
 3. In the name, type **bastion**
 
-   ![](./images/forms-bastion-name.png)
+   ![Bastion Name](./images/forms-bastion-name.png)
 
 4. In the network, check that :
 - VCN: **forms-vcn**
 - Subnet: **Public subnet for forms-vcn**
 - Save the public and private SSH keys (##1##)
 - Click **Create**
-![](./images/forms-bastion-network-ssh.png)
+![Bastion Network](./images/forms-bastion-network-ssh.png)
 
 5.. Get the Public IP
 
-   ![](./images/forms-bastion-public-ip.png)
+   ![Bastion Public IP](./images/forms-bastion-public-ip.png)
 
 Write it down. (##2##)
 
-## Acknowledgements ##
-
-- **Author** - Marc Gueury - Application Development EMEA 
-- March 2022
+## Acknowledgements
+* Marc Gueury - Application Development EMEA
+* Michael Ferrante - Senior Principal Product Manager
+* Last Updated - March 2022

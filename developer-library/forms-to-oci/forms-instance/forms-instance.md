@@ -21,15 +21,15 @@ Go to the Marketplace.
 1. Go to the Oracle Cloud home page. In the Hamburger menu, look for **Marketplace**
 2. In the search, look for **Forms**
 
-   ![](./images/forms-marketplace-search.png)
+   ![Marketplace Search](./images/forms-marketplace-search.png)
 
 3. Review the Terms and Conditions then check **I have reviewed and accept the Oracle standard Terms and Restrictions**.  Then click **Launch Instance**.
 
-   ![](./images/forms-marketplace.png)
+   ![Marketplace](./images/forms-marketplace.png)
 
 4. Enter the machine name, ex: **forms**
 
-   ![](./images/forms-instance-name.png)
+   ![Instance Name](./images/forms-instance-name.png)
 
 5. Then check that:
 - VCN: **forms-vcn**
@@ -37,11 +37,11 @@ Go to the Marketplace.
 - Check the button **Upload the public key** and upload the public key that you got from the Bastion in Lab1 (##1##)
 - Click Create
 
-![](./images/forms-instance-network.png), 
+![Instance Network](./images/forms-instance-network.png), 
 
 5.. Get the Private IP
 
-   ![](./images/forms-instance-private-ip.png)
+   ![Instance Private IP](./images/forms-instance-private-ip.png)
 
 Write it down. (##3##)
 
@@ -58,7 +58,7 @@ Choose your next Lab accordingly.
 
 ## Learn More
 
-* [Forms on OCI](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/forms-oci/index.html)
+* [Forms on Oracle Cloud Infrastructure](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/forms-oci/index.html)
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA

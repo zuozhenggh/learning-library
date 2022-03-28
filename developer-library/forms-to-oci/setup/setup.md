@@ -51,8 +51,8 @@ Let's look at the important files and directories.
 There is a README in the Desktop directory. It is a good idea to read it first.
 
 ```
-cd $HOME/Desktop
-vi ReadMe
+<copy>cd $HOME/Desktop
+vi ReadMe</copy>
 ```
 
 ```
@@ -87,9 +87,9 @@ Oracle Forms is installed on top of Fusion Middleware Infrastructure, which incl
 The Forms configuration files are stored in a Domain and should be administered using Fusion Middleware Control.  
 
 ```
-export DOMAIN_HOME=/u01/oracle/middleware/user_projects/domains/base_domain/
+<copy>export DOMAIN_HOME=/u01/oracle/middleware/user_projects/domains/base_domain/
 cd $DOMAIN_HOME
-ls
+ls</copy>
 ```
 
 ```
@@ -110,8 +110,8 @@ The main files to configure Oracle Forms Runtime are:
 Let's look at them.
 
 ```
-export FORMS_CONFIG=/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/servers/WLS_FORMS/applications/formsapp_12.2.1/config
-cd $FORMS_CONFIG
+<copy>export FORMS_CONFIG=/u01/oracle/middleware/user_projects/domains/base_domain/config/fmwconfig/servers/WLS_FORMS/applications/formsapp_12.2.1/config
+cd $FORMS_CONFIG</copy>
 ```
 
 ```
@@ -143,7 +143,7 @@ FORMS_PATH=/u01/oracle/middleware/Oracle_Home/forms:/u01/oracle/middleware/user_
 There are important things to notice about the runtime configuration:
 - ORACLE\_HOME (Directory with Forms Binaries) is in /u01/oracle/middleware/Oracle_Home
 - TNS\_ADMIN (Directory with connection to the Database) is per default is $DOMAIN_HOME/config/fmwconfig
-- FORMS\_PATH (Directory your your Forms program) includes /home/opc/oracle/formsmodules
+- FORMS\_PATH (Directory of your Forms program) includes /home/opc/oracle/formsmodules
 
 ```
 cat formsweb.cfg
@@ -176,15 +176,15 @@ ex: http://xxxxx/forms/frmservlet?config=webstart
 The TNS\_ADMIN used by the runtime is $DOMAIN\_HOME/config/fmwconfig. Let's check it:
 
 ```
-cd $DOMAIN_HOME/config/fmwconfig
-cat tnsnames.ora 
+<copy>cd $DOMAIN_HOME/config/fmwconfig
+cat tnsnames.ora</copy>
 ```
 
 For a Local DB
 ```
 ORCL = 
   (DESCRIPTION = 
-    (ADDRESS = (PROTOCOL = TCP)(HOST = forms.subnet03211405.vcn03211405.oraclevcn.com)(PORT = 1521))
+    (ADDRESS = (PROTOCOL = TCP)(HOST = forms.subnet1234567.formsvcn.oraclevcn.com)(PORT = 1521))
     (CONNECT_DATA =
       (SERVER = DEDICATED)
        (SERVICE_NAME = orcl)
@@ -194,7 +194,7 @@ ORCL =
 
 For Database Cloud Service
 ```
-ORCL =(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.1.179)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=db_pdb1.sub03241142161.formsvcn.oraclevcn.com)))
+ORCL = (DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.1.179)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=db_pdb1.subnet1234567.formsvcn.oraclevcn.com)))
 ```
 
 Notice both have the same ORCL alias.
@@ -204,7 +204,7 @@ Notice both have the same ORCL alias.
 There is a script to start/stop the Database, OHS, Forms or WebLogic
 
 ```
-/home/opc/oracle/utilities/srvcontroller.sh
+<copy>/home/opc/oracle/utilities/srvcontroller.sh</copy>
 ```
 
 ```
@@ -231,7 +231,7 @@ If you are using the Local DB for the RCU and optionally your own schemas. You c
 Let's connect to it.
 
 ```
-cat /etc/oratab 
+<copy>cat /etc/oratab</copy>
 ```
 ```
 ...
@@ -240,9 +240,9 @@ orcl:/u01/oracle/database/base/Oracle_Home:N
 ```
 The file /etc/oratab defines the list of ORACLE\_HOME environments
 ```
-. oraenv
+<copy>. oraenv
 orcl
-sqlplus system/LiveLab__123@orcl
+sqlplus system/LiveLab__123@orcl</copy>
 ```
 
 ```
@@ -259,7 +259,7 @@ Version 19.3.0.0.0
 SQL> 
 ```
 
-## Task 3: Test the URLs.
+## Task 3: Test the URLs
 
 Notice that the installation has created the following URLs:
 
@@ -269,7 +269,7 @@ Notice that the installation has created the following URLs:
 
 VNC is also accessible on port 5901. Start your favorite VNC viewer and connect to **localhost:1**
 
-![](images/forms-vnc.png)
+![Forms VNC](images/forms-vnc.png)
 
 ## Learn More
 

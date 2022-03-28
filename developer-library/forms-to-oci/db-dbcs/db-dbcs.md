@@ -16,17 +16,17 @@ For a production database, it is better to use Database Cloud Service.
 
 1. Go to the Oracle Cloud home page. In the Hamburger menu, look for **Oracle Database**. Then **Bare Metal, VM and Exadata**
 
-   ![](./images/forms-db-hamburger.png)
+   ![Hamburger](./images/forms-db-hamburger.png)
 
 2. Click **Create DB System**
 
-   ![](./images/forms-db-create-button.png)
+   ![DB Create Button](./images/forms-db-create-button.png)
 
 3. Then in
 - Name your DB system: **db** (for ex)
 - Change Shape and choose the one that you need (Ex: VM.Standard2.1 )
 
-   ![](./images/forms-db-name.png)
+   ![DB Name](./images/forms-db-name.png)
 
 4.. Further in the wizard
 
@@ -34,14 +34,14 @@ For a production database, it is better to use Database Cloud Service.
 - Choose storage management software: **Logical Volume Manager**
 - SSH key: add the public ssh key that you got from the bastion (##1##)
 
-   ![](./images/forms-db-ssh.png)
+   ![DB SSH](./images/forms-db-ssh.png)
 
 - Choose your licence (Ex: Bring Your Own Licence)
 - Virtual cloud network **forms-vcn**
 - Client subnet: **Private Subnet-forms-vcn**
 - Click **Next**
 
-   ![](./images/forms-db-vcn.png)
+   ![DB VNC](./images/forms-db-vcn.png)
 
 5.. On the second tab,
 
@@ -50,20 +50,20 @@ For a production database, it is better to use Database Cloud Service.
 - Confirm Password: **LiveLab__123** (for ex)
 - Click **Create DB System**
 
-   ![](./images/forms-db-tab2.png)
+   ![DB Tab2](./images/forms-db-tab2.png)
 
 You can execute the Task 2 before that the database is created. You will need it for step 3 only.
 
 6.. Get the connection details of the database.
     Go to the database node. Then DB
 
-   ![](./images/forms-db-details.png)
+   ![DB Details](./images/forms-db-details.png)
 
 - Click **DB Connection**
 - And the easy connection string (##DB\_EASY##)
 - Then copy the long connection string (##DB\_LONG##)
 
-   ![](./images/forms-db-details2.png)
+   ![DB Details2](./images/forms-db-details2.png)
 
 ## Task 2: Start Forms Configuration 
 
@@ -92,7 +92,7 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 
 1. Choose Dabase Cloud Service **2**
 
-   ![](./images/forms-db-provision-start.png)
+   ![DB Provision Start](./images/forms-db-provision-start.png)
 
 2. Enter the followin:
 - Enter the DBCS Sys Password: **LiveLab__123**
@@ -101,27 +101,27 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 - Enter the DBCS long connect string:  see ##DB\_LONG##. Take care to replace with the service name by db_pdb1
 
 ```
-(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.197)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=DB_fra125.subnet03211405.vcn03211405.oraclevcn.com)))
+(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.197)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=DB_fra125.subnet1234567.formsvcn.oraclevcn.com)))
 
 to 
 
-(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.197)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=db_pdb1.subnet03211405.vcn03211405.oraclevcn.com)))
+(DESCRIPTION=(CONNECT_TIMEOUT=5)(TRANSPORT_CONNECT_TIMEOUT=3)(RETRY_COUNT=3)(ADDRESS_LIST=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=10.0.0.197)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=db_pdb1.subnet1234567.formsvcn.oraclevcn.com)))
 ```
 
 - Enter the DBCS easy connect string: see ##DB\_EASY##
 
 ```
-Ex: db.subnet03211405.vcn03211405.oraclevcn.com:1521/DB_fra125.subnet03211405.vcn03211405.oraclevcn.com
+Ex: db.subnet1234567.formsvcn.oraclevcn.com:1521/DB_fra125.subnet1234567.formsvcn.oraclevcn.com
 ```
 
-   ![](./images/forms-db-provision-db.png)
+   ![DB Provision DB](./images/forms-db-provision-db.png)
 
 2. Enter the passwords. By example:
 - Vnc Password: **LiveLab1**
 - FMW Repository Schema password: **LiveLab__123**
 - WLS Admin password: **LiveLab1**
 
-   ![](./images/forms-db-provision-password.png)
+   ![DB Provision Password](./images/forms-db-provision-password.png)
 
 3.. Run the provisioning
 
@@ -138,7 +138,7 @@ Wait that the provisioning finishes. Connect with ssh to see the status. It take
 
 ## Learn More
 
-* [Forms on OCI](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/forms-oci/index.html)
+* [Forms on Oracle Cloud Infrastructure](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/forms-oci/index.html)
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA

@@ -32,26 +32,26 @@ Let's create a Windows Machine
 2. Click **Create Instance**
 3. For the name, **windows**
 
- ![](./images/forms-windows-name.png)
+ ![Windows Name](./images/forms-windows-name.png)
 
 4. Click **Change Image**. Then choose **Windows**
 
-![](./images/forms-builder-windows-image.png)
+![Windows Image](./images/forms-builder-windows-image.png)
 
 5. Then:
 - VCN: **forms-vcn**
 - Subnet: **Private subnet for forms-vcn**
 - Click Create
 
-![](images/forms-windows-subnet.png), 
+![Windows Subnet](images/forms-windows-subnet.png), 
 
 6. Get the Private IP address (##4##) And the original password (##5##)
 
-![](images/forms-windows-private-ip.png)
+![Windows Private IP](images/forms-windows-private-ip.png)
 
 ## Task 2: Connect to the Windows Machine
 
-You can connect to the Windows machine via Remote Desktop. It is available on all operating systems. 
+You can connect to the Windows machine through Remote Desktop. It is available on all operating systems. 
 Remote Desktop run on the port 3389. 
 
 1. Download and run it. 
@@ -75,13 +75,13 @@ Keep the SSH session opened.
 - About the keyboard settings on Windows (see screenshot)
 - Verify with the eye if the password is correct.
 
-![](images/forms-windows-password.png)
+![Windows Password](images/forms-windows-password.png)
 
 5. You will then need to reset the password. Same take care:
 - About the keyboard settings on Windows
 - Verify with the eye if the password is correct.
 
-![](images/forms-windows-reset-password.png)
+![Windows Reset Password](images/forms-windows-reset-password.png)
 
 6. When logged in Windows. Maybe install another browser than Internet Explorer... Internet Explorer is quite touchy and ask to add all internet URLs in 
 - Start Internet Explorer
@@ -91,13 +91,13 @@ Keep the SSH session opened.
 - Add Sites. For example, add https://www.mozilla.org, https://download-installer.cdn.mozilla.net
 - Then https://www.mozilla.org and download Firefox for example.
 
-   ![](./images/forms-windows-ie.png)
+   ![Forms Windows IE](./images/forms-windows-ie.png)
 
 ## Task 3: Requirements
 
-It is always interesting to check the requirement before to install the software. See [here](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/sysrs/system-requirements-and-specifications.html#GUID-CB8C7C04-C8BD-4F9F-8ACF-F735FB6BD871).  
+It is always interesting to check the requirement before to install the software. See [System Requirements](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/sysrs/system-requirements-and-specifications.html#GUID-CB8C7C04-C8BD-4F9F-8ACF-F735FB6BD871).  
 
-You need to install the MS VC libraries in order to ensure that all components/tools in the installation work correctly.
+You need to install the MS VC libraries to ensure that all components/tools in the installation work correctly.
 
 - Install Visual Studio 2012 (VC++ 11.0) Update 4 : 
 [https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)  
@@ -110,21 +110,21 @@ Go to https://www.oracle.com/middleware/technologies/forms/downloads.html
 
 Then download the Forms Builder software. It is a zip file of about 2GB.
 
-![](images/forms-builder-download.png), 
+![Forms Download](images/forms-builder-download.png), 
 
 You will need to login to download from Edelivery
 
-![](images/forms-builder-download-edelivery.png)
+![Forms Edelivery](images/forms-builder-download-edelivery.png)
 
 Then Start the Download Manager
 
-![](images/forms-builder-download-manager.png)
+![Download Manager](images/forms-builder-download-manager.png)
 
 When the download is completed, unzip the file.
 
 2. Right click on the installer executable. And **Run as administrator**
 
-![](images/forms-builder-install.png)
+![Builder Install](images/forms-builder-install.png)
 
 Follow the wizard
 - Welcome: Next
@@ -141,7 +141,7 @@ Follow the wizard
 - But check **Automatically Launch Forms Builder Configuration Wizard**
 - In the Forms Builder instance: choose a directory like: C:\Oracle\Middleware\forms1
 
-![](images/forms-builder-instance.png)
+![Builder Instance](images/forms-builder-instance.png)
 
 - Then Next / Finish.
 
@@ -153,7 +153,7 @@ Follow the wizard
 - Copy the SSH private key on the Windows machine.
 - Start CMD.EXE on Windows in Administator mode. Then run this command:
 
-![](images/forms-windows-cmd-adminstrator.png)
+![CMD Administrator](images/forms-windows-cmd-adminstrator.png)
 
 ```
 # Copy the tnsadmin.ora file
@@ -174,7 +174,7 @@ exit
 
 2. Start Forms Builder
 
-![](images/forms-builder-test.png)
+![Builder Test](images/forms-builder-test.png)
 
 
 ## Learn More

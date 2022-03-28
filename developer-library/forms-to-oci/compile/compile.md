@@ -22,17 +22,18 @@ This lab assumes you have:
 Log to your Forms machine. And download the sample files.
 
 ```
-cd $HOME
+<copy>cd $HOME
 wget https://marcgueury.github.io/learning-library/developer-library/forms-to-oci/compile/files/forms_samples.zip
 unzip forms_samples.zip
 cd forms_samples
 # Copy the Forms files in the FORMS_PATH
 cp forms/* ../oracle/formsmodules/.
+</copy>
 ```
 
 Check the script to set the environment variables:
 ```
-cat env.sh
+<copy>cat env.sh</copy>
 ```
 
 ```
@@ -76,7 +77,7 @@ You will need to adapt it if you DB setup is different. But in short:
 First check the file that we will install. 
 
 ```
-vi dept.sql
+<copy>vi dept.sql</copy>
 ```
 
 ```
@@ -113,9 +114,10 @@ Run the dept.sql script in the database. It takes as arguments:
 
 Let's create the schema.
 ```
+<copy>
 cd $HOME/forms_samples
 . ./env.sh 
-sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS
+sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS</copy>
 ```
 
 Output:
@@ -140,7 +142,7 @@ The directory contains a script to compile your forms. Let's look at it.
 
 
 ```
-cat compile.sh
+<copy>cat compile.sh</copy>
 ```
 
 ```
@@ -180,7 +182,7 @@ done
 Run it.
 
 ```
-./compile.sh
+<copy>./compile.sh</copy>
 ```
 
 ```
@@ -202,8 +204,8 @@ Compiling procedure QUERY_MASTER_DETAILS...
 There is a prebuilt configuration that we will just add to test our Forms.
 
 ```
-cd $HOME/forms_samples
-cat formsweb.cfg.template
+<copy>cd $HOME/forms_samples
+cat formsweb.cfg.template</copy>
 ```
 
 You will see entries like this:
@@ -226,8 +228,8 @@ The interesting parameters:
 Let's add this configuration
 
 ```
-. ./env.sh
-cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg
+<copy>. ./env.sh
+cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg</copy>
 ```
 
 ## Task 5: Test
@@ -238,7 +240,7 @@ Check **Lab 4 - Task 1: Port Forwarding** for the command.
 Try this URL. You will need to have Java Runtime installed on your computer to do this.
 
 ```
-  http://localhost:9001/forms/frmservlet?config=dept_emp
+ <copy>http://localhost:9001/forms/frmservlet?config=dept_emp</copy>
 ```
 
 Depending of the browser, it will download a .jnlp file or start it automatically.
@@ -271,4 +273,5 @@ You could improve this setup by:
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
+* Michael Ferrante - Senior Principal Product Manager
 * Last Updated - March 2022

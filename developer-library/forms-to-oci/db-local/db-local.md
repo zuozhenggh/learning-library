@@ -46,7 +46,7 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 
 1. Choose Local Database: **1** 
 
-![](./images/forms-local-provision-start.png)
+![Local Provision](./images/forms-local-provision-start.png)
 
 2. Enter the passwords. By example:
 - Vnc Password: **LiveLab1**
@@ -54,11 +54,11 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 - WLS Admin password: **LiveLab1**
 - Database System Password: **LiveLab__123**
 
-![](./images/forms-local-provision-password.png)
+![Local Provision Password](./images/forms-local-provision-password.png)
 
 3.. Run the provisioning
 
-   ![](./images/forms-local-provision-end.png)
+   ![Provisioning end](./images/forms-local-provision-end.png)
 
 4. Answer 'y' to the next question
 
@@ -73,7 +73,7 @@ Wait that the provisioning finishes. Connect with ssh to see the status. It take
 
 ## Learn More
 
-* [Forms on OCI](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/forms-oci/index.html)
+* [Forms on Oracle Cloud Infrastructure](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/forms-oci/index.html)
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
