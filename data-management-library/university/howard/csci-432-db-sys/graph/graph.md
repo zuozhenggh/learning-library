@@ -856,5 +856,4 @@ Example:
 - Query the graph and display it
 - Then submit a screenshot of these 3 paragraphs
 
-Test
 

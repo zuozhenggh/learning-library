@@ -43,12 +43,12 @@
             "filename": "../../spatial/spatial.md"
         },       
         {
-            "title": "Need Help? Test",
+            "title": "Need Help?",
             "filename":"../../need-help/need-help.md"
         },
         {
             "title": "Acknowledgements",
-            "filename":"../../acknowledgements/acknowledgements.md" 
+            "filename":"../../acknowledgements/acknowledgements.md"
         }
     ]
 }
