@@ -1,4 +1,3 @@
-create or replace procedure lab_setup as 
 begin
   
   -- drop tables if they exist
@@ -28,4 +27,5 @@ begin
                         );
 
   
-end lab_setup;
+end;
+/
