@@ -13,14 +13,13 @@ In this lab, you will provision the following OCI resources using Resource Manag
 * Virtual Cloud Network with related network resources and policies
 * Oracle Container Engine for Kubernetes and a node pool with 2 worker nodes
 * MySQL Database System
-* An Operator Virtual Machine with kubectl and MySQL client tools installed
+* An Operator Virtual Machine with kubectl utility and MySQL client tools installed
 
 ### Prerequisites (Optional)
 
 * You have an Oracle account
 * You have enough privileges to use OCI
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
-* All previous labs successfully completed
 
 ## Task 1: Create Stack in Resource Manager
 
@@ -38,11 +37,9 @@ In this lab, you will provision the following OCI resources using Resource Manag
 
 4. Check **Run Apply** and click **Create** to create the stack and apply the Terraform scripts.
 
-
     ![Create Stack 3](images/resource-manager-stack-review.png)
 
 5. A job will be created to apply your Terraform scripts to provision OCI resources.
-
 
     ![Apply Stack](images/resource-manager-stack-apply.png)
 
@@ -52,15 +49,15 @@ In this lab, you will provision the following OCI resources using Resource Manag
 
     ![Stack Progress](images/resource-manager-stack-progress.png)
 
-7. Once your job has been executed successfully, you can find the public IP address of your operator VM, and the private IP address of the MySQL Database from the outputs. 
+7. Once your job has been executed successfully, you can find the public IP address of your operator VM, and the private IP address of the MySQL Database from the outputs.
+
 >**Note** down these two IP addresses that will be used in the subsequent labs.
 
     ![Stack Complete](images/resource-manager-stack-complete.png)
 
-
 ## Acknowledgements
 * **Author** 
              - Rayes Huang, Cloud Solution Architect, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
-* **Contributors** 
+* **Contributors**
 			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist, OCI APAC
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+* **Last Updated By/Date** - Ryan Kuan, March 2022

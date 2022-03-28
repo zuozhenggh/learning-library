@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes. 
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 In this lab, you will deploy a PHP application on **OKE**, and connect it to **MySQL**.
 
@@ -11,29 +11,30 @@ Estimated Time: 15 minutes
 ### Objectives
 
 In this lab, you will:
+
 * Deploy a PHP application to the OKE cluster
-* Test the deployed PHP applicationa against MySQL database
+* Test the deployed PHP application against MySQL database
 
 ### Prerequisites
 
 This lab assumes you have:
+
 * An Oracle account
 * You have enough privileges to use OCI
-* All previous labs successfully completed
 
 ## Task 1: Verify OKE cluster
 
-1. Click the **Navigation Menu** in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
+1. Click the **Hamburger Menu** ![](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
 
-    ![Navigate to OKE](images/navigate-to-oke.png)
+	![Navigate to OKE](images/navigate-to-oke.png)
 
 2. Select the Compartment (e.g. PHP-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
 
-    ![Locate OKE](images/locate-oke-instance.png)
+	![Locate OKE](images/locate-oke-instance.png)
 
 3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster. You will deploy a PHP application to this OKE cluster soon.
 
-    ![Verify OKE](images/oke-worker-nodes.png)
+	![Verify OKE](images/oke-worker-nodes.png)
 
 ## Task 2: Connect to **oke-operator** compute instance
 
@@ -50,7 +51,7 @@ This lab assumes you have:
 	```
 
 2. Update parameter **“mds-host”** in mds_connection.yaml. Replace **TO BET SET** below with the IP address of your MySQL instance, and execute the script.
-   
+
 	```
 	<copy>
 	sed -i 's/mds-host: "<TO BE SET>"/mds-host: "<IP ADDRESS>"/g' mds_connection.yaml
@@ -65,7 +66,6 @@ This lab assumes you have:
 	</copy>
 	```
 
-
 3. (Skip this step if you use default password  for MySQL) Update parameter **“mds-password”** in mds_connection.yaml. Replace **MySQL Password** with the password you gave when provisioning MySQL in Resource Manager, and execute the script.
 
 	```
@@ -74,7 +74,7 @@ This lab assumes you have:
 	</copy>
 	```
 
-	For example, if your new password is "MySQL#12345", your script should be:
+  For example, if your new password is "MySQL#12345", your script should be:
 
 	```
 	<copy>
@@ -91,7 +91,6 @@ This lab assumes you have:
 	```
 
     ![Update MDS Connection](images/mds-connection.png)
-
 
 5. Create Kubernetes configmap and secret to store MySQL connection metadata.
 
@@ -139,11 +138,11 @@ This lab assumes you have:
 	</copy>
 	```
 
-	Once you have the External IP provisioned, you can execute CTL+C to kill the command
+  Once you have the External IP provisioned, you can execute CTL+C to kill the command
 
-   ![Get Service](images/get-service.png)
+	![Get Service](images/get-service.png)
 
-## Task 4: Access the Application 
+## Task 4: Access the Application
 
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:5000/index.php). You will get a page to submit SQL statement against MySQL.
 
@@ -171,16 +170,16 @@ This lab assumes you have:
 	LIMIT 10;
 	</copy>
 	```
- 
+
 3. After a while, you should get the query result together with the execution time. Note down the execution time, you will see performance improvement in next lab after HeatWave is enabled.
 
 	![Query Result](images/query-result.png)
 
-You may now **proceed to the next lab.**
+  You may now **proceed to the next lab.**
 
 ## Acknowledgements
 * **Author** 
              - Rayes Huang, Cloud Solution Architect, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
-* **Contributors** 
+* **Contributors**
 			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist, OCI APAC
 * **Last Updated By/Date** - Ryan Kuan, March 2021
