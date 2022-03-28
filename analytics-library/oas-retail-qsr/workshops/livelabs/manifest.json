@@ -8,38 +8,38 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Lab 1: Environment Setup",
+      "title": "Environment setup",
       "description": "Verify Setup of compute instance",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-novnc.md"
     },
     {
-      "title": "Lab 2: Initialize Environment",
+      "title": "Initialize environment",
       "description": "Initialize Environment Lab",
       "filename": "../../initialize-environment/initialize-environment.md",
       "type": "external"
     },
     {
-      "title": "Lab 4: Main Dashboard",
-      "description": "Main Dashboard",
-      "filename": "../../main-dashboard/main-dashboard.md",
+      "title": "Create main dashboard",
+      "description": "Create Main Dashboard",
+      "filename": "../../create-main-dashboard/create-main-dashboard.md",
       "type": "external"
     },
     {
-      "title": "Lab 5: Channel Sales",
+      "title": "Analyze channel sales",
       "description": "Channel Sales",
       "filename": "../../channel-sales/channel-sales.md",
       "type": "external"
     },
     {
-      "title": "Lab 6: On Time Delivery",
-      "description": "On Time Delivery",
-      "filename": "../../on-time-delivery/on-time-delivery.md",
+      "title": "Uncover HR trends",
+      "description": "HR Analysis",
+      "filename": "../../hr-analysis/hr-analysis.md",
       "type": "external"
     },
     {
-      "title": "Lab 7: HR Analysis",
-      "description": "HR Analysis",
-      "filename": "../../hr-analysis/hr-analysis.md",
+      "title": "Predict on time delivery",
+      "description": "On Time Delivery",
+      "filename": "../../on-time-delivery/on-time-delivery.md",
       "type": "external"
     },
     {

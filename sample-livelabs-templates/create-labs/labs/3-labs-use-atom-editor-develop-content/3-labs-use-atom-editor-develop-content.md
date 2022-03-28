@@ -105,7 +105,7 @@ Leverage the content from the **learning-library\sample-livelabs-templates\sampl
 > **Note:** Ensure to update your clone from the **upstream/master** repository (detailed in **STEP 2**) on a regular basis whenever we are working on the markdown files.
 
 To create your lab and workshop content:
-1. Submit your workshop to the [LiveLabs Workshop Management System](http://bit.ly/oraclelivelabs) BEFORE you begin development.  No github requests will be approved without an approved LWMS ID.
+1. Submit your workshop to the [LiveLabs Workshop Management System](http://bit.ly/oraclelivelabs) BEFORE you begin development.  No github requests will be approved without an approved WMS ID.
 2. Open your cloned repository using Windows Explorer.
 3. Create your project folder anywhere in your cloned repository. If a folder already exists  for the product you work on, then you can create your project folder within that.
 4. Go to **learning-library\sample-livelabs-templates\sample-workshop**. This has a few lab folders, such as **analyze**, **query** etc. Every lab folder contains the following: a **files** folder, an **images** folder, and the respective `.md` file.
@@ -136,12 +136,6 @@ To create your lab and workshop content:
     In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
     ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
 
-<!-- 12. For additional information on creating your labs and developing workshop content:
-
-* Click [here](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax) for a quick tour that demonstrates commonly used Markdown syntax and their HTML equivalents.
-
-* Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features. -->
-
 ## Task 5: Security
 
 1. Blur all personal information (IP addresses, intranet URLs, email addresses, OCIDs, usernames, and passwords) from images.
@@ -151,7 +145,7 @@ To create your lab and workshop content:
 
   ![](./images/image-desc.png " ")
 
-3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text.
+3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text. Do not provide a demo password. 
 
 
 ## Task 6: Preview Your Workshop and Labs Using Live Server
@@ -178,6 +172,54 @@ To create your lab and workshop content:
   ![](./images/right-click.png " ")
 3. The local version of your workshop will then be launched in your web browser.
 
+## Task 7: (Optional) Helpful resources and extensions for Visual Studio Code
+
+1. [Showdown Editor](http://demo.showdownjs.com/) is a Javascript Markdown to HTML converter that LiveLabs uses in the background to convert Markdown files to HTML. This documentation is a helpful resource while developing content in markdown files. This document provides a quick description of the markdown syntax supported on the left side and the output in HTML format on the right side. Showdown Editor shows the syntax of writing, paragraphs, headings, block and italics, code formatting, creating lists, tables, adding links, images and escaping entities, etc.
+
+	![Showdown Editor](./images/showdown-editor.png " ")
+
+2. Set up tab spacing in Markdown files in Visual Studio Code - To have a fixed indentation and consistency in all the markdown files among the images, code snippets, and between the numbers in each task with the line starting, you need to set spaces to tabs (size 4).
+
+	To set spaces to tabs size 4, click on spaces, choose indent with tabs, and select 4 as configured size, which sets the tab spacing to 4.
+
+    ![click on spaces](./images/spacing1.png " ")
+
+    ![choose indent with tabs](./images/spacing2.png " ")
+
+    ![select 4 as configured size](./images/spacing3.png " ")
+
+    ![tab spacing is set to 4](./images/spacing4.png " ")
+
+3. Install Markdownlink Extension in Visual Studio Code - This extension is helpful to check markdown files linting and styling in VS Code. This extension has all library of rules to encourage standards and consistency for markdown files.
+
+	To install this extension, search for markdownlint in the VS Code marketplace, select the first one and click on Install to install it.
+
+    ![Markdownlink Extension](./images/markdownlink-extension.png " ")
+
+4. Install Code Spell Checker Extension in Visual Studio Code - This extension is helpful to check to  spellings in the files.
+
+	Search for the code spell checker in the VS Code marketplace, select the first one that doesn’t specify any language in the title, which is the English spell checker, and install it.
+
+	![Code Spell Checker Extension](./images/code-spell-checker-extension.png " ")
+
+5. Install Delete Trailing Spaces Extension in Visual Studio Code - Trailing space is all whitespace(s) located at the end of a line, without any other characters following it. This extension is helpful to resolve code blocks, copy and paste issues, and sometimes merge conflicts.
+
+	To highlight trailing spaces, in the VS Code marketplace, search for trailing spaces and select the first trailing spaces, not the one with a fork, and click on Install. Once the extension is installed, you can see that whitespace(s) are highlighted in red to delete them.
+
+	![Delete Trailing Spaces Extension](./images/delete-trailing-spaces-extension.png " ")
+
+6. Install Path Intellisense Extension in Visual Studio Code - Since Oracle learning library has many files, you may want to access files in different folders of your workshop or sometimes in a different directory. To know the file, you are pointing to in the manifest.json file, you can use the path intellisense extension.
+
+	To install this extension, search for path intellisense in VS Code marketplace, select the first extension and install it.
+
+	![Path Intellisense Extension](./images/path-intellisense-extension.png " ")
+
+	Use Path Intellisense Extension in manifest.json file - After typing black slash, hit enter to view or choose the folder(s) or file(s)
+
+	![Use Path Intellisense Extension](./images/use-path-intellisense-extension1.png " ")
+
+	![Use Path Intellisense Extension](./images/use-path-intellisense-extension2.png " ")
+
 This concludes this lab. You may now proceed to the next lab.
 
 ## Want to Learn More?
@@ -198,4 +240,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Brianna Ambler
 
-* **Last Updated By/Date:** Lauran Serhal, November 2021
+* **Last Updated By/Date:** Andres Quintana, March 2022

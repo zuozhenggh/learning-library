@@ -22,11 +22,11 @@ If you are running this lab in your existing tenancy, **make sure** you have the
 3. Virtual Machine for Goldengate Postgresql - VM.Standard2.1  
 4. Virtual Machine for Goldengate Microservices - VM.Standard2.1
 
-	![](/images/architecture.png)
+	![Work environment architecture](/images/architecture.png)
 
 For a technical overview of this lab step, please watch the following video:
 
-[](youtube:LWcwzXPw9ZU)
+[Video showing technical overview.](youtube:LWcwzXPw9ZU)
 
 ### Prerequisites
 
@@ -44,7 +44,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![](/images/1.Git.PNG)
+	![Cloned directory in Cloud Shell Terminal.](/images/1.Git.PNG)
 
 ## Task 2: Create Terraform Variables
 
@@ -95,9 +95,9 @@ For a technical overview of this lab step, please watch the following video:
 	
 3. Make a copy of your output results in your notepad for later use.
 
-	![](/images/1.git_1.PNG)
+	![Copy and save output results.](/images/1.git_1.PNG)
 
-**This concludes this lab. You may now [proceed to the next lab](#next).**
+**This concludes this lab. You may now proceed to the next lab.**
 
 ## **Appendix**: Troubleshooting
 
@@ -122,7 +122,7 @@ This lab uses the following compute types but not limited to:
 4. Look for "Standard2 based VM" and "Standard.E2 based VM", then check **Available** column numbers and sum  them up. All you need to have is at least **3** or more. If you have found correct available capacity, please continue to the next step.
 5. Go to `migrate_to_atp` folder in your cloud-shell and modify variables file with: **`vi vars.tf`**
 
-	![](/images/fix_1.png)
+	![Troubleshooting service limits exceeded.](/images/fix_1.png)
 
 6. Fix above accordingly to your **Available** resources.
 7. Go to **Step 3: Terraform**, and continue from substep **2**.
