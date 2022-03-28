@@ -6,16 +6,12 @@ This lab walks you through the steps to provision a Compute Node. This is where 
 
 Estimated Time: 10 minutes
 
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:ICHM8bDast0)
-
 ### Objectives
 
 In this lab, you will:
 
 * Learn how to provision a new Compute Node
-* Install MongoDB tools
+* Install MongoDB Shell
 
 ### Prerequisites
 
@@ -115,7 +111,7 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
     There is an additional menu at the top left of the Cloud Shell window. Open this and select __Upload__.
 
-	![](./images/cloud-shell.png)
+	![](./images/cloud-shell-upload.png)
 
     Select the key file ssh-key-YYYY-MM-DD.key that you saved earlier either by dropping it onto the window of using the file selector. Then click the __Upload__ button.
 
@@ -138,7 +134,7 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
     ```
     <copy>
-    ssh -i ssh-key-2022-03-14.key opc@11.22.33.44
+    ssh -i ssh-key-YYYY-MM-DD.key opc@11.22.33.44
     </copy>
     ```
 
@@ -153,7 +149,7 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
 	In the Available Downloads box, leave the Version as it is and change Platform to __Linux Tarball 64-bit__. Click the __Copy Link__ button
 
-	![](./images/mongo-download.png)
+	![Mongo Shell download](./images/mongosh-download.png)
 
 2. Go back to the cloud shell where you are logged into your Compute instance, and type "wget" and a space, followed by the link you just copied
 
@@ -175,26 +171,10 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
     echo export PATH=$(dirname `find /home/opc -name mongosh`):\$PATH >> .bashrc && . .bashrc
 	</copy>
 	```
-5. Repeat steps 1 to 4 for MongoDB Tools. The web page is [https://www.mongodb.com/try/download/database-tools](https://www.mongodb.com/try/download/database-tools)
-This time in "Platform" choose __Redhat / Centos 8.0 x86_64__ and click __Copy Link__
-
-	![](./images/tools-download.png)
-
-    Use "wget" to download the tar package, and "tar xvf" to expand it.
-
-    Then use the following shell command to add the new bin directory to the path:
-
-    ```
-    <copy>
-    echo export PATH=$(dirname `find /home/opc -name mongoimport`):\$PATH >> .bashrc && . .bashrc
-    </copy>
-    ```
-
-    ![](./images/mdb-tools.png)
 
 Our Compute instance is now set up. We will later use it to connect to Autonomous Database. Remember the "ssh" command you used to connect from Cloud Shell to the instance.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

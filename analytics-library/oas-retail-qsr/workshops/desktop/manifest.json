@@ -13,22 +13,34 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1: Initialize Environment",
+      "title": "Initialize environment",
       "description": "Initialize Environment Lab",
       "filename": "../../initialize-environment/initialize-environment.md",
       "type": "desktop"
     },
     {
-      "title": "Lab 2: WIP",
-      "description": "TBD",
-      "filename": "../../",
-      "type": "desktop"
+      "title": "Create main dashboard",
+      "description": "Create Main Dashboard",
+      "filename": "../../create-main-dashboard/create-main-dashboard.md",
+      "type": "external"
     },
     {
-      "title": "Lab 3: WIP",
-      "description": "TBD",
-      "filename": "../../",
-      "type": "desktop"
+      "title": "Analyze channel sales",
+      "description": "Channel Sales",
+      "filename": "../../channel-sales/channel-sales.md",
+      "type": "external"
+    },
+    {
+      "title": "Uncover HR trends",
+      "description": "HR Analysis",
+      "filename": "../../hr-analysis/hr-analysis.md",
+      "type": "external"
+    },
+    {
+      "title": "Predict on time delivery",
+      "description": "On Time Delivery",
+      "filename": "../../on-time-delivery/on-time-delivery.md",
+      "type": "external"
     },
     {
       "title": "Need Help?",
