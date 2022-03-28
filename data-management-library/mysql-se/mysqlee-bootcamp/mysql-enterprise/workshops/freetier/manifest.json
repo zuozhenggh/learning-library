@@ -11,9 +11,9 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "Lab 1: Setup",
-            "description": "Setup",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 1: Material and software download",
+            "description": "Material and software download",
+            "filename": "../../mysqlee-download/mysqee-download.md"
         },
         {
             "title": "Lab 2: Install - MySQL Community",
