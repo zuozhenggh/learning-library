@@ -56,6 +56,7 @@ Follow steps below to establish a unique static hostname that will be enforced o
     #  Rene Fontcha    02/17/2021           Initial Creation
     #  Rene Fontcha    10/07/2021           Added routine to update livelabs-get_started.sh
     #  Rene Fontcha    02/11/2022           Added Google Chrome update
+    #  Rene Fontcha    03/24/2022           Added support for Oracle Enterprise Linux 8
     #
     ###############################################################################
 
@@ -69,19 +70,19 @@ Follow steps below to establish a unique static hostname that will be enforced o
     echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
 
     # Update "livelabs-get_started.sh"
-    cd /tmp
+    rm -rf /tmp/ll_refresh
+    mkdir -p /tmp/ll_refresh
+    cd /tmp/ll_refresh
     wget -q https://objectstorage.us-ashburn-1.oraclecloud.com/p/RcNjQSg0UvYprTTudZhXUJCTA4DyScCh3oRdpXEEMsHuasT9S9N1ET3wpxnrW5Af/n/natdsecurity/b/misc/o/livelabs-get_started.zip
 
     if [[ -f livelabs-get_started.zip ]]; then
       unzip -q livelabs-get_started.zip
-      chmod +x livelabs-get_started.sh
+      chmod +x *.sh
       mv -f livelabs-get_started.sh /usr/local/bin/
-      rm -f livelabs-get_started.zip
+      ./refresh_desktop.sh
+      cd ..
+      rm -rf /tmp/ll_refresh
     fi
-
-    # Update Google Chrome
-    yum update -y google-chrome-stable
-
     EOF
     </copy>
     ```
@@ -249,8 +250,8 @@ Follow steps below to establish a unique static hostname that will be enforced o
     user_data_dir_base="/home/$(whoami)/.livelabs"
     desktop_app1_url="https://kv"
     desktop_app2_url="https://dbsec-lab:7803/em"
-    google-chrome --password-store=basic ${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
-    google-chrome --password-store=basic ${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --user-data-dir="${user_data_dir_base}/chrome-window2" --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic ${desktop_app1_url} --window-position=1010,50 --window-size=887,950 --disable-session-crashed-bubble >/dev/null 2>&1 &
+    google-chrome --password-store=basic ${desktop_app2_url} --window-position=1010,50 --window-size=887,950 --disable-session-crashed-bubble >/dev/null 2>&1 &
     </copy>
     ```
 

@@ -1,4 +1,4 @@
-# Set Up a Fleet
+# Set up a Fleet
 
 ## Introduction
 
