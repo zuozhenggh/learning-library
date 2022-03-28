@@ -1,4 +1,4 @@
-# Install Oracle Forms 
+# Provision Oracle Forms 
 
 ## Introduction
 
@@ -7,14 +7,14 @@ Estimated Time: 5 minutes
 ### Objectives
 
 In this lab, you will:
-* Install an Oracle Forms Server 
+* Provision an Oracle Forms Server environment
 
 ### Prerequisites 
 
 This lab assumes you have:
 * Followed the previous lab
 
-## Task 1: Install the Forms Server
+## Task 1: Provision Oracle Forms
 
 Go to the Marketplace. 
 
@@ -23,7 +23,7 @@ Go to the Marketplace.
 
    ![](./images/forms-marketplace-search.png)
 
-3. Check "I have reviewed and accept the conditions". Then click **Launch Instance**
+3. Review the Terms and Conditions then check **I have reviewed and accept the Oracle standard Terms and Restrictions**.  Then click **Launch Instance**.
 
    ![](./images/forms-marketplace.png)
 
@@ -48,7 +48,7 @@ Write it down. (##3##)
 ## Task 2: Decide your next step
 
 Here you have several choices. Install the Forms Server with
-- a Local Database (database in the same VM than Forms)
+- a Local Database (database in the same VM as Forms)
 - a Database Cloud Service (with automatic backup, easy dataguard setup ...)
 - Autonomous database (not contained in this document)
 
@@ -62,4 +62,5 @@ Choose your next Lab accordingly.
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
+* Michael Ferrante - Senior Principal Product Manager
 * Last Updated - March 2022

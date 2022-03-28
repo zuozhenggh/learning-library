@@ -84,6 +84,9 @@ You should be in the details of the Virtual Cloud Network.
 
 ## Task 3: Install a Bastion   ##
 
+In real usecase, it is more appropriate to have a VPN connection or Fastconnect between your on-premise system and the cloud.
+For this sample, we will use a Bastion host that is easier to set up. But for sure not ideal.
+
 1. In the Hamburger menu, choose **Compute / Instance**
 2. Then click **Create Instance**
 

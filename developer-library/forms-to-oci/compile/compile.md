@@ -232,10 +232,10 @@ cat formsweb.cfg.template >> $FORMS_CONFIG/formsweb.cfg
 
 ## Task 5: Test
 
-You should have a SSH connection from your laptop to the server forwarding port 9001.
+You should have a SSH connection from your computer to the server forwarding port 9001.
 Check **Lab 4 - Task 1: Port Forwarding** for the command.
 
-Try this URL. You will need to have Java Runtime installed on your laptop to do this.
+Try this URL. You will need to have Java Runtime installed on your computer to do this.
 
 ```
   http://localhost:9001/forms/frmservlet?config=dept_emp
@@ -251,7 +251,7 @@ Then the screen will appear. Click on the below icon to get the data.
 
 ![dept_emp](images/forms-test-dept_emp.png)
 
-If you reached this point. CONGRATULATION !!
+If you reached this point, CONGRATULATIONS !!
 
 ## Next Steps
 

@@ -7,17 +7,17 @@ Estimated Time: 15 minutes
 ### Objectives
 
 In this lab, you will: 
-- Install the database
-- Run the forms configuration
+- Integrate with a database
+- Run the Forms configuration
 
 ### Prerequisites 
-
+F
 This lab assumes you have:
 * Followed the previous lab
 
-## Task 1:  Install a Local DB
+## Task 1:  Integrate with a Local DB
 
-Nothing to do, the Database is already installed in the same machine than Forms
+Nothing to do, the Database is already installed in the same machine as Forms
 
 ## Task 2: Start Forms Configuration 
 
@@ -25,10 +25,9 @@ The Forms and Database should be started. Let's provision the installation.
 
 1. SSH to the Forms Server
 
-Ideally, you should SSH to you Forms Server from your laptop.
+Ideally, you should SSH to you Forms Server from your computer.
 
-There are several way to do this. For this tutorial, we will use a Bastion.
-But note that it is a lot easier on a day to day like to use a VPN or Fastconnect. 
+There are several ways to do this. For this tutorial, we will use a Bastion server.  However, for daily use it will likely be easier to use a VPN or Fastconnect. 
 
 ```
 # Add the key to ssh-agent
@@ -57,11 +56,20 @@ ssh -J opc@130.131.132.133 opc@10.0.1.130
 
 ![](./images/forms-local-provision-password.png)
 
-3.. Run the installation
+3.. Run the provisioning
 
    ![](./images/forms-local-provision-end.png)
 
-Wait that the installation finishes. It takes about 10 mins.
+4. Answer 'y' to the next question
+
+````
+Exit and continue in the background? (y/N).
+```
+
+It is safer to run in the background. If the shell is remain open
+and the shell is terminated intentionally or unintentionally, the provisioning will fail.
+  
+Wait that the provisioning finishes. Connect with ssh to see the status. It takes about 10 mins.
 
 ## Learn More
 
@@ -69,4 +77,5 @@ Wait that the installation finishes. It takes about 10 mins.
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
+* Michael Ferrante - Senior Principal Product Manager
 * Last Updated - March 2022

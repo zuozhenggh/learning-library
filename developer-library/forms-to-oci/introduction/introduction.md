@@ -4,15 +4,15 @@ Estimated Lab Time: 90 minutes
 
 ## About this Workshop
 
-In this workshop, you install Oracle Forms on Oracle Cloud Infrastruture. Then compile and run Oracle Forms samples. 
+In this workshop, you will provision Oracle Forms on Oracle Cloud Infrastruture. Then compile and run Oracle Forms samples. 
 
   ![architecture](images/forms-architecture.png)
 
 ### Objectives
 
 In this workshop, you will learn how to:
-- Install Forms Server
-- Install a Database:
+- Provision an Oracle Forms Server environment
+- Integrate Oracle Forms with a chosen database:
     - Option 1: Local Database
     - Option 2: Database Cloud Service
     - Option 3: Autonomous Database (not described in this lab)
@@ -22,10 +22,10 @@ In this workshop, you will learn how to:
 - Run them 
 - Optionally, Install Forms Builder on Windows
 
-### Prerequisites (Optional)
+### Prerequisites 
 
 This lab assumes you have:
-*  An Oracle Cloud Tenant 
+*  An Oracle Cloud Tenancy
 
 And if not:
 *  A valid email address
@@ -34,3 +34,5 @@ And if not:
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
+* Michael Ferrante - Senior Principal Product Manager
+* Last Updated - March 2022

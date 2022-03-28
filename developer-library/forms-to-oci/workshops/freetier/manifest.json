@@ -21,8 +21,8 @@
             "filename": "../../network/network.md"
         },        
         {
-            "title": "Lab 2: Install Oracle Forms",
-            "description": "Install Oracle Forms",
+            "title": "Lab 2: Provision Oracle Forms ",
+            "description": "Provision Oracle Forms ",
             "filename": "../../forms-instance/forms-instance.md"
         },
         {
@@ -34,7 +34,7 @@
             "filename": "../../db-dbcs/db-dbcs.md"
         },
         {
-            "title": "Lab 4: Explore the Installation ",
+            "title": "Lab 4: Explore the Environment",
             "filename": "../../setup/setup.md"
         },
         {

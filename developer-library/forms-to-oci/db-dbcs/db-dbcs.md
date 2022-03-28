@@ -7,13 +7,12 @@ Estimated Time: 15 minutes
 ### Objectives
 
 In this lab, you will: 
-- Install the database
-- Run the forms configuration
+- Integrate with a database
+- Run the Forms configuration
 
-## Task 1: Install Database Cloud Service
+## Task 1: Integrate with Database Cloud Service
 
 For a production database, it is better to use Database Cloud Service.
-This is what we will install here. 
 
 1. Go to the Oracle Cloud home page. In the Hamburger menu, look for **Oracle Database**. Then **Bare Metal, VM and Exadata**
 
@@ -72,10 +71,9 @@ The Forms and Database should be started. Let's provision the installation.
 
 1. SSH to the Forms Server
 
-Ideally, you should SSH to you Forms Server from your laptop.
+Ideally, you should SSH to you Forms Server from your computer.
 
-There are several way to do this. For this tutorial, we will use a Bastion.
-But note that it is a lot easier on a day to day like to use a VPN or Fastconnect. 
+There are several ways to do this. For this tutorial, we will use a Bastion server.  However, for daily use it will likely be easier to use a VPN or Fastconnect. 
 
 ```
 # Add the key to ssh-agent
@@ -125,9 +123,18 @@ Ex: db.subnet03211405.vcn03211405.oraclevcn.com:1521/DB_fra125.subnet03211405.vc
 
    ![](./images/forms-db-provision-password.png)
 
-3.. Run the installation
+3.. Run the provisioning
 
-Wait that the installation finishes. It takes about 10 mins.
+4. Answer 'y' to the next question
+
+````
+Exit and continue in the background? (y/N).
+```
+
+It is safer to run in the background. If the shell is remain open
+and the shell is terminated intentionally or unintentionally, the provisioning will fail.
+  
+Wait that the provisioning finishes. Connect with ssh to see the status. It takes about 10 mins.
 
 ## Learn More
 
@@ -135,4 +142,5 @@ Wait that the installation finishes. It takes about 10 mins.
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
+* Michael Ferrante - Senior Principal Product Manager
 * Last Updated - March 2022

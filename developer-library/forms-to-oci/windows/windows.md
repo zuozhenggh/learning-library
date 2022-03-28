@@ -57,7 +57,7 @@ Remote Desktop run on the port 3389.
 1. Download and run it. 
 2. SSH to the bastion by forwarding the port of the Windows machine.
 
-Since we are using a Bastion, we need to forward the port 3389 to your laptop. 
+Since we are using a Bastion, we need to forward the port 3389 to your computer. 
 It is not needed if you use a VPN or Fastconnect.
 
 ```
@@ -93,7 +93,16 @@ Keep the SSH session opened.
 
    ![](./images/forms-windows-ie.png)
 
-## Task 3: Install Forms Builder on Windows
+## Task 3: Requirements
+
+It is always interesting to check the requirement before to install the software. See [here](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/sysrs/system-requirements-and-specifications.html#GUID-CB8C7C04-C8BD-4F9F-8ACF-F735FB6BD871).  
+
+You need to install the MS VC libraries in order to ensure that all components/tools in the installation work correctly.
+
+- Install Visual Studio 2012 (VC++ 11.0) Update 4 : 
+[https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)  
+
+## Task 4: Install Forms Builder on Windows
 
 1. Download the software.
 
@@ -126,8 +135,6 @@ Follow the wizard
 - Then Next
 - There will be a warning. Skip. Install.
 
-Note: If you want to avoid the Warning during the pretest. You need to install first Visual Studio 2012 (VC++ 11.0) Update 4 : [https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170](https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)  
-
 - Installation Progress: Next
 - Installation Complete:
 - **DO NOT CLICK FINISH**. Else you will need to rerun the Forms Builder Config [manually](https://docs.oracle.com/middleware/1221/formsandreports/install-fnr/install.htm#FRINS394).
@@ -138,7 +145,7 @@ Note: If you want to avoid the Warning during the pretest. You need to install f
 
 - Then Next / Finish.
 
-## Task 4: Test Forms Builder
+## Task 5: Test Forms Builder
 
 1. If you want to access the local database on the Forms Server. 
 1. Before to start. Copy the tnsnames.ora from your Linux environment from /u01/oracle/middleware/user\_projects/domains/base\_domain/config/fmwconfig in C:\Oracle\Middleware\forms1
@@ -174,9 +181,11 @@ exit
 
 * [Forms Documentation](https://docs.oracle.com/en/middleware/developer-tools/forms/12.2.1.4/index.html)
 * [Forms Builder Wizard](https://docs.oracle.com/middleware/1221/formsandreports/install-fnr/install.htm#CIHGBBEH)
+* [Windows Requirements](https://docs.oracle.com/en/middleware/fusion-middleware/12.2.1.4/sysrs/system-requirements-and-specifications.html#GUID-CB8C7C04-C8BD-4F9F-8ACF-F735FB6BD871)
 
 ## Acknowledgements
 * Marc Gueury - Application Development EMEA
+* Michael Ferrante - Senior Principal Product Manager
 * Last Updated - March 2022
 
 

@@ -1,10 +1,9 @@
-# Explore the Forms installation 
+# Explore the Forms Environment
 
 Estimated Lab Time: 10 minutes
 
 ### About Forms
-Oracle Forms is a software product for creating screens that interact with an Oracle database. 
-The source form (fmb) is compiled into a platform-specific "executable" (fmx), that is run (interpreted) by the forms runtime module. The form is used to view and edit data in database-driven applications. 
+Oracle Forms is an application development technology used for creating screens that interact with an Oracle database. The source form or module (.fmb) is compiled into a platform-specific "executable" (.fmx) that is run (interpreted) by the Forms runtime server. The running form is used to view and edit data in database-driven applications. 
 
 ### Objectives
 
@@ -83,7 +82,9 @@ o Software locations:
 
 ### 2. DOMAIN_HOME
 
-A Forms server is a Weblogic (Java Server) with Forms installed on top of it. The Weblogic configuration files are installed in a **Domain**. You can find the domain here.
+Oracle Forms is installed on top of Fusion Middleware Infrastructure, which includes WebLogic Server.  Oracle Forms is made up of several mid-tier server side components, but the most relevant are the Forms Servlet and Forms Server.  The Forms Servlet is deployed into WebLogic similar to any other J2EE app and the Forms Server runs independently from the Oracle Home containing the installation.  The Forms Servlet acts as traffic cop between the Forms Server and the individual users running the applications.
+
+The Forms configuration files are stored in a Domain and should be administered using Fusion Middleware Control.  
 
 ```
 export DOMAIN_HOME=/u01/oracle/middleware/user_projects/domains/base_domain/
@@ -203,7 +204,7 @@ Notice both have the same ORCL alias.
 There is a script to start/stop the Database, OHS, Forms or WebLogic
 
 ```
-/u01/oracle/.frm_config/startup/srvcontroller.sh
+/home/opc/oracle/utilities/srvcontroller.sh
 ```
 
 ```
