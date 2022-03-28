@@ -21,7 +21,7 @@ In this lab, you will provision the following OCI resources using Resource Manag
 * You have enough privileges to use OCI
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
 
-## Task 1: Create Stack in Resource Manager
+## Task 1: Create stack in Resource Manager
 
 1. Visit the [Terraform scripts](https://github.com/rayeswong/terraform-oke-mds) in a browser, and click the image **"Deploy to Oracle Cloud"** at the bottom of the page. It would redirect you to OCI console to create a new stack in Resource Manager.
 
@@ -53,11 +53,16 @@ In this lab, you will provision the following OCI resources using Resource Manag
 
 >**Note** down these two IP addresses that will be used in the subsequent labs.
 
-    ![Stack Complete](images/resource-manager-stack-complete.png)
+  ![Stack Complete](images/resource-manager-stack-complete.png)
 
-## Acknowledgements
-* **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
+* **Author**
+
+  * Rayes Huang, Cloud Solution Architect, OCI APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+
 * **Contributors**
-			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist, OCI APAC
+
+  * Perside Foster, MySQL Solution Engineering
+  * Howie Owi, OCI Solution Specialist, OCI APAC
+
 * **Last Updated By/Date** - Ryan Kuan, March 2022

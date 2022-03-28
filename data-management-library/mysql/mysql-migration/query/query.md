@@ -3,7 +3,7 @@
 ## Introduction
 
 In this lab, you will execute a few more long running queries on MySQL HeatWave to appreciate the performance gain using MySQL HeatWave
-What we will do is to execute the queries against MDS and MySQL HeatWave to compare the performance, we will use the magic switch **"use_secondary_engine"** to specify where are we going to send the queries to. If **"use_secondary_engine"** is enabled, the query will be sent to  MySQL HeatWave, otherwise, the query will be sent to MDS
+What we will do is to execute the queries against MySQL and MySQL HeatWave to compare the performance, we will use the magic switch **use&#95;secondary&#95;engine** to specify where are we going to send the queries to. If **use&#95;secondary&#95;engine** is enabled, the query will be sent to MySQL HeatWave, otherwise, the query will be sent to MySQL
 
 Estimated Time: 10 minutes
 
@@ -21,7 +21,7 @@ This lab assumes you have:
 * You have enough privileges to use OCI
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
 
-## Task 1: Execute Query 1
+## Task 1: Execute query 1
 
   Query 1: Find per-country average age of passengers from Switzerland, Italy and France
 
@@ -89,7 +89,7 @@ Re-execute the query against MySQL HeatWave
 
   This query will now take less than 1s to execute, record the response time for comparison.
 
-## Task 2: Execute Query 2
+## Task 2: Execute query 2
 
 Query 2: Find top 10 airlines selling the most tickets for planes taking off from US airports. Run Pricing Summary Report Query:
 
@@ -153,7 +153,7 @@ Re-execute the query against MySQL HeatWave
 
   This query will now take less than 1s to execute, record the response time for comparison.
 
-## Task 3: Execute Query 3
+## Task 3: Execute query 3
 
 Query 3: Find the number of bookings that Neil Armstrong and Buzz Aldrin made for a price of > $400.00
 
@@ -215,13 +215,18 @@ Query 3: Find the number of bookings that Neil Armstrong and Buzz Aldrin made fo
 	</copy>
 	```
 
-  This query will now take less than 4s to exeute, record the response time for comparison.
+  This query will now take less than 4s to execute, record the response time for comparison.
 
   With HeatWave enabled, you can accelerate long running queries without any change to your existing SQL queries!
 
-## Acknowledgements
-* **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
+* **Author**
+
+  * Rayes Huang, Cloud Solution Architect, OCI APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+
 * **Contributors**
-			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist, OCI APAC
+
+  * Perside Foster, MySQL Solution Engineering
+  * Howie Owi, OCI Solution Specialist, OCI APAC
+
 * **Last Updated By/Date** - Ryan Kuan, March 2022

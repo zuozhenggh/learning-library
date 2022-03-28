@@ -37,9 +37,13 @@ In this workshop, you will learn how to:
 * You have enough privileges to use OCI
 * You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it.
 
-## Acknowledgements
-* **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
-* **Contributors** 
-			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist, OCI APAC
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+* **Author**
+
+  * Rayes Huang, Cloud Solution Architect, OCI APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+
+* **Contributors**
+  * Perside Foster, MySQL Solution Engineering
+  * Howie Owi, OCI Solution Specialist, OCI APAC
+
+* **Last Updated By/Date** - Ryan Kuan, March 2022

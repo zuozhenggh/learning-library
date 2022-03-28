@@ -142,7 +142,7 @@ This lab assumes you have:
 
 	![Get Service](images/get-service.png)
 
-## Task 4: Access the Application
+## Task 4: Access the application
 
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:5000/index.php). You will get a page to submit SQL statement against MySQL.
 
@@ -177,9 +177,13 @@ This lab assumes you have:
 
   You may now **proceed to the next lab.**
 
-## Acknowledgements
-* **Author** 
-             - Rayes Huang, Cloud Solution Architect, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
+* **Author**
+  * Rayes Huang, Cloud Solution Architect, OCI APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+
 * **Contributors**
-			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist, OCI APAC
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+
+  * Perside Foster, MySQL Solution Engineering
+  * Howie Owi, OCI Solution Specialist, OCI APAC
+
+* **Last Updated By/Date** - Ryan Kuan, March 2022

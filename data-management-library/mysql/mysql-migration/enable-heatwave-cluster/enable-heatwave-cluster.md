@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab we will enable the HeatWave cluster and accelerate your long running queries. The DB System and HeatWave cluster must use the same shape, the shape defines the number of CPU cores, the amount of RAM, and so on. The size of the HeatWave cluster needed depends on tables and columns required to load, and the compression achieved in memory for this data. By enabling HeatWave you will deploy a standalone DB System characterized by a HeatWave-compatible shape (MySQL.HeatWave.VM.Standard.E3) and 1TB of data storage that will accelerate processing of analytic queries. For more information, check HeatWave Documentation.
+In this lab we will enable the HeatWave cluster and accelerate your long running queries. The MySQL DB System and HeatWave cluster must use the same shape, the shape defines the number of CPU cores, the amount of RAM, and so on. The size of the HeatWave cluster needed depends on tables and columns required to load, and the compression achieved in memory for this data. By enabling HeatWave you will deploy a standalone DB System characterized by a HeatWave-compatible shape (MySQL.HeatWave.VM.Standard.E3) and 1TB of data storage that will accelerate processing of analytic queries. For more information, check HeatWave Documentation.
 
 Estimated Time: 15 minutes
 
@@ -175,8 +175,15 @@ This lab assumes you have:
   You may now **proceed to the next lab.**
 
 ## Acknowledgements
+
 * **Author**
-             - Rayes Huang, Cloud Solution Architect, OCI APAC, OCI APAC, Ryan Kuan, Cloud Engineer, MySQL APAC
+
+  * Rayes Huang, Cloud Solution Architect, OCI APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+
 * **Contributors**
-			 - Perside Foster, MySQL Solution Engineering, Howie Owi, OCI Solution Specialist
-* **Last Updated By/Date** - Ryan Kuan, March 2021
+
+  * Perside Foster, MySQL Solution Engineering
+  * Howie Owi, OCI Solution Specialist, OCI APAC
+
+* **Last Updated By/Date** - Ryan Kuan, March 2022
