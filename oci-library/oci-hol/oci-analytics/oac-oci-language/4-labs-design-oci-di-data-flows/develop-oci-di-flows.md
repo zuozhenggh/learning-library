@@ -22,12 +22,14 @@ In this lab, you will:
 This lab assumes you have:
 * All previous labs successfully completed
 * You have the rights to use OCI Data Integration. Below are steps to check your access:
-    - Work with you administrator to create the policies that will allow you to use the data integration service and grant your DI workspace the ability to read data from storage buckets. Follow the setup steps that are described at [Connect to Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/tutorial/tutorials/01-connecting-to-dis.htm#getting-workspace-ocid)
-		- Wait until your DI workspace is created. The process will take about 10 minutes.
-		- Keep the “Enable private network” selected.
-		- Make sure that the subnet you select is indeed your private subnet.
-		- From the Console, click **Analytics & AI** > **Data Integration**.
-		- Identify the workspace you created and ensure it is already in the **Active** state.
+    - Work with you administrator to create your DI Workspace and the policies that will allow you to use the data integration service and grant your DI workspace the ability to read data from storage buckets. Follow the setup steps that are described at [Connect to Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/tutorial/tutorials/01-connecting-to-dis.htm#getting-workspace-ocid)
+    - If you are the administrator you can follow this [Create Workspace](https://docs.oracle.com/en-us/iaas/data-integration/using/workspaces.htm#workspaces) on steps to create a workspace
+    - If you chose 'Enable Private Network' and If your source and target data sources are in a different network or region, you must separately configure appropriate gateways to establish routing between the networks. If you don't see your subnets, it could be because they weren't created as regional subnets.
+    - From the Console, click **Analytics & AI** > **Data Integration**.
+    - Identify the workspace you created and ensure it is already in the **Active** state.
+
+    ![Data Flow](./images/creatediworkspace.png " ")
+
 
 
 
@@ -80,6 +82,8 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     - **User Name**: USER1
     - **Password**: The password you created for USER1
 
+    ![Configure DB Connection](./images/configureconnection.png " ")
+
 6.	Click **Test Connection** to verify that you can connect to the data warehouse using the credentials you just provided.
 
 7.	Assuming your test was successful, click **Create**.
@@ -92,6 +96,8 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 2.	On the Projects page, click **Create Project**.
 
+    ![Create Project](./images/creatediproject.png " ")
+
 3.	On the **Create Project** page, enter “language-lab” for **Name**, and then click **Create**.
 
    Now we will create a data flow to ingest data the hotels review file we just ingested.
@@ -99,10 +105,15 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 5.	Click **Create Data Flow**. The data flow designer opens in a new tab.
 
+  ![Create Data Flow One](./images/createdataflowone.png " ")
+
 6.	In the **Properties** panel, for **Name**, enter lab-data-flow, and click **Create**.
    The designer remains open for you to continue editing.
 
+   ![Create Data Flow One](./images/createdataflowtwo.png " ")
+
    Add a data source:
+
 7.	Add a Source by dragging the **Source** icon into the data flow workspace area. Select the source you just added and navigate to the **Details** tab in the Properties pane.
 
 8.	Fill the properties as follows:
@@ -111,6 +122,8 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     - **Connection**: Keep “Default connection”
     - In **Schema**, select the bucket with the hotel reviews file.
     - In **Data Entity** select the hotels review data file and enter **CSV** as the File Type.
+
+    ![Create Data Flow Three](./images/createdataflowthree.png " ")
 
 9.	You can confirm that you loaded the data correctly by going to the Data section. It takes a minute or two for the data to appear there.
 
@@ -164,6 +177,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 19.	From the operator’s toolbar, drag the **Target** operator into the canvas, and connect the output of your sentiment function as the input into the target operator.
 
+
 20.	In the details properties tab for the target, set the following fields:
     - Identifier: TARGET_SENTIMENT
     - Integration Strategy: Insert
@@ -172,6 +186,8 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     - Schema: USER1
     - Data Entity: SENTIMENT
 
+    ![Configure Target Sentiment](./images/targetsentiment.png " ")
+    
 21. For staging Location you just need to provide an object storage location where intermediate files can be created during the data flow:
     - Data Asset: DATA_STAGING
     - Connection: Default connection
@@ -188,6 +204,11 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
    ![Create Task](./images/completedataflow.png " ")
 
+23. Follow steps 19 - 22 to configure Target table for Raw Reviews table. When done you mappings should look like below image.
+
+    ![Raw Reviews Details](./images/rawreviewstargetone.png " ")
+
+    ![Raw Reviews Mappings](./images/rawreviewstargettwo.png " ")
 
 ## **Task 4**: Run the Data Flow
 

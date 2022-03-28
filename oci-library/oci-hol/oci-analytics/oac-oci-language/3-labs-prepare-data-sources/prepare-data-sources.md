@@ -33,6 +33,8 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 3.	Click **create** accepting all defaults.
 
+    ![Configure Bucket](./images/configurebucket.png " ")
+
 4.	Repeat steps **1** to **3** and name the bucket “data-staging”
 
    ![](./images/introduction.png " ")
