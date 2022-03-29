@@ -355,15 +355,16 @@ In this example, use shape, describe and crosstab functions to explore and view 
 	The output is (4500, 14).
 	```
 2. Use the transparency layer function `describe()` to calculate descriptive statistics that summarize the central tendency, dispersion, and shape of the DEMO table in each numeric column.Note that all computations are computed in the database and only the summary results are returned to the Python client, in this case, the notebook. Eliminating the need to move data greatly increases scalability.A few rows of the output are displayed using the `z.show` function.
-		```
-		<copy>
-		%python
-		summary_df = DEMO.describe()
-		summary_df = summary_df.reset_index()
-		summary_df = summary_df.rename(columns = {'index': 'statistics'})
-		z.show(summary_df.head())
-		</copy>
-		```
+	```
+	<copy>
+	%python
+	summary_df = DEMO.describe()
+	summary_df = summary_df.reset_index()
+	summary_df = summary_df.rename(columns = {'index': 'statistics'})
+	z.show(summary_df.head())
+	</copy>
+
+	```
 	![Statistical details of DEMO.](images/statistical-data-demo.png)
 3. Use the crosstab function to perform cross-column analysis of an `oml.DataFrame` object. The crosstab method computes a cross-tabulation of two or more columns. By default, it computes a frequency table for the columns unless a column and an aggregation function have been passed to it.  In this example, the crosstab function displays the distribution of `AFFINITY_CARD` responders. To view the results in bar chart format click on the **Bar Chart** icon located on the icon row between your code and the result set.
 	```
@@ -442,8 +443,9 @@ Use the `oml.dt` class to build a Decision Tree model. You can build a model wit
 	```
 
 	The `oml.dt` class uses the Decision Tree algorithm for classification and a model object `dt_mod` is created with the default parameter settings.  The **fit** function builds the Decision Tree model according to the training data and parameter settings.
-	```
 
+	```
+	<copy>
 	Model Name: DT_CLAS_MODEL
 
 	Model Owner: OMLUSER
@@ -536,7 +538,9 @@ Use the `oml.dt` class to build a Decision Tree model. You can build a model wit
 	13     6.0       14        595           0                        (YRS_RESIDENCE >(3.5E+000))                  HOME_THEATER_PACKAGE >(5.0E-001))  (HOUSEHOLD_SIZE IN ("1" "2" "6-8" "9+")) AND (...
 	14     NaN        0       2725           0                                               None                                               None    
 	                                              (
-		```
+	</copy>
+
+	```
 2. To specify model settings and build a Decision Tree model, run the following script :
 	```
 	<copy>
