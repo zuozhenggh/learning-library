@@ -139,59 +139,33 @@ Watch the video below for a quick walk through of the task.
 
 [](youtube:wkKKO-RO0lA)
 
-
-### Objectives
-
-Learn how to
-- load CSV files into an Autonomous Database using Database Actions
-
-
-### Prerequisites
-
-- The following task requires an Oracle Autonomous Database account. 
-- It assumes that a Graph and Web-Access enabled user exists. That is, a database user with the correct roles and privileges exists and that user can log into Database Actions.
-
-
-**Connect to the Database Actions for your Autonomous Database instance**
-
-1. Open the service detail page for your Autonomous Database instance in the Oracle Cloud Console.  
-
-   ![ALT text is not available for this image](images/open-database-actions.png " ")  
-
-2. Click  **Database Actions**  to open it.
- 
 **Login as the graph-enabled user**
 
-1. Login as the graph user (for example, `GRAPHUSER`) for your Autonomous Database instance. 
+1. Click on Database Actions
+       ![ALT text is not available for this image](./images/database-actions.png " ")
+
+2. Log off ADMIN so you can log in as your new `GRAPHUSER`
+       ![ALT text is not available for this image](./images/logoff-admin.png " ")
+
+
+3. Login as the graph user (for example, `GRAPHUSER`) for your Autonomous Database instance. 
    
     ![ALT text is not available for this image](./images/db-actions-graphuser-login.png " ")  
 
-    >**Note:** *If necessary, do the following to create the user with the right roles and privileges*:
-    - Log in to Database Actions as the **ADMIN** user for your Autonomous Database
-    - Select **Administration** and then **Database Users** from the navigation menu
-    - Click **Create User**
-    - Turn on the **Web-Access** and **Graph** buttons
-
 **Download the sample datasets from the ObjectStore**
 
-1. Copy and paste the url in your browser for the zip archive, that is  
+1. Copy and paste the url below into your web browser (a new tab or browser) to download the sample file we will be using. This will download the file to you downloads directory or where you choose to save it. MAKE SURE you know where this file is being downloaded into your PC because you will need it in the next step.  
 
     ```
     <copy>
     https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/random-acct-txn-data.zip
     </copy>
     ```
-
-   Or use `wget` or `curl` to download the sample data to you computer.   
-   An example `curl` request that you can copy and paste is:
-
-    ```
-    <copy>
-    curl -G -o acct-txn-data.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/random-acct-txn-data.zip
-    </copy>
-    ```
+     ![ALT text is not available for this image](./images/save-zip-file.png " ")  
 
 2. **Unzip** the archive into a local directory such as ~/downloads.
+   
+   ![ALT text is not available for this image](./images/unzip-archive.png " ")
 
 **Upload using Database Actions Data Load**
 1. Click the **DATA LOAD** card. 
@@ -213,7 +187,7 @@ Learn how to
 3. Verify that the correct files were selected and then click **Run** icon.
 ![ALT text is not available for this image](./images/db-actions-dataload-click-run.png " ")
 
-4. Confirm that you wish the data load job.
+4. Confirm that you wish to run the data load job.
 
    ![ALT text is not available for this image](./images/db-actions-dataload-confirm-run.png " ")
 
@@ -226,14 +200,9 @@ Learn how to
    ![ALT text is not available for this image](images/dbactions-click-done.png " ")
 
 6. Now open the **SQL** Worksheet.
-   ![ALT text is not available for this image](./images/db-actions-choose-sql-card.png " ")
-
-7. Navigate to the correct folder (for example, ~/downloads) and select the `fixup.sql` file and drag it into the SQL worksheet. 
+  
+7. Copy and paste the following code into the worksheet  and run it by clicking on the “Run Script” arrow on top. 
    
-   ![ALT text is not available for this image](./images/db-actions-drag-drop-fixup-sql.png " ")  
-
-   If, however, you prefer to copy-n-paste then the contents of `fixup.sql` are:
-
       ```
       <copy>
       alter table bank_accounts add primary key (acct_id);
@@ -283,11 +252,6 @@ Watch the video below for a quick walk through of the task.
 Learn how to
 - use Graph Studio and PGQL DDL (that is, CREATE PROPERTY GRAPH statement) to model and create a graph from existing tables or views.
 
-### Prerequisites
-
-- The following lab requires an Autonomous Database - Shared Infrastructure account. 
-- And that the Graph-enabled user (`GRAPHUSER`) exists. That is, a database user with the correct roles and privileges exists.
-
 **Connect to your Autonomous Database using Graph Studio**
 
 1. If you have the Graph Studio URL then proceed to step 4. 
@@ -302,7 +266,7 @@ Learn how to
    If your tenancy administrator provided you the Graph Studio URL to connect directly then use that instead.
 
 
-3. Enter your Autonomous Database account credentials (for example, `GRAPHUSER`) into the login screen:
+3. Log in as the GRAPHUSER you created in task 2 above, username graphuser and the password you created:
  
     ![ALT text is not available for this image](./images/graphstudio-login-graphuser.png " ")
 
@@ -327,7 +291,7 @@ Learn how to
 
    **Note: If you clicked on `Start Modeling` button instead then you'll see the screen shown in the next step.**
 
-2. Then select the `BANK_ACCOUNTS` and `BANK_TXNS` tables.   
+2. Under Available, expand **GRAPHUSER** so it shows the `BANK_ACCOUNTS` and `BANK_TXNS` tables which we loaded from the flat file in a previous step.   
 ![ALT text is not available for this image](./images/select-tables.png " ")
 
 3. Move them to the right, that is, click the first icon on the shuttle control.   
@@ -345,12 +309,12 @@ Learn how to
 
 5.  Now let's change the default Vertex and Edge labels.  
 
-    Click the `BANK_ACCOUNTS` vertex table. Change the label to `ACCOUNTS`. Then click outside the input box to save the update.  
+    Click the `BANK_ACCOUNTS` vertex table. Change the label to `ACCOUNTS`. Then click the checkmark next to the box to save the update.  
 
     ![ALT text is not available for this image](images/edit-accounts-vertex-label.png " ")  
 
     Click the `BANK_TXNS` edge table and change the label from `BANK_TXNS` to `TRANSFERS`.  
-    Then click outside the input box to save the update.  
+    Then click the checkmark next to the box to save the update.  
 
     ![ALT text is not available for this image](images/edit-edge-label.png " ")  
 
@@ -377,36 +341,6 @@ Learn how to
 
    ![ALT text is not available for this image](images/generated-cpg-statement.png " " )  
   
-<!--- 
-  **An alternate approach:** In the earlier Step 5 you could have just updated the CREATE PROPERTY GRAPH statement and saved the updates. That is, you could have just replaced the existing statement with the following one which specifies that the SOURCE KEY is  `from_acct_id`  and the DESTINATION KEY is `to_acct_id`.  
-
-    ```
-    -- This is not required if you used swap edge in UI to fix the edge direction.
-    -- This is only to illustrate an alternate approach.
-    <copy>
-    CREATE PROPERTY GRAPH bank_graph
-        VERTEX TABLES (
-            BANK_ACCOUNTS as ACCOUNTS 
-            KEY (ACCT_ID) 
-            LABEL ACCOUNTS
-            PROPERTIES (ACCT_ID, NAME)
-        )
-        EDGE TABLES (
-            BANK_TXNS 
-            KEY (FROM_ACCT_ID, TO_ACCT_ID, AMOUNT)
-            SOURCE KEY (FROM_ACCT_ID) REFERENCES ACCOUNTS
-            DESTINATION KEY (TO_ACCT_ID) REFERENCES ACCOUNTS
-            LABEL TRANSFERS
-            PROPERTIES (AMOUNT, DESCRIPTION)
-        )
-    </copy>
-    ```
-
-   ![ALT text is not available for this image](images/correct-ddl-save.png " " )  
-
-   **Important:** Click the **Save** (floppy disk icon) to commit the changes.
---->
-
 8. Click **Next** and then click **Create Graph** to move on to the next step in the flow.   
 
    Enter `bank_graph` as the graph name.  
@@ -457,7 +391,7 @@ First **import** the sample notebook and then execute the relevant paragraph for
 	https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/circular-payments-notebook-wid770.dsnb
 	</copy>
 	```
-
+   ![ALT text is not available for this image](images/download-exported-notebook.png " ")  
 
 2. Click the **Notebooks** menu icon and then on the **Import Notebook** icon on the top right.  
 
@@ -476,7 +410,9 @@ First **import** the sample notebook and then execute the relevant paragraph for
 
 **Load and Query the `BANK_GRAPH` and visualize the results**
 
-**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*. 
+**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*. To execute a paragraph in a notebook click on the “Run Paragraph” arrow. Please make sure you find the correct paragraph to run as per the steps below as the notebook contains extra paragraphs of explanation that do not need to be run. 
+
+![ALT text is not available for this image](images/run-paragraph.png " ")
 
 1. First load the graph into the in-memory graph server since we will be executing some graph algorithms.  
    
@@ -523,48 +459,6 @@ First **import** the sample notebook and then execute the relevant paragraph for
 
 3. The result utilizes some features of the visualization component. The `acct_id` property is used for the node (or vertex) labels and the graph is rendered using a selected graph layout algorithm.  
 
-**Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.* 
-
-Steps required for customizing the visualization:  
-
-   Click the visualization `settings` icon 
-   ![ALT text is not available for this image](images/sliders.svg "") (the fourth icon from the left at the top of the visualization panel).  
-
-   ![ALT text is not available for this image](images/31-viz-open-settings.png " ") 
-   
-   In this `Settings` dialog, click the **Customization** tab. Then scroll down and pick `ACCT_ID` from the `Labeling`, `Vertex Label` drop-down list.  
-
-   ![ALT text is not available for this image](images/choose-viz-settings-label.png " ")  
-
-   Click the **X** on the top-right to exit the Settings dialog. The resulting visualization should be similar to the screenshot below.   
-
- **Note:** The colors and layout shown in the screenshots may differ from those in your results.
-
-![ALT text is not available for this image](images/33-viz-labels-shown.png " ")   
-
-Now open the visualization settings again, click the **Customization** tab, and choose a different layout (**Concentric**) from the Layout drop-down list. Exit the Settings dialog. 
-
-![ALT text is not available for this image](images/concentric-layout-for-elements.png " ")
-
-<!---
-1. Add a Markdown paragraph describing the next step which is to look for circular transfers.   
-    Create a new paragraph and enter the following text into it and execute it.   
-	```
-	<copy>
-	%md
-	### Find potential fraud patterns, for example, circular payment chain
-
-	Circular payments chains are often of length between 5 and 7, that is, payments pass through 5 or 6 intermediate accounts before 
-	landing back at the original account.   
-	First list the top ten accounts in terms of number of incoming or outgoing transfers. 
-	Then let's check if there are any such payment chains that start from one of those accounts, for example, account # 934.
-	</copy>
-	```
-
-    ![ALT text is not available for this image](images/34a-md-circular-transfers.png " ")
-
---->
-
 4. Next let's use PGQL to find the top 10 accounts in terms of number of transfers.  
 	PGQL has built-in functions `IN_DEGREE` and `OUT_DEGREE` which return the number of incoming and outgoing edges of a node. So we can use them in this query.   
 	Run the paragraph with the following query.  
@@ -582,15 +476,6 @@ Now open the visualization settings again, click the **Customization** tab, and 
 	![ALT text is not available for this image](images/35-num-transfers-top-10-query.png " ")  
 
 	We see that accounts 934 and 387 are high on the list.  
-
-<!---
-5.  This step is optional. It demonstrates some layout settings of the notebook.  
-    Since the table has just two columns we may want to reduce its width and place two paragraphs and result side by side.  
-	Click the **gear** icon at the top right to open the paragraph settings.  
-	Move the **width slider** to about halfway or a little less.  
-
-	![ALT text is not available for this image](images/35a-adjust-top-ten-para-width.png " ")  
---->
 
 5.  Now check if there are any circular transfers originating and terminating at account 934.   
 	Execute the following query.  
@@ -616,12 +501,6 @@ Now open the visualization settings again, click the **Customization** tab, and 
 	
 	It does not display all the paths or any intermediate nodes.
 
-<!--- 
-5. If you did not do step 5 to adjust the paragraph width then you needn't do this step either.  
-   Adjust the width of the paragraph so that the top ten table query and the circular transfer query paragraphs are side by side.  
-
-   	![ALT text is not available for this image](images/38a-adjust-width-circular-transfer.png " ")
---->
 
 6. We can change the above query to include the node which made the deposit into account 934. This will display all the paths.   
 	Execute the following query.  
@@ -678,35 +557,8 @@ Now open the visualization settings again, click the **Customization** tab, and 
 	```
 	![ALT text is not available for this image](images/44-6th-query-show-all-5-hops.png " ")  
 
+9. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
 
-**Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.* 
-
-Steps required for customizing the visualization:  
-
-This result is better viewed as a heirarchical layout.  
-Open the **Visualization** settings dialog and select **Hierarchical** from the **Layouts** drop-down list.  
-Leave the Direction as `Top-Down` and Algorithm Type as `Network Simplex`.
-
-![ALT text is not available for this image](images/choose-hierarchical-layout.png " ")  
-
-   Use the **Settings** icon and **Customization** tab to label the vertices with the `ACCT_ID` for the resulting graph.   
-Lastly, let's change the source node's size to highlight it.   
-Open the **Visualization** settings dialog and select the **Highlights** tab.   
-Click **New Highlight**.   
-Then 
-- Click the **Size** checkbox and move the slider to `3X` so that the select vertex will be 3 times as larger as others.
-- Click the **+** icon next to `Condition` to add a selection criterion for the vertex.
-- Select `ACCT_ID` from the first drop-down list, `=` from the second, and `934.0` from the third to specify the criterion `ACCT_ID=934`.
-	
-![ALT text is not available for this image](images/48-query-6-highlight-vertex-size.png " ")  
-
-The result will be similar to the following screenshot.  
-
-![ALT text is not available for this image](images/49-query-6-highlight-resulting-viz.png " ")
-
-9. The remainder of this lab illustrates more query features and the use of the JAVA API to execute graph algorithms.  
-
-10. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
    **Enter 534 as the account id**, and then execute the paragraph.  
 
 	```
@@ -721,7 +573,7 @@ The result will be similar to the following screenshot.
 
     ![ALT text is not available for this image](images/51-bind-params-in-query.png " ")
 
-11. Now let's run the PageRank graph algorithm.  
+10. Now let's run the PageRank graph algorithm.  
  
 
     A %java-pgx paragraph lets you execute Java code snippets.  
@@ -741,7 +593,7 @@ The result will be similar to the following screenshot.
 
 	![ALT text is not available for this image](images/53-java-pagerank.png " ")
 
-12. Now let's use the computed PageRank value in visualizing a PGQL query result.  
+11. Now let's use the computed PageRank value in visualizing a PGQL query result.  
  	
  Execute the paragraph with the following query which finds the 6-hop transfers starting at account #934.  
     
@@ -754,25 +606,12 @@ The result will be similar to the following screenshot.
 	WHERE n.acct_id = 934 limit 100
    </copy>
 	```
-
-**Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*   
-
-Steps required for customizing the visualization:  
-
-   Click **Visualization** settings once the query has executed. Then click the **Highlights** tab.  
-   ![ALT text is not available for this image](images/55a-highlights-for-pagerank.png " ")  
-
-   Then click **New Highlight** and enter the following details to create it.  
-   Specify pagerank >= 0.0035 as the condition, size = 3X as the visual effect.  
-
-   ![ALT text is not available for this image](images/55b-new-hightlight-for-pagerank.png " ")  
-
    The result should be similar to the screenshot shown below.  
 
    ![ALT text is not available for this image](images/55-query-with-pagerank.png " ")
 
 
-13.  Now let's compare the top ten accounts by PageRank and number of transactions. 
+12.  Now let's compare the top ten accounts by PageRank and number of transactions. 
 Execute the paragraph with the following query to show the top ten accounts by PageRank.  
 
     ```
@@ -788,7 +627,7 @@ Execute the paragraph with the following query to show the top ten accounts by P
 
     ![ALT text is not available for this image](images/57-top-ten-pagerank.png " ")    
 
-14.  And the one which shows top ten accounts by number of transfers.  
+13.  And the one which shows top ten accounts by number of transfers.  
 
     ```
     <copy>
@@ -802,7 +641,7 @@ Execute the paragraph with the following query to show the top ten accounts by P
 
 	![ALT text is not available for this image](images/58-top-ten-num-transfers.png " ")    
 
-15. Account #222 is in the top ten by PageRank but not by # of transfers. So let us look at that account and its immediate neighbors in the graph.  
+14. Account #222 is in the top ten by PageRank but not by # of transfers. So let us look at that account and its immediate neighbors in the graph.  
  
    Execute the paragraph which queries and displays account 222 and its neighbors. 
 
@@ -813,17 +652,9 @@ Execute the paragraph with the following query to show the top ten accounts by P
 	select * from match (v1)-[e1]->(a)-[e2]->(v2) on bank_graph where a.acct_id=222
    </copy>
 	```
-
-**Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*   
-
-Steps required for customizing the visualization:  
-
-Choose a **Grid** layout for the visualization.  
-Add a new highlight with pagerank >= 0.0035 as the condition, size = 3X as the visual effect.  
-	 
-![ALT text is not available for this image](images/60-account-222-and-neighbors.png " ")    
+   ![ALT text is not available for this image](images/60-account-222-and-neighbors.png " ")    
     
-16.  Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.  
+15.  Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.  
  
    So let us look at those two and their neighbors.  
 
@@ -838,13 +669,7 @@ Add a new highlight with pagerank >= 0.0035 as the condition, size = 3X as the v
    </copy>
     ```
 
-**Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*   
-
-Steps required for customizing the visualization:  
-
-Change the graph visualization layout to **Hierarchical**. 
-
-![ALT text is not available for this image](images/62-viz-account-4-and-380.png " ")  	  
+    ![ALT text is not available for this image](images/62-viz-account-4-and-380.png " ")  	  
 
 ## Task 6: Homework 
 
