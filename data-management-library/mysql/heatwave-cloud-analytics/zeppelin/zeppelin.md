@@ -40,14 +40,14 @@ In this lab, you will:
 
     ```
     <copy>
-    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-server.yml
+    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/files/zeppelin-server.yml
     </copy>
     ```
 
 3. Download the [Zeppelin ingress](files/zeppelin-ing.yml)
     ```
     <copy>
-    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-ing.yml
+    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/files/zeppelin-ing.yml
     </copy>
     ```
 
