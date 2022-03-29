@@ -18,7 +18,7 @@ In this lab, you will:
 
 * You have an Oracle account
 * You have enough privileges to use OCI
-* You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
+* OCI Resource required: HOL-compartment, OKE Cluster, MySQL HeatWave
 
 ## Task 1: Verify OKE cluster
 
@@ -30,7 +30,7 @@ In this lab, you will:
 
     ![Verify OKE](images/click-cluster.png)
 
-## Task 2: Deploy PhpMyAdmin to OKE
+## Task 2: Deploy phpMyAdmin to OKE
 
 1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
 
@@ -148,7 +148,7 @@ In this lab, you will:
 	```
 	![Ingress IP](images/ingress.png)
 
-8. Access the deployed PhpMyAdmin application using your browser, http:://&lt;LOAD&#95;BALANCER&#95;PUBLIC&#95;IP&gt;/phpmyadmin
+8. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
 
 	![PhpMyAdmin](images/phpmyadmin.png)
 

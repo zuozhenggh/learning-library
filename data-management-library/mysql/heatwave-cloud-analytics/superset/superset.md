@@ -26,7 +26,7 @@ This lab assumes you have:
 
 * An Oracle account
 * You have enough privileges to use OCI
-* Resources Ready : HOL-compartment, OKE cluster, MySQL Database Service
+* OCI Resources required: HOL-compartment, OKE cluster, MySQL HeatWave
 
 ## Task 1: Verify OKE cluster
 
@@ -44,7 +44,7 @@ This lab assumes you have:
 
 	![Connect to VM](images/connect-to-vm.png)
 
-2. Install helm cli client 'helm' to the **oke-operator** compute instance and add superset to helm repository
+2. Install **helm** cli client to **oke-operator** compute instance and add superset to helm repository
 
     ```
     <copy>
@@ -62,7 +62,7 @@ This lab assumes you have:
 
     ![Add superset repo to helm ](images/helm-add-repo.png)
 
-3. Generate superset-custom-values.yaml (update any specific variables if required) and install Superset package
+3. Generate **superset-custom-values.yaml** (update any specific variables if required) and install Superset package
 
     ```
     <copy>
@@ -74,7 +74,7 @@ This lab assumes you have:
 
     ![Install superset ](images/superset-install.png)
 
-4. Verify the deployment of status of Superset application
+4. Verify the deployment status of Superset application
 
     ```
     <copy>
@@ -93,9 +93,9 @@ This lab assumes you have:
     sudo systemctl disable firewalld
     </copy>
     ```
-    > **Note** You should not disable the firewalld service in production. THe purpose of this step is to simplify and allow port-forwarding service to the **oke-operator** compute instance
+    > **Note** The purpose of this step is to simplify and allow port-forwarding service to the **oke-operator** compute instance. You should not disable the firewalld service in production
 
-6. Start port-forward to service/superset.  If the testing finishes, press **CTRL-C** to terminate port-forward service.
+6. Start port-forwarding to Superset service.  If the testing finishes, press **CTRL-C** to terminate port-forward service
 
     ```
     <copy>
@@ -106,27 +106,29 @@ This lab assumes you have:
 
 ## Task 3: Edit VCN Security List
 
-1. Select VCN **oke-vcn** from networking
-    ![Choose oke-vnc VCN](images/VCN.png)
+1. Click on **Virtual Cloud Network** in OCI Networking, select **oke-vcn**
+    ![Choose oke-vnc VCN](images/vcn.png)
 
-2. Click on the oke-operator subnet **operator-subnet-regional**
-    ![operator subnet](images/VCN-subet.png)
+2. Click on **operator-subnet-regional** subnet
+    ![operator subnet](images/vcn-subet.png)
 
-3. Click on the security list of **operator-subnet-regional**
-    ![security list](images/VCN-subnet-securitylist.png)
+3. Click on **operator-subnet-regional** security list
+    ![security list](images/vcn-subnet-securitylist.png)
 
-4. Add ingress rule to specify port 8088 and click "Add Ingress Rules" button
-    ![Add Ingress Rule](images/VCN-AddIngressRule.png)
+4. Click on **Add Ingress Rule** to add a new ingress rule
 
-    ![Add Ingress Rule](images/VCN-AddIngressRule-8088.png)
+    ![Add Ingress Rule](images/vcn-add-ingress-rule.png)
+
+5. Specify **0.0.0.0/0** in **Source CIDR**, **8088** in **Destination Port Range**. Click on **Add Ingress Rules** when finish
+    ![Add Ingress Rule](images/vcn-add-ingress-rule-8088.png)
 
     > **Note** In order to use kubernetes port-forwarding function, we need to allow ingress traffic to TCP port 8888 to oke-operator VM
 
 ## Task 4: Test Superset
 
-1. Point your browser to http://&lt;public IP of oke-operator VM&gt;:8088. (Substitude **public IP of oke-operator VM** with the Public IP of **oke-operator** VM)
+1. Point your browser to http://&lt;public IP of **oke-operator**&gt;:8088
 
-2. Login using user id and password of "admin/admin" and click "Sign In"
+2. Login using user id and password of **admin/admin**
     ![Superset login](images/superset-login.png)
 
 3. You will land on the default Superset **HOME** page
@@ -136,33 +138,33 @@ This lab assumes you have:
 
 1. Login to OCI Console, select the **Hamburger Menu** ![](images/hamburger.png), type in **mysql** in the seach bar, select **DB System**
 
-2. Click on the link "MySQLInstance" to check the details
+2. Click on **MySQLInstance**
     ![DB System](images/oci-mysql-dbsystem.png)
 
-  Note down the IP Address for the DB System
+3. Note down the **Private IP Address** for MySQL HeatWave
     ![DB System](images/oci-mysql-dbsystem-ip.png)
 
-4. Add MySQL Database Connection to Superset
+4. Point your browser to http://&lt;public IP of **oke-operator** &gt;:8088
 
-5. Select "Connect Database" from "Data" menu item on "+" icon
+5. Click on **+**, expand on **Data**, and select **Connect database**
     ![Connect Database Menu](images/superset-add-database-menu.png)
 
-6. Choose "MySQL" for Database connection
+6. Select **MySQL**
     ![Connect MySQL database](images/superset-connect-mysql.png)
 
-7. Fill in the details accordingly
+7. Specify details of your MySQL HeatWave (You can get the private ip address of MySQL HeatWave in Lab 2, Task 2). Click on **Connect** to test the connection
     ![MySQL Details](images/superset-mysql-details.png)
 
-8. Click "Finish" on successful connection to the MySQL Database Service
+8. Click **Finish** on successful connection to MySQL
     ![Connect Success](images/superset-mysql-connect-success.png)
 
 ## Task 6: Execute SQL
 
-1. Choose **SQL Editor** from SQL Lab menu
+1.  Expand **SQL Lab** in Superset dashboard, and select **SQL Editor**
     ![SQL Editor menu](images/superset-sqllab-menu.png)
     ![SQL Editor menu](images/superset-sql-editor.png)
 
-2. Select the relevant values in the list boxes
+2. Select **MySQL** as Database, **airportdb** as schema. You can start executing SQL in the **SQL Editor**
     ![SQL Editor test](images/superset-sql-editor-test.png)
 
   You may now **proceed to the next lab.**

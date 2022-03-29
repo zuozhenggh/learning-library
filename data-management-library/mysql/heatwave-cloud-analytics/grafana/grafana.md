@@ -23,15 +23,15 @@ This lab assumes you have:
 
 * An Oracle account
 * You have enough privileges to use OCI
-* Resources Ready : HOL-compartment, OKE cluster, MySQL Database Service
+* OCI Resources required: HOL-compartment, OKE cluster, MySQL HeatWave
 
 ## Task 1: Verify OKE cluster
 
-1. Click the **Hamburger Menu** in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
+1. Click the **Hamburger Menu** ![](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
 
     ![Navigate to OKE](images/navigate-to-oke.png)
 
-2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster **oke_cluster** is **Active**
 
     ![Locate OKE](images/click-cluster.png)
 
@@ -162,7 +162,7 @@ This lab assumes you have:
 
 1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). Login using admin/admin as username/password
 
-    ![Grafana Login](images/GrafanaLogin.png)
+    ![Grafana Login](images/grafana-login.png)
 
 2. You can change the password accordingly
 
@@ -172,16 +172,16 @@ This lab assumes you have:
 
 1. Select **Data Sources** from the **Settings** on the left menu
 
-    ![Add Datasource](images/AddDatasource.png)
+    ![Add Datasource](images/select-datasource.png =300x100)
 
-2. Click **Add data source** button
-    ![Add Datasource](images/AddDatasource-1.png)
+2. Click "**Add data source**" button
+    ![Add Datasource](images/add-datasource.png)
 
-3. Enter **mysql** in the filter textbox and select the **MySQL** Datasource
-    ![Choose MySQL](images/AddDatasource-3.png)
+3. Enter **mysql** in the filter textbox to search for MySQL data source. Click on **Select** button on **MySQL** datasource
+    ![Choose MySQL](images/select-mysql-datasource.png)
 
 4. Fill in the **MySQL Connection** details with MySQL's IP address, port, username and password details
-    ![Fill MySQL](images/AddDatasource-4.png)
+    ![Fill MySQL](images/mysql-datasource-details.png)
 
 ## Task 5: Execute dashboard script
 
@@ -207,27 +207,29 @@ This lab assumes you have:
 
 ## Task 6: Import MySQL dashboard
 
-1. Choose "Import" from "+" left menu and put in 7991 dashboard ID for import
-	![Import](images/import7991.png " ")
+1. Choose "Import" from "+" left menu and specify **7991**, one of the sample dashboard available from grafana.com, and hit the **Load** button
+	![Import](images/import7991.png)
 
-2. Choose the Datasource and click "Import"
-	![Import](images/import7991-Import.png)
+2. Choose the datasource you created in Step 4 of Task 4, and click "Import"
+	![Import](images/import7991-import.png)
 
-3. Check the Dashboard
-	![Dashboard](images/MySQLDashboard7991.png)
+3. Once the dashboard is imported, you can view the imported dashboard
+	![Dashboard](images/mysql-dashboard7991.png)
 
 ## Task 7: Add panel widget to MySQL dashboard
 
-1. Click on the add panel icon as shown
+1. Click on the **Add panel** icon in the dashboard
 	![Dashboard](images/grafana-add-panel-menu.png)
 
-2. Click on 'Add Empty Panel' and the panel will show
+2. Click on 'Add an empty panel'
 	![Dashboard](images/grafana-panel-add.png)
 
 3. Click on the **Edit SQL** button
 	![Dashboard](images/grafana-panel-edit-sql.png)
 
-4. Paste the SQL to the query text field and change the format to **Table**
+4. Paste the SQL text to the query text field and change the format to **Table**
+
+	![Dashboard](images/grafana-edit-sql-table.png)
 
 	```
 	<copy>
@@ -237,16 +239,13 @@ This lab assumes you have:
 	</copy>
 	```
 
-	![Dashboard](images/grafana-edit-sql-table.png)
-
-5. Change the visualization to **Table** as shown and specify the the Panel title as "Table loaded to Heatwave"
-
+5. Change the visualization to **Table** as shown and specify the the Panel title as **Table loaded to Heatwave**
 	![Dashboard](images/grafana-change-panel-settings.png)
 
 6. Click "Apply" and return to dashboard
 	![Dashboard](images/grafana-panel-apply.png)
 
-7. Finally, click the "disk" icon to save
+7. Finally, click the "Disk" icon to save
 	![Dashboard](images/grafana-save-dashboard.png)
 
   You may now **proceed to the next lab.**

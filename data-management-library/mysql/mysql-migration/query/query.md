@@ -27,7 +27,7 @@ This lab assumes you have:
 
 	```
 	<copy>
-	mysqlsh --user=admin --password=,password> --host=<mysql_private_ip_address> --port=3306 --sql
+	mysqlsh --user=admin --password=<password> --host=<mysql_private_ip_address> --port=3306 --sql
 	</copy>
 	```
 	```
@@ -58,8 +58,8 @@ This lab assumes you have:
 	</copy>
 	```
 
-  This query will take about 13s to execute. Record the response time for comparison. 
-Re-execute the query against MySQL HeatWave
+  This query will take about 13s to execute. Record the response time for comparison.
+  Re-execute the query against MySQL HeatWave
 
 	```
 	<copy>
@@ -95,7 +95,7 @@ Query 2: Find top 10 airlines selling the most tickets for planes taking off fro
 
 	```
 	<copy>
-	mysqlsh --user=admin --password=,password> --host=<mysql_private_ip_address> --port=3306 --sql
+	mysqlsh --user=admin --password=<password> --host=<mysql_private_ip_address> --port=3306 --sql
 	</copy>
 	```
 	```
@@ -159,7 +159,7 @@ Query 3: Find the number of bookings that Neil Armstrong and Buzz Aldrin made fo
 
 	```
 	<copy>
-	mysqlsh --user=admin --password=,password> --host=<mysql_private_ip_address> --port=3306 --sql
+	mysqlsh --user=admin --password=<password> --host=<mysql_private_ip_address> --port=3306 --sql
 	</copy>
 	```
 	```
@@ -187,7 +187,7 @@ Query 3: Find the number of bookings that Neil Armstrong and Buzz Aldrin made fo
 	</copy>
 	```
 
-  This query will take about 40s to exeute, record the response time for comparison.
+  This query will take about 40s to execute, record the response time for comparison.
 
   Re-execute the query against MySQL HeatWave
 
@@ -220,6 +220,7 @@ Query 3: Find the number of bookings that Neil Armstrong and Buzz Aldrin made fo
   With HeatWave enabled, you can accelerate long running queries without any change to your existing SQL queries!
 
 ## Acknowledgements
+
 * **Author**
 	* Rayes Huang, Cloud Solution Architect, OCI APAC
 	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC

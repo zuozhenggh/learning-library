@@ -6,7 +6,6 @@
 
 In this lab, you will deploy an ingress-controller on **OKE** to allow public IP access to internal services (similar to load balancer). We will be using this ingress-controller to route access to applications (Grafana, Zeppelin, Superset) deployed to **OKE**. These applications will be accessed via different port numbers via this ingress-controller.
 
-Please do remember to add security list to public subnet to allow All protocol from All source IP address in this demo.   Or you can add your notebook public IP address as source so that your IP is registered in VCN to allow all TCP traffic in/out your services.
 
 Estimated Time: 5 minutes
 
@@ -24,7 +23,7 @@ This lab assumes you have:
 
 * An Oracle account
 * You have enough privileges to use OCI
-* Resources Ready : HOL-compartment, OKE cluster
+* OCI Resources required: HOL-compartment, OKE cluster
 
 ## Task 1: Verify OKE cluster
 
@@ -32,11 +31,7 @@ This lab assumes you have:
 
     ![Navigate to OKE](images/navigate-to-oke.png)
 
-2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster 'oke_cluster' is Active
-
-    ![Locate OKE](images/locate-oke-instance.png)
-
-3. Click 'oke_cluster' to view the status of the OKE cluster and the worker nodes in your OKE cluster, ensure the status is **Active**
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify the status of **oke_cluster** is **Active**
 
     ![Verify OKE](images/click-cluster.png)
 

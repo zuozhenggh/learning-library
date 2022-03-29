@@ -9,7 +9,6 @@ This workshop will cover the migration of a conventional LAMP stack application 
 * Loading data into MySQL HeatWave using MySQL shell utility and Autopilot features
 * Speeding up SQL queries with MySQL HeatWave
 
-
 [](youtube:pexH2tqI_0E)
 
 Estimated Time: 90 minutes

@@ -18,8 +18,7 @@ In this lab, you will:
 
 * You have an Oracle account
 * You have enough privileges to use OCI
-* You have one Compute instance having <a href="https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-install.html" target="\_blank">**MySQL Shell**</a> installed on it
-* All previous labs successfully completed
+* OCI Resources required: HOL-compartment, OKE cluster, MySQL HeatWave
 
 ## Task 1: Access OKE cluster
 
@@ -37,20 +36,22 @@ In this lab, you will:
 
     ![Connect to VM](images/connect-to-vm.png)
 
-2. Download the zeppelin yaml scripts
+2. Download the [Zeppelin-Server](files/zeppelin-server.yml?download=1)
 
     ```
     <copy>
     wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-server.yml
     </copy>
     ```
+
+3. Download the [Zeppelin ingress](files/zeppelin-ing.yml)
     ```
     <copy>
     wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/zeppelin-ing.yml
     </copy>
     ```
 
-3. Execute the kubectl commands to create a namespace
+4. Execute the kubectl commands to create a namespace
 
 	```
     <copy>
@@ -80,7 +81,7 @@ In this lab, you will:
     ```
 	![Ingress IP](images/ingress.png)
 
-6. Access the deployed Zeppelin application. Point your browser to **http://<PUBLIC_IP_ADDRESS>/zeppelin**
+6. Access the deployed Zeppelin application. Point your browser to **http://&lt;INGRESS&#95;PUBLIC&#95;IP&#95;ADDRESS&gt;/zeppelin**
 
 	![Zeppelin](images/zeppelin.png)
 
@@ -91,7 +92,7 @@ Task 3: Connect to MySQL HeatWave
 	![Interpreter](images/interpreter.png)
 
 2. Click on **Create** to create a new JDBC driver for MySQL HeatWave. Fill up the details as indicated in the diagram
-Replace the private ip address of your MySQL instance in the **JDBC URL**
+  Replace the private ip address of your MySQL instance in the **JDBC URL**
 
    ![MySQL JDBC](images/mysql-jdbc.png)
 
