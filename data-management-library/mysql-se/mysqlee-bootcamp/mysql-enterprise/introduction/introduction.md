@@ -51,5 +51,4 @@ When all of the tasks in Lab1 are completed, the software will be located within
 
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Engineering
-* **Contributors** -  Marco Carlessi, MySQL Engineering
-* **Last Updated By/Date** - Perside Foster, October 2021
+* **Contributors** -  Marco Carlessi, MySQL April 2022
