@@ -23,9 +23,8 @@ Log to your Forms machine. And download the sample files.
 
 ```
 <copy>cd $HOME
-wget https://marcgueury.github.io/learning-library/developer-library/forms-to-oci/compile/files/forms_samples.zip
-unzip forms_samples.zip
-cd forms_samples
+git clone https://github.com/mgueury/forms-to-oci-samples.git
+cd forms-to-oci-samples
 # Copy the Forms files in the FORMS_PATH
 cp forms/* ../oracle/formsmodules/.
 </copy>
@@ -115,7 +114,7 @@ Run the dept.sql script in the database. It takes as arguments:
 Let's create the schema.
 ```
 <copy>
-cd $HOME/forms_samples
+cd $HOME/forms-to-oci-samples
 . ./env.sh 
 sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS</copy>
 ```
@@ -204,7 +203,7 @@ Compiling procedure QUERY_MASTER_DETAILS...
 There is a prebuilt configuration that we will just add to test our Forms.
 
 ```
-<copy>cd $HOME/forms_samples
+<copy>cd $HOME/forms-to-oci-samples
 cat formsweb.cfg.template</copy>
 ```
 
