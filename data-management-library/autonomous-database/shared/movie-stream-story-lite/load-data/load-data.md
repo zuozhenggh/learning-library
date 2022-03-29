@@ -119,6 +119,7 @@ You learned how to use the Create User dialog to create a new user. You can also
     ```
     <copy>
     grant execute on dbms_cloud to moviestream;
+    grant execute on dbms_cloud_repo to moviestream;
     grant create table to moviestream;
     grant create view to moviestream;
     grant all on directory data_pump_dir to moviestream;
@@ -233,91 +234,44 @@ In this step, we will use some additional features of the DBMS\_CLOUD APIs to lo
 
     ![Click on Development - SQL](images/gotosql.png)
 
-2. Copy and paste the following script into the Worksheet. This script will load the rest of the data required by the workshop.
+2. Copy and paste the following script into the Worksheet. This script will create PL/SQL procedures based on the lab_setup.sql file found in github.
 
 ```
 <copy>
--- Run the following in order to add all the data sets required for the workshop
--- Click F5 to run all the scripts at once
-
--- drop this table with the lab listings
-
-drop table moviestream_labs; -- ignore error if table did not exist
-drop table moviestream_log;  -- ignore error if table did not exist
-
--- Add the log table
-create table moviestream_log
-   (	execution_time timestamp (6),
-	    message varchar2(32000 byte)
-   );
-
--- Create the MOVIESTREAM_LABS table that allows you to query all of the labs and their associated scripts
-begin
-    dbms_cloud.create_external_table(table_name => 'moviestream_labs',
-                file_uri_list => 'https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/movie-stream-story-lite/add-data-scripts/moviestream-lite-labs.json',
-                format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true'),
-                column_list => 'doc varchar2(30000)'
-            );
-end;
-/
-
--- Define the scripts found in the labs table.
+-- Install the setup file from github 
 declare
-    b_plsql_script blob;            -- binary object
-    c_plsql_script clob;    -- converted to clob
-    uri_scripts varchar2(2000) := 'https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/movie-stream-story-lite/add-data-scripts'; -- location of the scripts
-    uri varchar2(2000);
-begin
-
-    -- Add privilege to run dbms_cloud
-    -- Run a query to get each lab and then create the procedures that generate the output
-    for lab_rec in (
-        select  json_value (doc, '$.lab_num' returning number) as lab_num,
-                json_value (doc, '$.title' returning varchar2(500)) as title,
-                json_value (doc, '$.script' returning varchar2(100)) as proc        
-        from moviestream_labs ml
-        where json_value (doc, '$.script' returning varchar2(100))  is not null
-        order by 1 asc
-        )
-    loop
-        -- The plsql procedure DDL is contained in a file in object store
-        -- Create the procedure
-        dbms_output.put_line(lab_rec.title);
-        dbms_output.put_line('....downloading plsql procedure ' || lab_rec.proc);
-
-        -- download the script into this binary variable        
-        uri := uri_scripts || '/' || lab_rec.proc || '.sql';
-
-        dbms_output.put_line('....the full uri is ' || uri);        
-        b_plsql_script := dbms_cloud.get_object(object_uri => uri);
-
-        dbms_output.put_line('....creating plsql procedure ' || lab_rec.proc);
-        -- convert the blob to a varchar2 and then create the procedure
-        c_plsql_script :=  to_clob( b_plsql_script );
-
-        -- generate the procedure
-        execute immediate c_plsql_script;
-
-    end loop lab_rec;  
-
-    execute immediate 'grant execute on moviestream_write to public';
-
-    exception
-        when others then
-            dbms_output.put_line('Unable to add the data sets.');
-            dbms_output.put_line('');
-            dbms_output.put_line(sqlerrm);
- end;
- /
-
-begin
-    add_datasets();
-end;
+    l_owner     varchar2(100) := 'martygubar';
+    l_repo_name varchar2(100) := 'learning-library';
+    l_file_path varchar2(200) := 'data-management-library/autonomous-database/shared/movie-stream-story-lite/add-data-scripts/lab_setup.sql';
+BEGIN
+    dbms_cloud_repo.install_file(
+        repo => dbms_cloud_repo.init_github_repo(                 
+                 repo_name       => l_repo_name,
+                 owner           => l_owner
+                ),
+        file_path     =>     l_file_path,
+        stop_on_error => false
+  );
+END;
 /
 </copy>
 ```
 
-9.  Click the **Run Script** button to run the script.
+Click the **Run Script** button to run the script.
+
+
+3. A PL/SQL procedure called add_datasets was installed by the previous step.  Run that procedure to load the rest of the data.
+```
+<copy>
+-- Run the PLSQL procedure that loads the rest of the dataset
+BEGIN
+    add_datasets;
+END;
+/
+</copy>
+```  
+
+Click the **Run Script** button to run the script.
 
 > **Note** The script should take around 4-5 minutes to run as it uses a number of scripts to load and links a number of data files, and to generate additional views and tables used in later analysis steps.
 
