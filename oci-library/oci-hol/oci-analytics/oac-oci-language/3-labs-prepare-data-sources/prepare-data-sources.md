@@ -23,7 +23,7 @@ This lab assumes you have:
 
 ## **Task 1**: Create Object Storage Bucket
 
-In this task we'll create 2 buckets one for storing source file with reviews and the other for staging. The staging bucket is a 'location' that OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse
+In this task we'll create 2 buckets one for storing source file with reviews and the other for staging. The staging bucket is a 'location' that OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse.
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
