@@ -6,6 +6,9 @@ You can enable Cloud Guard and begin monitoring your environment immmediately. E
 ## Enable Oracle Cloud Guard
 1. Launch the cloud dashboard. Click <b>Security</b> and then <b>Cloud Guard</b> in the Oracle Cloud
 2. On the Cloud Guard page, click the <b>Enable Cloud Guard</b> button at the top right
+
+![Oracle Cloud Guard Dashboard](images/cloudguardbutton.png)
+
 3. Click <b>Create Policy</b> to add the required identity and access management poilices for Cloud Guard. Once the policies are enabled, click <b>Next</b>
 4. In the region field, select a region and compartments you want Cloud Guard to monitor 
 5. Click the <b>Enable</b> button at the bottom of the screen. 
