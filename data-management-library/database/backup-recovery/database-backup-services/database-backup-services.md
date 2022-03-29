@@ -1,4 +1,4 @@
-# Back up Oracle database to OCI
+# Back up and recover Oracle database to OCI
 
 ## Introduction
 

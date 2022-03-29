@@ -95,7 +95,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 - Oracle Cloud Shell
 - MAC or Windows CYCGWIN Emulator
 - Windows Using Putty
-  
+
 ### Oracle Cloud Shell
 
 1. To re-start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon to the right of the region.  *Note: Make sure you are in the region you were assigned*
