@@ -1,4 +1,4 @@
-# Set Up of Management Agent
+# Set up of Management Agent
 
 ## Introduction
 
@@ -189,6 +189,8 @@ Install Management Agent (If your host is Windows, skip to **For Windows** Secti
     To check if you are currently running the Command Prompt as an Administrator, enter the following:
     ```
     <copy>
+    SETLOCAL
+    PATH=C:\Windows\system32;%PATH%
     ECHO Administrative permissions required for installation of management agent. Detecting permissions...
 
     NET SESSION >nul 2>&1

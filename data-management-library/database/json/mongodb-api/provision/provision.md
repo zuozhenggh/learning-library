@@ -146,9 +146,6 @@ In this lab, you will:
     ![](./images/add-access-rule.png " ")
 
     ![](./images/network-add-ip.png " ")
-    You can then click "Add My IP Address" to allow access from your current IP address. You should avoid any VPN or proxy server access which may mask or change your actual IP address.
-
-    ![](./images/network-access.png " ")
 
 9. Choose a license type:
 
@@ -183,7 +180,7 @@ In this lab, you will:
 
 Again, make sure you have saved these URLs for the next lab.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 
