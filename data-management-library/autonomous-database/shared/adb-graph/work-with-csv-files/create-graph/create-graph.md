@@ -117,7 +117,7 @@ Learn how to
 
    ![ALT text is not available for this image](images/generated-cpg-statement.png " " )  
   
-
+<!--- 
   **An alternate approach:** In the earlier Step 5 you could have just updated the CREATE PROPERTY GRAPH statement and saved the updates. That is, you could have just replaced the existing statement with the following one which specifies that the SOURCE KEY is  `from_acct_id`  and the DESTINATION KEY is `to_acct_id`.  
 
     ```
@@ -145,7 +145,7 @@ Learn how to
    ![ALT text is not available for this image](images/correct-ddl-save.png " " )  
 
    **Important:** Click the **Save** (floppy disk icon) to commit the changes.
-
+--->
 
 8. Click **Next** and then click **Create Graph** to move on to the next step in the flow.   
 
@@ -169,4 +169,4 @@ Please **proceed to the next lab** to do so.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Product Management, February 2022  
+* **Last Updated By/Date** - Jayant Sharma, Product Management, March 2022  

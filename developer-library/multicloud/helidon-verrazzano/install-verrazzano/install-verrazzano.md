@@ -140,8 +140,8 @@ An installation profile is a well-known configuration of Verrazzano settings tha
 
 Verrazzano supports the following installation profiles: development (`dev`), production (`prod`), and managed cluster (`managed-cluster`).
 
-* The production profile, which is the default, provides a 3-node Elasticsearch and persistent storage for the Verrazzano Monitoring Instance (VMI).
-* The development profile provides a single node Elasticsearch and no persistent storage for the VMI.
+* The production profile, which is the default, provides a 3-node Opensearch and persistent storage for the Verrazzano Monitoring Instance (VMI).
+* The development profile provides a single node Opensearch and no persistent storage for the VMI.
 * The managed-cluster profile installs only managed cluster components of Verrazzano. To take full advantage of multicluster features, the managed cluster should be registered with an admin cluster.
 
 To change profiles in any of the following commands, set the *VZ_PROFILE* environment variable to the name of the profile you want to install.
@@ -153,7 +153,7 @@ In this lab, we are going to install the *development profile of Verrazzano*, wh
 * It has a lightweight installation.
 * It is for evaluation purposes.
 * No persistence.
-* Single-node Elasticsearch cluster topology.
+* Single-node OpenSearch cluster topology.
 
 The following image describes the Verrazzano components that are installed with each profile.
 
