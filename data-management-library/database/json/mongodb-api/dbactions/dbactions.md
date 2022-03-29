@@ -38,8 +38,6 @@ In this lab, you will:
 
 3. Click the navigation menu in the upper left to show top level navigation choices.
 
-    ![Oracle home page.](./images/navigation.png " ")
-
 4. Click on **Oracle Database** and choose **Autonomous JSON Database**.
 
     ![Click Autonomous JSON Database](./images/adb-json.png " ")
@@ -249,7 +247,7 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
 
     ![](./images/avg-salary.png " ")
 
-    Simple dot notation is great for straightforward "flat" JSON. There are many other JSON functions available to access data within JSON, such as JSON_VALUE, JSON_OBJECT and JSON_TABLE, but we won't go into those here.
+    Simple dot notation is great for straightforward "flat" JSON. There are many other JSON functions available to access data within JSON, such as JSON\_VALUE, JSON\_OBJECT and JSON\_TABLE, but we won't go into those here.
 
 4.  JSON Dataguide
 
@@ -342,27 +340,18 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
     ``` 
     On the right Choose "Pie Chart" in the "Chart type" drop-down. Click "Create" when done.
 
-    ![](./images/chart-create-2.png " ")
+    ![](./images/chart-create-3.png " ")
 
     On the next page, click the "three dots" menu to the right of our Salary Breakdown panel, and choose "View Chart".
+
+    ![](./images/view-chart.png " ")
 
     And now we should see a nice pie chart of our salary costs - we can see that Programmers are by far our largest cost at 63.6% of the total salary bill.
 
     ![](./images/chart-display.png " ")
 
 
-
-
-
-
-
-
-    
-
-
-## Learn More
-
 ## Acknowledgements
 
-- **Author** - Roger Ford, Principal Product Managerda
-- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler June 2021
+- **Author** - Roger Ford, Principal Product Manager
+- **Last Updated By/Date** - Roger Ford, March 2022
