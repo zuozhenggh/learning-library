@@ -3,14 +3,14 @@
 ## Introduction
 
 A Database Vault policy is made up of a few different components:
-•	Rule – describe conditions that will be checked before an action is allowed or blocked
-•	Rule set – a group of one or more rules that can be assigned to an action. You can associate the rule set with a realm authorization, factor assignment, command rule, or secure application role.
-•	Command rule – connects a rule set to a specific action and object or schema. A command rule ALWAYS references a rule set. Command rules are commonly used to implement context-sensitive access policies 
-•	Realm – a logical grouping of objects or schemas. Realms automatically override DBA and * ANY privileges. Realms are commonly used to block privileged user access to data
+-	Rule – describe conditions that will be checked before an action is allowed or blocked
+-	Rule set – a group of one or more rules that can be assigned to an action. You can associate the rule set with a realm authorization, factor assignment, command rule, or secure application role.
+-	Command rule – connects a rule set to a specific action and object or schema. A command rule ALWAYS references a rule set. Command rules are commonly used to implement context-sensitive access policies 
+-	Realm – a logical grouping of objects or schemas. Realms automatically override DBA and * ANY privileges. Realms are commonly used to block privileged user access to data
 A simple example of these concepts working together might be:
-•	Create a rule that checks the user session is connected using mapped consumer group service.
-•	Create a rule set that includes the rule, and specified when Database Vault will create an audit records (success, failure, or both).
-•	Create a command rule that enforces the user access restriction for non-mapped users upon CONNECT operation.
+-	Create a rule that checks the user session is connected using mapped consumer group service.
+-	Create a rule set that includes the rule, and specified when Database Vault will create an audit records (success, failure, or both).
+-	Create a command rule that enforces the user access restriction for non-mapped users upon CONNECT operation.
 
 
 
