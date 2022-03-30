@@ -1,4 +1,4 @@
-# Automatic data optimization
+# Enable automatic data optimization
 
 ## Introduction
 
@@ -85,8 +85,7 @@ This lab assumes you have:
     You successfully made it to the end of this lab. 
  
 ## Learn More
-
-* [Row compression](https://livesql.oracle.com/apex/livesql/file/content_D84SJGGDXB1SW4HKXVX6BK7N9.html) 
+ 
 * [Oracle advanced compression](https://www.oracle.com/technetwork/database/options/compression/advanced-compression-wp-12c-1896128.pdf) 
  
 ## Acknowledgements
