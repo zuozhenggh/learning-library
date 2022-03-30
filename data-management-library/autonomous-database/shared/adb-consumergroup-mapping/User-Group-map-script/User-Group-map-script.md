@@ -19,7 +19,7 @@ Now that we have Database Vault enabled, we are going to create a repository tab
 
     
     CREATE TABLE "ADMIN"."USERS_CONS_GRP" 
-    (	"USERNAME" VARCHAR2(200 BYTE) NOT NULL, 
+    ("USERNAME" VARCHAR2(200 BYTE) NOT NULL, 
 	"CONS_GRP" VARCHAR2(20 BYTE) NOT NULL, 
 	 CONSTRAINT "USERS_CONS_GRP_CHK1" CHECK (cons_grp in ('HIGH','LOW','MEDIUM','TPURGENT','TP'))
     )  
@@ -42,7 +42,7 @@ Lets check the repository table contents
 ---
     Select * from USERS_CONS_GRP
 
-  ![](./images/Picture2.png " ")
+  ![Repository table contents](./images/picture2.png " ")
 
 
 

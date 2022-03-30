@@ -6,7 +6,7 @@ Resource Managers or Consumer Groups or Service names are the integral part of A
 There are cases where we see a lot of application users misusing the consumer groups to their advantage and in doing so leading to performance overhead in the database.
 We are going to show how to restrict users to certain consumer groups using database vault built into autonomous database.
 
-![](./images/Picture1.png " ")
+![ADB Consumer Groups](./images/picture1.png " ")
 
 ### Objectives
 In the next 15 minutes, you will:
