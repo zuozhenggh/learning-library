@@ -105,19 +105,19 @@ In such case we will have to setup the below Database vault policy from ‘ADMIN
 
 Let’s connect to “SCOTT” schema using “TP” service and we see its connecting.
 
-![Database connection](./images/picture4.png " ")
+![Database connection TP service success](./images/picture4.png " ")
 
 And when we will connect using any other service it will be denied.
 
-![Database connection](./images/picture5.png " ")
+![Database connection TP service denied](./images/picture5.png " ")
 
 Similarly for User “TOTO” access is allowed for “LOW” service.
 
-![Database connection](./images/picture6.png " ")
+![Database connection LOW service success](./images/picture6.png " ")
 
 And restricted for any other service.
 
-![Database connection](./images/picture7.png " ")
+![Database connection LOW service denied](./images/picture7.png " ")
 
 **Congratulations!** You successfully completed the lab. 
 
