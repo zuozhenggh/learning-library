@@ -55,8 +55,6 @@ To add a link to a lab from an OHC Tutorials page:
 
 This concludes this lab. You may now proceed to the next lab.
 
-## Want to Learn More?
-
 
 ## Acknowledgements
 
@@ -66,4 +64,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
 
-* **Last Updated By/Date:** Lauran Serhal & Anuradha Chepuri, November 2021
+* **Last Updated By/Date:** Andres Quintana, March 2022
