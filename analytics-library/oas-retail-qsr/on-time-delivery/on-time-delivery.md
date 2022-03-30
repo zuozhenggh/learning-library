@@ -4,7 +4,7 @@
 
 This lab walks you through the steps to understand on-time delivery analysis through visualizations that blend data from distribution centers, logistics and shipping.
 
-Estimated Time: XXXX
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -313,7 +313,7 @@ Now we can start building our self-service visualization canvas that breaks down
 
   Let's use the data flow editor to configure a predictive machine learning model.
 
-  1. Download the dataset **"bobbysburgerdataset.csv"** - This dataset contains the historical data that OAS can use to create a machine learning model with.
+  1. Download the dataset **[bobbysburgerdataset.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/bobbysburgerdataset.csv)** - This dataset contains the historical data that OAS can use to create a machine learning model with.
 
   2. **Navigate** to the Oracle Analytics Server home page.
 
@@ -374,7 +374,8 @@ Now we can start building our self-service visualization canvas that breaks down
 
   Now, let's apply the model we just built.
 
-  12. Download the dataset **"bobbyscustomerdataset.csv"**
+  12. Download the dataset
+  **[bobbyscustomerdataset.csv](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/bobbyscustomerdataset.csv)**
 
   13. **Navigate** to the Oracle Analytics Server home page.
 
