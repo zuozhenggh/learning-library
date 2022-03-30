@@ -187,7 +187,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     - Data Entity: SENTIMENT
 
     ![Configure Target Sentiment](./images/targetsentiment.png " ")
-    
+
 21. For staging Location you just need to provide an object storage location where intermediate files can be created during the data flow:
     - Data Asset: DATA_STAGING
     - Connection: Default connection
@@ -215,6 +215,9 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 Now we need to execute the data flow. The process is as follows.
 
 1.	Navigate back to your workspace and click **Create Integration Task** in the Quick Actions menu.
+
+    ![Integration Task](./images/integrationtask.png " ")
+
    As part of the process of creation you need to select the project and the data flow you just created in **Task 3**. If there are any errors with the data flow you would need to fix those until it successful validates as shown in the image below.
 
     ![Create Task One](./images/createtasktwo.png " ")
@@ -232,7 +235,7 @@ Now we need to execute the data flow. The process is as follows.
     ![Run Task](./images/runtasktwo.png " ")
 
 
-  You will navigate to the **Runs** page where you will be able to monitor the execution of your integration task run. If there are any errors, make sure to check the logs to understand the cause of the run error.
+  You will navigate to the **Runs** page where you will be able to monitor the execution of your integration task run. If there are any errors, make sure to check the logs to understand the cause of the run error. Click **Refresh**
 
     ![Task Status](./images/taskstatus.png " ")
 

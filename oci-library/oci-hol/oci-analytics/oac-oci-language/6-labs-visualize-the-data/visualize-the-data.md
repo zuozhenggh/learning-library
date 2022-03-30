@@ -51,10 +51,9 @@ This lab assumes you have:
 
   ![Drag Tables](./images/dragtables.png " ")
 
-4.	Drag them on top of each other. This will automatically create some JOINS.
+4.	Drag them on top of each other. This will automatically create an inner join with HOTEL_NAME and since it's just one hotel Vancouver X Inn we can keep it as is and add another Inner Join for RECORD_ID
 
-5.	Modify the JOINS so that they join on **RECORD_ID**.
-     You may get a warning that doing so will treat record-id as an attribute (instead of a numeric value) – that’s ok. That’s what we want.
+5. Let's add another Inner Join for RECORD_ID. Please change RECORD_ID from Measure to Attribute on both SENTIMENT and REVIEWS before the join. When creating the Join right click on Reviews and select **Preserve Grain** (otherwise it will not work Auto Insights).You can delete REVIEW_RATING and REVIEW TITLE columns (have no values). When you go to Data Preparation we can filter "Missing or Null Values" and then we can correct them. For more information about how you can cleanse your data refer to [Explore Your Data Using Quality Insights]( https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/explore-your-data-using-quality-insights.html)
 
   ![Join Tables](./images/tablejoins.png " ")
 

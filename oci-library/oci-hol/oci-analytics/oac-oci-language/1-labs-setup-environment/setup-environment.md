@@ -143,6 +143,11 @@ Talk to your Administrator to verify the name of compartment you are to use for 
     ```
     ```
     <copy>
+    allow any-user to use functions-family in compartment <functions-oac-compartment> where ALL {request.principal.type= 'disworkspace'}
+    </copy>
+    ```
+    ```
+    <copy>
     allow any-user to manage objects in compartment <oac-compartment> where ALL {request.principal.type = 'disworkspace', request.principal.id = '<data-integration-workspace-ocid>'}
     </copy>
     ```
