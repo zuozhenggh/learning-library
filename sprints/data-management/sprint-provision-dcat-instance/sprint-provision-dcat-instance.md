@@ -9,7 +9,7 @@ Duration: 5 minutes
 ## Create a Data Catalog Instance
 Create a Data Catalog instance as follows:
 
-1. Sign in to the Console.
+1. Sign in to the Oracle Cloud Infrastructure Console.
 
 2. Open the **Navigation** menu and click **Analytics & AI**. Under **Data Lake**, click **Data Catalog**.
 
@@ -19,15 +19,13 @@ Create a Data Catalog instance as follows:
 
 5. Select your compartment where you would like to provision the Data Catalog instance. In this example, we selected a compartment named **`training-dcat-compartment`** from the **Create In Compartment** drop-down list.
 
-6. Enter a name for your Data Catalog instance in the **Name** field.
+6. Enter a name for your Data Catalog instance in the **Name** field, and then click **Create Data Catalog**.
 
     ![The completed Create Data Catalog dialog box is displayed. The Create Data Catalog button is highlighted.](./images/create-data-catalog.png " ")
 
-7. Click **Create Data Catalog**. The Data Catalog instance is created and displayed in the **Data Catalogs** page.
+7. The Data Catalog instance is created and displayed in the **Data Catalogs** page. To use your newly created Data Catalog instance, click the instance name link in the **Name** column.
 
     ![The newly created Data Catalog instance is displayed with an Active state.](./images/click-data-catalog.png " ")
-
-8. To use your newly created data catalog instance, click the instance name link in the **Name** column.
 
 ## Learn More
 

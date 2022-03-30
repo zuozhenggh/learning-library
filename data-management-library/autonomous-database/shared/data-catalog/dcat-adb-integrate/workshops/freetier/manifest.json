@@ -17,7 +17,7 @@
             "title": "Lab 1: Setup the Workshop Environment",
             "type":"freetier",
             "description": "This lab walks you through the required and optional tasks to setup your workshop environment.",
-            "filename": "./../../sprint-provision-dcat-instance/sprint-provision-dcat-instance.md"
+            "filename": "./../../setup-workshop-environment/setup-workshop-environment.md"
         },
         {
             "title": "Lab 2: Harvest Metadata from Oracle Object Storage",

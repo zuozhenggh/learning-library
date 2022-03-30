@@ -11,7 +11,7 @@ You can create policies to define how you want your users to access Data Catalog
 ## Create a Policy to Allow Users to Manage a Data Catalog Instance         
 Create a policy to allow users to create, update, and delete Data Catalog instances in your tenancy or a specific compartment as follows:
 
-1. Sign in to the Console.
+1. Sign in to the Oracle Cloud Infrastructure Console.
 
 2. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, select **Policies**.
 
@@ -43,7 +43,7 @@ Create a policy to allow users to create, update, and delete Data Catalog instan
 
         > **Note:** Substitute `<group-name>` with your actual group name and `<compartment-name>` with your compartment's name.
 
-        In the following policy example, users in the group `training-dcat-users-group` can manage to manage Data Catalogs in the compartment `training-dcat-compartment` using the aggregate resource-type, `data-catalog-family`.
+        In the following policy example, users in a group named `training-dcat-users-group` can manage Data Catalogs in a compartment named `training-dcat-compartment` using the aggregate resource-type, `data-catalog-family`.
 
         ![On the completed Create Policy dialog box, the policy in the Policy Builder field and the Create button are highlighted.](./images/create-users-policy.png " ")
 
