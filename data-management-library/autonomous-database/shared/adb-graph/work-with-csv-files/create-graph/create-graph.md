@@ -97,17 +97,16 @@ Learn how to
     In this instance we want to **confirm** that the direction is from `from_acct_id` to `to_acct_id`.  
 
     Note the `Source Vertex` and `Destination Vertex` information on the left.  
-    ![ALT text is not available for this image](./images/wrong-edge-direction.png " ")   
+ 
+    ![ALT text is not available for this image](images/wrong-edge-direction.png " ")  
 
     **Notice** that the direction is wrong. The Source Key is `to_acct_id` instead of what we want, which is `from_acct_id`.  
 
-    Click the swap edge icon on the right to swap the source and destination vertices and hence reverse the edge direction.
-
-   ![ALT text is not available for this image](images/wrong-edge-direction.png " " ) 
+    Click the swap edge icon on the right to swap the source and destination vertices and hence reverse the edge direction.  
 
    Note that the `Source Vertex` is now the correct one, i.e. the `FROM_ACCT_ID`.
 
-   ![ALT text is not available for this image](images/reverse-edge-result.png " " ) 
+   ![ALT text is not available for this image](images/reverse-edge-result.png " ") 
 
 
    
@@ -115,9 +114,9 @@ Learn how to
 7. Click the **Source** tab to verify that the edge direction, and hence the generated CREATE PROPERTY GRAPH statement, is correct.
 
 
-   ![ALT text is not available for this image](images/generated-cpg-statement.png " " )  
+   ![ALT text is not available for this image](images/generated-cpg-statement.png " ")  
   
-
+<!--- 
   **An alternate approach:** In the earlier Step 5 you could have just updated the CREATE PROPERTY GRAPH statement and saved the updates. That is, you could have just replaced the existing statement with the following one which specifies that the SOURCE KEY is  `from_acct_id`  and the DESTINATION KEY is `to_acct_id`.  
 
     ```
@@ -145,7 +144,7 @@ Learn how to
    ![ALT text is not available for this image](images/correct-ddl-save.png " " )  
 
    **Important:** Click the **Save** (floppy disk icon) to commit the changes.
-
+--->
 
 8. Click **Next** and then click **Create Graph** to move on to the next step in the flow.   
 
@@ -169,4 +168,4 @@ Please **proceed to the next lab** to do so.
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
 * **Contributors** -  Jayant Sharma, Product Management
-* **Last Updated By/Date** - Jayant Sharma, Product Management, February 2022  
+* **Last Updated By/Date** - Jayant Sharma, Product Management, March 2022  

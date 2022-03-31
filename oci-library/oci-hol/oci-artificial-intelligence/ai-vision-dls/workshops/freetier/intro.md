@@ -1,4 +1,4 @@
-# OCI Vision and Data Labeling Service
+# Use the OCI Vision and Data Labeling Service
 
 ## Introduction
 

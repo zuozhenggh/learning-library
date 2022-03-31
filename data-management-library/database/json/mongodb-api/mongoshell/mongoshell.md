@@ -1,17 +1,17 @@
-# Working with JSON collections using the SODA (Simple Oracle Document Access) API
+# Using Mongo Shell with Autonomous Database
 
 ## Introduction
 
-In this lab, we are going to download a standard MongoDB tool: __mongosh__ and use it to access Autonomous Database to create collections and documents.
+In this lab, we are going to connect to the Autonomous Database we provisioned in Lab 2, from the MongoDB shell tool that we installed into our Compute node in Lab 1.
 
-Estimated Time: 20 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
 In this lab, you will:
 
 * Start up Cloud Shell
-* Install __mongosh__ in Cloud Shell
+* Connect to our Compute Node
 * Attach __mongosh__ to your Autonomous JSON Database
 * Create a collection
 * Add some simple documents to that collection
@@ -19,261 +19,199 @@ In this lab, you will:
 ### Prerequisites
 
 * Have provisioned an Autonomous JSON Database instance and saved the URLs for Database API for MongoDB.
+* Have provisioned a Compute Node and installed the MongoDB Shell
+
+You will need the following information, saved from previous labs:
+
+* The URLs for the MongoDB API
+* The IP address of your Compute Node
 
 ## Task 1: Start Cloud Shell
 
 Cloud Shell is a Linux command prompt provided for your user. You can upload files to it and run commands from it.
 
-1. Go to the main Oracle Cloud page (you may need to close the Service Console browser tab if you still have it open). Click on the square icon with ">" in it at the top right.
+1. Go to the main Oracle Cloud page (you may need to close any Service Console or Database Actions tabs that you have open). Click on the square icon with ">" in it at the top right.
 
 	![](./images/open-console.png)
 
-2. The console will open at the bottom of your screen. It may take a minute or so to do so first time round. You should see a Linux command prompt. If you wish, you can expand the console window to fill your browser screen by clicking on the diagonal double-arrow. You can resize the font if needed using your browser's normal zoom operation (e.g. CMD-+ on a Mac)
+2. The console will open at the bottom of your screen. You should see a Linux command prompt. If you wish, you can expand the console window to fill your browser screen by clicking on the diagonal double-arrow. You can resize the font if needed using your browser's normal zoom operation (e.g. CMD-+ on a Mac)
 
 	![](./images/cloud-shell.png)
 
-## Task 2: Download and install mongosh
+## Task 2: Connect to your Compute Node
 
-1. In a new browser tab, open the following link: https://www.mongodb.com/try/download/shell (note: this page belongs to MongoDB and may change - Oracle Corporation is not responsible for the page or any programns downloaded from it).
+1. The key file should be in your current directory.
 
-	In the Available Downloads box, leave the Version as it is and change Platform to __Linux Tarball 64-bit__. Click the __Copy Link__ button
+    As before, we will use ssh to connect to our Compute Node. We will need to know the name of the ssh file we just uploaded, and the IP address of the 
+    Compute Node that we saved earlier. Run the following command, altering the file name and IP address (shown as 11.22.33.44) as necessary. 
+    "opc" is the pre-installed username for the node and should not be changed. You may find that the necessary 'ssh' command is saved in your command history, accessed by the up-arrow key. 
 
-	![](./images/mongo-download.png)
+    ```
+    <copy>
+    ssh -i ssh-key-YYYY-MM-DD.key opc@11.22.33.44
+    </copy>
+    ```
 
-2. Go back to the cloud shell and type "wget" followed by the link you just copied
+## Task 3: Edit the connection URL
 
-	![](./images/wget-mongosh.png)
+1. Find the URL you saved earlier and edit it in a text editor
 
-3. This willl download a compressed tar file which you will need to unzip. Do that with "tar xvf" followed by the name of the downloaded file. In my case, this would be "tar xvf mongosh-1.2.3-linux-x64.tgz" but it may change with newer versions.
+	* Change the [user:password@] to admin:YourPassword@ at the start of the URL. Substitute the password you chose earlier for the YourPassword.
+	* Change the [user] string in the middle to admin
 
-	![](./images/unzip.png)
+   	For example, let's say your password is "Password123", and your original connection string is mongodb://[user:password@]MACHINE-JSONDB.oraclecloudapps.com:27017/[user]?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
 
-4. Finally set the PATH variable so it includes the mongosh executable.
-
-	The PATH variable must include the 'bin' directory, which you can see in the output from the unzip command. Don't forget to include the existing path at the end with :$PATH. In my case the command is as below, but the directory may change for newer versions of mongosh.
-
-	```
-	<copy>
-	export PATH=mongosh-1.2.3-linux-x64/bin:$PATH
-	</copy>
-	```
-
-	![](./images/save-path.png)
-
-	Note: If you close and reopen the Cloud Shell you will need to repeat this step to set the PATH. To avoid that you can add the SET PATH 
-
-## Task 4: Start Mongo Shell and create a collection
-
-Mongo Shell is a command-line utility to interact with MongoDB databases (and, by extension, any other database which implements the MongoDB API). Other tools are available such as the graphical Compass tool, but we will stick with the command line to avoid complexities of installing a GUI-based tool.
-
-1. Go back to where you saved the URLs for the Database API for MongoDB in the previous lab. Edit each URL, replacing *[user]* with *admin* (without the brackets) and *[user:password@]* with *admin:password@* where password is the password you provided earlier for the admin user for your database.
-
-	For example, if your first URL is mongodb://[user:password@]myserver.oraclecloudapps.com:27017/[user]?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true and your admin password is "password1":
-
-	You would modify it to read
-
-	mongodb://admin:password1@myserver.oraclecloudapps.com:27017/admin?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
- 
-2.  In the cloud shell, enter "mongosh" followed by the first modified URL in single quotes
-
-	![](./images/id101.png)
-	![](./images/id101-results.png)
-
-3.	Find all DVDs:
-
-	Running the query will displays two documents with format DVD.
+	You would change it to 
 
 	```
 	<copy>
-	{"format":"DVD"}
-	</copy>
+	mongodb://admin:Password123@MACHINE-JSONDB.oraclecloudapps.com:27017/admin?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
+    </copy>
 	```
-	![](./images/dvd-results.png)
 
-4.	Find all non-movies:
+	Make sure you've changed both strings, and have not left any square brackets in there.
 
-	This query displays the documents that are not of type - movies, which means just the document with id 103.
+	**IMPORTANT NOTE:** if your password contains any special characters in the set / : ? # [ ] @, you will need to escape them as follows:
 
-	```
-	<copy>
-	{"type":{"$ne":"movie"}}
-	</copy>
-	```
-	![](./images/not-movies.png)
+	| Character | Escape Sequence |
+	| :---:     | :---: |
+	| /	 | %25 |
+	| :	 | %3A |
+	| #	 | %23 |
+	| [	 | %5B |
+	| ]  | %5D |
+	| @	 | %40 |
 
-5.	Find documents whose condition value contains "new", which means just document (with id) 101.
+	So if your password was **P@ssword#123** you would encode it as **P%40ssword%23123**.
 
-	```
-	<copy>
-	{"condition":{"$like":"%new%"}}
-	</copy>
-	```
-	![](./images/new.png)
+## Task 4: Connect MongoDB shell to Autonomous Database
 
-6. Find bargains of all products costing 5 or less:
+1. In the ssh shell prompt, enter "mongosh" followed by a space followed the edited URL from the previous task in **single-quotes**.
 
-	This query displays the documents with ids 100, 102 and 103 as those documents have price less than 5.
+	![](./images/mongosh-login.png)
 
-	```
-	<copy>
-	{"price":{"$lte":5}}
-	</copy>
-	```
-	![](./images/less5.png)
+	If all goes well you will see an "admin>" prompt. If not, check your URL carefully:
 
-7. Tighten previous query to choose only movie documents:
+	* Is it enclosed in single quotes?
+	* Is your password correct, with any special characters quoted as above?
+	* Did you leave any [ square brackets ] in the URL where they should have been removed?
+	* Do you have the : sign between the user and password, and the @ sign after the password? 
+	* Is the whole command on a single line with no line breaks?
 
-	This query displays the documents whose ids are 100, 102 as those documents have price less than 5 and not the type - book.
+## Task 5: Create, populate and search a collection
 
-	```
-	<copy>
-	{"$and":[{"price":{"$lte":5}}, {"type":"movie"}]}
-	</copy>
-	```
-	![](./images/less5-movie.png)
+You should now be in Mongo Shell. This is a command-line utility to interact with MongoDB databases (and, by extension, any other database which implements the MongoDB API). Other tools are available such as the graphical Compass tool, but we will stick with the command line to avoid complexities of installing a GUI-based tool.
 
-## Task 4: JSON and Constraints
+1.  Create a collection.
 
-Some values need to be unique, so how do we enforce this?
-
-1.	Insert a duplicate document for the id - 100:
-
-	Click New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
-
-	The document is successfully inserted as duplicate id's are not prevented and JSON database is schemaless.
+	Copy the following into mongosh and press the enter key.
 
 	```
 	<copy>
-	{
-		"id": 100,
-		"fruit": "banana"
-	}
-	</copy>
+	db.createCollection('emp')
+    </copy>
 	```
-	![](./images/step4.1.png)
+    ![](./images/create-collection.png)
 
-2. Use QBE:
+	That will have created a new document collection called "emp". If you wish, you can type "show collections" to confirm it has been created.
 
-	Copy and paste the following query in the worksheet and click **Run Query**.
+2.	Add some employee documents to the collection.
 
-	The result now shows two documents with id 100.
+	Copy the following into mongosh, pressing the enter key after each:
 
 	```
 	<copy>
-	{"id":100}
+	db.emp.insertOne(
+  		{ "name":"Blake", "job": "Intern", "salary":30000 }
+	)
 	</copy>
 	```
 
-	![](./images/id100-2.png)
-
-	Let's delete the {id:100, fruit:banana} last inserted document by clicking on the trash bin button.
-
-	![](./images/delete_document.png)
-
-	It is likely we are looking up products by their id. Let's a create an index that gives fast access to 'id'. Make sure id is unique and numeric.
-
-	Now we use a field 'id' in the JSON document to identify the product. The value could also be a SKU (barcode) or some catalog number. Obviously, every product needs an id and we want this to be a unique numeric value across all documents in the collection. Also, we want to be able to quickly find a product using the id value. So, let's create a unique index that solves all requirements (unique, numeric, present).
-
-3.	Let's navigate to SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
-
-	![](./images/sql-dw.png)
-
-4. Copy and paste the query below in the worksheet and click Run query button to creates a unique index that solves all requirements (unique, numeric, present).
+	That created a single employee record documemt. Now we'll create another two. Notice that the second one has an email address, which the first doesn't. With JSON we can change the schema at will.
 
 	```
 	<copy>
-	create unique index product_id_idx on products (JSON_VALUE(json_document, '$.id.number()' ERROR ON ERROR));
+	db.emp.insertOne(
+		{ "name":"Smith", "job": "Programmer", "salary": 60000, "email" : "smith@example.com" }
+	)
 	</copy>
 	```
-	![](./images/index.png)
-
-	JSON_Value is a SQL/JSON function that extracts one value from the JSON data that is specified by a JSON Path Expression - in this case we extract the 'id' and convert the selected value to a SQL number. Here, *$.id.number()* is a standard, SQL/JSON path expression. You'll learn more about SQJ/JSON functions later in this lab.
-
-	*Learn more -* [SQL/JSON Path Expressions](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-path-expressions.html#GUID-2DC05D71-3D62-4A14-855F-76E054032494)
-
-5.	Once the product\_id\_idx is created, navigate back to JSON workshop. Click the navigation menu on the top left and select **JSON** under Development.
-
-	![](./images/json-nav.png)
-
-6.	Try to insert some documents that do not have an id or a non-numeric id:
-
-	Click New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
-
-	Although the "id" is unique the insert fails throws the error "Unable to add new JSON document" because the value is not a number. The same happens if the id is missing or already in use. Try it!
 
 	```
 	<copy>
-	{"id":"xxx","title":"Top Gun"}
+	db.emp.insertOne(
+		{ "name":"Miller", "job": "Programmer", "salary": 70000 }
+	)	
 	</copy>
 	```
-	![](./images/create-error.png)
-	![](./images/error.png)
+3.	Do some searches against the data we just inserted
 
-7.  While we're at it lets add more 'checks' - we call them 'constraints'. Navigate back to the SQL Developer Web. Click the navigation menu on the top left and select **SQL** under Development.
-
-	![](./images/nav.png)
-
-8. Check constraint to make sure every product has a title of string data type and price >=0. Add a constraint to make sure that every item has at least a title and the price. We want the price to be a non-negative number and title to be a string.
-
-	Copy and paste the query below in the worksheet and click Run query button to run the SQL query to alter products table and add constraints.
+	Queries in MongoDB (and most JSON databases) use '**Query By Example**' or **QBE**. For a simple QBE, you provide a JSON document fragment, and the system returns all documents that contain that fragment. For example:
 
 	```
 	<copy>
-	alter table products add constraint required_fields check (JSON_EXISTS(json_document, '$?(@.title.type() == "string" && @.price.number() > 0)'));
+ 	db.emp.find({"name":"Miller"})
 	</copy>
 	```
-	![](./images/sql-query.png)
 
-	JSON_Exists is a SQL/JSON function that checks that a SQL/JSON path expression selects at least one value in the JSON data. The selected value(s) are not extracted – only their existence is checked. Here, *$?(@.title.type() == "string" && @.price.number() > 0)* i a standard, SQL/JSON path expressions. You'll learn more about SQJ/JSON functions later in this lab.
+	will return all documents which have a name field of "Miller". Try it now.
 
-9. Once the *products* table is altered, navigate back to JSON workshop. Click the navigation menu on the top left and select **JSON** under Development.
+	Note: MongoDB Shell allows a "relaxed" JSON syntax where the key name strings don't need to be quoted. So you could use **{name:"Miller"}** 
+	instead of **{"name":"Miller"}**. We will use that syntax in some of the following examples.
 
-	![](./images/nav2-json.png)
-
-10. Validate that the following documents cannot get inserted as fields are missing or of wrong type.
-
-	Click New JSON Document icon, copy and paste the following query in the worksheet and click **Create**.
-
-	Throws the error "Unable to add new JSON document" since the following document has missing fields while trying to insert.
+	A more advanced QBE will use special match operators. For example, **$gt** means "greater than". So:
 
 	```
 	<copy>
-	{"id":"200","title":"Top Gun"}
-	</copy>
+	db.emp.find({"salary":{"$gt":50000}}) 
+	<copy>
 	```
-	![](./images/tester.png)
-	![](./images/error2.png)
 
-11. The following document now satisfies all the constraints: the "id" is a unique number, the title is a string, and the price is a positive number.
+	will find all documents where the salary field is numeric, and contains a value greater than 50,000.
+
+    ![QBE to find salary greater than 50000](./images/find-salary.png)
+
+4.	Projection
+
+	In the QBEs used so far, the database has returned the entire document involved. Not a problem here where the documents are short, but we may only want specific parts of the documents. Doing that is called "projection" and is similar to a SELECT clause in a SQL statement. Let's say we want just the name and salary info for our programmers. To get that we specify a second argument to the **find** command, which is a JSON document specifying the parts of the document to return:
 
 	```
 	<copy>
-	{
-		"id": 200,
-		"title": "Top Gun",
-		"category": "VHS",
-		"condition": "like new",
-		"price": 8,
-		"starring": [
-			"Tom Cruise",
-			"Kelly McGillis",
-			"Anthony Edwards",
-			"Val Kilmer"
-		],
-		"year": 1986,
-		"decade": "80s"
-	}
-	</copy>
+	db.emp.find({ job:"Programmer" }, { name:1, salary:1 })
+	<copy>
 	```
 
-You may now proceed to the next lab.
+	![](./images/projection.png " ")
 
-## Learn More
+5.	Updates
 
-* [Creating B-Tree Indexes for JSON_VALUE](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/indexes-for-json-data.html#GUID-FEE83855-780A-424B-9916-B899BFF2077B)
+	We can use the updateOne or updateMany commands to make changes to one, or a number, of documents. They both take a first argument which is a QBE specifying which documents to update, and a second argument which is the changes to be made to the document. For example the following will add an email address to our "Miller" employer.
+
+	```
+	<copy>
+	db.emp.updateOne({name:"Miller"}, {$set: {email:"miller@example.com"}})
+	<copy>
+	```
+	
+	When you've run that, you should see confirmation that one record has been found, and one modified. You can check the modification has worked with:
+
+	```
+	<copy>
+	db.emp.find({name:"Miller"})
+	<copy>
+	```
+	
+	![](./images/qbe-update.png " ")
+
+That's all we're going to cover in MongoDB Shell, but there are some important points to remember:
+
+* This will work just as well with GUI tools such as Atlas, or from your own programs using MongoDB libraries
+* All the data is held in Oracle Autonomous Database, and can be accessed from any SQL-based programs just as easily as from MongoDB programs.
+
+In the next lab we'll cover Autonomous Database tools, including JSON Workshop and SQL.
 
 ## Acknowledgements
 
-- **Author** - Beda Hammerschmidt, Architect
-- **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
+- **Author** - Roger Ford, Principal Product Manager
+- **Contributors** - Kamryn Vinson, Andres Quintana
+- **Last Updated By/Date** - Roger Ford, March 2022
