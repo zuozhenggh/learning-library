@@ -4,7 +4,7 @@
 
 Oracle MySQL HeatWave is a fully-managed database service that lets developers quickly develop and deploy secure, cloud-native applications using the world’s most popular open-source database.It is 100% built, managed, and supported by the Oracle Cloud Infrastructure and MySQL engineering teams.
 
-In this workshop, you will learn how to create three different instances of MySQL Database Service Systems, Standalone, High Availability, and HeatWave in a secure Oracle Cloud Infrastructure environment.You will also create a MySQL HeatWave Cluster. You  will connect to all of the Database service instances  using MySQL Shell and MySQL Workbench, run queries on HeatWave, run Analytics workloads in Oracle Cloud, and create a LAMP application.
+In this workshop, you will learn how to create a Standalone and a HeatWave MySQL Database Service System in a secure Oracle Cloud Infrastructure environment.You will convert the Standalone Database into a High Availability Database, and  create a MySQL HeatWave Cluster. You  will connect to all of the Database service instances  using MySQL Shell and MySQL Workbench, run queries on HeatWave, run Analytics workloads in Oracle Cloud, and create a LAMP application.
 
 Overall this workshop will show you how easy it is to create and manage MySQL HeatWave and how MySQL HeatWave enables you to make informed business-critical decisions with real-time insights.
 
@@ -34,10 +34,10 @@ MySQL Database Service with HeatWave is a fully managed service, optimized for O
 In this lab, you will be guided through the following steps:
 
 - Create and configure a Virtual Cloud Network (VCN)
-- Create three MySQL Database Systems
+- Create two MySQL Database Systems
     - Standalone
-    - High Availability
     - HeatWave
+- Convert the Standalone Database into a High Availability Database
 - Create SSH Key on Oracle Cloud Infrastructure Cloud Shell
 - Setup Compute instance
 - Connect to all three DB Systems using MySQL Shell through Compute Instance / Cloud Shell
