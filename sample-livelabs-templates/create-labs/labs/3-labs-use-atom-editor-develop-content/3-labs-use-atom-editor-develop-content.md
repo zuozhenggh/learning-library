@@ -145,7 +145,7 @@ To create your lab and workshop content:
 
   ![](./images/image-desc.png " ")
 
-3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text.
+3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text. Do not provide a demo password. 
 
 
 ## Task 6: Preview Your Workshop and Labs Using Live Server
@@ -240,4 +240,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Brianna Ambler
 
-* **Last Updated By/Date:** Lauran Serhal, November 2021
+* **Last Updated By/Date:** Andres Quintana, March 2022

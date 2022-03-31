@@ -55,7 +55,7 @@ def oracle_datasource_example(spark):
     df.printSchema()
 
     print("Filtering recommendation.")
-    df.filter(df."recommended" == "Y")
+    df.filter(df.recommended == "Y")
 
     print("Writing to autonomous database.")
     df.write.format("oracle").mode("overwrite").option("dbtable",TARGET_TABLE).options(**properties).save()
@@ -113,7 +113,7 @@ For creating the application, you need to have the python code and we are provid
 
 ![Create Data Flow](./images/createsparkapp.png " ")
 
-For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
+For this example,Than choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded livelabs-df.py
 
 ![Create Data Flow](./images/createappconfigure.png " ")
 

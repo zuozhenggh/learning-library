@@ -174,9 +174,10 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
 Our Compute instance is now set up. We will later use it to connect to Autonomous Database. Remember the "ssh" command you used to connect from Cloud Shell to the instance.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager, Oracle Database
+- **Contributors** - Kamryn Vinson, Andres Quintana
 - **Last Updated By/Date** - Roger Ford, March 2022
