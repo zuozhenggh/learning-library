@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
@@ -23,7 +23,7 @@
         },
         {
             "title": "Lab 3: Create user group mapping script",
-            "filename": "../../user-group-map-script/user-group-function-script.md"
+            "filename": "../../user-group-map-script/user-group-map-script.md"
         },
         {
             "title": "Lab 4: Create a Database Vault rule",

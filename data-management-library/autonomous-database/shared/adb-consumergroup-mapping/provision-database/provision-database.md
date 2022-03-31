@@ -123,7 +123,7 @@ In this lab, you will:
     ![Database instance homepage.](./images/adb-provisioned.png " ")
     Autonomous Database sucessfully provisioned.
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn more
 
@@ -131,4 +131,4 @@ See the [documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-wa
 
 ## Acknowledgements
 
-- **Author** - Goutam Pal,  Senior Cloud Engineer
+- **Author** - Goutam Pal, Senior Cloud Engineer, NA Cloud Engineering

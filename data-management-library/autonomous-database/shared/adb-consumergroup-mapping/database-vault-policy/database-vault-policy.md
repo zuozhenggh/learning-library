@@ -12,7 +12,7 @@ A simple example of these concepts working together might be:
 -	Create a rule set that includes the rule, and specified when Database Vault will create an audit records (success, failure, or both).
 -	Create a command rule that enforces the user access restriction for non-mapped users upon CONNECT operation.
 
-
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -21,103 +21,109 @@ In this lab, you will:
 -   Create Database Vault Policy in Autonomous Database
 -   Validation
 
-## Task 1: Create Database Vault Policy in ADB-S
+### Prerequisites
 
-For our scenario we want user “SCOTT” to be able to connect to database using only “TP” services and user “TOTO” to connect using “LOW” services.
+This lab assumes you have:
+
+- Created the repository table and user-group validation function in the previous lab.
+
+## Task 1: Create Database Vault Policy in Autonomous Database
+
+1. For our scenario we want user “SCOTT” to be able to connect to database using only “TP” services and user “TOTO” to connect using “LOW” services.
 In such case we will have to setup the below Database vault policy from ‘ADMIN’ account or 'ADV_OWNER' account
 
-- Create Rule Set
+2. Create Rule Set
 
 
----
+    ---
 
-    
-    BEGIN
+        
+        BEGIN
 
-    DVSYS.DBMS_MACADM.CREATE_RULE_SET(
-    rule_set_name => 'RULE_SET_USER_CONS',
-    description => 'Rule Set enabled for Consumer Group User Mapping',
-    enabled => DVSYS.DBMS_MACUTL.G_YES,
-    eval_options => DBMS_MACUTL.G_RULESET_EVAL_ALL, -- all rules must be true,
-    audit_options => DBMS_MACUTL.G_RULESET_AUDIT_FAIL, -- no audit
-    fail_options => DBMS_MACUTL.G_RULESET_FAIL_SILENT,
-    fail_message => '',
-    fail_code => NULL,
-    handler_options => DBMS_MACUTL.G_RULESET_HANDLER_OFF,
-    handler => NULL
-    );
+        DVSYS.DBMS_MACADM.CREATE_RULE_SET(
+        rule_set_name => 'RULE_SET_USER_CONS',
+        description => 'Rule Set enabled for Consumer Group User Mapping',
+        enabled => DVSYS.DBMS_MACUTL.G_YES,
+        eval_options => DBMS_MACUTL.G_RULESET_EVAL_ALL, -- all rules must be true,
+        audit_options => DBMS_MACUTL.G_RULESET_AUDIT_FAIL, -- no audit
+        fail_options => DBMS_MACUTL.G_RULESET_FAIL_SILENT,
+        fail_message => '',
+        fail_code => NULL,
+        handler_options => DBMS_MACUTL.G_RULESET_HANDLER_OFF,
+        handler => NULL
+        );
 
-    END;
-    /
-
-
-
-- Create Rule
-
----
-    BEGIN
-    DVSYS.DBMS_MACADM.CREATE_RULE(
-    rule_name  => 'Check USER and Consumer group', 
-    rule_expr  =>'ADMIN.USER_GRP_FN = 1');
-    END;
-    /
+        END;
+        /
 
 
-- Add Rule to Rule Set
+
+3. Create Rule
+
+    ---
+        BEGIN
+        DVSYS.DBMS_MACADM.CREATE_RULE(
+        rule_name  => 'Check USER and Consumer group', 
+        rule_expr  =>'ADMIN.USER_GRP_FN = 1');
+        END;
+        /
 
 
----
-    BEGIN
-    DBMS_MACADM.ADD_RULE_TO_RULE_SET(
-    rule_set_name     => ' RULE_SET_USER_CONS',
-    rule_name         => 'Check USER and Consumer group'
-    );
-    END;
-    /
+4. Add Rule to Rule Set
 
 
-- Create command rule for session connect
+    ---
+        BEGIN
+        DBMS_MACADM.ADD_RULE_TO_RULE_SET(
+        rule_set_name     => ' RULE_SET_USER_CONS',
+        rule_name         => 'Check USER and Consumer group'
+        );
+        END;
+        /
 
 
----
-    BEGIN
-    DBMS_MACADM.CREATE_COMMAND_RULE(
-    command            => 'CONNECT',
-    rule_set_name      => ‘RULE_SET_USER_CONS’,
-    object_owner       => '%',
-    object_name        => '%',
-    enabled            => DBMS_MACUTL.G_YES);
-    END;
-    /
-    COMMIT;
+5. Create command rule for session connect
 
 
-- Check the rule has been implemented
+    ---
+        BEGIN
+        DBMS_MACADM.CREATE_COMMAND_RULE(
+        command            => 'CONNECT',
+        rule_set_name      => ‘RULE_SET_USER_CONS’,
+        object_owner       => '%',
+        object_name        => '%',
+        enabled            => DBMS_MACUTL.G_YES);
+        END;
+        /
+        COMMIT;
 
 
----
-    SELECT * FROM DVSYS.DBA_DV_RULE where name like '%Cons%';
+6. Check the rule has been implemented
 
-![Database Vault rule status](./images/picture3.png " ")
+
+    ---
+        SELECT * FROM DVSYS.DBA_DV_RULE where name like '%Cons%';
+
+    ![Database Vault rule status](./images/database-vault-rule-status.png " ")
 
 
 ## Task 2:   Validation
 
-Let’s connect to “SCOTT” schema using “TP” service and we see its connecting.
+1. Let’s connect to “SCOTT” schema using “TP” service and we see its connecting.
 
-![Database connection TP service success](./images/picture4.png " ")
+    ![Database connection SCOTT success](./images/scott-tp.png " ")
 
-And when we will connect using any other service it will be denied.
+2. And when we will connect using any other service it will be denied.
 
-![Database connection TP service denied](./images/picture5.png " ")
+    ![Database connection SCOTT denied](./images/scott-high.png " ")
 
-Similarly for User “TOTO” access is allowed for “LOW” service.
+3. Similarly for User “TOTO” access is allowed for “LOW” service.
 
-![Database connection LOW service success](./images/picture6.png " ")
+    ![Database connection TOTO success](./images/toto-low.png " ")
 
-And restricted for any other service.
+4. And restricted for any other service.
 
-![Database connection LOW service denied](./images/picture7.png " ")
+    ![Database connection TOTO denied](./images/toto-medium.png " ")
 
 **Congratulations!** You successfully completed the lab. 
 
@@ -128,4 +134,4 @@ And restricted for any other service.
 
 
 ## Acknowledgements
-* **Author** - Goutam Pal, Senior Cloud Engineer
+* **Author** - Goutam Pal, Senior Cloud Engineer, NA Cloud Engineering
