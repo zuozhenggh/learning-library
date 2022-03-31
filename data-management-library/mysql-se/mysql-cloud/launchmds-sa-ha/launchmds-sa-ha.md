@@ -78,7 +78,7 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
       ````
       <copy>tar xvzf sakila-db.tar.gz</copy>
       ```` 
-3. Connect to MySQL using MySQL Shell
+3. Connect to MDS-SA  using MySQL Shell (Be sure to replace the IP address with MDS-SA IP)
 
       ````
       <copy>mysqlsh -uadmin -p -h 10.0.1.. -sql</copy>
@@ -128,18 +128,21 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
 ## Task 3: Convert Standalone database to High Availability database
 
 Use the Console to enable or disable high availability on a DB system
+   1. Open the navigation menu. Under Databases >MySQL > DB Systems
+    ![MDS](./images/04mysql01.png " ")
 
-   1. To enable High Availability on a DB System, open the Enable High Availability dialog from one of the following locations:
+   2. Click the **MDS-SA** Standalone Dabase link
 
-      - The Enable High Availability menu item from the More Actions (3-dot) menu on the DB Systems list page
-      - The Enable High Availability menu item from the More Actions drop-down menu on the DB System Details page.
-      - The Enable link adjacent the High Availability label on the DB System Details page.
-      - The Enable High Availability dialog is displayed.
-   2. Click Enable.
+   3. Click the **More Actions** button
 
-   If your DB System is not using a high availability-compatible configuration, you must select one from the Configuration drop-down list.
+   4. Select **Enable high availability**
+      ![MDS](./images/en-ha.png " ")  
 
-   3. Select the HA-compatible configuration and click Enable.
+   5. Click the **Enable** button
+         ![MDS](./images/ha-enable.png " ")  
+
+   6. Select the HA-compatible configuration **MySQL.VM.Standard.E3.1.8GB.HA** and click Enable.
+            ![MDS](./images/ha-select-config.png " ")     
 
       The configuration is updating. The DB System  will enter the UPDATING state. 
 
@@ -205,7 +208,7 @@ To switch from the current primary instance to one of the secondary instances, d
     ![Connect](./images/07switch01.png " ")  
     * Select Switchover from the More Actions menu. The Switchover dialog is displayed
      ![Connect](./images/07switch02.png " ")   
-    * Switch the PRimary from AD-2 to AD-3  
+    * Switch the PRimary from AD-1 to AD-2  
     * Click Switchover to begin the switch process.
     ![Connect](./images/07switch03.png " ")  
     * The DB System's status changes to Updating, and the selected instance becomes the primary.
