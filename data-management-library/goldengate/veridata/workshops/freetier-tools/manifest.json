@@ -52,9 +52,9 @@
       "filename": "./../../ggv-add-remove-mapping/ggv-add-remove-mapping.md"
     },
     {
-      "title": "Lab 8:  Use the Oracle GoldenGate Veridata Command-line Utilities ",
-      "description": "This lab walks you through the command line utilities in Oracle GoldenGate Veridata.",
-      "filename": "./../../ggv-import-export-vgpp/ggv-import-export-vgpp.md"
+      "title": "Lab 8:  Purge Data and Delete Direcotries ",
+      "description": "This lab walks you through the Purge Data and Delete Directories features in Oracle GoldenGate Veridata.",
+      "filename": "./../../ggv-purge-delete-directories/ggv-purge-delete-directories.md"
     },
     {
       "title": "Need Help?",

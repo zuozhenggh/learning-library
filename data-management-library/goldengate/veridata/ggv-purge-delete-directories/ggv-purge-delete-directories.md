@@ -3,14 +3,18 @@
 ## Introduction
 This lab describes how to purge data and delete directories in the Oracle GoldenGate Veridata UI.
 
-You must create and execute the job to run the comparisons. The job configuration determines which compare pair groups are processed.
+To purge old reports, compare results, and obsolete data, use the **Delete** option in the **Finished Jobs** page.
+
+When you purge job reports, select the optional **Delete Directories Completely** check box to delete the entire reports directory content, including files and directories created by the user.
+
+By default, the **Delete Directories** completely check box is not selected and therefore only the files created by Oracle GoldenGate Veridata are purged. The directories are purged only if they are empty after the Oracle GoldenGate Veridata files are purged. User-defined files created within the reports directories will not be deleted. 
 
 *Estimated Lab Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:
-* Create a job for the Compare Pair Groups.
-* Run the job.
+* Purge Data
+* Delete Directories
 
 ### Prerequisites
 This lab assumes you have:
@@ -22,10 +26,10 @@ This lab assumes you have:
     * Lab: Create Datasource Connections
     * Lab: Create Groups and Compare Pairs
 
-## Task 1: Create a Job for the Compare Pair Group
-To create a job:
+## Task 1: Purge Data
+To purge data:
 
-1. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Job Configuration** page.
+1. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Job Configuration** page, select the job from the **Job** drop-down list, click **Retrieve Compare Pair List** to display the list of Compare Pairs, and then click **Run Job**.
 
 2. Click **Home** to display the details of the Jobs executed. The repository has the metadata of all the UI configurations.
 
@@ -39,34 +43,56 @@ To create a job:
 
     ![](./images/3Purge.png " ")
 
-5. Select the Group and click **Finish**.
+    Data has been purged for the selected Date and time.
 
-    ![](./images/14-create-job-select-group-click-Finish.png " ")
+    ![](./images/4Purge.png " ")
 
-A new job is created for the compare pair.
+5. Click **Reports**. Previously available data is not displayed now.
 
-## Task 2: Execute the Job
-To execute a job:
+    ![](./images/5Purge.png " ")
 
-1. From the left navigation pane, click **Run/Execute Job** to display the **Run configuration** page.
+6. Similarly, click **Home**. Previously available data is not displayed on the **Home** page as well.
 
-    [](./images/15a-run-job-run-configuration-page.png " ")
+## Task 2: Delete Directories
 
-2. Select the job you just created from the **Job** drop-down list.
+The generated report files are stored in this location:
+`home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
 
-    ![](./images/15-run-job.png " ")
+To delete directories:
 
-3. Click **Retrieve Compare Pair List** to display the list of Compare Pairs and then click **Run Job**.
+1. Create a Group called **groupDel**. From the left navigation pane, click **Configuration** and then click **Group Configuration** to display the **Group configuration** page. Follow the steps in the **Lab: Create Groups and Compare Pairs** to create a new Group.
 
-    ![](./images/15b-select-job-retrieve-job.png " ")
+2. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Job Configuration** page, select the job from the **Job** drop-down list, click **Retrieve Compare Pair List** to display the list of Compare Pairs, and then click **Run Job**.
 
-4. From the left navigation pane, click **Running Jobs** to display the status of the jobs that are running.
+3. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
 
-  ![](./images/16-running-jobs-status.png " ")
+4. Select the Job you want to delete.
 
-5. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
+  ![](./images/1DeleteDir.png " ")
 
-    ![](./images/17-completed-jobs-compare-pair-status-chart.png " ")
+5. In the Terminnal, delete the reports from the Veridata UI under the following server directory: `home/opc/VDT/user_projects/domains/base_domain/veridata/reports/rtp/jobDel/<directory for latest job>`.
+
+6. In the Terminal, create a user-defined file under this location `home/opc/VDT/user_projects/domains/base_domain/veridata/reports/rtp/jobDel/<directory for latest job>` using the following command:
+
+    ```
+    <copy>touch lab_test</copy>
+    ```
+    ![](./images/2DeleteDir-LabTestTouchCommand.png " ")
+
+7. In the UI, select **Finished Jobs**, and select the Job **jobDel** you want to delete and click **Delete**
+
+    ![](./images/3DeleteDir-SelectjobDel.png " ")
+
+8. Click **OK** in the displayed popup.
+
+9. Run the Job.
+10. Click **Finished Jobs**.
+11. Select **jobDel**, and select the **Delete Directories** completely check box and click **Delete**.
+      ![](./images/4DeleteDir-ClickOK-Popup.png " ")
+
+12. In the terminal, verify that the entire directory has been deleted.
+
+      ![](./images/7DeletedDirectories_Terminal.png " ")
 
 You may now [proceed to the next lab](#next).
 
