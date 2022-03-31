@@ -81,7 +81,7 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
 3. Connect to MDS-SA  using MySQL Shell (Be sure to replace the IP address with MDS-SA IP)
 
       ````
-      <copy>mysqlsh -uadmin -p -h 10.0.1.. -sql</copy>
+      <copy>mysqlsh -uadmin -p -h 10.0.1.. --sql</copy>
       ````
 4. Import  Sakila schema 
 
@@ -203,7 +203,7 @@ To switch from the current primary instance to one of the secondary instances, d
 
 1. Open the navigation menu  Database > MySQL > DB Systems
 2. Choose **(root)** Compartment.
-3. In the list of DB Systems, Click MDS-HA DB System to display the details page and do the following:
+3. In the list of DB Systems, Click MDS-SA DB System to display the details page and do the following:
     * Save the current endpoint values for a before and after comparisson of the switch
     ![Connect](./images/07switch01.png " ")  
     * Select Switchover from the More Actions menu. The Switchover dialog is displayed
