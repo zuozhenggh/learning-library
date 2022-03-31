@@ -126,18 +126,7 @@ Learn how to
 
    The newly created user will now be listed.
 
-   ![ALT text is not available for this image](./images/db-actions-user-created.png " ")   
-
-## Task 3: Graph Studio: Load data from CSV files into tables
-
-### Introduction
-
-In this task you will load two CSV files into corresponding tables using the Database Actions interface of your 
-Oracle Autonomous Data Warehouse  or Oracle Autonomous Transaction Processing instance.
-
-Watch the video below for a quick walk through of the task.
-
-[](youtube:wkKKO-RO0lA)
+   ![ALT text is not available for this image](./images/db-actions-user-created.png " ") 
 
 **Login as the graph-enabled user**
 
@@ -151,6 +140,18 @@ Watch the video below for a quick walk through of the task.
 3. Login as the graph user (for example, `GRAPHUSER`) for your Autonomous Database instance. 
    
     ![ALT text is not available for this image](./images/db-actions-graphuser-login.png " ")  
+ 
+
+## Task 3: Graph Studio: Load data from CSV files into tables
+
+### Introduction
+
+In this task you will load two CSV files into corresponding tables using the Database Actions interface of your 
+Oracle Autonomous Data Warehouse  or Oracle Autonomous Transaction Processing instance.
+
+Watch the video below for a quick walk through of the task.
+
+[](youtube:wkKKO-RO0lA)
 
 **Download the sample datasets from the ObjectStore**
 
