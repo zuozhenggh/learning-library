@@ -36,11 +36,11 @@ Estimated Time: 5 minutes
     **MySQL Workbench Use  for MDS HeatWAve**
     ![MDS](./images/13workbench02.png " ")
 
-## **TASK 2:** Create PHP MySQL Application
+## **TASK 2:** Inatall and test PHP MySQL Application
 
 Estimated Time: 20 minutes
 
-Subtask 1 – Install App Server (APACHE)
+**Subtask 1 – Install App Server (APACHE)**
 
 1.	If not already connected with SSH, on Command Line, connect to the Compute instance using SSH ... be sure replace the  "private key file"  and the "new compute instance ip"
 
@@ -80,7 +80,7 @@ Subtask 1 – Install App Server (APACHE)
 
     **Example: http://129.213....**
 
-Subtask 2 – Install PHP    
+**Subtask 2 – Install PHP**   
 
 1.	Install php:
 
@@ -128,7 +128,7 @@ phpinfo();
 
    Example: http://129.213.167.../info.php
 
-Subtask 3 – Create MDS / PHP connect app
+**Subtask 3 – Create MDS / PHP connect app**
 
 1.	Security update"   set SELinux to allow Apache to connect to MySQL
 
@@ -216,6 +216,39 @@ if ($stmt = $link->prepare($query)) {
 6.	From your local  machine connect to dbhwtest.php
 
     Example: http://129.213.167..../dbtest.php  
+
+## **TASK 2:** Create Google Chart Application
+
+1. Go to the development folder
+
+    ````
+    <copy>cd /var/www/html</copy>
+    ````
+2. Create mydbchart.php file
+
+    ````
+    <copy>sudo nano mydbchart.php</copy>
+    ````
+3. Click on this link to **Download file [dbchart.php](files/dbchart.php)**  to your local machine
+2. Open dbchart.php from your local machine
+
+    ![MDS](./images/dbchart-open.png " ")
+
+4. copy all of the content of dbchart.php file from your local machine
+    - add the content to the mydbchart.php file that you are  creating
+    
+        ![MDS](./images/dbchart-select-all.png " ")
+    - Remember to replace the IP daadress,username, and password (lines 2 and 98 )
+        - $con = mysqli_connect('30.0...','admin','Welcome#123','airportdb');
+        - $link = mysqli_connect('30.0...','admin','Welcome#123','airportdb');
+        ![MDS](./images/dbchart-copied.png " ")
+    - Save the mydbchart.php 
+
+
+3.	From your local  machine connect to dbhwtest.php
+
+    Example: http://129.213.167..../mydbchart.php
+    ![MDS](./images/mydbchart-out.png " ")
 
 ## **TASK 3:**  Create an Oracle Analytic Cloud
 
