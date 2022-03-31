@@ -94,6 +94,22 @@ This lab assumes you have:
 
       ![Accept License](images/sqldeveloper-connection-properties.png "Accept License") 
 
+## Task 4: Connecting to Pluggable Database PDB1 and accessing HR Schema based tables
+
+1. In the connection parameters of SQL Developer, change to orcl to the name of pluggable database in our case pdb1
+
+      ![Accept License](images/sqldev-pdb1.png "Accept License") 
+
+      Once connected run the following query to access HR Schema based employee table
+  
+      ```
+      <copy>
+      select * from HR.EMPLOYEES;
+      </copy>
+      ``` 
+
+      ![Accept License](images/hr-schema.png "Accept License") 
+
 ## Task 4: Configuring Net Manager ( Optional )
 
 1. You can also update the configurations through Net Manager 
@@ -108,12 +124,114 @@ This lab assumes you have:
       ![Accept License](images/netmgr-service.png "Accept License") 
 
       ![Accept License](images/netmgr-listener.png "Accept License") 
+
+## Task 5: Install Visual Studio Code
+
+1. Configure connection parameters
+
+      ```
+      <copy>
+      # cd /etc/yum.repos.d
+      sudo vi vscode.repo 
+      </copy>
+      ``` 
+
+      ```
+      <copy> 
+      [vscode]
+      name=vscode
+      baseurl=https://packages.microsoft.com/yumrepos/vscode/
+      enabled=1
+      gpgcheck=1
+      gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+      </copy>
+      ``` 
+
+      ```
+      <copy> 
+      sudo su
+      yum install code 
+      </copy>
+      ``` 
+
+      create Visual code launcher from Desktop 
+
+      ![Visual studio code](images/vscode.png "Visual studio code") 
+
+## Task 6: Install NodeJS
+
+1. Configure connection parameters
+
+      ```
+      <copy>
+      sudo yum install -y oracle-nodejs-release-el7 oracle-release-el7
+      sudo yum install nodejs
+      </copy>
+      ``` 
+
+      Verify the installed node version
+
+      ```
+      <copy> 
+      node -v
+      v16.14.0
+      </copy>
+      ``` 
+
+## Task 7: Install Python3
+
+1. Configure connection parameters
+
+      ```
+      <copy>
+      sudo yum install -y python3
+      </copy>
+      ``` 
+
+      Verify the output if Python 3 is already installed
+
+      ```
+      <copy> 
+      Loaded plugins: langpacks, ulninfo
+      Package python3-3.6.8-18.0.5.el7.x86_64 already installed and latest version
+      Nothing to do
+      </copy>
+      ``` 
+
+## Task 8: Install Nginx
+
+1. Configure connection parameters
+
+      ```
+      <copy>
+      sudo yum install -y nginx
+      </copy>
+      ``` 
+
+      Verify the output if nginx is already installed
+
+      ```
+      <copy> 
+      Loaded plugins: langpacks, ulninfo
+      Package 1:nginx-1.20.1-9.el7.x86_64 already installed and latest version
+      Nothing to do
+      </copy>
+      ``` 
+
+      
    
    You successfully made it to the end this lab. You may now  *proceed to the next lab* .  
 
 ## Learn More
 
-* [Create users and groups on Oracle Linux 8](https://docs.oracle.com/en/learn/users_groups_linux8/index.html#administer-group-accounts) 
+* [Install Visual Code](https://blogs.oracle.com/wim/post/installing-visual-studio-code-on-oracle-linux-7) 
+* [How do I start with Node.js](https://nodejs.org/en/docs/guides/getting-started-guide/) 
+* [HR Schema](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/comsc/HR-sample-schema-table-descriptions.html) 
+
+
+
+
+
  
 ## Acknowledgements
 

@@ -100,7 +100,7 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Create users and groups on Oracle Linux 8](https://docs.oracle.com/en/learn/users_groups_linux8/index.html#administer-group-accounts) 
+* [Create users and groups on Oracle Linux ](https://docs.oracle.com/en/learn/users_groups_linux8/index.html#administer-group-accounts) 
  
 ## Acknowledgements
 

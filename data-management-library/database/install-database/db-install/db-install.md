@@ -2,9 +2,9 @@
 
 ## Introduction
 
-TBD.
+In this lab, we will install the Oracle Database 19c software.
 
-Estimated Time: 20 minutes
+Estimated Time: 40 minutes
 
 ### About TBD
 
@@ -17,8 +17,10 @@ some content.. .
 ### Objectives
  
 In this lab, you will enable:
-* some content.. . 
-* some content.. .  
+
+* Learn how to install and register a new Oracle 19c Home in the location of your choice
+* Install the Oracle 19c preinstall package 
+* Install Oracle 19c Database with a pluggable database (PDB)
 
 ### Prerequisites 
 This lab assumes you have:
@@ -132,7 +134,7 @@ This lab assumes you have:
           
       ```
       <copy> 
-      [opc@lldb:~]$ sudo su
+      [opc@x:~]$ sudo su
       [root@x:/home/opc]$ yum install -y oracle-database-preinstall-19c  
       </copy>
       ``` 
@@ -278,10 +280,10 @@ This lab assumes you have:
   
       LISTENER =
       (DESCRIPTION_LIST =
-      (DESCRIPTION =
-            (ADDRESS = (PROTOCOL = TCP)(HOST = <instance name>.livelabs.oraclevcn.com)(PORT = 1521))
-            (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
-      )
+            (DESCRIPTION =
+                  (ADDRESS = (PROTOCOL = TCP)(HOST = <instance name>.livelabs.oraclevcn.com)(PORT = 1521))
+                  (ADDRESS = (PROTOCOL = IPC)(KEY = EXTPROC1521))
+            )
       )
       </copy>
       ```
@@ -297,7 +299,7 @@ This lab assumes you have:
 
       Copyright (c) 1991, 2019, Oracle.  All rights reserved.
 
-      Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=lldb.livelabs.oraclevcn.com)(PORT=1521)))
+      Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=< image name >.livelabs.oraclevcn.com)(PORT=1521)))
       STATUS of the LISTENER
       ------------------------
       Alias                     LISTENER
@@ -308,7 +310,7 @@ This lab assumes you have:
       Security                  ON: Local OS Authentication
       SNMP                      OFF
       Listener Parameter File   /u01/app/oracle/product/19c/db_1/network/admin/listener.ora
-      Listener Log File         /u01/app/oracle/diag/tnslsnr/lldb/listener/alert/log.xml
+      Listener Log File         /u01/app/oracle/diag/tnslsnr/<image name>/listener/alert/log.xml
       Listening Endpoints Summary... 
       </copy>
       ```
@@ -325,7 +327,7 @@ This lab assumes you have:
 
       ```
       <copy>
-      [orcl:oracle@lldb:/u01/app/oracle/product/19c/db_1/bin]$ sqlplus -v 
+      [orcl:oracle@x:/u01/app/oracle/product/19c/db_1/bin]$ sqlplus -v 
       SQL*Plus: Release 19.0.0.0.0 - Production
       Version 19.3.0.0.0 
       </copy>
@@ -334,8 +336,26 @@ This lab assumes you have:
 7. connect to sqlplus as sysdba
 
       ```
-      <copy>
-      [orcl:oracle@lldb:/u01/app/oracle/product/19c/db_1/bin]$ sqlplus / as sysdba 
+      <copy> 
+      [orcl:oracle@x:~]$ . oraenv
+      ORACLE_SID = [orcl] ? orcl
+      The Oracle base remains unchanged with value /u01/app/oracle
+      [orcl:oracle@x:~]$ sqlplus / as sysdba
+
+      SQL*Plus: Release 19.0.0.0.0 - Production on Mon Mar 28 07:18:26 2022
+      Version 19.3.0.0.0
+
+      Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+      Connected to:
+      Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+      Version 19.3.0.0.0
+
+      SQL> exit
+      Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+      Version 19.3.0.0.0
+      [orcl:oracle@x:~]$  
       </copy>
       ```
 
