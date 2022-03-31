@@ -57,21 +57,28 @@ algorithm, it will predict the number of nodes needed.
     ```
     <copy>mysqlsh -uadmin -p -h 10.0.1... --sql </copy>
     ```
-
-3. Run the following Auto Parallel Load command to load the airportdb tables into HeatWave..
-
     ![Connect](./images/heatwave-load-01-shell.png " ")
+
+
+3. View the airportdb total records per table
+
+    ```
+    <copy>SELECT table_name, table_rows FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'airportdb';</copy>
+    ```
+    ![Connect](./images/airportdb-list.png " ")
+
+4. Run the following Auto Parallel Load command to load the airportdb tables into HeatWave..
 
     ```
     <copy>CALL sys.heatwave_load(JSON_ARRAY('airportdb'), NULL);</copy>
     ```
-4. The completed load cluster screen should look like this:
+5. The completed load cluster screen should look like this:
 
     ![Connect](./images/heatwave-load-02.png " ")
 
     ![Connect](./images/heatwave-load-03.png " ")
 
-5.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
+6.	Verify that the tables are loaded in the HeatWave cluster. Loaded tables have an AVAIL_RPDGSTABSTATE load status.
 
     ```
     <copy>USE performance_schema;</copy>

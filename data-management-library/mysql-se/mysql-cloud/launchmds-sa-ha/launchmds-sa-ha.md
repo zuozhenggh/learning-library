@@ -2,7 +2,7 @@
 
 ## Introduction
 
-When working in the cloud, there are often times when your servers and services are not exposed to the public internet. The Oracle Cloud Infrastructure (OCI) MySQL HeatWave Dabase Service instances is an example of a service that is only accessible through private networks. Since the service is fully managed, we keep it siloed away from the internet to help protect your data from potential attacks and vulnerabilities. It’s a good practice to limit resource exposure as much as possible, but at some point, you’ll likely want to connect to those resources. That’s where Compute Instance, also known as a Bastion host, enters the picture. This Compute Instance Bastion Host is a resource that sits between the private resource and the endpoint which requires access to the private network and can act as a “jump box” to allow you to log in to the private resource through protocols like SSH.  This bastion host requires a Virtual Cloud Network and Compute Instance to connect with the MySQL DB Systems. 
+When working in the cloud, there are often times when your servers and services are not exposed to the public internet. The Oracle Cloud Infrastructure (OCI) MySQL HeatWave Dabase Service instances is an example of a service that is only accessible through private networks. Since the service is fully managed, we keep it siloed away from the internet to help protect your data from potential attacks and vulnerabilities. It’s a good practice to limit resource exposure as much as possible, but at some point, you’ll likely want to connect to those resources. That’s where Compute Instance, also known as a Bastion host, enters the picture. This Compute Instance Bastion Host is a resource that sits between the private resource and the endpoint which requires access to the private network and can act as a “jump box” to allow you to log in to the private resource through protocols like SSH.  
 
 Today, you will use the already created Compute Instance with MySQL Shell to connect to the DB Systems. 
 
@@ -16,7 +16,7 @@ In this lab, you will be guided through the following tasks:
 
 - Setup Compute Instance with MySQL Shell
 - Connect to MySQL Standalone DB System
-- Connect to MySQL High Availability DB System
+- Switchover and Connect to MySQL High Availability DB System
 
 ### Prerequisites
 
@@ -30,7 +30,7 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
 
 1. If not already connected with SSH, connect to Compute instance using Cloud Shell
 
-(Example: ssh -i ~/.ssh/id_rsa opc@132.145.17….)
+   (Example: ssh -i ~/.ssh/id_rsa opc@132.145.17….)
 
 2. Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-SA private IP address at the end of the cammand. Also enter the admin user password
 
@@ -40,43 +40,123 @@ MySQL Database Service Standalone has daily automatic backups and is resilient t
     ````
     <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
     ````
-    ![Connect](./images/06connect04.png " ")
-
 3. On MySQL Shell, switch to SQL mode  to try out some SQL commands
 
- Enter the following command at the prompt:
+   a. Enter the following command at the prompt:
      ````
     <copy>\sql</copy>
     ````
- To display a list of databases, Enter the following command at the prompt:
+   b. To display a list of databases, Enter the following command at the prompt:
       ````
     <copy>SHOW DATABASES;</copy>
     ````  
 
- To display the database version, current_date, and user enter the following command at the prompt:
+   c. To display the database version, current_date, and user enter the following command at the prompt:
       ````
     <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
     ````  
- To display MySQL user and host from user table enter the following command at the prompt:
+   d. To display MySQL user and host from user table enter the following command at the prompt:
        ````
     <copy>SELECT USER, HOST FROM mysql.user;</copy>
       ````
- Type the following command to exit MySQL:
+   e. Type the following command to exit MySQL:
       ````
     <copy>\q</copy>
-    ````   
+    ```` 
+  
 
-  **Final Sceen Shot**
-    ![Connect](./images/06connect05.png " ")
+## Task 2:  Download, unpack, Import the Sakila sample dataset
 
-## Task 2: Connect to MySQL Database and Switchover - High Availability
+1. Download Sakila sample dataset
+
+      ````
+      <copy> wget https://downloads.mysql.com/docs/sakila-db.tar.gz </copy>
+      ````  
+
+2. Unpack  Sakila Sample Dataset.
+
+      ````
+      <copy>tar xvzf sakila-db.tar.gz</copy>
+      ```` 
+3. Connect to MySQL using MySQL Shell
+
+      ````
+      <copy>mysqlsh -uadmin -p -h 10.0.1.. -sql</copy>
+      ````
+4. Import  Sakila schema 
+
+      ````
+      <copy>\source sakila-db/sakila-schema.sql</copy>
+      ```` 
+5. Import  Sakila data.
+
+      ````
+      <copy>\source sakila-db/sakila-data.sql</copy>
+      ```` 
+
+   a. List all of the databases
+
+      ````
+      <copy>show databases;</copy>
+      ```` 
+   
+   b. Point to Sakila schema
+
+      ````
+      <copy> use sakila</copy>
+       ```` 
+   
+   c. List Sakila tables
+
+      ````
+      <copy>show tables;</copy>
+      ```` 
+   d. Display Sakila  actors
+
+      ````
+      <copy>select * from sakila.actor limit 3;</copy>
+      ```` 
+   e. Display Sakila countries
+
+      ````
+      <copy>SELECT country_id, country from country WHERE country = 'Afghanistan' OR 'Bangladesh' OR 'China';</copy>
+      ```` 
+   f. Type the following command to exit MySQL:
+      ````
+      <copy>\q</copy>
+      ````
+## Task 3: Convert Standalone database to High Availability database
+
+Use the Console to enable or disable high availability on a DB system
+
+   1. To enable High Availability on a DB System, open the Enable High Availability dialog from one of the following locations:
+
+      - The Enable High Availability menu item from the More Actions (3-dot) menu on the DB Systems list page
+      - The Enable High Availability menu item from the More Actions drop-down menu on the DB System Details page.
+      - The Enable link adjacent the High Availability label on the DB System Details page.
+      - The Enable High Availability dialog is displayed.
+   2. Click Enable.
+
+   If your DB System is not using a high availability-compatible configuration, you must select one from the Configuration drop-down list.
+
+   3. Select the HA-compatible configuration and click Enable.
+
+      The configuration is updating. The DB System  will enter the UPDATING state. 
+
+      The selected configuration will be applied to the DB System.
+
+      The secondary instances will be  cloned from the primary instance. 
+
+**This conversion will take a while Go to the next Lab and come back in 15 minutes** 
+
+## Task 4: Connect to MySQL Database High Availability
 
 A highly available database system is one which guarantees if one instance fails, another takes over, with zero data loss and minimal downtime.
 MySQL Database High Availability uses MySQL Group Replication to provide standby replicas to protect your data and provide business continuity. It is made up of three MySQL instances, a primary, and two secondaries. All data written to the primary instance is also written to the secondaries. In the event of failure of the primary, one of the secondaries is automatically promoted to primary, is set to read-write mode, and resumes availability to client applications with no data loss. This is called a failover. It is also possible to switch manually, and promote a secondary to primary. This is called a switchover.
 
 1. If not already connected with SSH, connect to Compute instance using Cloud Shell
 
-(Example: ssh -i ~/.ssh/id_rsa opc@132.145.17….)
+   (Example: ssh -i ~/.ssh/id_rsa opc@132.145.17….)
 
 2. From your Compute instance, connect to MDS-HA MySQL using the MySQL Shell client tool.
 
@@ -93,40 +173,34 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
     ````
     <copy>mysqlsh -uadmin -p -h 10.0.1....</copy>
     ````
-    ![Connect](./images/06connect04.png " ")
-
 4. On MySQL Shell, switch to SQL mode  to try out some SQL commands
 
- Enter the following command at the prompt:
+   a. Enter the following command at the prompt:
      ````
     <copy>\sql</copy>
     ````
- To display a list of databases, Enter the following command at the prompt:
+   b. Display all of the databases
       ````
     <copy>SHOW DATABASES;</copy>
     ````  
 
- To display the database version, current_date, and user enter the following command at the prompt:
+   c. To display the database version, current_date, and user enter the following command at the prompt:
       ````
-    <copy>SELECT VERSION(), CURRENT_DATE, USER();</copy>
+    <copy>select * from sakila.actor limit 3;</copy>
     ````  
- To display MySQL user and host from user table enter the following command at the prompt:
-       ````
-    <copy>SELECT USER, HOST FROM mysql.user;</copy>
-      ````
- Type the following command to exit MySQL:
+
+   d. Type the following command to exit MySQL:
       ````
     <copy>\q</copy>
     ````   
 
-  **Final Sceen Shot**
-    ![Connect](./images/06connect05.png " ")
+## Task 5: Switcover MySQL Database  High Availability
 
-5. **Switchover** - To switch from the current primary instance to one of the secondary instances, do the following:
+To switch from the current primary instance to one of the secondary instances, do the following:
 
-* Open the navigation menu  Database > MySQL > DB Systems
-* Choose **(root)** Compartment.
-* In the list of DB Systems, Click MDS-HA DB System to display the details page and do the following:
+1. Open the navigation menu  Database > MySQL > DB Systems
+2. Choose **(root)** Compartment.
+3. In the list of DB Systems, Click MDS-HA DB System to display the details page and do the following:
     * Save the current endpoint values for a before and after comparisson of the switch
     ![Connect](./images/07switch01.png " ")  
     * Select Switchover from the More Actions menu. The Switchover dialog is displayed
@@ -137,7 +211,8 @@ MySQL Database High Availability uses MySQL Group Replication to provide standby
     * The DB System's status changes to Updating, and the selected instance becomes the primary.
         ![Connect](./images/07switch04.png " ")  
 
-    
+4. To view the new praimary database go back to **Task 4**
+
 **You may now proceed to the next lab**
 
 
