@@ -20,9 +20,9 @@ This lab assumes you have:
 
 1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
 
-    - Database Listeners
+    - Database Listener
         - LISTENER (1521)
-    - Database Server Instances
+    - Database Server Instance
         - IAMDB
     - Hedwig Mail Server
 
