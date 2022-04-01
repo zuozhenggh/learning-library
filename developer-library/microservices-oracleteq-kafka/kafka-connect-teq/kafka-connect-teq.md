@@ -32,6 +32,12 @@ You will configure the connection between the Kafka broker and the Oracle TEQ su
 
 The kafka2teq-connect-configuration.json file below has the configuration required to create a Connect Sync agent. The topics is already filled with Kafka Topic created during Lab 2, if it was changed, you need change this configuration too.
 
+```bash
+<copy>
+cat $LAB_HOME/kafka-connect-teq/kafka2teq-connect-configuration.json
+</copy>
+```
+
 ```json
 {
   "connector.class": "io.confluent.connect.jms.JmsSinkConnector",
@@ -149,14 +155,17 @@ Now that you have the Connector running, you can produce some messages and test 
 
     ```bash
         <copy>
-            curl -X POST -H "Content-Type: application/json" -d '{ "id": "sync1", "message": "Sync Message from Kafka to TEQ #1" } ' http://localhost:8080/placeMessage
+            curl -X POST -H "Content-Type: application/json" -d '{ "id": "sync1", "message": "Sync Message from Kafka to TEQ #1" } ' http://localhost:8080/placeMessage | jq
         </copy>
     ```
 
     The result should be like
 
     ```bash
-        {"id":"3","statusMessage":"Successful"}%
+        {
+            "id": "1",
+            "statusMessage": "Successful"
+        }
     ```
 
 2. Enqueueing with Kafka Producer inside container.
@@ -174,10 +183,9 @@ Now that you have the Connector running, you can produce some messages and test 
     You will get the prompt to write your messages and to finish your should press CTRL+D:
 
     ```bash
-    >LAB8022 - Sync Message from Kafka to TEQ 1
-    >LAB8022 - Sync Message from Kafka to TEQ 2
-    >LAB8022 - Sync Message from Kafka to TEQ 3
-    >LAB8022 - Sync Message from Kafka to TEQ 4
+    >Sync Message from Kafka to TEQ #2
+    >Sync Message from Kafka to TEQ #3
+    >Sync Message from Kafka to TEQ #4
     ```
 
 ## **Task 3:** Dequeue messages from Oracle TEQ
@@ -191,6 +199,11 @@ After produce some messages, the expected behavior is the Connect Sync agent con
     ```bash
         <copy>
         cd $LAB_HOME/kafka-connect-teq
+        </copy>
+    ```
+
+    ```bash
+        <copy>
         source dequeue_oracle_teq.sh
         </copy>
     ```
@@ -198,7 +211,13 @@ After produce some messages, the expected behavior is the Connect Sync agent con
     As a result you will something like this:
 
     ```bash
-    JMS message: LAB8022 - Sync Message from Kafka to TEQ 1
+    TEQ message: {"id": "0", "message": "message1"}
+
+    PL/SQL procedure successfully completed.
+    ```
+
+    ```bash
+    TEQ message: {"id": "1", "message": "Sync Message from Kafka to TEQ #1"}
 
     PL/SQL procedure successfully completed.
     ```
@@ -222,12 +241,17 @@ After produce some messages, the expected behavior is the Connect Sync agent con
 
     SQL> select MSGID, ENQUEUE_TIME from LAB8022_TOPIC WHERE ROWNUM<20 ORDER BY ENQUEUE_TIME DESC;
 
-                                MSGID                           ENQUEUE_TIME 
+                                MSGID                           ENQUEUE_TIME
+
     ___________________________________ ______________________________________
-    01000000000000000000000001661400    25-JAN-22 03.44.03.005846000 PM GMT
-    01000000000000000000000001661300    25-JAN-22 03.43.47.184700000 PM GMT
-    01000000000000000000000001661200    25-JAN-22 03.32.27.958987000 PM GMT
-    01000000000000000000000001661100    25-JAN-22 03.32.22.928905000 PM GMT
+    00000000000000000200000001660400    21-MAR-22 08.50.38.953964000 PM GMT
+    00000000000000000200000001660300    21-MAR-22 08.50.31.738645000 PM GMT
+    00000000000000000200000001660200    21-MAR-22 08.50.29.545642000 PM GMT
+    00000000000000000200000001660100    21-MAR-22 08.49.04.080323000 PM GMT
+    00000000000000000200000001660000    21-MAR-22 08.47.47.158314000 PM GMT
+    00000000000000000000000001660000    21-MAR-22 08.42.29.565761000 PM GMT
+
+    6 rows selected.
 
     ```
 

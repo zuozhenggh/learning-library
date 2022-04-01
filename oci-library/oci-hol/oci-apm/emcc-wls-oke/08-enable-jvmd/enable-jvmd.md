@@ -24,7 +24,11 @@ Estimated time: 25 minutes
 * Completion of the preceding tutorials in this workshop
 
 
-## Task 1: Configure network and firewall settings
+### Objectives
+* Enable JVM Diagnostics
+
+## **Task 1**: Configure network and firewall settings
+
 
 1.  First, you will need to obtain **JVMD SSL Port** from the Middleware agent management page in the EM console. From the EM console, select **Setup** (a gear icon in the menu bar) > **Middleware Management** > **Engines and Agents**.
 
@@ -98,7 +102,9 @@ Estimated time: 25 minutes
 
    ![Client PC, terminal window, exit](images/1-11-oci.png " ")
 
-## Task 2: Edit hosts files in WebLogic Server containers
+
+## **Task 2**: Edit hosts files in WebLogic Server containers
+
 
 1.  Launch the Oracle Cloud Shell, run the ***oci ce cluster create-kubectl*** command which you saved in the Tutorial 1, Task 1, Step 7.
 
@@ -177,7 +183,8 @@ Estimated time: 25 minutes
     </copy>
     ```
 
-## Task 3: Download JVMD agent and upload to the WebLogic Server pod
+
+## **Task 3**: Download JVMD agent and upload to the WebLogic Server pod
 
 In this task, you will download ***jamagent.war*** from the EM console.  
 
@@ -253,7 +260,9 @@ In this task, you will download ***jamagent.war*** from the EM console.
     </copy>
     ```
 
-## Task 4: Install JVMD agent to the WebLogic Servers
+
+## **Task 4**: Install JVMD agent to the WebLogic Servers
+
 
 
 1. Once the ***jamagent.war*** file was uploaded to the pod, you can deploy it using the WebLogic Administration Console web application. Run the following command to see the external IP of the Traefik load balancer.
@@ -352,7 +361,9 @@ In this task, you will download ***jamagent.war*** from the EM console.
     ![EM Console, JVM Pool target home page](images/4-19-emcc.png " ")
 
 
-## Task 5: Associate JVM targets with the WebLogic domain
+
+## **Task 5**: Associate JVM targets with the WebLogic domain
+
 
 When a JVMD agent is deployed manually to a WebLogic Server in the Kubernetes cluster, JVM targets appear under the **Default** JVM pool target in the EM console, and it is not associated with the WebLogic Domain. In this task, you will manually add associations of the JVM targets to the WebLogic domain target.
 
