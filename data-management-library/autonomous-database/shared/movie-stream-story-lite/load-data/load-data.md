@@ -50,15 +50,13 @@ For this workshop we need to create one new user.
 
     ![Click Database Actions](images/launchdbactions.png " ")
 
-2. Enter ADMIN for the username and click **Next**. On the next form, enter the ADMIN password - which is the one you entered when creating your Autonomous Data Warehouse. Click **Sign in**.
+You will automatically log in as the ADMIN user.
 
-    ![Log in dialog for Database Actions](images/2878884336.png " ")
-
-3. On the Database Actions home page, click the **Database Users** card.
+2. On the Database Actions home page, click the **Database Users** card.
 
     ![Database Users card of the Database Actions home page](images/2878884369.png " ")
 
-4.  You can see that your ADMIN user appears as the current user.  On the right-hand side, click the **+ Create User** button.
+3.  You can see that your ADMIN user appears as the current user.  On the right-hand side, click the **+ Create User** button.
 
     ![Create User button highlighted on the Database Users page](images/2878884398.png " ")
 
@@ -151,25 +149,26 @@ Now you need to switch from the ADMIN user to the MOVIESTREAM user, before start
     ![The Database Actions home page](images/dbactions-home.png " ")
 
 
-## Task 4: Configure the Object Storage connections
+## Task 4: Load data from files in Object Storage using Data Tools
 
-In this step, you will set up access to a bucket on Oracle Cloud Infrastructure Object Storage that contains "gold" data that we want to load.
+In this step we will perform some simple data loading tasks, to load in CSV files from object storage into tables in our autonomous database.
 
-1. On the Database Actions home page, under **Data Tools**, click **DATA LOAD**.
+1. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
 
-    ![Click DATA LOAD](images/dataload.png)
+    ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
 
-2. In the **Explore and Connect** section, click **CLOUD LOCATIONS** to set up the connection from your autonomous database to object storage.
+2. You will need to set up a cloud storage location. A cloud storage location is an object storage bucket that contains your source data. Click **Done** to set up a location.
 
-    ![Click CLOUD LOCATIONS](images/cloudlocations.png)
+    ![Add Cloud Storage location](images/goto_addcloudstorage.png)
 
-3. To add access to the Moviestream gold area which contains curated files for us to load, click **+Add Cloud Storage** in the top right of your screen.
+3. Fill in the cloud location details:
 
     - In the **Name** field, enter 'MovieStreamGold'.
 
-    **Note:** Take care not to use spaces in the name.
+        **Note:** Take care not to use spaces in the name.
 
-    - Leave Cloud Store selected as **Oracle**.
+    - Select **No Credential** as this is a public bucket.
+
     - Copy and paste the following URI into the URI + Bucket field:
 
     ```
@@ -178,24 +177,9 @@ In this step, you will set up access to a bucket on Oracle Cloud Infrastructure 
     </copy>
     ```
 
-    - Select **No Credential** as this is a public bucket.
-    - Then click **Create**.
-
-4. The page now shows the newly created Cloud Location.
-
-    ![Click CLOUD LOCATIONS](images/cloudlocations2.png)
-
-## Task 5: Load data from files in Object Storage using Data Tools
-
-In this step we will perform some simple data loading tasks, to load in CSV files from object storage into tables in our autonomous database.
-
-1. To load or link data from our newly configured cloud storage, click on the **Data Load** link in the top left of your screen.
-
-    ![Click on Data Load](images/backtodataload.png)
-
-2. Under **What do you want to do with your data?** select **LOAD DATA**, and under **Where is your data?** select **CLOUD STORAGE**, then click **Next**
-
-    ![Select Load Data, then Cloud Storage](images/loadfromstorage.png)
+    ![Add Cloud Storage location](images/addcloudstorage-details.png)
+    
+    - Then click **Create**. This will return you to the **Load Cloud Object** page.
 
 3. From the MOVIESTREAMGOLD location, drag the **customer_contact** folder over to the right hand pane. Note that a dialog box appears asking if we want to load all the files in this folder to a single target table. In this case, we only have a single file, but we do want to load this into a single table. Click **OK**.
 
