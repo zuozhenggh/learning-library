@@ -136,12 +136,6 @@ To create your lab and workshop content:
     In this example, your project folder **labs** contains 5 labs and a workshop. Your **workshops\freetier** folder can be treated as another lab that includes an introduction to your workshop.
     ![](./images/use-atom-editor-folder-structure-in-atom.png " ")
 
-<!-- 12. For additional information on creating your labs and developing workshop content:
-
-* Click [here](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax) for a quick tour that demonstrates commonly used Markdown syntax and their HTML equivalents.
-
-* Click [here](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New) for a deeper dive into more robust Markdown Template features. -->
-
 ## Task 5: Security
 
 1. Blur all personal information (IP addresses, intranet URLs, email addresses, OCIDs, usernames, and passwords) from images.
@@ -151,7 +145,7 @@ To create your lab and workshop content:
 
   ![](./images/image-desc.png " ")
 
-3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text.
+3. Do not use any IP addresses, intranet URLs (for example links to a Confluence page), email addresses, OCIDs, username, passwords in the text. Do not provide a demo password. 
 
 
 ## Task 6: Preview Your Workshop and Labs Using Live Server
@@ -246,4 +240,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Brianna Ambler
 
-* **Last Updated By/Date:** Lauran Serhal, November 2021
+* **Last Updated By/Date:** Andres Quintana, March 2022
