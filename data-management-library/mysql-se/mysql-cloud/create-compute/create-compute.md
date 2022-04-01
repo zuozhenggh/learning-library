@@ -98,7 +98,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     ![CONNECT](./images/05compute01.png " ")
 
 5. On Instances in **(root)** Compartment, click  **Create Instance**
-    ![CONNECT](./images/05compute02_00.png " ")
+    ![CONNECT](./images/05compute02-00.png " ")
 
 6. On Create Compute Instance 
 
