@@ -217,7 +217,7 @@ if ($stmt = $link->prepare($query)) {
 
     Example: http://129.213.167..../dbtest.php  
 
-## **TASK 2:** Create Google Chart Application
+## **TASK 3:** Create Google Chart Application
 
 1. Go to the development folder
 
@@ -250,7 +250,7 @@ if ($stmt = $link->prepare($query)) {
     Example: http://129.213.167..../mydbchart.php
     ![MDS](./images/mydbchart-out.png " ")
 
-## **TASK 3:**  Create an Oracle Analytic Cloud
+## **TASK 4:**  Create an Oracle Analytic Cloud
 
 Estimated Time: 40 minutes minutes intallation time
 
