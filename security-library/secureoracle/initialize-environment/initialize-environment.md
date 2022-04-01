@@ -34,7 +34,6 @@ This lab assumes you have:
     <copy>
     systemctl status hedwig.service
     systemctl status oracle-database
-    systemctl status oracle-db-listener
     </copy>
     ```
 
@@ -48,7 +47,6 @@ This lab assumes you have:
     ```
     <copy>
     sudo systemctl restart oracle-database
-    sudo systemctl restart oracle-db-listener
     </copy>
     ```
     To restart the *Hedwig Mail server*:
