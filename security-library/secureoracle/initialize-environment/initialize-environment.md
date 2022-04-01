@@ -28,7 +28,7 @@ This lab assumes you have:
 
     ![](./images/landing.png " ")
 
-2.  Run the following from the *Terminal* session to validate that expected processes are up.
+2.  Run the following from the *Terminal* session, to validate that the expected processes are up.
 
     ```
     <copy>
@@ -61,7 +61,7 @@ This lab assumes you have:
     </copy>
     ```
 
-4.  Now open a new terminal session remotely using an SSH client and proceed as shown below to start all components as “*oracle*” user
+4.  Open a new terminal session remotely using an SSH client and proceed as shown below to start all components as “*oracle*” user
 
     ```
     <copy>sc start all</copy>
