@@ -1,10 +1,10 @@
 # Connect to ADB
 ## Introduction
-Included with Oracle REST Data Services, Oracle SQL Developer Web is the web-based version of Oracle SQL Developer that enables you to execute queries and scripts, create database objects, build data models, and monitor database activity.
+Included with Oracle REST Data Services, *Oracle SQL Developer Web* is the web-based version of Oracle SQL Developer that enables you to execute queries and scripts, create database objects, build data models, and monitor database activity.
 
-Oracle SQL Developer Web runs in Oracle REST Data Services and access to it is provided through schema-based authentication. To use Oracle SQL Developer Web, you must sign in as a database user whose schema has been enabled for SQL Developer Web.
+Oracle SQL Developer Web runs in Oracle REST Data Services, and access to it is provided through schema-based authentication. To use Oracle SQL Developer Web, you must sign in as a database user whose schema has been enabled for SQL Developer Web.
 
-In Oracle Autonomous Database databases, the ADMIN user is pre-enabled for SQL Developer Web.
+In Oracle Autonomous Database, the ADMIN user is pre-enabled for SQL Developer Web.
 
 Estimated time: 5 minutes
 
@@ -20,7 +20,7 @@ Estimated time: 5 minutes
 
 This will open another browser tab/window. If you have popup blockers on, you may need to allow cloud.oracle.com access to open popup windows or open the popup window manually.
 
-3. The popup window will take you directly to the Database Actions start page logged in as the **Admin** user. 
+3. The popup window will take you directly to the **Database Actions** start page logged in as the **Admin** user.
 
 ![](./images/db-actions-main.png)
 
@@ -41,10 +41,10 @@ If it does not, you will be directed to a login page.
 ![](./images/click-x.png  " ")
 
 ## Conclusion
- You are now connected to your Autonomous Database using SQL Developer Web.
+ You are now connected to your Autonomous Database using SQL Developer Web. You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
  - **Author** - Troy Anthony, Database Product Management, May 2020
- - **Contributors** - Anoosha Pilli, Product Manager
- - **Last Updated By/Date** - Brian Spendolini, April 2022
+ - **Contributors** - Anoosha Pilli, Product Manager; Brian Spendolini
+ - **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, March 2022
