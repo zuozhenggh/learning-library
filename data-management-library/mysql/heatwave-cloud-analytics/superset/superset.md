@@ -95,11 +95,11 @@ This lab assumes you have:
     ```
     > **Note** The purpose of this step is to simplify and allow port-forwarding service to the **oke-operator** compute instance. You should not disable the firewalld service in production
 
-6. Start port-forwarding to Superset service.  If the testing finishes, press **CTRL-C** to terminate port-forward service
+6. Start port-forwarding to Superset service.
 
     ```
     <copy>
-    kubectl port-forward --address 0.0.0.0 8088:8088 service/superset -n superset
+    kubectl port-forward service/superset --address 0.0.0.0 8088:8088 -n superset &
     </copy>
     ```
     > **Note** This is an alternative way to access OKE services via kubernetes port-forwarding function that is different from using ingress-controller
