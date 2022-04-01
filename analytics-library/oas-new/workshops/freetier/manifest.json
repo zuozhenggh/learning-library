@@ -37,7 +37,13 @@
       "type": "external"
     },
     {
-      "title": "Lab 5: Augmented Analytics",
+      "title": "Lab 5: Self-Service Data Preparation and Enrichment",
+      "description": "Self-Service Data Preparation and Enrichment Lab",
+      "filename": "../../self-service-data-prep/self-service-data-prep.md",
+      "type": "external"
+    },
+    {
+      "title": "Lab 6: Augmented Analytics",
       "description": "Augmented Analytics",
       "filename": "../../augmented-analytics/augmented-analytics.md",
       "type": "external"
