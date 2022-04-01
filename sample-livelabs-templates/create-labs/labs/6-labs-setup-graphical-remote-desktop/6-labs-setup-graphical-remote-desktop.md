@@ -48,6 +48,31 @@ Follow steps below to establish a unique static hostname that will be enforced o
     - (3) Do you have additional host alias(es), virtualhost names, or FQDN required for labs that are using this instance? [Y/N]
     - (4) If Y, "Enter each additional host alias, FQDN, or virtualhost name (separated from each other by a space. e.g. *serv1 serv1.demo.com*)"
 
+3. Review the script output
+4. If you have additional entries you would like added to */etc/hosts* file whenever an instance is created from the image, edit */root/bootstrap/firstboot.sh* and add them under the ***Add Static Name to /etc/hosts*** block
+
+    In the example below, the following customization are added to a setup:
+    - 3 Additional host aliases:  *myapp*, *app1*, and *hr.demo.com*
+    - 3 Additional external host entries to "/etc/hosts"
+
+    ```
+    <copy>
+    sudo cat /root/bootstrap/firstboot.sh
+    </copy>
+    ```
+
+    ![](./images/novnc-firstboot-1.png " ")
+
+    This customization resulted in the following */etc/hosts* file.
+
+    ```
+    <copy>
+    sudo cat /etc/hosts
+    </copy>
+    ```
+
+    ![](./images/novnc-firstboot-2.png " ")
+
 ## Task 2: Deploy noVNC
 1.  From the same session started in the previous task, login again as root via SUDO and run the latest setup script. You will be prompted for the following input:
 
