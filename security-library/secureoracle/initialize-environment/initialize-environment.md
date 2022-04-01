@@ -60,8 +60,8 @@ This lab assumes you have:
     sudo -E /home/oracle/demo/hedwig-0.7/bin/run.sh start
     </copy>
     ```
-
-4.  Open a new terminal session remotely using an SSH client and proceed as shown below to start all components as “*oracle*” user
+## Task 2: Start OIG Components
+1. Open a new terminal session *remotely using an SSH client* and proceed as shown below to start all components as “*oracle*” user
 
     ```
     <copy>sc start all</copy>
@@ -82,7 +82,7 @@ This lab assumes you have:
     ```
 
 
-## Task 2: Running Development Tools
+## Task 3: Running Development Tools
 
 The development tools in SecureOracle are aimed to support use cases like editing SOA composites for OIG workflow approvals but also to help in customizing and configuring the different components as needed.
 
@@ -141,7 +141,7 @@ The development tools in SecureOracle are aimed to support use cases like editin
     </copy>
     ```
 
-## Task 3: Admin Consoles, Applications and User Credentials
+## Task 4: Admin Consoles, Applications and User Credentials
 
 
 If you prefer accessing these from your local computer then chose one of the following options:
@@ -308,7 +308,7 @@ If you prefer accessing these from your local computer then chose one of the fol
     Password        Oracle123
     ```
 
-## Task 4: Branding SecureOracle (optional)
+## Task 5: Branding SecureOracle (optional)
 Use the following instructions to customize the logo in the OIG Self Service interface. For illustrations we will use a sample logo image staged on your instance. Feel free to use your own image if preferred. Should you elect to use your own logo, ensure follow the recommended size of 145 x 38 pixels.
 
 1. Copy the image file to *`/home/oracle/products/oim/idm/server/apps/oim.ear/iam-consoles-faces.war/images`*
