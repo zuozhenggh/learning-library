@@ -10,9 +10,12 @@ Estimated time: 5 minutes
 ### Prerequisites
 
 * Completion of the **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop, labs 1, 2, 3 and 4.
-* Completion of the preceding tutorials in this workshop
 
-## Task 1:  Create a private subnet
+### Objectives
+* Create a private subnet for load balancer services
+
+## **Task 1**: Create a private subnet
+
 
 1. From the Oracle Cloud navigation menu, select **Developer Services** > **Kubernetes Clusters (OKE)**.
 
@@ -52,7 +55,8 @@ Estimated time: 5 minutes
 
 
 
-You may now [proceed to the next tutorial](#next).
+
+You may now **proceed to the next tutorial**.
 
 ## Acknowledgements
 
