@@ -109,7 +109,7 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 	<copy>
 	<script>
 	window.apmrum = (window.apmrum || {});
-	window.apmrum.serviceName='todolist browser ';
+	window.apmrum.serviceName='todolist browser';
 	window.apmrum.webApplication='My TodoList App';
 	window.apmrum.ociDataUploadEndpoint='<ociDataUploadEndpoint>';
 	window.apmrum.OracleAPMPublicDataKey='<APM_Public_Datakey>';

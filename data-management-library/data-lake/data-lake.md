@@ -22,60 +22,111 @@ Watch the video below for a quick walk through of the lab.
 
 You have several choices on how to create applications and languages. You can choose something that makes sense for your environment. First, we are going to take a look at the OCI Data Flow and create an application to read through files in the object storage or data lake.
 
-This is just an example of how you can use your already created scripts to run as an application and schedule using OCI Data Flow. This currently only reads the data from a csv file which can be used to populate a table or put the output into the bucket.
+We have created a python script for you to use as part of your OCI Data Flow application. It requires a little bit of editing to get your ADB ID, user name and password added to script and then uploaded to object storage. We are going to use Cloud Shell to do the editing and upload to our object storage bucket.
 
-First navigate to the OCI Data Flow and click on Create Application.
+Start Cloud Shell
+
+![Start Cloud Shell](./images/cloudshell-open.png " ")
+
+From the current directory (your home directory of your user in Cloud Shell), create a file called livelabs_example.py
+
+```
+<copy>
+vi livelabs_example.py
+</copy>
+```
+Copy the following script and insert it into the livelabs_example.py file you are currently editing in Cloud Shell:
+
+```
+<copy>
+from pyspark.sql import SparkSession
+import sys
+
+def oracle_datasource_example(spark):
+    # Wallet  information.
+    properties = {"adbId": "replacewithADBID","user" : "replacewithUSER","password": "replacewithPASSWORD"}
+
+    print("Reading data from autonomous database.")
+    df = spark.read.format("oracle").option("dbtable", SRC_TABLE).options(**properties).load()
+
+    df.printSchema()
+
+    print("Filtering recommendation.")
+    df.filter(df.RECOMMENDED == "Y")
+
+    print("Writing to autonomous database.")
+    df.write.format("oracle").mode("overwrite").option("dbtable",TARGET_TABLE).options(**properties).save()
+
+if __name__ == "__main__":
+    spark = SparkSession \
+        .builder \
+        .appName("Python Spark Oracle Datasource Example") \
+        .getOrCreate()
+
+    # TODO: PROVIDE THE ARGUMENTS 
+    ABD_ID = "replacewithADBID"
+    SRC_TABLE = "ADMIN.EXPORT_STREAM_2020_UPDATED" 
+    TARGET_TABLE = "ADMIN.MOVIE_GENRE" 
+    USERNAME = "replacewithUSER"
+    PASSWORD = "replacewithPASSWORD"
+
+    oracle_datasource_example(spark)
+
+    spark.stop()
+</copy>
+```
+
+After pasting the above script, replace the ADB ID with your autonomous database ocid, replace the username and password for your autonomous database, probably ADMIN, where it stats replacewithXXXX. If you are unsure of your ADB ID, with Cloud Shell still open you can navigate to your ADW database from the hamburger menu to Autonomous Database and **Copy** the OCID to be pasted in the script in Cloud Shell in both places where it states "replacewithADBID".
+
+![Get the ADB ID](./images/getadbid.png " ")
+
+Edit the replacewithXXXXX text with the correct information (paste with right click between the quotation marks:
+
+![Paste ADB ID](./images/editfilepaste.png " ")
+
+![Edited File](./images/editedfile.png " ")
+
+See the edited file for the two places there are edits. When finished editing press **esc** **:wq** to save the file and your changes.
+
+Upload this edited file to your object storage using the command line in Cloud Shell after replacing REPLACEYOURNAME with your actual namespace name (Namespace name can be found in OCI tenancy:
+
+```
+<copy>
+oci os object put --file livelabs_example.py --namespace REPLACEYOURNAMESPACE --bucket-name dataflow-warehouse
+</copy>
+```
+
+![Upload File](./images/cloudshellupload.png " ")
+
+Navigate from the hamburger memu to storage and select buckets. And you should see your python script in your dataflow-warehouse bucket ready for you to use in your application.
+
+![Storage Buckets](./images/showbuckets.png " ")
+
+Now, navigate to the OCI Data Flow and click on Create Application.
 
 ![Create Data Flow](./images/nav_dataflow.png " ")
 
-For creating the application, you need to have the java jar file and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
+For creating the application, you need to have the python code and we are providing an example one. Also you will need to have access to the data files. Enter a name for the application and if you would like a description. Take the other defaults for the first part of the form.
 
-![Create Data Flow](./images/df_createapp.png " ")
+![Create Data Flow](./images/createsparkapp.png " ")
 
-For this example, choose Java, and check the box for entering the URL manually. Copy and paste from the following into the form. 
+For this example, choose python. Select Object Storage dataflow-warehouse, and then choose the file you just uploaded live_labs_example.py
 
-![Create Data Flow](./images/df_app_details1.png " ")
+![Create Data Flow](./images/createappconfigure.png " ")
 
-```
-<copy>
-oci://dataflow_sample_apps@bigdatadatasciencelarge/dataflow-java-sample-1.0-SNAPSHOT.jar
-</copy>
-```
-```
-<copy>
-com.oracle.oci.dataflow.samples.DataFlowJavaSample
-</copy>
-```
-And for the arguments:
-```
-<copy>
-${input} ${output}
-</copy>
-```
+Click on Show advanced options. And enter in the Spark configuration properties the key: spark.oracle.datasource.enabled and the value: true
+
+![Advanced Options](./images/createappadvoptions.png " ")
+
 Click on Create Application.
 
-![Create Data Flow](./images/df_app_details2.png " ")
+Now we can run the application by selecting the more option dots and selecting Run from the menu.
 
-Now we can run the application. Copy and paste the following into the input and output arguments and click run.
-Input
-```
-<copy>
-https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/data_lakehouse/o/custsales_custsales-2020-01.csv
-</copy>
-```
-Output
-You will need to supply the namespace of your tenancy for your dataflow-warehouse bucket, and use this as the output for the process.
-```
-<copy>
-oci://dataflow-warehouse@NAMESPACE
-</copy>
-```
+![Run Data Flow](./images/runappmanual.png " ")
 
-![Create Data Flow](./images/df_run_app.png " ")
+It of course depends on how big your data file is but this sample takes about two minutes to return successfully. This job has filtered out the data and populated the movie_genre table with the job.
 
-It of course depends on how big your data file is but this sample takes about a minute to return successfully.
-
-![Create Data Flow](./images/df_validate_run.png " ")
+![Completed Data Flow](./images/runappresults.png " ")
 
 You can also monitor your applications in the Spark UI. Click on the application name and click on the Spark UI button.
 
