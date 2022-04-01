@@ -16,33 +16,52 @@ This lab assumes you have:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
 
-
-## Task 0: Running your Lab
-### Access the graphical desktop
-Now with access to your remote desktop session, open **Terminal** and proceed with the subsequent tasks.
-
-
-### Login to Host using SSH Key based authentication
-While all command line tasks included in this workshop can be performed from a terminal session from the remote desktop session as shown above, you can optionally use your preferred SSH client.
-
-Refer to *Lab Environment Setup* for detailed instructions relevant to your SSH client type (e.g. Putty on Windows or Native such as terminal on Mac OS):
-  - Authentication OS User - “*opc*”
-  - Authentication method - *SSH RSA Key*
-  - OS User – “*oracle*”.
-
-1. First login as “*opc*” using your SSH Private Key
-
-2. Then sudo to “*oracle*”. E.g.
-
-    ```
-    <copy>sudo su - oracle</copy>
-    ```
-
-Follow the steps below to Start/Stop SecureOracle components.
-
 ## Task 1: Start and Stop SecureOracle Components
 
-1.  From any of the terminal session started above, proceed as shown below to start all components as “*oracle*” user
+1. Now with access to your remote desktop session, proceed as indicated below to validate your environment before you start executing the subsequent labs. The following Processes should be up and running:
+
+    - Database Listeners
+        - LISTENER (1521)
+    - Database Server Instances
+        - IAMDB
+    - Hedwig Mail Server
+
+    ![](./images/landing.png " ")
+
+2.  Run the following from the *Terminal* session to validate that expected processes are up.
+
+    ```
+    <copy>
+    systemctl status hedwig.service
+    systemctl status oracle-database
+    systemctl status oracle-db-listener
+    </copy>
+    ```
+
+    ![](./images/hedwig.png " ")
+    ![](./images/sql.png " ")
+
+    If all expected processes are shown in your output as seen above, then your environment is ready for the next task.
+
+3. If you see questionable output(s), failure or down component(s), restart the service accordingly
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    sudo systemctl restart oracle-db-listener
+    </copy>
+    ```
+    To restart the *Hedwig Mail server*:
+
+    ```
+    <copy>
+    export JAVA_HOME=/home/oracle/products/jdk
+    sudo -E /home/oracle/demo/hedwig-0.7/bin/run.sh stop
+    sudo -E /home/oracle/demo/hedwig-0.7/bin/run.sh start
+    </copy>
+    ```
+
+4.  Now open a new terminal session remotely using an SSH client and proceed as shown below to start all components as “*oracle*” user
 
     ```
     <copy>sc start all</copy>
