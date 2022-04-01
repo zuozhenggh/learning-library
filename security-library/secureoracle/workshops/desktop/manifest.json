@@ -8,31 +8,31 @@
       "filename": "../../introduction/introduction.md"
     },
     {
-      "title": "Lab 1: Environment Setup",
-      "description": "Verify Setup of compute instance",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-ssh-and-novnc.md"
+      "title": "Get Started with noVNC Remote Desktop",
+      "description": "Using noVNC Remote Desktop",
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 2: Initialize Environment",
+      "title": "Lab 1: Initialize Environment",
       "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {
-      "title": "Lab 3: Employee Lifecycle Management",
+      "title": "Lab 2: Employee Lifecycle Management",
       "filename": "../../employeelm/employeelm.md"
     },
     {
-      "title": "Lab 4: Identity Certification",
+      "title": "Lab 3: Identity Certification",
       "filename": "../../idcert/idcert.md"
     },
     {
-      "title": "Lab 5: Using REST APIs for OIM and OAM",
+      "title": "Lab 4: Using REST APIs for OIM and OAM",
       "filename": "../../restapi/restapi.md"
     },
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
     }
   ]
 }
