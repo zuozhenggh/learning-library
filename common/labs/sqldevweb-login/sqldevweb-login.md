@@ -12,33 +12,33 @@ Estimated time: 5 minutes
 
 1. From the ADB Details page, click the Database Actions button ![](./images/db-actions-button.png)
 
-![](./images/ADB-details-sdw-1.png)
+    ![Database Actions](./images/ADB-details-sdw-1.png)
 
 2. The **Launch DB actions modal** window will appear.
 
-![](./images/db-actions-modal.png)
+    ![Launch DB actions modal](./images/db-actions-modal.png)
 
 This will open another browser tab/window. If you have popup blockers on, you may need to allow cloud.oracle.com access to open popup windows or open the popup window manually.
 
 3. The popup window will take you directly to the **Database Actions** start page logged in as the **Admin** user.
 
-![](./images/db-actions-main.png)
+    ![Database Actions Dashboard](./images/db-actions-main.png)
 
-If it does not, you will be directed to a login page.
+    If it does not, you will be directed to a login page.
 
-![](./images/sdw-login.png)
+    ![Log in](./images/sdw-login.png)
 
 4. Sign in with the database instance's default administrator account, **Username - ADMIN** with the admin password you specified when creating the database. Click **Sign in**.
 
-![](./images/sdw-signin-admin.png " ")
+    ![Sign in](./images/sdw-signin-admin.png " ")
 
-4. From the Database Action menu, select the **SQL** tile.
+5. From the Database Action menu, select the **SQL** tile.
 
-![](./images/sql.png " ")
+    ![SQL tile](./images/sql.png " ")
 
-5. SQL Developer Web opens on a worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes introduce the main features.
+6. SQL Developer Web opens on a worksheet tab. The first time you open SQL Developer Web, a series of pop-up informational boxes introduce the main features.
 
-![](./images/click-x.png  " ")
+    ![Close information box](./images/click-x.png  " ")
 
 ## Conclusion
  You are now connected to your Autonomous Database using SQL Developer Web. You may now **proceed to the next lab**.

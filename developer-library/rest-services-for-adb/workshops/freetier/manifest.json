@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "RESTful Services for your Autonomous Database",
+  "workshoptitle": "Create RESTful services for your Autonomous Database",
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
@@ -8,7 +8,7 @@
             "filename": "../../intro/intro.md"
         },
         {
-            "title": "Getting Started",
+            "title": "Get started",
             "description": "Get a Free Trial",
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
@@ -16,15 +16,15 @@
             "title": "Lab 1: Provision an Autonomous Database",
             "description": "Provisioning an Autonomous Database Instance",
             "type": "freetier",
-            "filename": "../../../../data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
         },
         {
             "title": "Lab 2: Connect to ADB with SQL Dev Web",
             "description": "Connect to an Autonomous Database with SQL Developer Web",
-            "filename": "../../../../common/labs/sqldevweb-login/sqldevweb-login.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md"
         },
         {
-            "title": "Lab 3: RESTul Services",
+            "title": "Lab 3: Create RESTul services",
             "description": "RESTful Services for your Autonomous Database",
             "filename": "../../rest-services-for-adb/rest-services-for-adb.md"
         },
