@@ -100,7 +100,7 @@ This lab will give an understanding of Advanced Queues creation using different 
 
 2. Enqueue, Dequeue AQ for Payload ADT, RAW and JMS using Python
 
-   - Execute the following sequence of commands into cloud shell:
+      - Execute the following sequence of commands into cloud shell:
 
         ```bash
         <copy>cd $ORACLEAQ_HOME; pyhton3 PythonAQ.py;
@@ -109,7 +109,7 @@ This lab will give an understanding of Advanced Queues creation using different 
 
 3. Clean up for Python AQ
 
-   - Execute the following sequence of commands into cloud shell:
+      - Execute the following sequence of commands into cloud shell:
 
         ```bash
         <copy>cd $ORACLEAQ_HOME; source cleanupAQPython.sh;
