@@ -337,4 +337,4 @@ In this lab, you had an opportunity to get an introduction to REST services usin
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager
-- **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, March 2022
+- **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, April 2022

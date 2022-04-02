@@ -35,4 +35,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
  - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Product Manager
- - **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, March 2022
+ - **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, April 2022
