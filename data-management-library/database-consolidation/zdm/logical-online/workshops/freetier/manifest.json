@@ -14,11 +14,11 @@
         },
         {
             "title": "Lab 1: Create SSH Keys",
-            "filename": "../../../../../../common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/generate-ssh-key-cloud-shell/generate-ssh-keys-cloud-shell.md"
         },
         {
             "title": "Lab 2: Setup a Compute Instance and Source Database",
-            "filename":"../../../../../../common/labs/setup-compute/setup-19c-freetier.md"
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
         },
         {
             "title": "Lab 3: Connect to Source Database and Creating Migration User",
