@@ -159,6 +159,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
     | PO Header Id | poheaderid |
     | Order Number | ordernumber |
     | Sold To Legal Entity Id | soldtolegalentityid |
+    | Document Description | description |
     | Creation Date | creationdate |
     | Document Status | status |
     | Total Amount | total |
