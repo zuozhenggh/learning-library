@@ -27,33 +27,22 @@ Click on SQL to execute the query to create the table.
 
 ![SQL](./images/SQL_queries.png " ")
 
-You can just simply query the MOVIE GENRE table to view data, or create the following view to see the additional data along with the join to the MOVIE GENRE entity.
+You can just simply query the MOVIE GENRE table to view data, or create a view to see the additional data along with the join to the MOVIE GENRE entity.
 
 ```
 <copy>
 CREATE or REPLACE VIEW MOVIE_VW as
 SELECT
-    ENTERED_TIME,
-    PRICE,
-    CUSTID,LAST_NAME, COUNTRY,
-    GENREID,NAME,
-    MOVIEID,
-    ACTIVITY,
-    RECOMMENDED
+   "genreid",name,country, count("custid")
 FROM
-    ADMIN.MOVIE_GENRE, customer_contact,GENRE
-    where genre_id=genreid and custid=cust_id;
+    ADMIN.MOVIE_GENRE,customer_contact,GENRE
+    where genre_id="genreid" and "custid"=cust_id
+group by "genreid",name, country
+order by country;
 </copy>
 ```
-This view will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
+This query will demonstrate the combination for the customer, country and if they would recommend the movie and can be grouped by genre and other activities.
 
-A simple select statement can be done to just see the data based on this view and other joins are possible.
-
-```
-<copy>
-SELECT * FROM MOVIE_VW;
-</copy>
-```
 ![SQL](./images/SQL_output.png " ")
 
 
@@ -83,6 +72,35 @@ We have a database, csv and json files in our data lake but there can be all of 
 
 Navigate back to DBActions. Under Development, click on SQL. We are going to run a few queries here for analysis. At this point you can take the queries and information to analytics and reporting.
 
+Optionally you can also get the results using either external tables or Data Lake Accelerator. Here is an example to use an external table to access the CSV file in the object storage and join to the database tables.
+
+Create an external table to view the data transformation in the object storage files that were created as part of the data integration and data loader tasks. The file_uri_list can be pulled from the object storage, object details. 
+
+```
+<copy>
+BEGIN
+DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
+table_name => 'customersales_ext2',
+file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/w2EI-pmpE8AccgP0U_fgQImDCFP6kDi-DfJlWuemCIAgcEUHShafHn2tgejRgUfl/n/c4u04/b/data_lakehouse/o/customersales_custsales-2020-02.csv',
+ format => json_object('type' value 'csv', 'skipheaders' value '1',   'dateformat' value 'mm/dd/yy'),
+  column_list => 'DAY_ID DATE,
+  GENRE_ID NUMBER,
+  MOVIE_ID NUMBER,
+  CUST_ID NUMBER,
+APP VARCHAR2(100),
+DEVICE VARCHAR2(100),
+OD VARCHAR2(100),
+PAYMENT_METHOD VERCHAR2(100),
+LIST_PRICE number,
+DISCOUNT_TYPE VARCHAR2(100),
+DISCOUNT_PERCENT number,
+ACTUAL_PRICE number'
+);
+END;
+/
+</copy>
+```
+
 Join the data to the existing customer data:
 
 ```
@@ -95,7 +113,7 @@ SELECT
     GENDER, 
     STATE_PROVINCE
 FROM
-    ADMIN.CUSTSALES_CUSTSALES_2020_01 custsales, 
+    ADMIN.customersales_ext custsales, 
     ADMIN.CUSTOMER_EXTENSION, 
     ADMIN.CUSTOMER_CONTACT,
     ADMIN.GENRE
@@ -106,34 +124,9 @@ FROM
 </copy>    
 ```
 
-Optionally you can also get the results using either external tables or Data Lake Accelerator. Here is an example to use an external table to access the JSON file in the object storage and join to the database tables.
 
-Create the external table or view to get the json file data that is stored in the object storage.
-```
-<copy>
-BEGIN
-DBMS_CLOUD.CREATE_EXTERNAL_TABLE (
-table_name => 'json_movie_data_ext2',
-file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/p/ECSyjYVno_ekE_qrWZ-g3LwGvNvxkFkgcDAC3OeTUXvmXNxl1umLqf6NXDa2sL5Q/n/c4u04/b/data_lakehouse/o/export-stream-2020-updated.json',
-column_list => 'doc varchar2(32000)',
-field_list => 'doc char(30000)',
-format => json_object('delimiter' value '\n')
-);
-END;
-/
-</copy>
-```
-Query the data:
-```
-<copy>
-select *
-FROM JSON_MOVIE_DATA_EXT2,
-JSON_TABLE("DOC", '$[*]' COLUMNS
-"custid" number path '$.custid',
-"genreid" number path '$.genreid',
-"movieid" number path '$.movieid')
-</copy>
-```
+
+
 
 ***Oracle Data Lakehouse
 

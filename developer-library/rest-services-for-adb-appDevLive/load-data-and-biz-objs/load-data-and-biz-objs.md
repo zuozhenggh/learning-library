@@ -69,7 +69,7 @@ This lab assumes you have completed the following labs:
 5. Time to get ready for the data load. To start, we need to download the csv file. Using the Cloud Shell, enter the following command:
 
     ````
-    <copy>curl -o 2M.csv https://objectstorage.us-ashburn-1.oraclecloud.com/p/7uNJU4XM-W70-Hdbjc_HvdN5vnZNzi1rcgiU5VOAvbMa4JknH5Gd9zq0rlX35QcS/n/c4u04/b/developer-library/o/2M.csv</copy>
+    <copy>curl -o 2M.csv https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/2M.csv</copy>
     ````
 
 6. Now that we have the file local, we can load it into the database. Remember that cURL command we saved just a bit ago? Time to alter a few commands in there and run it via the Cloud Shell. 
