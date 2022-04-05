@@ -2,47 +2,41 @@
 
 ## Introduction
 
-TBD.
+Oracle Cloud Infrastructure provides fast, flexible, and affordable compute capacity to fit any workload need from performant bare metal servers and VMs to lightweight containers. OCI Compute provides uniquely flexible VM and bare metal instances for optimal price-performance.
 
 Estimated Time: 20 minutes
 
-### About TBD
-
-some content.. . 
-
-### TBD
-
-some content.. . 
-  
 ### Objectives
- 
-In this lab, you will enable:
-* some content.. . 
-* some content.. .  
 
-### Prerequisites 
-This lab assumes you have:
+In this lab, you will create:
 
-* A LiveLabs Cloud account and assigned compartment
-* The IP address and instance name for your DB19c Compute instance
-* Successfully logged into your LiveLabs account
-* A Valid SSH Key Pair
-  
+* Compute instance
+* Create virtual cloud network and associate it with compute instance
+* SSH into compute instance
+* Oracle user
+
+### Prerequisites
+This lab assumes:
+
+* You have access to Oracle cloud account
+* Authorized to create a compute instance and virtual cloud network 
+* A valid SSH key pair
+
 ## Task 1: Create compute instance with virtual cloud network 
 
 1. Create compute instance in the compartment of your choice
 
       ![Create Compute](images/create-compute.png "Create Compute") 
 
-2. Select Image, Oracle Enterprise Linux 7.9 
- 
+2. Select Image, An Oracle Enterprise Linux 7 or 8  
+
       ![Select Image](images/select-image-shape.png "Select Image") 
 
-3. Create a virtual cloud network in the same compartment as that of the instance created
+3. Create a virtual cloud network in the same compartment as that of the compute instance
 
       ![Create Network](images/create-network.png "Create Network") 
 
-4. Make note of public IP address
+4. Make note of public and private IP address
 
       ![Compute Details](images/compute-details.png "Compute Details") 
 
@@ -58,7 +52,7 @@ This lab assumes you have:
 
 ## Task 3: Create oracle user 
 
-1. You can check the logged-in user with whoami. This will return opc
+1. You can check the logged-in user with whoami. This will return *opc*
  
       ```
       <copy>

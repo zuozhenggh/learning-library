@@ -1,36 +1,37 @@
 # Introduction
  
-TBD.  
+Oracle Database offers market-leading performance, scalability, reliability, and security, both on-premises and cloud. Oracle Database 19c is the current long term release, and it provides the highest level of release stability and the longest time frame for support and bug fixes. *Long term support* means that Oracle Database 19c comes with 4 years of premium support and a minimum of 3 years of extended support. Oracle Database 19c builds upon the innovations of previous releases such as Multitenant, In-Memory, JSON support, Sharding and many other features that enable Oracle's Autonomous Database Cloud Services.
+ 
 
 ## About this Workshop
 
-TBD. 
+In this workshop, we will install Oracle Database 19c on a compute instance with noVNC Desktop enabled. later we will install tools like SQL Developer and configure the connection parameters to access the database, and run a couple of sample examples from HR Schema
 
-Estimated Time:  1 hour  
-
-### Data compression can significantly reduce storage cost
-
-TBD. 
-
-### Key Features
- 
-* TBD. 
+Estimated Time:  2 hours
  
 ### Objectives
  
-* TBD. 
+The objective of this workshop is:
 
-### Prerequisites
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported 
-> **Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+* Create a compute instance
+* Create an oracle user
+* Install noVNC Desktop
+* Install Oracle Database 19c on Oracle Enterprise Linux Operating system
+* Configure and Install additional tools such as SQL Developer, VSCode, JDK, Node JS to make it developer-friendly
+* Configure SQL Developer to access CDB and PDB
+* Run sample queries on HR Schema
 
+### Prerequisites  
+* Free or paid Oracle cloud account with administrative access
+> **Note:** Currently, this workshop is not supported in an Always Free environment. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**  
+> **Note:** This workshop is available in free or paid environments only.
  
 ## More information and References 
 
-* [Partitioning whitepaper ](https://www.oracle.com/technetwork/database/options/partitioning/partitioning-wp-12c-1896137.pdf)  
+* [Oracle database 19c introduction and overview whitepaper ](https://www.oracle.com/a/tech/docs/database19c-wp.pdf)  
 
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** -  
-* **Last Updated By/Date** -  Madhusudhan Rao, Mar 2022
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database
+* **Last Updated By/Date** -  Madhusudhan Rao, Apr 2022

@@ -3,42 +3,45 @@
 ## Introduction
 
 In this lab, we will install the Oracle Database 19c software.
+ 
+> **Note:** This workshop is available in free or paid environments only.
 
 Estimated Time: 40 minutes
 
-### About TBD
+### About Oracle Database 19c Installation
 
-some content.. . 
-
-### TBD
-
-some content.. . 
-  
+In this lab, we will log in to the noVNC Desktop image as an oracle user, create required groups and directories, and install Oracle Database 19c in a GUI mode. Once the installation is complete, we will start the database listener and database. We will end this lab by creating a simple database table.
+ 
 ### Objectives
  
-In this lab, you will enable:
+In this lab, you will:
 
-* Learn how to install and register a new Oracle 19c Home in the location of your choice
-* Install the Oracle 19c preinstall package 
-* Install Oracle 19c Database with a pluggable database (PDB)
+* Download Oracle Database 19c
+* Create required group, directories and set permissions 
+* Setup the Kernel parameters
+* Stop and disable the firewall
+* Install pre-installation packages
+* Run the installer in GUI mode
+* Review the success of the installation 
+* Start the listener and database
+* Create a simple database table
 
 ### Prerequisites 
 This lab assumes you have:
 
-* TBD
-* A Valid SSH Key Pair
+* Compute instance created with Virtual cloud network attached to the instance
+* Oracle user created
+* noVNC remote desktop is available and you have already logged into the remote desktop environment
   
 ## Task 1: Download Database 19c 
 
-1. Accept License 
+1. Sign in to the Oracle Database 19c download page and Accept the License 
  
       ![Accept License](images/accept-license.png "Accept License") 
 
-2. Download Oracle Database 19c zip file from the NoVNC Desktop Browser
+2. Download *Oracle Database 19c for Linux* zip file 
 
       ![Download Database 19c zip file](images/download-19c.png "Download Database 19c zip file") 
-
-
 
 3. Create backup of .bash_profile in /home/oracle
 
@@ -80,7 +83,7 @@ This lab assumes you have:
 
 ## Task 2: Create group, create directories and set permissions
 
-1. As root create group, create directories and set permissions
+1. As root create group *oinstall*, add user *oracle* to group *oinstall*
 
       ```
       <copy>
@@ -128,9 +131,9 @@ This lab assumes you have:
 
       reboot system
 
-## Task 4:  Install additional packages and extract installer
+## Task 4:  Install database *preinstall* packages and extract the installer
 
-1. Install additional packages oracle-database-preinstall-19c
+1. Install additional packages *oracle-database-preinstall-19c*
           
       ```
       <copy> 
@@ -139,7 +142,7 @@ This lab assumes you have:
       </copy>
       ``` 
 
-2. Extract the downloaded installer
+2. Extract the downloaded installer in */u01/app/oracle/product/19c/db_1/*
 
       ```
       <copy>
@@ -166,7 +169,7 @@ This lab assumes you have:
       OPatch succeeded. 
       </copy>
       ```
-2. Make required directories 
+2. Make required directories for installation 
 
       ```
       <copy> 
@@ -214,45 +217,64 @@ This lab assumes you have:
       </copy>
       ```
 
-      Step 1 of 9: select create and configure single instance database installer
+2. Step 1 of 9: select create and configure single instance database installer
 
       ![DB Installer](images/db-installer-1.png "DB Installer") 
 
-      Step 2 of 8: Select Desktop class
+3. Step 2 of 8: Select Desktop class
 
       ![DB Installer](images/db-installer-desktop-class-2.png "DB Installer") 
 
-      Step 2 of 8: setup install configuration, Database Edition as Enterprise Edition, specify database password and Pluggable database name
+4. Step 2 of 8: setup install configuration, Database Edition as Enterprise Edition, specify database password and Pluggable database name
 
-      ![DB Installer](images/db-installer-config-3.png "DB Installer") 
+      The following values will be configured:
+ 
+      - Oracle base: /u01/app/oracle
+      - Database file location: /u01/app/oracle/oradata
+      - Database edition: Enterprise Edition
+      - Character set: Unicode (AL32UTF8)
+      - OSDBA group: oinstall or dba
+      - Global database name: orcl.livelabs.oraclevcn.com
+      - Password: < your password >
+      - Create as Container database (selected)
+      - Pluggable database name: pdb1 or orclpdb
+          
+  ![DB Installer](images/db-installer-config-3.png "DB Installer") 
 
-      Step 4 of 8: check automatically run configuration scripts
+5. Step 4 of 8: check automatically run configuration scripts
 
       ![DB Installer](images/db-installer-root-exec-4.png "DB Installer") 
 
-      Step 5 of 8: ignore all for swap size check
+6. Step 5 of 8: ignore all for swap size check
 
       ![DB Installer](images/db-installer-prerequisites-5.png "DB Installer") 
 
-      Step 6 of 8: View summary and save response file
+7. Step 6 of 8: View summary and save response file
 
       ![DB Installer](images/db-installer-summary-7.png "DB Installer") 
 
-      Step 7 of 8: review the installation progress
+8. Step 7 of 8: review the installation progress
 
       ![DB Installer](images/db-installer-progress-6.png "DB Installer") 
 
-      Step 8 of 8: review the Finish and close the installer
+9. Step 8 of 8: review the Finish and close the installer
 
       ![DB Installer](images/db-installer-summary-8.png "DB Installer") 
 
+10. Reboot the system 
+   
+      ![Reboot Instance](images/instance-reboot.png "Reboot Instance") 
+
 ## Task 8:  Review installation and start database listener
 
-1. Reboot the system 
-   
-   ![Reboot Instance](images/instance-reboot.png "Reboot Instance") 
+1. Open noVNC remote desktop through the web browser. 
 
-2. Open NoVNC remote desktop through the web browser, open the terminal and run the following commands as an oracle user. View the tnsnames.ora  
+      ```
+      <copy>
+      http://[your instance public-ip address]/livelabs/vnc.html?password=LiveLabs.Rocks_99&resize=scale&quality=9&autoconnect=true&reconnect=true
+      </copy>
+      ```
+2. Open the terminal and run the following commands as an oracle user. View the tnsnames.ora  
    
       ```
       <copy>
@@ -272,7 +294,7 @@ This lab assumes you have:
       </copy>
       ```
 
-4. View the listener.ora  
+3. View the listener.ora  
    
       ```
       <copy>
@@ -288,7 +310,7 @@ This lab assumes you have:
       </copy>
       ```
 
-5. check listener status 
+4. check listener status 
    
        ```
       <copy>
@@ -361,7 +383,7 @@ This lab assumes you have:
 
       ![SQLPlus connect](images/sqlplus-connect.png "SQLPlus connect") 
 
-7. start database if it has not yet been started
+8. start database if it has not yet been started
 
       ```
       <copy> 
@@ -377,7 +399,7 @@ This lab assumes you have:
       Database opened. 
       </copy>
       ```
-7. check system date 
+9. check system date 
 
       ```
       <copy> 
@@ -390,8 +412,8 @@ This lab assumes you have:
 
 ## Task 9:  CRUD Operation on a sample table
 
-1. Run the following commands at the *SQL>*  prompt, Let us create a table  
-   
+1. Run the following commands at the sqlplus prompt *SQL>* to create a table
+    
       ```
       <copy>   
       CREATE TABLE emp  ( emp_id NUMBER , first_name VARCHAR2(128) , last_name VARCHAR2(128)  ); 
@@ -435,7 +457,7 @@ This lab assumes you have:
       </copy>
       ``` 
 
-      Verify table for deleted record. 
+5. Verify table for deleted record. 
 
       ```
       <copy>   
@@ -443,7 +465,7 @@ This lab assumes you have:
       </copy>
       ``` 
 
-5. exit sqlplus
+6. exit sqlplus
    
       ```
       <copy>   
@@ -457,10 +479,11 @@ This lab assumes you have:
 
 ## Learn More
 
-* [Create users and groups on Oracle Linux 8](https://docs.oracle.com/en/learn/users_groups_linux8/index.html#administer-group-accounts) 
+* [Create users and groups on Oracle Linux 8](https://docs.oracle.com/en/learn/users_groups_linux8/index.html#administer-group-accounts)
+* [Download Oracle Database 19c](https://www.oracle.com/in/database/technologies/oracle19c-linux-downloads.html) 
  
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** -  
-* **Last Updated By/Date** -  Madhusudhan Rao, Mar 2022 
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database
+* **Last Updated By/Date** -  Madhusudhan Rao, Apr 2022 

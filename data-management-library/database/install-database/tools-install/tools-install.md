@@ -10,7 +10,7 @@ Estimated Time: 20 minutes
 
 some content.. . 
 
-### TBD
+### Difference between CDB and PDB
 
 some content.. . 
   
