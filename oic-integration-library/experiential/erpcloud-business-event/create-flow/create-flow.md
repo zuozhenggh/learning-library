@@ -183,9 +183,11 @@ Manage business identifiers that enable you to track fields in messages during r
 1. Click the **Actions** menu on the top right, then select **Tracking**.
     ![Open Business Identifiers For Tracking](images/open-business-identifiers.png)
 
-2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the **POHeaderId** and **OrderNumber** field from ERP PO source to the *Drag a trigger field here* section:
+2. From the *Source* section, expand **getPurchaseOrderResponse** > **result**, click **Load more**, expand **Value**, and click **Load more**. Drag the **POHeaderId**, **OrderNumber** and **DocumentDescription** fields from ERP PO source to the *Drag a trigger field here* section:
 
     ![Assign Business Identifiers](images/assign-business-identifiers.png)
+
+    > **Note:** Only the Used fields are displayed due to the *Filter* on the top left side of the screen.
 
 3. Click **Save**. 
 
