@@ -28,7 +28,12 @@ This lab assumes you have:
 
 ## Task 1: Purge Data
 
-Ensure to execute a Job by following the steps in Lab: Create and Execute Jobs.
+Ensure to execute a Job by following the steps in **Lab: Create and Execute Jobs**.
+
+Watch this short video on how to create datasource connections, groups, compare pairs, jobs.:
+
+[](youtube:DiAapnWt0No)
+
 To purge data:
 
 1. Click **Purge Data** from the Left Navigation pane.
@@ -43,15 +48,16 @@ To purge data:
     ![](./images/4Purge.png " ")
 
 
-## Task 2: Delete Directories
+## Task 2: Delete Directories (Delete Directories Completely Check Box is Unchecked)
 
 The generated report files are stored in this location:
 `/home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
 
+Ensure to execute a Job by following the steps in **Lab: Create and Execute Jobs**.
+
 To delete directories:
 
-1. Ensure to execute a Job by following the steps in Lab: Create and Execute Jobs.
-2. Create user-defined files in the generated report file location:
+1. Create user-defined files in the generated report file location:
 `/home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
 
     ```
@@ -67,17 +73,54 @@ To delete directories:
 
     ![](./images/2DeleteDir-LabTestTouchCommand.png " ")
 
-3. In the UI, select **Finished Jobs**, and select the Job you want to delete and click **Delete**
+2. In the UI, select **Finished Jobs**, and select the Job you want to delete and click **Delete**.
 
     ![](./images/1DeleteDir.png " ")
 
-4. Select **jobDel**, and select the **Delete Directories** completely check box and click **Delete**.
-      ![](./images/4DeleteDir-ClickOK-Popup.png " ")
+3. Click **OK** in the displayed popup.
 
-5. In the terminal, verify that the entire directory has been deleted.
+    ![](./images/4DeleteDir-ClickOK-Popup.png " ")
+
+4. In the terminal, verify that except for the user-defined file (lab_test), the other files are deleted.
+
+      ![](./images/4User-Defined-File-NotDeleted-terminal.png " ")
+
+  User-defined files created within the reports directories will not be deleted.
+
+## Task 3: Delete Directories (Delete Directories Completely Check Box is Selected)
+
+  The generated report files are stored in this location:
+  `/home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
+
+  To delete directories:
+
+  1. Ensure to execute a Job by following the steps in Lab: Create and Execute Jobs.
+  2. Create user-defined files in the generated report file location:
+  `/home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
+
+      ```
+      <copy>
+      cd /home/opc/VDT/user_projects/domains/base_domain/veridata/reports/rpt/JobName/directory for the latest job
+      <copy>
+
+      ```
+      ```
+      <copy>
+      touch lab_test
+      <copy>
+      ```
+
+      ![](./images/2DeleteDir-LabTestTouchCommand.png " ")
+
+  3. In the UI, select **Finished Jobs**, select the Job you want to delete, select the **Delete Directories Completely** check box, and then click **Delete**.
+
+  4. Click **OK** in the displayed popup.
+
+      ![](./images/4DeleteDir-ClickOK-DelDirCompletely-Popup.png " ")
+
+  5. In the terminal, verify that the entire directory has been deleted.
 
       ![](./images/7DeletedDirectories_Terminal.png " ")
-  User-defined files created within the reports directories will not be deleted.
 
 You may now [proceed to the next lab](#next).
 
@@ -90,5 +133,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021
+* **Contributors** -  Sukin Varghese
+* **Last Updated By/Date** - Anuradha Chepuri, April 2022
