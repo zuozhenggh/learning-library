@@ -8,7 +8,7 @@ This workshop will help you understand the technical capabilities of Advanced Qu
 
 ### About Product/Technology
 
-PL/SQL, Java, and (in the near future) Python AQ/ TEQ Workflow examples will be demonstrated.
+PL/SQL, Java, and Python AQ/ TEQ Workflow examples will be demonstrated.
 
 ### Objectives
 
@@ -63,4 +63,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Mayank Tayal, Developer Advocate
+- **Contributors** - Sanjay Goil, VP Microservices and Oracle Database; Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist; Richard Exley, Maximum Availability Architecture; Shivani Karnewar, Senior Member Technical Staff
 - **Last Updated By/Date** - Mayank Tayal, February 2022

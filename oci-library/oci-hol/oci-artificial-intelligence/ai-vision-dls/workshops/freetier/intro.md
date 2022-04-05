@@ -1,4 +1,4 @@
-# OCI Vision and Data Labeling Service
+# Use the OCI Vision and Data Labeling Service
 
 ## Introduction
 
@@ -8,11 +8,12 @@ You can upload images to detect and classify objects in them. If you have lots o
 
 Oracle Cloud Infrastructure (OCI) Data Labeling is a service for building labeled datasets to more accurately train AI and machine learning models. With OCI Data Labeling, developers and data scientists assemble data, create and browse datasets, and apply labels to data records through user interfaces and public APIs. The labeled datasets can be exported for model development across Oracle’s AI and data science services for a seamless model-building experience.
 
-**About the data:**
-
-We obtained coherent diffraction images generated from cancerous blood samples from East Carolina University. Each of these JPG images is labeled with one of three classifications based on the features present in the image. The three classifications are: cell, debris, and stripe.
 
 *Estimated Workshop Time*: 90 minutes
+
+### About the data:
+
+We obtained coherent diffraction images generated from cancerous blood samples from East Carolina University. Each of these JPG images is labeled with one of three classifications based on the features present in the image. The three classifications are: cell, debris, and stripe.
 
 ### Objectives
 
@@ -28,6 +29,8 @@ In this workshop, you will:
 * Some familiarity with OCI CLI is desirable, but not required
 * Some familiarity with Python is desirable, but not required
 
+>**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 [Proceed to the next section](#next).
 

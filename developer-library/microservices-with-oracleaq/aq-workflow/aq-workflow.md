@@ -1,4 +1,4 @@
-# Second- Factor Authentication workflow using Oracle AQ
+# Use workflow with Oracle AQ (Second-factor Authentication)
 
 ## Introduction
 
@@ -145,5 +145,5 @@ Below are the code samples to create the workflow
 ## Acknowledgements
 
 - **Author** - Mayank Tayal, Developer Advocate
-
+- **Contributors** - Sanjay Goil, VP Microservices and Oracle Database; Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist; Richard Exley, Maximum Availability Architecture; Shivani Karnewar, Senior Member Technical Staff
 - **Last Updated By/Date** - Mayank Tayal, February 2022

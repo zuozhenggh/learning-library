@@ -134,7 +134,7 @@ This lab assumes you have completed the following lab:
 
     ![Image alt text](images/partition-before-2016.png "Display partition before 2016 sales_interval_hash Data")
 
-7. View data in sales\_interval\_hash table by system generated partition  
+7. View data in sales\_interval\_hash table by system-generated partition. In the below example, SYS_P1754 is system generated partition name.  
 
       ```
         <copy> 
