@@ -34,11 +34,11 @@ In this lab, you will:
 
 1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
 
-	![Connect to VM](images/connect-to-vm.png)
+  ![Connect to VM](images/connect-to-vm.png)
 
 2. Create the phpMyAdmin yaml deployment script
 
-	```
+```
 <copy>
 cat <<EOF >>phpmyadmin.yaml
 ---
@@ -77,29 +77,28 @@ EOF
 </copy>
 ```
 
-
 3. Specify your MySQL private IP address in the yaml file, replace **MYSQL&#95;PRIVATE&#95;IP&#95;ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
 
-	```
-	<copy>
-	sed -i -e 's/MYSQL_HOST/<MYSQL_PRIVATE_IP_ADDRESS>/g' phpmyadmin.yaml
-	</copy>
-	```
+ ```
+ <copy>
+ sed -i -e 's/MYSQL_HOST/<MYSQL_PRIVATE_IP_ADDRESS>/g' phpmyadmin.yaml
+ </copy>
+ ```
 
 4. Create a phpmyadmin namespace in OKE
 
-	```
-	<copy>
-	kubectl create ns phpmyadmin
-	</copy>
-	```
+ ```
+ <copy>
+ kubectl create ns phpmyadmin
+ </copy>
+ ```
 
 5. Create the phpmyadmin service
 
 ```
-	<copy>
-	kubectl apply -f phpmyadmin.yaml -n phpmyadmin
-	</copy>
+ <copy>
+ kubectl apply -f phpmyadmin.yaml -n phpmyadmin
+ </copy>
 ```
 
 6. Create the phpmyadmin ingress service
@@ -144,11 +143,12 @@ EOF
 7. Find out the public IP of OKE Ingress Controller
 
 ```
-	<copy>
-	kubectl get all -n ingress-nginx
-	</copy>
+ <copy>
+ kubectl get all -n ingress-nginx
+ </copy>
 ```
-	![Ingress IP](images/ingress.png)
+
+  ![Ingress IP](images/ingress.png)
 
 8. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
 
@@ -159,10 +159,10 @@ EOF
 ## Acknowledgements
 
 * **Author**
-	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
-	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+  * Ivan Ma, MySQL Solution Engineer, MySQL APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors**
-	* Perside Foster, MySQL Solution Engineering
-	* Rayes Huang, OCI Solution Specialist, OCI APAC
+  * Perside Foster, MySQL Solution Engineering
+  * Rayes Huang, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022
