@@ -1,7 +1,10 @@
-# Self-Service Data Visualization for Finance
+# Self-Service Data Preparation, Data Enrichment & Data Modeling
 
 ## Introduction
-This exercise will introduce you to the key features of self service within Oracle Analytics Server and will illustrate what is happening at **JTC America Group**, a fictional conglomerate with operations in multiple geographies and segments covering a vast portfolio of products.
+Analysts and Database Administrators spend a great deal of time assembling, and preparing data to perform analysis, therefore, ability to quickly access, leverage and make sense of the volumes and variety of data available today is critical to maintain competitive advantage in today's marketplace.  
+
+Oracle Analytics Server provides powerful visual data management capabilities enabling users to create new datasets dynamically and quickly.  
+This lab will introduce you to the key features of self service data management within Oracle Analytics Server.  
 
 *Estimated Completion Time:* 45 minutes
 
@@ -12,9 +15,8 @@ Oracle Analytics Server features powerful, intuitive self service capabilities t
 
 In this lab, you will explore the following features and capabilities:
 
-* Data Visualization and Mash Ups
-* Custom Calculations and Maps
-* Freeform Canvases, Trend Lines, and Custom Backgrounds
+* Creating & Enriching a Data Set
+* Self-Service Data Modeling
 
 ### Prerequisites
 This lab assumes you have:
@@ -25,405 +27,334 @@ This lab assumes you have:
     - Lab: Initialize Environment
 
 The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage`*</if> are required to complete this lab.
-- inventory.xlsx
-- vendor payments.xlsx
-- JRC Americas Group.jpg
 
-## Task 1: Data Visualization and Mash Ups
+- employee termination.xlsx
 
-In order to complete our analysis we will create a workbook.  Think of a workbook as a dashboard. A workbook may contain a number of objects including filters, text boxes and other visualization types.  
+## Task 1: Create and Enrich a Dataset
+
+Analysts spend a great deal of time assembling, preparing, and enhancing data to perform analysis.  In this task, we will start with the basics of uploading a spreadsheet into Oracle Analytics Server.  Once successful, we will review data elements and explore some of the data transformation and enrichment capabilities that make for a smooth and seamless data preparation process.   
 
 1. From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), Click on *"Create"* at the upper right-hand corner.
 
     ![](./images/asdvff1.png "OAS Home Screen")
 
-2. **Click** on Workbook to start a new self-service workbook.
+2. **Click** on Dataset from the menu.
 
     ![](./images/asdvff2.png " ")
 
-3. **Select** the "Sample App" subject area and **Click** "Add to Workbook".
-
-     Sample App provides access to the data we will use to complete our analysis.  
+3. **Upload** the "employee termination.xlsx that was provided to you.
 
     ![](./images/asdvff3.png " ")
 
-4. You will be presented with an empty canvas. Let’s start visualizing! First, let’s see how the product ratios are split across product types.
-
-    - **Control select** "Products – Product Type" and "Profit Metrics – Profit Ratio %".
-    - **Right click**, select "Pick Visualization".
+	Once uploaded, click the add button in the top right-hand corner.
 
     ![](./images/asdvff4.png " ")
 
-5. **Select** "Donut" Chart.
+    After creating a dataset, the dataset undergoes column-level profiling to produce a set of semantic recommendations to repair or enrich 
+    your data. These recommendations are based on the system automatically detecting a specific semantic type during the profile step.
+    After profiling the data, you can make modifications to the data and implement enrichment recommendations provided on the far-right hand    side of the palette. Keep in mind, the date elements and their semantic types will dictate the variety and number of recommendations you receive to include within your dataset. 
 
     ![](./images/asdvff5.png " ")
 
-6. Observe the donut chart on the canvas. You can see that of all the product ratios "Audio" has the lowest profit ratio percentage.
+4.  Use the scroll bar located at the bottom of the screen and review the data elements.  
+    Each element has been labeled with an identifier.  
+    - A = Attribute 
+    - '#' = Measure 
+    - Clock = Time 
+
+    Make sure your data elements have been labeled correctly as the assignment will control the properties, and analysis options available 
+    to you during analysis.
+
+    Use the scroll bar to locate ID and Employee Number within the data source.  Notice each element has been marked with a # which indicates that Oracle Analytics Server identified the element as a measure or numeric.  Employee Numbers and Identifiers are generally not measures to be aggregated or summarized.  They are attributes used for identification purposes.  
+
+    Modify data element identifier for ID and Employee data elements.
+
+    **Click** on the ID column.  Notice the ID properties box in the lower left corner.  Let’s modify the identifier.  Under the property 'Treat As' **Click**  on 'measure' and select attribute. 
 
     ![](./images/asdvff6.png " ")
 
-7. Now, let’s try to dig deeper and find out why audio’s profit ratio is lower compared to our other product types. Let’s see how the products under "Audio" have been performing over time.
-
-    Expand Time, Products and Profit Metrics, **CTRL-Click** *Product*, *Month* and *Profit Ratio %*. Then, **drag them** to the left of Donut chart.
-
-    A green line appears.  It identifies the location of your visualization. You may drop the visualization to the left, right, top or bottom of the donut visualization.
+    Continue on and locate Employee Number, make the same modification. 
 
     ![](./images/asdvff7.png " ")
 
-8. Oracle Analytics Server provides adaptive charting capabiities. Because we wish to review our measure over a specific period of time, Oracle  Analytics chose to deliver the results with a line chart illustrating profit ratio, month over month.
+    As you review the remaining columns, you may find additional data elements to modify.  
 
-   Next, we wish to review profit ratio for each product separately to obtain greater detail.
-   
-   **Drag** "Products" up to **Trellis Rows**. You should  see an individual line chart for each product as shown in the image.
+5.  Continue to scroll to the right, until you reach the end. Note, the dataset includes social security number. **Click** on the 
+    column labeled SSN. Social security number is a sensitive piece of data and Oracle Analytics Server recognized it and delivered 6 recommendations. You can choose to obfuscate, delete, or extract a portion of it all with one click of your mouse.
+
+    **Select** 'Obfuscate First 5 digits of SSN'
 
     ![](./images/asdvff8.png " ")
 
-    Since we are concerned about the profit ratio of the Audio product type, we will filter down to the product level. To do this, **drag** "Products - Product Type" to the filters section and select "Audio".
 
-    ![](./images/asdvff9.png " ")
+6.  Even further right, beyond social security number, locate the 'zip code' column.  
 
-     Observe that "MicroPod" has declining profit ratios and "SoundX Nano" could also be improved. There could be any number of reasons why this is the case.
+    Zip code has been identified as an attribute, however some of the zip code records look incomplete. 
 
-9.   We continue our investigation examining our product inventory levels. JTC America utilizes a third-party system which captures data regarding our inventory and product demand levels. I need this data to complete my analysis.  Oracle Analytics provides the ability to quickly access the inventory data and mash it up with our current analysis all within a single platform.  
+    Notice, right above the column heading, each data element has an associated data quality insight card.
 
-    From the data elements panel, click on "+" and "Add Data Set" to import the inventory dataset into your current workbook.
+    The data quality insight card provides a visualization illustrating information about the data element as well as information regarding record distribution.  Additionally, it provides insight into the cleanliness of the records within each column.  
+    
+    Note the red bar at the top of the data quality insights card. Hover over the red bar.  Oracle Analytics Server detected invalid values based upon deep semantic knowledge provided by System Knowledge.  System Knowledge provides a vast set of geographic and demographic reference data used during the profiling process.  
 
-    ![](./images/asdvff10.png " ")
+    **Click** on the zip code column and review the recommendations provided by Oracle Analytics Server.  
 
-10. **Click** on "Create Data Set" >> "Drop data file here or click to browse".
+     Let’s repair the zip code values selecting the "Repair Zip Code' recommendation.
+
+    ![](./images/asdvff9.png " ") 
+
+    Oracle Analytics Server has corrected each zip code record within the column. Note the horizontal bar has changed from red to green. 
+
+    ![](./images/asdvff10.png " ") 
+
+
+7.  Additionally I see that Oracle Analytics Server recommended enriching my dataset providing many geoname options, including City and State.
+
+    Let’s enhance the dataset utilizing both the State and City recommendations for our analysis. 
+
+    From the recommendations panel, **Click** 'Enrich Zip Code with State, then 'Enrich Zip Code with City'.
 
     ![](./images/asdvff11.png " ")
 
-    Drag and drop, or browse and select the file *“Inventory.xlsx”* from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)
+    We've added two additional columns to our dataset. 
 
-    ![](./images/asdvff12.png " ")</if> <if type="desktop"> *`/opt/oracle/stage`*
+    Next we will rename each column label.  
 
-    ![](./images/asdvff12-d.png " ")</if>
+    Double **Click** Zip Code_City column label. 
+    
+    **Click** ‘rename’ – type ‘City’ 
 
-    Once the spreadsheet has been uploaded,  **Click**  "Add" in the upper right hand corner.
+    Perform the same steps to rename the Zip Code_State column label to State.
+
+    RMB over the State Column label, Notice there are a wide variety of transformation options!
+
+    ![](./images/asdvff12.png " ")
+
+8.  Scroll back to the left of the dataset.  Locate the 'EducationField' column. 
 
     ![](./images/asdvff12-a.png " ")
 
-11. Oracle Analytics Server includes its own light weight data preparation capabilities. 
+    Review the information provided in the data quality insights card.
 
-    When you import the spreadsheet, notice a new tab opens labeled "New Dataset".  When Oracle Analytics ingests data, each element is identified as an attribute, measure, or time element.  Above each data column, notice each associated data insight card, which provides additional diagnostic information and notifies you of missing values, misspellings, and data type inconsistencies.  Data quality issues and inconsistencies can be easily corrected inline, accelerating data preparation and improving analytics quality.  
- 
-    Over to the right, notice Oracle Analytics will make enrichment recommendations based upon what it understands and knows about the data.  Enrichment recommendations provide the ability to add information to data such as enhancing a zip code attribute column with the state name.  A user may choose to add a new column to the dataset containing the name of the state associated with the zip code.  When you select a recommendation, the change is added to the Preparation Script.  Note the panel located on the far left side of the working palette.  Modifications and enhancements are applied when you apply the preparation script. If you delete or undo the change, the recommendation is displayed once again as an available option in the Recommendations panel. 
+    Oracle Analytics Server has identified there are some missing or null values.  
 
-    We will explore these features later in another lab exercise. 
+    The data quality bar indicates that 5% of the records are null values. 
 
-    Navigate back to the "New Workbook" tab located up above the workbook area. 
+    You can replace null or missing values by double clicking on 'Missing or Null' and typing in the replacement value.
 
-    ![](./images/asdvff1012c.png " ")
+    Double **Click** 'Missing or Null' and type 'Other'
 
-    Notice the inventory dataset is available to add to the workbook.  
+    ![](./images/asdvff12-c.png " ")
 
-    - **Click**  "inventory"  "Add to workbook"
-
-      ![](./images/asdvff12-f.png " ")</if>
+9.  Let's make one last modification to our dataset.  Scroll back to the beginning of the dataset, all the way to the left.  
     
-12. Let's define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis.
+    I would like to combine the columns "First Name" and "Last Name" into one column titled 'Employee Name'.  
 
-    From the top - middle of the workbook, notice three navigation options - "Data"  "Visualize"  "Present"
+    We will concatenate the columns to merge them together. 
 
-    - **Click**  "Data"
+    Right **Click** on 'First Name' and select 'concatenate'
 
-    ![](./images/asdvff12-g.png " ")</if>
+    ![](./images/asdvff12-d.png " ")
 
-    Within Data, you have the ability to identify the key data elements and join your data sources.  Oracle Analytics will attempt to locate data elements that are labeled the same, and automatically make the join if identical data element labels are found.  
+    In the concatenate column dialogue box, enter the following:
 
-    Notice data diagram. The data diagram provides a graphical representation of your data sources and data source connections. Note there are no connections.   Move your cursor in between the data sources "SampleApp" and "Inventory".
+    - Give the new column a name – Employee Name
+    - Leave Merge Column entry as First Name
+    - Modify ‘With’ to Last Name
+    - Leave Delimiter as Space ( ) 
+    - Once complete, click “Add Step” in the upper right hand corner 
 
-    A match was not identified, therefore we must create our own.
+    ![](./images/asdvff12-f.png " ")
 
-     - **Click** on "0' in between the two data sources. 
+    Right **Click** on First Name and Last Name Columns and select ‘Hide’
 
-     - **Click** "Add Another Match"  
+10. Next to ‘Employee Name’, there is a column labeled ‘Born’.
 
-    ![](./images/asdvff12-h.png " ")</if>
+    Let’s change the column label to ‘Birthdate’.  Follow the steps listed above to ‘rename’ your column.  
 
-    From inventory
-   
-    - **Click** on "Select Data" and select the "Product Name” column.  
+    Next, I’d like to add a column that calculates ‘Age’.  
+    
+    From the upper left, notice a  “ + “ icon in the script navigation panel.    
 
-        ![](./images/asdvff12-j.png " ")</if>
+    Review the items listed in the Script Navigation Panel.  The Script Navigation Panel has recorded and made note of each modification we have made to the dataset.  The modifications reside with the dataset and will be applied when the data source has been refreshed or appended. 
 
-    Perform the same steps on "SampleApp" and select "Products - Product" to join the data sources. 
+    ![](./images/asdvff12-g.png " ")
 
-    Notice the data sources are joined.  
+    **Click** on the + icon.  The Create Column dialog box appears.  
+
+    - Give the new column a name – Age
+
+    Enter your calculation simply by typing into the box or by utilizing the functions listed in the table on the right.  
+    
+    I would like to calculate age utilizing current date and the birthday column.  I need to utilize the year function in order to create my calculation. 
+
+    In the box, I begin typing year, notice that Oracle Analytics Server begins to provide choices matching my text or I can simply click on the functions listed on the right. 
+
+    - Select 'Year'.  In (dimension), select 'current_date'.  
+    - Enter an ‘ – ‘ to denote subtraction.
+    - Enter year.  In (dimension), enter ‘birthdate’.
+
+    Your entry should look like this.
+    
+    ![](./images/asdvff12-j.png " ")
+    
+    Once complete, **Click** Validate.  If the calculation has been entered successfully, then **Click** ‘Add Step’.
+
+
+11.	I’m very happy with my dataset.  I’ve made several modifications and cleaned up my data.  It is ready for analysis.  
+
+    To save my enrichments and modifications, I need to “apply this script” to the data source.  
+
+    Now we are ready to analyze our data.  **Click** Create - Workbook.
 
     ![](./images/asdvff13.png " ")
 
-    - - **Navigate** to "Visualize".  Explore the data elements panel on the left. Note the Inventory spread sheet is listed under SampleApp.
+    You may begin your analysis by selecting the appropriate data elements. 
 
-        ![](./images/asdvff13-a.png " ")
+    Take a look at the Birthday, and Date Left data elements list in the data panel.  
+    
+    Click on “Date Left”, notice that Oracle Analytics has created a time dimension automatically for analysis.  
+    
+    You may slice your data by a variety of time dimensions without having to write code, or transform your date elements. 
 
-13. Let's perform our analysis.  **Hold control** and **select** "Product -> Product" from SampleApp and "Stock" and "Demand" from Inventory.
+     ![](./images/asdvff14.png " ")
 
-    - **Right Click** and **Select** "Pick Visualization".  
 
-    ![](./images/asdvff16.png " ")
+## Task 2: Self Service Data Modeling
 
-      - **Select** "Bar"
+     Oracle Analytics Server provides the ability to create new datasets quickly and easily adding tables from one or more connections 
+     to a data set for analysis. This exercise will explain how to bring data entities together from one or more sources, select different tables, modify columns and join them together and preview the dataset. 
+    
+     Datasets can be blended with other datasets, saved, and shared with others throughout the organization for analysis purposes.  
 
-    ![](./images/asdvff17.png " ")
+     Let's begin.  
 
-14. Notice the grammar panel for the bar visualization. Arranging both the metrics "Stock" and "Demand" in the Y axis respectively, the graph should render as shown in the image. 
+1.   Create - Dataset 
 
-    ![](./images/asdvff18.png " ")
+     ![](./images/asdvff2.png " ")
 
-      **Right click** on any bar representing "Demand" and **Sort** -> "Demand" -> "Low to High."
+     We are prompted to 'Select A Data Source'.  
 
-    ![](./images/asdvff23.png " ")
+     For this exercise, we will be utilizing an Oracle Database to select a variety of tables I need for analysis.  
 
-    See that the graph sorts itself with Demand in order from lowest to highest demand.
+     **Click** the database 'orclpdb1'.  The database has a variety of schemas available.  We are going to use BICS_SAMPLEAPP.  
 
-    ![](./images/asdvff22.png " ")
+     ![](./images/asdvff15.png " ")
 
-    Looking at the bar chart, it can be easily seen that for *"MicroPod"* and *"SoundNano"*, the demand is greater than the current stock level.
+2.   We would like to analyze customer orders, products, revenue, and billing information.  I'm going to bring together the tables I need
+     in order to complete my analysis. 
 
-    For other products, the relationship between Stock and Demand is not significantly different. We are curious why the stock levels for both products is less than the current demand.
+     Let's start by selecting the CLOUD_D_CUSTOMERS table.  You can double click it or drag it over to the palette. 
 
-15. We decide to investigate payables and receivables. In order to continue our analysis, we import our Vendor Outstanding Payment spreadsheet which we obtained from our financial system.
+     Once selected, you will see the table represented in a diagram on the upper portion of the palette.  Below, you will see the data elements that reside in the table. 
 
-    **Import** the *Vendor Payments.xlsx* spreadsheet and repeat the steps from 9 through 12. You should now see the data set for Vendor Payments appear in the data elements panel of the workbook.
+     ![](./images/asdvff16.png " ")
 
-    ![](./images/asdvff19.png " ")
+     Next we are going to select the remaining tables we need.  **CTRL Click** the following tables:
 
-16. Let’s create a visualization to analyze products and vendor payments. 
+     - CLOUD_D_PRODUCTS
+     - CLOUD_F_BILL_REV
+     - CLOUD_TIME_SMALL
+     - CLOUD_D_ORDERS
+    
+     Once selected, RMB - select 'Add to dataset'
 
-    Expand Products and Vendor Payments, **CTRL-Click** *Product* and *OutstandingPayment*. Then, **Right-Click** and **select** "Pick Visualization."
+     ![](./images/asdvff17.png " ")
 
-    ![](./images/asdvff20.png " ")
+     Notice that a couple of joins have been defined within the data source, as a result, the joins have happened automatically.
 
-17. Select "Tag Cloud".
+     **Click** or **Hover** over the connection point. 
 
-    ![](./images/asdvff21.png " ")
+     CLOUD_F_BILL_REV and CLOUD_D_ORDERS are joined on Order_Status
 
-18. You should see a new visualization on the canvas. The visual shows that **MicroPod** and **SoundX Nano** are the products with the greatest amount of outstanding vendor payments. 
+     ![](./images/asdvff18.png " ")
 
-    It is possible that our vendors might not be willing to ship the order quantities if there are substantial outstanding payments on the account.
+     CLOUD_F_BILL_REV and CLOUD_D_PRODUCTS are joined on PROD_ITEM_KEY
 
-    We must take action to clear up these payment issues.
+3.   We need to manually add joins for both CLOUD_D_CUSTOMERS and CLOUD_TIME_SMALL tables. 
 
-19. There are a few more metrics and insights I would like to provide in order to complete my analysis. 
+     **Click** on CLOUD_F_BILL_REV.  CUST_NUMBER resides within the table.  Notice it is identified as a measure. In order to join CLOUD_F_BILL_REV 
+     to CLOUD_D_CUSTOMERS we need to modify the identifier. 
 
-    Let's forecast profit ratio and revenue performance for the upcoming months.  Oracle Analytics Server provides easy to use, advanced analytic functions such as trendline, forecast, clustering and outlier detection.  
+     **Click** on the # CUST_NUMBER column name and modify the identifier 
 
-1.  Let’s start by adding a new canvas. **Click** on the "+" icon at the bottom to create a new canvas. On the new canvas **Click** the upside
-    down triangle to the right of its name. Select "Canvas Properties".
+     ![](./images/asdvff20.png " ")
 
-    ![](./images/asdvff50.png " ")
+     **Right Mouse Click** on CLOUD_D_CUSTOMERS and select Join To CLOUD_F_BILL_REV
 
-2. **Click** "Auto Fit" and change it to "Freeform." **Click** "Ok".
-  
-3. **Select** "Profit Ratio %", "Revenue" and "Month". RMB Pick Visualization. **Select** "Combo."
+     ![](./images/asdvff21.png " ")
 
-    ![](./images/asdvff52.png " ")
+     Notice the join has been suggested for you.
 
-    Notice in freeform mode the entire canvas is not utilized automatically.
+     ![](./images/asdvff22.png " ")
 
-4. From the grammar panel **Right click** "Profit Ratio %" and select "Y2 Axis." Enlarge the visualization for a better view.
+     **Right Mouse Click** on CLOUD_TIME_SMALL.  Select Join To CLOUD_F_BILL_REV. A clear date element match has not been identified. 
+     Select CLOUD_F_BILL_REV - TIME_BILL_DT and CLOUD_TIME_SMALL - DAY_TS
 
-    ![](./images/asdvff53.png " ")
+     ![](./images/asdvff23.png " ")
 
-5. **Select** the "Analytics" option from the navigation panel on the left. Drag and drop "Trend Line" onto the visualization.
+     Let's save our dataset so we can complete our analysis.  **Click** on the disk icon in the upper right hand corner.  
+     Name your dataset - my new dataset 
 
-    ![](./images/asdvff54.png " ")
 
-6. You have now created a management report that shows both Revenue and Profit Ratio % with their corresponding trendlines all with no coding.
+4.   Before we navigate to 'Create Workbook', take a look at the bottom of the palete, there tabs representing all of the tables you selected.  
 
-    **Drag** and **drop** "Forecast" on the visualization and you will see forecasted results for both measures. This may take a few moments, please wait.
+     **Click**  on the tab labeled CLOUD_D_CUSTOMERS. 
 
-    ![](./images/asdvff55.png " ")
+     ![](./images/asdvff24.png " ")
 
-    Review the properties box. Notice the forecast has predicted revenue and profit ratio % for the next 3 months. These variables may be modified as needed by the user.
+     Notice the recommendations panel on the right.  You may apply any of the recommendations the knowledge engine has provided.  
 
-    ![](./images/asdvff56.png " ")
+     Additionally, you may ' Edit Definition '
+
+     ![](./images/asdvff25.png " ")
+
+     Notice the following: 
+
+     - You may add or remove columns from the data table. 
+     - You may modify the data indicator as needed. 
+     - You may modify the data access setting. 
+
+     ![](./images/asdvff26.png " ")
+
+     **Click**  Ok and then Create Workbook.  If prompted, save the changes you've made to the dataset. 
+
+5.   Look at the data elements panel to the left.  Each table is represented by a folder icon. 
+
+     You are ready to begin your analysis.  
+
+     Note you have the ability to add other datasources to your analysis.  **Click** on the + to the right of the Search box.
+
+     ![](./images/asdvff27.png " ")
+
+     At this point you can:
+     -  add a dataset 
+     -  leverage a subject area 
+     -  create a new dataset, selecting data from your local desktop or another data source.
+
+     ![](./images/asdvff28.png " ")
+
+     Oracle Analytics Server provides flexible and agile data management capabilities enabling users to access and bring together a wide variety of data sources. 
+
+     
+
+
+
 
    
 
-20. Let's organize our visualizations within our workbook canvas. 
+  
+    
+    
 
-    Oracle self-service includes a freeform canvas mode. This allows you to place and size visualizations anywhere on the canvas. 
 
-    I would like to size my visualizations to make this canvas more pleasing to the business consumer.  In order to do that I need to modify the canvas properties.  
+    
 
-    Move your cursor to the tab labeled "Canvas 1" .  **Click** on the arrow, and **select** "Canvas Properties"
+    
 
-    ![](./images/asdvff14.png " ")
 
-    Navigate to the "Layout" setting, and **select** "freeform" from the choice list.
 
-    ![](./images/asdvff15.png " ")
-
-    **Click** on any visualization.  Notice you can drag in or drag out from any of the edges of the visualization.  Or  drag and drop the entire visualization to a new location within the canvas.  
-
-     ![](./images/asdvff15-a.png " ")
-
-21. The canvas is an extremely dynamic and interactive palette.  Users can quickly create slices or subsets to obtain deeper insights.  Let's explore the ability to filter. 
-
-    Each visualization can be leveraged to drill down to specific details.  **Right Click** on the "Audio" pie slice and  "Keep Selected".
-
-    ![](./images/asdvff24.png " ")
-
-     Notice that each object interactively changes based upon the selection of "Audio" pie slice.
-
-    ![](./images/asdvff25.png " ")
-
-    Clear your filter section by Right **Clicking** on the "Audio" pie slice and **selecting** "Remove Selected".
-
-    ![](./images/asdvff26.png " ")
-
-22. Now, let’s look at how to add custom visualizations to the canvas. Let’s start by adding a new canvas. **Click** on the "+" icon at the bottom to create a new canvas.
-
-    ![](./images/asdvff27.png " ")
-
-    Expand Products and Revenue Metrics, **CTRL-Click** *Product*, *Brand*, *LOB* and *Revenue*. Then, **right click** and **select** "Pick Visualization".
-
-    ![](./images/asdvff28.png " ")
-
-    **Select** the "Circle Pack," which is a custom visualization.
-
-    **Note:** if you are interested in learning how to upload custom visualization types, please see the section at the end of this document.
-
-    **Drag** "Products" from Color to the Rows section.
-
-    ![](./images/asdvff29.png " ")
-
-    The circle pack visualization appears as shown in the image. The size of the circles represents Revenue and each colored circle represents a combination of Brand and LOB.
-
-    ![](./images/asdvff30.png " ")
-
-23. Now, let’s look at revenue by date by leveraging another custom visualization type "Calendar Heatmap." Expand Time and Revenue Metrics, **CTRL-Click** *Date* and *Revenue*. Then, **right click** and **select**
-    the "Calendar Heatmap" visual.  
-
-    ![](./images/asdvff31.png " ")
-
-    Recall in the previous activity, the calendar map visualization was not available for selection. Oracle Analytics determined the calendar heatmap to be an appropriate visualization option because date and revenue were selected by the user.
-
-    The Calendar Heatmap appears next to the Circle Pack.
-
-    ![](./images/asdvff32.png " ")
-
-    **Click** on the "Save" icon at the top right of the screen to save your project.
-
-    ![](./images/asdvff33.png " ")
-
-    **Save** your project under  /My Folders as `"<your_name>_Project`".
-
-    ![](./images/asdvff34.png " ")
-
-## Task 2: Custom Calculations and Maps
- Oracle Analytics Server provides advanced mapping capabilities and the ability to create custom calculations. 
-
-1. In this exercise we will create two custom calculations and then use Oracle’s self-service built in map capabilities to analyze state and average profit per customer.
-
-    Let’s start by adding a new canvas.
-
-    **Click** on the "+" icon at the bottom to create a new canvas.
-
-    ![](./images/asdvff35.png " ")
-
-2. **Right Click** on the "My Calculations" folder.  **Select** "Add Calculation".
-
-    ![](./images/asdvff36.png " ")
-
-3. We are going to utilize the expression builder to create a new metric called "Profit by Customer Count".  Notice there are a wide range of functions available for creating custom calculations.
-
-4. **Select** "Profit Value" from "Profit Metrics" and **drag** and **drop** into the calculation dialog. Type "/" after the "Profit Value" then drag and drop "# of Customers" from "Revenue Metrics" after "/." Click Validate. Click Save.
-
-    You have successfully created your own custom calculation that can be used like any other metric.
-
-    ![](./images/asdvff38.png " ")
-
-5. Let’s utilize our custom calculation in a couple of visualizations.
-
-    **Select** "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labelled "Click here or drag data to add filter." **Filter** to "United States" by typing "uni" and select "United States".
-
-    ![](./images/asdvff40.png " ")
-
-    ![](./images/asdvff39.png " ")
-
-6. **Select** "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas."  Notice that not all states are making a profit.
-
-    ![](./images/asdvff62.8.png " ")
-
-    Let’s see what this looks like on a map.
-
-7. On the upper right corner of the visual, **Click** the three verticle dots and select "Edit" and then "Duplicate Visualization".
-
-    ![](./images/asdvff62.9.png " ")
-
-8. Change the visualization type for the visualizations by selecting the "change visualization" menu in the upper left-hand corner of the grammar panel.
-
-    **Select** map.
-
-    ![](./images/asdvff62.10.png " ")
-
-9. Let’s change the default color scheme to a red to green gradient. From Color, click on the down arrow > Manage Assignments.
-
-    ![](./images/asdvff62.11.png " ")
-
-10. Under Series, locate the metric you created : Profit by Customer Count 
-
-    - **Click** the edit option (the pen) for Profit by Customer Count.
-    - **Click** the Down arrow next to the color bar.
-    - **Select** the red to green gradient second from the bottom right.
-    - **Click** "Done".
-
-    ![](./images/asdvff47.png " ")
-
-11. You have successfully completed custom calculations and mapping. **Select** "Save" to save and update your project.
-
-    ![](./images/asdvff62.13.png " ")
-
-
-## Task 3:  Auto Insights.
-
- 
-
-7. Next we will add the JTC Americas logo to our canvas.
-
-    **Click** the Visualizations menu on the left side of the pane. **Select** "Image" and **drag** and **drop** it on the canvas. Click "Select Image" and upload the *"JTC Americas Group.jpg"* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>.
-
-    ![](./images/asdvff57.png " ")
-
-    ![](./images/asdvff58.png " ")
-
-8. On the Image properties panel change the "Width" and Height" properties to "Auto Fit".
-
-    ![](./images/asdvff59.png " ")
-
-    Notice you can align the image and modify the "Transparency."   **Click** the value of "0" and use the slider to see how the transparency looks beneath your trendline visualization.
-
-    ![](./images/asdvff61.png " ")
-
-9. Once you have configured the image to your liking. Move the image of the company logo on top of the trendline visualization. "**Right-Click** and **select** "Order Visualization"->"Send Backward".
-
-    ![](./images/asdvff60.png " ")
-
-
-10. The result should look something like this. Select "save" to update and save your project.
-
-    ![](./images/asdvff62.png " ")
-
-## Task 4: Uploading a custom visual extension (Read-only)  
-
-**Note:** Tasks listed under this step are for ***reference*** only as they have already been performed on your instance.
-
-Oracle Analytics provides users choice and flexibility with deployment.  Users can upload custom visualizations and analytics scripts in order to expand and enhance self-service visualization capabilities. In this task, you will review how to leverage two of our extension options.
-
-1. Navigate to the Analytics Library to view custom visualization plugins which are available for import
-
-    [https://www.oracle.com/business-analytics/data-visualization/extensions.html](https://www.oracle.com/business-analytics/data-visualization/extensions.html)
-
-    ![](./images/uscve1.png " ")
-
-2. Download the “Circle Pack” and “Calendar Heatmap” extensions.
-
-    ![](./images/uscve2.png " ")
-
+   
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
@@ -432,5 +363,8 @@ Oracle Analytics provides users choice and flexibility with deployment.  Users c
 
 ## Acknowledgements
 * **Authors** - Linda Dest Analytics Platform Specialist, NA Technology
-* **Contributors** - Linda Dest, Rene Fontcha
-* **Last Updated By/Date** - Linda Dest NA Technology, March 2022
+              - Malia German Solution Engineer, NA Technology
+              - Bronze Martin Solution Engineer, NA Technology
+              - Mike Keefe Analytics Platform Specialist, NA Technology
+* **Contributors** -  Rene Fontcha
+* **Last Updated By/Date** - Linda Dest NA Technology, April 2022
