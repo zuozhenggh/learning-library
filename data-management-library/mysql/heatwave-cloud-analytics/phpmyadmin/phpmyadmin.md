@@ -82,7 +82,7 @@ EOF
 
 	```
 	<copy>
-	sed -i -e 's/MYSQL_HOST/<MYSQL_PRIVATE_IP_ADDRESS>/g' phpmyadmin.yaml 
+	sed -i -e 's/MYSQL_HOST/<MYSQL_PRIVATE_IP_ADDRESS>/g' phpmyadmin.yaml
 	</copy>
 	```
 
@@ -96,15 +96,15 @@ EOF
 
 5. Create the phpmyadmin service
 
-	```
+```
 	<copy>
 	kubectl apply -f phpmyadmin.yaml -n phpmyadmin
 	</copy>
-	```
+```
 
 6. Create the phpmyadmin ingress service
 
-	```
+```
 <copy>
 cat <<EOF | kubectl -n phpmyadmin apply -f - 
 apiVersion: networking.k8s.io/v1
@@ -135,7 +135,7 @@ spec:
           backend:
             service:
               name: phpmyadmin-svc
-              port: 
+              port:
                 number: 80
 EOF
 </copy>
@@ -143,16 +143,16 @@ EOF
 
 7. Find out the public IP of OKE Ingress Controller
 
-	```
+```
 	<copy>
 	kubectl get all -n ingress-nginx
 	</copy>
-	```
+```
 	![Ingress IP](images/ingress.png)
 
 8. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
 
-	![PhpMyAdmin](images/phpmyadmin.png)
+  ![PhpMyAdmin](images/phpmyadmin.png)
 
   You may now **proceed to the next lab.**
 
