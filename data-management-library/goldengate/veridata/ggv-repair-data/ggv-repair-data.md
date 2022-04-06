@@ -1,7 +1,7 @@
 # Repair Out-of-Sync Jobs and Generate SQL Files
 
 ## Introduction
-From the Finished Jobs page, you can select the out-of-sync comparisons for repair. Jobs, groups, and compare pairs can be selected for repair.
+From the **Finished Jobs** page, you can select the out-of-sync comparisons for repair. Jobs, groups, and compare pairs can be selected for repair.
 
 The Repair Jobs page displays a summary of all repair jobs. You can use the Filters on this page to display older repair jobs and to filter repair jobs by repair status and job name.
 

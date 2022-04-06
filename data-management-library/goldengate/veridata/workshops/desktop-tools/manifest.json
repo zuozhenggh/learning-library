@@ -57,6 +57,16 @@
       "filename": "./../../ggv-purge-delete-directories/ggv-purge-delete-directories.md"
     },
     {
+      "title": "Lab 8:  Purge Data and Delete Directories ",
+      "description": "This lab walks you through the Purge Data and Delete Directories features in Oracle GoldenGate Veridata.",
+      "filename": "./../../ggv-purge-delete-directories/ggv-purge-delete-directories.md"
+    },
+    {
+      "title": "Lab 9: Repair Jobs and Download SQL Files ",
+      "description": "This lab walks you through the steps to download and repair SQL statements.",
+      "filename": "./../../ggv-repair-data/ggv-repair-data.md"
+    },
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
