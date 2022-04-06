@@ -1,4 +1,4 @@
-# Access and Utilize REST API via OCI CLI
+# Access and utilise REST API via OCI CLI
 
 ## Introduction
 
