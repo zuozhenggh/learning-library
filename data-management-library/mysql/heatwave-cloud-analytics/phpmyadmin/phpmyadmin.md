@@ -77,7 +77,6 @@ EOF
 </copy>
 ```
 
-
 3. Specify your MySQL private IP address in the yaml file, replace **MYSQL&#95;PRIVATE&#95;IP&#95;ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
 
 	```
@@ -94,6 +93,19 @@ EOF
 	</copy>
 	```
 
+2. Install phpmyadmin repository using helm
+
+  ```
+<copy>
+helm repo add bitnami https://charts.bitnami.com/bitnami
+</copy>
+```
+  ```
+<copy>
+helm install myrelease bitnami/phpmyadmin --namespace phpmyadmin
+</copy>
+```
+
 5. Create the phpmyadmin service
 
 	```
@@ -106,7 +118,7 @@ EOF
 
 	```
 <copy>
-cat <<EOF | kubectl -n phpmyadmin apply -f - 
+cat <<EOF | kubectl -n phpmyadmin apply -f -
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -135,7 +147,46 @@ spec:
           backend:
             service:
               name: phpmyadmin-svc
-              port: 
+              port:
+                number: 80
+EOF
+</copy>
+```
+
+6. Create the phpmyadmin ingress service
+
+	```
+<copy>
+cat <<EOF | kubectl -n phpmyadmin apply -f -
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: phpmyadmin-ing
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/app-root: /phpmyadmin/
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      rewrite ^/themes/(.*)$ /phpmyadmin/themes/$1 redirect;
+      rewrite ^/index.php(.*)$ /phpmyadmin/index.php$1 redirect;
+      rewrite ^/config/(.*)$ /phpmyadmin/config/$1 redirect;
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+        - path: /phpmyadmin(/|$)(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: myrelease-phpmyadmin
+              port:
+                number: 80
+        - path: /index.php(.*)
+          pathType: Prefix
+          backend:
+            service:
+              name: myrelease-phpmyadmin
+              port:
                 number: 80
 EOF
 </copy>

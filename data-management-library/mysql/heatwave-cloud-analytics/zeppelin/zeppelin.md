@@ -36,18 +36,18 @@ In this lab, you will:
 
     ![Connect to VM](images/connect-to-vm.png)
 
-2. Download the [Zeppelin-Server](files/zeppelin-server.yml?download=1)
+2. Download the [Zeppelin-Server](files/zeppelin-server.yaml?download=1)
 
     ```
     <copy>
-    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/files/zeppelin-server.yml
+    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/files/zeppelin-server.yaml
     </copy>
     ```
 
-3. Download the [Zeppelin ingress](files/zeppelin-ing.yml)
+3. Download the [Zeppelin ingress](files/zeppelin-ing.yaml)
     ```
     <copy>
-    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/files/zeppelin-ing.yml
+    wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/files/zeppelin-ing.yaml
     </copy>
     ```
 
