@@ -14,7 +14,7 @@ In this step, we will show you how to prepare your work environment in Oracle Cl
 
 For a technical overview of this lab step, please watch the following video:
 
-[Video showing a technical overview](youtube:g7FFyY9Kf2g)
+[Video link for the instruction](youtube:g7FFyY9Kf2g)
 
 
 ### Prerequisites
@@ -105,4 +105,4 @@ You've now completed the prerequisites.
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
 * **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
-* **Last Updated By/Date** - Andres Quintana, March 2022
+* **Last Updated By/Date** - Bilegt Bat-Ochir 04/04/2022

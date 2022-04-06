@@ -12,7 +12,7 @@ We need to create our target tables for our GoldenGate migration and enable GGAD
 
 For a technical overview of this lab step, please watch the following video:
 
-[Technical overview of Preparing Target ATP.](youtube:K89v3fprzpg)
+[Technical overview of Preparing Target ATP](youtube:K89v3fprzpg)
 
 ### Prerequisites
 
@@ -38,7 +38,7 @@ For a technical overview of this lab step, please watch the following video:
 
 ## Task 2: Create Target Tables
 
-1. Let's create our target tables for migration. Please download the target table creation script **[from here](./files/CreateTables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
+1. Let's create our target tables for migration. Please download the target table creation script **[from here](./files/create-tables.sql)**. Make sure to save these with the correct extension **.sql** not txt!
 
 2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop it in the worksheet area. Then run create statements.
 
@@ -59,21 +59,21 @@ For a technical overview of this lab step, please watch the following video:
 
 	![Run the SQL query.](/images/sql-dev-3.png)
 
-2. Let's check whether the parameter `enable_goldengate_replicaton` is set to true. 
+2. Let's check whether the parameter `enable_GoldenGate_replicaton` is set to true. 
 
 	```
 	<copy>
-	select * from v$parameter where name = 'enable_goldengate_replication';
+	select * from v$parameter where name = 'enable_GoldenGate_replication';
 	</copy>
 	```
 
 	![Check if parameter is set to true.](/images/sql-dev-4.png)
 	
-3. If value is _**FALSE**_ then modify the parameter, else go to next step.
+	If value is _**FALSE**_ then modify the parameter, else go to next Lab.
 
 	```
 	<copy>
-	alter system set enable_goldengate_replication = true scope=both;
+	alter system set enable_GoldenGate_replication = true scope=both;
 	</copy>
 	```
 
@@ -85,4 +85,4 @@ For a technical overview of this lab step, please watch the following video:
 
 * **Author** - Bilegt Bat-Ochir - Senior Solution Engineer
 * **Contributors** - John Craig - Technology Strategy Program Manager, Patrick Agreiter - Senior Cloud Engineer
-* **Last Updated By/Date** - Andres Quintana, March 2022
+* **Last Updated By/Date** - Bilegt Bat-Ochir 04/04/2022
