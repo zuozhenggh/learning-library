@@ -26,6 +26,14 @@
         {
             "title": "Lab 4: Install Tools and Services (Optional)",
             "filename": "../../tools-install/tools-install.md"
-        } 
+        },
+        {
+            "title": "Lab 5: Developing Node.js Applications for Oracle Database",
+            "filename": "../../nodedb-development/nodedb-development.md"
+        }, 
+        {
+            "title": "Lab 6: Developing Python Applications for Oracle Database",
+            "filename": "../../pythondb-development/pythondb-development.md"
+        }
     ]
 }

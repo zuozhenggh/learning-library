@@ -164,8 +164,9 @@ This lab assumes you have:
 
       ```
       <copy>
-      sudo yum install -y oracle-nodejs-release-el7 oracle-release-el7
+      sudo yum install oracle-nodejs-release-el7
       sudo yum install nodejs
+      sudo yum install npm
       </copy>
       ``` 
 
@@ -174,7 +175,9 @@ This lab assumes you have:
       ```
       <copy> 
       node -v
-      v16.14.0
+      v16.14.1
+      npm -v
+      8.5.0
       </copy>
       ``` 
 
