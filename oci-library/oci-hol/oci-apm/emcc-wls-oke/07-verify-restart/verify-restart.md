@@ -10,7 +10,10 @@ Estimated time: 10 minutes
 * Completion of the preceding tutorials in this workshop
 
 
-## Task 1: Restart the Kubernetes Pods
+### Objectives
+* Verify the continuous monitoring at the pod restart
+
+## **Task 1**: Restart the Kubernetes Pods
 
 1. Launch the Cloud Shell, run the **oci ce cluster create-kubectl** command, saved in the Tutorial 1, Task 1, step 7.
 
@@ -104,7 +107,9 @@ Estimated time: 10 minutes
 
     However, the change made in the WebLogic IP has no impact on the EM monitoring.  This is because the EM agent does not directly communicate with the pods where WebLogic Servers are running; instead, it connects with the load balancer services, which automatically handles the mapping when the pods are regenerated.  
 
-## Task 2: Verify the monitoring in EM Console
+
+## **Task 2**: Verify the monitoring in EM Console
+
 
 1.  Launch your EM web console in a browser, log on and navigate to the Middleware home page.  Observe that the WebLogic targets are in the UP status.  Note that it will take few minutes to have the statuses updated for the targets.
 
@@ -122,7 +127,9 @@ Estimated time: 10 minutes
 
 
 
-You may now [proceed to the next tutorial](#next).
+
+You may now **proceed to the next tutorial**.
+
 
 ## Acknowledgements
 
