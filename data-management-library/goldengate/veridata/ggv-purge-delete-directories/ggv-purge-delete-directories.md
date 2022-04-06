@@ -89,13 +89,13 @@ To delete directories:
 
 ## Task 3: Delete Directories (Delete Directories Completely Check Box is Selected)
 
-  The generated report files are stored in this location:
-  `/home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
+The generated report files are stored in this location:
+`/home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
 
-  To delete directories:
+Ensure to execute a Job by following the steps in **Lab: Create and Execute Jobs**.
 
-  1. Ensure to execute a Job by following the steps in Lab: Create and Execute Jobs.
-  2. Create user-defined files in the generated report file location:
+To delete directories:
+1. Create user-defined files in the generated report file location:
   `/home/opc/VDT/user_projects/domains/base_domain/veridata/reports`.
 
       ```
@@ -112,13 +112,13 @@ To delete directories:
 
       ![](./images/2DeleteDir-LabTestTouchCommand.png " ")
 
-  3. In the UI, select **Finished Jobs**, select the Job you want to delete, select the **Delete Directories Completely** check box, and then click **Delete**.
+2. In the UI, select **Finished Jobs**, select the Job you want to delete, select the **Delete Directories Completely** check box, and then click **Delete**.
 
-  4. Click **OK** in the displayed popup.
+3. Click **OK** in the displayed popup.
 
       ![](./images/4DeleteDir-ClickOK-DelDirCompletely-Popup.png " ")
 
-  5. In the terminal, verify that the entire directory has been deleted.
+4. In the terminal, verify that the entire directory has been deleted.
 
       ![](./images/7DeletedDirectories_Terminal.png " ")
 
