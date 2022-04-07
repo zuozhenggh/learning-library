@@ -6,7 +6,6 @@
 
 In this lab, you will deploy an ingress-controller on **OKE** to allow public IP access to internal services (similar to load balancer). We will be using this ingress-controller to route access to applications (Grafana, Zeppelin, Superset) deployed to **OKE**. These applications will be accessed via different port numbers via this ingress-controller.
 
-
 Estimated Time: 5 minutes
 
 ### Objectives

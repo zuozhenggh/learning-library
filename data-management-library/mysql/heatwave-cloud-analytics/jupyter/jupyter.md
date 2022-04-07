@@ -100,16 +100,51 @@ kubectl -n jhub get svc proxy-public -o jsonpath='{.status.loadBalancer.ingress[
 pip3 install mysql-connector-python
 </copy>
 ```
-
 	![install mysql connector](images/import-mysql-connector.png)
+
+3. Install sql modules
+
+	```
+<copy>
+pip3 install ipython-sql
+</copy>
+```
+	![install ipython-sql](images/install-ipython-sql.png)
+
+4. Install mysql modules
+
+	```
+<copy>
+pip3 install pymysql
+</copy>
+```
+	![install pymysql](images/install-pymysql.png)
 
 	Click on the top left corner **jupyterhub** to go back to home page
 
-3. Create a new notebook
+5. Create a new notebook
 
 	![New notebook](images/jupyter-new-notebook.png)
 
-4. Access MySQL HeatWave
+6. Execute SQL codes
+
+	```
+<copy>
+%load_ext sql
+</copy>
+```
+	```
+<copy>
+%sql mysql+pysql://admin:Oracle#123@<mysql_private_ip>/airportdb
+</copy>
+```
+	```
+%sql select * from airport limit 5
+```
+
+	![Run SQL](images/run-sql-notebook.png)
+
+5. Access MySQL HeatWave using python
 
 	```
 <copy>
