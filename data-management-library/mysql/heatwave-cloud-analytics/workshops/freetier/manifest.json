@@ -32,19 +32,19 @@
             "filename": "../../ingress-controller/ingress-controller.md"
         },
         {
-            "title": "Lab 5: Deploy Jupyter notebook",
-            "description": "Analyze data with Jupyter on MySQL HeatWave",
-            "filename": "../../jupyter/jupyter.md"
-        },
-        {
-            "title": "Lab 6: Deploy Grafana dashboard",
+            "title": "Lab 5: Deploy Grafana dashboard",
             "description": "Deploy Grafana Dashboard for MySQL to OCI Kubernetes",
             "filename": "../../grafana/grafana.md"
         },
         {
-            "title": "Lab 7: Deploy Superset dashboard",
+            "title": "Lab 6: Deploy Superset dashboard",
             "description": "Build analytics dashboard with Superset on MySQL HeatWave",
             "filename": "../../superset/superset.md"
+        },
+        {
+            "title": "Lab 7: Deploy Jupyter notebook",
+            "description": "Analyze data with Jupyter on MySQL HeatWave",
+            "filename": "../../jupyter/jupyter.md"
         },
         {
             "title": "Lab 8: Deploy Zeppelin notebook",
