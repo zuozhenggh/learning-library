@@ -50,56 +50,6 @@ In this task you will create and configure spatial data and perform some basic s
 
     ![](./images/yellow-to-green.png " ")
 
-**Logging on to APEX**
-
-1. On the Autonomous Database console page scroll down to the APEX Instance and click on the name next to the Instance Name (it’s the same name as your database).
-
-    ![](./images/apex-instance-name.png " ")
-
-2. This will open up the APEX Instance Details. Click on **Launch APEX**.
-
-    ![](./images/click-launch-apex.png " ")
-
-3. Enter your workspace name, user name, and password that you created when you did **Lab 3**. If you do not remember this information skip to the **Forgot your APEX Username or Password** section below.
-
-    ![](./images/apex-login.png " ")
-
-4. You will be logged in to your APEX Workspace. Proceed with the Lab.
-
-    ![](./images/apex-main-screen.png " ")
-
-**Note: Forgot your APEX Username or Password**
-
-If you don’t remember your APEX user name and workspace name that you created for **Lab 3** (the user name and workspace name should be the same) then follow the these steps to reset the password for your APEX user name. If you did not do the APEX Lab Homework **(Lab 3)** then you will have to go back  to Lab 3 and complete **Task 1 and 2** from that lab before you can do this Lab. This is only for resetting the password for the user you created in that lab.
-
-1. From the APEX Instance Details console click on **Launch Database Actions**
-
-    ![](./images/launch-database-actions.png " ")
-
-2. On the Database Actions page click on Database Users under the Administration section
-
-    ![](./images/db-users.png " ")
-
-3. Find the user you created for the APEX Lab (Lab 3). In that lab the instructions were to create a user with your name as the user name, so most likely that is the user you are looking for. The lab screenshots had TESTUSER as the default, so if you did not use your own name as the user name you may have used TESTUSER. After you find the user, **click on the 3 dots** on the top right of the user and a drop down list will appear. Click on **Edit**.
-
-    ![](./images/click-edit.png " ")
-
-4. On the Edit User screen, input your new password and confirm, then click on **Apply Changes**.
-
-    ![](./images/apply-changes.png " ")
-
-5. After your password change is done, go back to the tab that has the APEX instance details, click on **Launch APEX**.
-
-    ![](./images/launch-apex.png " ")
-
-6. Sign in
-
-    ![](./images/apex-login.png " ")
-
-7. You will be on the logged in to your APEX Workspace. Proceed with the Lab.
-
-    ![](./images/apex-main-screen.png " ")
-
 ## Task 2: Create Sample Data
 
 ### Introduction
@@ -192,33 +142,20 @@ The instructions and screen shots refer to SQL Developer Web, however the same s
 
 1. Download the SQL script [here](files/create-sample-data.sql).
 
-2. Navigate to **SQL Workshop** and click on **SQL Scripts**
 
-    ![](./images/click-sql-scripts.png " ")
+2. Copy/paste/run the script in SQL Developer Web
+![Image alt text](images/run-script-1.png)
 
-3. Click **Upload**. Then drag-and-drop the script you downloaded and enter a script name.
+3. Refresh listing to see the tables BRANCHES and WAREHOUSES
 
-    ![](./images/drag-and-drop.png " ")
+    ![Image alt text](images/refresh-tables-1.png)
 
-4. Click the **Run** button
-
-    ![](./images/click-run.png " ")
-
-5. Click **Run Now**
-
-    ![](./images/click-run-now.png " ")
-
-6. Once complete, in the **SQL Workshop** pull-down menu select **Object Browser** and observe the BRANCHES and WAREHOUSES tables have been created.
-
-    ![](./images/branches-warehouses.png " ")
 
 **Create Geometries from Coordinates**
 
 Geometries can be populated with SQL, for exathis case by specifying the coordinates of point geometries based on  latitude and longitude columns.
 
-1. In the **SQL Workshop** pull-down menu, select **SQL Commands**
-
-2. Add geometry columns by running the following. Highlight the first command and click run. 
+1. Add geometry columns:
 
     ```
     <copy> 
@@ -232,12 +169,7 @@ Geometries can be populated with SQL, for exathis case by specifying the coordin
     </copy>
     ```
 
-    ![](./images/run-commands.png " ")
-
-3. Highlight the second command and click run.
-   **Note**: Only one command can be highlighted at a time, then click run.
-   
-4. Populate geometry columns by running the following. Highlight the first command and click run.
+2. Populate geometry columns:
 
     ```
     <copy> 
@@ -258,16 +190,11 @@ Geometries can be populated with SQL, for exathis case by specifying the coordin
     </copy>
     ```
 
-    ![](./images/populate-columns.png " ")
-
-5. Highlight the second command and click run.
-   **Note**: Only one command can be highlighted at a time, then click run.
-
 **Create Table with Polygon**
 
 Lines and polygons can be created in the same way. While a point geometry requires one coordinate, lines and polygons require all of the coordinates that define the geometry. In this case we create a table to store a polygon.
 
-1. Create table and insert row by running the following. Highlight the first command and click **Run**.
+1. Create table and insert row
    
 	```
     <copy>
@@ -300,15 +227,16 @@ Lines and polygons can be created in the same way. While a point geometry requir
     );
     </copy>
     ```
-    ![](./images/create-polygon.png " ")
 
-2. Repeat for second command.
+2. Refresh the table listing to see the COASTAL_ZONE table.
+    ![Image alt text](images/refresh-tables-2.png)
+
 
 **Add Spatial Metadata and Indexes**
 Oracle Database provides a native spatial index for high performance spatial operations. Our sample data is so small that a spatial index is not really needed. However we perform the following steps since they are important for typical production data volumes. A spatial index requires a row of metadata for the geometry being indexed. We create this metadata and then the spatial indexes.
 
 
-1. Add spatial metadata by running the following. Highlight the first command and click **Run**.
+1. Add spatial metadata:
 
     ```
     <copy> 
@@ -352,11 +280,8 @@ Oracle Database provides a native spatial index for high performance spatial ope
    );
     </copy>
     ```
-    ![](./images/spatial-metadata.png " ")
 
-3. Repeat for the other two commands.
-
-4. Create spatial indexes metadata by running the following. Highlight the first command and click **Run**.
+2. Create spatial indexes:
 
     ```
     <copy> 
@@ -379,12 +304,9 @@ Oracle Database provides a native spatial index for high performance spatial ope
            INDEXTYPE IS MDSYS.SPATIAL_INDEX;
     </copy>
     ```
-    ![](./images/indexes-metadata.png " ")
 
-5. Repeat for the other two commands,
-
-    After the indexes are created, in the **SQL Workshop** pull-down menu, select **Object Browser**. You will see 3 tables having names beginning with MDRT_. These are artifacts of the spatial indexes and are managed by Oracle Database automatically. You should never manually manipulate these tables.
-    ![Image alt text](images/object-browsers.png)
+    After the indexes are created, refresh the table listing. You will see 3 tables having names beginning with MDRT_. These are artifacts of the spatial indexes and are managed by Oracle Database automatically. You should never manually manipulate these tables.
+    ![Image alt text](images/refresh-tables-3.png)
 
 
     Our sample data is now prepared and ready for spatial queries. 
@@ -582,87 +504,39 @@ Notes:
 * The ```SDO_ANYINTERACT``` operator accepts 2 arguments, geometry1 and geometry2. The operator returns ```TRUE``` for rows where geometry1 is inside or on the boundary of geometry2.
 * In this example geometry1 is ```B.GEOMETRY```, the branch geometries, and geometry2 is ```C.GEOMETRY```, the coastal zone geometry. The COASTAL_ZONE table has only 1 row so no additional criteria is needed.
 
-## Task 4: Homework
+**Identify branches outside and within 10km of coastal zone:**
 
-1. Perform Tasks 1-3
+```
+<copy>
 
-2. Show the results of a spatial query in an APEX map.
-
-    Click App Builder and then Create Application
-    ![Image alt text](images/click-app-builder.png)
-
-    Add a blank page
-    ![Image alt text](images/blank-page.png)
-
-    Enter **Map** as the page name and click **Add Page**
-    ![Image alt text](images/add-page.png)
-
-    Enter **Spatial lesson homework** as the application name and click **Create Application**
-    ![Image alt text](images/create-application.png)
-
-    Click **Run Application**
-    ![Image alt text](images/run-application.png)
-
-    Login with APEX as you did in **Lab 3**
-    ![Image alt text](images/login-apex.png)
-
-    Click on the tile to navigate to your **Map** page
-    ![Image alt text](images/map-page.png)
-
-    The page is initially blank. Click on the **Edit Page 2** button at the bottom to edit the page.
-    ![Image alt text](images/click-edit-page.png)
-
-    Drag a **Map** region into the **REGION BODY**
-    ![Image alt text](images/drag-map.png)
-
-    Set the title to **My Map**
-    ![Image alt text](images/my-map.png)
-
-    Under Layers, click on New and update the title to **Coastal Zone**, layer type to **Polygons**, and table name to **COASTAL_ZONE**
-    ![Image alt text](images/under-layers.png)
-
-    Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #18079d or a color of your choosing, and set fill opacity to **0.5**.
-    ![Image alt text](images/sdo-geometry.png)
-
-    In the page tree on the left, right click on Layers and select **Create Layer**
-    ![Image alt text](images/create-layer.png)
-
-    In the Layer panel on the right, set the layer name to **Branches**, layer type to **Points** and table name to **BRANCHES**.
-    ![Image alt text](images/branches-points.png)
-
-    Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #00ff00 or a color of your choosing.
-    ![Image alt text](images/fill-color.png)
-    
-    Again, in the Page tree on the left, right-click on Layers and select **Create Layer**. In the Layer panel on the right, set the new layer name to **Branches in zone** and Layer Type to **Points**. Under Source, set Type to **SQL Query**. Enter the following **into SQL Query**
-    ```
-    <copy>
-    SELECT
+( SELECT
     B.BRANCH_NAME,
-    B.BRANCH_TYPE,
-    B.GEOMETRY
-  FROM
+    B.BRANCH_TYPE
+FROM
     BRANCHES      B,
     COASTAL_ZONE  C
-  WHERE
+WHERE
+    SDO_WITHIN_DISTANCE(
+        B.GEOMETRY, C.GEOMETRY, 'distance=10 unit=km'
+    ) = 'TRUE'
+)
+MINUS
+( SELECT
+    B.BRANCH_NAME,
+    B.BRANCH_TYPE
+FROM
+    BRANCHES      B,
+    COASTAL_ZONE  C
+WHERE
     SDO_ANYINTERACT(
         B.GEOMETRY, C.GEOMETRY
-    ) = 'TRUE';
-    </copy>
-    ```
-    This is the query from Task 3 titled Identify branches in the coastal zone, with the addition of GEOMETRY so that the result can be rendered on a map.
+    ) = 'TRUE'
+);
+</copy>
+```
+![Image alt text](images/query7.png)
+Notes:
+* In the first part of this query, the ```SDO_WITHIN_DISTANCE``` operator identifies BRANCHES within 10 km of the COASTAL_ZONE. This includes BRANCHES inside the COASTAL\_ZONE.
+* The query uses ```MINUS``` to remove BRANCHES inside the COASTAL_ZONE, leaving only BRACNCHES within 10km and outside the COASTAL\_ZONE. 
 
-    ![Image alt text](images/query-branches.png)
-
-    Scroll down the Layer panel on the right. Under Appearance set Fill Color to #ff0000.
-    ![Image alt text](images/set-fill-color.png)
-
-    On the top right, click **Save** and then **Run**
-    ![Image alt text](images/save-and-run.png)
-
-3. Take a screenshot of your APEX page and upload to Blackboard.
-    ![Image alt text](images/final-map.png)
-
-
-
-
-
+## Task 4: Homework
