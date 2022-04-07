@@ -209,26 +209,26 @@ You may now **proceed to the next lab**.
 
 ## **Appendix**: Troubleshooting Tips
 ### Issue: Commits Behind oracle:master
-![](./images/behind.png " ")
+![Commits behind oracle master.](./images/behind.png " ")
 
 1. To fix this, in Github Desktop select **Fetch Origin**
-  ![](./images/fetch-origin.png " ")
+  ![Fetch origin.](./images/fetch-origin.png " ")
 
 2. Next, select **Branch -> Merge into Current Branch**
-  ![](./images/branch.png " ")
+  ![Select merge into current branch.](./images/branch.png " ")
 
 3. Then, click **Upstream/Master -> Merge Upstream/Master into Master**
-  ![](./images/merge.png " ")
+  ![Click upstream master.](./images/merge.png " ")
 
 4. Finally, select **Push Origin**
-  ![](./images/push-origin.png " ")
+  ![Select push origin.](./images/push-origin.png " ")
 
 4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
-  ![](./images/git-hub-sync-ahead.png " ")
+  ![Refresh your personal github repository.](./images/git-hub-sync-ahead.png " ")
 
 ### Issue: Clone failed
-  ![](./images/clone-failed.png " ")
+  ![Clone failed.](./images/clone-failed.png " ")
 
   1. Execute the following commands to make sure .gitconfig is updated:
 
@@ -254,7 +254,7 @@ GitHub merge conflicts happen when you and some other contributors are changing 
 
 4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
-  ![](./images/git-hub-sync-ahead.png " ")
+  ![Refresh your personal GitHub repository.](./images/git-hub-sync-ahead.png " ")
 
 This concludes this lab. You may now **proceed to the next lab**.
 
