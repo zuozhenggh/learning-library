@@ -3,7 +3,7 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
         {
-            "title": "How do I scale my Oracle Autonomous Database instance",
+            "title": "How do I scale my Oracle Autonomous Database instance?",
             "description": "",
             "filename": "sprint-adb-manage-scaling.md"
         },
