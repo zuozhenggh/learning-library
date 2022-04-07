@@ -1,10 +1,11 @@
-# Apply Auto Scaling on an Autonomous Database
+# Connect to ADB
 
-## **Introduction**
+## Introduction
+In this demo, we will connect to an Autonomous Database via SQL Developer using a wallet. 
+You will also, learn the benefits of auto scaling an Oracle Autonomous Database. This lab uses the existing SSB schema in Autonomous Data Warehouse (ADW). The lab executes a PL/SQL procedure which loops through executing a query twice. You will be running this procedure from 3 SQL Developer Web worksheet sessions concurrently to see how CPU is utilized with and without auto scaling.
+Lastly, we will cover disaster recovery on Autonomous Database.
 
-In this lab, you will learn the benefits of auto scaling an Oracle Autonomous Database. This lab uses the existing SSB schema in Autonomous Data Warehouse (ADW). The lab executes a PL/SQL procedure which loops through executing a query twice. You will be running this procedure from 3 SQL Developer Web worksheet sessions concurrently to see how CPU is utilized with and without auto scaling.
-
-Estimated time: 30 minutes
+Estimated Time: 40 minutes
 
 **What is Auto Scaling and How Does It Work?**
 
@@ -25,10 +26,49 @@ As in our lab example below, if a customer provisions an Autonomous Database wit
 The customer is charged only for the actual average number of OCPUs used per hour, between 1 and 3 OCPUs.
 
 ### Objectives
+- Download an instance Wallet
+- Connect SQL Developer to instance using wallet
+- Learn the benefits of auto scaling
+- Learn how to enable and disable auto scaling
+- Examine the performance benefits of auto scaling
+- Enable Autonommous Data Guard
+- Perform a manual switchover
 
--   Learn the benefits of auto scaling
--   Learn how to enable and disable auto scaling
--   Examine the performance benefits of auto scaling
+### Prerequisites
+  This lab assumes you have:
+  - Obtained and signed in to your `workshop-installed` compute instance
+  - Have SQL Developer installed
+
+## Task 1: Download an Instance Wallet
+1. Click on the menu and navigate to your database. 
+
+  ![Shows the menu to option to navigate to database.](./images/navigate-to-db.png)
+
+2. Click on DB Connection. Select Instance Wallet, and click Download Wallet to download the wallet. 
+
+  ![Shows how to download wallet.](./images/download-wallet.png)
+
+3. Specify a password of choice for the wallet. You will need this password when connecting to the database via SQL Developer later.
+
+## Task 2: Connect SQL Developer to Instance using Wallet
+
+4. Open SQL Developer, and select New Connection. 
+
+5. Fill in the name, your username, and your password. For connection type, select Cloud Wallet.
+
+  ![Shows where to enter username, password, and select cloud wallet.](./images/cloud-wallet.png)
+
+6. Select Browse, and locate your wallet. 
+
+  ![Shows where to browser for the cloud wallet.](./images/locate-wallet.png)
+
+7. Test your connection by selecting Test. You should see status Success. 
+
+  ![Shows how to test connection to wallet.](./images/test-connection.png)
+
+8. Connect to your database by clicking Connect. 
+
+  ![Shows how to connect to database.](./images/connect-wallet.png)
 
 ### How You Will Test a Real-World Auto Scaling Example in this Lab
 
@@ -40,7 +80,7 @@ The **business case** we want to answer here is to **summarize orders by month a
 ## **Test 1 - Auto Scaling Disabled**
 In tasks 1 through 3, with auto scaling **disabled**, you will have 3 SQL Developer Web sessions executing queries sharing the CPU and IO resources, and you will examine query times.
 
-## Task 1: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
+## Task 3: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
 
 1. You created an Autonomous Data Warehouse database **ADW Finance Mart** in the earlier lab named *Provision Autonomous Database*. Go to the details page for the database, click the **More Actions** button and select **Manage Scaling**. In the Manage scaling dialog, deselect the **OCPU auto scaling** checkbox to disable auto scaling if you have not done so already. Click **Apply**, which will close the dialog and return you to the details page for the database.
 
@@ -60,7 +100,7 @@ In tasks 1 through 3, with auto scaling **disabled**, you will have 3 SQL Develo
 
   ![Consumer Group drop-down menu showing HIGH highlighted.](./images/create-four-worksheets.png " ")
 
-## Task 2: Create the `test_proc` Procedure to Generate the Test Workload
+## Task 4: Create the `test_proc` Procedure to Generate the Test Workload
 In this task, you run a script that will:
 - Create the procedure **test\_proc** for the workload used in the test.
     - When this procedure is executed, it will run a query in a loop 2 times, to answer the business case from our [SSB database](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-sample-data.html#GUID-4BB2B49B-0C20-4E38-BCC7-A61D3F45390B): Aggregate orders by month and city, for customers in the US, in the Fall of 1992.
@@ -173,7 +213,7 @@ In this task, you run a script that will:
     </copy>
     ```
 
-## Task 3: Run the `test_proc` Procedure Concurrently in Three Worksheets
+## Task 5: Run the `test_proc` Procedure Concurrently in Three Worksheets
 
 1. Open 3 worksheets you named **Query 1**, **Query 2**, and **Query 3**. To open 3 SQL Developer Web worksheets, simply go back to the OCI console's Details page for your database, click the **Database Actions** button and in the Database Actions **Launchpad**, click the **SQL** card to open a SQL worksheet in a tab in your browser. Do this 3 times so that you have 3 SQL worksheets open in your browser. In the first SQL worksheet, select your saved Query 1. In the second worksheet, select Query 2. In the third worksheet, select Query 3.
 
@@ -232,13 +272,13 @@ In this task, you run a script that will:
 ## **Test 2 - Auto Scaling Enabled, Providing 3x the Amount of CPU and IO Resources**
 In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
 
-## Task 4: Enable Auto Scaling
+## Task 6: Enable Auto Scaling
 
 1. Enable auto scaling, to allow you to use 3X the amount of base CPU and IO. Go to the details page for the database, click the **More Actions** drop-down menu and select  **Manage Scaling**, and select the **Auto Scaling** checkbox to **re-enable** auto scaling.
 
     ![Click the checkbox to re-enable auto scaling.](images/enable-auto-scaling.png " ")
 
-## Task 5: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
+## Task 7: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
 
 1. Once again, go to your 3 SQL Developer Web **"Query"** worksheet instances (re-open 3 instances if you closed the tabs from before) which are using the HIGH consumer group. Enter - but do not immediately execute - the following execute command in each worksheet. After you have entered the command into all 3 worksheets, quickly execute the command in each worksheet so that they begin at nearly the same time.
 
@@ -254,7 +294,7 @@ In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Develope
 
     ![Worksheet shows that the PL/SQL procedure completed successfully.](images/procedure-successfully-completed.png " ")
 
-## Task 6: Review the Improved Performance After Enabling Auto Scaling
+## Task 8: Review the Improved Performance After Enabling Auto Scaling
 
 1. When the procedures have completed, run this script to see the test results:
 
@@ -311,12 +351,39 @@ In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Develope
 - To see the average number of OCPUs used during an hour you can use the "Number of OCPUs allocated" graph on the Overview page on the Autonomous Data Warehouse service console. **Note**: These Overview graphs are updated **per hour**, so you will be able to see this data in the next hour.
 - When auto scaling is enabled, only the amount of OCPUs and IO available to the database increases by 3x. Other database parameters, including memory, concurrency and parallel statement queueing, do not automatically scale. Depending on where the bottlenecks in your business' query workloads are, you may see different lifts in performance.
 
+## Task 9: Enable Autonomous Data Guard
+
+1. From the Autonomous Database Details page, click on the Autonomous Data Guard Enable link. 
+
+    ![Shows how to enable Data Guard.](./images/enable-data-guard.png)
+
+2. Autonomous Data Guard is now being enabled on my ATP Demo instance. You'll notice that the peer state is in provisioning, and there is a switchover link that is now available.
+
+    ![Shows the status of the Data Guard provisioning.](./images/data-guard-status.png)
+
+
+## Task 10: Perform a manual switchover. 
+3. Confirm the switchover to the standby database by entering the database name. 
+
+    ![Shows how to perform a switchover.](./images/switchover.png)
+
+4. Note that this database name is the actual database name in the database name section on the details page. 
+
+    ![Shows how to confirm a switchover.](./images/confirm-switchover.png)
+
+5. Once the switchover is complete, the status will go from updating to available.
+
+    ![Shows the updated status.](./images/updated-status.png)
+
+This concludes this lab. You may now proceed to the next lab.
+
+
 ## Want to Learn More?
 
 For more information about auto scaling, see the documentation [Use Auto Scaling](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-auto-scale.html#GUID-27FAB1C1-B09F-4A7A-9FB9-5CB8110F7141).
 
 ## Acknowledgements
 
-- **Authors** - Rick Green, Database User Assistance; Nilay Panchal, ADB Product Management
-- **Contributors** - John Zimmerman, Real World Performance Team; Keith Laker, ADB Product Management
+- **Authors** - Kamryn Vinson, Product Manager, Oracle Database; Rick Green, Database User Assistance; Nilay Panchal, ADB Product Management
+- **Contributor** - Nicholas Cusato, Solution Engineer, Santa Monica Specialist Hub
 - **Last Updated By/Date** - Nicholas Cusato, Santa Monica Specialist Hub, March 2022
