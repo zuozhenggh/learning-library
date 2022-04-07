@@ -37,7 +37,7 @@ Before you develop you should ensure you have the latest content from production
 4. Finally, select **Push Origin**
   ![](./images/push-origin.png " ")
 
-4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+5. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
   ![](./images/git-hub-sync-ahead.png " ")
 
@@ -128,15 +128,17 @@ After your pull request is complete, wait a few minutes and perform the steps be
 
 1.  Replace your GitHub pages site from Step 3 -> #5 with oracle.github.io.  This will take you to the full path of your workshop.  
 
-  ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
-
 2. This workshop for example is located in the link below.
 
-  https://github.com/oracle/learning-library/tree/master/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
+    https://github.com/oracle/learning-library/tree/master/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
 
 3. The published version becomes:
 
-  https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
+    https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/freetier
+    ```
 
 ## Task 7: Change your status
 Now that your workshop is in the learning library, set your workshop status in WMS to the appropriate status: **In Development** or **Self QA**.
@@ -206,7 +208,7 @@ You have finish developing your workshop. In order to publish your workshop, you
 You may now **proceed to the next lab**.
 
 ## **Appendix**: Troubleshooting Tips
-### Issue: Conflicts
+### Issue: Commits Behind oracle:master
 ![](./images/behind.png " ")
 
 1. To fix this, in Github Desktop select **Fetch Origin**
@@ -238,7 +240,23 @@ You may now **proceed to the next lab**.
     <copy> git config --global core.ignorecase false </copy>
     ```
 
-This concludes this lab. You may now proceed to the next lab.
+### Issue: GitHub Merge Conflicts
+GitHub merge conflicts happen when you and some other contributors are changing the same content in the learning-library. Merge conflicts prevent you from pushing your changes to your learning-library GitHub repository.
+  ![Merge Conflicts](./images/merge-conflicts.png)
+
+1. When you fetch origin and merge changes into your current branch (as in Task 1), you may encounter merge conflicts, as shown in the screenshot above. In the screenshot, you have 3 files that have merge conflicts.
+
+2. Since you are changing the same content as other people, you need to manually decide which version of changes you want to keep. Open your text editor. Go to the files that have conflicts. Conflicts are highlighted by your text editor, and you will choose to use either your changes or other people's changes.
+  ![Resolve Conflicts](./images/resolve-conflicts.png)
+
+3. After you resolve all the conflicts and save your changes, you GitHub Desktop should look like the screenshot below. There will be a green checkmark beside each file, indicating there are no conflicts. Enter the **Summary** and click **Commit to master**. After commit finishes, you can click **Push origin**, and your changes are pushed to your GitHub repository.
+  ![Conflicts Resolved](./images/conflicts-resolved.png)
+
+4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![](./images/git-hub-sync-ahead.png " ")
+
+This concludes this lab. You may now **proceed to the next lab**.
 
 ## Want to Learn More?
 
