@@ -24,22 +24,22 @@ Before you develop you should ensure you have the latest content from production
 
 1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is, perform the following steps to sync.  This should be done before you commit.
 
-  ![](./images/git-hub-sync-behind.png " ")
+  ![Sync GitHub with master repository.](./images/git-hub-sync-behind.png " ")
 
 2. Start your **GitHub Desktop** client.  Go to **Branch** -> **Merge into Current Branch**.
 
-  ![](./images/git-hub-merge-branch.png " ")
+  ![Merge into current branch.](./images/git-hub-merge-branch.png " ")
 
 3. Select the branch upstream/master (there may be a number of branches, search until you see *upstream/master*). Press the **merge upstream/master into master** button.
 
-  ![](./images/git-hub-merge-branch-2.png " ")
+  ![Merge upstream/master into master.](./images/git-hub-merge-branch-2.png " ")
 
 4. Finally, select **Push Origin**
-  ![](./images/push-origin.png " ")
+  ![Push origin.](./images/push-origin.png " ")
 
 5. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
-  ![](./images/git-hub-sync-ahead.png " ")
+  ![Confirm on GitHub.](./images/git-hub-sync-ahead.png " ")
 
 
 ## Task 2: Commit your Changes in your Clone
@@ -49,13 +49,13 @@ To commit your changes:
 1. Start your **GitHub Desktop** client.
 2. In the **Summary (required)** text box on the left (next to your picture), enter a summary of your changes. You can optionally add a more detailed description of your changes in the **Description** text box.
 
-  ![](./images/git-hub-commit-to-master.png " ")
+  ![Enter a summary of your changes.](./images/git-hub-commit-to-master.png " ")
 
 3. Click **Commit to master**. This saves your changes in your local clone. **Fetch Origin** changes to **Push Origin**.
 
 4. Click **Push origin** (it should have an upward arrow with a number). This pushes the updated content from your clone into the origin of this clone, that is, your fork.
 
-  ![](./images/git-hub-commit-push-origin.png " ")
+  ![Push updated content to the origin.](./images/git-hub-commit-push-origin.png " ")
 
 
 ## Task 3: Set Up GitHub Pages for your Fork to Test your Content
@@ -67,21 +67,21 @@ The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** 
 To publish your GitHub Pages site:
 1. Login to [GitHub Web UI](http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
-  ![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
+  ![Display your fork on GitHub.](./images/git-hub-stage-git-hub-pages-repositories.png " ")
 
 2. Click **Settings**.
 
-   ![](./images/git-hub-stage-git-hub-pages-settings.png " ")
+   ![GitHub settings.](./images/git-hub-stage-git-hub-pages-settings.png " ")
 
 3. Click **Options** and scroll down to the **GitHub Pages** section.
 
-  ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
+  ![Select options.](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
 4. Under **Source**, select **master** (if it's not already selected) from the drop-down list.
 5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice.
 
   This may take a few minutes to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
-  ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
+  ![Changes are published.](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
 ## Task 4: Sharing your Workshop for Review
 After you have successfully set up your GitHub pages, you can share your workshop for review.
@@ -101,15 +101,15 @@ Note:  *Before executing a PR, make sure you have run Task 1 above and that your
 To create a Pull Request:
 1. In the **GitHub Desktop** client, select **Branch > Create pull request** to display a browser interface.
 
-  ![](./images/git-hub-branch-pull-request.png " ")
+  ![Create a pull request.](./images/git-hub-branch-pull-request.png " ")
 
 2. Click **Create pull request** to display an **Open a pull request** page.
 
-  ![](./images/git-hub-branch-browser-create-pull-request.png " ")
+  ![Open a pull request.](./images/git-hub-branch-browser-create-pull-request.png " ")
 
 3. Enter the title for the pull request, **include your WMS ID** (you can find that by visiting the [WMS](http://bit.ly/oraclewms)) in the title.  PRs will not be approved without this ID.
 4. Click **Create pull request**.
-    ![](./images/git-hub-pull-request-title-comment.png " ")
+    ![Include WMS id in pull request title.](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
 
   When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
