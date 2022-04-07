@@ -1,4 +1,4 @@
-# Connect to ADB
+# Managing and Monitoring Autonomous Database
 
 ## Introduction
 In this demo, we will connect to an Autonomous Database via SQL Developer using a wallet. 
@@ -39,7 +39,9 @@ The customer is charged only for the actual average number of OCPUs used per hou
   - Obtained and signed in to your `workshop-installed` compute instance
   - Have SQL Developer installed
 
-## Task 1: Download an Instance Wallet
+## Task 1: Connect to ADB 
+In this task, we will first download an Instance Wallet.
+
 1. Click on the menu and navigate to your database. 
 
   ![Shows the menu to option to navigate to database.](./images/navigate-to-db.png)
@@ -50,7 +52,7 @@ The customer is charged only for the actual average number of OCPUs used per hou
 
 3. Specify a password of choice for the wallet. You will need this password when connecting to the database via SQL Developer later.
 
-## Task 2: Connect SQL Developer to Instance using Wallet
+Now we will connect SQL Developer to Instance using Wallet.
 
 4. Open SQL Developer, and select New Connection. 
 
@@ -70,6 +72,8 @@ The customer is charged only for the actual average number of OCPUs used per hou
 
   ![Shows how to connect to database.](./images/connect-wallet.png)
 
+## Task 3: Monitor Autoscaling
+
 ### How You Will Test a Real-World Auto Scaling Example in this Lab
 
 The **business case** we want to answer here is to **summarize orders by month and city, for customers in the US, in the Fall of 1992** over our benchmark <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-sample-data.html#GUID-4BB2B49B-0C20-4E38-BCC7-A61D3F45390B" target="\_blank">SSB dataset</a> containing 1 TB of data.
@@ -80,7 +84,7 @@ The **business case** we want to answer here is to **summarize orders by month a
 ## **Test 1 - Auto Scaling Disabled**
 In tasks 1 through 3, with auto scaling **disabled**, you will have 3 SQL Developer Web sessions executing queries sharing the CPU and IO resources, and you will examine query times.
 
-## Task 3: Disable Auto Scaling and Create Four Connections in SQL Developer Web to your ADW Database
+First we need to disable Auto Scaling and create four connections in SQL Developer Web to your ADW Database
 
 1. You created an Autonomous Data Warehouse database **ADW Finance Mart** in the earlier lab named *Provision Autonomous Database*. Go to the details page for the database, click the **More Actions** button and select **Manage Scaling**. In the Manage scaling dialog, deselect the **OCPU auto scaling** checkbox to disable auto scaling if you have not done so already. Click **Apply**, which will close the dialog and return you to the details page for the database.
 
@@ -100,7 +104,7 @@ In tasks 1 through 3, with auto scaling **disabled**, you will have 3 SQL Develo
 
   ![Consumer Group drop-down menu showing HIGH highlighted.](./images/create-four-worksheets.png " ")
 
-## Task 4: Create the `test_proc` Procedure to Generate the Test Workload
+Now we need to create the `test_proc` Procedure to Generate the Test Workload
 In this task, you run a script that will:
 - Create the procedure **test\_proc** for the workload used in the test.
     - When this procedure is executed, it will run a query in a loop 2 times, to answer the business case from our [SSB database](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/autonomous-sample-data.html#GUID-4BB2B49B-0C20-4E38-BCC7-A61D3F45390B): Aggregate orders by month and city, for customers in the US, in the Fall of 1992.
@@ -108,7 +112,7 @@ In this task, you run a script that will:
 - Create a sequence used for each test number.
 - Create the table used to save the results.
 
-1. Copy and paste the following script into the first worksheet you named **Setup**. Run the following script using the LOW consumer group.
+4. Copy and paste the following script into the first worksheet you named **Setup**. Run the following script using the LOW consumer group.
 
     ```
     <copy>-- Create a sequence to increment the number of tests running
@@ -213,29 +217,29 @@ In this task, you run a script that will:
     </copy>
     ```
 
-## Task 5: Run the `test_proc` Procedure Concurrently in Three Worksheets
+Now, we need to run the `test_proc` Procedure concurrently in three worksheets.
 
-1. Open 3 worksheets you named **Query 1**, **Query 2**, and **Query 3**. To open 3 SQL Developer Web worksheets, simply go back to the OCI console's Details page for your database, click the **Database Actions** button and in the Database Actions **Launchpad**, click the **SQL** card to open a SQL worksheet in a tab in your browser. Do this 3 times so that you have 3 SQL worksheets open in your browser. In the first SQL worksheet, select your saved Query 1. In the second worksheet, select Query 2. In the third worksheet, select Query 3.
+5. Open 3 worksheets you named **Query 1**, **Query 2**, and **Query 3**. To open 3 SQL Developer Web worksheets, simply go back to the OCI console's Details page for your database, click the **Database Actions** button and in the Database Actions **Launchpad**, click the **SQL** card to open a SQL worksheet in a tab in your browser. Do this 3 times so that you have 3 SQL worksheets open in your browser. In the first SQL worksheet, select your saved Query 1. In the second worksheet, select Query 2. In the third worksheet, select Query 3.
 
     ![Click the SQL card.](./images/database-actions-launchpad.png " ")
 
-2. **Make sure that each of the 3 worksheets are set to the HIGH consumer group.** Enter - but do not immediately execute - the following execute command in each worksheet. After you have entered the command into all 3 worksheets, quickly execute the command in each worksheet so that they begin at nearly the same time.
+6. **Make sure that each of the 3 worksheets are set to the HIGH consumer group.** Enter - but do not immediately execute - the following execute command in each worksheet. After you have entered the command into all 3 worksheets, quickly execute the command in each worksheet so that they begin at nearly the same time.
 
     ````
     exec test_proc;
     ````
 
-3. While the 3 procedure instances are running concurrently, which in our test runs for approximately 4.5 minutes on a 1 OCPU system (you may see different execution times), go to your Autonomous Database's console page and click **Performance Hub**. In Performance Hub, click the **SQL Monitoring** tab, and look at the Monitored SQL to see that each worksheet is running your procedure.
+7. While the 3 procedure instances are running concurrently, which in our test runs for approximately 4.5 minutes on a 1 OCPU system (you may see different execution times), go to your Autonomous Database's console page and click **Performance Hub**. In Performance Hub, click the **SQL Monitoring** tab, and look at the Monitored SQL to see that each worksheet is running your procedure.
 
     ![In Performance Hub click the SQL Monitoring tab.](./images/sql-monitoring-during-query-with-auto-scaling-disabled.png " ")
 
-4. Go back to your SQL Developer Web worksheets. Make sure all 3 tests in the worksheets indicate that the queries have **executed** completely. You can see if the test procedure is still running, completed successfully or failed in the worksheet's status at the bottom of the page.
+8. Go back to your SQL Developer Web worksheets. Make sure all 3 tests in the worksheets indicate that the queries have **executed** completely. You can see if the test procedure is still running, completed successfully or failed in the worksheet's status at the bottom of the page.
 
     **Note**: If your test procedure fails after running for a while, you may be behind a VPN that is timing out your query. You may need to disconnect from that VPN to run this test.
 
     ![Screenshot of a Worksheet indicating that the PL/SQL procedure completed successfully.](./images/procedure-successfully-completed.png " ")
 
-5. In your **Setup** worksheet, run the following script to view your test's results:
+9. In your **Setup** worksheet, run the following script to view your test's results:
 
     ```
     <copy>alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
@@ -259,7 +263,7 @@ In this task, you run a script that will:
     </copy>
     ```
 
-6. Review the results of running the test. Notice that in our run:
+10. Review the results of running the test. Notice that in our run:
     - The average time each query ran was 275.5 seconds.
     - The total time the test ran was 581.5 seconds.
 
@@ -269,34 +273,30 @@ In this task, you run a script that will:
 
   In the next tasks, let's see if auto scaling reduces query time and increases CPU and IO usage.
 
-## **Test 2 - Auto Scaling Enabled, Providing 3x the Amount of CPU and IO Resources**
-In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
+Auto Scaling needs to be Enabled, Providing 3x the Amount of CPU and IO Resources**
+You will enable auto scaling and again have 3 SQL Developer Web sessions executing queries. Auto scaling will allow your running sessions to use up to 3x more OCPUs, reducing your execution times significantly.
 
-## Task 6: Enable Auto Scaling
-
-1. Enable auto scaling, to allow you to use 3X the amount of base CPU and IO. Go to the details page for the database, click the **More Actions** drop-down menu and select  **Manage Scaling**, and select the **Auto Scaling** checkbox to **re-enable** auto scaling.
+11. Enable auto scaling, to allow you to use 3X the amount of base CPU and IO. Go to the details page for the database, click the **More Actions** drop-down menu and select  **Manage Scaling**, and select the **Auto Scaling** checkbox to **re-enable** auto scaling.
 
     ![Click the checkbox to re-enable auto scaling.](images/enable-auto-scaling.png " ")
 
-## Task 7: Run the Procedure Again Concurrently on Three Worksheets After Enabling Auto Scaling
-
-1. Once again, go to your 3 SQL Developer Web **"Query"** worksheet instances (re-open 3 instances if you closed the tabs from before) which are using the HIGH consumer group. Enter - but do not immediately execute - the following execute command in each worksheet. After you have entered the command into all 3 worksheets, quickly execute the command in each worksheet so that they begin at nearly the same time.
+12. Once again, go to your 3 SQL Developer Web **"Query"** worksheet instances (re-open 3 instances if you closed the tabs from before) which are using the HIGH consumer group. Enter - but do not immediately execute - the following execute command in each worksheet. After you have entered the command into all 3 worksheets, quickly execute the command in each worksheet so that they begin at nearly the same time.
 
     ````
     exec test_proc;
     ````
 
-2. While the procedures are running, the monitored SQL in Performance Hub shows 3 queries executing. In the previous test, before you enabled Auto Scaling, the procedure's 3 query sessions averaged 4.5 minutes to run. After enabling Auto Scaling and immediately getting access to 3x the amount of CPU and IO, the queries now require approximately 3x less time; we see below less than 2 minutes to run.
+13. While the procedures are running, the monitored SQL in Performance Hub shows 3 queries executing. In the previous test, before you enabled Auto Scaling, the procedure's 3 query sessions averaged 4.5 minutes to run. After enabling Auto Scaling and immediately getting access to 3x the amount of CPU and IO, the queries now require approximately 3x less time; we see below less than 2 minutes to run.
 
     ![Monitored SQL shows three queries executing and consuming less database time.](images/monitored-sql-while-three-procedures-running-with-auto-scaling.png " ")
 
-3. As before, go back to your SQL Developer Web worksheets to be sure all 3 tests in the worksheets indicate that the queries have **executed** completely.
+14. As before, go back to your SQL Developer Web worksheets to be sure all 3 tests in the worksheets indicate that the queries have **executed** completely.
 
     ![Worksheet shows that the PL/SQL procedure completed successfully.](images/procedure-successfully-completed.png " ")
 
-## Task 8: Review the Improved Performance After Enabling Auto Scaling
+Next we will review the improved performance after enabling Auto Scaling
 
-1. When the procedures have completed, run this script to see the test results:
+15. When the procedures have completed, run this script to see the test results:
 
     ```
     <copy>alter session set nls_date_format='DD-MM-YYYY HH24:MI:SS';
@@ -320,7 +320,7 @@ In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Develope
     </copy>
     ```
 
-2. Let's examine the improved performance after enabling auto scaling. **Test 1** had auto scaling **disabled** and **Test 2** had auto scaling **enabled**:
+16. Let's examine the improved performance after enabling auto scaling. **Test 1** had auto scaling **disabled** and **Test 2** had auto scaling **enabled**:
 
   ![Screenshot shows the improved performance of Test 2 after enabling auto scaling.](images/test-two-results.png " ")
 
@@ -334,11 +334,11 @@ In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Develope
 
     - Consequently, the average query time reduced from ~275 seconds to ~97 seconds and therefore the duration of the total test that ran 3 worksheet sessions concurrently **reduced approximately 3x** from ~581 seconds to ~210 seconds.
 
-3. Go to your Autonomous Database console page and click **Performance Hub**. Move your mouse cursor in the **Activity** panel above the SQL Monitoring panel, and drag the rectangle horizontally across to cover the portion of the timeline that indicates your recent query activity. This will fill in the **ASH Analytics** panel at the bottom, with information from the completed test.
+17. Go to your Autonomous Database console page and click **Performance Hub**. Move your mouse cursor in the **Activity** panel above the SQL Monitoring panel, and drag the rectangle horizontally across to cover the portion of the timeline that indicates your recent query activity. This will fill in the **ASH Analytics** panel at the bottom, with information from the completed test.
 
     ![Screenshot of Performance Hub Activity panel showing ASH Analytics panel.](./images/drag-rectangle-to-cover-period-of-queries.png " ")
 
-4. Scroll down and view the **Average Active Sessions** chart. View the Average Active Sessions chart by Wait Class in the 2nd test after auto scaling is enabled.  Since there are 3 OCPUs available to the running queries, we now see:
+18. Scroll down and view the **Average Active Sessions** chart. View the Average Active Sessions chart by Wait Class in the 2nd test after auto scaling is enabled.  Since there are 3 OCPUs available to the running queries, we now see:
 - The **inflated I/O waits** (in blue) due to the unavailability of resources reduces significantly.
 - Consequently, the workload becomes more efficient (CPU-bound) and is able to utilize more CPU (in dark green) reducing the average time spent on running each query.
 - The **Scheduler waits** (in light green) on CPU/IO resources almost entirely disappears.
@@ -351,7 +351,7 @@ In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Develope
 - To see the average number of OCPUs used during an hour you can use the "Number of OCPUs allocated" graph on the Overview page on the Autonomous Data Warehouse service console. **Note**: These Overview graphs are updated **per hour**, so you will be able to see this data in the next hour.
 - When auto scaling is enabled, only the amount of OCPUs and IO available to the database increases by 3x. Other database parameters, including memory, concurrency and parallel statement queueing, do not automatically scale. Depending on where the bottlenecks in your business' query workloads are, you may see different lifts in performance.
 
-## Task 9: Enable Autonomous Data Guard
+## Task 3: Configure Disaster Recovery
 
 1. From the Autonomous Database Details page, click on the Autonomous Data Guard Enable link. 
 
@@ -362,7 +362,8 @@ In tasks 4 through 6, you will enable auto scaling and again have 3 SQL Develope
     ![Shows the status of the Data Guard provisioning.](./images/data-guard-status.png)
 
 
-## Task 10: Perform a manual switchover. 
+Now we will perform a manual switchover. 
+
 3. Confirm the switchover to the standby database by entering the database name. 
 
     ![Shows how to perform a switchover.](./images/switchover.png)
