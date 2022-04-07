@@ -109,14 +109,14 @@ In this lab, you will:
 
    Make sure the rest of the **properties** are like the following:
 
-      - Image: `Oracle Linux 7.9`
+      - Image: `Oracle Linux 7.9` or Superior - `Oracle Linux 8`
       - Shape for Always Free: `VM.Standard.E2.1.Micro`
       - Alternative Shape could be: `VM.Standard.E2.Flex, VM.Standard.E3.Flex, VM.Standard.E4.Flex`
       - Virtual cloud network: `nature`
       - Subnet: `Public Subnet-nature`
       - Assign a public IPv4 address: `Yes`
 
-   ![Instance Values](images/compute_create_values.png)
+   ![Instance Values](images/compute_create_values_new.png)
 
 5. On the section **Add SSH Keys**, make sure **Generate SSH Keypair** is checked.
 
@@ -225,7 +225,7 @@ In this lab, you will:
       ```
 
       ```
-      <copy>sudo yum install mysql-shell mysql-community-client -y</copy>
+      <copy>sudo yum install mysql-shell</copy>
       ```
 
 21. Let's check the **version** of MySQL Shell:
@@ -280,7 +280,7 @@ In this lab, you will:
 
    ![Object Details Menu](images/os_object_details_menu.png)
 
-12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.eu-frankfurt-1.oraclecloud.com`. We will use it in the Lab number 3, Create Data Integration Instance.
+12. Take note of the URL you have. Only copy the part of the URL up to `oraclecloud.com`. For example, if you are in Frankfurt region should look like `https://objectstorage.eu-frankfurt-1.oraclecloud.com`. We will use the **OCI Region** part (in our case eu-frankfurt-1) in the Lab number 3, Create Data Integration Instance.
 
    ![Object Details URL](images/os_object_details_url.png)
 
@@ -288,6 +288,6 @@ Congratulations! You are ready to go to the next Lab!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Priscila Iruela, April 2022
