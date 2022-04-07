@@ -1,4 +1,4 @@
-# Interacting with JSON Documents through Database Actions
+# Creating an Oracle Text index
 
 ## Introduction
 
@@ -41,11 +41,11 @@ In this lab, you will:
 
 3. Click the navigation menu in the upper left to show top level navigation choices.
 
-4. Click on **Oracle Database** and choose **Autonomous JSON Database**.
+4. Click on **Oracle Database** and choose **Autonomous Transaction Processing**.
 
     ![Click Autonomous Transaction Processing](./images/adb-atp.png " ")
 
-5. Use the __List Scope__ drop-down menu on the left to select the same compartment where you created your Autonomous JSON Databae in Lab 2. Make sure your workload type is __JSON Database__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+5. Use the __List Scope__ drop-down menu on the left to select the same compartment where you created your Autonomous Databae in Lab 1. Make sure your workload type is __Transaction Processing__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 
@@ -53,19 +53,19 @@ In this lab, you will:
 <if type="freetier">
     ![Check the workload type on the left.](./images/compartments.png " ")
 </if>
-    ![](./images/workload-type.png " ")
+    ![check workload type](./images/workload-type.png " ")
 
 <if type="freetier">
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
 </if>
 
-6. You should see your database **TEXTDB** listed in the center. Click on the database name "JSONDB".
+6. You should see your database **TEXTDB** listed in the center. Click on the database name "TEXTDB".
 
-    ![](./images/database-name.png " ")
+    ![database name](./images/database-name.png " ")
 
 7.  On the database page, choose __Database Actions__.
 
-    ![](./images/dbactions-button.png " ")
+    ![dbactions button](./images/dbactions button.png " ")
 
 8.  You are now in Database Actions.
 
@@ -76,11 +76,11 @@ In this lab, you will:
 
 1. You should be in the Database Actions panel. Click on the **SQL** card
 
-    ![](./images/dbactions-menu-sql.png " ")
+    ![dbactions menu sql](./images/dbactions-menu-sql.png " ")
 
     When you first enter SQL, you will get a tour of the features. We recommend you step through it, but you can skip the tour by clicking on the "X". The tour is available at any time by clicking the tour button.
 
-    ![](./images/sql-tour.png " ")
+    ![sql tour](./images/sql-tour.png " ")
 
 
 2. We will create a simple table with one numeric column and one text column. Copy the following into the 'Worksheet' area and press the "Run Statement" button:
@@ -94,11 +94,11 @@ In this lab, you will:
     </copy>
     ```
 
-    ![](./images/create-table.png " ")
+    ![create table](./images/create-table.png " ")
 
     You should see a message "Table MYTABLE created". On the left side of the screen, click the "Refresh" button to see your new table in the table list.
 
-    ![](./images/create-table-result.png " ")
+    ![create table result](./images/create-table-result.png " ")
 
 3. Populate the table with a few rows.
 
@@ -115,7 +115,7 @@ In this lab, you will:
     </copy>
     ```
 
-    ![](./images/inserts.png " ")
+    ![inserts](./images/inserts.png " ")
 
     **Note:** You should see "3 rows inserted" at the bottom. If you just see the values listed, you didn't highlight the statement, and SQL workshop only run the SELECTs rather than the INSERT. You can try again.
 
@@ -133,7 +133,7 @@ In this lab, you will:
 
     If there are no rows shown, return to Step 3.
 
-    ![](./images/select-star.png " ")
+    ![select star](./images/select-star.png " ")
 
 ## Task 3:  Create a Text Index
 
@@ -159,7 +159,8 @@ Text indexes are an example of a **domain index**. Domain indexes are specialize
     where index_name = 'MYINDEX'
     </copy>
     ```
-    ![](./images/)
+
+    ![user indexes view](./images/user_indexes.png)
 
     So there is your index, with an index_type of 'DOMAIN' and a status of 'VALID'. A Text index must be VALID for you to use it. An index being created on a large table may show as INPROGRS, meaning index creation is in progress, and it's not yet ready to use.
 
@@ -171,7 +172,7 @@ Text indexes are an example of a **domain index**. Domain indexes are specialize
     </copy>
     ```
 
-    ![](./images/ctx_user_indexes.png)
+    ![ctx_user_indexes view](./images/ctx_user_indexes.png)
 
     That tells us that our index MYINDEX is created on table MYTABLE, column TEXT.
 
@@ -181,7 +182,7 @@ Text indexes are an example of a **domain index**. Domain indexes are specialize
 
     Refresh the list of tables on the left side of the screen.
 
-    ![](./images/table-list.png " ")
+    ![table list](./images/table-list.png " ")
 
     You should see several tables listed. Open the table definition for DR$MYINDEX$I by clicking on the triangle next to it.
 
@@ -195,7 +196,19 @@ Text indexes are an example of a **domain index**. Domain indexes are specialize
     </copy>
     ```
 
+    ![List of indexed tokens](./images/token-list.png " ")
+
+    You may want to expand the output window upwards so you can see the full list of indexed words.
+
+    Notice anything about the list? Not all the words in the text appear - "a" and "the" are missing. That's because those
+    are designated "stop words" - common words that are not very useful in searches, but are likely to take a lot of space
+    in the index. By default, we don't index them - though using advanced options we can tell the system to index all words,
+    or provide a "custom stoplist" of words we don't want indexed. The default list of stopwords will vary with language and
+    will depend on the default language setting for the database (always English for Autonomous Database).
     
+    We don't need to know anything about the index sub-tables at the moment. But it's useful to see the words that are indexed,
+    and it can sometimes be worth refering to this list when trying to figure out why a particular query acts as it does (queries
+    are covered in the next lab).
 
 You may now continue to the next lab.
 

@@ -22,7 +22,11 @@
             "filename": "../../create-indexes/create-indexes.md"
         },
         {
-            "title": "Lab 3: Index Maintenance",
+            "title": "Lab 3: Queries",
+            "filename": "../../queries/queries.md"
+        },
+        {
+            "title": "Lab 4: Index Maintenance",
             "filename": "../../maintenance/maintenance.md"
         },
         {

@@ -52,7 +52,7 @@ In this lab, you will:
 <if type="freetier">
     ![Check the workload type on the left.](./images/compartments.png " ")
 </if>
-    ![](./images/workload-type.png " ")
+    ![Check the workload type om the left](./images/workload-type.png " ")
 
 <if type="freetier">
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
@@ -83,7 +83,7 @@ In this lab, you will:
 <if type="livelabs">
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __TEXTDB__ and append you LiveLabs user id. For example, __TEXTDB7199__.
 
-    ![](./images/adb-info-livelabs.png)
+    ![choose database name](./images/adb-info-livelabs.png)
 </if>
 
 4. Choose a workload type: Select the workload type for your database from the choices:
@@ -134,14 +134,7 @@ In this lab, you will:
 
     Network access allows you to limit connections to certain IP addresses. For this workshop, we'll set it to "Secure access from anywhere"
 
-    ![](./images/network-access.png " ")
-
-    Then you must also add the IP address for the Compute Node we set up in the previous lab (which you should have saved!)
-    To do that, click __+ Access Control Rule__ button and enter the IP address of your Compute Node in the "Values" field.
-
-    ![](./images/add-access-rule.png " ")
-
-    ![](./images/network-add-ip.png " ")
+    ![Choose network access](./images/network-access.png " ")
 
 9. Choose a license type:
 
@@ -149,7 +142,7 @@ In this lab, you will:
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-    ![](./images/license-type.png " ")
+    ![Choose license type](./images/license-type.png " ")
 
 10. Click __Create Autonomous Database__.
 
