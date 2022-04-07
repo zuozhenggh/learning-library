@@ -18,8 +18,7 @@ In this lab, you will:
 ### Prerequisites 
 This lab assumes you have:
 
-* TBD
-* A Valid SSH Key Pair
+* Access to noVNC Desktop environment 
   
 ## Task 1: Install JDK 
 
@@ -29,20 +28,19 @@ This lab assumes you have:
  
 2. Download JDK
 
-      ![Accept License](images/download-jdk.png "Accept License") 
+      ![Download JDK](images/download-jdk.png "Download JDK") 
 
 3. UnCompress the JDK file in Downloads folder
-
 
 ## Task 2: Install SQL Developer
 
 1. Download SQL Developer for other platforms 
 
-      ![Accept License](images/download-sqldeveloper-otherpf.png "Accept License") 
+      ![Download SQL Developer](images/download-sqldeveloper-otherpf.png "Download SQL Developer") 
 
 2. Accept License
 
-      ![Accept License](images/download-sqldeveloper.png "Accept License") 
+      ![Download SQL Developer](images/download-sqldeveloper.png "Download SQL Developer") 
 
 3. UnCompress the Downloaded SQLDeveloper file in Downloads folder
    
@@ -79,21 +77,21 @@ This lab assumes you have:
       </copy>
       ``` 
 
-     ![Accept License](images/sqldeveloper-launcher.png "Accept License") 
+     ![SQL Developer launcher](images/sqldeveloper-launcher.png "SQL Developer launcher") 
 
 ## Task 3: Configure SQL Developer connection parameters
 
 1. Configure connection parameters
 
-      ![Accept License](images/sqldeveloper-connection.png "Accept License") 
+      ![SQL Developer connection](images/sqldeveloper-connection.png "SQL Developer connection") 
 
-      ![Accept License](images/sqldeveloper-connection-properties.png "Accept License") 
+      ![SQL Developer connection](images/sqldeveloper-connection-properties.png "SQL Developer connection") 
 
 ## Task 4: Connecting to Pluggable Database PDB1 and accessing HR Schema based tables
 
 1. In the connection parameters of SQL Developer, change to orcl to the name of pluggable database in our case pdb1
 
-      ![Accept License](images/sqldev-pdb1.png "Accept License") 
+      ![SQL Developer PDB connection](images/sqldev-pdb1.png "SQL Developer PDB connection") 
 
       Once connected run the following query to access HR Schema based employee table
   
@@ -103,7 +101,7 @@ This lab assumes you have:
       </copy>
       ``` 
 
-      ![Accept License](images/hr-schema.png "Accept License") 
+      ![HR Schema](images/hr-schema.png "HR Schema") 
 
 ## Task 4: Configuring Net Manager ( Optional )
 
@@ -116,9 +114,9 @@ This lab assumes you have:
       </copy>
       ``` 
 
-      ![Accept License](images/netmgr-service.png "Accept License") 
+      ![Net manager service](images/netmgr-service.png "Net manager service") 
 
-      ![Accept License](images/netmgr-listener.png "Accept License") 
+      ![Net manager listener](images/netmgr-listener.png "Net manager service") 
 
 ## Task 5: Install Visual Studio Code
 
@@ -196,7 +194,6 @@ This lab assumes you have:
       </copy>
       ``` 
  
-   
    You successfully made it to the end this lab. You may now  *proceed to the next lab* .  
 
 ## Learn More
@@ -205,13 +202,8 @@ This lab assumes you have:
 * [How do I start with Node.js](https://nodejs.org/en/docs/guides/getting-started-guide/) 
 * [HR Schema](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/comsc/HR-sample-schema-table-descriptions.html) 
 
-
-
-
-
- 
 ## Acknowledgements
 
 - **Author** - Madhusudhan Rao, Principal Product Manager, Database
-* **Contributors** -  
-* **Last Updated By/Date** -  Madhusudhan Rao, Mar 2022 
+* **Contributors** - Kevin Lazarz, Senior Principal Product Manager, Database 
+* **Last Updated By/Date** -  Madhusudhan Rao, April 2022 
