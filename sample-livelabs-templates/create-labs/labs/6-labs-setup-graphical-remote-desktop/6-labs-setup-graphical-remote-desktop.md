@@ -13,12 +13,12 @@ This lab shows you how to deploy and configure noVNC Graphical Remote Desktop on
 
 ### Prerequisites
 This lab assumes you have:
-- An Oracle Enterprise Linux 7 (OEL) that meets requirement for marketplace publishing
+- An Oracle Enterprise Linux 7 or 8 (OEL) that meets requirement for marketplace publishing
 
-## Task 1: Configure Preserved Static hostname
+## Task 1: Configure and Enforce Static hostname
 Follow steps below to establish a unique static hostname that will be enforced on any offspring from the image. Whenever possible, this one-time task should be performed prior to installing any product that will hardcode the hostname to various config/settings in the product. e.g. DB Listener, Weblogic, etc...
 
-1.  As opc, run *sudo su -* to login as root
+1.  As opc, run *sudo su -* to login as root.
 
     ```
     <copy>
@@ -27,111 +27,7 @@ Follow steps below to establish a unique static hostname that will be enforced o
     </copy>
     ```
 
-2. Create script */root/bootstrap/firstboot.sh* .
-
-    ```
-    <copy>
-    mkdir -p /root/bootstrap
-    cat > /root/bootstrap/firstboot.sh <<EOF
-    #!/bin/bash
-    # Copyright (c) 2021 Oracle and/or its affiliates. All rights reserved.
-
-    ################################################################################
-    #
-    # Name: "firstboot.sh"
-    #
-    # Description:
-    #   Script to perform one-time adjustment to an OCI instance upon booting for the
-    #   first time to preserve a static hostname across reboots and adjust any setting
-    #   specific to a given workshop
-    #
-    #  Pre-requisite: This should be executed as "root" user.
-    #
-    #  AUTHOR(S)
-    #  -------
-    #  Rene Fontcha, Oracle LiveLabs Platform Lead
-    #
-    #  MODIFIED        Date                 Comments
-    #  --------        ----------           -----------------------------------
-    #  Rene Fontcha    02/17/2021           Initial Creation
-    #  Rene Fontcha    10/07/2021           Added routine to update livelabs-get_started.sh
-    #  Rene Fontcha    02/11/2022           Added Google Chrome update
-    #  Rene Fontcha    03/24/2022           Added support for Oracle Enterprise Linux 8
-    #
-    ###############################################################################
-
-    # Preserve user configured hostname across instance reboots
-    sed -i -r 's/^PRESERVE_HOSTINFO.*\$/PRESERVE_HOSTINFO=2/g' /etc/oci-hostname.conf
-
-    # Preserve hostname info and set it for current boot
-    hostnamectl set-hostname <host>.livelabs.oraclevcn.com
-
-    # Add static name to /etc/hosts
-    echo "\$(oci-metadata -g privateIp |sed -n -e 's/^.*Private IP address: //p')   <host>.livelabs.oraclevcn.com  <host>" >>/etc/hosts
-
-    # Update "livelabs-get_started.sh"
-    rm -rf /tmp/ll_refresh
-    mkdir -p /tmp/ll_refresh
-    cd /tmp/ll_refresh
-    wget -q https://objectstorage.us-ashburn-1.oraclecloud.com/p/RcNjQSg0UvYprTTudZhXUJCTA4DyScCh3oRdpXEEMsHuasT9S9N1ET3wpxnrW5Af/n/natdsecurity/b/misc/o/livelabs-get_started.zip
-
-    if [[ -f livelabs-get_started.zip ]]; then
-      unzip -q livelabs-get_started.zip
-      chmod +x *.sh
-      mv -f livelabs-get_started.sh /usr/local/bin/
-      ./refresh_desktop.sh
-      cd ..
-      rm -rf /tmp/ll_refresh
-    fi
-    EOF
-    </copy>
-    ```
-
-3. Create and run script */tmp/s_host.sh* to replace all occurrences of *<host>* from above file with the short name (not FQDN, so no domain) you would like permanently assigned to any instance created from the image. It requires providing the input for short hostname as prompted. e.g. *edq* resulting in FQDN *`edq.livelabs.oraclevcn.com`*
-
-    ```
-    <copy>
-    cat > /tmp/s_host.sh <<EOF
-    #!/bin/sh
-    # Copyright (c) 2019 Oracle and/or its affiliates. All rights reserved.
-
-    echo "Please provide the short hostname (not FQDN, so no domain) you would like permanently assigned to any instance created from the image:"
-    read s_host
-    echo ""
-    echo "The permanent/preserved FQDN will be \${s_host}.livelabs.oraclevcn.com"
-    sed -i "s/<host>/\${s_host}/g" /root/bootstrap/firstboot.sh
-    EOF
-    chmod +x /tmp/s_host.sh
-    /tmp/s_host.sh
-    </copy>
-    ```
-
-    *Note:* If you need to set a specific FQDN to satisfy an existing product setup, manually edit */root/bootstrap/firstboot.sh* and update replace all occurrences of *`<host>`* and *`livelabs.oraclevcn.com`* accordingly.
-
-4. Make script */root/bootstrap/firstboot.sh* executable, add soft link to */var/lib/cloud/scripts/per-instance* and run it
-
-    ```
-    <copy>
-    chmod +x /root/bootstrap/firstboot.sh
-    ln -sf /root/bootstrap/firstboot.sh /var/lib/cloud/scripts/per-instance/firstboot.sh
-    /var/lib/cloud/scripts/per-instance/firstboot.sh
-    hostname
-    exit
-
-    </copy>
-    ```
-
-## Task 2: Deploy noVNC
-1.  As root, download and run the latest setup script. You will be prompted for the following input:
-
-    - The *OS user* for which the remote desktop will be configured. *Default: Oracle*
-
-    ```
-    <copy>
-    sudo su - || (sudo sed -i -e 's|root:x:0:0:root:/root:.*$|root:x:0:0:root:/root:/bin/bash|g' /etc/passwd && sudo su -)
-
-    </copy>
-    ```
+2. Download setup artifacts and run *setup-firstboot.sh*.
 
     ```
     <copy>
@@ -141,6 +37,57 @@ Follow steps below to establish a unique static hostname that will be enforced o
     unzip -o  setup-novnc-livelabs.zip -d ll-setup
     cd ll-setup/
     chmod +x *.sh .*.sh
+    ./setup-firstboot.sh && exit
+
+    </copy>
+    ```
+
+    You are prompted for the following inputs:
+    - (1) Do you want to keep and preserve the current hostname? [Y/N]. The current hostname is shown for confirmation and the input required is either Y or N
+    - (2) If Y, "Please press *ENTER* to accept the default *holserv1* or type in your preferred host shortname (not the FQDN, and must be lowercase and alphanumeric):"
+    - (3) Do you have additional host alias(es), virtualhost names, or FQDN required for labs that are using this instance? [Y/N]
+    - (4) If Y, "Enter each additional host alias, FQDN, or virtualhost name (separated from each other by a space. e.g. *serv1 serv1.demo.com*)"
+
+3. Review the script output
+4. If you have additional entries you would like added to */etc/hosts* file whenever an instance is created from the image, edit */root/bootstrap/firstboot.sh* and add them under the ***Add Static Name to /etc/hosts*** block
+
+    In the example below, the following customization are added to a setup:
+    - 3 Additional host aliases:  *myapp*, *app1*, and *hr.demo.com*
+    - 3 Additional external host entries to "/etc/hosts"
+
+    ```
+    <copy>
+    sudo cat /root/bootstrap/firstboot.sh
+    </copy>
+    ```
+
+    ![](./images/novnc-firstboot-1.png " ")
+
+    This customization resulted in the following */etc/hosts* file.
+
+    ```
+    <copy>
+    sudo cat /etc/hosts
+    </copy>
+    ```
+
+    ![](./images/novnc-firstboot-2.png " ")
+
+## Task 2: Deploy noVNC
+1.  From the same session started in the previous task, login again as root via SUDO and run the latest setup script. You will be prompted for the following input:
+
+    - The *OS user* for which the remote desktop will be configured. *Default: Oracle*
+
+    ```
+    <copy>
+    sudo su -
+
+    </copy>
+    ```
+
+    ```
+    <copy>
+    cd /tmp/ll-setup/
     ./setup-novnc-livelabs.sh
 
     </copy>
