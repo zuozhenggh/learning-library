@@ -32,9 +32,9 @@
             "filename": "../../ingress-controller/ingress-controller.md"
         },
         {
-            "title": "Lab 5: Deploy phpMyAdmin",
-            "description": "Manage MySQL with phpMyAdmin",
-            "filename": "../../phpmyadmin/phpmyadmin.md"
+            "title": "Lab 5: Deploy Jupyter notebook",
+            "description": "Analyze data with Jupyter on MySQL HeatWave",
+            "filename": "../../jupyter/jupyter.md"
         },
         {
             "title": "Lab 6: Deploy Grafana dashboard",
@@ -50,6 +50,11 @@
             "title": "Lab 8: Deploy Zeppelin notebook",
             "description": "Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
             "filename": "../../zeppelin/zeppelin.md"
+        },
+        {
+            "title": "[OPTIONAL] Lab 9: Deploy phpMyAdmin",
+            "description": "Manage MySQL with phpMyAdmin",
+            "filename": "../../phpmyadmin/phpmyadmin.md"
         },
         {
             "title": "Need Help?",
