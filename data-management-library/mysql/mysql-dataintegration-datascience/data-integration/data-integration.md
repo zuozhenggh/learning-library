@@ -74,45 +74,50 @@ In this lab, you will:
 
    ![](images/di_menu.png)
 
-6. Click **Create Workspace**.
+6. Click in the **Workspaces** section in the left part of the screen. At the moment we are on the Overview page.
 
-   ![](images/di_create_workshop_button.png)
+   ![](images/di_menu_workspaces.png)
 
-7. **Modify** the following fields, leave the rest as default:
+7. Click **Create Workspace**.
+
+   ![](images/di_create_workshop_button_new.png)
+
+8. **Modify** the following fields, leave the rest as default:
 
       - Name: `Workspace Nature`
       - VCN: `nature`
       - Subnet: `Private subnet-nature`
+   Be sure you have select the correct compartment, `root` in the workshop case. As soon as you select the compartment, you will be capable of selecting VCN and Subnet.
 
-8. Click **Create**.
+9. Click **Create**.
 
    ![](images/di_create_workshop.png)
 
-9. While the Workspace is created, click the **three dots contextual menu**.
+10. While the Workspace is created, click the **three dots contextual menu**.
 
    ![](images/di_creating.png)
 
-10. Then click **Copy OCID**.
+11. Then click **Copy OCID**.
 
    ![](images/di_ocid.png)
 
-11. Go to **Identity & Security** > **Policies**. We are going to add new **policies** for our new Workspace.
+12. Go to **Identity & Security** > **Policies**. We are going to add new **policies** for our new Workspace.
 
    ![](images/identity_policies_menu.png)
 
-12. **Click** on the `dataintegration` policy name.
+13. **Click** on the `dataintegration` policy name.
 
    ![](images/di_policy_link.png)
 
-13. Click **Edit Policy Statements**.
+14. Click **Edit Policy Statements**.
 
    ![](images/di_policy_edit_button.png)
 
-14. Click **+ Another Statement**.
+15. Click **+ Another Statement**.
    
    ![](images/di_policy_add_policy.png)
 
-15. Add **two more statements** and make sure you replace `DATA_INTEGRATION_WORKSPACE_OCID` with the Workspace OCID:
+16. Add **two more statements** and make sure you replace `DATA_INTEGRATION_WORKSPACE_OCID` with the Workspace OCID:
 
       - The first statement:
       
@@ -126,15 +131,15 @@ In this lab, you will:
       <copy>allow any-user to manage objects in tenancy where ALL {request.principal.type='disworkspace',request.principal.id='DATA_INTEGRATION_WORKSPACE_OCID'}</copy>
       ```
 
-16. Click **Save Changes**.
+17. Click **Save Changes**.
 
    ![](images/di_policy_save_changes.png)
 
-17. Come back to **Data Integration** under **Analytics & AI**, click **Menu** > **Analytics & AI** > **Data Integration**.
+18. Come back to **Data Integration** under **Analytics & AI**, click **Menu** > **Analytics & AI** > **Data Integration**.
 
    ![](images/di_menu.png)
 
-18. Check the **Data Integration Workspace** is `Active` and click the link.
+19. Check the **Data Integration Workspace** is `Active` and click the link.
 
    ![](images/di_active_go_to_workspace.png)
 
@@ -195,7 +200,7 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 
    ![](images/di_workspace_enter.png)
 
-   You can see that by default, there is a `Default Application` and a default project, `My First Project`.
+   You can see that by default, there are a `Default Application` and a default project, `My First Project`.
 
    ![](images/di_home_page.png)
 
@@ -210,12 +215,12 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
       - Name: `bucket-study`
       - Description: `Object Storage Bucket with fish survey`
       - Type: `Oracle Object Storage`
-      - URL: `https://objectstorage.<REGION>.oraclecloud.com`
-      - Tenancy OCID: `ocid1.tenancy.oc1..muahahahahahahahaha`
+      - Tenancy OCID: `ocid1.tenancy.oc1..xxxx`
+      - OCI region: `eu-frankfurt-1`. You can find this information as part of the Object Storage URL that we copied on Lab 1, Task 3, Step 12. You can copy the OCI region, from the summary table of Object Srotage regions URLs on Step 1 of this Task, if you know which region you are using.
 
-7. Click outside the **Tenancy OCID** field, and after few seconds, and **OS Namespace** will be retrieved automatically.
+7. Click outside the **Tenancy OCID** field, and after few seconds, and **Namespace** will be retrieved automatically.
 
-   ![](images/dataasset_fields1.png)
+   ![](images/dataasset_fields1_new.png)
 
    You can test the **connection**.
 
@@ -270,6 +275,6 @@ Congratulations, you are ready for the next Lab!
 
 ## **Acknowledgements**
 
-- **Author** - Victor Martin, Technology Product Strategy Manager
+- **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Brianna Ambler, June 2021
+- **Last Updated By/Date** - Priscila Iruela, April 2022

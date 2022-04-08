@@ -22,19 +22,19 @@ For a technical overview of this lab step, please watch the following video:
 
 1. Go to the top-left hamburger icon, navigate to **Oracle Database** and choose **Autonomous Transaction Processing**. It will show you all available ATP workload type databases. Click on **HOL Target ATP** database.
 
-	![Available ATP workload databases](/images/atp.png)
+	![Available ATP workload databases](/images/2-atp.png)
 
 2. In **Tools** tab, where you will see **Database Actions**, click on **Open Database Actions**. You may need to enable a pop-up in your browser if it doesn't open anything.
 
-	![Open database actions](/images/atp-1.png)
+	![Open database actions.](/images/2-atp-1.PNG)
 
 3. A new sign-in page opens, enter **ADMIN** in Username, when it asks you to enter the password, which is in the terraform output. Go and copy, then paste here.
 
-	![Admin login page](/images/sql-dev-1.png)
+	![Admin login page.](/images/sql-dev-1.png)
 
 4. In the **DEVELOPMENT** section, click on **SQL**. 
 
-	![Database development SQL selection](/images/sql-dev-5.png)
+	![Database development SQL selection.](/images/sql-dev-5.png)
 
 ## Task 2: Create Target Tables
 
@@ -42,7 +42,7 @@ For a technical overview of this lab step, please watch the following video:
 
 2. SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded **CreateTables.sql** file and drop it in the worksheet area. Then run create statements.
 
-	![SQL development workspace](/images/sql-dev-2.png)
+	![SQL development workspace.](/images/sql-dev-2.png)
 
 	There should be **5** tables created after script execution.
 
@@ -57,7 +57,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![Run the SQL query](/images/sql-dev-3.png)
+	![Run the SQL query.](/images/sql-dev-3.png)
 
 2. Let's check whether the parameter `enable_GoldenGate_replicaton` is set to true. 
 
@@ -67,7 +67,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![Check if parameter is set to true](/images/sql-dev-4.png)
+	![Check if parameter is set to true.](/images/sql-dev-4.png)
 	
 	If value is _**FALSE**_ then modify the parameter, else go to next Lab.
 
