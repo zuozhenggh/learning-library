@@ -25,15 +25,7 @@ Before deactivating a notebook session, save all your work to the attached block
 
 1. [Login to the OCI Console](https://www.oracle.com/cloud/sign-in.html).
 1. Open the navigation menu.
-<<<<<<< HEAD
 1. Under **Data and AI** and click **Data Science**. This will open the **Projects** page.
-=======
-
-1. Click the **Navigation Menu** in the upper left, navigate to **Analytics & AI**, and select **Data Science**
-
-	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/analytics-ml-datascience.png " ")
-
->>>>>>> 691d591bea2a55a6dec53632a56f1fcb2790606b
 1. Select the compartment for the project.
 1. Click the name of the project to contain the notebook session to open the Projects page.
     ![](./../speed-up-ds-with-the-ads-sdk/images/select-project.png)
