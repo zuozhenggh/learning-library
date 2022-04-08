@@ -14,7 +14,7 @@ For more information please visit [https://oracle.com/goto/spatial] (https://ora
 
 In this task you will create and configure spatial data and perform some basic spatial queries.  The scenario involves WAREHOUSES, BRANCHES, and a COASTAL\_ZONE. The WAREHOUSES and BRANCHES are points, and the COASTAL\_ZONE is a polygon. You will create and configure these spatial tables, and then perform spatial queries to identify items on proximity and containment.
 
-## Task 1: Connecting to your Oracle Cloud Database
+## Task 1: Connecting to your Oracle Cloud Database and APEX workspace
 
 1. Log in to the Oracle Cloud at <a href="https://cloud.oracle.com">cloud.oracle.com</a>. Cloud Account Name is howarduniversity. Click "Next".
 2. Click on "Direct Sign-In" and enter your Cloud Account email and password.
@@ -196,7 +196,7 @@ The instructions and screen shots refer to SQL Developer Web, however the same s
 
     ![](./images/click-sql-scripts.png " ")
 
-3. Click **Upload**. Then drag-and-drop the script you downloaded and enter a script name.
+3. Click the **Upload** > button to open the Upload Script dialog. Then drag-and-drop the SQL script you downloaded, enter a script name, and then click **Upload** at the bottom of the dialog..
 
     ![](./images/drag-and-drop.png " ")
 
@@ -584,56 +584,59 @@ Notes:
 
 ## Task 4: Homework
 
-1. Perform Tasks 1-3
+**Perform Tasks 1-3**
 
-2. Show the results of a spatial query in an APEX map.
+**Show the results of a spatial query in an APEX map.**
 
-    Click App Builder and then Create Application
+1. In the **App Builder** pull-down menu, select **Create**. Then click on **New Application**
     ![Image alt text](images/click-app-builder.png)
 
-    Add a blank page
+2. Click **Add Page** and then select **Blank**
     ![Image alt text](images/blank-page.png)
 
-    Enter **Map** as the page name and click **Add Page**
+3. Enter **Map** as the page name and click **Add Page**
     ![Image alt text](images/add-page.png)
 
-    Enter **Spatial lesson homework** as the application name and click **Create Application**
+4. Enter **Spatial lesson homework** as the application name and click **Create Application**
     ![Image alt text](images/create-application.png)
 
-    Click **Run Application**
+5. Click **Run Application**
     ![Image alt text](images/run-application.png)
 
-    Login with APEX as you did in **Lab 3**
+6. Log in with your APEX username and password
     ![Image alt text](images/login-apex.png)
 
-    Click on the tile to navigate to your **Map** page
+7. Click on the tile to navigate to your **Map** page
     ![Image alt text](images/map-page.png)
 
-    The page is initially blank. Click on the **Edit Page 2** button at the bottom to edit the page.
+8. The page is initially blank. Click on the **Page 2** button at the bottom to edit the page.
     ![Image alt text](images/click-edit-page.png)
 
-    Drag a **Map** region into the **REGION BODY**
+9. Drag a **Map** region into the **REGION BODY**
     ![Image alt text](images/drag-map.png)
 
-    Set the title to **My Map**
+10. Set the title to **My Map**
     ![Image alt text](images/my-map.png)
 
-    Under Layers, click on New and update the title to **Coastal Zone**, layer type to **Polygons**, and table name to **COASTAL_ZONE**
+11. Under Layers, click on **New**
+    ![Image alt text](images/click-new.png)
+
+12. Update the layer title to **Coastal Zone** and layer type to **Polygons**. Under Source, set the table name to **COASTAL_ZONE**
     ![Image alt text](images/under-layers.png)
 
-    Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #18079d or a color of your choosing, and set fill opacity to **0.5**.
+13. Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #18079d or a color of your choosing, and set fill opacity to **0.5**.
     ![Image alt text](images/sdo-geometry.png)
 
-    In the page tree on the left, right click on Layers and select **Create Layer**
+14. In the page tree on the left, right click on Layers and select **Create Layer**
     ![Image alt text](images/create-layer.png)
 
-    In the Layer panel on the right, set the layer name to **Branches**, layer type to **Points** and table name to **BRANCHES**.
+15. In the Layer panel on the right, set the layer name to **Branches**, layer type to **Points** and table name to **BRANCHES**.
     ![Image alt text](images/branches-points.png)
 
-    Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #00ff00 or a color of your choosing.
+16. Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #00ff00 or a color of your choosing.
     ![Image alt text](images/fill-color.png)
     
-    Again, in the Page tree on the left, right-click on Layers and select **Create Layer**. In the Layer panel on the right, set the new layer name to **Branches in zone** and Layer Type to **Points**. Under Source, set Type to **SQL Query**. Enter the following **into SQL Query**
+17. Again, in the Page tree on the left, right-click on Layers and select **Create Layer**. In the Layer panel on the right, set the new layer name to **Branches in zone** and Layer Type to **Points**. Under Source, set Type to **SQL Query**. Enter the following **into SQL Query**
     ```
     <copy>
     SELECT
@@ -649,18 +652,18 @@ Notes:
     ) = 'TRUE';
     </copy>
     ```
-    This is the query from Task 3 titled Identify branches in the coastal zone, with the addition of GEOMETRY so that the result can be rendered on a map.
+    This is the query from Task 3 titled **Identify branches in the coastal zone**, with the addition of GEOMETRY so that the result can be rendered on a map.
 
     ![Image alt text](images/query-branches.png)
 
-    Scroll down the Layer panel on the right. Under Appearance set Fill Color to #ff0000.
+17. Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**. Under Appearance set fill color to #ff0000..
     ![Image alt text](images/set-fill-color.png)
 
-    On the top right, click **Save** and then **Run**
+18. On the top right, click **Save** and then **Run**
     ![Image alt text](images/save-and-run.png)
 
-3. Take a screenshot of your APEX page and upload to Blackboard.
-    ![Image alt text](images/final-map.png)
+**Take a screenshot of your APEX page and upload to Blackboard.**
+![Image alt text](images/final-map.png)
 
 
 
