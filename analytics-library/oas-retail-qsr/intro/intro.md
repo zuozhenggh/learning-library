@@ -30,7 +30,7 @@ Throughout this lab you will:
 
 
 
-This concludes this lab. You may now proceed to the next lab.
+This concludes this lab. You may now **proceed to the next lab.**
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
