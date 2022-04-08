@@ -5,7 +5,7 @@
         {
             "title": "Introduction to Oracle Integration Insight",
             "description": "Introduction to Oracle Integration Insight",
-            "filename": "../../introduction-to-oracle-insight/introduction-to-oracle-insight.md"
+            "filename": "../introduction-to-oracle-insight/introduction-to-oracle-insight.md"
         },
         {
             "title": "Get Started",
@@ -15,55 +15,55 @@
         {
             "title": "Key Concepts",
             "description": "Oracle Insight Key Concepts",
-            "filename": "../../key-concepts/key-concepts.md"
+            "filename": "../key-concepts/key-concepts.md"
         },
         {
-            "title": "Lab 1: Setup",
-            "description": "Oracle Insight Lab Setup",
-            "filename": "../../setup/setup.md"
+            "title": "Lab Preparation",
+            "description": "Oracle Insight Lab Preparation",
+            "filename": "../lab-preparation/lab-preparation.md"
         },
         {
-            "title": "Lab 2: Oracle Insight Navigation",
+            "title": "Oracle Insight Navigation",
             "description": "Oracle Insight Navigation",
-            "filename": "../../navigation-layout-commands/navigation-layout-commands.md"
+            "filename": "../navigation-layout-commands/navigation-layout-commands.md"
         },      
         {
-            "title": "Lab 3: Create a Model",
+            "title": "Lab 1. Create a Model",
             "description": "Create a Model",
-            "filename": "../../create-a-model/create-a-model.md"
+            "filename": "../create-a-model/create-a-model.md"
         },
         {
-            "title": "Lab 4: Map Milestones",
+            "title": "Lab 2. Map Milestones",
             "description": "Map Milestones",
-            "filename": "../../mapping-milestones/mapping-milestones.md"
+            "filename": "../mapping-milestones/mapping-milestones.md"
         },
         {
-            "title": "Lab 5: Insight Console",
+            "title": "Lab 3. Insight Console",
             "description": "Insight Console",
             "filename": "../../mapping-test/insight-console.md"
         },
         {
-            "title": "Lab 6: Create Indicators",
+            "title": "Lab 4. Create Indicators",
             "description": "Create Indicators",
             "filename": "../../create-indicators/create-indicators.md"
         },
         {
-            "title": "Lab 7: Map Indicators",
+            "title": "Lab 5. Map Indicators",
             "description": "Map Indicators",   
             "filename": "../../map-indicators/map-indicators.md"
         },
         {
-            "title": "Lab 8: Indictors Test",
+            "title": "Lab 6. Indictors Test",
             "description": "Indicators Test",
             "filename": "../indicators-test/indicators-test.md"
         },
         {
-            "title": "Lab 9: Custom Dashboards",
+            "title": "Lab 7. Custom Dashboards",
             "description": "Custom Dashboards",
             "filename": "../../console/custom-dashboards.md"
         },
         {
-            "title": "Lab 10: Define an Alert",
+            "title": "Lab 8. Define an Alert",
             "description": "Define an Alert",
             "filename": "../../define-an-alert/define-an-alert.md"
         },
