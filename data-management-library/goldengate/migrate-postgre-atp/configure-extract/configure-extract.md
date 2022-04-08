@@ -89,7 +89,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![Animation of Cloud Shell environment](/images/gg-pg-config-2.gif)
+	![Animation of Cloud Shell environment.](/images/gg-pg-config-2.gif)
 
 ## Task 4: Create GoldenGate Directories 
 
@@ -132,7 +132,7 @@ For a technical overview of this lab step, please watch the following video:
 
 2. You can check manager status by issuing **`INFO MGR`** command.
 
-	![Animation of Cloud Shell output](/images/gg-pg-config-3.gif)
+	![Animation of Cloud Shell outputs.](/images/gg-pg-config-3.gif)
 
 ## Task 7: Connect to Source DB
 
@@ -146,7 +146,7 @@ For a technical overview of this lab step, please watch the following video:
 
 2. You should be able to see below information saying *Successfully Logged into database*
 
-	![Output showing successful login to database](/images/gg-pg-dblogin.png)
+	![Output showing successful login to database.](/images/gg-pg-dblogin.png)
 
 	Now you are logged into the source database from GGSCI console, which means you are ready to proceed. Remember that we need to create three extract processes and we have five tables in the source PostgreSQL database.
 
@@ -164,7 +164,7 @@ For a technical overview of this lab step, please watch the following video:
 	</copy>
 	```
 
-	![Commands to enable supplemental logging at table level](/images/gg-pg-trandata.png)
+	![Commands to enable supplemental logging at table level.](/images/gg-pg-trandata.png)
 
 ## Task 9: Registering EXTTAR
 
@@ -178,7 +178,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 	</copy>
 	```
 
-	![Register your extract](/images/gg-pg-exttar-0.png)
+	![Register your extract.](/images/gg-pg-exttar-0.png)
 
 2. Then edit extract configuration with the below:
 
@@ -188,7 +188,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 	</copy>
 	```
 
-	![Edit extract configuration](/images/gg-pg-exttar-1.png)
+	![Edit extract configuration.](/images/gg-pg-exttar-1.png)
 
 3. Insert the below as your exttar parameter and save.
 
@@ -221,7 +221,7 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 	</copy>
 	```
 
-	![Create extract process exttar](/images/gg-pg-exttar-2.png)
+	![Create extract process.](/images/gg-pg-exttar-2.png)
 
 5. Confirm everything is correct then start the extract process.
 
@@ -231,11 +231,11 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 	</copy>
 	```
 
-	![Output confirming extract process is correct](/images/gg-pg-exttar-3.png)
+	![Output confirming extract process is correct.](/images/gg-pg-exttar-3.png)
 
 6. After completing this, you should be able to check the status of the extract with **`info all`** command and the result should show the **RUNNING** state.
 
-	![Output showing running state extract status](/images/gg-pg-exttar.png)
+	![Output showing running state extract status.](/images/gg-pg-exttar.png)
 
 	This process is capturing change data from your source database. As it was mentioned earlier, this is a necessary step for a continuous replication project. 
 
@@ -243,7 +243,17 @@ Oracle GoldenGate needs to register an extract with the database replication slo
 
 Now changes are being captured from the source database and we need to send them to GG microservices in order to apply to the target database. Therefore we need another process, which acts as an extract but sends existing trail files to GG microservices. This is also known as a pump process. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
 
-1. Similar to previous step, edit extract configuration with the below:
+1. Again, register your pump "extdmp" extract.
+
+	```
+	<copy>
+	register extract extdmp
+	</copy>
+	```
+
+	![Register your extract.](/images/gg-pg-extdmp-0.png)
+
+2. Similar to previous step, edit extract configuration with the below:
 
 	```
 	<copy>
@@ -251,7 +261,7 @@ Now changes are being captured from the source database and we need to send them
 	</copy>
 	```
 
-	![Edit extract configuration](/images/gg-pg-extdmp-1.png)
+	![Edit extract configuration.](/images/gg-pg-extdmp-1.png)
 
 2. Insert below as your extdmp parameter, and **make sure** you must change _**ip address**_ with your GoldenGate Microservice's IP Address! Why? Because we will send extracted records to Microservice.
 
@@ -285,7 +295,7 @@ Now changes are being captured from the source database and we need to send them
 	</copy>
 	```
 
-	![Add trail files to extract process](/images/gg-pg-extdmp-2.png)
+	![Commands to create extract process.](/images/gg-pg-extdmp-2.png)
 
 4. Confirm everything is correct then start this extract by issuing below command.
 
@@ -295,11 +305,11 @@ Now changes are being captured from the source database and we need to send them
 	</copy>
 	```
 
-	![Command to start extract process](/images/gg-pg-extdmp-3.png)
+	![Command to start extract process.](/images/gg-pg-extdmp-3.png)
 
 5. After completing this, you should be able to see the status of the extract with **`info all`** command and the result should show you **RUNNING** state.
 
-	![Output showing running extract status](/images/gg-pg-extdmp.png)
+	![Output showing running extract status.](/images/gg-pg-extdmp.png)
 
 	The **EXTTAR** process is capturing your changes at your source database, however, it was only kept locally in the GoldenGate instance.
 
@@ -310,7 +320,17 @@ Now changes are being captured from the source database and we need to send them
 
 ## Task 11: Registering INITLOAD
 
-Up to now, we created 2 extract processes that are now capturing changes and shipping to the GoldenGate Microservices instance. However, we have not yet loaded our static data directly from our source objects to a target database. This specific process is called Initial-load. Steps are similar to the previous extract processes. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
+Up to now, we created 2 extract processes that are now capturing changes and shipping to the Goldengate Microservices instance. However, we have not yet loaded our static data directly from our source objects to a target database. This specific process is called Initial-load. Steps are similar to the previous extract processes. _**Ensure that you are connected to the source database using the DBLOGIN command**_ before doing the next steps.
+
+1. Register your initial load.
+
+	```
+	<copy>
+	register extract init
+	</copy>
+	```
+
+	![Register initial load.](/images/gg-pg-initload-0.png)
 
 1. To edit initial load configuration, issue below.
 
@@ -320,7 +340,7 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 	</copy>
 	```
 
-	![Edit initial load configuration](/images/gg-pg-initload-1.png)
+	![Edit initial load configuration.](/images/gg-pg-initload-1.png)
 
 2. Insert the below as your initial load parameter, and **make sure** you must change _**ip address**_ with your GG Microservice's IP Address! Why? Because we will send extracted records to Microservice.
 
@@ -348,7 +368,7 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 	</copy>
 	```
 
-	![Output showing using sourceistable type](/images/gg-pg-initload-2.png)
+	![Output showing using sourceistable type.](/images/gg-pg-initload-2.png)
 
 4. Confirm everything is correct then start the initial load by issuing the below command.
 
@@ -358,11 +378,11 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 	</copy>
 	```
 
-	![Start the initial load](/images/gg-pg-initload-3.png)
+	![Start the initial load.](/images/gg-pg-initload-3.png)
 
 5. You can see status of this special type of extract process with **`info init`**.
 
-	![Status of extract process](/images/gg-pg-initload.png)
+	![Status of extract process.](/images/gg-pg-initload.png)
 
 	Note that the number of records is 10000 and the status is already STOPPED. Because our sample data has only 5 tables and a few records, the initial load will take only a few seconds.
 
@@ -374,7 +394,7 @@ Up to now, we created 2 extract processes that are now capturing changes and shi
 	</copy>
 	```
 
-	![Output showing report about the extract process](./images/gg-pg-initload-report.png)
+	![Output showing report about the extract process.](/images/gg-pg-initload-report.png)
 
 	This is a good way to investigate your GoldenGate process result. You can see some statistics at the end of this report. 
 	As soon as the initial load process as finished and you have loaded to target database, you need to start applying the captured change data in your target database.
