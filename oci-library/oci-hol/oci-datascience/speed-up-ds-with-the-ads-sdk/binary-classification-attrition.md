@@ -10,7 +10,7 @@ In addition to the modeling aspects, the lab will demonstrate some of the featur
 
 The lab also demonstrates the feature engineering abilities in ``ADS``. For example, it can fix class imbalance by up or downsampling. There are many transforms that ADS can also apply. You can have ADS perform an analysis of the data and automatically perform the transformations that it thinks would improve the model. This is done with the ``auto_transform()`` method. The ``suggest_recommendations()`` method allows you to explore the suggested transforms using the notebook's UI and select the transformations that you want it to make.
 
-The Oracle ``AutoML`` package automatically tunes a model class to produce the best models. In this lab, Oracle ``AutoML`` is used to create, tune and select the best supervised binary classification model. Oracle ``AutoML`` supports binary and multi-class classifications, as well as regression problems. It automates three major stages of the ML pipeline, feature selection, algorithm selection, and hyperparameter tuning. These pieces are combined into a pipeline that automatically optimizes the whole process with minimal user interaction.
+The Oracle ``AutoML`` environment automatically tunes a model class to produce the best models. In this lab, Oracle ``AutoML`` is used to create, tune and select the best supervised binary classification model. Oracle ``AutoML`` supports binary and multi-class classifications, as well as regression problems. It automates three major stages of the ML pipeline, feature selection, algorithm selection, and hyperparameter tuning. These pieces are combined into a pipeline that automatically optimizes the whole process with minimal user interaction.
 
 The ``ADSEvaluator`` class is used to evaluate model performance. Since this is a binary classification problem,  the ``ADSEvaluator`` is used to create precision-recall, ROC, lift, and gain plots. Each model under study is plotted together. This allows for easy comparison. In addition, the normalized confusion matrices are provided.
 
@@ -58,14 +58,14 @@ The following is a summary of the steps that are covered in this lab along with 
 1. **Local explanations**: ``local_explainer = explainer.local_explanation()``
 1. **Feature important**: ``global_explainer.feature_importance_summary()`` and ``global_explainer.compute_feature_importance()``
 
-## Task 3: Install a Conda Package
+## Task 3: Install a Conda Environment
 
-A conda package is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
+A conda environment is a collection of libraries, programs, components and metadata. It defines a reproducible set of libraries that are used in the data science environment. There is an Environment Explore that allows you to learn about the different conda environments that are available. We are going to use the General Machine Learning for CPUs conda.
 
 1. Open a terminal window by clicking on **File**, **New** and then **Terminal**.
 1. Run the command: `odsc conda install -s generalml_p37_cpu_v1`
 1. You will receive a prompt related to what version number you want. Press `Enter` to select the default.
-1. Wait for the conda package to be installed.
+1. Wait for the conda environment to be installed.
 
 ## Task 4: Binary Classification Model
 
@@ -74,7 +74,7 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 1. Click on the **Notebook Examples**. A drop down will appear.
 ![](./../speed-up-ds-with-the-ads-sdk/images/click-ne.png)
 
-1. Select the environment **generalml_p37_cpu_v1** and then the notebook **binary\_classification\_attrition.ipynb**.
+1. Select the environment **generalml\_p37\_cpu\_v1** and then the notebook **binary\_classification\_attrition.ipynb**.
 ![](./../speed-up-ds-with-the-ads-sdk/images/load-example-generalml_p37_cpu_v1.png)
 
 1. Click **Load Example**. The notebook will open in a new tab.
