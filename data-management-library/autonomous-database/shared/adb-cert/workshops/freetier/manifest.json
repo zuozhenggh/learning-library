@@ -28,9 +28,9 @@
             "filename": "./../../adb-iam/adb-iam.md"
         },
         {
-            "title": "Lab 4",
-            "description": "put description here",
-            "filename": "./../../adb-iam/adb-iam.md"
+            "title": "Lab 4: Using Autonomous Database Tools",
+            "description": "Using Autonomous Database Tools",
+            "filename": "./../../adb-tools/adb-tools.md"
         },
         {
             "title": "Lab 5: Developing on Autonomous Database",
