@@ -15,16 +15,16 @@
         {
             "title": "Key Concepts",
             "description": "Oracle Insight Key Concepts",
-            "filename": "../key-concepts/key-concepts.md"
+            "filename": "../"
         },
         {
             "title": "Lab Preparation",
-            "description": "Oracle Insight Lab Prepration",
+            "description": "Oracle Insight Lab Preparation",
             "filename": "../lab-preparation/lab-preparation.md"
         },
         {
             "title": "Oracle Insight Navigation",
-            "description": "Oracle Insight Naviatgion",
+            "description": "Oracle Insight Navigation",
             "filename": "../navigation-layout-commands/navigation-layout-commands.md"
         },      
         {
