@@ -30,7 +30,7 @@ This lab assumes you have:
 
 Ensure to execute a Job by following the steps in **Lab: Create and Execute Jobs**.
 
-Watch this short video on how to create datasource connections, groups, compare pairs, jobs.:
+Watch this short video on how to create datasource connections, groups, compare pairs, jobs:
 
 [](youtube:DiAapnWt0No)
 
