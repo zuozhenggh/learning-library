@@ -46,7 +46,7 @@ To run the application from the Gateway, you will need to add headers, which are
 
 	![OCI Gateway](images/9-6-0-gateway.png " ")
 
-  External IP can be found by the kubectl get services command.
+  External IP can be found by the **kubectl get services -n mtdrworkshop** command.
 
   ![OCI Gateway](images/9-6-2-gateway.png " ")
 
@@ -88,8 +88,7 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 1.	On your laptop, open a terminal. Go to your React JS project directory, which you created in the Native Cloud App Workshop, and change to ***mtdrworkshop/frontend*** directory.
 
-	```
-	bash
+	``` bash
 	<copy>
 	cd <project directory on your laptop>/oci-react-samples/mtdrworkshop/frontend
 	</copy>
@@ -98,8 +97,7 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 	![frontend directory](images/10-1-1-frontend.png " ")
 
 2.	from the ***frontend/public*** directory, open ***index.html*** with an editor.
-	```
-	bash
+	``` bash
 	<copy>
 	vi public/index.html
 	</copy>
@@ -107,12 +105,11 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 3.	Insert the following JavaScript to the ***index.html*** file, just below the ***&lt;head&gt;*** section.
 
-	```
-	bash
+	```	bash
 	<copy>
 	<script>
 	window.apmrum = (window.apmrum || {});
-	window.apmrum.serviceName='todolist browser ';
+	window.apmrum.serviceName='todolist browser';
 	window.apmrum.webApplication='My TodoList App';
 	window.apmrum.ociDataUploadEndpoint='<ociDataUploadEndpoint>';
 	window.apmrum.OracleAPMPublicDataKey='<APM_Public_Datakey>';
@@ -134,8 +131,7 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 1.	Make sure you are in the ***frontend*** directory, then run the **npm run build** command. It packages the build files into the ***‘build’*** folder for the deployment.
 
-	```
-  bash
+	``` bash
 	<copy>
 	npm run build
 	</copy>
@@ -242,4 +238,4 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-- **Last Updated By/Date** - Yutaka Takatsu, December 2021
+- **Last Updated By/Date** - Yutaka Takatsu, February 2022
