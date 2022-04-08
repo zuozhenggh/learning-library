@@ -62,7 +62,7 @@ This lab assumes that you have:
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc.
 
-![](./../feature-type/images/notebook-session.png)
+![](./../feature-types-for-data-exploration-and-validation/images/notebook-session.png)
 
 There is a menu across the top of the screen. For this lab, the most interesting menu item is **Run**. It will allow you to execute code cells in the document. It is recommended that you manually execute the cells one at a time as you progress through the notebook. It is, generally important, that you execute them in order. To do this from the keyboard, press *shift + enter* in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
@@ -130,7 +130,7 @@ A conda environment is a collection of libraries, programs, components and metad
 ## Task 4: Download Notebook
 
 1. Open a terminal window by clicking on **File**, **New** and then **Terminal**.
-1. Run the command `wget https://raw.githubusercontent.com/oracle-samples/oci-data-science-ai-samples/master/labs/feature-type/feature_type_tutorial.ipynb`
+1. Run the command `wget https://raw.githubusercontent.com/oracle-samples/oci-data-science-ai-samples/master/labs/feature-types-for-data-exploration-and-validation/feature_type_tutorial.ipynb`
 
 ## Task 5: Feature Type Tutorial Notebook
 
@@ -138,12 +138,12 @@ A conda environment is a collection of libraries, programs, components and metad
 1. Open the notebook by clicking on it.
 1. If you are asked for a kernel choose `dataexpl_p37_cpu_v3`
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
-![](./../feature-type/images/running-cell.png)
-![](./../feature-types/finished-cell.png)
+![](./../feature-types-for-data-exploration-and-validation/images/running-cell.png)
+![](./../feature-types-for-data-exploration-and-validations/finished-cell.png)
 
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
-![](./../feature-type/images/restart-kernel.png)
-![](./../feature-type/images/restart.png)
+![](./../feature-types-for-data-exploration-and-validation/images/restart-kernel.png)
+![](./../feature-types-for-data-exploration-and-validation/images/restart.png)
 
 1. Step through the lab and look at the tools that are provided by the feature type module in the Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes. Validate your data and quickly explore it, with minimal code.
 

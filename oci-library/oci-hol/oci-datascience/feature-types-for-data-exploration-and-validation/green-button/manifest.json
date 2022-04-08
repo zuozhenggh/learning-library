@@ -1,44 +1,34 @@
 {
-    "workshoptitle": "Feature Type Tutorial",
+    "workshoptitle": "Feature Types for Data Exploration and Validation",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
-        {
-            "title": "Getting Started",
-            "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
-        },
         {
             "title": "Introduction",
             "description": "Introduction to the Data Science Service",
             "filename": "./../../common/odsc-intro.md"
         },
         {
-            "title": "Lab 1: Configure the Data Science Service",
-            "description": "Configure the tenancy to work with the Data Science service.",
-            "filename": "./../../common/orm-solution-hub-setup.md"
-        },
-        {
-            "title": "Lab 2: Create a Project",
+            "title": "Lab 1: Create a Project",
             "description": "Create a project to contain the Data Science Notebooks.",
-            "filename": "./../../common/project-setup-free-tier.md"
+            "filename": "./../../common/project-setup-green-button.md"
         },
         {
-            "title": "Lab 3: Create a Notebook Session",
+            "title": "Lab 2: Create a Notebook Session",
             "description": "Create a Notebook Session and launch it.",
-            "filename": "./../../common/notebook-setup-free-tier.md"
+            "filename": "./../../common/notebook-setup-green-button.md"
         },
         {
-            "title": "Lab 4: Accelerated Data Science SDK",
+            "title": "Lab 3: Accelerated Data Science SDK",
             "description": "Introduction to the Accelerated Data Science SDK.",
             "filename": "./../../common/ads-intro.md"
         },
         {
-            "title": "Lab 5: Feature Type Tutorial",
+            "title": "Lab 4: Feature Type Tutorial",
             "description": "Introduction to the Feature Type System in the Accelerated Data Science SDK.",
             "filename": "./../feature-type.md"
         },
         {
-            "title": "Lab 6: Shutting Down a Notebook Session",
+            "title": "Lab 5: Shutting Down a Notebook Session",
             "description": "Deactivate or terminate a notebook session.",
             "filename": "./../../common/notebook-shutdown.md"
         },
