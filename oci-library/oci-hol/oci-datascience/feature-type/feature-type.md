@@ -2,13 +2,13 @@
 
 ## Introduction
 
-There is a distinction between the data type of a feature and the nature of data that it represents. The data type represents the form of the data that the computer understands. ADS uses the term "feature type" to refer to the nature of the data. For example, a medical record id could be represented as an integer, its data type, but the feature type would be "medical record id". The feature type represents the data the way the data scientist understands it. ADS provides the feature type module on top of your Pandas dataframes and series to manage and use the typing information to better understand your data.
+There is a distinction between the data type of a feature and the nature of the data that it represents. The data type represents the form of the data that the computer understands. ADS uses the term "feature type" to refer to the nature of the data. For example, a medical record id could be represented as an integer, its data type, but the feature type would be "medical record id". The feature type represents the data in the way the data scientist understands it. ADS provides the feature type module on top of your Pandas dataframes and series to manage and use the typing information to better understand your data.
 
-The feature type framework comes with some common feature types. However, the power of using feature types is that you can easily create your own and apply them to your specific data. You don't need to try to represent your data in a synthetic way that does not match the nature of your data. This framework allows you to create methods that validate whether the data fits the specifications of your organization. For example, for a medical record type you could create methods to validate that the data is properly formatted. You can also have the system generate warnings to sure the data is valid as a whole or create graphs for summary plots.
+The feature type framework comes with some common feature types. However, the power of using feature types is that you can easily create your own and apply them to your specific data. You don't need to try to represent your data in a synthetic way that does not match the nature of your data. This framework allows you to create methods that validate whether the data fits the specifications of your organization. For example, for a medical record type, you could create methods to validate that the data is properly formatted. You can also have the system generate warnings to sure the data is valid as a whole or create graphs for summary plots.
 
 The framework allows you to create and assign multiple feature types. For example, a medical record id could also have a feature type id and the integer feature type.
 
-The feature type system allows data scientists to separate the concept of how data is represented physically from what the data actually measures. That is, the data can have feature types that classify the data based on what it represents and not how the data is stored in memory. Each set of data can have multiple feature types through a system of multiple inheritances. As a concrete example, an organization that sells cars might have a set of data that represents their purchase price of a car, that is the wholesale price. You  could have a feature set of ``wholesale_price``, ``car_price``, ``USD``, and ``continuous``. 
+The feature type system allows data scientists to separate the concept of how data is represented physically from what the data actually measures. That is, the data can have feature types that classify the data based on what it represents and not how the data is stored in memory. Each set of data can have multiple feature types through a system of multiple inheritances. As a concrete example, an organization that sells cars might have a set of data that represents the purchase price of a car, that is the wholesale price. You could have a feature set of ``wholesale_price``, ``car_price``, ``USD``, and ``continuous``.
 
 All default feature types have methods for creating summary statistics and a plot to represent the data. This allows you to have summary information for each feature of your dataset while only using a single command. However, the default feature types may not provide the exact details needed in your specific use case. Therefore, feature types have been designed with expandability in mind. When creating a new feature type, the summary statistics and plots that are specific to your feature type can be customized.
 
@@ -18,13 +18,13 @@ The ``.feature_count()`` method returns a dataframe that provides a summary of t
 
 The ``.feature_stat()`` method returns a dataframe where each row represents a summary statistic and the numerical value for that statistic.
 
-The ``.feature_plot()`` method returns a Seaborn plot object that summaries the feature. It can be modified after it is returned so that you can customize it to fit your needs.
+The ``.feature_plot()`` method returns a Seaborn plot object that summarizes the feature. It can be modified after it is returned so that you can customize it to fit your needs.
 
 There are also a number of correlation methods such as ``.correlation_ratio()``, ``.pearson()``, and ``.cramersv()`` that provide information about the correlation between different features in the form of a dataframe. Each row represents a single correlation metic. This information can also be represented in a plot with the ``.correlation_ratio_plot()``, ``.pearson_plot()``, and ``.cramersv_plot()`` methods.
 
 Feature type warnings are used for rapid validation of the data. For example, the ``wholesale_price`` might have a method that ensures that the value is a positive number because you can't purchase a car with negative money. The ``car_price`` feature type may have a check to ensure that it is within a reasonable price range. ``USD`` can check the value to make sure that it represents a valid US dollar amount. It can't have values below one cent. The ``continuous`` feature type is the default feature type and it represents the way the data is stored internally.
 
-The feature type validators are a set of ``is_*`` methods, where ``*`` is generally the name of the feature type. For example, the method ``.is_wholesale_price()`` can create a boolean Pandas series that indicates what values meet the validation criteria. It  allows you to quickly identify which values need to be filtered or require future examination into problems in the data pipeline. The feature type validators can be as complex as they need to be. For example, they might take a client ID and call an API to validate each client ID is active.
+The feature type validators are a set of ``is_*`` methods, where ``*`` is generally the name of the feature type. For example, the method ``.is_wholesale_price()`` can create a boolean Pandas series that indicates what values meet the validation criteria. It allows you to quickly identify which values need to be filtered or require future examination into problems in the data pipeline. The feature type validators can be as complex as they need to be. For example, they might take a client ID and call an API to validate that each client ID is active.
 
 The feature type manager provides the tools to manage the handlers that are used to drive this system. The system works by creating functions that are then registered as feature type validators or warnings. The role of ``feature_type_manager`` is to provide the interface to manage these handlers.
 
@@ -35,7 +35,7 @@ A feature type has the following attributes that can be overridden:
 
 If you wish to create custom summary statistics for a feature type, then override the ``.feature_stat()`` method. To create a custom summary plot, override the ``.feature_plot()`` method.
 
-In this lab, you will learn how to use Feature Types to improve your exploratory data analysis (EDA) by generating meaningful statistics, graphs, counting, and producing correlation metrics. You will also learn about the Feature Type Warning system that allows you to use built-in warnings and create custom warnings to check the overall proprieties of a feature. The Feature Type Validator system is discussed in detail. This system allows you to write custom validation rules that empowers you to rapidly confirm that your data is clean and meets the assumptions of your models. The multiple inheritance system will be discussed and you create a custom feature type.
+In this lab, you will learn how to use Feature Types to improve your exploratory data analysis (EDA) by generating meaningful statistics, graphs, counting, and producing correlation metrics. You will also learn about the Feature Type Warning system that allows you to use built-in warnings and create custom warnings to check the overall proprieties of a feature. The Feature Type Validator system is discussed in detail. This system allows you to write custom validation rules that empower you to rapidly confirm that your data is clean and meets the assumptions of your models. The multiple inheritance system will be discussed and you create a custom feature type.
 
 *Estimated Time*: 90 minutes
 
@@ -44,9 +44,9 @@ In this lab, you will learn how to use Feature Types to improve your exploratory
 In this lab, you will:
 * Learn how to execute cells in JupyterLab and perform other basic operations in a notebook.
 * Learn about the difference between how Python stores your data and how it is represented as a Feature Type.
-* Assign multiple inheritance to features.
-* Select columns from a dataframe based on feature type.
-* Perform common operations in an EDA such as counting, creating summary statistics, understand relationships between covariants using correlations, and plot the data.
+* Assign multiple inheritances to features.
+* Select columns from a dataframe based on the feature type.
+* Perform common operations in an EDA such as counting, creating summary statistics, understanding relationships between covariants using correlations, and plotting the data.
 * Use Feature Type Warnings to validate that an entire feature conforms to your assumptions.
 * Create custom Feature Type Warnings and add them to a Feature Type.
 * Use Feature Type Validators to confirm that each metric is valid. You will use default as well as create custom validators.
@@ -60,7 +60,7 @@ This lab assumes that you have:
 
 ## Task 1: Working with JupyterLab
 
-Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc..
+Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc.
 
 ![](./../feature-type/images/notebook-session.png)
 
@@ -136,20 +136,20 @@ A conda environment is a collection of libraries, programs, components and metad
 
 1. Use the File Browser to locate the ``feature_type_tutorial.ipynb``.
 1. Open the notebook by clicking on it.
-1. If you are asked for a kernel choose `dataexpl_p37_cpu_v3` 
+1. If you are asked for a kernel choose `dataexpl_p37_cpu_v3`
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
-    ![](./../feature-type/images/running-cell.png)
-    ![](./../feature-types/finished-cell.png)
+![](./../feature-type/images/running-cell.png)
+![](./../feature-types/finished-cell.png)
 
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
-    ![](./../feature-type/images/restart-kernel.png)
-    ![](./../feature-type/images/restart.png)
+![](./../feature-type/images/restart-kernel.png)
+![](./../feature-type/images/restart.png)
 
 1. Step through the lab and look at the tools that are provided by the feature type module in the Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes. Validate your data and quickly explore it, with minimal code.
 
 ## Task 5: Next Steps
 
-There are some other notebooks that you may find interesting. They can be accessed by clicking **File** then clicking **New Launcher**. This will open Launcher. Click **Notebook Examples** and select a notebook then click **Load Example**. Some notebooks of interest are:
+There are some other notebooks that you may find interesting. They can be accessed by clicking **File** and then clicking **New Launcher**. This will open Launcher. Click **Notebook Examples** and select a notebook and then click **Load Example**. Some notebooks of interest are:
 
 * **visual\_genome.ipynb**: Explore the Visual Genome dataset that is provided by Oracle Open Data.
 * **data\_visualizations.ipynb**: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
@@ -159,4 +159,4 @@ There are some other notebooks that you may find interesting. They can be access
 
 * **Author**: [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist
 * **Last Updated By/Date**:
-    * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, April 2022
+  * [John Peach](https://www.linkedin.com/in/jpeach/), Principal Data Scientist, April 2022
