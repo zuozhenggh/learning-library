@@ -44,7 +44,9 @@ This lab assumes you have:
 
 	![Connect to VM](images/connect-to-vm.png)
 
-2. Install **helm** cli client to **oke-operator** compute instance and add superset to helm repository
+2. Install **helm** cli client to **oke-operator** compute instance 
+
+    >**Note** Skip this step if you have helm client installed already
 
     ```
     <copy>
@@ -54,6 +56,8 @@ This lab assumes you have:
 
     ![Install helm cli](images/helm-cli-install.png)
 
+3. Add superset to helm repository
+
     ```
     <copy>
     helm repo add superset https://apache.github.io/superset
@@ -62,7 +66,7 @@ This lab assumes you have:
 
     ![Add superset repo to helm ](images/helm-add-repo.png)
 
-3. Generate **superset-custom-values.yaml** (update any specific variables if required) and install Superset package
+4. Generate **superset-custom-values.yaml** (update any specific variables if required) and install Superset package
 
     ```
     <copy>
@@ -74,7 +78,7 @@ This lab assumes you have:
 
     ![Install superset ](images/superset-install.png)
 
-4. Verify the deployment status of Superset application
+5. Verify the deployment status of Superset application
 
     ```
     <copy>
@@ -85,7 +89,7 @@ This lab assumes you have:
 
     ![Check resources in namespace superset ](images/superset-get-all.png)
 
-5. Disable the **firewalld** service in **oke-operator** compute instance
+6. Disable the **firewalld** service in **oke-operator** compute instance
 
     ```
     <copy>
@@ -95,7 +99,7 @@ This lab assumes you have:
     ```
     > **Note** The purpose of this step is to simplify and allow port-forwarding service to the **oke-operator** compute instance. You should not disable the firewalld service in production
 
-6. Start port-forwarding to Superset service.
+7. Start port-forwarding to Superset service.
 
     ```
     <copy>

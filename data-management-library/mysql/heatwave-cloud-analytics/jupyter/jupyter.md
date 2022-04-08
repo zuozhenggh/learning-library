@@ -36,7 +36,20 @@ In this lab, you will:
 
 	![Connect to VM](images/connect-to-vm.png)
 
-2. Create the namespace in OKE
+2. We need to install helm in **oke-operator**
+
+	```
+<copy>
+sudo yum-config-manager --enable ol7_developer
+</copy>
+```
+	```
+<copy>
+sudo yum install helm
+</copy>
+```
+
+3. Create the namespace in OKE
 
 	```
 <copy>
@@ -44,8 +57,7 @@ kubectl create ns jhub
 </copy>
 ```
 
-3. Add Jupyter repository using helm
-
+4. Add Jupyter repository using helm
 
 	```
 <copy>
@@ -58,7 +70,7 @@ helm repo update
 </copy>
 ```
 
-4. Install Jupyter using helm
+5. Install Jupyter using helm
 
 	```
 <copy>
@@ -73,7 +85,7 @@ helm upgrade --install jhub jupyterhub/jupyterhub --namespace jhub
 	</copy>
 	```
 
-5. Retrieve the public IP of the deployed Jupyter notebook
+6. Retrieve the public IP of the deployed Jupyter notebook
 
 	```
 <copy>
@@ -81,7 +93,7 @@ kubectl -n jhub get svc proxy-public -o jsonpath='{.status.loadBalancer.ingress[
 </copy>
 ```
 
-6. Access the deployed phpMyAdmin application using your browser, http:://&lt;Jupyter&#95;Proxy&#95;PUBLIC&#95;IP&gt;/.
+7. Access the deployed phpMyAdmin application using your browser, http:://&lt;Jupyter&#95;Proxy&#95;PUBLIC&#95;IP&gt;/.
 
 	Enter **admin/admin** to log into Jupyter notebook
 
