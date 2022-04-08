@@ -40,17 +40,17 @@
         {
             "title": "Lab 5: Insight Console",
             "description": "Insight Console",
-            "filename": "../mapping-test/insight-console.md"
+            "filename": "../../mapping-test/insight-console.md"
         },
         {
             "title": "Lab 6: Create Indicators",
             "description": "Create Indicators",
-            "filename": "../create-indicators/create-indicators.md"
+            "filename": "../../create-indicators/create-indicators.md"
         },
         {
             "title": "Lab 7: Map Indicators",
             "description": "Map Indicators",   
-            "filename": "../map-indicators/map-indicators.md"
+            "filename": "../../map-indicators/map-indicators.md"
         },
         {
             "title": "Lab 8: Indictors Test",
@@ -60,17 +60,17 @@
         {
             "title": "Lab 9: Custom Dashboards",
             "description": "Custom Dashboards",
-            "filename": "../console/custom-dashboards.md"
+            "filename": "../../console/custom-dashboards.md"
         },
         {
             "title": "Lab 10: Define an Alert",
             "description": "Define an Alert",
-            "filename": "../define-an-alert/define-an-alert.md"
+            "filename": "../../define-an-alert/define-an-alert.md"
         },
         {
             "title": "Roles and Personas",
             "description": "Roles and Personas",
-            "filename": "../roles-and-personas/roles-and-personas.md"
+            "filename": "../../roles-and-personas/roles-and-personas.md"
         },
         {
             "title": "Need Help?",
