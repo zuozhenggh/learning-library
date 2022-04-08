@@ -22,7 +22,7 @@
             "description": "Introduction to the Accelerated Data Science SDK.",
             "filename": "./../../common/ads-intro.md"
         },
-        }
+        {
             "title": "Lab 4: Feature Type Tutorial",
             "description": "Introduction to the Feature Type System in the Accelerated Data Science SDK.",
             "filename": "./../feature-type.md"
