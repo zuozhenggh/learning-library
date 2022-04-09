@@ -62,7 +62,7 @@ This lab assumes that you have:
 
 Now that JupyterLab is open, it can be seen that the screen is split into two sections. By default, the left side has the file browser open but it can change based on what navigation icons are selected on the far left side of the screen. The right side of the screen contains the workspace. It will have a notebook, terminal, console, launcher, Notebook Examples, etc.
 
-![](./../feature-types-for-data-exploration-and-validation/images/notebook-session.png)
+![Notebook session](./../feature-types-for-data-exploration-and-validation/images/notebook-session.png)
 
 There is a menu across the top of the screen. For this lab, the most interesting menu item is **Run**. It will allow you to execute code cells in the document. It is recommended that you manually execute the cells one at a time as you progress through the notebook. It is, generally important, that you execute them in order. To do this from the keyboard, press *shift + enter* in a cell and it will execute it and advance to the next cell. Alternatively, you can run all of the cells at once. To do this, click on Run then "Run Selected Cells".
 
@@ -138,22 +138,24 @@ A conda environment is a collection of libraries, programs, components and metad
 1. Open the notebook by clicking on it.
 1. If you are asked for a kernel choose `dataexpl_p37_cpu_v3`
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
-![](./../feature-types-for-data-exploration-and-validation/images/running-cell.png)
-![](./../feature-types-for-data-exploration-and-validations/finished-cell.png)
+![Running-cell has an asterisk ](./../feature-types-for-data-exploration-and-validation/images/running-cell.png)
+![Executed shell has a number in it](./../feature-types-for-data-exploration-and-validations/finished-cell.png)
 
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
-![](./../feature-types-for-data-exploration-and-validation/images/restart-kernel.png)
-![](./../feature-types-for-data-exploration-and-validation/images/restart.png)
+![Restart kernel](./../feature-types-for-data-exploration-and-validation/images/restart-kernel.png)
+![Restart](./../feature-types-for-data-exploration-and-validation/images/restart.png)
 
 1. Step through the lab and look at the tools that are provided by the feature type module in the Oracle Accelerated Data Science (ADS) SDK. This automates a number of time-consuming and repetitive processes. Validate your data and quickly explore it, with minimal code.
 
-## Task 5: Next Steps
+## Task 6: Next Steps
 
 There are some other notebooks that you may find interesting. They can be accessed by clicking **File** and then clicking **New Launcher**. This will open Launcher. Click **Notebook Examples** and select a notebook and then click **Load Example**. Some notebooks of interest are:
 
 * **visual\_genome.ipynb**: Explore the Visual Genome dataset that is provided by Oracle Open Data.
 * **data\_visualizations.ipynb**: It provides a comprehensive overview of the data visualization tools in ADS. This includes smart data visualization for columns based on data types and values.
 * **transforming\_data.ipynb**: Learn about the ``ADSDatasetFactory`` and how it can clean and transform data.
+
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 

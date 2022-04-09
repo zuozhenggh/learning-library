@@ -1,5 +1,5 @@
 {
-    "workshoptitle": "Feature Types for Data Exploration and Validation",
+    "workshoptitle": "Feature types for data exploration and validation",
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
@@ -18,17 +18,12 @@
             "filename": "./../../common/notebook-setup-green-button.md"
         },
         {
-            "title": "Lab 3: Accelerated Data Science SDK",
-            "description": "Introduction to the Accelerated Data Science SDK.",
-            "filename": "./../../common/ads-intro.md"
-        },
-        {
-            "title": "Lab 4: Feature Type Tutorial",
+            "title": "Lab 3: Feature Type Tutorial",
             "description": "Introduction to the Feature Type System in the Accelerated Data Science SDK.",
             "filename": "./../feature-type.md"
         },
         {
-            "title": "Lab 5: Shutting Down a Notebook Session",
+            "title": "Lab 4: Shutting Down a Notebook Session",
             "description": "Deactivate or terminate a notebook session.",
             "filename": "./../../common/notebook-shutdown.md"
         },
