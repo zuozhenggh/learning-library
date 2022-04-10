@@ -17,7 +17,7 @@ Create a new VCN (Virtual Cloud Network) to connect our machines and services.
     * Firefox
     * Internet Explorer 11.
     * **It does not support the Edge browser**
-4. You should have compled Lab 1b
+4. You should have compled Lab 1a
 
 **Note** For more information on Oracle Cloud Console, please visit: [https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/console.htm](https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/console.htm)
 
