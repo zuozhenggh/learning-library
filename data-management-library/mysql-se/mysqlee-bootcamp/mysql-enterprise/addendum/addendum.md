@@ -28,7 +28,7 @@ Estimated Lab Time: -- minutes
 2. Download file [my.cnf.replica.txt](files/my.cnf.replica.txt)  
 3. Download file [my.cnf.replica.txt](files/my.cnf.replica.txt)  
 4. Download file [mysqld-advanced02.service.txt](files/mysqld-advanced02.service.txt) 
-5. Download file [mysqlbackup\_user\_grants.sql](files/mysqlbackup_user_grants.sql)
+5. Download file [mysqlbackup_user_grants.sql](files/mysqlbackup_user_grants.sql)
 6. Download file [my.cnf.secondary-2.txt](files/my.cnf.secondary-2.txt) 
 
 
