@@ -1,14 +1,20 @@
-# OCI CLI installation
+# Install OCI CLI
 
 ## About this Workshop
 
 ### Objective
 
-Install the Oracle Cloud Infrastructure Command Line Interface (OCI-CLI)
+In This lab you will perform the following tasks
 
-* OCI CLI tool is used by setup script, but it’s useful also to control our instances. In the addendum you have an example how to automatically stop&start resources with crontab
+1. Install CLI
+2. Configure CLI
+3. Execute CLI Setup
 
-* More info on OCI CLI can be found here[https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm](<https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm>)
+    **Note**
+
+    * OCI CLI tool is used by setup script, but it’s useful also to control our instances. In the addendum you have an example how to automatically stop&start resources with crontab
+
+    * More info on OCI CLI can be found here[https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm](<https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm>)
 
 ### Prerequisites and Reminders
 

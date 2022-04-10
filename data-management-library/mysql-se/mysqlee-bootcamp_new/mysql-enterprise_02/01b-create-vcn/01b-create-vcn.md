@@ -4,7 +4,10 @@
 
 ### Objective
 
-Create a new VCN (Virtual Cloud Network) to connect our machines and services.
+In This lab you will perform the following tasks
+
+1. Login to Oracle Cloud
+2. Create Your VCN
 
 ### Prerequisites
 

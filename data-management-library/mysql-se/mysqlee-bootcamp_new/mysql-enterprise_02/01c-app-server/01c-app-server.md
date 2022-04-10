@@ -1,16 +1,21 @@
-# Application server creation and test
+# Create and Test Application Server
 
 ## About this Workshop
 
 ### Objective
 
-Download and upload wget sw, upload and execute deploy.sh script; connect to all mysql servers, then power off mysql2 and mysql3
+In This lab you will perform the following tasks
 
-* The compute machine that we create is called **“app-srv”**
-* Compute instances have by default the user “opc” without a password.
-* It’s mandatory to use an SSH key file to access the instance
-* Linux opc user has limited privileges
-* To work with administrative privileges, use "sudo" like **shell> sudo su - root**
+1. Create the Application Server - Download and upload wget sw, upload and execute deplo sh scripty.
+2. Test the Application Server - Power off mysql2 and mysql3
+
+    **Notes**
+
+    * The compute machine that we create is called **“app-srv”**
+    * Compute instances have by default the user “opc” without a password.
+    * It’s mandatory to use an SSH key file to access the instance
+    * Linux opc user has limited privileges
+    * To work with administrative privileges, use "sudo" like **shell> sudo su - root**
 
 ### Prerequisites and Reminders
 

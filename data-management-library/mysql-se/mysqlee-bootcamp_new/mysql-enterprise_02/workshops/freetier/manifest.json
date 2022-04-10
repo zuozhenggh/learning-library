@@ -8,32 +8,32 @@
         {
             "title": "Introduction",
             "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
-            "filename": "../../introduction/introduction.md"
+            "filename": "../../00-introduction/00-introduction.md"
         },
         {
-            "title": "Lab 1a: Material and software download",
-            "description": "Material and software download",
-            "filename": "../../mysqlee-download/mysqee-download.md"
+            "title": "Lab 1a:Download Material and Software",
+            "description": "Download Material and Software",
+            "filename": "../../01a-mysqlee-download/01a-mysqee-download.md"
         },
         {
             "title": "Lab 1b: Create VCN",
             "description": "Create a VCN (Virtual Cloud Network)",
-            "filename": "../../create-vcn/create-vcn.md"
+            "filename": "../../01b-create-vcn/01b-create-vcn.md"
         },
         {
             "title": "Lab 1c: Create Application Server",
             "description": "Create Application server creation and test",
-            "filename": "../../app-server/app-server.md"
+            "filename": "../../01c-app-server/01c-app-server.md"
         },
         {
             "title": "Lab 1d: Install CLI",
             "description": "OCI Command Line Interface installation",
-            "filename": "../../oci-cli/oci-cli.md"
+            "filename": "../../01d-oci-cli/01d-oci-cli.md"
         },
         {
             "title": "Lab 1e: Setup Environme",
-            "description": " Environment setup",
-            "filename": "../../setup/setup.md"
+            "description": " Setup Environment",
+            "filename": "../../01e-setup-environment/01e-setup-environment.md"
         },
         {
             "title": "Lab 2a: Install - MySQL Community",

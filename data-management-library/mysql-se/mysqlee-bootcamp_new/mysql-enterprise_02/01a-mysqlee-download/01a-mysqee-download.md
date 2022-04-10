@@ -1,10 +1,10 @@
-# Material and software download
+# Download Material Software
 
 ## About this Workshop
 
 ### Objectives
 
-Download the software and configure the environment for the labs
+In This lab you will download the software for the labs
 
 ### Prerequisites
 
