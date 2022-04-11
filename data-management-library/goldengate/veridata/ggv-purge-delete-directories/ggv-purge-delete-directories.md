@@ -49,7 +49,7 @@ To purge data:
 
 3. Click **Reports** and notice that there are no reports under **Existing Reports**.
 
-    ![](./images/5purge.png " ")
+    ![](./images/5Purge.png " ")
 
 The metadata of the Reports get deleted from the repository. However, the reports are available on Oracle GoldenGate Veridata server.
 
@@ -125,11 +125,11 @@ To delete directories:
 
 4. In the terminal, verify that the entire directory has been deleted.
 
-      ![](./images/7DeletedDirectories_Terminal.png " ")
+    ![](./images/7DeletedDirectories_Terminal.png " ")
 
 5. Click **Reports** and notice that there are no reports under **Existing Reports**.
 
-    ![](./images/5purge.png " ")
+    ![](./images/5Purge.png " ")
 
 
 ## Learn More
