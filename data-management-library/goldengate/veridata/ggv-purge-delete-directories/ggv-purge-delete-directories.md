@@ -47,6 +47,11 @@ To purge data:
 
     ![](./images/4Purge.png " ")
 
+3. Click **Reports** and notice that there are no reports under **Existing Reports**.
+
+      ![](./images/5purge.png " ")
+
+The metadata of the Reports get deleted from the repository. However, the reports are available on Oracle GoldenGate Veridata server.
 
 ## Task 2: Delete Directories (Delete Directories Completely Check Box is Unchecked)
 
