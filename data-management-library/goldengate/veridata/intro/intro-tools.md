@@ -2,7 +2,7 @@
 
 ## About this Workshop                             
 
-The labs in this workshop walk you through several use cases to add and remove column mapping, purge data, and delete directories.
+The labs in this workshop walk you through use cases to add and remove column mapping, purge data, and delete directories.
 
 *Estimated Lab Time*: 4 hours
 
