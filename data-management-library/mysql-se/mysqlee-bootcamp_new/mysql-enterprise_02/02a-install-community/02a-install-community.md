@@ -136,6 +136,116 @@ This lab uses color coding to identify input type
     <copy>sudo systemctl status mysqld</copy>
     ```
 
+## Task 2:  Start MySQL Community
+
+1. Start MySQL if not alread started
+
+    a. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo systemctl start mysqld</copy>
+    ```
+
+    b.**<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo systemctl status mysqld</copy>
+    ```
+
+2. Check the content of my.cnf that is in the default folder for Linux OS and note some info (lines that start with “#” are just comments)
+
+    a. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>cat /etc/my.cnf</copy>
+    ```
+
+    b. Where is the database and the error log (mysqld.log) stored?
+
+    * Copy the answer to your notepad.
+
+    c. Check if there are errors for the instance by looking into the error log file
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo grep -i error /var/log/mysqld.log</copy>
+    ```
+
+3. Starting from MySQL 5.7 the default installation of MySQL Server generates a one-time password. You will find it in the error log notes
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo grep 'temporary' /var/log/mysqld.log</copy>
+    ```
+
+4. Login to MySQL using password retrieved in previous step
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>mysql -uroot -p -h localhost</copy>
+    ```
+
+5. Try to run a command and write down the error message on your notepad
+
+    **<span style="color:blue">mysql></span>**
+
+    ```text
+    <copy>status;</copy>
+    ```
+
+6. Change the **root** password
+
+    **<span style="color:blue">mysql></span>**
+
+    ```text
+    <copy>ALTER USER 'root'@'localhost' IDENTIFIED BY 'Welcome1!';</copy>
+    ```
+
+7. Retry the **status** command  and now it works
+
+    **<span style="color:blue">mysql></span>**
+
+    ```text
+    <copy>status;</copy>
+    ```
+
+8. Check to see which databases are installed by default
+
+    **<span style="color:blue">mysql></span>**
+
+    ```text
+    <copy>show databases;</copy>
+    ```
+
+    ![Appserver](images/mysql-com-01.png " ")
+
+9. To see which version of MySQL you are using submit the following command
+
+    **<span style="color:blue">mysql></span>**
+
+    ```text
+    <copy>show variables like "%version%";</copy>
+    ```
+
+10. Check the default users in the standard installation
+
+    **<span style="color:blue">mysql></span>**
+
+    ```text
+    <copy>select user, host from mysql.user where user='root';</copy>
+    ```
+
+11. Logout as ‘root’
+
+    **<span style="color:blue">mysql></span>**
+
+    ```text
+    <copy>exit</copy>
+    ```
+
     **You may now proceed to the next lab**
 
 ## Learn More
