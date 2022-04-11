@@ -38,7 +38,7 @@
         {
             "title": "Lab 2a: Install - MySQL Community",
             "description": "Install - MySQL Community",
-            "filename": "../../install-community/install-community.md"
+            "filename": "../../02a-install-community/02a-install-community.md"
         },
         {
             "title": "Lab 2b: Install - MySQL Enterprise Edition",

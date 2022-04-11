@@ -18,11 +18,6 @@ Download and upload wget sw, upload and execute deploy.sh script; connect to all
     * Internet Explorer 11.
     * **It does not support the Edge browser**
 4. You should have compled Lab 1c
-5. The compute machine that we create is called “app-srv”
-6. Compute instances have by default the user “opc” without a password.
-7. It’s mandatory to use an SSH key file to access the instance
-8. Linux opc user has limited privileges
-9. To work with administrative privileges, use "sudo" like **shell> sudo su - root**
 
 ### Lab standard
 
