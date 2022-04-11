@@ -34,7 +34,7 @@ In this task you will create and configure spatial data and perform some basic s
 
     ![](./images/hu-compartment.png " ")
 
-6. Click on the database you created in lab 1
+6. Click on the database you created in lab 1.
    
     ![](./images/adb-compartment.png " ")
 
@@ -72,11 +72,11 @@ In this task you will create and configure spatial data and perform some basic s
 
 If you don’t remember your APEX user name and workspace name that you created for **Lab 3** (the user name and workspace name should be the same) then follow the these steps to reset the password for your APEX user name. If you did not do the APEX Lab Homework **(Lab 3)** then you will have to go back  to Lab 3 and complete **Task 1 and 2** from that lab before you can do this Lab. This is only for resetting the password for the user you created in that lab.
 
-1. From the APEX Instance Details console click on **Launch Database Actions**
+1. From the APEX Instance Details console click on **Launch Database Actions**.
 
     ![](./images/launch-database-actions.png " ")
 
-2. On the Database Actions page click on Database Users under the Administration section
+2. On the Database Actions page click on Database Users under the Administration section.
 
     ![](./images/db-users.png " ")
 
@@ -92,7 +92,7 @@ If you don’t remember your APEX user name and workspace name that you created 
 
     ![](./images/launch-apex.png " ")
 
-6. Sign in
+6. Sign in.
 
     ![](./images/apex-login.png " ")
 
@@ -192,19 +192,19 @@ The instructions and screen shots refer to SQL Developer Web, however the same s
 
 1. Download the SQL script [here](files/create-sample-data.sql).
 
-2. Navigate to **SQL Workshop** and click on **SQL Scripts**
+2. Navigate to **SQL Workshop** and click on **SQL Scripts**.
 
     ![](./images/click-sql-scripts.png " ")
 
-3. Click the **Upload** > button to open the Upload Script dialog. Then drag-and-drop the SQL script you downloaded, enter a script name, and then click **Upload** at the bottom of the dialog..
+3. Click the **Upload** > button to open the Upload Script dialog. Then drag-and-drop the SQL script you downloaded, enter a script name of your choosing, and then click **Upload** at the bottom of the dialog.
 
     ![](./images/drag-and-drop.png " ")
 
-4. Click the **Run** button
+4. Click the **Run** button.
 
     ![](./images/click-run.png " ")
 
-5. Click **Run Now**
+5. Click **Run Now**.
 
     ![](./images/click-run-now.png " ")
 
@@ -214,9 +214,9 @@ The instructions and screen shots refer to SQL Developer Web, however the same s
 
 **Create Geometries from Coordinates**
 
-Geometries can be populated with SQL, for exathis case by specifying the coordinates of point geometries based on  latitude and longitude columns.
+Geometries can be populated with SQL, for example by specifying the coordinates of point geometries based on  latitude and longitude columns.
 
-1. In the **SQL Workshop** pull-down menu, select **SQL Commands**
+1. In the **SQL Workshop** pull-down menu, select **SQL Commands**.
 
 2. Add geometry columns by running the following. Highlight the first command and click run. 
 
@@ -381,7 +381,7 @@ Oracle Database provides a native spatial index for high performance spatial ope
     ```
     ![](./images/indexes-metadata.png " ")
 
-5. Repeat for the other two commands,
+5. Repeat for the other two commands.
 
     After the indexes are created, in the **SQL Workshop** pull-down menu, select **Object Browser**. You will see 3 tables having names beginning with MDRT_. These are artifacts of the spatial indexes and are managed by Oracle Database automatically. You should never manually manipulate these tables.
     ![Image alt text](images/object-browsers.png)
@@ -588,46 +588,46 @@ Notes:
 
 **Show the results of a spatial query in an APEX map.**
 
-1. In the **App Builder** pull-down menu, select **Create**. Then click on **New Application**
+1. In the **App Builder** pull-down menu, select **Create**. Then click on **New Application**.
     ![Image alt text](images/click-app-builder.png)
 
-2. Click **Add Page** and then select **Blank**
+2. Click **Add Page** and then select **Blank**.
     ![Image alt text](images/blank-page.png)
 
-3. Enter **Map** as the page name and click **Add Page**
+3. Enter **Map** as the page name and click **Add Page**.
     ![Image alt text](images/add-page.png)
 
-4. Enter **Spatial lesson homework** as the application name and click **Create Application**
+4. Enter **Spatial lesson homework** as the application name and click **Create Application**.
     ![Image alt text](images/create-application.png)
 
-5. Click **Run Application**
+5. Click **Run Application**.
     ![Image alt text](images/run-application.png)
 
-6. Log in with your APEX username and password
+6. Log in with your APEX username and password.
     ![Image alt text](images/login-apex.png)
 
-7. Click on the tile to navigate to your **Map** page
+7. Click on the tile to navigate to your **Map** page.
     ![Image alt text](images/map-page.png)
 
 8. The page is initially blank. Click on the **Page 2** button at the bottom to edit the page.
     ![Image alt text](images/click-edit-page.png)
 
-9. Drag a **Map** region into the **REGION BODY**
+9. Drag a **Map** region into the **REGION BODY**.
     ![Image alt text](images/drag-map.png)
 
-10. Set the title to **My Map**
+10. Set the title to **My Map**.
     ![Image alt text](images/my-map.png)
 
-11. Under Layers, click on **New**
+11. Under Layers, click on **New**.
     ![Image alt text](images/click-new.png)
 
-12. Update the layer title to **Coastal Zone** and layer type to **Polygons**. Under Source, set the table name to **COASTAL_ZONE**
+12. Update the layer title to **Coastal Zone** and layer type to **Polygons**. Under Source, set the table name to **COASTAL_ZONE**.
     ![Image alt text](images/under-layers.png)
 
 13. Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #18079d or a color of your choosing, and set fill opacity to **0.5**.
     ![Image alt text](images/sdo-geometry.png)
 
-14. In the page tree on the left, right click on Layers and select **Create Layer**
+14. In the page tree on the left, right click on Layers and select **Create Layer**.
     ![Image alt text](images/create-layer.png)
 
 15. In the Layer panel on the right, set the layer name to **Branches**, layer type to **Points** and table name to **BRANCHES**.
@@ -636,7 +636,7 @@ Notes:
 16. Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**.  Under Appearance set fill color to #00ff00 or a color of your choosing.
     ![Image alt text](images/fill-color.png)
     
-17. Again, in the Page tree on the left, right-click on Layers and select **Create Layer**. In the Layer panel on the right, set the new layer name to **Branches in zone** and Layer Type to **Points**. Under Source, set Type to **SQL Query**. Enter the following **into SQL Query**
+17. Again, in the Page tree on the left, right-click on Layers and select **Create Layer**. In the Layer panel on the right, set the new layer name to **Branches in zone** and Layer Type to **Points**. Under Source, set Type to **SQL Query**. Enter the following **into SQL Query**:
     ```
     <copy>
     SELECT
@@ -656,10 +656,10 @@ Notes:
 
     ![Image alt text](images/query-branches.png)
 
-17. Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**. Under Appearance set fill color to #ff0000..
+17. Scroll down the Layer panel on the right. Under Column Mapping set geometry column type to **SDO_GEOMERY**, geometry column to **GEOMETRY**. Under Appearance set fill color to #ff0000.
     ![Image alt text](images/set-fill-color.png)
 
-18. On the top right, click **Save** and then **Run**
+18. On the top right, click **Save** and then **Run**.
     ![Image alt text](images/save-and-run.png)
 
 **Take a screenshot of your APEX page and upload to Blackboard.**
