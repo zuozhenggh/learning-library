@@ -6,6 +6,10 @@ This lab walks you through the steps to provision a Compute Node. This is where 
 
 Estimated Time: 10 minutes
 
+
+Watch the video below for an overview of the provision a compute node lab.
+[](youtube:yU3uW5hFNtc)
+
 ### Objectives
 
 In this lab, you will:
