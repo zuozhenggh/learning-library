@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Get Started with Oracle GoldenGate Veridata",
+  "workshoptitle": "Column Mapping and Purging Data in Oracle GoldenGate Veridata",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -61,7 +61,7 @@
       "description": "This lab walks you through the Purge Data and Delete Directories features in Oracle GoldenGate Veridata.",
       "filename": "./../../ggv-purge-delete-directories/ggv-purge-delete-directories.md"
     },
-    
+
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",

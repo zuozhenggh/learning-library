@@ -11,7 +11,7 @@ In Oracle GoldenGate Veridata, you can add mappings to the selected source and t
 ### Objectives
 In this lab, you will:
 * Add column mapping
-* Remove Column mapping
+* Remove column mapping
 
 ### Prerequisites
 This lab assumes you have:
@@ -23,7 +23,7 @@ This lab assumes you have:
     * Lab: Create Datasource connections
     * Lab: Create Groups and Compare Pairs. Create a Group by name **Group\_Mapping**.
     * Lab: Create Groups and Compare Pairs. Follow the Tasks 1 to 2 to create a compare pair.
-- The understanding of Lab: Create Jobs and Execute Jobs.
+- The understanding of **Lab: Create Jobs and Execute Jobs**.
 
 ## **Task 1:** Remove Mappings
 To Remove Column Mapping:

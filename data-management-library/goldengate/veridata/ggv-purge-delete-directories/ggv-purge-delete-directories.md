@@ -11,9 +11,9 @@ The Delete Directories option allows you to purge old reports, compare results, 
 
 ### Objectives
 In this lab, you will:
-* Purge Data
-* Delete Directories
-* Delete Directories completely
+* Purge data
+* Delete directories
+* Delete directories completely
 
 ### Prerequisites
 This lab assumes you have:
@@ -124,9 +124,8 @@ To delete directories:
 
 5. Click **Reports** and notice that there are no reports under **Existing Reports**.
 
-        ![](./images/5Purge.png " ")
+      ![](./images/5purge.png " ")
 
-You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
@@ -137,5 +136,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Sukin Varghese
+* **Contributors** -  Sukin Varghese, Jonathan Fu
 * **Last Updated By/Date** - Anuradha Chepuri, April 2022
