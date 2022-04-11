@@ -34,9 +34,8 @@ This lab assumes you have:
 
   > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-The following files are required to complete this lab.
-
-- **[Bobby's Burgers & Fries.dva](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/Bobby's%20Burgers%20&%20Fries%20.dva)**
+The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage`*</if> are required to complete this lab.
+- *** use the dva here ***
 
 ## **Task 1:** Data exploration
 1. From the browser session you started in the  Initialize environment lab, **click** on the **Page Menu** icon located in the upper right-hand corner.
@@ -50,7 +49,7 @@ The following files are required to complete this lab.
 
 5. **Select** the **Bobby's Burgers & Fries** icon from under the **Projects** section.  
 
-6. You will be presented with an empty canvas. Let’s start visualizing! First, **click** on the **Prepare tab** at the top of the screen. Here is where we can see all of the data that Bobby's Burgers & Fries will be working with.
+6. You will be presented with an empty canvas. Let’s start visualizing! First, **click** on the **Data Tab** at the top of the screen. Here is where we can see all of the data that Bobby's Burgers & Fries will be working with.
     ![OAS Visualize page](./images/mian-dashboard-visualize-tab.png " ")
 Oracle Analytics Server includes its own light weight data preparation capabilities. When you import the spreadsheet, you will navigate to the preparation tab before adding the data to the project.  Here you can make some modifications to the data elements or make modifications to your data based upon any recommendations Oracle Analytics knowledge service suggests.  Additionally, you can define a relationship between the subject areas in order to join the data sources for further analysis.
 
