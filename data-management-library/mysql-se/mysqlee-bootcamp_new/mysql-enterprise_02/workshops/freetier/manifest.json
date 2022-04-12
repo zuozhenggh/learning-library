@@ -48,6 +48,12 @@
         },
 
         {
+            "title": "Lab 2c: Install Detailed MySQL EE on Linux",
+            "description": "Install Detailed MySQL EE on Linux",
+            "filename": "../../02c-install-detailed-mysql/02c-install-detailed-mysql.md"
+        },
+
+        {
             "title": "Lab 2zzz: Install MySQL Enterprise Edition",
             "description": "Install MySQL Enterprise Edition",
             "filename": "../../02b-install-ee/02b-install-ee.md"

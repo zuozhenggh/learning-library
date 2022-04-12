@@ -4,7 +4,7 @@
 
 ### Objective
 
-Download and upload wget sw, upload and execute deploy.sh script; connect to all mysql servers, then power off mysql2 and mysql3
+In this lab, you will...
 
 ### Prerequisites and Reminders
 
