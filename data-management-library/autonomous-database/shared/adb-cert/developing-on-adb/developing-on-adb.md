@@ -27,7 +27,7 @@ Estimated Time: 15-20 minutes
 ### Objectives
 
 In this lab, you will:
-* Access the Autonomous Database Actions Portal 
+* Create an **Autonomous JSON Database**
 * Create a New `JSON` Collection
 * Upload Sample `JSON` Documents Into **products** Collection
 * Restrict Duplicate Values
@@ -37,31 +37,54 @@ In this lab, you will:
 
 This lab assumes you have:
 * Access to an Oracle Cloud Free Tier Account
-* A running Autonomous JSON Database Instance
+* Logged in to your Oracle CLoud Free Tier Account
 
-## Task 1: Accessing the Autonomous Database Actions Portal 
+## Task 1: Creating an Autonomous JSON Database
 
-1. Select the hamburger menu in the top left of the OCI console. Select **Oracle Database** then navigate and click on **Autonomous JSON Database**.
+1. Select the hamburger menu in the top left of the OCI console. Under the **Features** section, Select **Autonomous Database**.
 
-    ![](./images/T1-1.1.png)
+    ![](./images/T0-1.1.png)
 
-2. Select your running Autonomous JSON Database Instance.
-3. Navigate to the **Tools** tab and under **Database Actions** select **Open Database Actions**.
+    ![](./images/T0-1.2.png)
 
-    ![](./images/T1-1.2.png)
+2. Select your desired **Compartment**, then click on **Create Autonomous Database**.
+
+    ![](./images/T0-1.3.png)
+
+3. Referencing the images below, fill out the respective sections. When finished, select **Create Autonomous Database**. 
+
+    *Note*: 
+    * You may fill out the **Display Name** and **Database Name** as you see fit
+    * Under **Create Administrator Credentials**, use a password of **your** choice.
+    
+    ![](./images/T0-1.4.png)
+
+    ![](./images/T0-1.5.png)
+
+4. While your Autonomous JSON Database is provisioning, it will appear with an **orange** box. Once provisioned and fully ready for use, the box will turn **green**. 
+
+    ![](./images/T0-1.6.png)
+
+    ![](./images/T0-1.7.png)   
+
 
 ## Task 2: Creating a New JSON Collection
 
-1. Use the Username and Password you created when intially provisioning your Autonomous JSON Database to log into the **Database Actions** page.
-2. Once logged in, under Development, select **JSON**.
+1. Navigate to the **Tools** tab and under **Database Actions** select **Open Database Actions**.
+
+    ![](./images/T1-1.2.png)
+
+2. Use the Username and Password you created when intially provisioning your Autonomous JSON Database to log into the **Database Actions** page.
+
+3. Once logged in, under Development, select **JSON**.
 
     ![](./images/T2-1.1.png)
 
-3. This takes you to the JSON portal in **Database Actions**. Exit out of the tutorial and select the **New Collection** button in the upper left of the portal.
+4. This takes you to the JSON portal in **Database Actions**. Exit out of the tutorial and select the **New Collection** button in the upper left of the portal.
 
     ![](./images/T2-1.2.png)
 
-4. Name the new collecion **products** (case-sensitive) and select **Create** in the bottom right-hand side of the pop-up.
+5. Name the new collecion **products** (case-sensitive) and select **Create** in the bottom right-hand side of the pop-up.
 
     ![](./images/T2-1.3.png)
 
