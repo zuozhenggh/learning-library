@@ -61,13 +61,13 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 1.  [OPTIONAL] Click **Terraform Actions** -> **Plan** to validate your configuration. Click **Plan**. This takes about a minute, please be patient.
 
-    ![](./images/terraformactions.png " ")
+    ![Click plan from Terraform Actions.](./images/terraformactions.png " ")
 
-    ![](images/image-20201030095622286.png)
+    ![Plan window loading.](images/planwindow.png)
 
-    ![](./images/planjob.png " ")
+    ![Plan job accepted.](./images/planjob.png " ")
 
-    ![](./images/planjob1.png " ")
+    ![Plan job succeeded.](./images/planjob1.png " ")
 
 ## Task 3: Terraform Apply
 
@@ -75,19 +75,19 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 1. At the top of your page, click on **Stack Details**.  Click the button, **Terraform Actions** -> **Apply**. Click **Apply**. This will create your instance and install Oracle 19c. This takes about a minute, please be patient.
 
-    ![](./images/applyjob1.png " ")
+    ![Begin by clicking stack details.](./images/applyjob1.png " ")
 
-    ![](images/image-20201030095534379.png)
+    ![Click apply from Terraform Actions.](images/applyterraformactions.png)
 
-    ![](./images/applyjob2.png " ")
+    ![Apply job in progress.](./images/applyjob2.png " ")
 
-    ![](./images/step3.1-applyjob3.png " ")
+    ![Apply job succeeded.](./images/step3-1-applyjob3.png " ")
 
     
 
 2. Once this job succeeds, you will get an apply complete notification from Terraform.  Click **Outputs**,  you can get the **public ip address** and **private ip address** for each of the instances. Congratulations, your environment is created! Time to login to your instances to finish the configuration.
 
-    ![image-20201202090351134](images/image-20201202090351134.png)
+    ![Click outputs from Terraform.](images/terraformoutputs.png)
 
 3.  Write down all the public and private ip for later use. It's same like the following.
 
@@ -130,7 +130,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 2.  Enter a name for the session and click **Save**.
 
-    ![](./images/putty-setup.png " ")
+    ![Enter a session name and click save.](./images/putty-setup.png " ")
 
 3.  Click **Connection** > **Data** in the left navigation pane and set the Auto-login username to **opc**.
 
@@ -138,7 +138,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 5.  Navigate to the location where you saved your SSH private key file, select the file, and click Open.  NOTE:  You cannot connect while on VPN or in the Oracle office on clear-corporate (choose clear-internet).
 
-    ![](./images/putty-auth.png " ")
+    ![Navigate to your SSH private key and click open.](./images/putty-auth.png " ")
 
 6.  The file path for the SSH private key file now displays in the Private key file for authentication field.
 
@@ -155,11 +155,11 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     tail -f /u01/ocidb/buildsingle.log
     </copy>
     ````
-    ![](./images/tailOfBuildDBInstanceLog.png " ")
+    ![This file has the configures log of the database.](./images/tailofbuilddbinstancelog.png " ")
 
 2.  When you see the following message, the database setup is complete - **Completed successfully in XXXX seconds** (this may take up to 30 minutes). You can press Ctrl-C to exit from the tail command.
 
-    ![](./images/tailOfBuildDBInstanceLog_finished.png " ")
+    ![After seeing success message exit from tail command.](./images/tailofbuilddbinstancelog-finished.png " ")
 
 3.  Run the following command to verify the database with the SID **ORCL** is up and running.
 
@@ -169,7 +169,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     </copy>
     ````
 
-    ![](./images/pseforcl.png " ")
+    ![Run the command.](./images/pseforcl.png " ")
 
 4. Verify the listener is running:
 
@@ -179,9 +179,9 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     </copy>
     ````
 
-    ![](./images/pseftns.png " ")
+    ![Verify the listener is running.](./images/pseftns.png " ")
 
-5.  Do the same steps to the other VMs, make sure all the databases are create correctly. Connect to the Database using SQL*Plus as the **oracle** user. The 4 CDBs we created named `cata, shd1, shd2, shd3` and the PDB named `catapdb, shdpdb1, shdpdb2, shdpdb3`.
+5.  Do the same steps to the other VMs, make sure all the databases are created correctly. Connect to the Database using SQL*Plus as the **oracle** user. The 4 CDBs we created named `cata, shd1, shd2, shd3` and the PDB named `catapdb, shdpdb1, shdpdb2, shdpdb3`.
 
     ````
     <copy>
@@ -190,7 +190,7 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
     </copy>
     ````
 
-    ![](./images/sqlplus_login_orclpdb.png " ")
+    ![Make sure all databases are created correctly.](./images/sqlplus-login-orclpdb.png " ")
     
 6.  To leave `sqlplus` you need to use the exit command. Copy and paste the text below into your terminal to exit sqlplus.
 
@@ -210,9 +210,9 @@ When using Resource Manager to deploy an environment, execute a terraform **Plan
 
 You now have a fully functional Oracle Database 19c instance running on Oracle Cloud Compute. Check all the 4 instances and make sure they are ready.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Minqiao Wang, DB Product Management, Dec 2020
-* **Last Updated By/Date** - Minqiao Wang, Jul 2021
+* **Last Updated By/Date** - Andres Quintana, April 2022
 
