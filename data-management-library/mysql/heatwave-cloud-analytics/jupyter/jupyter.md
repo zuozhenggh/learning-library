@@ -36,16 +36,13 @@ In this lab, you will:
 
 	![Connect to VM](images/connect-to-vm.png)
 
-2. We need to install helm in **oke-operator**
+2. Install the helm client
 
+	>**Note** Skip this step if you have installed helm client
+	
 	```
 <copy>
-sudo yum-config-manager --enable ol7_developer
-</copy>
-```
-	```
-<copy>
-sudo yum install helm
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
 </copy>
 ```
 

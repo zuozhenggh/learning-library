@@ -52,7 +52,12 @@
             "filename": "../../zeppelin/zeppelin.md"
         },
         {
-            "title": "[OPTIONAL] Lab 9: Deploy phpMyAdmin",
+            "title": "Lab 9: Deploy Redash dashboard",
+            "description": "Create dashborad with Redash on MySQL HeatWave",
+            "filename": "../../redash/redash.md"
+        },
+        {
+            "title": "[OPTIONAL] Lab 10: Deploy phpMyAdmin",
             "description": "Manage MySQL with phpMyAdmin",
             "filename": "../../phpmyadmin/phpmyadmin.md"
         },

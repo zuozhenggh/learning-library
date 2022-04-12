@@ -44,7 +44,17 @@ In this lab, you will:
  </copy>
  ```
 
-3. Install phpmyadmin repository using helm
+3. Install the helm client
+
+	>**Note** Skip this step if you have installed helm client
+	
+	```
+<copy>
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
+</copy>
+```
+
+4. Install phpmyadmin repository using helm
 
 	```
 <copy>
@@ -58,7 +68,7 @@ helm install myrelease bitnami/phpmyadmin --namespace phpmyadmin
 </copy>
 ```
 
-4. Create the phpmyadmin ingress service
+5. Create the phpmyadmin ingress service
 
 	```
 <copy>
@@ -97,7 +107,7 @@ EOF
 </copy>
 ```
 
-5. Find out the public IP of OKE Ingress Controller
+6. Find out the public IP of OKE Ingress Controller
 
 	```
  <copy>
@@ -107,11 +117,9 @@ EOF
 
 	![Ingress IP](images/ingress.png)
 
-6. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
+7. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
 
 	![PhpMyAdmin](images/phpmyadmin.png)
-
-	You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
