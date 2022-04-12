@@ -109,8 +109,9 @@ This lab assumes that you have:
 
 
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
-    ![](./../common/images/restart-kernel-confirmation.png)
     ![](./../common/images/restart-kernel-button.png)
+    
+    ![](./../common/images/restart-kernel-confirmation.png)
 
 1. Throughout the notebook, useful instructions and additional links are provided. Feel free to execute one cell at a time or all of them at once. We also included a table of content at the top of the notebook to help you navigate through the notebook. cuML is a powerful library with an API that is very similar to `scikit-learn`.
 

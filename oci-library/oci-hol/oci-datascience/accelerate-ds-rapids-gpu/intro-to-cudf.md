@@ -107,8 +107,9 @@ There is a menu across the top of the screen. For this lab, the most interesting
 
 
 2. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
-    ![](./../common/images/restart-kernel-confirmation.png)
     ![](./../common/images/restart-kernel-button.png)
+    
+    ![](./../common/images/restart-kernel-confirmation.png)
 
 3. Throughout the notebook, useful instructions and additional links are provided to various sections of the cuDF documentation. Feel free to execute one cell at a time or all of them at once. We also included a table of content at the top of the notebook to help you navigate through the notebook. cuDF is a powerful library with an API that is very similar to Pandas and Dask. In the section "Comparisons with Pandas" we included a few simple performance comparisons between Pandas and cuDF. These comparisons include simple commands like loading a csv file, sorting a column, or performing simple data aggregations.
 
