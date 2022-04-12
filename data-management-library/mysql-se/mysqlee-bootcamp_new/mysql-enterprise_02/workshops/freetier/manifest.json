@@ -36,14 +36,21 @@
             "filename": "../../01e-setup-environment/01e-setup-environment.md"
         },
         {
-            "title": "Lab 2a: Install - MySQL Community",
-            "description": "Install - MySQL Community",
+            "title": "Lab 2a: Install MySQL Community",
+            "description": "Install MySQL Community",
             "filename": "../../02a-install-community/02a-install-community.md"
         },
+
         {
-            "title": "Lab 2b: Install - MySQL Enterprise Edition",
-            "description": "Install - MySQL Enterprise Edition",
-            "filename": "../../install-ee/install-ee.md"
+            "title": "Lab 2b: Open Subnet Ports to Access MySQL",
+            "description": "Open Subnet Ports to Access MySQL",
+            "filename": "../../02b-open-mysql-ports/02b-open-mysql-ports.md"
+        },
+
+        {
+            "title": "Lab 2zzz: Install MySQL Enterprise Edition",
+            "description": "Install MySQL Enterprise Edition",
+            "filename": "../../02b-install-ee/02b-install-ee.md"
         },
         {
             "title": "Lab 8: Install - Veirify MySQL Enterprise Edition ",

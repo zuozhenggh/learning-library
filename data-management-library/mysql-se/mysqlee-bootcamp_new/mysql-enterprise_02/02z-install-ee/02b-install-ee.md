@@ -1,4 +1,4 @@
-# INSTALL - MYSQL ENTERPRISE EDITION
+# Install - MySQL Enterprise Edition
 
 ## Introduction
 
