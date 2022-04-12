@@ -304,10 +304,10 @@ Click the **Save** icon on top right, provide a **Name** and click **Save** butt
 
 22.  Bonus: [Integrate Oracle Functions with OAC Data Flows](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/register-and-use-oci-functions-data-flows.html#GUID-93BB53BC-8463-4957-8B0B-40206AF9805A).  
 **Oracle Analytics Cloud** can natively consumes **OCI Functions**, directly invoking the FaaS function from within an OAC Data Flow safely and securely.  
-Please check the following videos:  
-    - [Oracle Analytics Making OCI Functions Compatible with OAC](youtu.be/oS4TUwjx9e4?list=PL6gBNP-Fr8KVWVRE0U8HQAvoU5mU31KVs)  
-    - [Running Custom OCI Functions in Oracle Analytics Cloud](youtu.be/TpHgZsAnNT0?list=PL6gBNP-Fr8KVWVRE0U8HQAvoU5mU31KVs)
-
+Please check the following videos and documentation:  
+    - [Oracle Analytics Making OCI Functions Compatible with OAC](https://www.youtube.com/watch?v=oS4TUwjx9e4&list=PL6gBNP-Fr8KVWVRE0U8HQAvoU5mU31KVs)  
+    - [Running Custom OCI Functions in Oracle Analytics Cloud](https://www.youtube.com/watch?v=TpHgZsAnNT0&list=PL6gBNP-Fr8KVWVRE0U8HQAvoU5mU31KVs)
+    - [Register and use OCI Functions in Data Flows](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/register-and-use-oci-functions-data-flows.html#GUID-9EF52034-D1BA-4B2C-8378-AE505A4B1009)
 
 You have just finished learning how to **Load** and **Prepare** your **Data**, how to create your first **Workbook** as well as basic **editing** and **filtering**.  
 You have also learnt how to explore **Explain** **ML** feature and  **Auto Insights**, which enable insights that you can immediately start with, instead of a blank canvas.
