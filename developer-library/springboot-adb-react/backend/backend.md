@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, you will build and deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
+In this lab, you will build and deploy the pre-built SpringBoot Java backend Docker image to OKE, then configure the API Gateway.
 
-Estimated time: 25 minutes
+Estimated time: 15 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -22,12 +22,13 @@ As with most React applications (https://reactjs.org/), this application uses re
 
 The APIs are documented using Swagger at http://130.61.67.158:8780/swagger-ui/#/.
 
-The backend is implemented using the following Java classes (under ./backend/src/...):
+The backend is implemented using the following Java classes (under ./backend/src/main/java/com/springboot...):
 
-* Main.java: starts and configures the main entry points
-* ToDoItem.java: maps a Todo Item instance to and from the JSON document
-* ToDoItemStorage.java: stores the Todo item in a persistent store that is the Oracle Autonomous database
-* ToDoListAppService.java: implements the Helidon service and exposes the REST APIs
+* MyTodoListApplication.java: Starts and configures the main entry points
+* ToDoItem.java: Maps a Todo Item instance to and from the JSON document
+* OracleConfiguration.java: Connects SpringBoot backend to Oracle Autonomous Database
+* ToDoItemService.java: Implements the SpringBoot service and exposes the REST APIs
+* ToDoItemController.java: Implements the endpoints and populates data 
 ![bcknd apis](images/Backend-APIs.png)
 
 ### Objectives
@@ -46,24 +47,24 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 The OCI Container Registry is where your Docker images are managed. A container registry should have been created for you in Lab 1 in your compartment.
 
-1. Edit ./backend/src/main/java/com/oracle/todoapp/Main.java
+1. Edit ./backend/src/main/java/com/springboot/config/CorsConfig.java
 
     - Locate the following code fragment
 
-    ![](images/cors-main-new.png " ")
-    - Replace `eu-frankfurt-1` in  `"https://objectstorage.eu-frankfurt-1.oraclecloud.com"` with your region
+    ![](images/allowed-origins.png " ")
+    - Replace `us-phoenix-1` in  `"https://objectstorage.us-phoenix-1.oraclecloud.com"` with your region
 
     - Save the file
 
 This will allow the appropriate object storage bucket to access your application.
 
-2. Run `build.sh` script to build and push the helidon-se image into the repository
+2. Run `build.sh` script to build and push the SpringBoot image into the repository
 
     ```
     <copy>
     cd $MTDRWORKSHOP_LOCATION/backend
     </copy>
-    ./build.sh
+    source build.sh
     ```
   In a couple of minutes, you should have successfully built and pushed the images into the OCI repository.
 
@@ -71,7 +72,7 @@ This will allow the appropriate object storage bucket to access your application
     - Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
-    ![](images/container-registry.png)
+    ![](images/build-image.png)
 
 ## **Task 2**: Deploy on Kubernetes and Check the Status
 
@@ -97,8 +98,8 @@ This will allow the appropriate object storage bucket to access your application
         services
         </copy>
         ```
-    This will run `kubectl get services` in the background, but the setup script creates aliases for ease of use
-        ![](images/get-services.png)
+    This will run `kubectl get services` in the background, but the setup script creates aliases for ease of use. After running the command above, it should output the external IP address.
+        ![](images/services.png)
 
 3. The following command returns all the pods running in your kubernetes cluster:
     ```
@@ -106,7 +107,7 @@ This will allow the appropriate object storage bucket to access your application
     pods
     </copy>
     ```
-This will run `kubectl get pods` in the background, but the setup script creates aliases for ease of use
+This will run `kubectl get pods` in the background, but the setup script creates aliases for ease of use. The pods should say 'running' if everything is done correctly.
 
     ![](images/get-pods.png)
 
@@ -119,11 +120,11 @@ This will run `kubectl get pods` in the background, but the setup script creates
     ```
 
   $ kubectl logs -f <pod name>
-  Example: `kubectl -n mtdrworkshop logs -f todolistapp-helidon-se-deployment-7fd6dcb778-c9dbv`
+  Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 
-    ![](images/pod-logs.png)
+    ![](images/deploy-success.png)
 
-  If the logs return `webserver is up!` then you have done everything correctly.
+  If the logs return 'Tomcat started on port(s): 8080 (http) with context path', then you can move on to task 4!
 ## **Task 3**: UnDeploy (optional)
 
   If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
@@ -154,7 +155,8 @@ The setup script already creates an API gateway, but you still need to create th
    ![](images/create-deployment.png)
 
 4. Fill out the basic information like so:
-    ![](images/basic-information-deployment.png)
+    ![](images/cors-information.png)
+    
 5. Configure Cross-origin resource sharing (CORS) policies.
   - CORS is a security mechanism that will prevent loading resources from unspecified origins (domain, scheme, or port).
   - Allowed Origins: is the list of all servers (origins) that are allowed to access the API deployment typically your Kubernetes cluster IP.
@@ -165,6 +167,7 @@ The setup script already creates an API gateway, but you still need to create th
   To configure CORS, scroll down and click add next to CORS and fill in this information under allowed origins. These are the origins that can load resources to your application.
 
   ![](images/cors-information.png)
+
 6. Configure the Headers
 
     ![](images/headers-new.png)
@@ -195,6 +198,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
-* **Author** -  Kuassi Mensah, Dir. Product Management, Java Database Access, Peter Song Developer Advocate JDBC
+* **Author** -  Peter Song, Developer Advocate JDBC
 * **Contributors** - Jean de Lavarene, Sr. Director of Development, JDBC/UCP
-* **Last Updated By/Date** - Peter Song Developer Advocate  February 2022
+* **Last Updated By/Date** - Peter Song Developer Advocate February 2022
