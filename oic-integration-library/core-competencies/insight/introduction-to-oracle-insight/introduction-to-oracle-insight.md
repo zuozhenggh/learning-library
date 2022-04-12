@@ -7,6 +7,7 @@ The workshop will cover how to use Oracle Integration Insight to provide real-ti
 Estimated Workshop Time: There are 9 labs and may take about 2 hours to complete all LiveLabs and reading material 
 
 ### What is Oracle Integration Insight
+
 Today's competitive market demands that stakeholders be able to understand, monitor, and react to changing market conditions. Businesses need flexible, dynamic, and detailed insight – and they need it as it happens.
 
 Collecting, storing, visualizing, and reporting on business metrics in real time has traditionally been a costly undertaking, requiring significant investment of capital and engineering resources. Software is typically developed to meet the unique needs of business applications. In today’s sophisticated enterprise software environment, many businesses use multiple integrated systems, provided by a variety of vendors, further complicating the task of collecting business metrics.
@@ -14,6 +15,7 @@ Collecting, storing, visualizing, and reporting on business metrics in real time
 The Integration Insight feature (commonly referred to as Insight) in Oracle Integration dramatically simplifies the process of modeling and extracting meaningful business metrics for business users. It provides built-in powerful business analytics through a business-friendly experience, allowing users to model, collect, and monitor metrics for their business processes to achieve real-time visibility and react quickly to changing demands.
 
 ### Insight Capabilities
+
 Insight can collect metrics from business processes that are implemented using integration flows or process applications (or both) in Oracle Integration.
 
  Insight provides:
@@ -31,9 +33,11 @@ Insight can collect metrics from business processes that are implemented using i
 * Advanced analytics presented in both preconfigured and custom dashboards. Dashboards can be viewed in Oracle Integration or embedded in external applications, portals, or web sites in a number of ways, as described in Embed Insight Dashboards in Other Applications.
 
 * Early warnings that prevent business failure through alerts that trigger notifications as needed. Alerts can be defined to flag exceptionally high orders, business errors that may otherwise be missed, or orders stuck in one step for longer than the defined service-level agreement (SLA).
+
 ### What Will You Learn?
 
 In this workshop, you will:
+
 * Comprehend Insight basic navigation, terminology and key concepts
 * Create a model, defining milestone(s), a unique instance identifier, and alert(s)
 * Associate model to a business process by mapping model milestone(s) to the business process implementation.
