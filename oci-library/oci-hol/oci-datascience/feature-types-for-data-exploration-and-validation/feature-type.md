@@ -139,7 +139,7 @@ A conda environment is a collection of libraries, programs, components and metad
 1. If you are asked for a kernel choose `dataexpl_p37_cpu_v3`
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
 ![Running-cell has an asterisk ](./../feature-types-for-data-exploration-and-validation/images/running-cell.png)
-![Executed shell has a number in it](./../feature-types-for-data-exploration-and-validations/finished-cell.png)
+![Executed shell has a number in it](./../feature-types-for-data-exploration-and-validations/images/finished-cell.png)
 
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
 ![Restart kernel](./../feature-types-for-data-exploration-and-validation/images/restart-kernel.png)
