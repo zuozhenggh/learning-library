@@ -26,34 +26,34 @@ Click on the link below to download the Resource Manager zip files you need to b
 
 1. Login to the Oracle Cloud Console, open the hamburger menu in the left hand corner. Choose **Resource Manager > Stacks**. Choose the **Compartment** that you want to use, click the  **Create Stack** button. *Note: If you are in a workshop, double check your region to ensure you are on the assigned region.*
 
-    ![](./images/cloud-homepage.png " ")
+    ![Login to the Oracle Cloud Console.](./images/cloud-homepage.png " ")
 
-    ![](./images/resource.png " ")
+    ![Select stacks from resource manager.](./images/resource.png " ")
 
     
 
-    ![](./images/step1.3-createstackpage.png " ")
+    ![Click the create stack button.](./images/step1-3-createstackpage.png " ")
 
 2. Check the **ZIP FILE**, Click the **Browse** link and select the setup zip file (`sdb19c-primary-num.zip`) that you downloaded. Click **Select** to upload the zip file.
 
-    ![](images/image-20201030094139692.png)
+    ![Select and upload zip file.](images/selectzipfile.png)
 
     Accept all the defaults and click **Next**.
 
 
 3. Accept the default value of the  `CataDB_Shape` and `Shard_Shape`. Paste the content of the public key you create before to the `SSH_PUBLIC_KEY`,  and click **Next**. (Note: If you don't want to compare the performance in the following labs and want save the resource, you can change the catalog db shape to VM.Standard2.1).
 
-    ![image-20201208184358963](images/image-20201208184358963.png)
+    ![Enter SSH key and click next.](images/entersshkey.png)
 
     
 
 4. Click **Create**.
 
-    ![](images/image-20201030094944273.png)
+    ![Click to create stack.](images/clickcreate.png)
 
 5. Your stack has now been created!  Now to create your environment. *Note: If you get an error about an invalid DNS label, go back to your Display Name, please do not enter ANY special characters or spaces. It will fail.*
 
-    ![](./images/step1.7-stackcreated.png " ")
+    ![Your stack is now created.](./images/step1-7-stackcreated.png)
 
 ## Task 2: Terraform Plan (OPTIONAL)
 
