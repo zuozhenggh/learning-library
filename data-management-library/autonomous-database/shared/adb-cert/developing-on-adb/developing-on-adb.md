@@ -53,7 +53,8 @@ This lab assumes you have:
 
 3. Referencing the images below, fill out the respective sections. When finished, select **Create Autonomous Database**. 
 
-    *Note*: 
+    *Note*:
+    * Make sure your **Compartment** is correct. 
     * You may fill out the **Display Name** and **Database Name** as you see fit
     * Under **Create Administrator Credentials**, use a password of **your** choice.
     
