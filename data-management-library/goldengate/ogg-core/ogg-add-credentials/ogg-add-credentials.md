@@ -29,10 +29,34 @@ In this lab, you will:
     <copy>
 
     ```
+## Task 2: Add Oracle GoldenGate Users and Database Credentials
 
+You need to establish a database connection through the Administration Client in preparation to issue other Oracle GoldenGate commands that affect the database. Therefore, the Oracle GoldenGate user must have the appropriate database privileges to be able to execute the commands in the Administration Client.
+
+To add Oracle GoldenGate Users and Database Credentials in the Administration Client:
+
+1. Run the following command to add a user:
+
+    ```
+    <copy>
+    ALTER CREDENTIALSTORE ADD USER c##ggadmin@phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:1521/orcl.dev3sub1phx.databasede3phx.oraclevcn.com ALIAS cggnorth  DOMAIN OracleGoldenGate Password Welcome1
+    <copy>
+
+    ```
+2.  To establish a database connection through Administration Client, run the following command:
+
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggeast
+    <copy>
+
+    ```
 
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
+* [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/command-line-interfaces.html#GUID-C0F6B123-14C0-466F-AE43-CAFB99B08C3D)
+* [ALTER CREDENTIALSTORE](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/alter-credentialstore.html#GUID-50893039-3C29-4C66-87E4-F63EAB05C811)
+* [DBLOGIN USERIDALIAS](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/dblogin-useridalias.html#GUID-897F212D-7F83-4610-BCE8-E1D61744D9AA)
 
 ## Acknowledgements
 * **Author**
