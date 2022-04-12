@@ -104,7 +104,7 @@ This lab assumes that you have:
 1. Click on the `intro_to_clustering.ipynb` notebook tab. This will activate the notebook file.
 
 1. Read through the notebook. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
-    ![](./../common/images/running-cell.png)
+    ![](./../common/images/jlab-running-cell.png)
     ![](./../common/images/jlab-executed-cell.png)
 
 

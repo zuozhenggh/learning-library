@@ -58,7 +58,7 @@ Configuring a tenancy using Oracle Resource Manager includes creating a solution
 
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
-    ![Stack details](./../common/images/orm-stack-details.png)
+    ![Stack details](./../common/images/orm-stack-detail.png)
 
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues, and then repeat this step.
     ![Apply button](./../common/images/orm-stack-apply.png)
@@ -76,7 +76,7 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
 
 1. Choose a compartment you have permission to work in (on the left side of the page). The page updates to display only the resources in that compartment. If you are not sure which compartment to use, contact an administrator.
 1. Click **Create Stack**.
-    ![Create stack](./../common/images/orm-create-stack.png)
+    ![Create stack](./../common/imagesorm-create-stack.png)
 
 1. Click **Sample Solution**, and then click **Select Solution**.
     ![Select solution](./../common/images/orm-select-solution.png)
@@ -100,7 +100,7 @@ Configuring a tenancy using the Oracle Resource Manager includes creating a solu
 1. Select **Provision Functions and API Gateway?** to enable deploying models to Oracle Functions and use the API gateway.
 1. Click **Next** and review the stack configuration.
 1. Click **Create** to create your stack. This creates the stack, but does not create any Data Science resources. The **Stack Details** page appears.
-    ![Stack details](./../common/images/orm-stack-details.png)
+    ![Stack details](./../common/images/orm-stack-detail.png)
 
 1. Click **Terraform Actions**, and then click **Apply** to apply the Terraform script and create the Data Science resources. If the stack generates an error, click **Terraform Actions**, and then click **Destroy** to remove the resources. Fix any issues and then repeat this step.
     ![Apply button](./../common/images/orm-stack-apply.png)

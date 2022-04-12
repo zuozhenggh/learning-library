@@ -81,7 +81,7 @@ To open the notebook, that is used in this lab, have the launcher open. The laun
 ![](./../speed-up-ds-with-the-ads-sdk/images/binary-notebook.png)
 
 1. Read through the document. When you encounter a chunk of code, click in the cell and press *shift + enter* to execute it. When the cell is running a ``[*]`` will appear in the top left corner of the cell. When it is finished, a number will appear in ``[ ]``, for example ``[1]``.
-![](./../common/images/running-cell.png)
+![](./../common/images/jlab-running-cell.png)
 ![](./../common/images/jlab-executed-cell.png)
 
 1. Execute the cells in order. If you run into problems and want to start over again, click the **restart** button then click **Restart**.
