@@ -186,6 +186,8 @@ Otherwise, login to the Oracle Cloud.
 
 This is as far as well go in exploring queries in this lab, but feel free to experiment futher.
 
+You can find a list of query operators here: [Contains Query Operators](https://docs.oracle.com/en/database/oracle/oracle-database/19/ccref/oracle-text-CONTAINS-query-operators.html). Particularly useful operators are FUZZY - useful for spelling mistakes - and NEAR for finding words close to each other.
+
 You may now continue to the next lab.
 
 ## Acknowledgements
