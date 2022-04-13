@@ -1,0 +1,26 @@
+{
+    "workshoptitle": "How to install an Oracle Database 19c silent mode",
+    "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
+                "sample.json":"../../data-load/files/sample.json",
+                "step2.md":"../../data-load/files/step2.md"},
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "The Introduction is always first. The title and contents menu title match for the Introduction.",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Create compute instance",
+            "filename": "../../create-instance/create-instance.md"
+        }, 
+        {
+            "title": "Lab 3: Install Oracle Database 19c in silent mode",
+            "filename": "../../db-install/db-install.md"
+        },
+        {
+            "title": "Lab 4: Install Tools and Services (Optional)",
+            "filename": "../../tools-install/tools-install.md"
+        } 
+    ]
+}
