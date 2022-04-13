@@ -157,26 +157,28 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 5.	Once I submit my request, what’s next?
     -	Our LiveLabs team will review your request within 2 business days. We will let you if we request any information or changes from you. If everything looks good, we will approve it, and your event code will be created automatically within 1 business day. You will receive a notification email containing your event code.
     - Once the event code is created, we recommend you try and verify the event code in LiveLabs before showing to customers.
-6.	Who is an event code ambassador?
+6. Can I extend my event code?
+    - Yes, please contact our LiveLabs team [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com] to extend your event code.
+7.	Who is an event code ambassador?
     -	Event code ambassador represent an Org within Oracle to create event codes.
-7.	For Event Code Ambassador - How to create/update an event code in production? Extend time period for running the event?
+8.	For Event Code Ambassador - How to create/update an event code in production? Extend time period for running the event?
     -	Create or update an event by watching [this](https://otube.oracle.com/media/Creating+Event+Codes+in+LiveLabs/1_gbrukexm) video.
-8.	When will the event code be active?
+9.	When will the event code be active?
     -	The event code will be active on the day of the event or the specific time period you requested the event code.
-9.	Can anyone access the event code or event code link?
+10.	Can anyone access the event code or event code link?
     -	Only those with an oracle.com account
-10.	How many event codes can I request?
+11.	How many event codes can I request?
     -	You can create as many event codes you want based on your requirement/
-11.	Can I create a custom workshop and select just the labs I want to do for my event?
+12.	Can I create a custom workshop and select just the labs I want to do for my event?
     -	Yes, build a separate manifest.json (with your event name), push that to GitHub and give us the new link.
-12.	How long can a custom page be available?
+13.	How long can a custom page be available?
     -	For the time period you requested it for, up to a maximum of 365 days.
-13.	Can I link the event to sales cloud or similar systems?
+14.	Can I link the event to sales cloud or similar systems?
     -	Yes
-14.	Once the event code is ready, What and when should I share details with the customer?
+15.	Once the event code is ready, What and when should I share details with the customer?
     -	You can share your event code link, event code, and QR image to your customers at any time.
     -	The event code will be active on the day of the event or the specific time period you requested the event code.
-15.	What are customer actions?
+16.	What are customer actions?
     -	Only those with an oracle.com account can access the event code page using the event code or event code link.
     -	To navigate to the event page, the customer will use the event code link or search for Oracle LiveLabs on the search engine of their choice, click on the apex link, go to LiveLabs homepage, click on Have an Event Code?, provide the event code and click Submit Event Code, provide the account details and view the event page.
     -	To run the workshop Freetier or Always Free or Paid tenancy, hit the brown button:
@@ -187,19 +189,19 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
         - On My Reservations Page, once the provisioning is done, click on Launch Console to view the Workshop details and Instructions to run the workshop.
         - Provisioning would depend on the workshop, 5-10 minutes for traditional cloud, and 15-25 or so for those with images (on-premises).
         - Then click on Open these workshop instructions in a new tab available at the bottom of the page to run through the instructions.
-16.	How many users can at the same time?
+17.	How many users can at the same time?
     -	Freetier or Always Free or Paid tenancy – A customer would not reserve an environment to execute a workshop on the freetier, it’s on-demand.
     -	To run in LiveLabs tenancy through a green button - There is a quota on how many can be run.  It’s limited by our collection of tenancies and what else is running on the system. We allow 30 concurrent users as the customer would reserve an environment to run the workshop at the same time. If you provide your Own tenancy it is just limited by the resources available.
-17.	Do we get the report of who is running the workshops?
+18.	Do we get the report of who is running the workshops?
     -	Yes, the voucher owner gets access to view the report of the email Id and date registered.
-18.	Are the event codes internal only? Or if an external prospect wants to use these will they need to request one?
+19.	Are the event codes internal only? Or if an external prospect wants to use these will they need to request one?
     -	The vouchers are so that internal people (sales, marketing, consulting, etc) can create their own customizable workshop page for their participants.
-19.	If I request the code for a workshop, does it mean that the workshop will be able to run on oracle's tenancy?
+20.	If I request the code for a workshop, does it mean that the workshop will be able to run on oracle's tenancy?
     -	Not all of the workshops have the "green button" to reserve a workshop enabled.
     -	It goes by what that particular workshop is configured to run on. e.g. If the workshop is configured to run on both freetier & paid, the event code will have both of the options
-20.	Do you track the resource details of what the customers used while running the event?
+21.	Do you track the resource details of what the customers used while running the event?
     -	No, we do not track the resource details of what the customers used while running the event.
-21.	When I create an event code, the link requires an oracle login to access the event. Is there a way to create an event code without authentication?
+22.	When I create an event code, the link requires an oracle login to access the event. Is there a way to create an event code without authentication?
     -	No, all the users need to pass the authentication to login to the event.
 
 ## **LiveLabs Production FAQ**
