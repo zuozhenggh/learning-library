@@ -64,6 +64,11 @@ To create database credentials in the Administration Client:
     <copy>
 
     ```
+    You have now successfully created database credentials for the source (ggeast) and target (ggwest) databases.
+
+  After connecting to the databases, you can enable TRANDATA, add Heartbeat and Checkpoint tables.
+  You may now [proceed to the next lab](#next).
+
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
 * [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/command-line-interfaces.html#GUID-C0F6B123-14C0-466F-AE43-CAFB99B08C3D)
