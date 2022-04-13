@@ -76,6 +76,6 @@ To create database credentials in the Administration Client:
 * [DBLOGIN USERIDALIAS](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/dblogin-useridalias.html#GUID-897F212D-7F83-4610-BCE8-E1D61744D9AA)
 
 ## Acknowledgements
-* **Author**
-* **Contributors**
-* **Last Updated By/Date**
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Preeti Shukla, Volker Kuhr
+* **Last Updated By/Date** - Anuradha Chepuri, April 2022

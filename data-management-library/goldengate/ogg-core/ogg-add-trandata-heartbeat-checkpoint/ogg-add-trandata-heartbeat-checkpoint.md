@@ -57,7 +57,7 @@ To add the Checkpoint table:
   <copy>
   ADD CHECKPOINTTABLE Tablename
   <copy>
-  
+
   ```
 
 You may now [proceed to the next lab](#next).
@@ -65,9 +65,12 @@ You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
-*
+* [ADD TRANDATA](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-trandata.html#GUID-D3FD004B-81E4-4185-92D3-812834A5DEFC)
+* [ADD HEARTBEATTABLE](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-heartbeattable.html#GUID-126E30A2-DC7A-4C93-93EC-0EB8BA7C13CB)
+* [ADD CHECKPOINTTABLE](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-checkpointtable.html#GUID-870D65C1-A18E-4B2D-8257-F58E9A808197)
+* [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-checkpointtable.html#GUID-870D65C1-A18E-4B2D-8257-F58E9A808197)
 
 ## Acknowledgements
-* **Author**
-* **Contributors**
-* **Last Updated By/Date**
+* **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
+* **Contributors** -  Preeti Shukla, Volker Kuhr
+* **Last Updated By/Date** - Anuradha Chepuri, April 2022
