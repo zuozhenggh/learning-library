@@ -5,7 +5,7 @@
         {
             "title": "Introduction to Oracle Integration Insight",
             "description": "Introduction to Oracle Integration Insight",
-            "filename": "../introduction-to-oracle-insight/introduction-to-oracle-insight.md"
+            "filename": "../../introduction-to-oracle-insight/introduction-to-oracle-insight.md"
         },
         {
             "title": "Get Started",
@@ -13,19 +13,19 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
         },
         {
-            "title": "Key Concepts",
+            "title": "Lab 1: Key Concepts",
             "description": "Oracle Insight Key Concepts",
-            "filename": "../key-concepts/key-concepts.md"
+            "filename": ",,./../key-concepts/key-concepts.md"
         },
         {
             "title": "Lab 2: Setup",
             "description": "Oracle Insight Setup",
-            "filename": "../set/setup.md"
+            "filename": "../../set/setup.md"
         },
         {
             "title": "Lab 3: Oracle Insight Navigation",
             "description": "Oracle Insight Navigation",
-            "filename": "../navigation-layout-commands/navigation-layout-commands.md"
+            "filename": "../../navigation-layout-commands/navigation-layout-commands.md"
         },      
         {
             "title": "Lab 4: Create a Model",
@@ -35,7 +35,7 @@
         {
             "title": "Lab 5: Map Milestones",
             "description": "Map Milestones",
-            "filename": "../mapping-milestones/mapping-milestones.md"
+            "filename": "../../mapping-milestones/mapping-milestones.md"
         },
         {
             "title": "Lab 6: Insight Console",
