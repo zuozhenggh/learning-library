@@ -137,7 +137,7 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	Yes, we can limit a workshop to specific regions for the workshops that run on LiveLabs tenancy.
 13.	How to download the list of all the workshops in production?
     -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
-    -	Click on Report: View All Workshops on the left menu Report.  
+    -	Click on Report: View All Workshops on the left menu Report.
     -	Click on Production flg column and select 1 from the dropdown list to filter the workshops in production.
     -	Click Actions -> Download -> Excel Download.
 
@@ -149,26 +149,28 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	Only those with an oracle.com account
 3.	How to request an event code in WMS?
     -	Click [here](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) to navigate to the WMS.
-    -	Click on Request an Event Code and fill the required fields then click Save Event, then click OK and then click Next.
-    -	Fill in the description boxes that you want to customize and click Request Event.
+    -	Click **Request an Event Code** and fill the required fields.
+    - We recommend you set the **Start Date** one day before the actual event, and the **End Date** one day after the actual event, to make sure the event code accommodates for people in all time zones.
+    - Finally, click **Request Event**.
 4.	Can I edit my event code once requested in the WMS?
-    -	No, write a message in the description box and click submit. We make the changes.
-5.	Who is an event code ambassador?
+    -	No, write a message in the **Remarks to the LiveLabs Team** box and click **Save Changes**.
+5.	Once I submit my request, what’s next?
+    -	Our LiveLabs team will review your request within 2 business days. We will let you if we request any information or changes from you. If everything looks good, we will approve it, and your event code will be created automatically within 1 business day. You will receive a notification email containing your event code.
+    - Once the event code is created, we recommend you try and verify the event code in LiveLabs before showing to customers.
+6.	Who is an event code ambassador?
     -	Event code ambassador represent an Org within Oracle to create event codes.
-6.	For Event Code Ambassador - How to create/update an event code in production? Extend time period for running the event?
+7.	For Event Code Ambassador - How to create/update an event code in production? Extend time period for running the event?
     -	Create or update an event by watching [this](https://otube.oracle.com/media/Creating+Event+Codes+in+LiveLabs/1_gbrukexm) video.
-7.	When will the event code be active?
+8.	When will the event code be active?
     -	The event code will be active on the day of the event or the specific time period you requested the event code.
-8.	Can anyone access the event code or event code link?
+9.	Can anyone access the event code or event code link?
     -	Only those with an oracle.com account
-9.	How many event codes can I request?
+10.	How many event codes can I request?
     -	You can create as many event codes you want based on your requirement/
-10.	Can I create a custom workshop and select just the labs I want to do for my event?
+11.	Can I create a custom workshop and select just the labs I want to do for my event?
     -	Yes, build a separate manifest.json (with your event name), push that to GitHub and give us the new link.
-11.	How long can a custom page be available?
+12.	How long can a custom page be available?
     -	For the time period you requested it for, up to a maximum of 365 days.
-12.	Once I submit my request, what’s next?
-    -	We take a look and if everything looks good, we approve it, create your event and send you your request code within 1-2 days.
 13.	Can I link the event to sales cloud or similar systems?
     -	Yes
 14.	Once the event code is ready, What and when should I share details with the customer?
@@ -241,4 +243,4 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 
 * **Author:** Anoosha Pilli, Product Manager, Database Product Management
 * **Reviewed by:** Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-* **Last Updated By/Date:** Kamryn Vinson, March 2022
+* **Last Updated By/Date:** Arabella Yao, Product Manager, Database Product Management, April 2022
