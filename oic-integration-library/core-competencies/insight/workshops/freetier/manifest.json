@@ -15,7 +15,7 @@
         {
             "title": "Lab 1: Key Concepts",
             "description": "Oracle Insight Key Concepts",
-            "filename": ",,./../key-concepts/key-concepts.md"
+            "filename": "../../key-concepts/key-concepts.md"
         },
         {
             "title": "Lab 2: Setup",
@@ -30,7 +30,7 @@
         {
             "title": "Lab 4: Create a Model",
             "description": "Create a Model",
-            "filename": "../create-a-model/create-a-model.md"
+            "filename": "../../create-a-model/create-a-model.md"
         },
         {
             "title": "Lab 5: Map Milestones",
@@ -55,7 +55,7 @@
         {
             "title": "Lab 9: Indictors Test",
             "description": "Indicators Test",
-            "filename": "../indicators-test/indicators-test.md"
+            "filename": "../../indicators-test/indicators-test.md"
         },
         {
             "title": "Lab 10: Custom Dashboards",
