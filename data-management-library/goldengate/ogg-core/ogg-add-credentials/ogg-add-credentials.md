@@ -28,7 +28,7 @@ This lab assumes that you have:
     ```
 ## Task 2: Add Database Credentials
 
-You need to establish 2 database connections (**pdbeast** and **pdbwest**) through the Admin Client in preparation to issue other Oracle GoldenGate commands that affect the database. 
+You need to establish 2 database connections (**pdbeast** and **pdbwest**) through the Admin Client in preparation to issue other Oracle GoldenGate commands that affect the database.
 
 To create database credentials in the Administration Client:
 
@@ -58,12 +58,12 @@ To create database credentials in the Administration Client:
     ```
 4.  To test the database connection, run the following command:
 
-        ```
-        <copy>
-        DBLOGIN USERIDALIAS ggwest
-        <copy>
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggwest
+    <copy>
 
-        ```
+    ```
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
 * [Command Line Interface Reference for Oracle GoldenGate](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/command-line-interfaces.html#GUID-C0F6B123-14C0-466F-AE43-CAFB99B08C3D)
