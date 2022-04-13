@@ -88,7 +88,7 @@ Create the HR.MEMOPTWRITES table in PDB1 to have rows inserted as deferred inser
     with deferred storage.
     ```
 
-By default, an object created like a table does not have a segment created until a first row is inserted. `MEMOPTIMIZE FOR WRITE` tables require a segment created before the first row is inserted.
+    By default, an object created like a table does not have a segment created until a first row is inserted. `MEMOPTIMIZE FOR WRITE` tables require a segment created before the first row is inserted.
 
 ## Task 3: Observe how space is allocated for fast ingest writes
 
@@ -149,7 +149,7 @@ By default, an object created like a table does not have a segment created until
 
     ```
 
-The space has not been initialized yet, it will be once we insert something into the table.
+    The space has not been initialized yet, it will be once we insert something into the table.
 
 6. Insert a row into the table so that the row goes to the space allocated for fast ingest writes in the large pool.
 

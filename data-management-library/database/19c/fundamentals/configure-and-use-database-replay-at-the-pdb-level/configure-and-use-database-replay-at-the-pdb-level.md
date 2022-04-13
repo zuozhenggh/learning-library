@@ -187,7 +187,6 @@ You are ready to start workload clients to replay the captured workload in `PDB1
     password: password
     Wait for the replay to start (11:40:35)
     ```
-    Note: The password required is your respective `SYSTEM` password.
 
 3. The `wrc` client is waiting for Database Replay to start in the `PDB`. In **session 1**, execute the `START_REPLAY` procedure.
 
