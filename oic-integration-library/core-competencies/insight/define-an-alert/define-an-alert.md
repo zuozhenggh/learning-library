@@ -2,16 +2,24 @@
 
 ## Introduction
 
-The Lab will cover how to add an alert to your Model. 
+The Lab will cover how to add an alert to your Model.
 
-Estimated Lab Time: 25 minutes
+Estimated Time: 25 minutes
 
 ## Learning Objectives
+
 In this lab, you will learn how to create the following:
+
 - Add an Alert
 - Test the Alert
 
+## Prerequisites
+
+This lab assumes you have:
+    *Completed Labs 1 through 10
+
 ### How to Add an Alert
+
     A. On the Models page, click the name or Edit icon icon of the model for which you want to create alerts. 
         1. If the model is not a draft, click Create Draft.
         2. Click <Alerts>
@@ -42,8 +50,7 @@ In this lab, you will learn how to create the following:
 
 Now that we have instructed you on how to create an alert, it's your turn
 
-
-You will be using your existing Active Model. YOu will be creating alerts by adding new milestones, indicators and add an alert for them. You will be testing your alert as well.
+You will be using your existing Active Model. You will be creating alerts by adding new milestones, indicators and add an alert for them. You will be testing your alert as well.
 
 ### Task 1: De-Activate
 
