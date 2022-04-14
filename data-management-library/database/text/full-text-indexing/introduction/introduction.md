@@ -31,7 +31,7 @@ You may now proceed to the next lab.
 
 ## Learn More
 
-* [Overview of JSON](https://docs.oracle.com/en/database/oracle/oracle-database/21/adjsn/json-data.html#GUID-B2D82ED4-B007-4019-8B53-9D0CDA81C4FA)
+* [Oracle Text Homepage](https://www-sites.oracle.com/database/technologies/appdev/oracletext.html)
 
 ## Acknowledgements
 
