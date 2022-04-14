@@ -2,7 +2,7 @@
 
 ## About this Lab
 
-The Lab will cover Orcale Integration Insight key concepts and terminology for each stage of building, activating, mapping a model and Console. 
+The Lab will cover Oracle Integration Insight key concepts and terminology for each stage of building, activating, mapping a model and Console. 
 
 Estimated Time: 15 minutes.
 
@@ -10,21 +10,22 @@ Estimated Time: 15 minutes.
 
 In this lab, you will:
 
-    * Learn key terminology and concepts of Oracle Integration Insight
+* Learn key terminology and concepts of Oracle Integration Insight
 
 ## Prerequisites
 
 This lab assumes you have:
 
-        * Oracle Integration Enterprise 
-        * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
-        >**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. 
+ * Oracle Integration Enterprise 
+ * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
+    **Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. 
 **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 
 ## Task 1: Model
-A model is a business process, comprising of Milestone(s), a Unique Instance Indentifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle. 
+A model is a business process, comprising of Milestone(s), a Unique Instance Identifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle. 
 There are 8 states: 
+
 * Draft: A newly created model is in this state until the model is activated. In this state, changes can be made to the model and no metrics are collected. A draft model can be exported to later be imported into another Insight instance.
 * Configured: A model moves into this state when its milestones, indicators, and unique instance identifier have been defined and milestones have been mapped to a business process. A model in this state is ready to activate.
 * Activation In Progress: A model is in this state when activation has been initiated.
@@ -37,8 +38,10 @@ There are 8 states:
 To make changes to an activated model, you must first create a draft version of the active model to edit the model without interrupting metrics collection in the active model. After editing, the model can be reactivated to apply the changes.
 
 ## Task 2: Milestone
-A milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation. 
+
+A Milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation. 
 Characteristics of a milestone include:
+
 * Atomicity: A milestone has no entry or exit point. A milestone is considered to be passed or not passed, but you are never in a milestone. A milestone has no duration and is passed atomically. However, it is important to consider the duration from one milestone to another.
 * No enforced ordering: Milestones can be passed in any order and repeatedly. However, Insight does maintain the natural ordering in which the milestones are defined in the model.
 * Semantic types: A milestone may have one or more semantic classifications that describe the milestone’s role in the execution of a business process. See the list of milestone types below.
