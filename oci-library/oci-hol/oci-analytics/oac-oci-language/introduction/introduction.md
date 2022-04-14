@@ -10,7 +10,7 @@ In this workshop, we describe a pattern where we use OCI Language, one of our AI
 
 Estimated Workshop Time: 6 hours 30 minutes.
 
-![](./images/introduction.png " ")
+![Architecture Diagram](./images/introduction.png " ")
 
 ### Objectives
 
@@ -30,15 +30,14 @@ This lab assumes you have:
 * Familiarity with Oracle Cloud Infrastructure (OCI)
 * Some understanding of cloud, database and visualization fundamentals
 
+## **Task 1**: Verify the Prerequisites
+
+In this lab you will familiarize yourself with the workshop prerequisites.
 
 ## Learn More
 
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
 
 ## Acknowledgements
-* **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering
-* **Contributors** -  Luis -Cabrera Cordon, Sr Product Director -OCI Language Services -- optional
+* **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
+* **Contributors** -  Paridhi Mathur, Cloud Engineering
 * **Last Updated By/Date** - <Name, Month Year>
