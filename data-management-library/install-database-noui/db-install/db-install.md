@@ -34,11 +34,39 @@ This lab assumes you have:
 * Oracle user created
 * noVNC remote desktop is available and you have already logged into the remote desktop environment
   
-## Task 1: Download Software Oracle Database 19c
+## Task 1: Download Oracle Database 19c
 
-1. Sign in to the Oracle Database 19c download page and Accept the License
+1. Sign in to the Oracle Database 19c download page
 
-      TDB ...
+      ![Download Page](images/download-page.png "Download Page")
+
+2. Review and accept license agreenment      
+
+      ![Accept License](images/accept-license.png "Accept License")
+
+3. Copy the Download link if you are using firefox or any other browser      
+
+      ![Copy Download Link](images/download-link.png "Copy Download Link")
+
+4. SSH into your compute instance and change directory to /tmp folder wget followed by the copied link
+
+       ```
+      <copy> 
+      cd /tmp
+      wget <download url copied in above step>
+      </copy>
+      ```
+
+      ![Use wget to download](images/wget-download.png "Use wget to download")
+
+      Rename the downloaded file to LINUX.X64\_193000\_db\_home.zip file
+
+       ```
+      <copy> 
+      cd /tmp
+      mv LINUX.X64_193000_db_home.zip.AuthParam=<Random Number> LINUX.X64_193000_db_home.zip
+      </copy>
+      ```
 
 ## Task 2: Hosts File and Hostname
 
@@ -241,6 +269,7 @@ This lab assumes you have:
       SELINUX=permissive
       </copy>
       ```
+
 3. Restart the server   
 4. Once the change is complete, restart the server or run the following command.
    
@@ -260,14 +289,7 @@ This lab assumes you have:
       systemctl stop firewalld 
       systemctl disable firewalld 
       </copy>
-      ```
-
-      ```
-      <copy>  
-      Removed /etc/systemd/system/multi-user.target.wants/firewalld.service.
-      Removed /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
-      </copy>
-      ```
+      ``` 
 
 ## Task 8: Create required folders
 
@@ -380,7 +402,7 @@ This lab assumes you have:
       </copy>
       ```
 
-      [List Oracle Home Directory](images/list-home.png "List Oracle Home Directory") 
+      ![List Oracle Home Directory](images/list-home.png "List Oracle Home Directory") 
 
       ```
       <copy>  
@@ -506,37 +528,9 @@ This lab assumes you have:
       </copy>
       ```
 
-      ```
-      <copy>  
-      Prepare for db operation
-      8% complete
-      Copying database files
-      31% complete
-      Creating and starting Oracle instance
-      32% complete
-      36% complete
-      40% complete
-      43% complete
-      46% complete
-      Completing Database Creation
-      51% complete
-      53% complete
-      54% complete
-      Creating Pluggable Databases
-      58% complete
-      77% complete
-      Executing Post Configuration Actions
-      100% complete
-      Database creation complete. For details check the logfiles at:
-      /u01/app/oracle/cfgtoollogs/dbca/cdb1.
-      Database Information:
-      Global Database Name:cdb1
-      System Identifier(SID):cdb1
-      Look at the log file "/u01/app/oracle/cfgtoollogs/dbca/cdb1/cdb1.log" for further details.
-      </copy>
-      ```
+      Verify for *Database creation complete* message
 
-      [Install success message](images/db-complete.png "Install success message") 
+      ![Install success message](images/db-complete.png "Install success message") 
 
 
 ## Task 13:  Post Installation

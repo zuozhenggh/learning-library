@@ -49,46 +49,6 @@ This lab assumes:
       ssh -i <private key> opc@<public ip address>
       </copy>
       ``` 
-
-## Task 3: Create oracle user 
-
-1. You can check the logged-in user with whoami. This will return *opc*
- 
-      ```
-      <copy>
-      whoami 
-      </copy>
-      ```  
-
-      As the root user, add a user named oracle which is used later in this lab
-
-      ```
-      <copy> 
-      groupadd oracle 
-      </copy>
-      ``` 
-
-      ```
-      <copy> 
-      useradd -m -g oracle -d /home/oracle -s /bin/bash oracle 
-      </copy>
-      ``` 
-
-      ```
-      <copy> 
-      passwd oracle
-      < password > 
-      </copy>
-      ``` 
-
-      ```
-      <copy> 
-      su - oracle
-      Password: 
-      </copy>
-      ``` 
-
-
  
    You successfully made it to the end this lab. You may now *proceed to the next lab*.  
 
