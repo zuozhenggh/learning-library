@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this workshop, we will migrate a sample HR database application to an Autonomous Database in Oracle Cloud Infrastructure using the new cloud-native OCI GoldenGate. The purpose of this workshop is to show the simple and yet efficient way to migrate a database to Oracle Cloud Infrastructure. This workshop consists of four labs. 
+In this workshop, we will migrate a sample HR database application to an Autonomous Database in Oracle Cloud Infrastructure using the new cloud-native OCI GoldenGate. The purpose of this workshop is to show the simple and yet efficient way to migrate a database to Oracle Cloud Infrastructure. This workshop consists of four labs.
 
 In the first three labs, we will use the OCI GoldenGate  for the database migration to designated resources which are in Oracle Cloud Infrastructure. In the last lab, we will migrate an HR application to the built-in APEX environment of the Oracle Autonomous Database. Bonus lab also will unfold some additional tasks for you to explore some of the latest APEX features.
 
-*Estimated total Workshop Time*: 1.5 hours
+*Estimated Time*: 1.5 hours
 
 ### About Oracle Cloud Infrastructure GoldenGate
 
@@ -14,7 +14,7 @@ Oracle Cloud Infrastructure GoldenGate is a managed service providing a real-tim
 
 ### About HR schema
 
-We are about to migrate Oracle's famous sample schema HR to the Oracle Autonomous Database. This sample database schema will represent our on-premises source database and consists of multiple tables. 
+We are about to migrate Oracle's famous sample schema HR to the Oracle Autonomous Database. This sample database schema will represent our on-premises source database and consists of multiple tables.
 
 ### About Autonomous Database
 
@@ -24,7 +24,7 @@ This is self-driving, converged, multimodel database and machine learning-based 
 
 First of all Oracle Application Express (APEX) is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere. Also, APEX is a built-in tool of the Autonomous Database and we will explore the best capabilities in the bonus step.
 
-### About Terraform 
+### About Terraform
 
 Terraform is an open-source tool that allows you to manage programmatically, version, and persist infrastructure through the "infrastructure-as-code" model.
 The Oracle Cloud Infrastructure (OCI) Terraform provider is a component that connects Terraform to the OCI services that you want to manage. We will use it as our infrastructure orchestration to deploy all necessary resources.
@@ -62,8 +62,6 @@ All of the above resources are going to be deployed in Oracle Cloud Infrastructu
 * Oracle Cloud Infrastructure supports the following browsers and versions: Google Chrome 69 or later, Safari 12.1 or later, Firefox 62 or later.
 
 > **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
-This concludes the introduction. You may now **[proceed to next step](#next).**
 
 ## Learn More
 

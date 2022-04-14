@@ -1,15 +1,32 @@
 # Oracle Integration Insight Key Concepts
 
-## About this Lab
+## Introduction
 
-The Lab will cover Orcale Integration Insight key concepts and terminology for each stage of building, activating, mapping a model and Console. 
+The Lab will cover Oracle Integration Insight key concepts and terminology for each stage of building, activating, mapping a model and Console.
 
-Estimated Lab Time: This Lab will be 15 minutes.
+Estimated Time: 15 minutes.
 
+### Objectives
 
-## Model
-A model is a business process, comprising of Milestone(s), a Unique Instance Indentifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle. 
-There are 8 states: 
+In this lab, you will:
+
+* Learn key terminology of Oracle Integration Insight
+* Understand key concepts of Oracle Integration Insight
+
+## Prerequisites
+
+This lab assumes you have:
+
+* Oracle Integration Enterprise
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
+    **Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+
+## Task 1: Model
+
+A model is a business process, comprising of Milestone(s), a Unique Instance Identifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle.
+There are 8 Model states:
+
 * Draft: A newly created model is in this state until the model is activated. In this state, changes can be made to the model and no metrics are collected. A draft model can be exported to later be imported into another Insight instance.
 * Configured: A model moves into this state when its milestones, indicators, and unique instance identifier have been defined and milestones have been mapped to a business process. A model in this state is ready to activate.
 * Activation In Progress: A model is in this state when activation has been initiated.
@@ -21,9 +38,11 @@ There are 8 states:
 
 To make changes to an activated model, you must first create a draft version of the active model to edit the model without interrupting metrics collection in the active model. After editing, the model can be reactivated to apply the changes.
 
-## Milestone
-A milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation. 
+## Task 2: Milestone
+
+A Milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation.
 Characteristics of a milestone include:
+
 * Atomicity: A milestone has no entry or exit point. A milestone is considered to be passed or not passed, but you are never in a milestone. A milestone has no duration and is passed atomically. However, it is important to consider the duration from one milestone to another.
 * No enforced ordering: Milestones can be passed in any order and repeatedly. However, Insight does maintain the natural ordering in which the milestones are defined in the model.
 * Semantic types: A milestone may have one or more semantic classifications that describe the milestone’s role in the execution of a business process. See the list of milestone types below.
@@ -31,15 +50,17 @@ Characteristics of a milestone include:
 * Indicators: Milestones can have indicators associated with them whose values are extracted when the milestone is passed. These indicators represent the state of the instance when the milestone is passed, and have a variety of different semantic options.
 
 Milestones are of the following types:
-* Initial: This milestone is preseeded in a newly created model. It is mandatory and cannot be removed from the model. A model instance is assumed to be valid when a milestone of type Initial is passed. This concept is key to filtering out instances that may already be in flight when Insight starts monitoring a runtime engine. An instance that has most recently passed an Initial milestone is in an Active state.
+
+* Initial: This milestone is preceded in a newly created model. It is mandatory and cannot be removed from the model. A model instance is assumed to be valid when a milestone of type Initial is passed. This concept is key to filtering out instances that may already be in flight when Insight starts monitoring a runtime engine. An instance that has most recently passed an Initial milestone is in an Active state.
 * Standard: Represents a milestone that is neither Terminal nor Error. An instance that has most recently passed a Standard milestone is in an Active state.
 * Error: Represents a milestone that reflects some business error condition encountered in the execution of the business process. The business process implementation may account for and recover from errors, and thus Error milestones are not necessarily also Terminal. An instance that has most recently passed an Error milestone is in an Error state.
-* Terminal: This milestone is preseeded in a newly created model. It is mandatory and cannot be removed from the model. A terminal milestone represents an expected end to the model instance. For example, a milestone "Order Complete" that represents the completion of an order might be modeled as a Terminal milestone. Insight does not enforce the end of an instance after a Terminal milestone, and further milestones may be passed. An instance is in a Completed state when the last milestone passed was a Terminal milestone.
+* Terminal: This milestone is preceded in a newly created model. It is mandatory and cannot be removed from the model. A terminal milestone represents an expected end to the model instance. For example, a milestone "Order Complete" that represents the completion of an order might be modeled as a Terminal milestone. Insight does not enforce the end of an instance after a Terminal milestone, and further milestones may be passed. An instance is in a Completed state when the last milestone passed was a Terminal milestone.
 * Terminal/Error: Represents an Error milestone, which also represents the expected end of the business process processing. An instance that reaches a Terminal/Error milestone is in a Failed state.
 
 Every instance (unique business transaction) of the model must pass through at least an Initial and a Terminal milestone.
 
-## Unique Instance Indentifier
+## Task 3: Unique Instance Identifier
+
 Every Insight model must have a unique instance identifier defined. This identifier describes a value that is extracted at runtime for every instance (business transaction) of the business process defined by the model.
 
 Insight uses the unique instance identifier to grant you visibility into your entire business process, even if it is implemented in more than one integration or process.
@@ -50,7 +71,7 @@ The unique instance identifier value is extracted at runtime every time a milest
 
 When a business process implementation spans more than one integration or process, or both, you must assign the model's unique instance identifier to mapped milestones to establish the correlation between the actions in the same instance of the business process and extract the unique instance identifier value when the specified milestone is passed. For example, if your business process is implemented across two integrations, and the order number is extracted from the first integration, when the second integration is invoked you can extract the order number a second time to correlate its actions as part of the same order.
 
-## Indicators
+## Task 4: Indicators
 
 Indicators represent metrics that are unique to a business process, and are extracted when milestones are passed in a business process implementation.
 
@@ -66,9 +87,9 @@ There are two types of indicators:
 
 * Dimensions provide a type of grouping and categorization of business transactions (instances), allowing for slicing and dicing of aggregate integration measures. For example, a typical order in a business process might define dimensions for Geographic Region, Sales Channel, or Product Category.
 
-Insight does note support duplicate indicators. 
+Insight does note support duplicate indicators.
 
-## Alerts
+## Task 5: Alerts
 
 Alerts define conditions for milestones or indicators to notify users when those conditions are met.
 
@@ -80,6 +101,13 @@ You can optionally define alerts in your model to notify users by email when:
 
 You can configure the alert notification email to include the unique instance identifier, indicator values, and a link to the associated Business Transactions dashboard in the body of the email.
 
+You may now **proceed to the next lab**.
+
 ## Learn More
 
 More about key concepts and terminology can be found at [https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html](http://docs.oracle.com)
+
+## Acknowledgements
+
+* **Author** - Lucy Cortez, Product Enablement Management - Oracle Integration
+* **Last Updated By/Date** - Lucy Cortez, April 2022
