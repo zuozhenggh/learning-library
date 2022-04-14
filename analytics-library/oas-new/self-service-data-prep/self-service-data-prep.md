@@ -126,7 +126,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     Perform the same steps to rename the Zip Code_State column label to State.
 
-    RMB over the State Column label, Notice there are a wide variety of transformation options!
+    **Right Click** over the State Column label, Notice there are a wide variety of transformation options!
 
     ![](./images/asdvff12.png " ")
 
@@ -182,23 +182,33 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     **Click** on the + icon.  The Create Column dialog box appears.  
 
-    - Give the new column a name – Age
+        - Give the new column a name – Age
 
-    Enter your calculation simply by typing into the box or by utilizing the functions listed in the table on the right.  
+     Enter your calculation simply by typing into the box or by utilizing the functions listed in the table on the right.  
     
-    I would like to calculate age utilizing current date and the birthday column.  I need to utilize the year function in order to create my calculation. 
+     I would like to calculate age utilizing current date and the birthday column.  I need to utilize the year function in order to create my calculation. 
 
-    In the box, I begin typing year, notice that Oracle Analytics Server begins to provide choices matching my text or I can simply click on the functions listed on the right. 
-
-    - Select 'Year'.  In (dimension), select 'current_date'.  
-    - Enter an ‘ – ‘ to denote subtraction.
-    - Enter year.  In (dimension), enter ‘birthdate’.
-
-    Your entry should look like this.
+     In the box, begin typing Year, as you type, notice that Oracle Analytics Server provides choices matching my data entry.  **Select** Year when it is provided as an option.  
     
-    ![](./images/asdvff12-j.png " ")
+     Notice that (dimension) appears beside Year. Let's utilize the current date function to specify year.  
+
+     ![](./images/asdvff12-k.png " ")
+     
+     Begin typing current. As you type, you should see options matching the entry  of current.  **Select** 'current_date' when it is provided as an option.  
+
+     Make sure you move your cursor outside of the parenthesis.
+
+        - Enter an ‘ – ‘ to denote subtraction.
+
+     To complete our calculation, we will utilize the year specified within BIRTHDATE.    
+
+        - Repeat the steps above to create Year(Birthdate)
+
+     Your entry should look like this.
     
-    Once complete, **Click** Validate.  If the calculation has been entered successfully, then **Click** ‘Add Step’.
+     ![](./images/asdvff12-j.png " ")
+    
+     Once complete, **Click** Validate.  If the calculation has been entered successfully, then **Click** ‘Add Step’.
 
 
 11.	I’m very happy with my dataset.  I’ve made several modifications and cleaned up my data.  It is ready for analysis.  
@@ -211,9 +221,9 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     You may begin your analysis by selecting the appropriate data elements. 
 
-    Take a look at the Birthday, and Date Left data elements list in the data panel.  
+    Take a look at the Birthdate, and Date Left data elements list in the data panel.  
     
-    Click on “Date Left”, notice that Oracle Analytics has created a time dimension automatically for analysis.  
+    Click on “Birthdate. Notice that Oracle Analytics has created a time dimension automatically for analysis.  
     
     You may slice your data by a variety of time dimensions without having to write code, or transform your date elements. 
 
@@ -257,11 +267,13 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
      - CLOUD_TIME_SMALL
      - CLOUD_D_ORDERS
     
-     Once selected, RMB - select 'Add to dataset'
+     Once selected, **Right Click** - select 'Add to dataset'
 
      ![](./images/asdvff17.png " ")
 
      Notice that a couple of joins have been defined within the data source, as a result, the joins have happened automatically.
+
+     ![](./images/asdvff17-a.png " ")
 
      **Click** or **Hover** over the connection point. 
 

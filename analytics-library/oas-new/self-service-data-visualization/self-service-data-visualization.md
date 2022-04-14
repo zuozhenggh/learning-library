@@ -107,7 +107,8 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
       ![](./images/asdvff12-a.png " ")
 
 11.   Navigate back to the "New Workbook" tab located up above the workbook area. 
-      ![](./images/asdvff1012c.png " ")
+
+      ![](./images/asdvff12-c.png " ")
 
       Notice the inventory dataset is available to add to the workbook.  
 
@@ -115,51 +116,53 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       ![](./images/asdvff12-f.png " ")</if>
     
-12.   Let's define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis.
+12.    Let's define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis.
 
-      From the top - middle of the workbook, notice three navigation options - "Data"  "Visualize"  "Present"
+       From the top - middle of the workbook, notice three navigation options - "Data"  "Visualize"  "Present"
 
-      - **Click**  "Data"
+       - **Click**  "Data"
 
-      ![](./images/asdvff12-g.png " ")</if>
+       ![](./images/asdvff12-g.png " ")</if>
 
-      Within Data, you have the ability to identify the key data elements and join your data sources.  Oracle Analytics will attempt to locate data elements that are labeled the same, and automatically make the join if identical data element labels are found.  
+       Within Data, you have the ability to identify the key data elements and join your data sources.  Oracle Analytics will attempt to locate data elements that are labeled the same, and automatically make the join if identical data element labels are found.  
 
-      Notice data diagram. The data diagram provides a graphical representation of your data sources and data source connections. Note there are no connections.   Move your cursor in between the data sources   "SampleApp" and "Inventory".
+       Notice data diagram. The data diagram provides a graphical representation of your data sources and data source connections. Note there are no connections.   Move your cursor in between the data sources   "SampleApp" and "Inventory".
 
-      A match was not identified, therefore we must create our own.
+       A match was not identified, therefore we must create our own.
 
-      - **Click** on "0' in between the two data sources. 
+       - **Click** on "0' in between the two data sources. 
 
-      - **Click** "Add Another Match"  
+       - **Click** "Add Another Match"  
 
-      ![](./images/asdvff12-h.png " ")</if>
+       ![](./images/asdvff12-h.png " ")</if>
 
-      From inventory
+       From inventory
    
-     - **Click** on "Select Data" and select the "Product Name” column.  
+        - **Click** on "Select Data" and select the "Product Name” column.  
 
         ![](./images/asdvff12-j.png " ")</if>
 
-      Perform the same steps on "SampleApp" and select "Products - Product" to join the data sources. 
+        Perform the same steps on "SampleApp" and select "Products - Product" to join the data sources. 
 
-     Notice the data sources are joined.  
+        Notice the data sources are joined.  
 
-     - **Navigate** to "Visualize". 
+        ![](./images/asdvff12-k.png " ")</if>
 
-     ![](./images/asdvff13.png " ")
+       - **Navigate** to "Visualize". 
 
-     -  Explore the data elements panel on the left. Note the Inventory spread sheet is listed under SampleApp.
+       ![](./images/asdvff13.png " ")
+
+       -  Explore the data elements panel on the left. Note the Inventory spread sheet is listed under SampleApp.
 
         ![](./images/asdvff13-a.png " ")
 
-13.  Now that we've successfully mashed up our data, let's continue with our analysis.  **Hold control** and **select** "Product -> Product"     from SampleApp and "Stock" and "Demand" from Inventory.
+13.     Now that we've successfully mashed up our data, let's continue with our analysis.  **Hold control** and **select** "Product -> Product"     from SampleApp and "Stock" and "Demand" from Inventory.
 
-     - **Right Click** and **Select** "Pick Visualization".  
+        - **Right Click** and **Select** "Pick Visualization".  
 
-     ![](./images/asdvff16.png " ")
+       ![](./images/asdvff16.png " ")
 
-      - **Select** "Bar"
+       - **Select** "Bar"
 
      ![](./images/asdvff17.png " ")
 
