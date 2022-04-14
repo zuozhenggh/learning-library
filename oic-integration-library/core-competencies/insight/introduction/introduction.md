@@ -73,4 +73,4 @@ This concludes this lab. You may now [proceed to the next lab](#next)
 ## Acknowledgements
 * **Author** - Lucy Cortez Product Enablement Manager OIC
 * **Contributors** - Ravi Chanblani Product Manager - Integration OIC 
-* **Last Updated By/Date** - Lucy Cortez August 2021
+* **Last Updated By/Date** - Lucy Cortez April 2022
