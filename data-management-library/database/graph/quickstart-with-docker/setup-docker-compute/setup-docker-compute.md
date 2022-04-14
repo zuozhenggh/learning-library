@@ -210,8 +210,7 @@ Now, we are going to install git using yum as the root user.
 You may now *proceed to the next lab*.
 
 ## Acknowledgements
-* **Author** - Gerald Venzl, Master Product Manager, Database Development
-* **Adapted for Cloud by** -  Tom McGinn, Sr. Principal Product Manager, Database and Database Cloud Service
+* **Author** - Gerald Venzl, Master Product Manager, Database Development 
 * **Contributor** - Anoosha Pilli, Product Manager, Arabella Yao, Product Manager Intern, Database Management, June 2020
 * **Last Updated By/Date** - Anoosha Pilli, October 2020
 
