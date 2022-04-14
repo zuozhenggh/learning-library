@@ -1,30 +1,31 @@
 # Oracle Integration Insight Key Concepts
 
-## About this Lab
+## Introduction
 
-The Lab will cover Oracle Integration Insight key concepts and terminology for each stage of building, activating, mapping a model and Console. 
+The Lab will cover Oracle Integration Insight key concepts and terminology for each stage of building, activating, mapping a model and Console.
 
 Estimated Time: 15 minutes.
 
-## Objectives
+### Objectives
 
 In this lab, you will:
 
-* Learn key terminology and concepts of Oracle Integration Insight
+* Learn key terminology of Oracle Integration Insight
+* Understand key concepts of Oracle Integration Insight
 
 ## Prerequisites
 
 This lab assumes you have:
 
- * Oracle Integration Enterprise 
- * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
-    **Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. 
+* Oracle Integration Enterprise
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
+    **Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
 **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-
 ## Task 1: Model
-A model is a business process, comprising of Milestone(s), a Unique Instance Identifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle. 
-There are 8 states: 
+
+A model is a business process, comprising of Milestone(s), a Unique Instance Identifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle.
+There are 8 Model states:
 
 * Draft: A newly created model is in this state until the model is activated. In this state, changes can be made to the model and no metrics are collected. A draft model can be exported to later be imported into another Insight instance.
 * Configured: A model moves into this state when its milestones, indicators, and unique instance identifier have been defined and milestones have been mapped to a business process. A model in this state is ready to activate.
@@ -39,7 +40,7 @@ To make changes to an activated model, you must first create a draft version of 
 
 ## Task 2: Milestone
 
-A Milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation. 
+A Milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation.
 Characteristics of a milestone include:
 
 * Atomicity: A milestone has no entry or exit point. A milestone is considered to be passed or not passed, but you are never in a milestone. A milestone has no duration and is passed atomically. However, it is important to consider the duration from one milestone to another.
@@ -86,7 +87,7 @@ There are two types of indicators:
 
 * Dimensions provide a type of grouping and categorization of business transactions (instances), allowing for slicing and dicing of aggregate integration measures. For example, a typical order in a business process might define dimensions for Geographic Region, Sales Channel, or Product Category.
 
-Insight does note support duplicate indicators. 
+Insight does note support duplicate indicators.
 
 ## Task 5: Alerts
 
@@ -105,3 +106,8 @@ You may now **proceed to the next lab**.
 ## Learn More
 
 More about key concepts and terminology can be found at [https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html](http://docs.oracle.com)
+
+## Acknowledgements
+
+* **Author** - Lucy Cortez, Product Enablement Management - Oracle Integration
+* **Last Updated By/Date** - Lucy Cortez, April 2022
