@@ -6,11 +6,11 @@ The workshop will cover how to navigate to Insight and the command fields you wi
 
 Estimated Workshop Time: 5 Minutes
 
-### Introduction
+## Introduction
 
 The Integration Insight feature (commonly referred to as Insight) is located in home page of Oracle Integration.
 
-### Objectives
+## Objectives
 
 In this workshop, you will:
 
