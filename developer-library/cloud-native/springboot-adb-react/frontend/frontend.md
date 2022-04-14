@@ -6,7 +6,7 @@ In this lab you will deploy a pre-built ReactJS application locally then build i
 
 Estimated time: 15 minutes
 
-Watch the video below for a quick walk through of the lab.
+<!-- Watch the video below for a quick walk through of the lab.
 
 Mac:
 
@@ -14,7 +14,7 @@ Mac:
 
 Windows:
 
-[](youtube:rHAf4ZW4XP0)
+[](youtube:rHAf4ZW4XP0) -->
 
 
 ### Understand the ReactJS Application
