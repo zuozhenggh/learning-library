@@ -29,7 +29,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
 1.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Compartments**. A list of the compartments you have access to is displayed.
 
-    ![Create Compartment One](./images/createcompartmentone.png " ")
+    ![Create Compartment](./images/createcompartmentone.png " ")
 
 2. Navigate to the compartment in which you want to create the new compartment:
     * To create the compartment in the tenancy (root compartment) click **Create Compartment**
@@ -41,7 +41,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
     * **Compartment**: The compartment you are in is displayed. To choose another compartment to create this compartment in, select it from the list.
     **Tags**: If you have permissions to create a resource, then you also have permissions to apply free-form tags to that resource. To apply a defined tag, you must have permissions to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
 
-    ![Create Compartment Two](./images/createcompartmenttwo.png " ")
+    ![Create Compartment](./images/createcompartmenttwo.png " ")
 
 4. Click **Create Compartment**.
 
@@ -49,7 +49,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
 5. Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Groups**. A list of the groups in your tenancy is displayed.
 
-    ![Create Group One](./images/creategroupone.png " ")
+    ![Create Group](./images/creategroupone.png " ")
 
 6. Click **Create Group**
 
@@ -58,7 +58,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
     * **Description**: A friendly description. You can change this later if you want to.
     * **Tags**: If you have permissions to create a resource, then you also have permissions to apply free-form tags to that resource. To apply a defined tag, you must have permissions to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
 
-    ![Create Group Two](./images/creategrouptwo.png " ")
+    ![Create Group](./images/creategrouptwo.png " ")
 
 8. Click **Create Group**.
 
@@ -169,17 +169,17 @@ Create a VCN with Internet access.
 
 2.	Click the button **Start VCN Wizard**.
 
-    ![Create VCN One](./images/createvcnone.png " ")
+    ![Create VCN](./images/createvcnone.png " ")
 
 3.	Select **Create VCN with Internet Connectivity**
 
-    ![Create VCN Two](./images/createvcntwo.png " ")
+    ![Create VCN](./images/createvcntwo.png " ")
 
 4.	Click **Start SVN Wizard**
 
 5.	Enter a name for the VCN and click **Next**
 
-    ![Create VCN Three](./images/createvcnthree.png " ")
+    ![Create VCN](./images/createvcnthree.png " ")
 
 6.	Click **Create**
 
@@ -247,7 +247,7 @@ Get familiar with the Language AI Service
 
 2.	In the Pre-trained models section, you can enter any text to analyze (or just keep the text there)
 
-   ![Open AI Language Two](./images/openlanguageaitwo.png " ")
+   ![Open AI Language](./images/openlanguageaitwo.png " ")
 
 3.	OCI Language has several capabilities, including sentiment analysis and entity extraction. Make sure those capabilities are selected
 
@@ -255,7 +255,7 @@ Get familiar with the Language AI Service
 
 5.	Inspect the results you get. If you cannot analyze the text, you may have to check that your policies are set correctly.
 
-   ![Open AI Language Three](./images/openlanguageaithree.png " ")
+   ![Open AI Language](./images/openlanguageaithree.png " ")
 
 6.	Click the **Show JSON** button on the output of the analysis so that you can see the schema of the JSON that you get by calling each of the capabilities.
 

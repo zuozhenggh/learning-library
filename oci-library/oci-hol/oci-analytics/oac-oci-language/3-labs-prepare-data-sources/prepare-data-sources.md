@@ -71,7 +71,7 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 3.	On the options, set a **Display Name** and **Database Name**
 
-   ![Create ADW Two](./images/createadwtwo.png " ")
+   ![Create ADW](./images/createadwtwo.png " ")
 
 4.	Workload type: **Data warehouse**.
 
@@ -81,15 +81,15 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 7.	Click **Create Autonomous Database** (Wait for your dataset to provision which may take up to 15mins)
 
-   ![Create ADW Three](./images/createadwthree.png " ")
+   ![Create ADW](./images/createadwthree.png " ")
 
 8.	On your database details page, click **Database Actions**.
 
-   ![Create ADW Four](./images/createadwfour.png " ")
+   ![Create ADW](./images/createadwfour.png " ")
 
 9.	Under **Development**, click **SQL**.
 
-   ![Create ADW Five](./images/createadwfive.png " ")
+   ![Create ADW](./images/createadwfive.png " ")
 
 11. Create a Contributor user. Autonomous Databases come with a predefined database role named **DWROLE**. This role provides the common privileges for a database developer or data scientist to perform real-time analytics. Depending on the usage requirements you may also need to grant individual privileges to users.
 
@@ -104,8 +104,8 @@ In this task we'll create and configure your target Autonomous Data Warehouse da
 
 Whilst we are in the Database Actions dashboard, we will create 2 Tables
 
-1.	A table to store the extracted aspects and related entities
-2.	A table to store the raw reviews
+1.	A table **REVIEWS** to store the extracted aspects and related entities
+2.	A table **SENTIMENT** to store the raw reviews
 Follow the scripts below:
 
   **Create Raw Reviews Table**

@@ -73,7 +73,7 @@ The sample output would be:
 
 Oracle Data Integration today supports calling functions, where the data payload is a single base 64 encoded string that contains the records to process, and a set of parameters.
 
-Sample Oracle Data Integration Function Input:
+Sample **Oracle Data Integration Function Input**:
 
 		<copy>{				"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}
     }</copy>
@@ -87,7 +87,7 @@ Note that the encoded data is the base 64 encode version of a set of JSON Lines 
 		{"id":2,"info":"Luis likes to work at Oracle and learn about data integration"
 		}</copy>
 
-The output of the Oracle Data Integration Function will be a list of results that has the shape of a table. Currently Oracle Data Integration does not support nesting of complex structures.
+The output of the **Oracle Data Integration Function** will be a list of results that has the shape of a table. Currently Oracle Data Integration does not support nesting of complex structures.
 
 This is what the sample output should look like. Notice that it does not have nested structures.
 
@@ -309,18 +309,18 @@ We need to map your newly created function to an API endpoint that is accessible
 3.	Click **Create Deployment**
 		Give the deployment a name and a prefix (i.e. /language)
 
-   ![Deploy API One](images/deployapione.png)
+   ![Deploy API](images/deployapione.png)
 
 4.	Click **Next**, now you can add routes to your deployment.
 
 5.	Then **Add a Route**
-	- Specify a path, for instance /sentiment
-	- For methods, select POST (since we will be sending a body on the request)
-	- Type: Oracle Functions
-	- Select the sentiment application you created in Section 4
-	- Select the name of the function “sentiment”
+	- Specify a **path**, for instance /sentiment
+	- For **methods**, select POST (since we will be sending a body on the request)
+	- **Type**: Oracle Functions
+	- Select the sentiment **application** you created in Section 4
+	- Select the name of the **function** “sentiment”
 
-   ![Deploy API Two](images/deployapitwo.png)
+   ![Deploy API](images/deployapitwo.png)
 
 6.	Click **Next** to review your route.
 

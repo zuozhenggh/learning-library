@@ -105,57 +105,57 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 5.	Click **Create Data Flow**. The data flow designer opens in a new tab.
 
-  ![Create Data Flow One](./images/createdataflowone.png " ")
+  ![Create Data Flow](./images/createdataflowone.png " ")
 
 6.	In the **Properties** panel, for **Name**, enter lab-data-flow, and click **Create**.
    The designer remains open for you to continue editing.
 
-   ![Create Data Flow One](./images/createdataflowtwo.png " ")
+   ![Create Data Flow](./images/createdataflowtwo.png " ")
 
    Add a data source:
 
 7.	Add a Source by dragging the **Source** icon into the data flow workspace area. Select the source you just added and navigate to the **Details** tab in the Properties pane.
 
 8.	Fill the properties as follows:
-    - Enter HOTEL_REVIEWS_CSV as the identifier. Enter the following fields:
+    - Enter **HOTEL\_REVIEWS\_CSV** as the identifier. Enter the following fields:
     - In **Details**, select the source asset your created (data-lake)
     - **Connection**: Keep “Default connection”
     - In **Schema**, select the bucket with the hotel reviews file.
     - In **Data Entity** select the hotels review data file and enter **CSV** as the File Type.
 
-    ![Create Data Flow Three](./images/createdataflowthree.png " ")
+    ![Create Data Flow](./images/createdataflowthree.png " ")
 
 9.	You can confirm that you loaded the data correctly by going to the Data section. It takes a minute or two for the data to appear there.
 
     ![Data Flow Source](./images/dataflowsource.png " ")
 
-10.	First, we will add an expression to change the format of our REVIEW-ID field.
-    - Right click on the 3 vertical dots next to the **data source name.review-id** field
+10.	First, we will add an expression to change the format of our **REVIEW\_ID** field.
+    - Right click on the 3 vertical dots next to the **data source name.review\_id** field
     - Select **Change Data Type** and select Integer and click **Apply**
     - This will create a new expression step in your dataflow
-    - Set the **Name** to REVIEW_ID
+    - Set the **Name** to REVIEW\_ID
 
 11.	Now we will perform a second transformation.  We will make sure that the date is treated as a Date. Start by navigating to the Data tab in the Properties pane while selecting the Expression.
-    - Right click on the 3 vertical dots next to the **data source name.review-date** field
+    - Right click on the 3 vertical dots next to the **data source name.review\_date** field
     - Select **Change Data Type** and select Data Type **Date** and the Date Format that matches the CSV format (in this case yyyy-MM-dd)
-    - Set the **Name** to REVIEW_DATE
+    - Set the **Name** to REVIEW\_DATE
 
 13.	Clicking on the Data tab of the expression will allow you to see the newly created fields.
 
-    ![Verify Expression One](./images/expressionone.png " ")
+    ![Verify Expression](./images/expressionone.png " ")
 
 
    Now we will connect the function you created in **Lab 2** to extract the aspect level sentiment from the review text.
 
 14.	From the operators toolbar, drag the Function (fn) operator into the canvas, and connect the output of your expression as the input into the function.
 
-    ![Verify Expression Two](./images/expressiontwo.png " ")
+    ![Verify Expression](./images/expressiontwo.png " ")
 
 15.	Select the function you just added, in the **Properties** pane, navigate to the **Details** Pane. Change the identifier to: SENTIMENT_FUNCTION
 
 16.	Click the **Select** button to select the OCI Function. Select the application you created earlier in **Lab 2** and pick the “sentiment” OCI Function. Click **OK** to confirm your changes.
 
-17.	Now you will need to add or edit the properties below. Except for the BATCH_SIZE property (which you can edit), you can do this by clicking the Add Property button for each field.
+17.	Now you will need to add or edit the properties below. Except for the BATCH\_SIZE property (which you can edit), you can do this by clicking the Add Property button for each field.
 
    | Name | Type | Data Type | LENGTH | Value |
    | --- | --- | --- |
@@ -179,7 +179,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 
 20.	In the details properties tab for the target, set the following fields:
-    - Identifier: TARGET_SENTIMENT
+    - Identifier: TARGET\_SENTIMENT
     - Integration Strategy: Insert
     - Data Asset: Select the data warehouse asset you created in **Lab 3**
     - Connection: Default connection
@@ -189,7 +189,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     ![Configure Target Sentiment](./images/targetsentiment.png " ")
 
 21. For staging Location you just need to provide an object storage location where intermediate files can be created during the data flow:
-    - Data Asset: DATA_STAGING
+    - Data Asset: DATA\_STAGING
     - Connection: Default connection
     - In Schema, select the object storage location that you want to use for staging purposes.
 
@@ -197,7 +197,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
     Make sure the fields are mapped as follows:
 
-     ![Function Mapping Two](./images/functionmappingtwo.png " ")
+     ![Function Mapping](./images/functionmappingtwo.png " ")
 
 
    When you are done with your data flow it will look something like this:
@@ -214,13 +214,13 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 Now we need to execute the data flow. The process is as follows.
 
-1.	Navigate back to your workspace and click **Create Integration Task** in the Quick Actions menu.
+1.	Navigate back to your workspace and click **Create Integration Task** in the **Quick Actions** menu.
 
     ![Integration Task](./images/integrationtask.png " ")
 
    As part of the process of creation you need to select the project and the data flow you just created in **Task 3**. If there are any errors with the data flow you would need to fix those until it successful validates as shown in the image below.
 
-    ![Create Task One](./images/createtasktwo.png " ")
+    ![Create Task](./images/createtasktwo.png " ")
 
 2.	Go to your data integration workspace and select the **Applications** link. Then click **Create an Application**. Give it a name and click **Create**.
 
@@ -228,7 +228,7 @@ Now we need to execute the data flow. The process is as follows.
 
 4.	Click on the Tasks link in the **Details** menu, select the contextual menu for the task you just created, and click **Publish to Application**. Select the application you just created.
 
-    ![Create Task Two](./images/createtaskone.png " ")
+    ![Create Task](./images/createtaskone.png " ")
 
 5.	Navigate back to the application you just created, select your integration task, and select **Run** on the contextual menu as shown below.
 
