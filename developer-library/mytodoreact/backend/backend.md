@@ -4,7 +4,7 @@
 
 In this lab, you will build and deploy the pre-built Helidon Java backend Docker image to OKE, then configure the API Gateway.
 
-Estimated time: 25 minutes
+Estimated time: 15 minutes
 
 Watch the video below for a quick walk through of the lab.
 
