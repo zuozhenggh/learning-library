@@ -6,11 +6,11 @@ The workshop will cover how to navigate to Insight and the command fields you wi
 
 Estimated Workshop Time: 5 Minutes
 
-### Oracle Insight Navigation
+### Introduction
 
 The Integration Insight feature (commonly referred to as Insight) is located in home page of Oracle Integration.
 
-### Workshop Objectives
+### Objectives
 
 In this workshop, you will:
 
@@ -45,7 +45,7 @@ Using the **Hamburger**, located on top left hand side of the screen, this will 
 
 Click **Insight** to access the Oracle Integration Insight commands of **Consoles** or **Models**.
 
-This concludes this lab named Oracle Insight Navigation.  [Proceed to the next lab](#next). Create a Model.
+You may now **Proceed to the next lab**
 
 ## Want to Learn More
 

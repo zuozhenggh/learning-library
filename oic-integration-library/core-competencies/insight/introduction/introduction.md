@@ -48,9 +48,9 @@ In this workshop, you will:
 
 ## What Do You Need?
 
-This workshop requires an active "Oracle Account" and a LiveLabs reservation as described in the "Getting Started" lab in the "Contents" menu.
+This workshop requires an active "Oracle Account" and a LiveLabs reservation as described in the "Get Started" lab in the "Contents" menu.
 
-Insight is available within Oracle Integration Generation 2 and Oracle Integration for Oracle SaaS Generation 2. However, please note that the Standard Edition does not and would need to update your license type to access. 
+Insight is available within Oracle Integration Generation 2 and Oracle Integration for Oracle SaaS Generation 2. However, please note that the Standard Edition does not and would need to update your license type to access.
 
 Please contact your _________________, if needed for an upgrade.
 

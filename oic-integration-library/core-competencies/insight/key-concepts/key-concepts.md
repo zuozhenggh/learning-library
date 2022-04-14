@@ -22,7 +22,7 @@ This lab assumes you have:
 **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
 
-## Model
+## Task 1: Model
 A model is a business process, comprising of Milestone(s), a Unique Instance Indentifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle. 
 There are 8 states: 
 * Draft: A newly created model is in this state until the model is activated. In this state, changes can be made to the model and no metrics are collected. A draft model can be exported to later be imported into another Insight instance.
@@ -36,7 +36,7 @@ There are 8 states:
 
 To make changes to an activated model, you must first create a draft version of the active model to edit the model without interrupting metrics collection in the active model. After editing, the model can be reactivated to apply the changes.
 
-## Milestone
+## Task 2: Milestone
 A milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation. 
 Characteristics of a milestone include:
 * Atomicity: A milestone has no entry or exit point. A milestone is considered to be passed or not passed, but you are never in a milestone. A milestone has no duration and is passed atomically. However, it is important to consider the duration from one milestone to another.
@@ -55,7 +55,7 @@ Milestones are of the following types:
 
 Every instance (unique business transaction) of the model must pass through at least an Initial and a Terminal milestone.
 
-## Unique Instance Identifier
+## Task 3: Unique Instance Identifier
 
 Every Insight model must have a unique instance identifier defined. This identifier describes a value that is extracted at runtime for every instance (business transaction) of the business process defined by the model.
 
@@ -67,7 +67,7 @@ The unique instance identifier value is extracted at runtime every time a milest
 
 When a business process implementation spans more than one integration or process, or both, you must assign the model's unique instance identifier to mapped milestones to establish the correlation between the actions in the same instance of the business process and extract the unique instance identifier value when the specified milestone is passed. For example, if your business process is implemented across two integrations, and the order number is extracted from the first integration, when the second integration is invoked you can extract the order number a second time to correlate its actions as part of the same order.
 
-## Indicators
+## Task 4: Indicators
 
 Indicators represent metrics that are unique to a business process, and are extracted when milestones are passed in a business process implementation.
 
@@ -85,7 +85,7 @@ There are two types of indicators:
 
 Insight does note support duplicate indicators. 
 
-## Alerts
+## Task 5: Alerts
 
 Alerts define conditions for milestones or indicators to notify users when those conditions are met.
 
