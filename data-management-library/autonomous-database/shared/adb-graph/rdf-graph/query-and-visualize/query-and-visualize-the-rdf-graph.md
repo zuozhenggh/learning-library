@@ -51,10 +51,20 @@ Let's execute some markdown statements!
     ```
     <copy>%md
     To create an RDF paragraph, mouse over the bottom of an existing paragraph and click the Add RDF Paragraph Symbol
-    <span class="oj-navigationlist-item-icon" aria-label="RDFGraph" role="img" title="RDFGraph"> <span class="fa fa-rotate-270 fa-network-triangle fa-stack-1x" data-bind="css: item.data.icon.icon"></span> </span>
+    <span class="oj-navigationlist-item-icon" aria-label="RDFGraph" role="img" title="RDFGraph"> <span class="fa fa-rotate-270 fa-network-triangle fa-1x" data-bind="css: item.data.icon.icon"></span> </span>
     .
     The desired paragraph opens.
     ```
+    A PGQL result can be displayed as a graph, if the select list consists of vertices and edges, or as table or some other chart type when the select list contains only vertex and edge properties or scalar values.  
+
+    The triangular symbol
+    <span class="oj-navigationlist-item-icon" aria-label="RDFGraph" role="img" title="RDFGraph"> <span class="fa fa-rotate-270 fa-network-triangle fa-stack-1x" data-bind="css: item.data.icon.icon"></span> </span>
+    will select Graph as the display type.  
+    Similarly clicking on the grid symbol
+    <span class="oj-navigationlist-item-icon" aria-label="Table" role="img" title="Table"> <span class="fa-fw selection-icon fa fa-th" data-bind="css: item.data.icon.icon"></span> </span> will show the results as a table.   
+    The slider icon
+    <span slot="startIcon" class="fa fa-sliders"></span>
+    brings up the visualization settings dialog.  This will be used in most of the subsequent paragraphs.
 
 Note: In this Graph Studio Release, the RDF interpreter icon is hidden. However, you can invoke the RDF interpreter by executing the paragraph with the %sparql-rdf directive at the beginning of the paragraph. The icon will be available in the Graph Studio GA Release.
 
