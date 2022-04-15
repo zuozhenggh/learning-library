@@ -90,6 +90,7 @@ In this query, `?actor` appears in the first and second triple patterns and `?mo
 
     ```
     <copy>%sparql-rdf
+
     PREFIX  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX  xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -114,6 +115,7 @@ Query 17 uses the `DESCRIBE WHERE` form to describe the director of Toy Story.
 
     ```
     <copy>%sparql-rdf
+
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     PREFIX ms: <http://www.example.com/moviestream/>
@@ -367,6 +369,7 @@ A sequence of triple patterns that repeat the same subject can be written by spe
 
     ```
     <copy>%sparql-rdf
+
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -380,7 +383,7 @@ A sequence of triple patterns that repeat the same subject can be written by spe
       ORDER BY ASC(?gname)</copy>
     ```
 
-    The query output is as shown:
+  The query output is as shown:
 
   ![Executes the prior query in a RDF Paragraph](./images/query2-part2.png)
 
