@@ -110,19 +110,140 @@ This lab uses color coding to identify input type
 
     Please insert these lines at the end of the file **/home/opc/.bashrc**
 
-    a.
+    a. **<span style="color:green">shell-mysql1></span>**
 
     ```text
     <copy>export PATH=$PATH:/mysql/mysql-latest/bin</copy>
     ```
 
-    b.
+    b. **<span style="color:green">shell-mysql1></span>**
 
     ```text
     <copy>export MYSQL_PS1="\\u on \\h>\\_"</copy>
     ```
 
-6. **<span style="color:red">Close the ssh session and reopen it to activate the new privilege and settings for opc user</span>**
+6. **<span style="color:red">Close the ssh session and reopen it to activate the new
+privilege and settings for opc user</span>**
+
+7. Extract the tarball in your /mysql folder
+
+    a. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>cd /mysql/</copy>
+    ```
+
+    b. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo tar xvf /workshop/linux/mysql-commercial-8.0.*-linux-glibc2.12-x86_64.tar.xz</copy>
+    ```
+
+8. Create a symbolic link to mysql binary installation
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo ln -s mysql-commercial-8.0.*-linux-glibc2.12-x86_64 mysql-latest</copy>
+    ```
+
+9. Create a new configuration file my.cnf inside /mysql/etc
+
+    To help you we have created one with some variables, please copy it
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo cp /workshop/support/my.cnf.mysql1 /mysql/etc/my.cnf</copy>
+    ```
+
+10. Check the content of the configuration file to have a look inside.
+
+    Please note that, because port 3306 is already in use by the community server previously installed , we  now use port 3307.
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>cat /mysql/etc/my.cnf</copy>
+    ```
+
+11. For security reasons change ownership and permissions
+
+    a. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo chown -R mysqluser:mysqlgrp /mysql</copy>
+    ```
+
+    b. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo chmod -R 750 /mysql</copy>
+    ```
+
+    The following permission is for the Lab purpose so that opc account can make changes and copy files to overwrite the content
+
+    c. **<span style="color:green">shell-mysql1</span>**
+
+    ```text
+    <copy>sudo chmod -R 770 /mysql/etc</copy>
+    ```
+
+12. Save the changes, log out and log in again from the ssh for the changes to take effect on the user profile.initialize your database
+
+    **<span style="color:green">shell-mysql1</span>**
+
+    ```text
+    <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf --initialize --user=mysqluser</copy>
+    ```
+
+13. Start your new mysql instance
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf --user=mysqluser &</copy>
+    ```
+
+14. Verify that process is running
+
+    a. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>ps -ef | grep mysqld</copy>
+    ```
+
+    b. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>netstat -an | grep 3307</copy>
+     ```
+
+15. Another way is searching the message “ready for connections” in error log as one of the last
+shell-mysql1> grep -i ready /mysql/log/err_log.log
+
+16. Retrieve root password for first login
+
+    a. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>grep -i ready /mysql/log/err_log.log </copy>
+    ```
+
+   b. **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>grep -i 'temporary password' /mysql/log/err_log.log</copy>
+    ```
+
+17. Before version 5.7 it was recommended to run the ' mysql_secure_installation ' script. From version 5.7 all these settings are “by default”, but the script can be used also to setup the validate_password plugin (used later). Execute now mysql_secure_installation
+
+    **<span style="color:green">shell-mysql1></span>**
+
+    ```text
+    <copy>ssh -i $HOME/sshkeys/id_rsa_mysql1 mysql1</copy>
+
+shell-mysql1> /mysql/mysql-latest/bin/mysql_secure_installation -h127.0.0.1 -P3307
 
 ## Learn More
 
