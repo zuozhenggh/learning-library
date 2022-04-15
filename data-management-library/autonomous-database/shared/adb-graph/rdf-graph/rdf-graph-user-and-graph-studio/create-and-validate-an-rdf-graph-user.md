@@ -1,7 +1,7 @@
 # Lab 2: Create and Validate an RDF Graph User in Graph Studio
 
 ## Introduction
-In this lab, we will create and validate an RDF Graph User in Graph Studio."
+In this lab, we will create and validate an RDF Graph User in Graph Studio.
 
 Estimated Time: 10 minutes
 
@@ -16,7 +16,7 @@ Estimated Time: 10 minutes
 This lab assumes you have:
   - An Oracle Free Tier or Paid Cloud Account
   - You have completed:
-  - Lab 1: Get Started with RDF
+      - Lab 1: Get Started with RDF
 
 ## **Task 1:** Create a graph user to access RDF in Graph Studio
 
@@ -40,7 +40,21 @@ Navigate to your Autonomous Database instance and create a graph user by followi
 
   ![The database users page highlighting the 'create user' button](./images/database-users.png "")
 
-5. Enter a user name and password. Make sure your password is greater than 12 characters, contains an uppercase letter, a lowercase letter, and a number. *Your password cannot contain special characters.*
+5. Enter a user name and password.
+
+Note: The password should meet the following requirements:
+
+- The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
+
+- The password cannot contain the username.
+
+- The password cannot contain the double quote (“) character.
+
+- The password must be different from the last 4 passwords used for this user.
+
+- The password must not be the same password that is set less than 24 hours ago.
+
+**For example:** Password12345#
 
   *Write down or save your username and password as this will be needed in a later exercise.*
 
@@ -66,7 +80,7 @@ Before we can create an RDF graph we must first import RDF data into Graph Studi
 
   ![Autonomous Database details showing the link to Graph Studio, accessible under 'Tools'](./images/database-tools.png "")
 
-2. Open Graph Studio and log in with the user name and password you created in Lab 2, Task 1, Step 5.
+2. Open Graph Studio and log in with the user name and password you created in Lab 2, Task 9.
 
 3. Click on Graphs on the navigation menu from the left to navigate the Graphs page.
 
@@ -80,7 +94,7 @@ Before we can create an RDF graph we must first import RDF data into Graph Studi
 
   ![The 'create RDF graph' page.](./images/create-rdf-graph.png "")
 
-6. Enter the OCI Object Storage URI path to the RDF file in your OCI bucket:
+6. Enter the OCI Object Storage URI path:
 
     ```
       <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/moviestream_rdf.nt
