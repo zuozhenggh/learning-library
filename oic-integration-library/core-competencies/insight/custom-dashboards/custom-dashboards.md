@@ -7,6 +7,11 @@ While the Console page displays information about performance and preconfigured 
 
 Estimated Time: 15 minutes
 
+## Prerequisites 
+
+This lab assumes you have:
+    *Completed Labs 1 through 9
+
 ## Learning Objectives
 
 In this lab, you will learn how to create the following:
