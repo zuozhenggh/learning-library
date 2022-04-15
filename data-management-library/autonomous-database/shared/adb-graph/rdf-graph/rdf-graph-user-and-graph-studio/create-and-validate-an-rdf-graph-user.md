@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, we will create and validate an RDF Graph User in Graph Studio."
 
-Estimated Time: 30 minutes
+Estimated Time: 10 minutes
 
 ### Objectives
 - Create a Graph User to Access RDF in Graph Studio
