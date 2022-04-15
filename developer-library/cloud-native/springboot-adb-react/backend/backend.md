@@ -8,7 +8,7 @@ Estimated time: 15 minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:Th7YCV6e8CE)
+[](youtube:-twDGXrjOrI)
 
 ### Understand the Java backend application
 

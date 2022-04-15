@@ -17,6 +17,10 @@ Estimated time: 25 minutes
     * 1 OCI Registry
     * 1 Virtual Cloud Network
 
+Watch this video for a quick walkthrough of this lab
+
+Mac:
+[](youtube:Zo7r8Ahdhsc)
 ### Prerequisites
 
 * This lab requires an [Oracle Cloud account](https://www.oracle.com/cloud/free/). You may use your own cloud account, a cloud account that you obtained through a trial, a Free Tier account, or a LiveLabs account.
@@ -106,7 +110,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 1. Clone the workshop code inside the directory you just created.
 	````
 	<copy>
-	git clone https://github.com/peterrsongg/oci-react-springboot-simple.git
+	git clone -b springboot --single-branch https://github.com/oracle/oci-react-samples.git
 	</copy>
 	````
   You should now see `oci-react-springboot-simple` in your root directory
@@ -120,7 +124,7 @@ The setup script uses terraform, bash scripts, and SQL to automate the creation 
 
 	```
 	<copy>
-	cd oci-react-springboot-simple/MtdrSpring
+	cd oci-react-samples/MtdrSpring
 	</copy>
 	```
 2. Copy this command to make sure that env.sh gets run everytime you start up cloud shell

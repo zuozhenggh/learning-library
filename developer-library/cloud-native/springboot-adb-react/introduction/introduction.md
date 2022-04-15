@@ -2,7 +2,7 @@
 
 ## About this Workshop
 
-Estimated Time: 60 minutes
+Estimated Time: 50 minutes
 
 In this workshop, you will explore how to use SpringBoot to build microservices to build and deploy a Cloud Native application. You will serve the data to the React.js frontend and persist your data in Oracle Autonomous database, while utilizing Oracle Cloud Infrastructure (OCI) services.
 

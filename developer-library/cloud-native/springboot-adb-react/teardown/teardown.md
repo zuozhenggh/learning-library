@@ -3,7 +3,7 @@
 ## Introduction
 In this lab, we will tear down the resources created in your tenancy and the directory in the Oracle cloud shell
 
-Estimated time: 10 minutes
+Estimated time: 5 minutes
 
 ### Objectives
 - Delete object storage bucket created in Lab 3

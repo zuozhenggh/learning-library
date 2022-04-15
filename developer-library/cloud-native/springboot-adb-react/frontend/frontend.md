@@ -4,17 +4,13 @@
 
 In this lab you will deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastucture.
 
-Estimated time: 15 minutes
+Estimated time: 10 minutes
 
-<!-- Watch the video below for a quick walk through of the lab.
+Watch the video below for a quick walk through of the lab.
 
 Mac:
 
-[](youtube:cEEKcV3-yTQ)
-
-Windows:
-
-[](youtube:rHAf4ZW4XP0) -->
+[](youtube:xCVhmx7KAm8)
 
 
 ### Understand the ReactJS Application
@@ -72,14 +68,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	<copy>
 	mkdir reacttoo
 	cd reacttodo
-	git clone https://github.com/peterrsongg/oci-react-springboot-simple.git
+	git clone -b springboot --single-branch https://github.com/oracle/oci-react-samples.git
+	cd oci-react-samples/MtdrSpring
 	</copy>
 	```
 
 2. Navigate to frontend
 	```
 	<copy>
-	cd oci-react-springboot-simple/MtdrSpring/frontend
+	cd frontend
 	</copy>
 	```
 
