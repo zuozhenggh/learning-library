@@ -16,9 +16,9 @@ In this workshop, you will:
 
 * Navigate Insight
 
-## Task 1: Navigate
-### Main Page
-Click the hamburger ![hamburger](./images/hamburger.jpg " ") at the top left hand site of the home screen. Click on the Insight ![insight](./images/insight.jpg " ") and you will see Consoles and Models.
+## Task 1: Main Page
+Click the hamburger at the top left hand site of the home screen. Then, select Insight to open the Consoles and Models.
+    ![insight](./images/insight.jpg)
 
 ## Task 2: Models
 Click on Models ![cmodels](./images/models.jpg " ") to commence creating or modify models.
