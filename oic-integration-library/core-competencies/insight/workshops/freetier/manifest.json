@@ -5,7 +5,7 @@
         {
             "title": "Introduction to Oracle Integration Insight",
             "description": "Introduction to Oracle Integration Insight",
-            "filename": "../../introduction-to-oracle-insight/introduction-to-oracle-insight.md"
+            "filename": "../../introduction/introduction.md"
         },
         {
             "title": "Get Started",
@@ -25,7 +25,7 @@
         {
             "title": "Lab 3: Oracle Insight Navigation",
             "description": "Oracle Insight Navigation",
-            "filename": "../../navigation-layout-commands/navigation-layout-commands.md"
+            "filename": "../../navigation/navigation.md"
         },      
         {
             "title": "Lab 4: Create a Model",
