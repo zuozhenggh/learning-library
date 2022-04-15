@@ -3,7 +3,7 @@
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
-            "title": "Introduction to Oracle Integration Insight",
+            "title": "Introduction",
             "description": "Introduction to Oracle Integration Insight",
             "filename": "../../introduction/introduction.md"
         },
