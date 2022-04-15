@@ -163,17 +163,17 @@ You can execute SPARQL Queries on the RDF Graph from the **Query Playground** pa
 3. Execute the following query for the RDF Graph.
 
     ```
-      <copy>PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-      PREFIX ms: <http://www.example.com/moviestream/>
+    <copy>PREFIX rdf: &lthttp://www.w3.org/1999/02/22-rdf-syntax-ns#&gt
+    PREFIX rdfs: &lthttp://www.w3.org/2000/01/rdf-schema#&gt
+    PREFIX xsd: &lthttp://www.w3.org/2001/XMLSchema#&gt
+    PREFIX ms: &lthttp://www.example.com/moviestream/&gt
 
-      SELECT DISTINCT ?gname
-      WHERE {
-          ?movie ms:actor/ms:name "Keanu Reeves" ;
-            ms:genre/ms:genreName ?gname .
-      }
-      ORDER BY ASC(?gname)
+    SELECT DISTINCT ?gname
+    WHERE {
+      ?movie ms:actor/ms:name "Keanu Reeves" ;
+      ms:genre/ms:genreName ?gname .
+    }
+    ORDER BY ASC(?gname)<copy>
     ```
 
       When the query is executed successfully the query output will be displayed as shown:
@@ -184,6 +184,6 @@ This concludes this lab. *You may now proceed to the next lab.*
 
 ## Acknowledgements
 
-- **Author** -  Malia German, Matthew McDaniel, Ethan Shmargad Solution Engineers, Ramu Murakami Gutierrez Product Manager
-- **Technical Contributor** -  Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff
-- **Last Updated By/Date** - Malia German Solution Engineer, Ramu Murakami Gutierrez Product Manager, April 4th 2022
+- **Author** -  Malia German, Ethan Shmargad, Matthew McDaniel Solution Engineers, Ramu Murakami Gutierrez Product Manager
+- **Technical Contributor** -  Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff, Lavanya Jayapalan Principal User Assistance Developer
+- **Last Updated By/Date** - Ramu Murakami Gutierrez Product Manager, April 14th 2022

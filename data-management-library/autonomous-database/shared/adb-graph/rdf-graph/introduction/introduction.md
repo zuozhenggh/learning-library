@@ -42,6 +42,6 @@ Estimated Time: 45 minutes
 This concludes this lab. You may now *proceed to the next lab.*
 
 ## Acknowledgements
-- **Author** -  Nicholas Cusato, Matthew McDaniel, Ethan Shmargad Solution Engineers, Ramu Murakami Gutierrez Product Manager
-- **Technical Contributor** -  Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff
-- **Last Updated By/Date** - Nicholas Cusato Solution Engineer, Ramu Murakami Gutierrez Product Manager, April 4th 2022
+- **Author** -  Nicholas Cusato, Ethan Shmargad, Matthew McDaniel Solution Engineers, Ramu Murakami Gutierrez Product Manager
+- **Technical Contributor** - Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff, Lavanya Jayapalan Principal User Assistance Developer
+- **Last Updated By/Date** -  Ramu Murakami Gutierrez Product Manager, April 14th 2022
