@@ -6,25 +6,24 @@ The Lab will cover how to build a simple model by reading the learning objective
 
 Estimated Time: 15 minutes
 
-
+### Using Insight
 To use Insight to monitor a business process in Oracle Integration, there are several tasks to complete before you can track business metrics on the Insight dashboards.
 
 The high-level workflow is as follows:
+* Create a model, defining milestones, a unique instance identifier, indicators, and alerts.
+* Associate the model to a business process implementation by mapping model milestones to the business process implementation.
+* Activate the model to allow business executives to view and analyze business processes in real time using dashboards.
 
-Create a model, defining milestones, a unique instance identifier, indicators, and alerts.
-Associate the model to a business process implementation by mapping model milestones to the business process implementation.
-Activate the model to allow business executives to view and analyze business processes in real time using dashboards.
 
-## Learning Objectives
-
-In this lab, you will learn how to create the following:
+## Objectives
+In this lab, you will create the following:
 - Draft Model
 - Initial and Terminal Milestones
 - Identifier mapped to one of the Milestones through a data type
 
 First practice the steps to familiarize yourself with the commands and then do the Labs.
 
-The Model has Milestone(s), and an Identifier which is mapped to one, or more, of the milestone(s). The Initial creation of a Model is called a Draft; which is not activated and can be modified, but not visable in the Console.
+The Model has Milestone(s), and an Identifier which is mapped to one, or more, of the milestone(s). The Initial creation of a Model is called a Draft; which is not activated and can be modified, but not visible in the Console.
 
 ### Model Steps
 
@@ -68,7 +67,10 @@ You will create an Insight Model with 2 Milestones, an Initial and a Terminal, a
 
 ### Task 1: Create Model
 
-Open Insight and create your Draft Model. Name the Draft Model **My Order Processing** and provide the description of **My First Model**. You will need to click **Create** to finish. When your completed it will open the Milestone Process for you; continue to Task 2 to add your Milestones.
+* Open Insight and create your Draft Model. 
+* Name the Draft Model **My Order Processing** and provide the description of **My First Model**. 
+* You will need to click **Create** to finish. 
+* When your completed it will open the Milestone Process for you; continue to Task 2 to add your Milestones.
      
 ### Task 2: Create A Milestone
 
