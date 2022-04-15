@@ -48,7 +48,7 @@ What to see more about the chart type, click [here](https://docs.oracle.com/en/c
 
  Now let's get you to create on of each chart!
 
-## Excercise 5       
+## Labs       
  
  You will create one of each chart type. You will test your mapping and then view the results of the order(s) in the created Console and Dashboards. 
 
@@ -101,7 +101,7 @@ Aggregating Function: Sum <br />
 
 X Axis: Product (Ignore empty values) <br />
 
-### Task 5: Area Chart
+## Task 5: Area Chart
 Name: Quantity Sold by Country <br />
 Chart Type: Area Chart <br />
 Y Axis:  <br />
@@ -111,8 +111,9 @@ Aggregating Function: Sum <br />
 
 X Axis: Country (Ignore empty values) <br />
 
-### Task 5: Test
-Now that you compelted the charts. It's time to test them. Open the <Order Processing Lab> in Test. Invoke the <bulkOrder> operation using   TBD      test data file.
+## Task 6: Test
+
+Now that you completed the charts. It's time to test them. Open the <Order Processing Lab> in Test. Invoke the <bulkOrder> operation using   TBD      test data file.
 Review custom dashboards.
 You may now [proceed to the next lab].
 
