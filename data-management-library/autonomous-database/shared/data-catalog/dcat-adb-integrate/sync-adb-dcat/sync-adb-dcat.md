@@ -439,7 +439,7 @@ From the **Oracle Cloud Console**, open the **Navigation** menu and click **Anal
 
 2.  To copy the **`catalog_id`** (OCID) or the **`catalog_region`** (region identifier) values, double-click the appropriate cell to highlight the value, and then copy it using **[Ctrl+C]** in MS-Windows. You can also click the pencil icon to copy the value in a cell. Paste the copied value into a text editor of your choice or wherever you need it.
 
-### **Find the Data Catalog Instance Region Identifier and OCID Using the UI**
+### **Find the Data Catalog Instance Region Identifier Using the UI**
 
 There are several ways to find the region identifier that is associated with your region name using the UI.
 
