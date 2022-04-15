@@ -17,28 +17,30 @@ In this lab, you will:
 
 This lab assumes you have:
 
-* Oracle Integration Enterprise
+* Oracle Integration - Enterprise edition
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
-    **Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+
+    > **Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
 **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-## Task 1: Model
+## Model
 
 A model is a business process, comprising of Milestone(s), a Unique Instance Identifier, Indicator(s), and Alert(s). A model passes through several states during its lifecycle.
+
 There are 8 Model states:
 
-* Draft: A newly created model is in this state until the model is activated. In this state, changes can be made to the model and no metrics are collected. A draft model can be exported to later be imported into another Insight instance.
-* Configured: A model moves into this state when its milestones, indicators, and unique instance identifier have been defined and milestones have been mapped to a business process. A model in this state is ready to activate.
-* Activation In Progress: A model is in this state when activation has been initiated.
-* Timeout: A model falls into this state when it times out after attempting to activate for five minutes.
-* Activated: When a model is in this state, metrics are being collected, and changes are not possible. An activated model can be exported to later be imported into another Insight instance.
-* Deactivated: A model moves into this state when you specifically deactivate it.
-* Failed: A model falls into this state when it encounters issues during activation.
-* Unknown: A model may move into this state when the state of the model cannot be determined as activated or deactivated. You can perform all lifecycle actions on a model in an unknown state.
+* **Draft**: A newly created model is in this state until the model is activated. In this state, changes can be made to the model and no metrics are collected. A draft model can be exported to later be imported into another Insight instance.
+* **Configured**: A model moves into this state when its milestones, indicators, and unique instance identifier have been defined and milestones have been mapped to a business process. A model in this state is ready to activate.
+* **Activation In Progress**: A model is in this state when activation has been initiated.
+* **Timeout**: A model falls into this state when it times out after attempting to activate for five minutes.
+* **Activated**: When a model is in this state, metrics are being collected, and changes are not possible. An activated model can be exported to later be imported into another Insight instance.
+* **Deactivated**: A model moves into this state when you specifically deactivate it.
+* **Failed**: A model falls into this state when it encounters issues during activation.
+* **Unknown**: A model may move into this state when the state of the model cannot be determined as activated or deactivated. You can perform all lifecycle actions on a model in an unknown state.
 
-To make changes to an activated model, you must first create a draft version of the active model to edit the model without interrupting metrics collection in the active model. After editing, the model can be reactivated to apply the changes.
+    > **Note:** To make changes to an activated model, you must first create a draft version of the active model to edit the model without interrupting metrics collection in the active model. After editing, the model can be reactivated to apply the changes.
 
-## Task 2: Milestone
+## Milestones
 
 A Milestone is a key component of an Insight Model. Milestone(s) define points in a business process that represent progress and map to at least one activity in the business process implementation.
 Characteristics of a milestone include:
@@ -59,7 +61,7 @@ Milestones are of the following types:
 
 Every instance (unique business transaction) of the model must pass through at least an Initial and a Terminal milestone.
 
-## Task 3: Unique Instance Identifier
+## Unique Instance Identifier
 
 Every Insight model must have a unique instance identifier defined. This identifier describes a value that is extracted at runtime for every instance (business transaction) of the business process defined by the model.
 
@@ -71,7 +73,7 @@ The unique instance identifier value is extracted at runtime every time a milest
 
 When a business process implementation spans more than one integration or process, or both, you must assign the model's unique instance identifier to mapped milestones to establish the correlation between the actions in the same instance of the business process and extract the unique instance identifier value when the specified milestone is passed. For example, if your business process is implemented across two integrations, and the order number is extracted from the first integration, when the second integration is invoked you can extract the order number a second time to correlate its actions as part of the same order.
 
-## Task 4: Indicators
+## Indicators
 
 Indicators represent metrics that are unique to a business process, and are extracted when milestones are passed in a business process implementation.
 
@@ -89,7 +91,7 @@ There are two types of indicators:
 
 Insight does note support duplicate indicators.
 
-## Task 5: Alerts
+## Alerts
 
 Alerts define conditions for milestones or indicators to notify users when those conditions are met.
 
@@ -100,6 +102,13 @@ You can optionally define alerts in your model to notify users by email when:
 * An indicator (dimension or measure) is equal to, greater than, or less than a specified value.
 
 You can configure the alert notification email to include the unique instance identifier, indicator values, and a link to the associated Business Transactions dashboard in the body of the email.
+
+
+## Model Instances
+*Instances* represent the activity of the associated Insight model. A single instance is a unique occurrence of the business process that the model defines. To a Business Executive, an instance is a *business transaction*.
+
+An instance always begins when the model's Initial milestone is passed and always ends when one of the model’s Terminal or Terminal Error milestones is passed. This activity is more commonly described using the model-specific **Business Transaction Label** and **Business Transactions Label** values that represent singular and plural terms, respectively, that are understandable by Business Executives, such as "Order" and "Orders".
+
 
 You may now **proceed to the next lab**.
 
