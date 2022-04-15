@@ -31,7 +31,7 @@ In *Models*, starting left to right, you will see the search tool, filter tool, 
 ![Models page](./images/modelpage.jpg " ")
 
 
-## Task 3:Consoles
+## Task 3: Consoles
 On the *Insight* page, click **Consoles** to view consoles. 
 
 ![Open Insight Consoles page](./images/console.jpg " ") 
@@ -45,7 +45,7 @@ Consoles are created once you activate a model and will have different icons nex
 ![consolepage2](./images/consolepage2.jpg " ")
 
 
-## Task 5: Dashboards
+## Task 4: Dashboards
 Open Dashboards via clicking on a Console name to open its related Dashboard. 
 
 ![Dashboards](./images/feb2021-opp-order-console.jpg " ") 
