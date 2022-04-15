@@ -105,6 +105,7 @@ You can configure the alert notification email to include the unique instance id
 
 
 ## Model Instances
+
 *Instances* represent the activity of the associated Insight model. A single instance is a unique occurrence of the business process that the model defines. To a Business Executive, an instance is a *business transaction*.
 
 An instance always begins when the model's Initial milestone is passed and always ends when one of the model’s Terminal or Terminal Error milestones is passed. This activity is more commonly described using the model-specific **Business Transaction Label** and **Business Transactions Label** values that represent singular and plural terms, respectively, that are understandable by Business Executives, such as "Order" and "Orders".

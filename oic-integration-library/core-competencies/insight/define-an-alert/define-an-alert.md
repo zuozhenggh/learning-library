@@ -1,4 +1,4 @@
-# Lab 11: Define an Alert
+# Define an Alert
 
 ## Introduction
 
