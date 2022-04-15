@@ -17,12 +17,17 @@ In this workshop, you will:
 * Navigate Insight
 
 ## Task 1: Main Page
-Click the hamburger at the top left hand site of the home screen. Then, select Insight to open the Consoles and Models.
-    ![insight](./images/insight.jpg)
+Click the hamburger at the top left hand site of the home screen. Then, select **Insight** to open the Consoles and Models.
+
+![Open Insight](./images/insight.jpg)
 
 ## Task 2: Models
-Click on Models ![cmodels](./images/models.jpg " ") to commence creating or modify models.
+On the *Insight* console, click on **Models** to commence creating or modifying models.
+
+![Open Insight Models](./images/models.jpg) 
+
 ![modelpage](./images/modelpage.jpg " ")
+
 In Models, starting left to right, you will see the search tool, filter tool, refresh, list horizontal, or list by block. Above that you will see the Import button or Create button.
 
 ## Task 3:Consoles
