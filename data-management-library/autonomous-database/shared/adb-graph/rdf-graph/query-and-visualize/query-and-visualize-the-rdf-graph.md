@@ -50,7 +50,7 @@ You can execute a paragraph by clicking the Run Paragraph icon.
 
 To create an RDF paragraph, mouse over the bottom of an existing paragraph and click the Add RDF Paragraph symbol.
 
-**Let' start querying and analyzing the RDF graph**
+**Let's start querying and analyzing the RDF graph**
 
 This section gives an introduction to the SPARQL 1.1 query language through a series of example queries using the MOVIESTREAM RDF graph.
 
@@ -410,7 +410,7 @@ Grouping and aggregation in SPARQL is very similar to grouping and aggregation i
 
 Query 3 finds the 10  movies with the most actors.
 
-the use of a `LIMIT` clause to restrict the total number of results to 10. SPARQL also supports an `OFFSET` clause to skip several solutions before returning query results.
+The use of a `LIMIT` clause to restrict the total number of results to 10. SPARQL also supports an `OFFSET` clause to skip several solutions before returning query results.
 
 1. Execute the following in a SPARQL paragraph.
 
@@ -552,6 +552,6 @@ This concludes this lab. Thank you!
 
 ## Acknowledgements
 
-- **Author**- Bronze Martin Solution Engineer, Ethan Shmargad, Matthew McDaniel Solution Engineers, Ramu Murakami Gutierrez Product Manage
+- **Author**- Bronze Martin Solution Engineer, Ethan Shmargad, Matthew McDaniel Solution Engineers, Ramu Murakami Gutierrez Product Manager
 - **Technical Contributor** -  Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff, Lavanya Jayapalan Principal User Assistance Developer
 - **Last Updated By/Date** - Ramu Murakami Gutierrez Product Manager, April 14th 2022
