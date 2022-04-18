@@ -109,7 +109,7 @@ This invokes the FTP adapter Configuration Wizard.
     | Output Directory | /home/users/subhani.italapuram@oracle.com/Output  |
     | File Name Pattern | PO%SEQ%.txt  |
 3. On the Schema page, select the "Sample JSON document" from the drop down:
-4. On the File Contents - Definition page, upload the file [Download the Purchase Order JSON](files/PurchaseOrder.json?download=1) and upload it here
+4. On the File Contents - Definition page, upload the file [Download the Purchase Order JSON](files/PurchaseOrder.json?download=1) and upload it here.
 
 
 You may now **proceed to the next lab**.
