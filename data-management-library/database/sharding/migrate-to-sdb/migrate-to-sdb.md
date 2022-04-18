@@ -1274,7 +1274,7 @@ Migrate application to the sharded database a slight change to the application c
 
     
 
-12. From you computer, launch a browser and use the URL: `http://xxx.xxx.xxx.xxx:8081`. Using the public ip address of the catalog host and the port number is 8081.
+12. From your computer, launch a browser and use the URL: `http://xxx.xxx.xxx.xxx:8081`. Using the public ip address of the catalog host and the port number is 8081.
 
     ![Display of catalog host.](images/cataloghost.png)
 
