@@ -207,7 +207,7 @@ This lab assumes you have:
     SQL> <copy>EXEC dbms_workload_repository.create_snapshot()</copy>
     ```
 
-    >**NOTE:** The ADDM report requires a significant amount of database activity to provide useful recommendations, if you would not like to wait for the proper amount of database activity, you may proceed with the lab without waiting. If you would like to see recommendations, please wait. Later, if you still do not see recommendations, we have provided the steps that allow you to reset the task. We've also included the recommendations in the output of step 9 if you choose to not wait. 
+    > **NOTE:** The ADDM report requires a significant amount of database activity to provide useful recommendations, if you would not like to wait for the proper amount of database activity, you may proceed with the lab without waiting. If you would like to see recommendations, please wait. Later, if you still do not see recommendations, we have provided the steps that allow you to reset the task. We've also included the recommendations in the output of step 9 if you choose to not wait. 
 
 6. Retrieve snapshot values to analyze. Pick the minimum and maximum snapshots. Note that the lower snap_id will be the `min` and the top value will be the `max` in step 8.
 

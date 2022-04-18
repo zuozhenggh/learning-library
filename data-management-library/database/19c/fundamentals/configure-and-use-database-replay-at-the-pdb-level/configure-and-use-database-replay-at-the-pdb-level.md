@@ -176,7 +176,7 @@ You are ready to start workload clients to replay the captured workload in `PDB1
 
 1. In **session 2**, if the workload is still not finished, interrupt the `$HOME/labs/19cnf/workload.sh` shell script using `ctrl + z`, quit the SQL*Plus session, and start the `wrc` process into `PDB19`.
 
-    Note: Replay time stamps may be different then the one's shown below.
+    > **Note:** Replay time stamps may be different then the one's shown below.
 
 
 2. Start the `wrc` process.

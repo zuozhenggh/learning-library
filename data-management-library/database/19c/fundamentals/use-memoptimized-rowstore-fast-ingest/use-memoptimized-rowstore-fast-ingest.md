@@ -22,6 +22,9 @@ In this lab, you will:
 
 ### Prerequisites
 
+This lab assumes you have:
+- Obtained and signed in to your `workshop-installed` compute instance.
+
 ## Task 1: Prepare your environment
 
 > **NOTE:** Unless otherwise stated, all passwords will be `Ora4U_1234`. When copying and pasting a command that includes a password, please replace the word `password` with `Ora4U_1234`. This only applies to instances created through OCI Resource Manager with our provided terraform scripts.
