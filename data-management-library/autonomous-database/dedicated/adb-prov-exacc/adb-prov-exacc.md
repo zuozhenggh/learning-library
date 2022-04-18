@@ -13,6 +13,8 @@ Oracle Autonomous Database on Oracle Exadata Cloud@Customer provides the benefit
 
 **This lab guide explains steps to setup Exadata Infrastructure on your on-premises Exadata Cloud@Customer**
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 1. Create the Oracle Exadata Cloud@Customer infrastructure.
@@ -36,18 +38,18 @@ Watch the video below for step by step directions on creating an Autonomous Exad
 *Login to your OCI account as a fleet administrator*
 
 Navigate to the 'Exadata Cloud@Customer' option in the top left hamburger menu from your OCI home screen.
-    ![This image shows the result of performing the above step.](./images/create_EI1.png " ")
+    ![This image shows the result of performing the above step.](./images/create-ei1.png " ")
 
 
 
 Select 'Exadata Infrastructure' and Click the blue 'Create  Exadata Infrastructure' button as shown below
-    ![This image shows the result of performing the above step.](./images/create_EI2.png " ")
+    ![This image shows the result of performing the above step.](./images/create-ei2.png " ")
 
 
 Choose a compartment to deploy, provide a display name, select the Exadata System model and shape.
-![This image shows the result of performing the above step.](./images/create_EI3.png " ")
+![This image shows the result of performing the above step.](./images/create-ei3.png " ")
 
-In the network section, provide, 
+In the network section, provide,
 
 1. **Two Control Plane Server IP Addresses:**These IP addresses are for the network interfaces that connect the two control plane servers to your corporate network using the control plane network
 2. **Netmask:** Specify the IP netmask for the control plane network.
@@ -83,9 +85,9 @@ You may now proceed to setup a VM Cluster Network to deployment your Autonomous 
 
 ## Task 2: Create a VM Cluster Network
 
-Navigate back to the Exadata Cloud@Customer console, select 'VM Cluster' from the left menu and click the blue 'Create VM Cluster' button 
+Navigate back to the Exadata Cloud@Customer console, select 'VM Cluster' from the left menu and click the blue 'Create VM Cluster' button
 
-![This image shows the result of performing the above step.](./images/create_VMC1.png " ")
+![This image shows the result of performing the above step.](./images/create-vmc1.png " ")
 
 After providing the compartment, display name (need not be unique) and the Exadata Cloud@Customer Infrastructure you provisioned above, you can proceed to configure the client and backup network for your VM Cluster as follows.
 
@@ -116,7 +118,7 @@ The backup network is the secondary channel for connectivity to Exadata Cloud@Cu
 
 The minimum and maximum IP addresses required for the backup network depend on the shape of your Exadata Infrastructure and are specified in the table below.
 
-![This image shows the result of performing the above step.](./images/create_VMC2.png " ")
+![This image shows the result of performing the above step.](./images/create-vmc2.png " ")
 
 3. **Netmask:** Specify the IP netmask for the backup network.
 
@@ -154,7 +156,7 @@ Step 3 is required if you plan to use ZDLRA or NFS as a backup destination. If y
 
 Navigate back to the Exadata Cloud@Customer console, select 'Backup Destinations' from the left menu and click the blue 'Create Backup Destination' button
 
-![This image shows the result of performing the above step.](./images/create_bkp1.png " ")
+![This image shows the result of performing the above step.](./images/create-bkp1.png " ")
 
 Once you select a compartment and provide a display name, you may pick one of the two backup destination types
 
@@ -164,7 +166,7 @@ If you choose to backup your autonomous databases on an on-premise Oracle Recove
 
 Provide the Recovery Appliance connect string and VPC username. Contact your ZDLRA backup admin for these details.
 
-![This image shows the result of performing the above step.](./images/create_bkp2.png " ")
+![This image shows the result of performing the above step.](./images/create-bkp2.png " ")
 
 Click **Create Backup Destination** at the bottom of the page.
 
@@ -174,7 +176,7 @@ If you choose to backup your autonomous databases on an on-premise NFS Storage d
 
 Provide the IP Address (up to 4) of your NFS Server and one or more NFS Export Shares. Contact your network / backup admin for details
 
-![This image shows the result of performing the above step.](./images/create_bkp3.png " ")
+![This image shows the result of performing the above step.](./images/create-bkp3.png " ")
 
 Click **Create Backup Destination** at the bottom of the page.
 
@@ -199,6 +201,8 @@ The Activate button is only available if the Oracle Exadata infrastructure requi
 
 After activation, the state of the Oracle Exadata infrastructure changes to **Active**
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 *All Done! You have successfully setup your Autonomous Database on Exadata Cloud @ Customer environment. It is now ready to deploy Autonomous VM Clusters*
@@ -206,5 +210,5 @@ After activation, the state of the Oracle Exadata infrastructure changes to **Ac
 - **Author** - Simon Law & Kris Bhanushali
 - **Last Updated By/Date** - Kris Bhanushali, July 2020
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!

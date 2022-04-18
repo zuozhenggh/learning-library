@@ -6,6 +6,8 @@ This lab is a 3 step process – take export from source, upload the dumpfiles o
 
 *Note: For using mv2adb for migration from source DB to ATPD, the source DB should be at lower version than ATP-D Database.*
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As a LOB user:
@@ -24,11 +26,11 @@ As a LOB user:
 
 - Log in to the OCI tenancy. Go to **Menu** > **Core Infrastructure** > **Oject Storage** > **Object Storage**.
 
-    ![This image shows the result of performing the above step.](./images/Img13.png " ")
+    ![This image shows the result of performing the above step.](./images/img13.png " ")
 
 - Ensure you are in the right compartment and click **Create Bucket**.
 
-    ![This image shows the result of performing the above step.](./images/Img14.png " ")
+    ![This image shows the result of performing the above step.](./images/img14.png " ")
 
 ## Task 2: Install Instant Client on the Source DBCS instance
 
@@ -53,7 +55,7 @@ As a LOB user:
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img2.png " ")
+    ![This image shows the result of performing the above step.](./images/img2.png " ")
 
 The instant cient package containing Basic Package, SQLPlus Package and Tools Package is now installed.
 
@@ -70,7 +72,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img3.png " ")
+    ![This image shows the result of performing the above step.](./images/img3.png " ")
 
 - Edit the sqlnet file to change the wallet directory to the new location of /root/wallet and export the following paths:
 
@@ -84,7 +86,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
 
     *Note: These paths may vary on your system. Please check prior to performing export.*
 
-    ![This image shows the result of performing the above step.](./images/Img4.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img4.jpg " ")
 
 - Copy the connect string from tnsnames.ora file existing in the Wallet folder to connect to ATP-D instance.
 
@@ -117,7 +119,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img5.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img5.jpg " ")
 
 - Validate the installation.
 
@@ -128,7 +130,7 @@ The instant cient package containing Basic Package, SQLPlus Package and Tools Pa
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img6.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img6.jpg " ")
 
 *Note: The cfg file created here will be used as a reference for our configuration file.*
 
@@ -178,13 +180,13 @@ Generate encrypted passwords using the **`mv2adb encpass`** command for system p
 
 - Click [this download link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/ccTZey-FamcBZ02nCaU7J9yzy20c0a5UxCQf-3IciWE/n/atpdpreview11/b/mv2adb/o/samplesource.mv2adbfinal.cfg) to download a sample config file for reference.
 
-    ![This image shows the result of performing the above step.](./images/Img8.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img8.jpg " ")
 
 - Navigate to your console and get the OCI Details.
 
-    ![This image shows the result of performing the above step.](./images/Img15.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img15.jpg " ")
 
-    ![This image shows the result of performing the above step.](./images/Img9.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img9.jpg " ")
 
 - Run the migration script in auto mode.
 
@@ -195,9 +197,9 @@ Generate encrypted passwords using the **`mv2adb encpass`** command for system p
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img10.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img10.jpg " ")
 
-    ![This image shows the result of performing the above step.](./images/Img11.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img11.jpg " ")
 
 Migration of schema from source machine to Autonomous Database is complete.
 
@@ -216,7 +218,8 @@ Migration of schema from source machine to Autonomous Database is complete.
     </copy>
     ```
 
-    ![This image shows the result of performing the above step.](./images/Img12.jpg " ")
+    ![This image shows the result of performing the above step.](./images/img12.jpg " ")
+
 
 ## Acknowledgements
 
