@@ -233,7 +233,7 @@ EOF
 
 	```
 	<copy>
-	select mytable.schema_name, mytable.name, mytable_load.load_status, nrows, load_progress, QUERY_COUNT 
+	select mytable.schema_name, mytable.name, mytable_load.load_status, nrows, load_progress, QUERY_COUNT
 	from performance_schema.rpd_tables mytable_load, performance_schema.rpd_table_id  mytable
 	where mytable_load.id = mytable.id
 	</copy>
