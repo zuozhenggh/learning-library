@@ -1,7 +1,7 @@
 # Work with RDF Graphs in Graph Studio
 
 ## Introduction
-Graph Studio in Oracle Autonomous Database enables users to model, create, query, and analyze graph data. It includes notebooks, developer APIs for executing graph queries using PGQL, nearly 60 built-in graph algorithms, and offers dozens of visualizations including native graph visualization.
+Graph Studio in Oracle Autonomous Database enables users to model, create, query, and analyze graph data. It includes notebooks, developer APIs for executing graph queries using PGQL, 60+ built-in graph algorithms, and offers dozens of visualizations including native graph visualization.
 In addition to property graph, Graph Studio now extends support for semantic technologies, including storage, inference, and query capabilities for data and ontologies based on Resource Description Framework (RDF) and Web Ontology Language (OWL).
 You can now use Graph Studio for the following supported RDF features:
 - Create an RDF graph
@@ -17,13 +17,13 @@ SPARQL Protocol and RDF Query Language (SPARQL) is one of the technologies stand
 
 SPARQL uses a **SELECT some elements WHERE some conditions** structure to specify a query. The conditions in the WHERE clause of a SPARQL query are built using triple patterns, which are essentially an RDF triple where elements of the triple can be replaced with query variables (denoted with a ? prefix). A query variable in a triple pattern acts as a wild card. Consider the triple pattern **?movie ms:genre ms:genre\_Comedy**. When this triple pattern is evaluated against an RDF graph, it will return all **subjects** of triples with predicate **ms:genre** and **object ms:genre\_Comedy**. The SPARQL SELECT clause specifies a list of query variables to project from the query. In SPARQL syntax, URIs are enclosed within angle brackets (for example, <http://www.example.com/moviestream/actor>) and literals are enclosed within double quotes (e.g., "Kevin Bacon"). Literals can be followed by ^^ and a datatype URI (e.g., "100"^^<http://www.w3.org/2001/XMLSchema#integer>) or followed by @ and a language tag (e.g., "Jalapeño"@es). Most XML schema data types are supported in SPARQL, and plain literals without a datatype URI are considered to have datatype <http://www.w3.org/2001/XMLSchema#string>.
 
-This video featured below is a demo example using a similar dataset that will be utilized in this lab. This video emphasizes the structure of the autonomy of the movie structure using RDF. The demo features RDF Graph using a staging table in combination with SQL Developer, which is distinctly different from this Autonomous Database version of the lab. However, the SPARQL language used to query and visualize the data is very similar for context.
+This video featured below is a demo example using a similar dataset that will be utilized in this lab. This video emphasizes the structure of the ontology of the movie structure using RDF. The demo features RDF Graph using a staging table in combination with SQL Developer, which is distinctly different from this Autonomous Database version of the lab. However, the SPARQL language used to query and visualize the data is very similar for context.
 
   [](youtube:e_EQjInas50)
 
 In this lab, a semantic graph will be built using SPARQL, which is a standardized methodology for integrating different data sources. This procedure will teach you how to analyze the data using graph-based queries and visualization.  
 
-Estimated Time: 45 minutes
+Estimated Time: 35 minutes
 
 ### Objectives
 - Prepare the Environment
@@ -36,12 +36,11 @@ Estimated Time: 45 minutes
   * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
   > **Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
 
-  - A database user with the correct roles and privileges for working with Graph Studio.
   - Download the MOVIESTREAM file (moviestream\_rdf.nt) using this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/moviestream_rdf.nt)
 
 This concludes this lab. You may now *proceed to the next lab.*
 
 ## Acknowledgements
-- **Author** -  Nicholas Cusato, Matthew McDaniel, Ethan Shmargad Solution Engineers, Ramu Murakami Gutierrez Product Manager
-- **Technical Contributor** -  Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff
-- **Last Updated By/Date** - Nicholas Cusato Solution Engineer, Ramu Murakami Gutierrez Product Manager, April 4th 2022
+- **Author** -  Nicholas Cusato, Ethan Shmargad, Matthew McDaniel Solution Engineers, Ramu Murakami Gutierrez Product Manager
+- **Technical Contributor** - Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff, Lavanya Jayapalan Principal User Assistance Developer
+- **Last Updated By/Date** -  Ramu Murakami Gutierrez Product Manager, April 14th 2022
