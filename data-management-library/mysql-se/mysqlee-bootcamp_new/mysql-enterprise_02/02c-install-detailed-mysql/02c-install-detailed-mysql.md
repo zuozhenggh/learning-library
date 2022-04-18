@@ -220,29 +220,28 @@ privilege and settings for opc user</span>**
      ```
 
 15. Another way is searching the message “ready for connections” in error log as one of the last
-shell-mysql1> grep -i ready /mysql/log/err_log.log
 
-16. Retrieve root password for first login
-
-    a. **<span style="color:green">shell-mysql1></span>**
+    **<span style="color:green">shell-mysql1></span>**
 
     ```text
     <copy>grep -i ready /mysql/log/err_log.log </copy>
     ```
 
-   b. **<span style="color:green">shell-mysql1></span>**
+16. Retrieve root password for first login
+
+    **<span style="color:green">shell-mysql1></span>**
 
     ```text
     <copy>grep -i 'temporary password' /mysql/log/err_log.log</copy>
     ```
 
-17. Before version 5.7 it was recommended to run the ' mysql_secure_installation ' script. From version 5.7 all these settings are “by default”, but the script can be used also to setup the validate_password plugin (used later). Execute now mysql_secure_installation
+17. Before version 5.7 it was recommended to run the \'mysql\_secure\_installation\' script. From version 5.7 all these settings are “by default”, but the script can be used also to setup the validate\_password plugin (used later). Execute now mysql\_secure\_installation
 
     **<span style="color:green">shell-mysql1></span>**
 
     ```text
-    <copy>ssh -i $HOME/sshkeys/id_rsa_mysql1 mysql1</copy>
-
+    <copy>/mysql/mysql-latest/bin/mysql_secure_installation -h127.0.0.1 -P3307</copy>
+    ```
 shell-mysql1> /mysql/mysql-latest/bin/mysql_secure_installation -h127.0.0.1 -P3307
 
 ## Learn More
