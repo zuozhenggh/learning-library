@@ -24,11 +24,11 @@ This lab assumes you have:
 
 Download the lab files with the following link. 
 
-[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip)
+[Lab Files](https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/func2.zip)
 
 To download them in the OCI Cloud Console, use the following command:
 ```
-curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
+curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/func2.zip
 ```
 
 ## Task 2: Creating a Collection
@@ -160,7 +160,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
     ```
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn list apps
     NAME            ID
-    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaf2snfvp2gxhghcsvadeffffdddd32rf7hqh3lbcgiztw2xkqrv74ha
+    functionsApp    ocid1.fnapp.oc1.eu-frankfurt-1.aaaaaaaaa1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4
     ```
 
     We are now setup to deploy our function.
@@ -168,7 +168,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
 4. Download the function code in your OCI Cloud Shell with the following command if you have not done so already:
 
     ```
-    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HEz_9QV5VG9jMEbIB97IilHQrAFP-PR_VObicV9g2vZs5bf8FjZZdUza8/n/c4u04/b/developer-library/o/func2.zip
+    curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/func2.zip
     ```    
 
     Once downloaded, unzip it
@@ -211,7 +211,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
     747aa001f428: Pushed 
     f9ef7f1bcb19: Pushed 
     02c055ef67f5: Pushed 
-    0.0.68: digest: sha256:2a9b72e1f08abc89ce3ac98bc1b074efe0bfccbc1103a14ba6b0b4c9745c623c size: 2623
+    0.0.68: digest: sha256:2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a size: 2623
     Updating function log-to-adw-with-ords-and-fn using image fra.ocir.io/mytenancy/livelabsrepo/log-to-adw-with-ords-and-fn:0.0.68...
     Successfully created function: log-to-adw-with-ords-and-fn with fra.ocir.io/mytenancy/livelabsrepo/log-to-adw-with-ords-and-fn:0.0.68
     ```
@@ -250,7 +250,7 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
     For the **secret_ocid** parameter, use the OCID of the password you entered in the secrets service during the setup.
 
     ```
-    fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
+    fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4"
     ```
 
     Once the values are entered, run them in the OCI Cloud Shell. Be sure to press enter/return after each configuration and that you see the confirmation that the function was updated.
@@ -264,8 +264,8 @@ curl -o func2.zip https://objectstorage.us-ashburn-1.oraclecloud.com/p/VG3Hkz5HE
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn db_user "admin"
     functionsApp log-to-adw-with-ords-and-fn updated db_user with admin
     
-    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq"
-    functionsApp log-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.amaaaaaau3i6vkyabasdasdasdasdasdasdasd43435ehgdfq
+    bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn secret_ocid "ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4"
+    functionsApp log-to-adw-with-ords-and-fn updated dbpwd_cipher with ocid1.vaultsecret.oc1.eu-frankfurt-1.a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4a1a2a3a4
     
     bspendol@cloudshell:~ (eu-frankfurt-1)$ fn config function functionsApp log-to-adw-with-ords-and-fn collection "loggingcollection"
     functionsApp log-to-adw-with-ords-and-fn updated input_bucket with loggingcollection
@@ -460,4 +460,4 @@ In this section, you created a function to automate the loading of logs into a d
 ## Acknowledgements
 
 - **Author** - Jeff Smith, Distinguished Product Manager and Brian Spendolini, Trainee Product Manager, Greg Verstraeten, Product Manager
-- **Last Updated By/Date** - Brian Spendolini, June 2021
+- **Last Updated By/Date** - Brian Spendolini, December 2021

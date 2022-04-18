@@ -11,8 +11,8 @@ How will we do this? First of all, we will look for clues in the data, through v
 If we can show that the score that we predict is accurate (meaning that the score we predict is close to the actual fan score), that would give us solid grounds to state that the factors that we identified are indeed the correct ones.
 
 You have access to the following:
-- Information on races (1950-now). For example, the circuit of each race, the lap times, pit stops and the results of each race.
-- A fan score per race (2008-2020) (source: racefans.net). These scores were collected from many fans and result in one aggregated average score for each race. We will treat this fan score as the **ground truth** of how "good" a race is.
+- Information on races (1950-2021). For example, the circuit of each race, the lap times, pit stops and the results of each race.
+- A fan score per race (2008-2020) (source: racefans.net). These scores were collected from many fans and result in one aggregated average score for each race. We will treat this fan score as the **ground truth** of how "good" a race is. Note that we **don't** have fan scores for 2021.
 
 We will go through the following phases:
 - Data Exploration: Understand our data and look for clues on what makes a great race. In other words, we try to identify race variables that are potentially important for a high appreciation score by the fans.
@@ -61,8 +61,8 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
 
 5. Type the password, confirm the password by typing it again and click **Download**.
 
-      - Password: `Oracle_12345`
-      - Confirm Password: `Oracle_12345`
+      - Password: Type the secure password
+      - Confirm Password: Confirm the secure password
 
    ![AWD Wallet Password](images/adw_wallet_password.png)
 
@@ -102,7 +102,7 @@ Therefore we need to create a connection from Oracle Analytics Cloud to Autonomo
     >
     > **Username**: `F1`
     >
-    > **Password**: `Oracle_12345`
+    > **Password**: Provide the secure password for the F1 user
     >
     > **Service Name**: Keep the default, the name of your database followed by the `_high` suffix.
     >
@@ -441,13 +441,7 @@ How can we check whether our theories about the relationship between position ch
 
    Configure the correlation diagram using the fields `OVERTAKEN_POSITIONS_TOTAL`, `SCORE` and `NAME_YEAR` as follows.
 
-	 Make sure you set the correct chart type (Scatter) configure the chart as follows:
-
-	 > `SCORE` -> Values Y-Axis
-	 >
-	 > `OVERTAKEN_POSITIONS_TOTAL` -> Values X-Axis
-	 >
-	 > `NAME_YEAR` -> Category
+	 Make sure you set the correct chart type (Scatter) configure the chart as shown in the screenshot.
 
 	 By default the fields may not be in the correct sections. In that case, drag the fields to their correct sections.
 

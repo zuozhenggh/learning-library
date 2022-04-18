@@ -1,207 +1,112 @@
-# Observability (metrics, tracing, and logs)
+# Set up the environment
 
 ## Introduction
 
-This lab will show you how you can trace microservice activity using Jaeger.
+In this tutorial, you'll provision and set up the resources to execute workshop in your tenancy.  
 
-Estimated lab Time - 25 minutes
+Estimated Time: 15 minutes
 
-  -   Install and configure Grafana, Prometheus, Loki, Promtail, and Jaeger
-  -   Understand single-pane-of glass unified observability using Grafana to analyze metrics, logs, and tracing of the microservices architecture across the application and Oracle database tier.
+### Objectives
 
-## Task 1: Install and configure observability software and metrics and log exporters
+- Clone the workshop repository.
+- Execute environment setup.
 
-1. Run the install script to install Jaeger, Prometheus, Loki, Promtail, Grafana and an SSL secured LoadBalancer for Grafana
+### Prerequisites
 
+An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
+
+## Task 1: Log in to the Oracle Cloud Console and Launch the Cloud Shell
+
+If you haven't already, sign in to your account.
+
+## Task 2: Select the Home Region
+
+Be sure to select the **home region** of your tenancy. Setup will only work in the home region.
+
+  ![Oracle Cloud Infrastructure Home Region](images/home-region.png " ")
+
+## Task 3: Check Your Tenancy Service Limits
+
+If you have a **fresh** free trial account with credits then you can be sure that you have enough quota and you can proceed to the next step.
+
+If, however, you have already used up some quota on your tenancy, perhaps while completing other workshops, there may be insufficient quota left to run this workshop. The most likely quota limits you may reach are summarized in the following table.
+
+| Service          | Scope  | Resource                                             | Available | Free Account Limit |
+|------------------|:------:|------------------------------------------------------|:---------:|:------------------:|
+| Database         | Region | Autonomous Transaction Processing Total Storage (TB) | **1**     | 2                  |
+|                  | Region | Autonomous Transaction Processing OCPU Count         | **2**     | 8                  |
+
+Quota usage and limits can be check through the console: **Limits, Quotas and Usage** in the **Governance & Administration** section , For example:
+
+  ![OCI Service Limit Example](images/service-limit-example.png " ")
+
+The Tenancy Explorer is used to locate existing resources: **Governance & Administration** --> **Governance** --> **Tenancy Explorer**. Use the "Show resources in subcompartments" feature to locate all the resources in your tenancy:
+
+  ![OCI Show Subcompartments](images/show-subcompartments.png " ")
+
+It may be necessary to delete some resources to make space to run the workshop. Once you have enough space you may proceed to the next step.
+
+## Task 4: Launch Cloud Shell
+
+Cloud Shell is a small virtual machine running a "bash" shell which you access through the Oracle Cloud Console. Cloud Shell comes with a pre-authenticated command line interface in the tenancy region. It also provides up-to-date tools and utilities.
+
+1. Click the Cloud Shell icon in the top-right corner of the Console.
+
+  ![OCI Cloud Shell Opening](images/open-cloud-shell.png " ")
+
+> **Note:** Cloud Shell uses *websockets* to communicate between your browser and the service. If your browser has websockets disabled or uses a corporate proxy that has websockets disabled you will see an error message ("An unexpected error occurred") when attempting to start Cloud Shell from the console. You also can change the browser cookies settings for a specific site to allow the traffic from *.oracle.com
+
+## Task 5: Make a Clone of the Workshop Setup Script and Source Code
+
+To work with the application code, you need to make a clone from the GitHub repository.  
+
+1. Execute the following sequence of commands into cloud shell:
+
+    ```bash
+    <copy>
+    git clone -b 22.2.2 --single-branch https://github.com/oracle/microservices-datadriven.git
+    cp -r ./microservices-datadriven/workshops/oracleAQ $HOME;     
+    rm -r -f microservices-datadriven; 
+    cd oracleAQ;
+    </copy>
     ```
-    <copy>cd $GRABDISH_HOME/observability;./install.sh</copy>
+
+2. You should now see the directory `oracleAQ` in the directory that you clone.
+
+## Task 6: Start the Setup
+
+1. Execute the below command into cloud shell to start the setup.
+  
+    ```bash
+    <copy>
+    source setup.sh
+    </copy>
+    ```
+  
+2. Enter the password to be used for database connection and wait for the ATP provisioning when you will see the message: **"Action completed. Waiting until the resource has entered state: ('AVAILABLE',)".**
+
+3. The setup process will typically take around 5 minutes to complete.
+
+> **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then re-run the above command to resume the setup.
+
+## Task 7: Complete the Setup
+
+Once the majority of the setup has been completed the setup will periodically provide a summary of the setup status. Once everything has been completed you will see the message: **SETUP COMPLETED**.
+
+1. If any of the background setup jobs are still running you can monitor their progress with the following command into cloud shell.
+
+    ```bash
+    <copy>
+    ps -ef | grep "$ORACLEAQ_HOME" | grep -v grep
+    </copy>
     ```
 
-2. Run the `/createMonitorsAndDBAndLogExporters.sh` script. This will do the following:
-   - Create Prometheus ServiceMonitors to scrape the Frontend, Order, and Inventory microservices.
-   - Create Prometheus ServiceMonitors to scrape the Order PDB, and Inventory PDB metric exporter services.
-   - Create configmpas, deployments, and services for PDB metrics exporters.
-   - Create configmaps, deployments, and services for PDB log exporters.
+> **Note:**  Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
-    ```
-    <copy>cd $GRABDISH_HOME/observability;./createMonitorsAndDBAndLogExporters.sh</copy>
-    ```
-
-## Task 2: Configure Grafana
-
-1. Identify the EXTERNAL-IP address of the Grafana LoadBalancer by executing the following command:
-
-       ```
-       <copy>services</copy>
-       ```
-
-     ![](images/grafana-loadbalancer-externalip.png " ")
-
-     Note, it will take a few minutes for the LoadBalancer to provision during which time it will be in a `pending` state
-
-2. Open a new browser tab and enter the external IP URL:
-
-     `https://<EXTERNAL-IP>`
-
-      Note, for convenience a self-signed certificate is used to secure this https address and so you will be prompted by the browser to allow access.
-
-3. Login using the default username `admin` and password `prom-operator`
-
-      ![](images/grafana_login_screen.png " ")
-
-4. View pre-configured Prometheus data source:
-
-    Select the `Configuration` gear icon on the left-hand side and select `Data Sources`.
-
-      ![](images/configurationdatasourcesidemenu.png " ")
-
-    Click `select` button of Prometheus option.
-
-      ![](images/selectprometheusdatasource.png " ")
-
-    The URL for Prometheus should be pre-populated
-
-      ![](images/prometheusdatasourceurl.png " ")
-
-    Click `Test` button and verify success.
-
-      ![](images/saveandtestdatasourceisworking.png " ")
-
-    Click the `Back` button.
-
-5. Select the `Data sources` tab and select `Jaeger`
-
-    Click `Add data source`.
-
-      ![](images/adddatasourcebutton.png " ")
-
-    Click `select` button of Jaeger option.
-
-      ![](images/addjaegerdatasource.png " ")
-
-    Enter `http://jaeger-query.msdataworkshop:8086/jaeger` in the URL field.
-
-      ![](images/jaegerdatasourceurl.png " ")
-
-    Click the `Save and test` button and verify successful connection message.
-      ![](images/confirmjaeger.png " ")
-
-    Click the `Back` button.
-
-6. Add and configure Loki data source:
-
-    Click `Add data source`.
-
-      ![](images/adddatasourcebutton.png " ")
-
-    Click `select` button of Loki option.
-
-      ![](images/lokidatasource.png " ")
-
-    Enter `http://loki-stack.loki-stack:3100` in the URL field
-
-      ![](images/lokidatasourceurl.png " ")
-
-    Create the two Derived Fields shown in the picture below.
-    The values are as follows:
-
-        Name: traceIDFromSpanReported
-        Regex: Span reported: (\w+)
-        Query: ${__value.raw}
-        Internal link enabled and `Jaeger` selected from the drop-down list.
-        (Optional) Debug log message: Span reported: dfeda5242866aceb:b5de9f0883e2910e:ac6a4b699921e090:1
-
-        Name: traceIDFromECID
-        Regex: ECID=(\w+)
-        Query: ${__value.raw}
-        Internal link enabled and `Jaeger` selected from the drop-down list
-        (Optional) Debug log message: ECID=dfeda5242866aceb
-
-      ![](images/traceidfromspan.png " ")
-
-      ![](images/traceIdFromEcid.png " ")
-
-    Click the `Save & Test` button and verify successful connection message.
-
-      ![](images/lokiconnectedandlabelsfound.png " ")
-
-    Click the `Back` button.
-
-7. Install the GrabDish Dashboard
-
-    Select the `+` icon on the left-hand side and select `Import`
-
-      ![](images/importsidemenu.png " ")
-
-    Copy the contents of the [GrabDish Dashboard JSON](https://raw.githubusercontent.com/oracle/microservices-datadriven/main/grabdish/observability/dashboards/grabdish-dashboard.json)
-
-    Paste the contents in the `Import via panel json` text field and click the `Load` button
-      ![](images/jsondashboardupload.png " ")
-
-    Confirm upload and click `Import` button.
-      ![](images/confirmdashimport.png " ")
-
-
-## Task 3: Open and study the main GrabDish Grafana Dashboard screen and metrics
-
-1. Select the four squares icon on the left-hand side and select 'Dashboards'
-      ![](images/dashboardsidemenu.png " ")
-
-2. In the `Dashboards` panel select `GrabDish Dashboard`
-
-      ![](images/dashboardlist.png " ")
-
-3. Notice the collapsible panels for each microservices and their content which includes
-    - Metrics about the kubernetes microservice runtime (CPU load, etc.)
-    - Metrics about the kubernetes microservice specific to that microservice (`PlaceOrder Count`, etc.)
-    - Metrics about the PDB used by the microservice (open sessions, etc.)
-    - Metrics about the PDB specific to that microservice (inventory count)
-
-      ![](images/frontenddashscreen.png " ")
-      ![](images/orderdashscreen.png " ")
-      ![](images/inventorydashscreen.png " ")
-
-4. By default the status will show a value of `1` for `UP` status.
-
-   This is corrected by selecting the `Edit` item in the/a `Status` panel dropdown
-      ![](images/editstatus.png " ")
-
-   Add a value mapping where `value` of `1` results in `text` of `UP`) under the `Field` tab as shown here:
-      ![](images/valuetest1upfield.png " ")
-
-   Click the `Apply` button in the upper right to apply changes.
-
-5. If not already done, place an order using the application or run the scaling test in the earlier labs to see the metric activity in the dashboard.
-
-6. Select the 'Explore' option from the drop-down menu of any panel to show that metric and time-span on the Explore screen
-
-      ![](images/grabdishdashexplorebutton.png " ")
-
-## Task 4: Use Grafana to drill down on metrics, tracing, and logs correlation and logs to trace feature
-
-1. Click the `Split` button on the Explore screen.
-      ![](images/grafanaexploresplitpanebutton.png " ")
-
-2. Click the `Loki` option from the drop-down list on the right-hand panel.
-      ![](images/explorerscreen.png " ")
-
-3. Click the chain icon on either panel. This will result in the Prometheus metrics on the left and Loki logs on the right are of the same time-span.
-      ![](images/syncchain.png " ")
-
-4. Click the `Log browser` drop-down list on the right-hand panel and select the `app` label under "1. Select labels to search in"
-      ![](images/logbrowser.png " ")
-
-5. Select the `order` (microservice) and `db-log-exporter-orderpdb` values under "2. Find values for selected label" and click `Show logs` button.
-      ![](images/ordermslabel.png " ")
-      ![](images/dblogexporterorderpdblabel.png " ")
-
-6. Select one of the green info log entries to expand it. Notice the `Jaeger` button next to the trace id.
-      ![](images/spanreportedlogentry.png " ")
-
-7. Click the `Jaeger` to view the corresponding trace information and drill down into detail.
-      ![](images/traceinfo.png " ")
-
+Once the setup has been completed you are ready to **proceed to the next lab.**
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist
-* **Last Updated By/Date** - Paul Parkinson, August 2021
+
+- **Author** - Mayank Tayal, Developer Advocate
+- **Contributors** - Sanjay Goil, VP Microservices and Oracle Database; Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist; Richard Exley, Maximum Availability Architecture; Shivani Karnewar, Senior Member Technical Staff
+- **Last Updated By/Date** - Mayank Tayal, February 2022

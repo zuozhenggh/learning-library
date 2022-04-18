@@ -1,4 +1,4 @@
-# CREATE MYSQL DATABASE SYSTEM AND HEATWAVE CLUSTER
+# Create MySQL Database System and HeatWave Cluster
 ![INTRO](./images/00_mds_heatwave_2.png " ")
 
 ## Introduction
@@ -26,9 +26,7 @@ In this lab, you will be guided through the following tasks:
 
 ## Task 1: Create Virtual Cloud Network
 
-1. Navigation Menu   
-        Networking  
-            Virtual Cloud Networks
+1. Click **Navigation Menu**, **Networking**, then **Virtual Cloud Networks**  
     ![VCN](./images/03vcn01.png " ")
 
 2. Click **Start VCN Wizard**
@@ -160,12 +158,12 @@ In this lab, you will be guided through the following tasks:
 
 8. On Configure hardware, keep default shape as **MySQL.HeatWave.VM.Standard.E3**
 
-    Data Storage Size (GB) Set value to:  **100**
+    Data Storage Size (GB) Set value to:  **1024**
 
     ```
-    <copy>100</copy>
+    <copy>1024</copy>
     ```
-    ![MDS](./images/04mysql07-3-100.png" ")
+    ![MDS](./images/04mysql07-3-100-2.png" ")
 
 9. On Configure Backups, disable 'Enable Automatic Backup'
 
@@ -480,4 +478,4 @@ algorithm, it will predict the number of nodes needed.
 
 * **Author** - Perside Foster, MySQL Solution Engineering
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager, Frédéric Descamps, MySQL Community Manager
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, February 2022
