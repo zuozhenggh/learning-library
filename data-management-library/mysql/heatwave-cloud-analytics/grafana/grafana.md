@@ -43,15 +43,15 @@ This lab assumes you have:
 
 2. Create 'grafana' namespace
 
-    ```
-    <copy>
+```
+<copy>
     kubectl create ns grafana
-    </copy>
-    ```
+</copy>
+```
 
 3. Deploy Grafana application with Load Balancer service
 
-	```
+```
 <copy>
 cat << EOF | kubectl apply -n grafana -f -
 ---
@@ -142,19 +142,19 @@ EOF
 
 4. Check the status of pods and wait until all the pods are up and running
 
-	```
-	<copy>
+```
+<copy>
 	kubectl get all -n grafana
-	</copy>
-	```
+</copy>
+```
 
 5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready
 
-	```
-	<copy>
-	kubectl get service -n grafana --watch
-	</copy>
-	```
+```
+<copy>
+kubectl get service -n grafana --watch
+</copy>
+```
 
   Once you have the External IP provisioned, you can press **CTL+C** to terminate the command
 
