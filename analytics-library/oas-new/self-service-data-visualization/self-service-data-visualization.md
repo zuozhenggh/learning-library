@@ -75,7 +75,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       Next, we wish to review profit ratio for each product separately to obtain greater detail.
    
-      **Drag** "Products" up to **Trellis Rows**. You should see an individual line chart for each product as shown in the image.
+      **Drag** "Product" up to **Trellis Rows**. You should see an individual line chart for each product as shown in the image.
 
       ![](./images/asdvff8.png " ")
 
@@ -156,15 +156,15 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
         ![](./images/asdvff13-a.png " ")
 
-13.     Now that we've successfully mashed up our data, let's continue with our analysis.  **Hold control** and **select** "Product -> Product"     from SampleApp and "Stock" and "Demand" from Inventory.
+13.    Now that we've successfully mashed up our data, let's continue with our analysis.  **Hold control** and **select** "Product -> Product"     from SampleApp and "Stock" and "Demand" from Inventory.
 
-        - **Right Click** and **Select** "Pick Visualization".  
+       - **Right Click** and **Select** "Pick Visualization".  
 
-       ![](./images/asdvff16.png " ")
+        ![](./images/asdvff16.png " ")
 
        - **Select** "Bar"
 
-     ![](./images/asdvff17.png " ")
+        ![](./images/asdvff17.png " ")
 
 14.  Notice the grammar panel for the bar visualization. Arranging both the metrics "Stock" and "Demand" in the Y axis respectively, the graph should render as shown in the image. 
 

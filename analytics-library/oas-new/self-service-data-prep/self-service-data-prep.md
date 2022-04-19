@@ -103,7 +103,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     ![](./images/asdvff9.png " ") 
 
-    Oracle Analytics Server has corrected each zip code record within the column. Note the horizontal bar has changed from red to green. 
+    Oracle Analytics Server has corrected each zip code record within the column. Note the horizontal bar has changed from red to grey. 
 
     ![](./images/asdvff10.png " ") 
 
@@ -132,19 +132,19 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
 8.  Scroll back to the left of the dataset.  Locate the 'EducationField' column. 
 
-    ![](./images/asdvff12-a.png " ")
+     ![](./images/asdvff12-a.png " ")
 
-    Review the information provided in the data quality insights card.
+     Review the information provided in the data quality insights card.
 
-    Oracle Analytics Server has identified there are some missing or null values.  
+     Oracle Analytics Server has identified there are some missing or null values.  
 
-    The data quality bar indicates that 5% of the records are null values. 
+     The data quality bar indicates that 5% of the records are null values. 
 
-    You can replace null or missing values by double clicking on 'Missing or Null' and typing in the replacement value.
+     You can replace null or missing values by double clicking on 'Missing or Null' and typing in the replacement value.
 
-    Double **Click** 'Missing or Null' and type 'Other'
+     Double **Click** 'Missing or Null' and type 'Other'
 
-    ![](./images/asdvff12-c.png " ")
+     ![](./images/asdvff12-c.png " ")
 
 9.  Let's make one last modification to our dataset.  Scroll back to the beginning of the dataset, all the way to the left.  
     
@@ -182,7 +182,8 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     **Click** on the + icon.  The Create Column dialog box appears.  
 
-        - Give the new column a name – Age
+    - Give the new column a name – Age
+
 
      Enter your calculation simply by typing into the box or by utilizing the functions listed in the table on the right.  
     
@@ -198,11 +199,11 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      Make sure you move your cursor outside of the parenthesis.
 
-        - Enter an ‘ – ‘ to denote subtraction.
+    - Enter an ‘ – ‘ to denote subtraction.
 
      To complete our calculation, we will utilize the year specified within BIRTHDATE.    
 
-        - Repeat the steps above to create Year(Birthdate)
+    - Repeat the steps above to create Year(Birthdate)
 
      Your entry should look like this.
     
@@ -232,12 +233,10 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
 ## Task 2: Self Service Data Modeling
 
-     Oracle Analytics Server provides the ability to create new datasets quickly and easily adding tables from one or more connections 
-     to a data set for analysis. This exercise will explain how to bring data entities together from one or more sources, select different tables, modify columns and join them together and preview the dataset. 
+Oracle Analytics Server provides the ability to create new datasets quickly and easily adding tables from one or more connections 
+to a data set for analysis. This exercise will explain how to bring data entities together from one or more sources, select different tables, modify columns and join them together and preview the dataset. 
     
-     Datasets can be blended with other datasets, saved, and shared with others throughout the organization for analysis purposes.  
-
-     Let's begin.  
+Datasets can be blended with other datasets, saved, and shared with others throughout the organization for analysis purposes.  
 
 1.   Create - Dataset 
 
@@ -254,7 +253,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 2.   We would like to analyze customer orders, products, revenue, and billing information.  I'm going to bring together the tables I need
      in order to complete my analysis. 
 
-     Let's start by selecting the CLOUD_D_CUSTOMERS table.  You can double click it or drag it over to the palette. 
+     Let's start by selecting the *CLOUD_D_CUSTOMERS* table.  You can double click it or drag it over to the palette. 
 
      Once selected, you will see the table represented in a diagram on the upper portion of the palette.  Below, you will see the data elements that reside in the table. 
 
@@ -262,10 +261,10 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      Next we are going to select the remaining tables we need.  **CTRL Click** the following tables:
 
-     - CLOUD_D_PRODUCTS
-     - CLOUD_F_BILL_REV
-     - CLOUD_TIME_SMALL
-     - CLOUD_D_ORDERS
+     - *CLOUD_D_PRODUCTS*
+     - *CLOUD_F_BILL_REV*
+     - *CLOUD_TIME_SMALL*
+     - *CLOUD_D_ORDERS*
     
      Once selected, **Right Click** - select 'Add to dataset'
 
@@ -277,22 +276,22 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      **Click** or **Hover** over the connection point. 
 
-     CLOUD_F_BILL_REV and CLOUD_D_ORDERS are joined on Order_Status
+     *CLOUD_F_BILL_REV* and *CLOUD_D_ORDERS* are joined on *Order_Status*
 
      ![](./images/asdvff18.png " ")
 
-     CLOUD_F_BILL_REV and CLOUD_D_PRODUCTS are joined on PROD_ITEM_KEY
+     *CLOUD_F_BILL_REV* and *CLOUD_D_PRODUCTS* are joined on *PROD_ITEM_KEY*
 
-3.   We need to manually add joins for both CLOUD_D_CUSTOMERS and CLOUD_TIME_SMALL tables. 
+3.   We need to manually add joins for both *CLOUD_D_CUSTOMERS* and *CLOUD_TIME_SMALL* tables. 
 
-     **Click** on CLOUD_F_BILL_REV.  CUST_NUMBER resides within the table.  Notice it is identified as a measure. In order to join CLOUD_F_BILL_REV 
-     to CLOUD_D_CUSTOMERS we need to modify the identifier. 
+     **Click** on *CLOUD_F_BILL_REV*.  *CUST_NUMBER* resides within the table.  Notice it is identified as a measure. In order to join *CLOUD_F_BILL_REV* 
+     to *CLOUD_D_CUSTOMERS* we need to modify the identifier. 
 
-     **Click** on the # CUST_NUMBER column name and modify the identifier 
+     **Click** on the *# CUST_NUMBER* column name and modify the identifier 
 
      ![](./images/asdvff20.png " ")
 
-     **Right Mouse Click** on CLOUD_D_CUSTOMERS and select Join To CLOUD_F_BILL_REV
+     **Right Mouse Click** on *CLOUD_D_CUSTOMERS* and select Join To *CLOUD_F_BILL_REV*
 
      ![](./images/asdvff21.png " ")
 
@@ -300,8 +299,8 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      ![](./images/asdvff22.png " ")
 
-     **Right Mouse Click** on CLOUD_TIME_SMALL.  Select Join To CLOUD_F_BILL_REV. A clear date element match has not been identified. 
-     Select CLOUD_F_BILL_REV - TIME_BILL_DT and CLOUD_TIME_SMALL - DAY_TS
+     **Right Mouse Click** on *CLOUD_TIME_SMALL*.  Select Join To *CLOUD_F_BILL_REV*. A clear date element match has not been identified. 
+     Select *CLOUD_F_BILL_REV* - *TIME_BILL_DT* and *CLOUD_TIME_SMALL* - *DAY_TS*
 
      ![](./images/asdvff23.png " ")
 
@@ -311,7 +310,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
 4.   Before we navigate to 'Create Workbook', take a look at the bottom of the palete, there tabs representing all of the tables you selected.  
 
-     **Click**  on the tab labeled CLOUD_D_CUSTOMERS. 
+     **Click**  on the tab labeled *CLOUD_D_CUSTOMERS*. 
 
      ![](./images/asdvff24.png " ")
 

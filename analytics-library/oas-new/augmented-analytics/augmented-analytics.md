@@ -62,13 +62,13 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
     ![](./images/hr1-4b.png "Change Age column to an Attribute and it's Data Type to text")
 
 
-    Oracle Analytics surfaces a set of helpful column transformation termed “Recommendations” when it detects patterns in your data.  These recommendations are displayed on a pane to the right. Find the *SSN* column and select the “Obfuscate Digits of SSN” recommendation and lets hide this sensitive information from prying eyes.  Finally on the RHS click Apply Script which will save the changes we've made above to the Attrition dataset.   
+    Oracle Analytics surfaces a set of helpful column transformation termed “Recommendations” when it detects patterns in your data.  These recommendations are displayed on a pane to the right. Find the *SSN* column and select the “Obfuscate Digits of SSN” recommendation and lets hide this sensitive information from prying eyes.  Finally on the right hand side click Apply Script which will save the changes we've made above to the Attrition dataset.   
 
     ![](./images/hr1-4c.png "find the SSN column to view OAS Recommendations then choose Obfuscate Digits of SSN option")    
 
     **Note**: these helpful Recommendations represent a key differentiator for Oracle and are designed to improve end user productivity while helping customers to get more out of their data. 
    
-5. Now lets Create a Workbook using this dataset that we just enhanced dataset by clicking the "Create Workbook" button on the upper RHS.
+5. Now lets Create a Workbook using this dataset that we just enhanced dataset by clicking the "Create Workbook" button on the upper right hand side.
 
     ![](./images/hr1-5a.png "Click Create Workbook")
 
@@ -76,7 +76,7 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
 
     ![](./images/hr1-5b.png "Choose Visualize")
 
-    In the "Data Elements" pane on the LHS find the Attrition attribute, then Right Click on it and select “Explain Attrition”.
+    In the "Data Elements" pane on the left hand side find the Attrition attribute, then Right Click on it and select “Explain Attrition”.
 
     ![](./images/hr1-5c.png "Explain Attrition after right clicking on that attribute")
 
@@ -106,14 +106,14 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
    Select the following charts from the tabs surfaced by Explain:  
 
     - Attrition pie chart from the Basic facts about Attrition panel
-    - JobRole  & OVertime from the Key Drivers of Attrition panel
+    - JobRole  & Overtime from the Key Drivers of Attrition panel
     - JobRole  from the Anomalies of Attrition panel
 
     **Note**: you may need to hit Refresh View at the bottom of the Anomalies of Attrition panel to see all charts generated.
 
-    Now click the "Add Selected" on the upper RHS to add these visualizations to your Workbook.  The end result should be a canvas named *Explain Attrition* containing each visualizations you selected that you can further explore or share.
+Now click the "Add Selected" on the upper right hand side to add these visualizations to your Workbook.  The end result should be a canvas named *Explain Attrition* containing each visualizations you selected that you can further explore or share.
  
-   ![](./images/hr1-6e.png "Canvas of items selected")  
+![](./images/hr1-6e.png "Canvas of items selected")  
 
 7.  We can likewise execute explain other attributes or measures in our dataset. For each item you explain & select charts for, a new canvas will be added to the Workbook.  Try explaining the 'EducationField' attribute and select a few visualizations to create a new canvas.  
 
@@ -127,23 +127,21 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
 
 **Note**: you may need to hit Refresh View at the bottom of the Anomalies of EducationField panel to see all charts generated.
 
-    Click "Add Selected" and a new canvas for EducationField will be added to the Workbook helping to further enhance our understanding of attrition.  
+      Click "Add Selected" and a new canvas for EducationField will be added to the Workbook helping to further enhance our understanding of attrition.  
 
-    Before going to the next lab, save this Workbook giving it a name such as *Attrition Analysis*
+      Before going to the next lab, save this Workbook giving it a name such as *Attrition Analysis*
 
-   ![](./images/hr1-7b.png "Canvas of Explain EducationField")     
+      ![](./images/hr1-7b.png "Canvas of Explain EducationField")     
 
-8.  Lets further explore the dataset attrition. One item we've not analyzed extensively yet is gender relative to attrition. Add a canvas to your Workbook by clicking the + sign at the bottom of the screen and then re-name canvas "Gender Analysis".
+8.  Lets further explore the dataset attrition. One item we've not analyzed extensively yet is gender. Add a canvas to your Workbook by clicking the + sign at the bottom of the screen and re-name the canvas "Gender Analysis".
 
     ![](./images/hr1-8a.png "Rename new canvas Gender Analysis")
 
-    Use the Search bar near the top LHS within the dataset panel to generate a visualization based on Gender -see:  
+    Use the Search bar near the top left hand side within the dataset panel to generate a visualization based on Gender:
 
     ![](./images/hr1-8b.png "Search bar")    
 
-    Search enables you to query your dataset and build visualizations based on measures / attributes you’re interested in. Type in the following column names: “EmployeeCount” and “Attrition” and “Gender”, selecting each one as it appears.  Search has a handy auto-complete feature so often you only need type in a portion of the column name to find it.  As each column surfaces select it to add it to the search bar so that it looks something like this: 
-    
-     ![](./images/hr1-8b.png "Search results")
+    Search enables you to query your dataset and build visualizations based on measures and attributes you’re interested in. Type in the following column names: “EmployeeCount” and “Attrition” and “Gender”, selecting each one as it appears.  Search has a handy auto-complete feature, so often you only need to type in a portion of the column name to find it.  As each column surfaces, select it, adding it to the search bar. 
 
     Once you have all three columns showing in the search bar simply drag them onto the empty canvas or choose create visualization under the search bar resulting in a visualization as follows: 
 
@@ -153,22 +151,24 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
    
     ![](./images/hr1-8d.png "Bar chart of Attriton, Gender and EmployeeCount")   
 
-    We see that in raw numbers more men than women have left our organization.  However, let's change the chart type to determine proportionally how many men vs  women have actually left. It's simple to change a chart type either by selecting a different chart using the chart icons on the upper RHS of a chart or in the layout panel for the chart. Using either method change the chart layout to be a horizontal 100% stacked bar chart. Then simply drag Gender to Category (X-Axis) and Attrition to Color so we can see what percentage of Male vs Female employees are leaving / staying as shown below:
+    We see in raw numbers more men than women have left our organization.  Let's change the chart type to determine proportionally how many men vs  women have actually left. It's simple to change a chart type either by selecting a different chart using the chart icons on the upper right hand side of a chart or in the layout panel for the chart. Using either method, change the chart layout to be a horizontal 100% stacked bar chart. Then simply drag Gender to Category (X-Axis) and Attrition to Color so we can see what percentage of Male vs Female employees are leaving / staying as shown below:
  
     ![](./images/hr1-8e.png "Swap x-axis with color")   
    
-    Now let's use a one-click advanced analytics feature to further investigate gender.  From the data data elements panel use your computer's multi-select key to select *Gender*, *EnvironmentSatisfaction*, *WorklifeBalance* and *Last Name*. Then right-click and choose the *Scatter* chart. Finally, move “Gender” to “Trellis Columns” so  your visualization looks like this:
+    Now let's use a one-click advanced analytics feature to further investigate gender.  From the data elements panel use your computer's multi-select key to select *Gender*, *EnvironmentSatisfaction*, *WorklifeBalance* and *Last Name*. Then right-click and choose the *Scatter* chart. Finally, move *Gender* to Trellis Columns.  Your visualization should look like this:
 
     ![](./images/hr1-8f.png "Choose scatter chart and move Gender to trellis rows")
+
 **Note**: you can simply drag a visualization above, below or beside any other visualization to order them as desired. 
 
-    From anywhere within the Scatter chart, right-click and choose *Add Statistics .. Outliers*.  Outliers will now be clearly highlighted using different colors for easy identification.
+From anywhere within the Scatter chart, right-click and choose *Add Statistics .. Outliers*.  Outliers will now be clearly highlighted using different colors for easy identification.
     
-    ![](./images/hr1-8g.png "Add outliers")
+![](./images/hr1-8g.png "Add outliers")
 
-    Looking at our non-outliers (which represents the majority) we can see that female employees seem to have both a lower EnvironmentSatisfaction and WorkLifeBalance as compared to their male counterparts. This may be a key factor in understanding what is causing women to leave our organization.
+Looking at our non-outliers (which represents the majority) we can see that female employees seem to have both a lower EnvironmentSatisfaction and WorkLifeBalance as compared to their male counterparts. This may be a key factor in understanding what is causing women to leave our organization.
 
-    Save your analysis.
+Save your analysis.
+
 ## Task 2: Leverage machine learning in Oracle Analytics Server to predict voluntary termination
 This exercise will explore how self-service machine learning (ML) enables predictive analytics using  native ML models contained within Oracle Analytics Server. We are now going to extend our analysis by seeing how we can predict whether an employee is likely to leave the organization. For this we will be using a Binary Classification model. Before we venture any further let us try to understand briefly what binary classification is.  
 
@@ -200,11 +200,11 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     ![](./images/hr2-6.png "Target columns is Attrition")
 
-7. Click *Save Model* and give the model a name like "AttritionPredict_BC_NB".
+7. Click *Save Model* and give the model a name like "AttritionPredict _ BC _ NB".
 
-    ![](./images/hr2-7.png "Save model as AttritionPredict_BC_NB")
+    ![](./images/hr2-7.png "Save model as AttritionPredic _BC_NB")
 
-8. Save the flow as *AttritionPredict_BC_NB* or something similar
+8. Save the flow as *AttritionPredict _ BC _ NB* or something similar
 
     ![](./images/hr2-8.png "Save Dataflow as AttritionPredict_BC_NB")
 
@@ -212,11 +212,11 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     ![](./images/hr2-9.png "Run Dataflow")
 
-10. Exit the data flow and from the Home landing page open the Machine Learning to review the results of the classification model.
+10.  1 Exit the data flow.  2 From the Home landing page  3 Open the Machine Learning to review the results of the classification model.
 
-    ![](./images/hr2-10.png "Machine Learning section")
+     ![](./images/hr2-10.png "Machine Learning section")
 
-11. We can inspect the validity of our Machine Learning model. Click on the dots along the RHS and select "Inspect".
+11. We can inspect the validity of our Machine Learning model. Click on the dots along the right hand side and select "Inspect".
 
     ![](./images/hr2-11.png "AttritionPredict_BC_NB model inspect option")
 
@@ -224,11 +224,11 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     ![](./images/hr2-12.png "Review Quality of the model")
 
-13. Since the model returned an accuracy score of 87%, let's apply that model to a dataset of employees who remain within our organization to see which of them might also be prone to leave. Click the three dots in the upper RHS then select *Import Workbook/Flow* .  
+13. Since the model returned an accuracy score of 87%, let's apply that model to a dataset of employees who remain within our organization to see which of them might also be prone to leave. Click the three dots in the upper right hand side then select *Import Workbook/Flow* .  
 
     ![](./images/hr2-13.png "Import Workbook/Flow")
 
-14. Drag and drop, or browse and select the *“Employee_Analysis.dva”* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>.
+14. Drag and drop, or browse and select the *Employee_Analysis.dva* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>.
 
     ![](./images/hr2-14.png "Employee_Analysis.dva file")
 
@@ -329,7 +329,7 @@ Some of the pre-work required to achieve this task are done for us already, just
 - The employee data needed to predict who else might leave our organizaton is already in our Oracle database 
  **Note**: in order to fully leverage OML capabilities both the machine learning model and data needed to make a prediction must be in the Oracle database.  
 
-1. From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), go to the landing page and along the upper RHS click the three vertical dots to open the drop down menu then select Register ML Model.
+1. From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), go to the landing page and along the upper right hand side click the three vertical dots to open the drop down menu then select Register ML Model.
 
     ![](./images/hr3-1.png "Register ML Model option")
 
@@ -337,19 +337,19 @@ Some of the pre-work required to achieve this task are done for us already, just
 
     ![](./images/hr3-2.png "OML Connection")
 
-3. Now select the ATTRITION_MODEL_SVM from the list of avaialable machine learning models and click Register at the bottom
+3. Now select the ATTRITION_MODEL_SVM from the list of available machine learning models and click Register at the bottom
 
     ![](./images/hr3-3.png "ATTRITION_MODEL_SVM")
 
-4. From the landing page click the hamburger button on the upper LHS, select Machine Learning and for the ATTRITION_MODEL_SVM that we just registered select the Inspect option using the three vertical dots which appear along on the RHS of the model.
+4. From the landing page click the hamburger button on the upper left hand side, select Machine Learning and for the ATTRITION_MODEL_SVM that we just registered select the Inspect option using the three vertical dots which appear along on the right hand side of the model.
 
     ![](./images/hr3-4.png "Panel to inspect ATTRITION_MODEL_SVM")
 
-5. Inspecting the registerd model notice firstly there is a lot more metadata surfaced about OML models hosted in the Oracle database as compared to native ML models hosted in OAS.   This speak to the fact that OML models are far more sophisticated.  Browse through the various tabs (General, Access, Details, Related)  Notice under Details - Output Columns that there is a Prediction and PredictionProbability which will tell us who is likely to leave next. Likewise, the Related tab offers up a series of underlying metadata stored in DM$ views within the Oracle database that contain signficant details regarding how the model was trained, tested and scored. While beyond the scope of our workshop feel free later to take a look at videos 8-10 in this http://bit.ly/OAC59Features series to see how available metadata helps to enrich your understanding of an OML model.  When done inspecting the model close the Inspect dialog box to proceed.
+5. Inspect the registered model. Notice there is more metadata surfaced about OML models hosted in the Oracle database as compared to native ML models hosted in OAS.   This speaks to the fact that OML models are far more sophisticated.  Browse through the various tabs (General, Access, Details, Related)  Notice under Details - Output Columns that there is a Prediction and PredictionProbability which will tell us who is likely to leave next. Likewise, the Related tab offers a series of underlying metadata stored in DM$ views within the Oracle database containing signficant details regarding how the model was trained, tested and scored. Optional: Take a look at videos 8-10 in this series https://bit.ly/OAC59Features to see how available metadata helps to enrich your understanding of an OML model.  When you are finished inspecting the model, close the Inspect dialog box to proceed.
 
     ![](./images/hr3-5.png "Related tab for Inspect ATTRITION_MODEL_SVM  ")
 
-6. Our registered OML model is now ready to be called by OAS in order to make predictions as to which employees might next be prone to leave the organization. To call this registered OML model Click  Create at the top RHS of the page then choose Data Flow. 
+6. Our registered OML model is now ready to be called by OAS in order to make predictions as to which employees might next be prone to leave the organization. To call this registered OML model Click  Create at the top right hand side of the page then choose Data Flow. 
     
     ![](./images/hr3-6.png "Data Flow create icon")
 
@@ -369,19 +369,19 @@ Some of the pre-work required to achieve this task are done for us already, just
     
     ![](./images/hr3-10.png "Apply Model config panel")
 
-11. Click the + sign to the RHS of the Apply Model node and choose Save Data 
+11. Click the + sign to the right hand side of the Apply Model node and choose Save Data 
         
     ![](./images/hr3-11.png "plus icon and Save Data icon")
 
-12. Save Data will automatically attempts to name the dataset New Dataset1. Because this is an invalid table name in an Oracle Database you may see an error stating "Table name is invalid".  You need to change the name to something like PRED_EMP_ATTRIT.  There seems to be a bug as even after changing the Table name to a valid value the error will not go away.  Ignore this error and click the Save As option along the top RHS of the page.
+12. Save Data will automatically attempts to name the dataset New Dataset1. Because this is an invalid table name in an Oracle Database you may see an error stating "Table name is invalid".  You need to change the name to something like PRED_EMP_ATTRIT.  There seems to be a bug as even after changing the Table name to a valid value the error will not go away.  Ignore this error and click the Save As option along the top right hand side of the page.
         
     ![](./images/hr3-12.png "Save data config panel")
 
-13. Save your dataflow naming it PRED_EMP_ATTRIT_OML then using the arrow at the top RHS of the page run the dataset to create the predictions.  After running the dataflow the "Table name is invalid" should go away.  Close the dataflow. 
+13. Save your dataflow naming it PRED_EMP_ATTRIT_OML then using the arrow at the top right hand side of the page run the dataset to create the predictions.  After running the dataflow the "Table name is invalid" should go away.  Close the dataflow. 
         
     ![](./images/3.png "Save Data Flow panel") 
 
-14. Using the hamburger icon on the top LHS of the page open the DATA panel and input EMP to see all datasets containing "EMP" in their name.  Click on the PRED_EMP_ATTRIT dataset to create a new workbook.
+14. Using the hamburger icon on the top left hand side of the page open the DATA panel and input EMP to see all datasets containing "EMP" in their name.  Click on the PRED_EMP_ATTRIT dataset to create a new workbook.
         
     ![](./images/hr3-14.png "PRED_EMP_ATTRIT table")
 
@@ -389,7 +389,7 @@ Some of the pre-work required to achieve this task are done for us already, just
         
     ![](./images/hr3-15.png "Column selection panel")
 
-16. Using drag and drop rearrange the columns comprising each row so that Prediction, PredictionProbability and EMPLOYEENUMBER appear on the RHS of the table.  You may also wish to move key attributes such as DEPARTMENT, JOBROLE, ... to the right hand side as well. 
+16. Using drag and drop rearrange the columns comprising each row so that Prediction, PredictionProbability and EMPLOYEENUMBER appear on the right hand side of the table.  You may also wish to move key attributes such as DEPARTMENT, JOBROLE, ... to the right hand side as well. 
        
     ![](./images/hr3-16.png "Columns rearranged in table")
 
