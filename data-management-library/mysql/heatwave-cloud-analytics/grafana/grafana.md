@@ -252,7 +252,7 @@ kubectl get service -n grafana --watch
 
   You may now **proceed to the next lab.**
 
---
+---
 
 # Bonus section
 
@@ -260,7 +260,7 @@ kubectl get service -n grafana --watch
 
 1. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
 
--- The now() as time column is added to allow grafana to do charting with time series.
+- The now() as time column is added to allow grafana to do charting with time series.
 
 ```
 SELECT /*+ SET_VAR(use_secondary_engine=off) */
@@ -282,7 +282,7 @@ LIMIT 10;
 
 2. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
 
--- The now() as time column is added to allow grafana to do charting with time series.
+- The now() as time column is added to allow grafana to do charting with time series.
 
 ```
 SELECT /*+ SET_VAR(use_secondary_engine=on) */
