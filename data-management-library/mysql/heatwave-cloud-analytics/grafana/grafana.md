@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes. 
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 In this lab, you will deploy the popular Grafana application to **OKE**, and connect it to **MySQL**.
 
@@ -29,23 +29,23 @@ This lab assumes you have:
 
 1. Click the **Hamburger Menu** ![](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
 
-    ![Navigate to OKE](images/navigate-to-oke.png)
+![Navigate to OKE](images/navigate-to-oke.png)
 
 2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster **oke_cluster** is **Active**
 
-    ![Locate OKE](images/click-cluster.png)
+![Locate OKE](images/click-cluster.png)
 
 ## Task 2: Deploy Grafana to OKE
 
 1. Connect to the **oke-operator** compute instance again using OCI Cloud Shell
 
-	![Connect to VM](images/connect-to-vm.png)
+![Connect to VM](images/connect-to-vm.png)
 
 2. Create 'grafana' namespace
 
 ```
 <copy>
-    kubectl create ns grafana
+kubectl create ns grafana
 </copy>
 ```
 
@@ -92,7 +92,7 @@ spec:
           ports:
             - containerPort: 3000
               name: http-grafana
-			  protocol: TCP
+     protocol: TCP
           readinessProbe:
             failureThreshold: 3
             httpGet:
@@ -144,7 +144,7 @@ EOF
 
 ```
 <copy>
-	kubectl get all -n grafana
+ kubectl get all -n grafana
 </copy>
 ```
 
@@ -160,7 +160,7 @@ kubectl get service -n grafana --watch
 
 ## Task 3: Access Grafana dashboard
 
-1. Open a browser and access your PHP application using the external IP address. (e.g. http://xxx.xxx.xxx.xxx:3000/). Login using admin/admin as username/password
+1. Open a browser and access your PHP application using the external IP address. (e.g. <http://xxx.xxx.xxx.xxx:3000/>). Login using admin/admin as username/password
 
     ![Grafana Login](images/grafana-login.png)
 
@@ -187,7 +187,7 @@ kubectl get service -n grafana --watch
 
 1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
 
-	![Connect to VM](images/connect-to-vm.png)
+ ![Connect to VM](images/connect-to-vm.png)
 
 2. Create my2 database for dashboard using script
 
@@ -208,48 +208,47 @@ kubectl get service -n grafana --watch
 ## Task 6: Import MySQL dashboard
 
 1. Choose "Import" from "+" left menu and specify **7991**, one of the sample dashboard available from grafana.com, and hit the **Load** button
-	![Import](images/import7991.png)
+ ![Import](images/import7991.png)
 
 2. Choose the datasource you created in Step 4 of Task 4, and click "Import"
-	![Import](images/import7991-import.png)
+ ![Import](images/import7991-import.png)
 
 3. Once the dashboard is imported, you can view the imported dashboard
-	![Dashboard](images/mysql-dashboard7991.png)
+ ![Dashboard](images/mysql-dashboard7991.png)
 
 ## Task 7: Add panel widget to MySQL dashboard
 
 1. Click on the **Add panel** icon in the dashboard
-	![Dashboard](images/grafana-add-panel-menu.png)
+ ![Dashboard](images/grafana-add-panel-menu.png)
 
 2. Click on 'Add an empty panel'
-	![Dashboard](images/grafana-panel-add.png)
+ ![Dashboard](images/grafana-panel-add.png)
 
 3. Click on the **Edit SQL** button
-	![Dashboard](images/grafana-panel-edit-sql.png)
+ ![Dashboard](images/grafana-panel-edit-sql.png)
 
 4. Paste the SQL text to the query text field and change the format to **Table**
 
-	![Dashboard](images/grafana-edit-sql-table.png)
+ ![Dashboard](images/grafana-edit-sql-table.png)
 
-	```
-	<copy>
-	select mytable.schema_name, mytable.name, mytable_load.load_status, nrows, load_progress, QUERY_COUNT
-	from performance_schema.rpd_tables mytable_load, performance_schema.rpd_table_id  mytable
-	where mytable_load.id = mytable.id
-	</copy>
-	```
+ ```
+ <copy>
+ select mytable.schema_name, mytable.name, mytable_load.load_status, nrows, load_progress, QUERY_COUNT
+ from performance_schema.rpd_tables mytable_load, performance_schema.rpd_table_id  mytable
+ where mytable_load.id = mytable.id
+ </copy>
+ ```
 
 5. Change the visualization to **Table** as shown and specify the the Panel title as **Table loaded to Heatwave**
-	![Dashboard](images/grafana-change-panel-settings.png)
+ ![Dashboard](images/grafana-change-panel-settings.png)
 
 6. Click "Apply" and return to dashboard
-	![Dashboard](images/grafana-panel-apply.png)
+ ![Dashboard](images/grafana-panel-apply.png)
 
 7. Finally, click the "Disk" icon to save
-	![Dashboard](images/grafana-save-dashboard.png)
+ ![Dashboard](images/grafana-save-dashboard.png)
 
   You may now **proceed to the next lab.**
-
 
 --
 
@@ -257,7 +256,7 @@ kubectl get service -n grafana --watch
 
 ## This is to create 2 panels to compare the performance using and not using Heatwave Engine for the aiportdb which has loaded seondary engine data - for country IN ("SWITZERLAND", "FRANCE", "ITALY")
 
-1. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off) */ to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
+1. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
 
 -- The now() as time column is added to allow grafana to do charting with time series.
 
@@ -279,9 +278,10 @@ airline.airlinename, nb_people
 LIMIT 10;
 ```
 
-2. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off) */ to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
+2. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
 
 -- The now() as time column is added to allow grafana to do charting with time series.
+
 ```
 SELECT /*+ SET_VAR(use_secondary_engine=on) */
 now() as time, airline.airlinename,
@@ -301,16 +301,18 @@ LIMIT 10;
 ```
 
 ## Adding Chart with the SQL to Grafana
+
 1. Click on the **Add panel** icon in the dashboard
-	![Dashboard](images/grafana-add-panel-menu.png)
+ ![Dashboard](images/grafana-add-panel-menu.png)
 
 2. Click on 'Add an empty panel'
-	![Dashboard](images/grafana-panel-add.png)
+ ![Dashboard](images/grafana-panel-add.png)
 
 3. Click on the **Edit SQL** button
-	![Dashboard](images/grafana-panel-edit-sql.png)
+ ![Dashboard](images/grafana-panel-edit-sql.png)
 
-4. Paste the SQL text to the query text field 
+4. Paste the SQL text to the query text field
+
 ```
 <copy>
 SELECT /*+ SET_VAR(use_secondary_engine=on) */
@@ -334,33 +336,30 @@ LIMIT 10;
   ![Dashboard](images/grafana-edit-panel-paste-sql.png)
 
 5. Change the Visualization settings using Pie Chart as shown
-	![Dashboard](images/grafana-edit-panel-pie-chart.png)
+ ![Dashboard](images/grafana-edit-panel-pie-chart.png)
 
-6. Click 'Apply' button at the right top meu 
-	![Dashboard](images/grafana-edit-panel-apply.png)
+6. Click 'Apply' button at the right top meu
+ ![Dashboard](images/grafana-edit-panel-apply.png)
 
 7. Switch back to the dashboard and from click on the panel and choose Duplicate a new one
-	![Dashboard](images/grafana-dashboard-duplicate-panel.png)
+ ![Dashboard](images/grafana-dashboard-duplicate-panel.png)
 
-8. Edit the Panel to change the SQL Hint with /*+ SET_VAR(use_secondary_engine=off) */
-	![Dashboard](images/grafana-edit-panel-off-secondary.png)
+8. Edit the Panel to change the SQL Hint with /*+ SET_VAR(use_secondary_engine=off)*/
+ ![Dashboard](images/grafana-edit-panel-off-secondary.png)
 
 9. Apply and switching back to the dashboard; Click Save icon to save the dashboard.
-	![Dashboard](images/grafana-save-dashboard-2.png)
+ ![Dashboard](images/grafana-save-dashboard-2.png)
 
 10. Refresh the browser page and notice the execution time for the pie chart.  
-	![Dashboard](images/grafana-dashboard-compare-perf.png)
-
-
-
+ ![Dashboard](images/grafana-dashboard-compare-perf.png)
 
 ## Acknowledgements
 
 * **Author**
-	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
-	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+  * Ivan Ma, MySQL Solution Engineer, MySQL APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors**
-	* Perside Foster, MySQL Solution Engineering
-	* Rayes Huang, OCI Solution Specialist, OCI APAC
+  * Perside Foster, MySQL Solution Engineering
+  * Rayes Huang, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022
