@@ -51,7 +51,8 @@ As a Database Administrator:
 
 - On the OEM home page click **Performance**, select **AWR**, and then click **AWR Administration**.
 
-    !This image shows the result of performing the above step.[](./images/us1-8.png " ")
+    ![This image shows the result of performing the above step.](./images/us1-8.png " ")
+
 
 - Click **Edit**.
 
