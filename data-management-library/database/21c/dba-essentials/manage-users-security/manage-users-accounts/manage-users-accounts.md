@@ -27,7 +27,7 @@ This lab assumes you have -
     -   Lab: Manage roles
 -   Logged in to Oracle EMCC in a web browser as *sysman* 
 
-## **Task 1:** View user accounts in Oracle Database
+## Task 1: View user accounts in Oracle Database
 
 Logging into Oracle EMCC as the *sysman* user gives you the privileges to view and manage user accounts in Oracle Database. In Oracle EMCC, go to the respective container, CDB or PDB, and view the users in that container. 
 
@@ -104,7 +104,7 @@ For this lab, view the details of the user account *DBUSER* in the PDB.
 
 Similarly, you can view the user accounts in the CDB from the Database Instance home page in Oracle EMCC. 
 
-## **Task 2:** Create a user account in PDB 
+## Task 2: Create a user account in PDB 
 
 To create a user account in Oracle Database, go to the container where you want to create the user. You can create a new user account altogether or duplicate an existing user account. 
 
@@ -194,7 +194,7 @@ For this lab, create a user account *appuser* in the PDB and grant the *appdev
 
 Similarly, you can create user accounts in the CDB from the Database Instance home page. 
 
-## **Task 3:** Unlock a user account
+## Task 3: Unlock a user account
 
 To deny access temporarily to Oracle Database for a particular user account, you can lock the user account instead of deleting it. Deleting a user also deletes all schema objects owned by the user. On locking a user account, when the user attempts to connect, the database displays an error message and does not allow the connection. 
 
@@ -242,7 +242,7 @@ For this lab, unlock the user account *APPUSER* in the PDB that you created in
 
 You can now log in to the PDB as the newly created user, *appuser*.
 
-## **Task 4:** Log in to PDB as appuser
+## Task 4: Log in to PDB as appuser
 
 You are currently logged in to PDB as the database admin user, *sys*. 
 

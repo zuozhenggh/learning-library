@@ -24,7 +24,7 @@ This lab assumes you have -
     -   Lab: Initialize environment
 -   Logged in to Oracle EMCC in a web browser as *sysman* 
 
-## **Task 1:** View roles in Oracle Database
+## Task 1: View roles in Oracle Database
 
 Logging into Oracle EMCC as the *sysman* user gives you the privileges to view and manage roles in Oracle Database. In Oracle EMCC, go to the respective container, CDB or PDB, and view the roles in that container. 
 
@@ -85,7 +85,7 @@ For this lab, view the details of the role *CONNECT* in the PDB. 
 
 Similarly, you can view the roles in the CDB from the Database Instance home page in Oracle EMCC. 
 
-## **Task 2:** Create a role in PDB
+## Task 2: Create a role in PDB
 
 You can create a role in your Oracle Database from Oracle EMCC. To create a role in the database, go to the container where you want to create the role. 
 
@@ -164,7 +164,7 @@ For this lab, create a role *appdev* in the PDB for application developers and g
 
 Similarly, you can create roles in the CDB from the Database Instance home page. 
 
-## **Task 3:** Modify a role
+## Task 3: Modify a role
 
 Suppose you want to grant more roles to an existing role in the container or edit the system privileges of a role. You can modify the roles in your Oracle Database from Oracle EMCC. To modify a role in the database, go to the container where the role exists and **Edit** the role. 
 
