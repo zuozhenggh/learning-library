@@ -73,4 +73,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Anuradha Chepuri, April 2022
+* **Last Updated By/Date** - Anuradha Chepuri, May 2022
