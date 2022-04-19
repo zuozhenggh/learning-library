@@ -7,6 +7,8 @@ An Autonomous Exadata VM Cluster is a set of symmetrical VMs across all Compute 
 
 **This lab provides steps to set up an Autonomous VM Cluster on your Exadata Infrastructure.**
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 - Create an Autonomous VM Cluster on a pre-provisioned Exadata Infrastructure.
@@ -24,15 +26,15 @@ Watch the video below for step by step directions on creating an Autonomous VM C
 
 - Navigate to the **Oracle Database** option in the top left hamburger menu from your OCI home screen and select **Autonomous Database or Autonomous Dedicated Infrastructure**.
 
-    ![This image shows the result of performing the above step.](./images/create_cavm1.png " ")
+    ![This image shows the result of performing the above step.](./images/create-cavm1.png " ")
 
 - Select **Autonomous Exadata VM Cluster** from the menu on the left and click the **Create Autonomous Exadata VM Cluster** button.
 
-    ![This image shows the result of performing the above step.](./images/create_cavm2.png " ")
+    ![This image shows the result of performing the above step.](./images/create-cavm2.png " ")
 
 - Perform the following tasks on the **Create Autonomous Exadata VM Cluster** page.
 
-    ![This image shows the result of performing the above step.](./images/create_cavm3.png " ")
+    ![This image shows the result of performing the above step.](./images/create-cavm3.png " ")
 
     - Choose a compartment to deploy the Autonomous VM Cluster and provide a display name.
 
@@ -50,10 +52,12 @@ Once created, your Autonomous Exadata VM Cluster is ready to deploy Autonomous C
 
 *All Done! You have successfully setup your Autonomous VM Cluster on Exadata Cloud @ Customer environment. It is now ready to deploy Autonomous Container Databases*
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 - **Author** - Ranganath, S R, Simon Law & Kris Bhanushali
 - **Last Updated By/Date** - Kris Bhanushali, March 2022
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
