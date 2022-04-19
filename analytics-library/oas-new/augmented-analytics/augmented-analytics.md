@@ -127,11 +127,11 @@ Now click the "Add Selected" on the upper right hand side to add these visualiza
 
 **Note**: you may need to hit Refresh View at the bottom of the Anomalies of EducationField panel to see all charts generated.
 
-      Click "Add Selected" and a new canvas for EducationField will be added to the Workbook helping to further enhance our understanding of attrition.  
+Click "Add Selected" and a new canvas for EducationField will be added to the Workbook helping to further enhance our understanding of attrition.  
 
-      Before going to the next lab, save this Workbook giving it a name such as *Attrition Analysis*
+Before going to the next lab, save this Workbook giving it a name such as *Attrition Analysis*
 
-      ![](./images/hr1-7b.png "Canvas of Explain EducationField")     
+![](./images/hr1-7b.png "Canvas of Explain EducationField")     
 
 8.  Lets further explore the dataset attrition. One item we've not analyzed extensively yet is gender. Add a canvas to your Workbook by clicking the + sign at the bottom of the screen and re-name the canvas "Gender Analysis".
 
@@ -337,7 +337,7 @@ Some of the pre-work required to achieve this task are done for us already, just
 
     ![](./images/hr3-2.png "OML Connection")
 
-3. Now select the ATTRITION_MODEL_SVM from the list of available machine learning models and click Register at the bottom
+3. Now select the "*ATTRITION_MODEL_SVM*" from the list of available machine learning models and click Register at the bottom
 
     ![](./images/hr3-3.png "ATTRITION_MODEL_SVM")
 
@@ -345,7 +345,7 @@ Some of the pre-work required to achieve this task are done for us already, just
 
     ![](./images/hr3-4.png "Panel to inspect ATTRITION_MODEL_SVM")
 
-5. Inspect the registered model. Notice there is more metadata surfaced about OML models hosted in the Oracle database as compared to native ML models hosted in OAS.   This speaks to the fact that OML models are far more sophisticated.  Browse through the various tabs (General, Access, Details, Related)  Notice under Details - Output Columns that there is a Prediction and PredictionProbability which will tell us who is likely to leave next. Likewise, the Related tab offers a series of underlying metadata stored in DM$ views within the Oracle database containing signficant details regarding how the model was trained, tested and scored. Optional: Take a look at videos 8-10 in this series https://bit.ly/OAC59Features to see how available metadata helps to enrich your understanding of an OML model.  When you are finished inspecting the model, close the Inspect dialog box to proceed.
+5. Inspect the registered model. Notice there is more metadata surfaced about OML models hosted in the Oracle database as compared to native ML models hosted in OAS.   This speaks to the fact that OML models are far more sophisticated.  Browse through the various tabs (General, Access, Details, Related)  Notice under Details - Output Columns that there is a Prediction and PredictionProbability which will tell us who is likely to leave next. Likewise, the Related tab offers a series of underlying metadata stored in DM$ views within the Oracle database containing signficant details regarding how the model was trained, tested and scored. Optional: Take a look at videos 8-10 in this series  https://bit.ly/OAC59Features  to see how available metadata helps to enrich your understanding of an OML model.  When you are finished inspecting the model, close the Inspect dialog box to proceed.
 
     ![](./images/hr3-5.png "Related tab for Inspect ATTRITION_MODEL_SVM  ")
 

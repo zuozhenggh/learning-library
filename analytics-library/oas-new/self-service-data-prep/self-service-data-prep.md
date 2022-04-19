@@ -253,7 +253,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 2.   We would like to analyze customer orders, products, revenue, and billing information.  I'm going to bring together the tables I need
      in order to complete my analysis. 
 
-     Let's start by selecting the *CLOUD_D_CUSTOMERS* table.  You can double click it or drag it over to the palette. 
+     Let's start by selecting the "*CLOUD_D_CUSTOMERS*" table.  You can double click it or drag it over to the palette. 
 
      Once selected, you will see the table represented in a diagram on the upper portion of the palette.  Below, you will see the data elements that reside in the table. 
 
