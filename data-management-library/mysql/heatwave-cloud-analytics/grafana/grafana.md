@@ -250,6 +250,110 @@ EOF
 
   You may now **proceed to the next lab.**
 
+
+--
+
+# Bonus section
+
+## This is to create 2 panels to compare the performance using and not using Heatwave Engine for the aiportdb which has loaded seondary engine data - for country IN ("SWITZERLAND", "FRANCE", "ITALY")
+
+1. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off) */ to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
+
+-- The now() as time column is added to allow grafana to do charting with time series.
+
+```
+SELECT /*+ SET_VAR(use_secondary_engine=off) */
+now() as time, airline.airlinename,
+count(*) as nb_people
+FROM
+booking, flight, airline, passengerdetails
+WHERE
+booking.flight_id=flight.flight_id AND
+airline.airline_id=flight.airline_id AND
+booking.passenger_id=passengerdetails.passenger_id AND
+country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+airline.airlinename
+ORDER BY
+airline.airlinename, nb_people
+LIMIT 10;
+```
+
+2. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off) */ to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
+
+-- The now() as time column is added to allow grafana to do charting with time series.
+```
+SELECT /*+ SET_VAR(use_secondary_engine=on) */
+now() as time, airline.airlinename,
+count(*) as nb_people
+FROM
+booking, flight, airline, passengerdetails
+WHERE
+booking.flight_id=flight.flight_id AND
+airline.airline_id=flight.airline_id AND
+booking.passenger_id=passengerdetails.passenger_id AND
+country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+airline.airlinename
+ORDER BY
+airline.airlinename, nb_people
+LIMIT 10;
+```
+
+## Adding Chart with the SQL to Grafana
+1. Click on the **Add panel** icon in the dashboard
+	![Dashboard](images/grafana-add-panel-menu.png)
+
+2. Click on 'Add an empty panel'
+	![Dashboard](images/grafana-panel-add.png)
+
+3. Click on the **Edit SQL** button
+	![Dashboard](images/grafana-panel-edit-sql.png)
+
+4. Paste the SQL text to the query text field 
+```
+<copy>
+SELECT /*+ SET_VAR(use_secondary_engine=on) */
+now() as time, airline.airlinename,
+count(*) as nb_people
+FROM
+booking, flight, airline, passengerdetails
+WHERE
+booking.flight_id=flight.flight_id AND
+airline.airline_id=flight.airline_id AND
+booking.passenger_id=passengerdetails.passenger_id AND
+country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+airline.airlinename
+ORDER BY
+airline.airlinename, nb_people
+LIMIT 10;
+</copy>
+```
+
+  ![Dashboard](images/grafana-edit-panel-paste-sql.png)
+
+5. Change the Visualization settings using Pie Chart as shown
+	![Dashboard](images/grafana-edit-panel-pie-chart.png)
+
+6. Click 'Apply' button at the right top meu 
+	![Dashboard](images/grafana-edit-panel-apply.png)
+
+7. Switch back to the dashboard and from click on the panel and choose Duplicate a new one
+	![Dashboard](images/grafana-dashboard-duplicate-panel.png)
+
+8. Edit the Panel to change the SQL Hint with /*+ SET_VAR(use_secondary_engine=off) */
+	![Dashboard](images/grafana-edit-panel-off-secondary.png)
+
+9. Apply and switching back to the dashboard; Click Save icon to save the dashboard.
+	![Dashboard](images/grafana-save-dashboard-2.png)
+
+10. Refresh the browser page and notice the execution time for the pie chart.  
+	![Dashboard](images/grafana-dashboard-compare-perf.png)
+
+
+
+
 ## Acknowledgements
 
 * **Author**
