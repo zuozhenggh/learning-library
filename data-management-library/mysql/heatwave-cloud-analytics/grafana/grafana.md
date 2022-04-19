@@ -49,10 +49,12 @@ kubectl create ns grafana
 </copy>
 ```
 
+
 3. Deploy Grafana application with Load Balancer service
 
 ```
 <copy>
+
 cat << EOF | kubectl apply -n grafana -f -
 ---
 apiVersion: v1
