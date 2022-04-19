@@ -36,76 +36,43 @@ In this lab, you will:
 
   ![Connect to VM](images/connect-to-vm.png)
 
-2. Create the phpMyAdmin yaml deployment script
+2. Create a phpmyadmin namespace in OKE
 
-```
-<copy>
-cat <<EOF >>phpmyadmin.yaml
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: phpmyadmin
-  labels:
-    app: phpmyadmin
-spec:
-  containers:
-    - name: phpmyadmin
-      image: phpmyadmin/phpmyadmin
-      env:
-        - name: PMA_HOST
-          value: MYSQL_HOST
-        - name: PMA_PORT
-          value: "3306"
-      ports:
-        - containerPort: 80
-          name: phpmyadmin
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: phpmyadmin-svc
-  name: phpmyadmin-svc
-spec:
-  ports:
-  - port: 80
-    targetPort: 80
-  selector:
-    app: phpmyadmin
-EOF
-</copy>
-```
-
-3. Specify your MySQL private IP address in the yaml file, replace **MYSQL&#95;PRIVATE&#95;IP&#95;ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
-
- ```
- <copy>
- sed -i -e 's/MYSQL_HOST/<MYSQL_PRIVATE_IP_ADDRESS>/g' phpmyadmin.yaml
- </copy>
- ```
-
-4. Create a phpmyadmin namespace in OKE
-
- ```
+	```
  <copy>
  kubectl create ns phpmyadmin
  </copy>
  ```
 
-5. Create the phpmyadmin service
+3. Install the helm client
 
-```
- <copy>
- kubectl apply -f phpmyadmin.yaml -n phpmyadmin
- </copy>
-```
-
-6. Create the phpmyadmin ingress service
-
-```
+	>**Note** Skip this step if you have installed helm client
+	
+	```
 <copy>
-cat <<EOF | kubectl -n phpmyadmin apply -f - 
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
+</copy>
+```
+
+4. Install phpmyadmin repository using helm
+
+	```
+<copy>
+helm repo add bitnami https://charts.bitnami.com/bitnami
+</copy>
+```
+
+	```
+<copy>
+helm install myrelease bitnami/phpmyadmin --namespace phpmyadmin
+</copy>
+```
+
+5. Create the phpmyadmin ingress service
+
+	```
+<copy>
+cat <<EOF | kubectl -n phpmyadmin apply -f -
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -126,35 +93,33 @@ spec:
           pathType: Prefix
           backend:
             service:
-              name: phpmyadmin-svc
+              name: myrelease-phpmyadmin
               port:
                 number: 80
         - path: /index.php(.*)
           pathType: Prefix
           backend:
             service:
-              name: phpmyadmin-svc
+              name: myrelease-phpmyadmin
               port:
                 number: 80
 EOF
 </copy>
 ```
 
-7. Find out the public IP of OKE Ingress Controller
+6. Find out the public IP of OKE Ingress Controller
 
-```
+	```
  <copy>
  kubectl get all -n ingress-nginx
  </copy>
 ```
 
-  ![Ingress IP](images/ingress.png)
+	![Ingress IP](images/ingress.png)
 
-8. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
+7. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
 
-  ![PhpMyAdmin](images/phpmyadmin.png)
-
-  You may now **proceed to the next lab.**
+	![PhpMyAdmin](images/phpmyadmin.png)
 
 ## Acknowledgements
 

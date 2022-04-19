@@ -1,0 +1,138 @@
+# Deploy Redash dashboard
+
+## Introduction
+
+In this lab, we will deploy a very popular open-source tool, <a href="https://redash.io/", target="\_blank">Redash dashboard</a> to OKE to analyze data in MySQL HeatWave
+
+Estimated Time: 15 minutes
+
+### Objectives
+
+In this lab, you will:
+
+* Create a Kubernetes namespace for phpMyAdmin
+* Deploy Redash dashboard to OKE
+* Analyze data in MySQL HeatWave
+
+### Prerequisites (Optional)
+
+* You have an Oracle account
+* You have enough privileges to use OCI
+* OCI Resource required: HOL-compartment, OKE Cluster, MySQL HeatWave
+
+## Task 1: Verify OKE cluster
+
+1. Click the **Hamburger Menu** ![](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
+
+    ![Navigate to OKE](images/navigate-to-oke.png)
+
+2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify the status of **oke_cluster** is **Active**
+
+    ![Verify OKE](images/click-cluster.png)
+
+## Task 2: Deploy Redash to OKE
+
+1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
+
+	![Connect to VM](images/connect-to-vm.png)
+
+2. Install the helm client
+
+	>**Note** Skip this step if you have installed helm client
+	
+	```
+<copy>
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
+</copy>
+```
+
+3. Add Redash repository using helm
+
+	```
+<copy>
+helm repo add redash https://getredash.github.io/contrib-helm-chart/
+</copy>
+```
+
+4. Create custom values for installation
+
+	```
+<copy>
+cat > my-values.yaml <<- EOM
+redash:
+  cookieSecret: $(openssl rand -base64 32)
+  secretKey: $(openssl rand -base64 32)
+postgresql:
+  postgresqlPassword: $(openssl rand -base64 32)
+redis:
+  password: $(openssl rand -base64 32)
+EOM
+</copy>
+```
+
+5. Install Redash using helm
+
+	```
+<copy>
+helm upgrade --install -f my-values.yaml my-release redash/redash --namespace redash --create-namespace
+</copy>
+```
+6. Get the pod information of Redash
+
+	```
+<copy>
+kubectl get pods --namespace redash -l "app.kubernetes.io/name=redash,app.kubernetes.io/instance=my-release" -o jsonpath="{.items[0].metadata.name}"
+</copy>
+```
+
+7. Create port-forward to Redash
+
+	Replace &lt;POD&#95;NAME&gt; with the output in step 6, for example, **my-release-redash-6b895d78f8-48n9h**
+
+	```
+<copy>
+kubectl --namespace redash port-forward <POD_NAME> 8082:5000 --address 0.0.0.0 &
+</copy>
+```
+8. Navigate to **Virtual Cloud Network**, select **oke-vcn**, select **Security List** on the left panel, and select **operator-seclist**
+
+	![operator security list](images/operator-seclist.png)
+
+9. Add a new ingress rule to **operator-seclist**
+
+	![add ingress](images/add-ingress-rule.png)
+	![add ingress rule](images/vcn-seclist.png)
+
+
+9. Access the deployed Redash dashboard using your browser, http:://&lt;oke-operator&#95;PUBLIC&#95;IP&gt;:8082/.
+
+	Upon your first login, you need to create an admin user with password. (For example, **admin/admin** to create the admin and password)
+
+  ![Redash Login](images/redash-initial-setup.png)
+
+## Task 3: Connect Redash to MySQL HeatWave
+
+1. Once you login to Redash, clink on the **Connect to a Data Source**
+
+	![Create data source](images/redash-create-data-source.png)
+
+2. Specify the connection details of MySQL HeatWave, and click on **Finish** when finished
+
+	![Create MySQL connector](images/redash-create-mysql.png)
+
+3. You are now ready to query the MySQL HeatWave
+
+	![Run query](images/redash-query.png)
+
+  You may now **proceed to the next lab.**
+
+## Acknowledgements
+
+* **Author**
+  * Ivan Ma, MySQL Solution Engineer, MySQL APAC
+  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+* **Contributors**
+  * Perside Foster, MySQL Solution Engineering
+  * Rayes Huang, OCI Solution Specialist, OCI APAC
+
+* **Last Updated By/Date** - Ryan Kuan, March 2022
