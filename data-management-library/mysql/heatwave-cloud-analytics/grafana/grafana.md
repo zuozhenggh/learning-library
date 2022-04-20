@@ -43,7 +43,7 @@ This lab assumes you have:
 
 2. Create 'grafana' namespace
 
-	```
+```
 <copy>
 kubectl create ns grafana
 </copy>
@@ -52,7 +52,7 @@ kubectl create ns grafana
 
 3. Deploy Grafana application with Load Balancer service
 
-	```
+```
 <copy>
 
 cat << EOF | kubectl apply -n grafana -f -
@@ -144,7 +144,7 @@ EOF
 
 4. Check the status of pods and wait until all the pods are up and running
 
-	```
+```
 <copy>
  kubectl get all -n grafana
 </copy>
@@ -152,7 +152,7 @@ EOF
 
 5. Get the external IP address of your load balancer. Wait 30 seconds if the external IP address is not ready
 
-	```
+```
 <copy>
 kubectl get service -n grafana --watch
 </copy>
@@ -193,19 +193,19 @@ kubectl get service -n grafana --watch
 
 2. Create my2 database for dashboard using script
 
-    ```
-    <copy>
-    curl https://raw.githubusercontent.com/meob/my2Collector/master/my2_80.sql | sed 's/^set global/-- set global/g; s/^set sql_log/-- set sql_log/g' > my2_80.sql
-    </copy>
-    ```
+```
+<copy>
+curl https://raw.githubusercontent.com/meob/my2Collector/master/my2_80.sql | sed 's/^set global/-- set global/g; s/^set sql_log/-- set sql_log/g' > my2_80.sql
+</copy>
+```
 
 3. Execute the my2 database script
 
-    ```
-    <copy>
-    mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
-    </copy>
-    ```
+```
+<copy>
+mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
+</copy>
+```
 
 ## Task 6: Import MySQL dashboard
 
@@ -269,7 +269,7 @@ This is to create 2 panels to compare the performance with and without Heatwave 
 
 	The now() as time column is added to allow grafana to do charting with time series.
 
-	```
+```
 SELECT /*+ SET_VAR(use_secondary_engine=off) */
 now() as time, airline.airlinename,
 count(*) as nb_people
@@ -291,7 +291,7 @@ LIMIT 10;
 
 	The now() as time column is added to allow grafana to do charting with time series.
 
-	```
+```
 SELECT /*+ SET_VAR(use_secondary_engine=on) */
 now() as time, airline.airlinename,
 count(*) as nb_people
@@ -325,7 +325,7 @@ LIMIT 10;
 
 4. Paste the SQL text to the query text field
 
-	```
+```
 <copy>
 SELECT /*+ SET_VAR(use_secondary_engine=on) */
 now() as time, airline.airlinename,
