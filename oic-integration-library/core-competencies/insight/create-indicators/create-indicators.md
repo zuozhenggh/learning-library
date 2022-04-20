@@ -7,6 +7,7 @@ The Lab will cover how to add and map indicators to the existing draft model.
  Estimated Lab Time: 15 minutes
 
 ## Learning Objectives
+
 In this lab, you will lean how to create the following:
 *   Edit Draft Model
 *   Create an Indicator
@@ -19,8 +20,8 @@ Indicators represent metrics that are unique to a business process, and are extr
 
 ### Define an Indicator
 
-    A. On the Models page, Click the name or Edit (pencil icon) of the model for which you want to crate indicators. There are two ways to create an Indicator, oneis going the Milestone page or going to Indicators page. In our sample, we will be doing the indicator's page. 
-        1. Click on <Indicators> Tab (located between the Identier and Alerts tab)
+    A. On the Models page, Click the name or Edit (pencil icon) of the model for which you want to crate indicators. There are two ways to create an Indicator, one is going the Milestone page or going to Indicators page. In our sample, we will be doing the indicator's page. 
+        1. Click on <Indicators> Tab (located between the Identifier and Alerts tab)
         You will notice that the page will say "You have no dimensions or measures"
         2. Read the following to see how to add Measures or Dimensions
         
@@ -51,15 +52,16 @@ Dimensions, icon is blocks provide a type of grouping and categorization of busi
         5. Select Data Type from dropdown (String, Integer,Float, or Decimal)
         6. Filterable: Mark the box if you want to use the indicator as filter criteria in dashboards
 
-An indicator can be mapped to one or more milestones. Mapping an indicator to multiple milestones allows the value of the indicator to change during the execution of a business process if necessary.
+An indicator can be mapped to one or more milestones. Mapping an indicator to multiple milestones allows the value of the indicator to change during the execution of a business process, if necessary.
+Now it's 
 
-
-## Excercise 4
 
 ### Task 1: De-Activate Model
+
 You will need to De-Activate your current model. This will put your model back in Draft mode. Go to Task 2
 
 ### Task 2: Add a Milestone, Dimensions and Measures
+
 Once that occurs, add **Order Received** Milestone Indicators and add the following 2 Dimensions and 3 Measures: <br />
     a. Product (Dimension of type String) <br />
     b. Country (Dimension of type String) <br />
@@ -70,14 +72,20 @@ Once that occurs, add **Order Received** Milestone Indicators and add the follow
 Now go to Task 3
 
 ### Task 3: Standard Milestone
+
 You will need to add a Standard Milestone named to **Shipped**.  Once completed, go to Task 4
 
 ### Task 4: Map Milestone
-Add the Shipped Milestone to the **Order Number** Identifier. 
+
+Add the Shipped Milestone to the **Order Number** Identifier.
 Save and Close your Model.
-_________________________________________________________________________________________________
 
 ## Summary
 
 Congratulations, you've done it!
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
+
+## Acknowledgements
+
+* **Author** - Lucy Cortez, Product Enablement Management - Oracle Integration
+* **Last Updated By/Date** - Lucy Cortez, April 2022
