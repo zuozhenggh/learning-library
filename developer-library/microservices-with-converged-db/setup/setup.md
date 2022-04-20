@@ -235,6 +235,10 @@ The setup will provision the following resources in your tenancy:
 
 You may now proceed to the next lab.
 
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
+
 ## Acknowledgements
 
 * **Authors** - Paul Parkinson, Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata; Irina Granat, Consulting Member of Technical Staff, Oracle MAA and Exadata
