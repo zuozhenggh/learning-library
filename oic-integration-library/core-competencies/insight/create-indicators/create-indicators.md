@@ -84,10 +84,12 @@ You will need to add a Standard Milestone named to **Shipped**.  Once completed,
 Add the Shipped Milestone to the **Order Number** Identifier.
 Save and Close your Model.
 
-## Summary
-
 Congratulations, you've done it!
 You may now **proceed to the next lab**.
+
+## Want to Learn More
+
+More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html).
 
 ## Acknowledgements
 

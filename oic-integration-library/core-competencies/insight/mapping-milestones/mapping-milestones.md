@@ -101,7 +101,7 @@ Draft to Configured State will show as this: <br />
 Activation :
 ![activate](./images/activate.jpg " ")
 
-## Learn More
+## Want to Learn More
 
 More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html).
 

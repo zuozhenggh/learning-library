@@ -48,8 +48,8 @@ Testing your mappings is vital. Ensuring that the mapped item function correctly
             c. Click text and copy the json file information
         4. Click "Test", located far center right of screen
         5. You will receive a message box and then see the Activity stream 
-            a. Activity stream will showcase in Ascending order and will show green if succesful
-            b. Activity stream will showcase yellow or red if unsuccesful
+            a. Activity stream will showcase in Ascending order and will show green if successful
+            b. Activity stream will showcase yellow or red, if unsuccessful
 
 Now your turn to try!
 
@@ -81,12 +81,12 @@ Access the Console to view your Console named ***My Order Process**. Click on Co
     
 ## Task 3: Dashboard View
 
-Review the 5 Preconfigured Dashboards named **Milestone Summary**, **Passed Milestones**, **Active Business Transactions**, **Business Transaction**, **Errors** and **Avg. Business transaction Completion Time**. 
+Review the 5 Preconfigured Dashboards named **Milestone Summary**, **Passed Milestones**, **Active Business Transactions**, **Business Transaction**, **Errors** and **Avg. Business transaction Completion Time**.
 
 Congratulation on completing the Process Mapping Test and Console View.
 You may now **proceed to the next lab**.
 
-## Learn More
+## Want to Learn More
 
 More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html).
 
