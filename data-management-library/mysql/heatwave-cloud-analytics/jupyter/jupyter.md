@@ -90,7 +90,7 @@ kubectl -n jhub get svc proxy-public -o jsonpath='{.status.loadBalancer.ingress[
 </copy>
 ```
 
-7. Access the deployed phpMyAdmin application using your browser, http:://&lt;Jupyter&#95;Proxy&#95;PUBLIC&#95;IP&gt;/.
+7. Access the deployed Jupyter application using your browser, http:://&lt;Jupyter&#95;Proxy&#95;PUBLIC&#95;IP&gt;/.
 
 	Enter **admin/admin** to log into Jupyter notebook
 
