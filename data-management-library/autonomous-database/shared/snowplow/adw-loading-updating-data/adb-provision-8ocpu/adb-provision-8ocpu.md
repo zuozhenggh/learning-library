@@ -79,7 +79,7 @@ This lab assumes you have:
 6. Configure the database:
 
     - __Choose database version__ - Select a database version from the available versions.
-    - __OCPU count__ - Number of CPUs for your service, choose __2 OCPUs__. Our example screenshot uses a database instance with 8 OCPUs. If you opt to configure fewer OCPUs your response times and query times will be longer and similarly if you opt to configure more OCPUs your response times and query times will be lesser.
+    - __OCPU count__ - Number of CPUs for your service<if type="livelabs">, choose __2 OCPUs__ when you are running your workshop in LiveLabs sandbox environment</if>. Our example screenshot uses a database instance with __8 OCPUs__. If you opt to configure fewer OCPUs your response times and query times will be longer and similarly if you opt to configure more OCPUs your response times and query times will be lesser.
     - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage.
     - __Auto Scaling__ - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
     - __New Database Preview__ - If a checkbox is available to preview a new database version, do NOT select it.
