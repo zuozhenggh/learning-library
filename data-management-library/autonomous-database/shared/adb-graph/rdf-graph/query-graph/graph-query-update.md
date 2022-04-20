@@ -61,7 +61,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
 
 ## Task 2: Load and Query the `BANK_GRAPH` and visualize the results
 
-**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*.
+>**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*.
 
 1. First load the graph into the in-memory graph server since we will be executing some graph algorithms.  
 
@@ -206,7 +206,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
   The resulting visualizing will be similar to the following screenshot.  
   ![ALT text is not available for this image](images/43-5th-query-viz.png " ")  
 
-8.  We may want also to display all the intermediate nodes, that is, accounts through which the money was transferred.
+8. We may want also to display all the intermediate nodes, that is, accounts through which the money was transferred.
 Let's do that for the 5-hop case.  
 
     ```
@@ -219,12 +219,11 @@ Let's do that for the 5-hop case.
 
   ![ALT text is not available for this image](images/44-6th-query-show-all-5-hops.png " ")  
 
-
-  **Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*
+  >**Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*
 
   Steps required for customizing the visualization:  
 
-  This result is better viewed as a heirarchical layout.  
+  This result is better viewed as a hierarchical layout.  
   Open the **Visualization** settings dialog and select **Hierarchical** from the **Layouts** drop-down list.  
   Leave the Direction as `Top-Down` and Algorithm Type as `Network Simplex`.
   ![ALT text is not available for this image](images/choose-hierarchical-layout.png " ")  
@@ -242,9 +241,9 @@ Let's do that for the 5-hop case.
   The result will be similar to the following screenshot.  
   ![ALT text is not available for this image](images/49-query-6-highlight-resulting-viz.png " ")
 
-9. The remainder of this lab illustrates more query features and the use of the JAVA API to execute graph algorithms.   
+## Task 3: More query features and the use of the JAVA API to execute graph algorithms   
 
-10. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
+1. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
    **Enter 534 as the account id**, and then execute the paragraph.  
 
     ```
@@ -256,7 +255,7 @@ Let's do that for the 5-hop case.
     ```
     ![ALT text is not available for this image](images/51-bind-params-in-query.png " ")
 
-11. Now let's run the PageRank graph algorithm.  
+2. Now let's run the PageRank graph algorithm.  
 
   A %java-pgx paragraph lets you execute Java code snippets.  
 
@@ -274,7 +273,7 @@ Let's do that for the 5-hop case.
 
   ![ALT text is not available for this image](images/53-java-pagerank.png " ")
 
-12. Now let's use the computed PageRank value in visualizing a PGQL query result.  
+3. Now let's use the computed PageRank value in visualizing a PGQL query result.  
 
   Execute the paragraph with the following query which finds the 6-hop transfers starting at account #934.  
 
@@ -303,7 +302,7 @@ Let's do that for the 5-hop case.
   ![ALT text is not available for this image](images/55-query-with-pagerank.png " ")
 
 
-13. Now let's compare the top ten accounts by PageRank and number of transactions.  
+4. Now let's compare the top ten accounts by PageRank and number of transactions.  
 
   Execute the paragraph with the following query to show the top ten accounts by PageRank.  
 
@@ -318,7 +317,7 @@ Let's do that for the 5-hop case.
   Click the **Table** icon to visualize the results as a table, if necessary.  
   ![ALT text is not available for this image](images/57-top-ten-pagerank.png " ")    
 
-14.  And the one which shows top ten accounts by number of transfers.  
+5. And the one which shows top ten accounts by number of transfers.  
 
     ```
     <copy>%pgql-pgx
@@ -330,7 +329,7 @@ Let's do that for the 5-hop case.
 
 	![ALT text is not available for this image](images/58-top-ten-num-transfers.png " ")    
 
-15. Account #222 is in the top ten by PageRank but not by # of transfers. So let us look at that account and its immediate neighbors in the graph.  
+6. Account #222 is in the top ten by PageRank but not by # of transfers. So let us look at that account and its immediate neighbors in the graph.  
 
   Execute the paragraph which queries and displays account 222 and its neighbors.
 
@@ -350,10 +349,10 @@ Let's do that for the 5-hop case.
   Add a new highlight with pagerank >= 0.0035 as the condition, size = 3X as the visual effect.  
   ![ALT text is not available for this image](images/60-account-222-and-neighbors.png " ")    
 
-16.  Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.   
+7. Similarly account #4 has a higher PageRank but is not in the top 10 by #transfers while account #380 is in the top 10 by #transfers but not by PageRank.   
   So let us look at those two and their neighbors.  
 
-  Execute the pararaph which queries the neighbors of accounts #4 and #380.  
+  Execute the paragraph which queries the neighbors of accounts #4 and #380.  
 
     ```
     <copy>%pgql-pgx
@@ -370,7 +369,7 @@ Let's do that for the 5-hop case.
   ![ALT text is not available for this image](images/62-viz-account-4-and-380.png " ")  	  
 
 
-**Congratulations** on successfuly completing this workshop.
+**Congratulations** on successfully completing this workshop.
 
 ## Acknowledgements
 * **Author** - Jayant Sharma, Product Management
