@@ -11,12 +11,12 @@ push the relevant event information to downstream systems. As part of the lab yo
 
 2.  You then create a PO in ERP Cloud and a PO event is triggered.
 3. Your integration receives the PO event and pushes the data
-    into a Visual Builder Web App
+    into the File Server.
 
     The following diagram shows the runtime interaction between the systems involved in this use case:
       ![POEvent](images/PO-Real-Time-Sync.png)
 
-Estimated Time: 10 minutes
+Estimated Time: 30 minutes
 
 ### Objectives
 
