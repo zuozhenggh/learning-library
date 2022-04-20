@@ -5,7 +5,7 @@
         {
             "title": "Getting Started",
             "description": "Sign up for and log into the Oracle Cloud",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
         },
         {
             "title": "Introduction",
@@ -41,11 +41,6 @@
             "title": "Lab 6: Shutting Down a Notebook Session",
             "description": "Deactivate or terminate a notebook session.",
             "filename": "./../../common/notebook-shutdown.md"
-        },
-        {
-            "title": "Need Help?",
-            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-            "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/oci-library/need-help/need-help-livelabs.md"
         }
     ]
 }
