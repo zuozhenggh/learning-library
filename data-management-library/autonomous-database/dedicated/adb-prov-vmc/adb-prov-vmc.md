@@ -14,6 +14,8 @@ Oracle Autonomous Database on Oracle Exadata Cloud@Customer provides the benefit
 
 **This lab provides steps to set up an Autonomous VM Cluster on your on-premises Exadata Cloud@Customer**.
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 - Create an Autonomous VM Cluster on a pre-provisioned Exadata Cloud@Customer infrastructure.
@@ -32,11 +34,11 @@ Watch the video below for step by step directions on creating an Autonomous VM C
 
 - Navigate to the **Exadata Cloud@Customer** option in the top left hamburger menu from your OCI home screen.
 
-    ![This image shows the result of performing the above step.](./images/create_EI1.png " ")
+    ![This image shows the result of performing the above step.](./images/create-ei1.png " ")
 
 - Select **Autonomous Exadata VM Clusters** from the menu on the left and click **Create VM Cluster**.
 
-    ![This image shows the result of performing the above step.](./images/create_VMC1.png " ")
+    ![This image shows the result of performing the above step.](./images/create-vmc1.png " ")
 
 - Choose a compartment to deploy the VM Cluster and provide a display name.
 
@@ -58,10 +60,12 @@ Once created, your Autonomous Exadata VM Cluster is ready to deploy Autonomous C
 
 *All Done! You have successfully setup your Autonomous VM Cluster on Exadata Cloud @ Customer environment. It is now ready to deploy Autonomous Container Databases*
 
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 - **Author** - Simon Law & Kris Bhanushali
 - **Last Updated By/Date** - Kris Bhanushali, March 2022
 
-## See an issue or have feedback?  
+## See an issue or have feedback?
 Please submit feedback [here](https://apexapps.oracle.com/pls/apex/f?p=133:1:::::P1_FEEDBACK:1).   Select 'Autonomous DB on Dedicated Exadata' as workshop name, include Lab name and issue / feedback details. Thank you!
