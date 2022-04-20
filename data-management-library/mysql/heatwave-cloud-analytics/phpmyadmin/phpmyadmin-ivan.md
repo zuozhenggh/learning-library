@@ -111,7 +111,7 @@ kubectl port-forward service/phpmyadmin-svc -n phpmyadmin --address 0.0.0.0 8080
 ```
 
 
-8. Access the deployed phpMyAdmin application using your browser, http:://&lt;PUBLIC&#95;IP of Operator VM&gt;/phpmyadmin
+8. Access the deployed phpMyAdmin application using your browser, http:://&lt;PUBLIC&#95;IP of Operator VM&gt;:8080/
 
 	![PhpMyAdmin](images/phpmyadmin.png)
 
