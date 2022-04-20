@@ -20,21 +20,21 @@ Oracleアカウントは以下二つのステップで作成できます。
 
   ![](images/create-account-oracle-2.png " ")
 
-## Task 2: Request Workshop Reservation
+## Task 2: ハンズオンワークショップリソースの予約
 
-1. Using your *Oracle Account Login* go to [LiveLabs 2.0](http://bit.ly/golivelabs) and click  ![](images/reserve.png) to request a reservation for this workshop.
+1. *Oracle Account Login* より [LiveLabs 2.0](http://bit.ly/golivelabs) へナビゲートし、 ![](images/reserve.png) をクリックして、本ハンズオン専用リソースを予約します。
 
-2. After creating a reservation for a LiveLab Workshop, you will receive an e-mail indicating that your reservation is being processed, followed by an e-mail indicating that your environment has been created.
+2. リソースの予約が完了後、予約が進行中および予約完了の計2通のe-mailが届きます。
 
   ![](images/livelab-env-created-email.png " ")
 
-  *Note: You will receive the second created e-mail just before your selected reservation time.*
+  *Note: 予約時間を選択した場合、その時間になる直前に2通目のe-mailが届きます。*
 
-3. Log into LiveLabs and click **My Reservations**, then click the **Launch Workshop** link for the Workshop environment you'd like to use. Note that you may have several Workshops listed.
+3. LiveLabsへログインして、 **My Reservations**をクリックします。 **Launch Workshop**のリンクをクリックし、該当ハンズオンを選択します。
 
   ![](images/ll-reservations.png " ")
 
-4. Follow the instructions provided to log in to your Oracle Cloud account, change your password, and complete your login to Oracle Cloud.
+4. 画面の指示に従ってOracleアカウントへログインし、初期パスワードを変更した上、Oracle Cloudへのログインを完了します。
 
   ![](images/launch-ll-workshop.png " ")
 
