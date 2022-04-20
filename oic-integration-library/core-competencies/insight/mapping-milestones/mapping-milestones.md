@@ -6,6 +6,11 @@ The Lab will cover how to map an Integration to a Milestone, Identifier and Acti
 
 Estimated Time: 10 minutes
 
+## Prerequisites
+
+This lab assumes you have:
+    *Completed Labs 1 through 5
+
 ## Learning Objectives
 
 In this lab, you will learn how to create the following:
@@ -66,13 +71,12 @@ When a business process implementation spans more than one integration or proces
 
 Now your turn to try!
 
-
- You will map your Milestones and Identifier to an existing integration. The Integration you will use is called Order Processing Lab. You will move your draft model into a configured model state and then active model state. 
+ You will map your Milestones and Identifier to an existing integration. The Integration you will use is called Order Processing Lab. You will move your draft model into a configured model state and then active model state.
 
 ## Task 1: Map Milestones/Identifiers
 
 Accessing your draft model, go to Milestones. You will map 2 Milestones and 2 Identifiers.
-Let's start with the Milestones. Map your Order Received Milestone **On Exit** event to the **PrepareOrderReceived** activity. Map your Order Completed Milestone **On Exit** event to the **PrepareOrderCompleted** activity. 
+Let's start with the Milestones. Map your Order Received Milestone **On Exit** event to the **PrepareOrderReceived** activity. Map your Order Completed Milestone **On Exit** event to the **PrepareOrderCompleted** activity.
 
 Now onto the Identifiers. Set your Order Number Identifier Extraction Criteria for the Order Received Milestone to **$OrderNumber**.
 Set your Order Number Identifier Extraction Criteria for the Order Completed Milestone to **$OrderNumber**. Go to Task 2 in order to save your work.
@@ -86,6 +90,8 @@ You may now click **Save** and ensure you receive the message box **Successfully
 Access your Insight Models, locate your model and ensure it says Configured. Now Activate your model by clicking **Activate** button. You will receive an Activation Confirmation box, click **Activate**. You will see a system response. 
 
 Congratulation on completing the Process Mapping! The next exercise will test the mapping and showcase the Console/Dashboards. 
+
+You may now **proceed to the next lab**.
 
 ## Solution
 
@@ -105,4 +111,7 @@ Activation :
 
 More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html).
 
-You may now **proceed to the next lab**.
+## Acknowledgements
+
+* **Author** - Lucy Cortez, Product Enablement Management - Oracle Integration
+* **Last Updated By/Date** - Lucy Cortez, April 2022
