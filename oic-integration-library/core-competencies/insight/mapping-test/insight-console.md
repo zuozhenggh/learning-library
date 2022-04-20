@@ -1,23 +1,27 @@
-# Learning Objective 3: Process Integration Test
+# Process Integration Test
 
 ## Introduction
 The Lab will cover how to test the process integration mapped milestones/indentiers. How to view the test in the Insight Console and some of the standard dashboard views.
 
-Estimated Lab Time: 10 minutes
+Estimated Time: 10 minutes
 
-More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html).
+## Prerequisites
+
+This lab assumes you have:
+    *Completed Labs 1 through 5
 
 ## Learning Objectives
+
 In this lab, you will learn how to create the following:
 - Console Views
 - Standard Dashboards
-- Map Testing 
+- Map Testing
 
-Insight automatically creates and associated Console when a model, with difined business processes, has been activated.
+Insight automatically creates and associated Console when a model, with defined business processes, has been activated.
 
-The Consoles page shows the status of all business processes and includes a high-level visualization of the metrics collected over the past day for all activated business processes. 
+The Consoles page shows the status of all business processes and includes a high-level visualization of the metrics collected over the past day for all activated business processes.
 
-Conoles can be accessed either fromm the Oracle Integration navigational pane or from the Insight tile on the Oracle Integration home page. Consoles names are the same as the Model name or Business Process that was mapped.
+Consoles can be accessed either fromm the Oracle Integration navigational pane or from the Insight tile on the Oracle Integration home page. Consoles names are the same as the Model name or Business Process that was mapped.
 
 Double-click on a dashboard to open the Business Transaction Details dashboard for that dashboard. The following dashboards support drilling down into the transaction details:
 * Passed Milestones: Double-click any milestone bar to show the business transactions (instances) that have passed that milestone.
@@ -49,10 +53,10 @@ Testing your mappings is vital. Ensuring that the mapped item function correctly
 
 Now your turn to try!
 
-## Excercise 2
  You will test you mapping and then view the results of the order in the created Console and Dashboard. 
 
-### Task 1: Test Mapping
+## Task 1: Test Mapping
+
 Open the Integration named **Order Processing Lab** in Test. Either use the file named exercise-first-instance.json 
 Download the [exercise-first-instance.json](files/exercise-first-instance.json?download=1) or copy the following information:
 
@@ -66,21 +70,27 @@ Download the [exercise-first-instance.json](files/exercise-first-instance.json?d
 "discount": 0,  
 "country": "US"  
 } 
-} 
     </copy>
 ```
 
+You will need to open the Console page to verify.
 
-You will need to open the Console page to verify.     
-### Task 2: Console View
-Access the Console to view your Concole named ***My Order Process**. Click on Console Manifest to view the names of the dashboards. You wil see both the dropdowns for the Dashboard names and the Filter Details which showcases the Milestones and the Identifier.
+## Task 2: Console View
+
+Access the Console to view your Console named ***My Order Process**. Click on Console Manifest to view the names of the dashboards. You wil see both the dropdowns for the Dashboard names and the Filter Details which showcases the Milestones and the Identifier.
     
-### Task 3: Dashboard View
-Review the 5 Preconfigured Dashboards named **Milestone Summary**, **Passed Milestones**, **Active Business Transactions**, **Business Transaction**, **Errors** and **Avg. Business tansaciton Completion Time**. 
+## Task 3: Dashboard View
+
+Review the 5 Preconfigured Dashboards named **Milestone Summary**, **Passed Milestones**, **Active Business Transactions**, **Business Transaction**, **Errors** and **Avg. Business transaction Completion Time**. 
 
 Congratulation on completing the Process Mapping Test and Console View.
+You may now **proceed to the next lab**.
 
-## Summary
-Great job mapping and activating and testing your Model.<br />
+## Learn More
 
-You may now [proceed to the next lab](#next).
+More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html).
+
+## Acknowledgements
+
+* **Author** - Lucy Cortez, Product Enablement Management - Oracle Integration
+* **Last Updated By/Date** - Lucy Cortez, April 2022

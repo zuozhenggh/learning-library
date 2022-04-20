@@ -6,6 +6,11 @@ The Lab will cover how to map an Integration to Indicators and Activate a Model.
 
 Estimated Time: 10 minutes
 
+## Prerequisites
+
+This lab assumes you have:
+    *Completed Labs 1 through 7
+
 ## Learning Objective
 
 In this lab, you will learn how to create the following:
