@@ -1,7 +1,90 @@
 # Add an Extract
 
 ## Introduction
+Use ADD EXTRACT to create an Extract group/process.
 
+This lab describes how to add an Extract group (exte), which then captures data from the source database and writes to a trail file (ea).
+
+*Estimated Lab Time*: 10 minutes
+
+### Objectives
+In this lab, you will:
+* Create an Extract process
+* Edit the parameter file
+* Register the Extract process
+* Add the Extract trail
+* Start the Extract process
+
+### Prerequisites
+This lab assumes that you have:
+- the appropriate database privileges to be able to execute the commands in the Admin Client.
+- completed the tasks in **Lab - Enable Trandata, Add Heartbeat and Checkpoint Tables**
+
+## Task 1: Add an Extract Process
+
+To add an extract process and Exttrail:
+
+1. Test the database connection by running the following command:
+
+
+    ```
+    <copy>
+    DBLOGIN USERIDALIAS ggeast
+    <copy>
+
+    ```
+
+2. Add an Extract:
+
+    ```
+    <copy>
+    ADD EXTRACT exte, TRANLOG, BEGIN NOW
+    <copy>
+
+    ```
+    **exte** is the name of the Extract that is being created.
+3. Edit the parameter file:
+
+    ```
+    <copy>
+    EDIT PARAMS exte
+    <copy>
+    ```
+4. Register the Extract:
+
+    ```
+    <copy>
+    REGISTER EXTRACT exte
+    <copy>
+    ```
+
+5.  Add the Extract Trail file:
+
+    ```
+    <copy>
+    ADD EXTTRAIL ea
+    <copy>
+    ```
+
+6. Start the Extract:
+
+    ```
+    <copy>
+    START EXTRACT exte
+    <copy>
+
+    ```
+    The Extract group **exte** starts.
+
+7. To confirm the Extract has started, run the following command:
+
+    ```
+    <copy>
+    INFO EXTRACT
+    <copy>
+
+    ```
+You may now [proceed to the next lab](#next).
 
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)

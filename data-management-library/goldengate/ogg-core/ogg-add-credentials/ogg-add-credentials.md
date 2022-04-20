@@ -13,6 +13,7 @@ In this lab, you will:
 ### Prerequisites
 This lab assumes that you have:
 - the appropriate database privileges to be able to execute the commands in the Admin Client.
+- completed the tasks in **Lab
 
 ## Task 1: Connect to the Administration Service from the Admin Client
 
