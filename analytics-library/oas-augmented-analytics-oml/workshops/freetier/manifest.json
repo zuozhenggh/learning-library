@@ -8,7 +8,7 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Getting Started",
+      "title": "Get Started",
       "description": "Login to Oracle Cloud",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
     },
@@ -41,7 +41,7 @@
       "description": "Machine Learning in the Oracle Database ",
       "filename": "../../machine-learning-oracle-database/machine-learning-oracle-database.md",
       "type": "external"
-    },
+    }
     
   ]
 }

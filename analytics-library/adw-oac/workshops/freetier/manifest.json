@@ -7,7 +7,7 @@
       "filename": "../../intro/intro.md"
     },
     {
-      "title": "Getting Started",
+      "title": "Get Started",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login.md"
     },
     {
@@ -25,7 +25,7 @@
     {
       "title": "Next Steps",
       "filename": "../../next/next.md"
-    },
+    }
     
   ]
 }
