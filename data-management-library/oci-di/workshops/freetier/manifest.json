@@ -35,7 +35,6 @@
         {
             "title": "Lab 5: Run Data Loader task, schedule and run Pipeline task",
             "filename": "../../schedule-run/schedule-run.md"
-        },
-       
+        }
     ]
 }
