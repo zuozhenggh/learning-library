@@ -38,7 +38,7 @@ In this lab, you will:
 
 2. Create the phpMyAdmin yaml deployment script
 
-	```
+```
 <copy>
 cat <<EOF >>phpmyadmin.yaml
 ---
@@ -79,7 +79,7 @@ EOF
 
 3. Specify your MySQL private IP address in the yaml file, replace **MYSQL&#95;PRIVATE&#95;IP&#95;ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
 
-	```
+```
  <copy>
  sed -i -e 's/MYSQL_HOST/<MYSQL_PRIVATE_IP_ADDRESS>/g' phpmyadmin.yaml
  </copy>
@@ -87,7 +87,7 @@ EOF
 
 4. Create a phpmyadmin namespace in OKE
 
-	```
+```
  <copy>
  kubectl create ns phpmyadmin
  </copy>
@@ -96,7 +96,7 @@ EOF
 
 5. Create the phpmyadmin service
 
-	```
+```
  <copy>
  kubectl apply -f phpmyadmin.yaml -n phpmyadmin
  </copy>
@@ -104,7 +104,7 @@ EOF
 
 6. Login to the operator VM and using port-forward
 
-	```
+```
 <copy>
 kubectl port-forward service/phpmyadmin-svc -n phpmyadmin --address 0.0.0.0 8080:80
 </copy>
