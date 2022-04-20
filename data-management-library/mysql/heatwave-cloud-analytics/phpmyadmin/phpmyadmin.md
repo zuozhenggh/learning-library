@@ -38,7 +38,7 @@ In this lab, you will:
 
 2. Create a phpmyadmin namespace in OKE
 
-	```
+```
  <copy>
  kubectl create ns phpmyadmin
  </copy>
@@ -46,9 +46,9 @@ In this lab, you will:
 
 3. Install the helm client
 
-	>**Note** Skip this step if you have installed helm client
-	
-	```
+	**Note** Skip this step if you have installed helm client
+
+```
 <copy>
 curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
 </copy>
@@ -56,13 +56,13 @@ curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |
 
 4. Install phpmyadmin repository using helm
 
-	```
+```
 <copy>
 helm repo add bitnami https://charts.bitnami.com/bitnami
 </copy>
 ```
 
-	```
+```
 <copy>
 helm install myrelease bitnami/phpmyadmin --namespace phpmyadmin
 </copy>
@@ -70,7 +70,7 @@ helm install myrelease bitnami/phpmyadmin --namespace phpmyadmin
 
 5. Create the phpmyadmin ingress service
 
-	```
+```
 <copy>
 cat <<EOF | kubectl -n phpmyadmin apply -f -
 apiVersion: networking.k8s.io/v1
@@ -109,13 +109,13 @@ EOF
 
 6. Find out the public IP of OKE Ingress Controller
 
-	```
+```
  <copy>
  kubectl get all -n ingress-nginx
  </copy>
 ```
 
-	![Ingress IP](images/ingress.png)
+  ![Ingress IP](images/ingress.png)
 
 7. Access the deployed phpMyAdmin application using your browser, http:://&lt;OKE&#95;INGRESS&#95;PUBLIC&#95;IP&gt;/phpmyadmin
 
