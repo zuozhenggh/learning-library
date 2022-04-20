@@ -27,7 +27,6 @@
             "title": "Lab 3: Create RESTul services",
             "description": "RESTful Services for your Autonomous Database",
             "filename": "../../rest-services-for-adb/rest-services-for-adb.md"
-        },
-        
+        }
     ]
 }
