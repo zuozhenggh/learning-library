@@ -1,4 +1,4 @@
-# Learning Objective 4: Indicators
+# Indicators
 
 ## Introductions
 
