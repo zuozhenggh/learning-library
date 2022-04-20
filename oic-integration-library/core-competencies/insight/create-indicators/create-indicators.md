@@ -53,8 +53,7 @@ Dimensions, icon is blocks provide a type of grouping and categorization of busi
         6. Filterable: Mark the box if you want to use the indicator as filter criteria in dashboards
 
 An indicator can be mapped to one or more milestones. Mapping an indicator to multiple milestones allows the value of the indicator to change during the execution of a business process, if necessary.
-Now it's 
-
+Now it's your turn
 
 ### Task 1: De-Activate Model
 
