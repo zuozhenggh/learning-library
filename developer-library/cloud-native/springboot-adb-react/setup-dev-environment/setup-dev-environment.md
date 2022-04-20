@@ -2,14 +2,14 @@
 
 ## Introduction
 
-In this lab, you will configure your development environment and collect information that will be used later throughout this workshop. The setup script requires certain environment variables to be set, which is why a script for configuring the environment variables is necessary. After the environment variables are set, the setup script uses Terraform, Bash, and SQL to automate the creation of all the resources needed for this lab, such as VCN's, an OKE Cluster, API Gateway, Autonomous database, etc. The script also creates a table and inserts one row into the table, which we will use to make sure the setup was done correctly.
+In this lab, you will configure your development environment and collect information that will be used later throughout this workshop. The setup script requires certain environment variables to be set, which is the reason for the configuration script (setup.sh). After the environment variables are set, the setup script uses Terraform, Bash, and SQL to automate the creation of all the resources needed for this lab, such as VCN's, an OKE Cluster, API Gateway, Autonomous database, etc. The script also creates a table and inserts one row, which we will use to make sure the setup was done correctly.
 
 Estimated time: 25 minutes
 
 ### Objectives
 
 * Create group and give the appropriate permissions to run the setup
-* Clone the github repository and execute setup script to create the following resources:
+* Clone the github repository and execute the setup script to create the following resources:
     * 1 Autonomous database
     * 1 API gateway
     * 1 Object Storage bucket
@@ -61,7 +61,7 @@ If you are not the tenancy administrator, there may be additional policies you m
 	![](images/policy-navigation.png)
 
 	![](images/create-policy.png)
-6. You should see a page like this. This is where you will create the policy that will give the group permissions to execute the setup for this workshop.
+6. You should see a page like this. This is where you will create the policy that will give the group permissions to execute the setup for this workshop. (note: replace oracleonpremjava(root) with the root of your tenancy)
 
 	![](images/policy-details.png)
 Select **Show manual editor** and copy and paste these policies in the box below
@@ -92,7 +92,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 
 ## **Task 3**: Create a Folder for the Workshop Code
 
-1. Create a directory. The directory name will also be used to create a compartment of the same name in your tenancy if you do not provide one of your own. The directory name **must be between 1 and 13 characters, contain only letters or numbers, and start with a letter**. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. 
+1. Create a directory, which will be used to create a compartment of the same name in your tenancy if you do not provide one of your own. The directory name **must be between 1 and 13 characters, contain only letters or numbers, and start with a letter**. Make sure that a compartment of the same name does not already exist in your tenancy or the setup will fail. 
 
 	````
 	<copy>
@@ -107,7 +107,7 @@ Select **Show manual editor** and copy and paste these policies in the box below
 
 ## **Task 4**: Clone the Workshop Code
 
-1. Clone the workshop code inside the directory you just created.
+1. Clone the workshop code into the directory you've just created.
 	````
 	<copy>
 	git clone -b springboot --single-branch https://github.com/oracle/oci-react-samples.git
@@ -117,10 +117,10 @@ Select **Show manual editor** and copy and paste these policies in the box below
 
 ## **Task 5**: Start the Setup
 
-The setup script uses terraform, bash scripts, and SQL to automate the creation of the resources needed for this lab. The script will ask for the necessary components to automate resource creation. 
+The setup script uses Terraform, Bash scripts, and SQL to automate the creation of the resources needed for this lab. The script will ask for the necessary components to automate resource creation. 
 
 
-1. Change to the mtdrworkshop directory:
+1. Change to the MtdrSpring directory:
 
 	```
 	<copy>
@@ -168,7 +168,7 @@ The setup script uses terraform, bash scripts, and SQL to automate the creation 
   	![](images/compartment-ocid.png)
 
 
-6. Next the setup will create an authentication token for your tenancy so that docker can log in to the Oracle Cloud Infrastructure Registry. If there is no space for a new Auth Token, the setup will ask you to remove an auth token then hit enter when you are ready.
+6. In the next step, the setup will create an authentication token for your tenancy so that docker can log in to the Oracle Cloud Infrastructure Registry. If there is no room for a new Auth Token, the setup will ask you to remove an Auth Token then hit enter when you are ready.
 
   ![](images/navigate-user-ocid.png)
 
@@ -176,7 +176,7 @@ The setup script uses terraform, bash scripts, and SQL to automate the creation 
 
   ![](images/auth-token.png)
 
-  Delete one auth token if you have too many
+  Delete one Auth Token if you have too many
 
   ![](images/delete-auth-token.png)
 
