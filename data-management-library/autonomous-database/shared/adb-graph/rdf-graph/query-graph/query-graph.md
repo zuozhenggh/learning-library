@@ -61,32 +61,9 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
 
 ## Task 2: Load and Query the `BANK_GRAPH` and visualize the results
 
-**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*.
+>**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*.
 
-1. First load the graph into the in-memory graph server since we will be executing some graph algorithms.  
-
-   Run the first `%java-pgx` paragraph which uses the built-in `session` object to read the graph into memory from the database and creates a `PgXGraph` object which is a handle to the loaded graph.  
-
-   The code snippet in that paragraph is:
-
-    ```
-    <copy>%java-pgx
-    // The first step is to load the graph into the in-memory server
-    // To do this we use the builtin session object
-    // We specify the graph by its name. The second argument to readGraphByName indicates that the graph is defined as a view on underlying database tables or views
-    // And we store a handle to it in a PgxGraph object
-    PgxGraph bankgraph = session.readGraphByName("BANK_GRAPH", GraphSource.PG_VIEW);</copy>
-    ```
-
-  ![ALT text is no available for this image](images/1-java-read-graph.png " ")  
-
-
-  **Note:** *If the compute environment is not ready as yet and the code cannot be executed then you will see a blue line moving across the bootom of the paragraph to indicate that a background task is in progress.  
-
-  ![ALT text is not available for this image](images/env-not-ready.png " ")  
-
-
-2. Next execute the paragraph which queries and displays 100 elements of the graph.    
+1. Next execute the paragraph which queries and displays 100 elements of the graph.    
 
     ```
     <copy>%pgql-pgx
@@ -108,7 +85,11 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
   See the [PGQL site](https://pgql-lang.org) and specification for more details on the syntax and features of the language.  
   The Getting Started notebook folder also has a tutorial on PGQL.  
 
-3. The result utilizes some features of the visualization component. The `acct_id` property is used for the node (or vertex) labels and the graph is rendered using a selected graph layout algorithm.  
+  >**Note:** *If the compute environment is not ready as yet and the code cannot be executed then you will see a blue line moving across the bootom of the paragraph to indicate that a background task is in progress.  
+
+  ![ALT text is not available for this image](images/env-not-ready.png " ")
+
+2. The result utilizes some features of the visualization component. The `acct_id` property is used for the node (or vertex) labels and the graph is rendered using a selected graph layout algorithm.  
 
   **Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*
 
@@ -132,7 +113,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
   Now open the visualization settings again, click the **Customization** tab, and choose a different layout (**Concentric**) from the Layout drop-down    list. Exit the Settings dialog.
   ![ALT text is not available for this image](images/concentric-layout-for-elements.png " ")
 
-4. Next let's use PGQL to find the top 10 accounts in terms of number of transfers.  
+3. Next let's use PGQL to find the top 10 accounts in terms of number of transfers.  
 	PGQL has built-in functions `IN_DEGREE` and `OUT_DEGREE` which return the number of incoming and outgoing edges of a node. So we can use them in this query.   
 	Run the paragraph with the following query.
 
@@ -149,7 +130,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
 
   We see that accounts 934 and 387 are high on the list.  
 
-5.  Now check if there are any circular transfers originating and terminating at account 934.   
+4.  Now check if there are any circular transfers originating and terminating at account 934.   
 	Execute the following query.
 
     ```
@@ -172,7 +153,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
 
   It does not display all the paths or any intermediate nodes.
 
-6. We can change the above query to include the node which made the deposit into account 934. This will display all the paths.   
+5. We can change the above query to include the node which made the deposit into account 934. This will display all the paths.   
 	Execute the following query.
 
     ```
@@ -191,7 +172,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
   Click the **Customization** settings and then select the **Concentric** layout and `ACCT_ID` for the vertex label.  
   ![ALT text is not available for this image](images/choose-concentric-and-acctid.png " ")
 
-7. The next query finds and displays the 6-hop circular payment chains originating at account 934.  
+6. The next query finds and displays the 6-hop circular payment chains originating at account 934.  
 
     ```
     <copy>%pgql-pgx
@@ -206,7 +187,7 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
   The resulting visualizing will be similar to the following screenshot.  
   ![ALT text is not available for this image](images/43-5th-query-viz.png " ")  
 
-8.  We may want also to display all the intermediate nodes, that is, accounts through which the money was transferred.
+7.  We may want also to display all the intermediate nodes, that is, accounts through which the money was transferred.
 Let's do that for the 5-hop case.  
 
     ```
@@ -242,9 +223,9 @@ Let's do that for the 5-hop case.
   The result will be similar to the following screenshot.  
   ![ALT text is not available for this image](images/49-query-6-highlight-resulting-viz.png " ")
 
-9. The remainder of this lab illustrates more query features and the use of the JAVA API to execute graph algorithms.   
+8. The remainder of this lab illustrates more query features and the use of the JAVA API to execute graph algorithms.   
 
-10. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
+9. This shows the use of bind parameters in a query. The account id value is entered at runtime.  
    **Enter 534 as the account id**, and then execute the paragraph.  
 
     ```
