@@ -16,7 +16,12 @@
       {
           "title": "Lab 1: Provision an ADB Instance",
           "description": "Provisioning an Autonomous Database Instance",
+<<<<<<< Updated upstream
           "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
+=======
+          "type": "freetier",
+          "filename": "../../prepare-environment/adb-provision-livelabs.md"
+>>>>>>> Stashed changes
       },
       {
           "title": "Lab 2: Create and validate an RDF graph user in Graph Studio",
@@ -25,6 +30,19 @@
       {
           "title": "Lab 3: Query and Visualize the RDF Graph",
           "filename": "../../query-and-visualize/query-and-visualize-the-rdf-graph.md"
+      },
+      {
+          "title": "Lab 4: Load CSV files into the Autonomous Database",
+          "description": "Load data from CSV files using Database Actions Data Load",
+          "filename": "../../load-csv-files/load-csv-files.md"
+      },
+      {
+          "title": "Lab 5: Create a graph",
+          "filename": "../../create-graph/create-graph.md"
+      },
+      {
+          "title": "Lab 6: Query and visualize the graph",
+          "filename": "../../query-graph/query-graph.md"
       },
       {
           "title": "Need Help?",
