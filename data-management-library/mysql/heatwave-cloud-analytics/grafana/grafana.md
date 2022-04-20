@@ -94,7 +94,7 @@ spec:
           ports:
             - containerPort: 3000
               name: http-grafana
-     protocol: TCP
+              protocol: TCP
           readinessProbe:
             failureThreshold: 3
             httpGet:
