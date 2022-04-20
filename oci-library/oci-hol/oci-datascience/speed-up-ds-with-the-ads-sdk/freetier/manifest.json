@@ -41,7 +41,6 @@
             "title": "Lab 6: Shutting Down a Notebook Session",
             "description": "Deactivate or terminate a notebook session.",
             "filename": "./../../common/notebook-shutdown.md"
-        },
-        
+        }
     ]
 }

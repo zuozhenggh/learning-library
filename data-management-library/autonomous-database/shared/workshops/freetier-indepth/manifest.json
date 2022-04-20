@@ -73,7 +73,6 @@
             "title": "Lab 12: Set Event and Alarm Notifications",
             "description": "Setting Event and Alarm Notifications for an Autonomous Database",
             "filename": "./../../adb-event-alarm/adb-event-alarm.md"
-        },
-       
+        }
     ]
 }
