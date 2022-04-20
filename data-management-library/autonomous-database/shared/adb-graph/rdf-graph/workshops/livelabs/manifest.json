@@ -16,12 +16,7 @@
       {
           "title": "Lab 1: Provision an ADB Instance",
           "description": "Provisioning an Autonomous Database Instance",
-<<<<<<< Updated upstream
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/data-management-library/autonomous-database/shared/adb-provision/adb-provision-conditional.md"
-=======
-          "type": "freetier",
           "filename": "../../prepare-environment/adb-provision-livelabs.md"
->>>>>>> Stashed changes
       },
       {
           "title": "Lab 2: Create and validate an RDF graph user in Graph Studio",
