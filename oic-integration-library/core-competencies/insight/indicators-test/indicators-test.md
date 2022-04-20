@@ -8,6 +8,11 @@ Estimated Lab Time: 10 minutes
 
 More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/work-models-integration-insight.html).
 
+## Prerequisites
+
+This lab assumes you have:
+    *Completed Labs 1 through 8
+
 ## Learning Objectives
 
 In this lab, you will learn how to create the following:
