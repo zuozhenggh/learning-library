@@ -85,15 +85,15 @@ An Indicator can be mapped to one or more Milestones. Mapping an indicator to mu
 
 There are two types of Indicators:
 
-* **Measures** are numerical values that can be used by mathematical functions. They identify values that allow the state of a business process to be quantified. For example, a business process might define measures for Total Order Value or Item Count. A single measure can change over the lifecycle of a model. For example, the Discount amount may change during a business process because the Quote Modified milestone can be passed more than once.
+* **Measures** are numerical values that can be used by mathematical functions. They identify values that allow the state of a business process to be quantified. For example, a business process might define measures for "Total Order Value" or "Item Count". A single measure can change over the lifecycle of a Model. For example, the "Discount amount" may change during a business process because the "Quote Modified" Milestone can be passed more than once.
 
 * **Dimensions** provide a type of grouping and categorization of business transactions (instances), allowing for slicing and dicing of aggregate integration measures. For example, a typical order in a business process might define dimensions for Geographic Region, Sales Channel, or Product Category.
 
-Insight does not support duplicate indicators.
+Insight does not support duplicate Indicators.
 
 ## Lab 5: Alerts
 
-*Alerts* define conditions for Milestones or indicators to notify users when those conditions are met.
+*Alerts* define conditions for Milestones or Indicators to notify users when those conditions are met.
 
 You can optionally define Alerts in your Model to notify users by email when:
 
@@ -102,7 +102,6 @@ You can optionally define Alerts in your Model to notify users by email when:
 * An Indicator (dimension or measure) is equal to, greater than, or less than a specified value.
 
 You can configure the Alert notification email to include the Unique Instance Identifier, indicator values, and a link to the associated Business Transactions dashboard in the body of the email.
-
 
 ## Lab 6: Model Instances
 
