@@ -42,7 +42,6 @@
             "type":"freetier",
             "description": "This lab shows you how to identify and delete the resources that you have created in this workshop.",
             "filename": "./../../cleanup/cleanup.md"
-        },
-       
+        }
     ]
 }
