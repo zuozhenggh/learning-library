@@ -175,7 +175,7 @@ If you just completed Task 1A, please proceed to Task 2.  If you have an existin
 
   ![](./images/create-stack-novnc-8.png " ")
 
-9. Your stack has is now created and the *Apply* action triggered is running to deploy your environment!
+9. Your stack is now created and the *Apply* action triggered is running to deploy your environment!
 
   ![](./images/create-stack-novnc-5.png " ")
 

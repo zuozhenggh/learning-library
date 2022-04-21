@@ -27,6 +27,12 @@
           "title": "Lab 3: Use Autonomous Database Tools",
           "description": "Using Autonomous Database Tools",
           "filename": "../using-adb-tools/using-adb-tools.md"
+      },
+      {
+          "title": "Need Help?",
+          "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+          "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
       }
+      
     ]
 }
