@@ -272,23 +272,23 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 - The now() as time column is added to allow grafana to do charting with time series.
 
-```sql
-SELECT /*+ SET_VAR(use_secondary_engine=off) */
-now() as time, airline.airlinename,
-count(*) as nb_people
-FROM
-booking, flight, airline, passengerdetails
-WHERE
-booking.flight_id=flight.flight_id AND
-airline.airline_id=flight.airline_id AND
-booking.passenger_id=passengerdetails.passenger_id AND
-country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-airline.airlinename
-ORDER BY
-airline.airlinename, nb_people
-LIMIT 10;
-```
+  ```sql
+  SELECT /*+ SET_VAR(use_secondary_engine=off) */
+  now() as time, airline.airlinename,
+  count(*) as nb_people
+  FROM
+  booking, flight, airline, passengerdetails
+  WHERE
+  booking.flight_id=flight.flight_id AND
+  airline.airline_id=flight.airline_id AND
+  booking.passenger_id=passengerdetails.passenger_id AND
+  country IN ("SWITZERLAND", "FRANCE", "ITALY")
+  GROUP BY
+  airline.airlinename
+  ORDER BY
+  airline.airlinename, nb_people
+  LIMIT 10;
+  ```
 
 2. The following SQL is used with SQL Hints  
 ```text
@@ -298,23 +298,23 @@ LIMIT 10;
 
 - The now() as time column is added to allow grafana to do charting with time series.
 
-```sql
-SELECT /*+ SET_VAR(use_secondary_engine=on) */
-now() as time, airline.airlinename,
-count(*) as nb_people
-FROM
-booking, flight, airline, passengerdetails
-WHERE
-booking.flight_id=flight.flight_id AND
-airline.airline_id=flight.airline_id AND
-booking.passenger_id=passengerdetails.passenger_id AND
-country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-airline.airlinename
-ORDER BY
-airline.airlinename, nb_people
-LIMIT 10;
-```
+  ```sql
+  SELECT /*+ SET_VAR(use_secondary_engine=on) */
+  now() as time, airline.airlinename,
+  count(*) as nb_people
+  FROM
+  booking, flight, airline, passengerdetails
+  WHERE
+  booking.flight_id=flight.flight_id AND
+  airline.airline_id=flight.airline_id AND
+  booking.passenger_id=passengerdetails.passenger_id AND
+  country IN ("SWITZERLAND", "FRANCE", "ITALY")
+  GROUP BY
+  airline.airlinename
+  ORDER BY
+  airline.airlinename, nb_people
+  LIMIT 10;
+  ```
 
 ## Task 9: Create charts panel
 
@@ -332,25 +332,25 @@ LIMIT 10;
 
 4. Paste the SQL text to the query text field
 
-```sql
-<copy>
-SELECT /*+ SET_VAR(use_secondary_engine=on) */
-now() as time, airline.airlinename,
-count(*) as nb_people
-FROM
-booking, flight, airline, passengerdetails
-WHERE
-booking.flight_id=flight.flight_id AND
-airline.airline_id=flight.airline_id AND
-booking.passenger_id=passengerdetails.passenger_id AND
-country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-airline.airlinename
-ORDER BY
-airline.airlinename, nb_people
-LIMIT 10;
-</copy>
-```
+  ```sql
+  <copy>
+  SELECT /*+ SET_VAR(use_secondary_engine=on) */
+  now() as time, airline.airlinename,
+  count(*) as nb_people
+  FROM
+  booking, flight, airline, passengerdetails
+  WHERE
+  booking.flight_id=flight.flight_id AND
+  airline.airline_id=flight.airline_id AND
+  booking.passenger_id=passengerdetails.passenger_id AND
+  country IN ("SWITZERLAND", "FRANCE", "ITALY")
+  GROUP BY
+  airline.airlinename
+  ORDER BY
+  airline.airlinename, nb_people
+  LIMIT 10;
+  </copy>
+  ```
 
  ![Dashboard](images/grafana-edit-panel-paste-sql.png)
 
