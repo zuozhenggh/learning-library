@@ -27,18 +27,15 @@ This lab assumes you have:
 
 ## Task 1: Verify OKE cluster
 
-1. Click the **Hamburger Menu** ![](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
-
+1. Click the **Hamburger Menu** ![menu](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
  ![Navigate to OKE](images/navigate-to-oke.png)
 
 2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster **oke_cluster** is **Active**
-
  ![Locate OKE](images/click-cluster.png)
 
 ## Task 2: Deploy Grafana to OKE
 
 1. Connect to the **oke-operator** compute instance again using OCI Cloud Shell
-
 ![Connect to VM](images/connect-to-vm.png)
 
 2. Create 'grafana' namespace
