@@ -29,6 +29,5 @@
             "description": "Provision a new ADW instance and connect to the database",
             "filename": "./../../../adb-query/adb-query.md"
         }
-        
     ]
 }
