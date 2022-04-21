@@ -49,7 +49,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
      ```
      <copy>
-     git clone -b 22.3.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+     git clone -b 22.4.1 --single-branch https://github.com/oracle/microservices-datadriven.git
      </copy>
      ```
 
@@ -61,8 +61,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
  
      ```
      <copy>
-     source microservices-datadriven/workshops/dcms-oci/source.env
-     <setup
+     source microservices-datadriven/workshops/dcms-oci/source.env ;  setup
      </copy>
      ```
 
@@ -141,6 +140,10 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     > **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
   
 You may now proceed to the next lab.
+
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
 
 ## Acknowledgements
 

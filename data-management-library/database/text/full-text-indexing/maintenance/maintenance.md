@@ -1,8 +1,12 @@
-# Interacting with JSON Documents through Database Actions
+# Index Maintenance
 
 ## Introduction
 
-This lab will use JSON and SQL in Database Actions from the Autonomous JSON Database page. It shows how we can swap between a document-centric model (MongoDB and Oracle's JSON tool in Database Actions), and a relational model using Oracle's SQL tool in Database Actions.
+So far we've seen how to create and query an Oracle Text index. That's the basics of Oracle Text, but we need to cover a couple of topics under index maintenance.
+
+Oracle Text indexes are not, by default transactional. After changes to the indexed table, the index must be **synchronized** before the new data can be found by a search.
+
+After many changes to an Oracle Text index, it will perform less than ideally, because of fragmentation of the index and garbage (deleted) data accumulating in the index. To get the index to it's best state, we must **optimize** it.
 
 Estimated Time: 20 minutes
 
@@ -10,346 +14,172 @@ Estimated Time: 20 minutes
 
 In this lab, you will:
 
-* Open Database Actions from the Autonomous JSON Database Menu
-* Use the JSON and SQL tools in Database Actions to view the data you created from Mongo Shell
+* See that indexes are not updated automatically
+* Learn how to synchronize an index, either manually or automatically
+* See that indexes get fragmented over time
+* Learn how to optimize the index
 
 ### Prerequisites
 
 * Be logged into your Oracle Cloud Account
+* Have completed at least Lab 2, Creating Indexes
 
 ## Task 1: Open Database Actions
 
-1. Login to the Oracle Cloud.
+We'll assume you're already in Database Actions having just completed the previous lab. If not, then follow Task 1 in Lab 3: Queries.
 
-<if type="freetier">
+## Task 2: Synchronization
 
-2. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **Region** in the top, right hand corner of the page.
+1.  Let's insert a new row into MYTABLE. Copy the following a click on the "Run Statement" button:
 
-    ![Select region on the far upper-right corner of the page.](./images/region.png " ")
+    ```
+    <copy>
+    insert into mytable values (40, 'brown cat')
+    </copy>
+    ```
 
-</if>
-<if type="livelabs">
+    Now try a query for the data you just inserted:
 
-2. If you are using a LiveLabs account, you need to be in the region your account was provisioned in. You can see your current default **Region** in the top, right hand corner of the page. Make sure that it matches the region on the LiveLabs Launch page.
+    ```
+    <copy>
+    select * from mytable
+        where contains ( text, 'cat' ) > 0
+    </copy>
+    ```
+    ![search without sync - no results](./images/search-nosync.png " ")
 
-    ![Select region on the far upper-right corner of the page.](./images/region.png " ")
+    When you run that you will get no results. Remember CONTAINS *only* works with a CONTEXT index. And if that index isn't up-to-date, neither will the results be. To get the right results, we must __SYNC__hronize the index. The basic way to do this is to call a PL/SQL procedure __CTX\_DDL.SYNC\_INDEX__ (your user will need to have CTXAPP role to access that, or have been explicitly granted __EXECUTE ON CTXSYS.CTX\_DDL__). The index name is passed in as a parameter to the procedure.
 
-</if>
+ 2. Sychronize the index. Run this:
 
-3. Click the navigation menu in the upper left to show top level navigation choices.
+    ```
+    <copy>
+    execute ctx_ddl.sync_index ('myindex')
+    </copy>
+    ```
 
-4. Click on **Oracle Database** and choose **Autonomous JSON Database**.
+    Now try the previous query for 'cat' again and it will work.
 
-    ![Click Autonomous JSON Database](./images/adb-json.png " ")
+    ![after sync query works](./images/after-sync.png " ")
 
-5. Use the __List Scope__ drop-down menu on the left to select the same compartment where you created your Autonomous JSON Databae in Lab 2. Make sure your workload type is __JSON Database__. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+## Task 3: Optimization
 
-    ![Check the workload type on the left.](images/livelabs-compartment.png " ")
+1.  Examine the "dollar I" table.
 
-</if>
-<if type="freetier">
-    ![Check the workload type on the left.](./images/compartments.png " ")
-</if>
-    ![](./images/workload-type.png " ")
+    Now we've done an update to the index, let's take another look at the list of indexed words in the $I table. Run the following:
 
-<if type="freetier">
-   > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
-</if>
+    ```
+    <copy>
+    select token_text from dr$myindex$i
+    </copy>
+    ```
 
-6. You should see your database **JSONDB** listed in the center. Click on the database name "JSONDB".
-
-    ![](./images/database-name.png " ")
-
-
-7.  On the database page, choose __Database Actions__.
-
-    ![](./images/dbactions-button.png " ")
-
-8.  You are now in Database Actions.
-
-    Database Actions allows you to connect to your Autonomous Database through various browser-based tools. We will be using three of those tools:
+    You should see that there are now two entries for the word 'brown'. We won't worry about exactly why, but let's just say it's an example of index fragmentation. 
     
-    * JSON - allows you to work with a **document database** view of your data
-    * SQL - allows you to work with a relational, **SQL-based** view of your data
-    * Charts - generate charts over data in Autonomous Database
-
-    ![](./images/dbactions-menu.png " ")
-
-
-## Task 2: JSON in Database Actions
-
-1. You should be in the Database Actions panel. Click on the **JSON** card
-
-    ![](./images/dbactions-menu-json.png " ")
-
-    When you first enter JSON, you will get a tour of the features. We recommend you step through it, but you can skip the tour by clicking on the "X". The tour is available at any time by clicking the tour button.
-
-    ![](./images/json-tour-2.png " ")
-
-    After the tour, you should see the 'emp' collection you created in Mongo Shell on the left. If it's not shown, click the refresh circle.
-
-    The left hand side shows collections. The upper right allows us to run queries, and the lower right shows the documents found by that query. An empty search - {} - will show all documents, which is what you should be looking at now. You can confirm using the scroll bar that there are three documents for Blake (Intern), Smith and Miller (Programmers).
-
-2. Let's go ahead and do a search. Enter {"job": "Programmer"} in the search box and press the Run Query button. Case **is** significant, so be careful, or copy the query below:
-
-    ```
-    <copy>
-    {"job": "Programmer"}
-    </copy>
-    ```
-
-    ![](./images/job-programmer.png " ")
-
-    We can see only two records are fetched as a result of that search. Let's give Miller a pay rise. Click on the "Edit" button to the right of the Miller document:
-
-    ![](./images/edit-miller.png " ")
-
-    That drops us into a JSON editor. In the JSON Document Content, change Miller's salary to 80000 and click the "Save" button. If you make an error which would produce invalid JSON, the editor will not let you save the content.
-
-    ![](./images/miller-salary.png " ")
-
-    We can now see that Miller's salary is 80000. Let's add another document to the collection. Click on the "New JSON Document" button immediately below the the collection name on the top panel.
-
-    ![](./images/new-document-button.png " ")
-
-
-    That will bring up the JSON editor again, this time with an empty document. Copy the following document in:
-
-    ```
-    <copy>
-    {
-        "name": "Jones",
-        "job": "Manager",
-        "salary": 50000
-    }
-    </copy>
-    ```
-
-    Since there's already an empty document in there, make sure you don't end up with two sets of braces (curly brackets) around the JSON. Click "Create" when done.
-
-    ![](./images/new-jones.png)
-
-    Click the "Clear" button for the existing search, then run another empty search to see all documents.
-
-    **Caution:** the same "trashcan" icon is used in two place in the JSON workshop. To the right of "add clause" it means "Clear the current search". On the top row, it means "Delete all documents found by the current query". Don't delete your documents by accident!
-
-    Finally, let's sort the results of our query, in descending order of salary (so highest first).
-
-    On the right, click "Add Clause" and choose "$orderby". This will guide us through adding an order-by clause to our (currently empty) query.
-
-    ![](./images/order-by.png " ")
-
-    That will change our query to have two parts - a $query part and a $orderby part. The $query part is the default if neither are specified.
-
-    $query still contains our empty search - {}.
-
-    We need to complete some details for the $orderby. We want to sort by salary, so change the path to "salary". It's a number, so change datatype from "varchar2" to "number". And finally change the order from "asc" (ascending) to "desc" (descending), so we get largest first. 
-
-    ![](./images/orderby-edit.png " ")
-
-    Use the scrollbar to confirm that we have fetched back the records in descending order of salary.
-
-    Before we leave JSON, let's just create a new collection. On the left side, click the "New Collection" button. 
-
-    ![](./images/new-col-button.png " ")
-
-    On the right, give our collection the name "newcollection" and check the "MongoDB Compatible" box. 
     
-    If you're interested, the main effect of the MongoDB compatibility is to include the allocated ID field within the document itself, as a field called "_id". This is a requirement for MongoDB utilities, but if you are only going to use Oracle SODA (Simple Oracle Document Access) then the ID field can be external to the document. You can see the difference in the sample JSON document if you check and uncheck the box.
+2.  Optimize the index
 
-    When done, click "Create".  We won't do anything else with this collection, but it illustrates a point in the next section.
+    We can optimize the index using another PL/SQL command in the ctx_ddl package: ctx\_ddl.optimize\_index. That takes two mandatory parameters, the name of the index and the type of optimization to perform. Common values are 'FULL' or 'REBUILD'. We'll go with 'FULL':
 
-    ![](./images/new-collection.png " ")
-
-    You can refresh the collection list on the left hand side to check the new collection is there.
-
-    After that, we're ready to move on to the next task.
-
-## Task 3: SQL in Database Actions
-
-So far we've looked at a documemt-centric view of our data, from Mongo Shell and from Oracle's JSON workshop.
-
-Now we're going to look at a SQL view of the same data, showing how you can swap between document and SQL views.
-
-1.  Get to the Database Actions menu
-
-    If you've just finished the previous task, click on 'Database Actions' in the top bar. If you've closed that window, then follow the instructions for Task 3 to get to the Database Actions menu.
-
-    ![](./images/back-to-dbactions.png " ")
-
-    Now we want to open SQL. Click on the SQL panel in Database Actions
-
-    ![](./images/dbactions-menu-sql.png " ")
-
-2.  Examine the EMP table
-
-    On the left hand panel, we will see all the tables in our database. Notice that there are two tables, EMP and NEWCOLLECTION.
-    These correspond with the two collections we created - "emp" from Mongo Shell and "newcollection" from JSON.
-
-    Open the EMP collection by clicking on the triangle next to it, to list the columns in the table.
-
-    ![](./images/emp-columns.png " ")
-
-    You can see that there are various "housekeeping" columns in the table, and a mysterious one called "DATA". We'll learn more about that later.
-    In the top right "Worksheet" pane, enter the following query and click the "Run Statement" button:
+    ![](./images/before-optimize.png " ")
 
     ```
     <copy>
-    select * from emp
+    execute ctx_ddl.optimize_index('myindex', 'FULL')
     </copy>
     ```
-    ![](./images/select-star.png " ")
 
-    In the output, you can see four rows. And we know that our "emp" collection has four documents in it, so we can deduce that:
+    Now try the previous select from the $I table again. There is now only one entry for 'brown' - the index information for that word has been condensed into a single row.
 
-    * Collections are represented by tables
-    * Documents are represented by rows in a table
+    ![](./images/after-optimize.png " ")
 
-    The "DATA" column of the table contains the actual JSON of the documents, but since it's in a binary format, SQL can't show it. We can use a function JSON_SERIALIZE to get it into readable format.
+## Task 4: Automatic SYNC on commit
 
-    Enter the following query and click "Run Statement"
+Running __SYNC\_INDEX__ manually is efficient, and gives you full control. However, you can have the index synchronize automatically, either by specifying that it should be synchronized on commit, or by specifying a regular time period (such as every minute) to perform the synchronization.
+
+1.    Drop the current index first:
 
     ```
     <copy>
-    select json_serialize(data) from emp
+    drop index myindex
     </copy>
     ```
 
-    You may need to adjust the column size to read the output better, but when you do you will see the JSON text displayed.
-
-    This is great, we're accessing the JSON from a relational table. But it would be better if we could get at individual elements of the JSON, right?
-
-3.  Simple dot notation
-
-    We can do that using something called "simple dot notation". To use that, we **must** give our table an alias, then we can refer to an element in the JSON as "alias.column.elementname". Run the following:
+2.    Whenever non-default index behavior is required, we use a PARAMETERS clause with the index. Here we're going to specify __SYNC(ON COMMIT)__ to have it sync automatically at COMMIT time:
 
     ```
     <copy>
-    select e.data.name,
-           e.data.job,
-           e.data.salary
-        from emp e
+    create index myindex on mytable(text) indextype is ctxsys.context
+        parameters ('sync (on commit)')
     </copy>
     ```
 
-    [](./images/dot-notation.png " ")
-
-    Fantastic! We've accessed individual elements of the JSON and returned them as though they were relational columns. In fact, anywhere we can use a relational column in a query we can use this simple dot notation. For example, we can use a simple aggregation query to find the average salary by job:
+3.    Now we'll add a new row to the table, and search for it:
 
     ```
     <copy>
-    select  avg (e.data.salary),
-            e.data.job
-        from emp e
-        group by e.data.job
+    insert into mytable values (50, 'brown rabbit' )
     </copy>
     ```
 
-    ![](./images/avg-salary.png " ")
-
-    Simple dot notation is great for straightforward "flat" JSON. There are many other JSON functions available to access data within JSON, such as JSON\_VALUE, JSON\_OBJECT and JSON\_TABLE, but we won't go into those here.
-
-4.  JSON Dataguide
-
-    JSON Dataguide examines the JSON stored in a collection and shows us the schema of that JSON - what elements are available, and their size and data types. Let's run it on our EMP table to see what the collection looks like:
+    The SQL Workshop in Autonomous Database commits automatically, so our insert should be immediately available. Run a and we will find the new row without having to call __CTX\_DDL.SYNC\_INDEX__.
 
     ```
     <copy>
-    select json_dataguide(data, dbms_json.FORMAT_HIERARCHICAL, dbms_json.pretty) from emp;
+    select * from mytable 
+        where contains ( text, 'rabbit' ) > 0
     </copy>
     ```
 
-    Since this is producing some quite long output, it's best if we use the "Run Script" button rather than "Run Statement". Scroll through the output to see the elements discovered in the JSON.
+    ![search for rabbit succeeds](./images/search-rabbit.png " ")
 
-    ![](./images/dataguide.png " ")
+## Task 6: Automatic SYNC at time intervals
 
+SYNC(ON COMMIT) is convenient, but not ideal in high transaction-rate situations. It can lead to transactions getting delayed as they wait for the previous SYNC to complete. Instead, you can choose to have SYNC performed at a specific time period.
 
+The longer that time period is (five minutes is often chosen) the less your index will need to be optimized. However, if you need near-real-time syncs, you can choose a period as low as one second.
 
-5.  Generate a view from Dataguide
+Time interval SYNCs use database scheduler, so in 19c and before you must have __CREATE JOB__ privilege to use it.
 
-    JSON Dataguide is useful for examing the layout of our JSON. But we can also use it to automatically create a relational view over the JSON data.
-
-    To do that, we first run JSON\_DATAGUIDE, and then feed the output from that into DBMS\_JSON.CREATE\_VIEW.
-
-    Note: the dbms_json.pretty used in the previous example is only to format the output nicely. DBMS\_JSON.CREATE\_VIEW doesn't care about formatting so we can leave that out here. Copy the following and click "Run Statement".
+1.  Drop the existing index:
 
     ```
     <copy>
-    declare
-        dg clob;
-    begin
-        select json_dataguide(data, dbms_json.FORMAT_HIERARCHICAL, dbms_json.pretty) into dg
-        from emp;
-    
-        dbms_json.create_view(
-            viewname  => 'EMP_VIEW', 
-            tablename => 'EMP', 
-            jcolname  => 'DATA', 
-            dataguide => dg
-        );
-    end;
+    drop index myindex
     </copy>
     ```
 
-    ![](./images/create-view.png " ")
-
-    That created a view based on the elements within our JSON. On the left hand side, choose "Views" rather than "Tables" and open the "EMP_VIEW" view.
-
-    You can see that our view contains the "housekeeping" data from our EMP table, plus the various elements from the JSON. Note that columns such as "job", "name" etc are in lower-case - case is significant for JSON, and "NAME" would be a different element to "name", so the case is maintained in the view. That means to refer to any of these colums, we must put them in double quotes, otherwise SQL will upper-case them.
-
-    So let's run a query against the view. We no longer need to use the dot notation, but as noted above we do need to quote the column names. We're going to figure out how much of our company's salary bill is spent on each job. We'll do that with an aggregation query:
+2.  Now create the index again, but this time specify that it should be SYNC'd every minute. The syntax for the time period comes from DBMS\_SCHEDULER.
 
     ```
     <copy>
-    select  sum("salary"),
-            "job"
-        from emp_view
-        group by "job"
+    create index myindex on mytable(text) indextype is ctxsys.context
+        parameters ('sync (every "freq=minutely; interval=1")');
     </copy>
-    ``` 
+    ```
 
-    Looking good! We've now automatically created a view over our collection, and can run SQL queries over it without even knowing that it's based on a JSON datasource.
-
-6.  Create a Pie Chart of salaries
-
-    Let's see if we can get that last query output in a more pleasing visual pattern. Click on "Database Actions" at the top of the page, and then choose Charts from the Database Actions menu.
-
-    ![](./images/dbactions-button-2.png " ")
-
-    ![](./images/dbactions-menu-charts.png " ")
-
-    As usual, the first time you enter Charts you will see a tutorial. You can step through it or skip it for now.
-
-    Click on "+ Create" in the top right, and then "New Chart"
-
-    ![](./images/chart-create.png " ")
-
-    Give your chart a name "Salary Breakdown" and a description of "Total Salaries by job". Set the "Protected by Privilege" drop-down to "Not protected". When done, click "Next".
-
-    ![](./images/chart-create-2.png " ")
-
-    In the next panel, enter the SQL aggregation query we used earlier in the "Enter a valid SQL query" box.
+3.  Now insert a new row
 
     ```
     <copy>
-    select  sum("salary"),
-            "job"
-        from emp_view
-        group by "job"
+    insert into mytable values (50, 'white rabbit')
     </copy>
-    ``` 
-    On the right Choose "Pie Chart" in the "Chart type" drop-down. Click "Create" when done.
+    ```
 
-    ![](./images/chart-create-3.png " ")
+4.  Search for the new row. Initially you'll probably find that it doesn't find the new row, but keep repeating the query and it will work 
+    within one minute.
 
-    On the next page, click the "three dots" menu to the right of our Salary Breakdown panel, and choose "View Chart".
+    ```
+    <copy>
+    select * from mytable 
+        where contains (text, 'white') > 0;
+    </copy>
+    ```
+    ![search for white](./images/search-white.png " ")
 
-    ![](./images/view-chart.png " ")
+You should now have a good grounding in creating Oracle Text indexes, running basic queries against those indexes, and maintaining those indexes.
 
-    And now we should see a nice pie chart of our salary costs - we can see that Programmers are by far our largest cost at 63.6% of the total salary bill.
-
-    ![](./images/chart-display.png " ")
-
+There is much more to Oracle Text than we were able to cover here, so look out for an advanced Oracle Text LiveLab coming soon.
 
 ## Acknowledgements
 
