@@ -22,7 +22,7 @@ In this lab, you will learn how to create the following:
 
 First practice the steps to familiarize yourself with the commands and then do the Labs.
 
-The Model has Milestone(s), and an Identifier which is mapped to one, or more, of the milestone(s). The Initial creation of a Model is called a Draft; which is not activated and can be modified, but not visable in the Console.
+The Model has Milestone(s), and an Identifier which is mapped to one, or more, of the milestone(s). The Initial creation of a Model is called a Draft; which is not activated and can be modified, but not visible in the Console.
 
 ### Model Steps
 
@@ -66,7 +66,9 @@ You will create an Insight Model with 2 Milestones, an Initial and a Terminal, a
 
 ## Task 1: Create Model
 
-Open Insight and create your Draft Model. Name the Draft Model **My Order Processing** and provide the description of **My First Model**. You will need to click **Create** to finish. When your completed it will open the Milestone Process for you; continue to Task 2 to add your Milestones.
+1. Open Insight and create your Draft Model. 
+2. Name the Draft Model **My Order Processing** and provide the description of **My First Model**. 
+3. You will need to click **Create** to finish. When you've completed it; it will open the Milestone Process for you. Continue to Task 2 to add your Milestones.
      
 ## Task 2: Create A Milestone
 

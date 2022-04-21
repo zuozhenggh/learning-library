@@ -13,10 +13,11 @@ Permissions in Insight are defined by Oracle Integration roles. The role(s) that
 ### Objectives
 
 In this workshop, you will:
-* Explain Oracle Integration Insite Roles
+* Explain Oracle Integration Insight Roles
 * Understand the permissions of each Oracle Insight persona
 
 ### ServiceAdminstrator
+
 This is a super user who manages Insight. This user can purge Insight model data and has all the privileges of the other roles to view, create, manage, edit, and delete all the models and dashboards.
 
 ### ServiceDeveloper
@@ -29,6 +30,7 @@ The Integration Architect understands the end-to-end business process implemente
 These users do not have access to Insight dashboards through the Consoles page.
 
 ### ServiceUser
+
 This user understands how the business works and can use the Insight consoles, which provide preconfigured and custom dashboards, to gain insight into business process status and activity in real time. For example, this user might ask an integration architect and business analyst to build a model in Insight to provide a visualization of which products are selling best in which US state and if there are any models with a high return rate. This data helps to make decisions such as investing more marketing dollars in certain regions and if it makes sense to expand overseas.
 
 This user can view, create, manage, edit, and delete Insight dashboards through the Consoles page. This user does not have access to models through the Models page or create Models.
