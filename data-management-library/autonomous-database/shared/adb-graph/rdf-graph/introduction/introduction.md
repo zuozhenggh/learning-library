@@ -34,8 +34,7 @@ Estimated Time: 35 minutes
 ### Prerequisites
   This lab assumes you have:
   * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported
-  > **Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
+  
   - Download the MOVIESTREAM file (moviestream\_rdf.nt) using this [link](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/moviestream_rdf.nt)
 
 This concludes this lab. You may now *proceed to the next lab.*
@@ -43,4 +42,4 @@ This concludes this lab. You may now *proceed to the next lab.*
 ## Acknowledgements
 - **Author** -  Nicholas Cusato, Ethan Shmargad, Matthew McDaniel Solution Engineers, Ramu Murakami Gutierrez Product Manager
 - **Technical Contributor** - Melliyal Annamalai Distinguished Product Manager, Joao Paiva Consulting Member of Technical Staff, Lavanya Jayapalan Principal User Assistance Developer
-- **Last Updated By/Date** -  Ramu Murakami Gutierrez Product Manager, April 14th 2022
+- **Last Updated By/Date** -  Marion Smith, Technical Program Manager, April 2022
