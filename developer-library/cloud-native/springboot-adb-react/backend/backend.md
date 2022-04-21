@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will build and deploy the pre-built SpringBoot Java backend Docker image to OKE, then configure the API Gateway.
+In this lab, you will make changes and deploy the pre-built SpringBoot Java backend Docker image to OKE, then configure the API Gateway.
 
 Estimated time: 15 minutes
 
@@ -41,7 +41,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 
 ### Prerequisites
 
-* This lab requires the completion of the **Setup Dev Environment** tutorial and the provisioning of the Orace Cloud Infrastructure (OCI) components.
+* This lab requires the completion of the **Setup Dev Environment** tutorial (aka Lab 1).
 
 ## **Task 1**: Build and Push the Docker Images to the OCI Registry
 
@@ -92,13 +92,13 @@ This will allow the appropriate object storage bucket to access your application
 
 2. Check the status using the following commands
 
-    The following command returns the Kubernetes service of MyToDo application with a load balancer exposed through an external API
+    The following command returns the Kubernetes servicea of MyToDo application with a load balancer exposed through an external API
         ```
         <copy>
         services
         </copy>
         ```
-    This will run `kubectl get services` in the background, but the setup script creates aliases for ease of use. After running the command above, it should output the external IP address.
+    This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
         ![](images/services.png)
 
 3. The following command returns all the pods running in your kubernetes cluster:
@@ -107,11 +107,11 @@ This will allow the appropriate object storage bucket to access your application
     pods
     </copy>
     ```
-This will run `kubectl get pods` in the background, but the setup script creates aliases for ease of use. The pods should say 'running' if everything is done correctly.
+    Pods is an alias for `kubectl get services`.
 
     ![](images/get-pods.png)
 
-5. You can tail the log of one of the pods by running:
+4. You can tail the log of one of the pods by running:
 
     ```
     <copy>
@@ -120,6 +120,7 @@ This will run `kubectl get pods` in the background, but the setup script creates
     ```
 
   $ kubectl logs -f <pod name>
+
   Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 
     ![](images/deploy-success.png)
@@ -130,12 +131,14 @@ This will run `kubectl get pods` in the background, but the setup script creates
   If you make changes to the image, you need to delete the service and the pods by running undeploy.sh then redo Steps 2 & 3.
 
   1. Run the `undeploy.sh` script
+
     ```
     <copy>
     cd $MTDRWORKSHOP_LOCATION/backend
     ./undeploy.sh
     </copy>
     ```
+
   2. Rebuild the image + Deploy + (Re)Configure the API Gateway
 
 ## **Task 4**: Configure the API Gateway
@@ -145,34 +148,31 @@ Rather than exposing the Helidon service directly, we will use the API Gateway t
 
 The setup script already creates an API gateway, but you still need to create the deployments in the API gateway.
 
-1. From the hamburger  menu navigate **Developer Services** > **API Management > Gateways**
+1. From the hamburger menu navigate to **Developer Services** > **API Management > Gateways**
    ![](images/api-gateway-navigate.png)
 
 2. Click on the todolist gateway that has been created for you
    ![](images/select-gateway.png)
 
-3. Create a todolist deployment by clicking create deployment
+3. Create a todolist deployment by clicking Create Deployment
    ![](images/create-deployment.png)
 
-4. Fill out the basic information like so:
-    ![](images/cors-information.png)
-    
-5. Configure Cross-origin resource sharing (CORS) policies.
+4. Configure Cross-origin resource sharing (CORS) policies with the details below
   - CORS is a security mechanism that will prevent loading resources from unspecified origins (domain, scheme, or port).
   - Allowed Origins: is the list of all servers (origins) that are allowed to access the API deployment typically your Kubernetes cluster IP.
-  - Replace the `.us-phoenix-1` portion with whichever region you replaced with in task 1.
-  - Replace the 3rd IP address with the external IP address of your Load Balancer
+  - Replace the `.us-phoenix-1` portion with whichever region set in task 1.
+  - Replace the 3rd IP address with the external IP address of your Load Balancer (you can get this by `services`)
   - Allowed methods: GET, PUT, DELETE, POST, OPTIONS are all needed.
 
-  To configure CORS, scroll down and click add next to CORS and fill in this information under allowed origins. These are the origins that can load resources to your application.
+  To configure additional origins, click `Another Origin` in the bottom right of the figure below
 
   ![](images/cors-information.png)
 
-6. Configure the Headers
+5. Configure the Headers
 
-    ![](images/headers-new.png)
+  ![](images/headers-new.png)
 
-7. Configure the routes: we will define two routes:
+6. Configure the routes: we will define two routes:
     - /todolist for the first two APIs: GET, POST and OPTIONS
 
         ![](images/route-1-new.png)
@@ -185,10 +185,10 @@ The setup script already creates an API gateway, but you still need to create th
 ## **Task 5**: Testing the Backend Application Through the API Gateway
 
 1. Navigate to the newly create Gateway Deployment Detail and copy the endpoint
+
    ![](images/copy-endpoint.png " ")
 
-2. Testing through the API Gateway endpoint
-  postfix the gateway endpoint with "/todolist" as shown in the image below
+2. To test the endpoint, copy the gateway endpoint in your browser and append "todolist"
 
    ![](images/endpoint-successful.png " ")
 
