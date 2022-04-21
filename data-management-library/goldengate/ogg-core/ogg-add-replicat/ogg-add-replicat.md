@@ -52,6 +52,18 @@ To add a Replicat:
     EDIT PARAMS repe
     <copy>
     ```
+    The Replicat parameter file is as follows:
+
+    ```
+    <copy>
+    REPLICAT repe
+    USERIDALIAS ggwest DOMAIN OracleGoldenGate
+    DDL INCLUDE ALL
+    SOURCECATALOG pdbeast
+    MAP hr.*, TARGET hr.*;
+    <copy>
+    ```
+
 4. Register the Replicat:
 
     ```

@@ -28,11 +28,11 @@ This lab assumes that you have:
     ```
 ## Task 2: Add Database Credentials
 
-You need to establish 2 database connections (**pdbeast** and **pdbwest**) through the Admin Client in preparation to issue other Oracle GoldenGate commands that affect the database.
+You need to establish 2 database connections (`pdbeast` and `pdbwest`) through the Admin Client in preparation to issue other Oracle GoldenGate commands that affect the database.
 
 To create database credentials in the Administration Client:
 
-1. Run the following command to add a user **ggeast**:
+1. Run the following command to add a user `ggeast`:
 
     ```
     <copy>
@@ -48,7 +48,7 @@ To create database credentials in the Administration Client:
     <copy>
 
     ```
-3. . Run the following command to add a user **ggwest**:
+3. . Run the following command to add a user `ggwest`:
 
     ```
     <copy>

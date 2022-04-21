@@ -43,11 +43,23 @@ To add an extract process and Exttrail:
 
     ```
     **exte** is the name of the Extract that is being created. However, the Extract is yet to start.
-3. Configure the Extract parameters in the Extract parameter file (exte.prm):
+3. Configure the Extract parameters in the Extract parameter file (`exte.prm`):
 
     ```
     <copy>
     EDIT PARAMS exte
+    <copy>
+    ```
+    The Extract parameter file is as follows:
+
+    ```
+    <copy>
+    EXTRACT exte
+    USERIDALIAS cggnorth DOMAIN OracleGoldenGate
+    EXTTRAIL east/ea
+    SOURCECATALOG pdbeast
+    DDL INCLUDE MAPPED
+    TABLE hr.*;
     <copy>
     ```
 4. Register the Extract:
