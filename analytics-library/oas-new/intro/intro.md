@@ -13,11 +13,13 @@ Oracle Analytics Server helps organizations discover deep, unique insights from 
   [](youtube:Dk9vLite0MA)
 
 ### Objectives
-The workshop illustrates how organizations worldwide rely on Oracle to manage their data and uncover value across the entire data lifecycle: creating and blending data, self-service data visualization and analysis, securely collaborating and sharing analysis across teams, and leveraging embedded augmented analytics and machine learning capabilities to deliver the fastest time to insight across all of your data
+The workshop illustrates how organizations worldwide rely on Oracle to manage their data and uncover value across the entire data lifecycle: creating and blending data, self-service data visualization and analysis, securely collaborating and sharing analysis across teams, and leveraging embedded augmented analytics and machine learning capabilities to deliver the fastest time to insight across all of your data.
+
 In this lab you will:
   -	Review the key features of self-service analytics
   -	Tell a story regarding what is happening at JTC America’s Group
   -	Explore a variety of intuitive and interactive visualization charts and create visualizations
+  - Prepare, enrich and transform your data before you make it available for analysis 
   -	Leverage augmented analytics capabilities to accelerate root cause analysis
   -	Leverage machine learning algorithms to predict attrition
   -	Explore custom visual extensions in the Oracle Analytics Library
@@ -35,5 +37,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
-* **Contributors** - Linda Dest, Jyotsana Rawat, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
+* **Contributors** - Linda Dest, John H. Miller, Malia German, Bronze Martin and Rene Fontcha
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2022

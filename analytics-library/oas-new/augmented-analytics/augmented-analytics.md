@@ -24,9 +24,6 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage`*</if> are required to complete this lab.
-- Attrition Training v3.xlsx
-- Employee_Analysis.dva
 
 ## Task 1: Using Machine Learning to Accelerate Root Cause Analysis
 In this exercise we are going to import a data set containing a number of employee records with various attributes that record employee experience, performance, and incentive. The data is historical in nature and includes a data element that identifies whether the employee has left the organization.  
@@ -44,11 +41,11 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
 
     ![](./images/hr1-2.png "Create Dataset")
 
-3. Add the data set. From <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>, drag and drop, or browse and select the file *“Attrition Training v3.xlsx”*
+3. Add the data set. From the Documents / Live Labs Content directory, select the file *“Attrition Training v3.xlsx”*
 
     ![](./images/hr1-3a.png "drag and drop Attrition Training v3.xlsx file to add the dataset")
 
-    Now Add the dataset to the workbook as follows.  
+    Now **add** the dataset to the workbook as follows.  
 
     ![](./images/hr1-3b.png "Click Add button to add the dataset")
 
@@ -87,9 +84,9 @@ Once you have imported your data into Oracle Analytics, you begin with data prof
    Attrition being a binary variable “yes/no” presents a pie chart showing a breakdown of employees who did / didn't leave the company.   Scroll down to explore  additional charts generated during Explain. Any interesting insights you'd like to share or further analyze, can be selected simply by clicking on the tick mark in the top, right hand corner of each chart.  
 
      
-   Navigate to the second tab, which identifies the key drivers related to the attrition attribute. Oracle Analytics, leverages machine learning to identify those variables having the most deterministic relationship behind what is driving 'attrition'.  The bar graphs provide a distribution of attrition across each key driver.
+   Navigate to the second tab, which identifies the key drivers related to the attrition attribute. Oracle Analytics leverages machine learning to identify those variables having the most deterministic relationship behind what is driving 'attrition'.  The bar graphs provide a distribution of attrition across each key driver.
 
-    ![](./images/hr1-6b.png "Key drivers of attriton")  
+    ![](./images/hr1-6b.png "Key drivers of attrition")  
 
    **Note**: Disregard order and screen placements of charts in explain.
 
@@ -228,7 +225,7 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     ![](./images/hr2-13.png "Import Workbook/Flow")
 
-14. Drag and drop, or browse and select the *Employee_Analysis.dva* file from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)</if> <if type="desktop"> *`/opt/oracle/stage`*</if>.
+14. From Documents / Live Lab Content directory,  select the *Employee_Analysis.dva* file. 
 
     ![](./images/hr2-14.png "Employee_Analysis.dva file")
 
@@ -345,11 +342,11 @@ Some of the pre-work required to achieve this task are done for us already, just
 
     ![](./images/hr3-4.png "Panel to inspect ATTRITION_MODEL_SVM")
 
-5. Inspect the registered model. Notice there is more metadata surfaced about OML models hosted in the Oracle database as compared to native ML models hosted in OAS.   This speaks to the fact that OML models are far more sophisticated.  Browse through the various tabs (General, Access, Details, Related)  Notice under Details - Output Columns that there is a Prediction and PredictionProbability which will tell us who is likely to leave next. Likewise, the Related tab offers a series of underlying metadata stored in DM$ views within the Oracle database containing signficant details regarding how the model was trained, tested and scored. Optional: Take a look at videos 8-10 in this series  https://bit.ly/OAC59Features  to see how available metadata helps to enrich your understanding of an OML model.  When you are finished inspecting the model, close the Inspect dialog box to proceed.
+5. Inspect the registered model. Notice there is more metadata surfaced about OML models hosted in the Oracle database as compared to native ML models hosted in OAS.   This speaks to the fact that OML models are far more sophisticated.  Browse through the various tabs (General, Access, Details, Related)  Notice under Details - Output Columns there is a Prediction and PredictionProbability which will tell us who is likely to leave next. Likewise, the Related tab offers a series of underlying metadata stored in DM$ views within the Oracle database containing signficant details regarding how the model was trained, tested and scored. Optional: Take a look at videos 8-10 in this series  [ https://bit.ly/OAC59Features.html ] to see how available metadata helps to enrich your understanding of an OML model.  When you are finished inspecting the model, close the Inspect dialog box to proceed.
 
     ![](./images/hr3-5.png "Related tab for Inspect ATTRITION_MODEL_SVM  ")
 
-6. Our registered OML model is now ready to be called by OAS in order to make predictions as to which employees might next be prone to leave the organization. To call this registered OML model Click  Create at the top right hand side of the page then choose Data Flow. 
+6. Our registered OML model is now ready to be called by OAS in order to make predictions regarding the employees who are prone to leave the organization. To call this registered OML model, **Click**  Create at the top right hand side of the page then choose Data Flow. 
     
     ![](./images/hr3-6.png "Data Flow create icon")
 
@@ -373,7 +370,7 @@ Some of the pre-work required to achieve this task are done for us already, just
         
     ![](./images/hr3-11.png "plus icon and Save Data icon")
 
-12. Save Data will automatically attempts to name the dataset New Dataset1. Because this is an invalid table name in an Oracle Database you may see an error stating "Table name is invalid".  You need to change the name to something like PRED_EMP_ATTRIT.  There seems to be a bug as even after changing the Table name to a valid value the error will not go away.  Ignore this error and click the Save As option along the top right hand side of the page.
+12. Save Data will automatically attempt to name the dataset New Dataset1. Because this is an invalid table name in an Oracle Database you may see an error stating "Table name is invalid".  You need to change the name to something like PRED_EMP_ATTRIT.  There seems to be a bug as even after changing the Table name to a valid value the error will not go away.  Ignore this error and click the Save As option along the top right hand side of the page.
         
     ![](./images/hr3-12.png "Save data config panel")
 
@@ -385,7 +382,7 @@ Some of the pre-work required to achieve this task are done for us already, just
         
     ![](./images/hr3-14.png "PRED_EMP_ATTRIT table")
 
-15. Using your multi-selct key select all columns from the dataset, right click and select Pick Visualization.  Then choose the Table visualization to view the predictions.
+15. Using your multi-select key select all columns from the dataset, right click and select Pick Visualization.  Then choose the Table visualization to view the predictions.
         
     ![](./images/hr3-15.png "Column selection panel")
 
@@ -413,4 +410,4 @@ Some of the pre-work required to achieve this task are done for us already, just
 ## Acknowledgements
 * **Authors** - Diane Grace, Manager, Analytics Platform Specialist Team, NA Technology
 * **Contributors** - Linda Dest, John Miller, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2022
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, April 2022

@@ -15,7 +15,7 @@ Oracle Analytics Server features powerful, intuitive self service capabilities t
 
 In this lab, you will explore the following features and capabilities:
 
-* Creating & Enriching a Data Set
+* Create, prepare and enrich a Data Set
 * Self-Service Data Modeling
 
 ### Prerequisites
@@ -26,9 +26,6 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage`*</if> are required to complete this lab.
-
-- employee termination.xlsx
 
 ## Task 1: Create and Enrich a Dataset
 
@@ -42,7 +39,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     ![](./images/asdvff2.png " ")
 
-3. **Upload** the "employee termination.xlsx that was provided to you.
+3. **Upload** the "employee termination.xlsx from the Documents / Live Labs Content directory as previously directed.  
 
     ![](./images/asdvff3.png " ")
 
@@ -348,23 +345,6 @@ Datasets can be blended with other datasets, saved, and shared with others throu
      Oracle Analytics Server provides flexible and agile data management capabilities enabling users to access and bring together a wide variety of data sources. 
 
      
-
-
-
-
-   
-
-  
-    
-    
-
-
-    
-
-    
-
-
-
    
 
 ## Learn More

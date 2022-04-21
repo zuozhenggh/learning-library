@@ -24,11 +24,6 @@ This lab assumes you have:
     - Lab: Environment Setup
     - Lab: Initialize Environment
 
-The following files <if type="external">referenced in [Lab: Initialize Environment](?lab=init-start-oas) should already be downloaded and staged as instructed, as they</if> <if type="desktop"> staged under *`/opt/oracle/stage`*</if> are required to complete this lab.
-- inventory.xlsx
-- vendor payments.xlsx
-- sample order lines.xlsx
-
 ## Task 1: Data Visualization and Mash Ups
 
 In order to complete our analysis we will create a workbook.  Think of a workbook as a dashboard. A workbook may contain a number of objects including filters, text boxes and other visualization types.  
@@ -96,11 +91,11 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       ![](./images/asdvff11.png " ")
 
-      Drag and drop, or browse and select the file *“Inventory.xlsx”* from <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)
+      Navigate to the documents directory on the left side of the dialogue box.  **Click** Live Labs Content, then select the file *“Inventory.xlsx”*.  Open the file. 
 
-      ![](./images/asdvff12.png " ")</if> <if type="desktop"> *`/opt/oracle/stage`*
+      ![](./images/asdvff12.png " ")
 
-      ![](./images/asdvff12-d.png " ")</if>
+      ![](./images/asdvff12-d.png " ")
 
       Once the spreadsheet has been uploaded,  **Click**  "Add" in the upper right hand corner.
 
@@ -365,13 +360,13 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
  When you create datasets or add datasets to a workbook, Oracle Analytics Server will assess the dataset and generate several suggestions via a visualization card and a descriptive 
  natural language summary.  The summary explains the relationship between attributes, measures, and points of interest.  
 
-1.  Let’s begin by creating a dataset with a spreadsheet titled - ‘sample order lines.xlsx’  from 
-    <if type="external"> the staging area where you unpacked the downloaded artifacts as instructed in [Lab: Initialize Environment](?lab=init-start-oas)
-
+1.  Let’s begin by creating a dataset with a spreadsheet titled - ‘sample order lines.xlsx’ located in  the Documents / Live Labs Content directory you accessed earlier. 
+    
      ![](./images/asdvff35a.png " ")
 
      ![](./images/asdvff11.png " ")
 
+     ![](./images/asdvff11a.png " ")
 
 2.  For this exercise, we will leave it exactly as it is, and add it to Oracle Analytics Server and create a workbook.
 
@@ -497,4 +492,4 @@ Oracle Analytics provides users choice and flexibility with deployment.  Users c
 ## Acknowledgements
 * **Authors** - Linda Dest Analytics Platform Specialist, NA Technology
 * **Contributors** - Linda Dest, Rene Fontcha
-* **Last Updated By/Date** - Linda Dest NA Technology, March 2022
+* **Last Updated By/Date** - Linda Dest NA Technology, April 2022

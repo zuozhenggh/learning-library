@@ -24,7 +24,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     - Database Listener
         - LISTENER
     - Database Server instance
-        - ORCLCDB
+        - PDB1
     - Oracle Analytics Server (OAS)
 
 2. On the *Web Browser* window on the right preloaded with *OAS Web Console*, click on the *Username* field and select the saved credentials to login. These credentials have been saved within *Web Browser* and are provided below for reference
@@ -50,13 +50,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
     <if type="external">
-    **Notes:** If for any reasons you prefer to bypass the remote desktop and access the OAS UI directly from your local computer/workstation, launch your browser to the following URL
-
-    ```
-    URL: <copy>http://[your instance public-ip address]:9502/dv/ui</copy>
-    e.g: http://111.888.111.888:9502/dv/ui
-    ```
-    </if>
+    
 
 4. If you are still unable to login or the login page is not functioning after reloading the application URL, open a terminal session and proceed as indicated below to validate the services.
 
@@ -99,14 +93,6 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     ```
 
 <if type="external">
-
-## Task 2: Download and Stage Workshop Artifacts (not needed if using the remote desktop)
-In order to run this workshop, you will need a set of files that have been conveniently packaged and stage on the instance for you. If you are bypassing the remote desktop and  connecting directly to OAS UI from your local computer/workstation, proceed as indicated below.
-
-1. Download [OAS_Workshop.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/6_WvdYP8HOSRFYJpU2958aV8WpEq2sDaqZUP4dJdFlz2NvBPIdlRg8uHyDC0WMyA/n/natdsecurity/b/labs-files/o/OAS_Workshop.zip) and save to a staging area on your laptop or workstation.
-
-2. Uncompress the ZIP archive
-</if>
 
 ## Appendix 1: Managing Startup Services
 Your workshop instance is configured to automatically start all processes needed for the labs. Should you need to stop/start these processes, proceed as shown below from your remote desktop session
