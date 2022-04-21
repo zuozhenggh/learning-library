@@ -56,6 +56,11 @@
           {
             "title": "Lab 11: PeopleSoft Middle Tier Setup & Configuration and Test Peoplesoft login in OCI",
             "filename": "../../11psft-mt-setup-oci/psft-mt-setup-oci.md"
+          },
+          {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
           }
         
       ]
