@@ -264,9 +264,13 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 - This is to create 2 panels to compare the performance with and without Heatwave Engine for the aiportdb which has loaded secondary engine data - for country IN ("SWITZERLAND", "FRANCE", "ITALY")
 
-1. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
+1. The following SQL is used with SQL Hints  
+```text
+/*+ SET_VAR(use_secondary_engine=off)*/ 
+```
+* to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
 
- The now() as time column is added to allow grafana to do charting with time series.
+- The now() as time column is added to allow grafana to do charting with time series.
 
 ```sql
 SELECT /*+ SET_VAR(use_secondary_engine=off) */
@@ -286,7 +290,11 @@ airline.airlinename, nb_people
 LIMIT 10;
 ```
 
-2. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
+2. The following SQL is used with SQL Hints  
+```text
+/*+ SET_VAR(use_secondary_engine=off)*/
+```
+* to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
 
 - The now() as time column is added to allow grafana to do charting with time series.
 
