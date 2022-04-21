@@ -5,6 +5,8 @@ Use Automatic Workload Repository (AWR) and automate database statistics gatheri
 
 *In this lab we will see the capabilities of Oracle Enterprise Manager in generating AWR reports.*
 
+Estimated Time: 20 minutes
+
 ### Objectives
 
 As a Database Administrator,
@@ -66,6 +68,8 @@ As a Database Administrator,
 - Click on "Generate Report"
     ![](./images/us1_13.png " ")
     
+You may now **proceed to the next lab**.
+
 ## Acknowledgements
 
 *Congratulations! You have successfully completed AWR report analysis using Oracle Enterprise Manager .*
