@@ -243,7 +243,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      For this exercise, we will be utilizing an Oracle Database to select a variety of tables I need for analysis.  
 
-     **Click** the database 'orclpdb1'.  The database has a variety of schemas available.  We are going to use BICS_SAMPLEAPP.  
+     **Click** the database 'PDB1'.  The database has a variety of schemas available.  We are going to use BICS_SAMPLEAPP.  
 
      ![](./images/asdvff15.png " ")
 

@@ -28,7 +28,7 @@ This lab assumes you have:
 
 In order to complete our analysis we will create a workbook.  Think of a workbook as a dashboard. A workbook may contain a number of objects including filters, text boxes and other visualization types.  
 
-1.    From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), Click on *"Create"* at the upper right-hand corner.
+1.    From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), **Click** on *"Create"* at the upper right-hand corner.
 
       ![](./images/asdvff1.png "OAS Home Screen")
 
