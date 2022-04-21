@@ -62,6 +62,8 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
 ## Task 2: Load and Query the `BANK_GRAPH` and visualize the results
 
 >**Note:** *Execute the relevant paragraph after reading the description in each of the steps below*.
+          If the compute environment is not ready as yet and the code cannot be executed then you will see a blue line moving across the bootom of the paragraph to indicate that a background task is in progress.  
+  ![ALT text is not available for this image](images/env-not-ready.png " ")
 
 1. Next execute the paragraph which queries and displays 100 elements of the graph.    
 
@@ -85,13 +87,9 @@ If the status is attaching you can choose to wait for the 20-30 seconds it may t
   See the [PGQL site](https://pgql-lang.org) and specification for more details on the syntax and features of the language.  
   The Getting Started notebook folder also has a tutorial on PGQL.  
 
-  >**Note:** *If the compute environment is not ready as yet and the code cannot be executed then you will see a blue line moving across the bootom of the paragraph to indicate that a background task is in progress.  
-
-  ![ALT text is not available for this image](images/env-not-ready.png " ")
-
 2. The result utilizes some features of the visualization component. The `acct_id` property is used for the node (or vertex) labels and the graph is rendered using a selected graph layout algorithm.  
 
-  **Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*
+  >**Note:** *You do not need to execute the following steps. They just outline the steps used. Feel free to experiment and modify the visualizations.*
 
   Steps required for customizing the visualization:  
 
