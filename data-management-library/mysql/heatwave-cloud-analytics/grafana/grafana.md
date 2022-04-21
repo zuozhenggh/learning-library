@@ -27,19 +27,16 @@ This lab assumes you have:
 
 ## Task 1: Verify OKE cluster
 
-1. Click the **Hamburger Menu** ![](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
-
-	![Navigate to OKE](images/navigate-to-oke.png)
+1. Click the **Hamburger Menu** ![menu](images/hamburger.png) in the upper left, navigate to **Developer Services** and select **Kubernetes Cluster (OKE)**
+ ![Navigate to OKE](images/navigate-to-oke.png)
 
 2. Select the Compartment (e.g. HOL-Compartment) that you provisioned the OKE cluster, and verify that the status of OKE cluster **oke_cluster** is **Active**
-
-	![Locate OKE](images/click-cluster.png)
+ ![Locate OKE](images/click-cluster.png)
 
 ## Task 2: Deploy Grafana to OKE
 
 1. Connect to the **oke-operator** compute instance again using OCI Cloud Shell
-
-	![Connect to VM](images/connect-to-vm.png)
+![Connect to VM](images/connect-to-vm.png)
 
 2. Create 'grafana' namespace
 
@@ -264,49 +261,57 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 - This is to create 2 panels to compare the performance with and without Heatwave Engine for the aiportdb which has loaded secondary engine data - for country IN ("SWITZERLAND", "FRANCE", "ITALY")
 
-1. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
+1. The following SQL is used with SQL Hints  
+```text
+/*+ SET_VAR(use_secondary_engine=off)*/ 
+```
+* to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
 
 	The now() as time column is added to allow grafana to do charting with time series.
 
-	```sql
-SELECT /*+ SET_VAR(use_secondary_engine=off) */
-now() as time, airline.airlinename,
-count(*) as nb_people
-FROM
-booking, flight, airline, passengerdetails
-WHERE
-booking.flight_id=flight.flight_id AND
-airline.airline_id=flight.airline_id AND
-booking.passenger_id=passengerdetails.passenger_id AND
-country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-airline.airlinename
-ORDER BY
-airline.airlinename, nb_people
-LIMIT 10;
+  ```sql
+  SELECT /*+ SET_VAR(use_secondary_engine=off) */
+  now() as time, airline.airlinename,
+  count(*) as nb_people
+  FROM
+  booking, flight, airline, passengerdetails
+  WHERE
+  booking.flight_id=flight.flight_id AND
+  airline.airline_id=flight.airline_id AND
+  booking.passenger_id=passengerdetails.passenger_id AND
+  country IN ("SWITZERLAND", "FRANCE", "ITALY")
+  GROUP BY
+  airline.airlinename
+  ORDER BY
+  airline.airlinename, nb_people
+  LIMIT 10;
+  ```
+
+2. The following SQL is used with SQL Hints  
+```text
+/*+ SET_VAR(use_secondary_engine=off)*/
 ```
+* to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
 
-2. The following SQL is used with SQL Hints  /*+ SET_VAR(use_secondary_engine=off)*/ to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
+- The now() as time column is added to allow grafana to do charting with time series.
 
-	The now() as time column is added to allow grafana to do charting with time series.
-
-	```sql
-SELECT /*+ SET_VAR(use_secondary_engine=on) */
-now() as time, airline.airlinename,
-count(*) as nb_people
-FROM
-booking, flight, airline, passengerdetails
-WHERE
-booking.flight_id=flight.flight_id AND
-airline.airline_id=flight.airline_id AND
-booking.passenger_id=passengerdetails.passenger_id AND
-country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-airline.airlinename
-ORDER BY
-airline.airlinename, nb_people
-LIMIT 10;
-```
+  ```sql
+  SELECT /*+ SET_VAR(use_secondary_engine=on) */
+  now() as time, airline.airlinename,
+  count(*) as nb_people
+  FROM
+  booking, flight, airline, passengerdetails
+  WHERE
+  booking.flight_id=flight.flight_id AND
+  airline.airline_id=flight.airline_id AND
+  booking.passenger_id=passengerdetails.passenger_id AND
+  country IN ("SWITZERLAND", "FRANCE", "ITALY")
+  GROUP BY
+  airline.airlinename
+  ORDER BY
+  airline.airlinename, nb_people
+  LIMIT 10;
+  ```
 
 ## Task 9: Create charts panel
 
@@ -324,25 +329,25 @@ LIMIT 10;
 
 4. Paste the SQL text to the query text field
 
-	```sql
-<copy>
-SELECT /*+ SET_VAR(use_secondary_engine=on) */
-now() as time, airline.airlinename,
-count(*) as nb_people
-FROM
-booking, flight, airline, passengerdetails
-WHERE
-booking.flight_id=flight.flight_id AND
-airline.airline_id=flight.airline_id AND
-booking.passenger_id=passengerdetails.passenger_id AND
-country IN ("SWITZERLAND", "FRANCE", "ITALY")
-GROUP BY
-airline.airlinename
-ORDER BY
-airline.airlinename, nb_people
-LIMIT 10;
-</copy>
-```
+  ```sql
+  <copy>
+  SELECT /*+ SET_VAR(use_secondary_engine=on) */
+  now() as time, airline.airlinename,
+  count(*) as nb_people
+  FROM
+  booking, flight, airline, passengerdetails
+  WHERE
+  booking.flight_id=flight.flight_id AND
+  airline.airline_id=flight.airline_id AND
+  booking.passenger_id=passengerdetails.passenger_id AND
+  country IN ("SWITZERLAND", "FRANCE", "ITALY")
+  GROUP BY
+  airline.airlinename
+  ORDER BY
+  airline.airlinename, nb_people
+  LIMIT 10;
+  </copy>
+  ```
 
 	![Dashboard](images/grafana-edit-panel-paste-sql.png)
 
