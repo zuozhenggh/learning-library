@@ -30,7 +30,7 @@ To add a Replicat:
 
     ```
     <copy>
-    DBLOGIN USERIDALIAS ggweast
+    DBLOGIN USERIDALIAS ggwest
     <copy>
 
     ```
@@ -39,11 +39,12 @@ To add a Replicat:
 
     ```
     <copy>
-    ADD REPLICAT repe, INTEGRATED, PARALLEL, exttrail ea checkpointtable ggadmin.ggs_checkpointtable
+    ADD REPLICAT repe, INTEGRATED, PARALLEL, EXTTRAIL ea CHECKPOINTTABLE ggadmin.ggs_checkpointtable
     <copy>
 
     ```
     **repe** is the name of the Replicat that is being created.
+
 3. Edit the parameter file:
 
     ```

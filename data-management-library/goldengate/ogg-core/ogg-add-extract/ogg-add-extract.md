@@ -42,8 +42,8 @@ To add an extract process and Exttrail:
     <copy>
 
     ```
-    **exte** is the name of the Extract that is being created.
-3. Edit the parameter file:
+    **exte** is the name of the Extract that is being created. However, the Extract is yet to start.
+3. Configure the Extract parameters in the Extract parameter file (exte.prm):
 
     ```
     <copy>
@@ -58,7 +58,7 @@ To add an extract process and Exttrail:
     <copy>
     ```
 
-5.  Add the Extract Trail file:
+5.  Add the Extract trail file:
 
     ```
     <copy>
@@ -89,6 +89,7 @@ You may now [proceed to the next lab](#next).
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
 * [ADD EXTRACT](https://docs.oracle.com/en/middleware/goldengate/core/21.3/gclir/add-extract.html#GUID-D9611110-A8D6-4118-837E-BF1900262666)
+* [SOURCEISCATALOG](https://docs.oracle.com/en/middleware/goldengate/core/21.3/reference/sourcecatalog.html#GUID-C2D88643-6839-432D-A7E4-63B874859566)
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
