@@ -30,10 +30,29 @@ To enable TRANDATA:
     ADD TRANDATA pdbeast.hr.employees, allcolumns
     <copy>
     ```
+2. Run the following command to verify the output:
+
+    ```
+    <copy>
+    INFO TRANDATA pdbeast.hr.employees
+    <copy>
+    ```
+The Trandata output for **hr.employees** is as follows:
+
+  ```
+  <copy>
+  OGG (http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9012 ggdepdev as ggeast@ORCL/PDBEAST) 52> INFO TRANDATA hr.*
+  Logging of supplemental transaction log data is disabled for table PDBEAST.HR.COUNTRIES.
+  Logging of supplemental transaction log data is disabled for table PDBEAST.HR.DEPARTMENTS.
+  Logging of supplemental transaction log data is enabled for table PDBEAST.HR.EMPLOYEES.
+
+All columns supplementally logged for table PDBEAST.HR.EMPLOYEES.
+  <copy>
+  ```
 
 
 ## Task 2: Add Heartbeat Tables
-Add the heartbeat tables for both source and target endpoints by connecting to ggeast and ggwest database credential aliases.
+Add the heartbeat tables for both source and target endpoints by connecting to **ggeast** and **ggwest** database credential aliases.
 
 To add the Heartbeat tables:
 
@@ -47,6 +66,23 @@ To add the Heartbeat tables:
     ```
 2. Repeat step 1 on the target database.
 
+3.  Run the following command to verify the output:
+
+    ```
+    <copy>
+    INFO HEARTBEATTABLE TARGETONLY
+    <copy>
+    ```
+The HEARTBEAT table gets added and the output is as follows:
+
+  ```
+  <copy>
+  OGG (http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9012 ggdepdev as ggwest@ORCL/PDBWEST) 24> ADD HEARTBEATTABLE,TARGETONLY
+  2022-04-19T12:59:16Z  INFO    OGG-14101  Successfully added heartbeat table.
+  <copy>
+
+  ```
+
 ## Task 3: Add Checkpoint table
 
 To add the Checkpoint table:
@@ -55,7 +91,27 @@ To add the Checkpoint table:
 
   ```
   <copy>
-  ADD CHECKPOINTTABLE Tablename
+  ADD CHECKPOINTTABLE ggadmin.ggs_checkpointtable
+  <copy>
+
+  ```
+2. Run the following command to verify the output:
+
+  ```
+  <copy>
+  INFO CHECKPOINTTABLE ggadmin.ggs_checkpointtable
+  <copy>
+
+  ```
+
+  The Checkpoint table gets added as follows:
+
+  ```
+  <copy>
+  OGG (http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9012 ggdepdev as ggeast@ORCL/PDBEAST) 17> INFO CHECKPOINTTABLE ggadmin.*
+  2022-04-19T06:24:55Z  INFO    OGG-15189  Default catalog name PDBEAST will be used for table specification ggadmin.*.
+  2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHKPT has been created on 2022-04-19 06:22:56.
+  2022-04-19T06:24:55Z  INFO    OGG-08100  Checkpoint table PDBEAST.GGADMIN.GGS_CHECKPOINTTABLE has been created on 2022-04-19 06:15:55.
   <copy>
 
   ```
