@@ -78,7 +78,9 @@ To add a Replicat:
     <copy>
 
     ```
+The following is a sample Replicat output:
 
+    ![](./images/Replicat-Output.png " ")
 
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)

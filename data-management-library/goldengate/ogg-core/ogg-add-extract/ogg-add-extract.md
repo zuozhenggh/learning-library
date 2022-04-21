@@ -84,6 +84,12 @@ To add an extract process and Exttrail:
     <copy>
 
     ```
+
+The following is a sample Extract output:
+
+  ![](./images/Extract-Output.png " ")  
+
+
 You may now [proceed to the next lab](#next).
 
 ## Learn More
