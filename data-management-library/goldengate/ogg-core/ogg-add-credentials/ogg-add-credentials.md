@@ -1,19 +1,18 @@
 # Add Database Credentials
 
 ## About Workshop
-This lab describes how to add the database credentials to connect to the source and target databases using the Administration Service.
+This lab describes how to add the database credentials to connect to the source and target databases from the Administration Service.
 
 *Estimated Lab Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:
-* Connect to the Administration Server from the Administration Client.
+* Connect to the Administration Service from the Administration Client.
 * Create Database credentials for Oracle Multitenant Container Databases.
 
 ### Prerequisites
 This lab assumes that you have:
 - the appropriate database privileges to be able to execute the commands in the Admin Client.
-- completed the tasks in **Lab
 
 ## Task 1: Connect to the Administration Service from the Admin Client
 

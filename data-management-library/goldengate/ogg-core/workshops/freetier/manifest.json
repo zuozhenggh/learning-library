@@ -25,8 +25,8 @@
       "filename": "../../initial-setup/initial-setup.md"
     },
     {
-      "title": "Lab 4: Add Oracle GoldenGate Users and Database Credentials",
-      "description": " Add Oracle GoldenGate Users and Database Credentials",
+      "title": "Lab 4: Add Database Credentials",
+      "description": " Add Database Credentials",
       "filename": "../../ogg-add-credentials/ogg-add-credentials.md"
     },
     {
