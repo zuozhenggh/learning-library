@@ -42,6 +42,11 @@
             "title": "Lab 6: Apply the Recommendation",
             "description": "Execute Apply API to Apply the Recommendation",
             "filename": "../../apply/apply.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
     ]
 }

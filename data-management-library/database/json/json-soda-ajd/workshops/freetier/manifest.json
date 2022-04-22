@@ -29,6 +29,12 @@
         {
             "title": "Lab 4: Using SQL to work with JSON",
             "filename": "../../sql-json/sql-json.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
+        
     ]
 }
