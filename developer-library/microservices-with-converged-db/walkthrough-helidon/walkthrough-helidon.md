@@ -17,7 +17,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
 ### Prerequisites
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
+* An Oracle Cloud paid account. 
 * The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
 
 ## Task 1: Deploy All the Microservices and the FrontEnd UI
@@ -202,6 +202,15 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
     The best-match wines based on vector matching between the order feature vector, and wine feature vectors (aroma, and non-aroma) are suggested. While popular NLP techniques are used (Gensim, NLTK, and Scikit-learn), it is used in the context of microservices with the converged Oracle database. The trained Word2vec model can be imported in Oracle Machine Learning, in Open Neural Network eXchange (ONNX) model format.
 
     > **Note:** This use case for GrabDish is inspired by [this article](https://towardsdatascience.com/robosomm-chapter-5-food-and-wine-pairing-7a4a4bb08e9e)
+
+6. (Optional) Undeploy foodwinepairing-python and return inventory-helidon to default pairing behavior
+
+    Optionally, for example if you want to run the scaling lab later, you can undeploy foodwinepairing-python and return inventory-helidon to default pairing behavior by issuing the following.
+
+    ```
+    <copy>cd $GRABDISH_HOME/foodwinepairing-python;./undeploy.sh ; cd $GRABDISH_HOME/inventory-helidon;./deploy.sh</copy>
+    ```
+
 
 ## Task 6: Show Metrics
 
@@ -425,6 +434,10 @@ This can be found under `Developer Services->Kubernetes Clusters` where you will
     ```
 
 You may now proceed to the next lab.
+
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
