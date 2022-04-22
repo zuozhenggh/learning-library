@@ -11,7 +11,7 @@ More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud
 ## Prerequisites
 
 This lab assumes you have:
-    *Completed Labs 1 through 9
+ - Completed Labs 1 through 9
 
 ## Learning Objectives
 
