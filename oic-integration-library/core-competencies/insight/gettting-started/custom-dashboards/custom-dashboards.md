@@ -10,7 +10,7 @@ Estimated Time: 15 minutes
 ## Prerequisites 
 
 This lab assumes you have:
-    *Completed Labs 1 through 10
+- Completed Labs 1 through 10
 
 ## Learning Objectives
 
@@ -33,7 +33,6 @@ A bar chart is the only chart type that lets you group by two different dimensio
 * ![line](./images/line-chart.jpg " ") A line chart is a two-dimensional chart that is represented by a series of data points connected with a straight line. Line charts are most often used to visualize data that changes over time. The X-axis values are computed based on the values of a dimension you select. The Y-axis values are computed based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
 *  ![scatter](./images/scatter-chart.jpg " ")  A scatter chart shows a single point for each point of data in a series without connecting them, showing patterns across hundreds of instances. The X-axis represents one measure, and the Y-axis represents another measure you select. Each point in the scatter chart is a combination of color and shape that represents a unique value of a dimension you select. <br />
 
-What to see more about the chart type, click [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/create-custom-dashboards.html).
 
 First practice the steps to familiarize yourself with the commands and then do the Labs.
 

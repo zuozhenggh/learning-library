@@ -6,7 +6,7 @@ The Lab will cover how to add and map indicators to the existing draft model.
 
  Estimated Lab Time: 15 minutes
 
- ## Prerequisites
+## Prerequisites
 
 This lab assumes you have:
 *   Completed Labs 1 through 7
