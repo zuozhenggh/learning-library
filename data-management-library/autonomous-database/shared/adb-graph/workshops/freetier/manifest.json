@@ -29,6 +29,12 @@
         {
             "title": "Lab 4: Analyze a Data Warehouse with Graph Algorithms",
             "filename": "../../run-graph-algorithms-on-data-warehouse/run-graph-algorithms-on-data-warehouse.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
+       
     ]
 }
