@@ -17,7 +17,7 @@ In this lab, you will learn how to create the following:
 
 - Map Indicators to an Integration
 - Modify your Draft into a Configured state
-- Activate your Insight Model 
+- Activate your Insight Model
 
 You can associate an Insight Model to a business process implementation in integrations.
 

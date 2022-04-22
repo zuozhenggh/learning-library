@@ -10,7 +10,7 @@ Estimated Time: 15 minutes
 ## Prerequisites 
 
 This lab assumes you have:
-    *Completed Labs 1 through 9
+    *Completed Labs 1 through 10
 
 ## Learning Objectives
 

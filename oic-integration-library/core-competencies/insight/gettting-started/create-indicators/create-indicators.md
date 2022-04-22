@@ -9,7 +9,7 @@ The Lab will cover how to add and map indicators to the existing draft model.
  ## Prerequisites
 
 This lab assumes you have:
-    *Completed Labs 1 through 6
+*   Completed Labs 1 through 7
 
 ## Learning Objectives
 

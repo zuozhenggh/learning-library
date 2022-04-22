@@ -1,14 +1,15 @@
 # Process Integration Test
 
 ## Introduction
-The Lab will cover how to test the process integration mapped milestones/indentiers. How to view the test in the Insight Console and some of the standard dashboard views.
+
+The Lab will cover how to test the process integration mapped Milestones/Identifiers. How to view the test in the Insight Console and some of the standard dashboard views.
 
 Estimated Time: 10 minutes
 
 ## Prerequisites
 
 This lab assumes you have:
-    *Completed Labs 1 through 5
+    *Completed Labs 1 through 6
 
 ## Learning Objectives
 
@@ -24,11 +25,11 @@ The Consoles page shows the status of all business processes and includes a high
 Consoles can be accessed either fromm the Oracle Integration navigational pane or from the Insight tile on the Oracle Integration home page. Consoles names are the same as the Model name or Business Process that was mapped.
 
 Double-click on a dashboard to open the Business Transaction Details dashboard for that dashboard. The following dashboards support drilling down into the transaction details:
-* Passed Milestones: Double-click any milestone bar to show the business transactions (instances) that have passed that milestone.
-* Milestones Summary: Double-click any milestone bubble to show the business transactions (instances) associated with the milestone.
-* Active Transactions: Double-click any business transaction bar to show the active business transactions. Because a business transaction state may change between the time the dashboard displayed and the time you clicked a bar, you may not see the same business transactions on the Business Transaction Details dashboard.
-* Transaction Errors: Double-click any slice on the pie chart to show the business transactions in Error state.
-* Avg. Transaction Completion Time: Double-click any bubble on the bubble chart to show the business transactions in Successful or Failed state, depending on the bubble you clicked.
+* **Passed Milestones**: Double-click any milestone bar to show the business transactions (instances) that have passed that milestone.
+* **Milestones Summary**: Double-click any milestone bubble to show the business transactions (instances) associated with the milestone.
+* **Active Transactions**: Double-click any business transaction bar to show the active business transactions. Because a business transaction state may change between the time the dashboard displayed and the time you clicked a bar, you may not see the same business transactions on the Business Transaction Details dashboard.
+* **Transaction Errors**: Double-click any slice on the pie chart to show the business transactions in Error state.
+* **Avg. Transaction Completion Time**: Double-click any bubble on the bubble chart to show the business transactions in Successful or Failed state, depending on the bubble you clicked.
 ### Access the Console
     A. Go to Integration Insight    
         1. Click Insight
