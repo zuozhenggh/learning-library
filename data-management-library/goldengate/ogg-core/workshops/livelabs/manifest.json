@@ -45,6 +45,11 @@
       "filename": "../../ogg-add-replicat/ogg-add-replicat.md"
     },
     {
+      "title": "Lab 8: Test the Data Replication Process",
+      "description": "Test Data Replication",
+      "filename": "../../ogg-test-data-replication-process/ogg-test-data-replication-process.md"
+    },
+    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"

@@ -45,7 +45,7 @@ To test the data replication:
     STATS EXTRACT exte, LATEST, REPORTFETCH
     <copy>
     ```
-    You'll see additions to the Insert, Updates, or Deletes columns on this page.
+    You'll see additions to the Insert, Updates, or Deletes columns as follows:
 
     ![](./images/PDBEAST-Output1.png " ")
 
@@ -68,6 +68,9 @@ To test the data replication:
     <copy>
 
     ```
+    You'll see that the data has been replicated on the target database (`PDBWEST`)
+
+    ![](./images/PDBWEST-Output2.png " ")
 
 ## Learn More
 * [Using the Admin Client](https://docs.oracle.com/en/middleware/goldengate/core/21.1/admin/getting-started-oracle-goldengate-process-interfaces.html#GUID-84B33389-0594-4449-BF1A-A496FB1EDB29)
