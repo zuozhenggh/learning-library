@@ -146,8 +146,10 @@ Follow the scripts below:
 This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
+ [Overview of Object Storage](https://docs.oracle.com/en-us/iaas/Content/Object/home.htm)
+ [Overview of Autonomous Database](https://docs.oracle.com/en-us/iaas/Content/Database/Concepts/adboverview.htm)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
 * **Contributors** -  Paridhi Mathur, Cloud Engineering
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Chenai Jarimani, Cloud Engineering, April 2022

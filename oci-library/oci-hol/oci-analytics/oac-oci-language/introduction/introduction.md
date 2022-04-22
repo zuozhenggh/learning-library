@@ -40,4 +40,4 @@ In this lab you will familiarize yourself with the workshop prerequisites.
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
 * **Contributors** -  Paridhi Mathur, Cloud Engineering
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Chenai Jarimani, Cloud Engineering, April 2022

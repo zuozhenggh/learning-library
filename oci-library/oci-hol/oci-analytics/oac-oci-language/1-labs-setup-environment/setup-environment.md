@@ -264,9 +264,10 @@ We need to call the endpoint from Python code (or using some other SDK). In **La
 This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
-
+[Overview of OCI Networking](https://docs.oracle.com/en-us/iaas/Content/Network/Concepts/landing.htm)
+[Users and Groups](https://docs.oracle.com/en-us/iaas/Content/GSG/Tasks/addingusers.htm)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
 * **Contributors** -  Paridhi Mathur, Cloud Engineering
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Chenai Jarimani, Cloud Engineering, April 2022

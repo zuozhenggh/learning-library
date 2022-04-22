@@ -247,9 +247,9 @@ Now we need to execute the data flow. The process is as follows.
 This concludes this lab. You may now **proceed to the next lab**.
 
 ## Learn More
-
+* [Getting Started with Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/home.htm)
 
 ## Acknowledgements
 * **Author** - Chenai Jarimani, Cloud Architect, Cloud Engineering, Luis Cabrera-Cordon, Senior Director, AI Services
 * **Contributors** -  Paridhi Mathur, Cloud Engineering
-* **Last Updated By/Date** - <Name, Month Year>
+* **Last Updated By/Date** - Chenai Jarimani, Cloud Engineering, April 2022
