@@ -38,7 +38,7 @@ In this lab, you will:
 - Host the production build on the Oracle Cloud's object storage
 ### Prerequisites
 
-1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/Helidon)**. This lab requires sudo privileges (if you can successfully issue a sudo command, you have admin privileges)
+1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/SpringBoot)**. This lab requires sudo privileges (if you can successfully issue a sudo command, you have admin privileges)
 
 2. Make sure the `npm` command is installed.
 

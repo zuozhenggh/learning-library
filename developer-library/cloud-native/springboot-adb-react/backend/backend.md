@@ -144,7 +144,7 @@ This will allow the appropriate object storage bucket to access your application
 ## **Task 4**: Configure the API Gateway
 
 The API Gateway protects any RESTful service running on Container Engine for Kubernetes, Compute, or other endpoints through policy enforcement, metrics and logging.
-Rather than exposing the Helidon service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
+Rather than exposing the SpringBoot service directly, we will use the API Gateway to define cross-origin resource sharing (CORS).
 
 The setup script already creates an API gateway, but you still need to create the deployments in the API gateway.
 
