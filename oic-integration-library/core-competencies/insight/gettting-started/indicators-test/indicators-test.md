@@ -11,7 +11,7 @@ More info on Insight Models can be found [here](https://docs.oracle.com/en/cloud
 ## Prerequisites
 
 This lab assumes you have:
-    *Completed Labs 1 through 8
+    *Completed Labs 1 through 9
 
 ## Learning Objectives
 
@@ -28,11 +28,13 @@ The Consoles page displays the status of all business processes and includes a h
 Consoles can be accessed either fromm the Oracle Integration navigational pane or from the Insight tile on the Oracle Integration home page. Consoles names are the same as the Model name or Business Process that was mapped.
 
 Double-click on a dashboard to open the Business Transaction Details dashboard for that dashboard. The following dashboards support drilling down into the transaction details:
-* Passed Milestones: Double-click any milestone bar to show the business transactions (instances) that have passed that milestone.
-* Milestones Summary: Double-click any milestone bubble to show the business transactions (instances) associated with the milestone.
-* Active Transactions: Double-click any business transaction bar to show the active business transactions. Because a business transaction state may change between the time the dashboard displayed and the time you clicked a bar, you may not see the same business transactions on the Business Transaction Details dashboard.
-* Transaction Errors: Double-click any slice on the pie chart to show the business transactions in Error state.
-* Avg. Transaction Completion Time: Double-click any bubble on the bubble chart to show the business transactions in Successful or Failed state, depending on the bubble you clicked.
+* *Passed Milestones*: Double-click any milestone bar to show the business transactions (instances) that have passed that milestone.
+* *Milestones Summary*: Double-click any milestone bubble to show the business transactions (instances) associated with the milestone.
+* *Active Transactions*: Double-click any business transaction bar to show the active business transactions. Because a business transaction state may change between the time the dashboard displayed and the time you clicked a bar, you may not see the same business transactions on the Business Transaction Details dashboard.
+* *Transaction Errors*: Double-click any slice on the pie chart to show the business transactions in Error state.
+* *Avg. Transaction Completion Time*: Double-click any bubble on the bubble chart to show the business transactions in Successful or Failed state, depending on the bubble you clicked.
+
+First practice the steps to familiarize yourself with the commands and then do the Labs.
 
 ### Access the Console
 
@@ -66,7 +68,7 @@ You will test your mapping and then view the results of the order(s) in the crea
 
 Open the Integration named **Order Processing Lab** in Test.  Copy the following information:
 
-```
+...
     </copy>
 {  
 "orderId": "1001",  
@@ -85,7 +87,7 @@ Access the Console to view your Console named ***My Order Process**. Click on Mi
     
 ## Task 3: Dashboard View
 
-Review the 5 Preconfigured Dashboards named **Milestone Summary**, **Passed Milestones**, **Active Business Transactions**, **Business Transaction**, **Errors** and **Avg. Business transaction Completion Time**.
+Review the Five Preconfigured Dashboards named **Milestone Summary**, **Passed Milestones**, **Active Business Transactions**, **Business Transaction**, **Errors** and **Avg. Business transaction Completion Time**.
 Review the Progress Tracker to you test instance.
 
 Congratulation on completing the Indicator Mapping Test and Console View.

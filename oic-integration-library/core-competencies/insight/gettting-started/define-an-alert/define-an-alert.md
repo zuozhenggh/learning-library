@@ -16,7 +16,7 @@ In this lab, you will learn how to create the following:
 ## Prerequisites
 
 This lab assumes you have:
-    *Completed Labs 1 through 10
+    *Completed Labs 1 through 11
 
 First practice the steps to familiarize yourself with the commands and then do the Labs.
 
