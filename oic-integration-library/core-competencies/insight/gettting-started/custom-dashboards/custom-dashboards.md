@@ -35,6 +35,8 @@ A bar chart is the only chart type that lets you group by two different dimensio
 
 What to see more about the chart type, click [here](https://docs.oracle.com/en/cloud/paas/integration-cloud/user-int-insight-oci/create-custom-dashboards.html).
 
+First practice the steps to familiarize yourself with the commands and then do the Labs.
+
 ### Custom Dashboard
 
     A. On the Models page, Click the model for which you want to create a custom dashboard and ensure that the model has indicators (dimensions and measures) defined. If not, follow the steps in Define Indicators in Learning Objective 4.
@@ -53,11 +55,10 @@ What to see more about the chart type, click [here](https://docs.oracle.com/en/c
 
  Now let's get you to create on of each chart!
 
-## Labs       
- 
- You will create one of each chart type. You will test your mapping and then view the results of the order(s) in the created Console and Dashboards. 
+ You will create one of each chart type. You will test your mapping and then view the results of the order(s) in the created Console and Dashboards.
 
-### Task 1: Bar Chart
+## Task 1: Bar Chart
+
 Name: Average Daily Order Value
 Chart Type: Bar Chart
 
@@ -67,7 +68,7 @@ Measure: Total
 Aggregating Function: Average
 X Axis: Instance Start Time (Ignore empty valuBar Ces)
 
-### Task 2: Bubble Chart
+## Task 2: Bubble Chart
 
 Name: Products by Quantity Sold by Country 
 Chart Type: Bubble Chart <br />
@@ -85,7 +86,8 @@ Aggregating Function: Sum <br />
 
 Grouping: Country (Ignore empty values) <br />
 
-### Task 3: Bar Chart
+## Task 3: Bar Chart
+
 Name: Total Order Value by Country <br />
 Chart Type: Bar Chart <br />
 Measure: Total <br />
@@ -96,7 +98,8 @@ X Axis: Instance Start Time (Ignore empty values) <br />
 
 Grouping: Country (Ignore empty values) <br />
 
-### Task 4: Pie Chart
+## Task 4: Pie Chart
+
 Name: Quantity Sold by Product <br />
 Chart Type: Pie Chart <br />
 Y Axis: <br />
@@ -107,6 +110,7 @@ Aggregating Function: Sum <br />
 X Axis: Product (Ignore empty values) <br />
 
 ## Task 5: Area Chart
+
 Name: Quantity Sold by Country <br />
 Chart Type: Area Chart <br />
 Y Axis:  <br />

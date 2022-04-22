@@ -32,11 +32,12 @@ In *Models*, starting left to right, you will see the search tool, filter tool, 
 
 
 ## Task 3: Consoles
-On the *Insight* page, click **Consoles** to view consoles. 
 
-![Open Insight Consoles page](./images/console.jpg " ") 
+On the *Insight* page, click **Consoles** to view consoles.
 
-In Consoles, starting left to right, you will see the search tool, filter tool, the number of how many consoles are listed, refresh, list horizontal, and list by block. 
+![Open Insight Consoles page](./images/console.jpg " ")
+
+In Consoles, starting left to right, you will see the search tool, filter tool, the number of how many consoles are listed, refresh, list horizontal, and list by block.
 
 ![Consoles page](./images/consolepage.jpg)
 
@@ -46,13 +47,14 @@ Consoles are created once you activate a model and will have different icons nex
 
 
 ## Task 4: Dashboards
-Open Dashboards via clicking on a Console name to open its related Dashboard. 
 
-![Dashboards](./images/feb2021-opp-order-console.jpg " ") 
+Open Dashboards via clicking on a Console name to open its related Dashboard.
 
-In the *Dashboards* canvas, starting left to right, you will see the search tool, filter tool, All Dropdown (where you can locate pre-configured or create a custom Dashboard), Rearrange Dashboard, Embed Dashboard, Search Order Number, View All, Purge Console Data, and Refresh. 
+![Dashboards](./images/feb2021-opp-order-console.jpg " ")
 
-Top right side, you will see the Console Manifest, Import, Create and the three dots, which displays the Console Details. Lastly, you will see blocks with the dashboards displays as built within the model.   
+In the *Dashboards* canvas, starting left to right, you will see the search tool, filter tool, All Dropdown (where you can locate pre-configured or create a custom Dashboard), Rearrange Dashboard, Embed Dashboard, Search Order Number, View All, Purge Console Data, and Refresh.
+
+Top right side, you will see the Console Manifest, Import, Create and the three dots, which displays the Console Details. Lastly, you will see blocks with the dashboards displays as built within the model.
 
 You may now **Proceed to the next lab**
 

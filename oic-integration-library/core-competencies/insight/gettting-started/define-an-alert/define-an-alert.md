@@ -18,6 +18,8 @@ In this lab, you will learn how to create the following:
 This lab assumes you have:
     *Completed Labs 1 through 10
 
+First practice the steps to familiarize yourself with the commands and then do the Labs.
+
 ### How to Add an Alert
 
     A. On the Models page, click the name or Edit icon icon of the model for which you want to create alerts. 
