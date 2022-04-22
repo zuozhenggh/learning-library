@@ -10,6 +10,12 @@ Estimated Workshop Time: 5 Minutes
 
 The Integration Insight feature (commonly referred to as Insight) is located in home page of Oracle Integration.
 
+## Prerequisites
+
+This lab assumes you have:
+
+* Completed Labs 1 thru 3 
+
 ## Objectives
 
 In this workshop, you will:

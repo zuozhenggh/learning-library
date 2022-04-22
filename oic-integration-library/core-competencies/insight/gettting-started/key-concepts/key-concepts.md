@@ -17,6 +17,7 @@ In this lab, you will:
 
 This lab assumes you have:
 
+* Completed Labs 1 and 2 
 * Oracle Integration - Enterprise edition
 * An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
 

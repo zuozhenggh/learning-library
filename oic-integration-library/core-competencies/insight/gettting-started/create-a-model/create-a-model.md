@@ -13,6 +13,12 @@ Create a model, defining milestones, a unique instance identifier, indicators, a
 Associate the model to a business process implementation by mapping model milestones to the business process implementation.
 Activate the model to allow business executives to view and analyze business processes in real time using dashboards.
 
+## Prerequisites
+
+This lab assumes you have:
+
+* Completed Labs 1 thru 4 
+
 ## Learning Objectives
 
 In this lab, you will learn how to create the following:
