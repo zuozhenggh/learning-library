@@ -58,8 +58,7 @@ Now your turn to try!
 
 ## Task 1: Test Mapping
 
-Open the Integration named **Order Processing Lab** in Test. Either use the file named exercise-first-instance.json 
-Download the [exercise-first-instance.json](files/exercise-first-instance.json?download=1) or copy the following information:
+Open the Integration named **Order Processing Lab** in Test. Copy the following information:
 
 ```
     <copy>

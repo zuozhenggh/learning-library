@@ -1,4 +1,4 @@
-# Indictors Test
+# Indicators Test
 
 ## Introduction
 
