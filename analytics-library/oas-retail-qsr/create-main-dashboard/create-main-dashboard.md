@@ -1,11 +1,13 @@
 # Create the main dashboard
 
 ## Introduction
+
 This exercise will introduce you to the key features of data visualization within Oracle Analytics Server and will help to tell a story on what is happening at **Bobby's Burgers & Fries**, a fictional quick serve restaurant with chains in multiple geographies.
 
 Estimated Time: 20 minutes
 
 ### About Oracle Analytics Server
+
 Oracle Analytics Server features powerful, intuitive data visualization capabilities that enable analysts to create self-service data visualizations on an accurate and consistent data set.
 
 ### Objectives
