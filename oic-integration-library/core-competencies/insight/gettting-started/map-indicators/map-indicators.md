@@ -9,7 +9,7 @@ Estimated Time: 10 minutes
 ## Prerequisites
 
 This lab assumes you have:
-    *Completed Labs 1 through 8
+ - Completed Labs 1 through 8
 
 ## Learning Objective
 
@@ -17,7 +17,7 @@ In this lab, you will learn how to create the following:
 
 - Map Indicators to an Integration
 - Modify your Draft into a Configured state
-- Activate your Insight Model <br />
+- Activate your Insight Model 
 
 You can associate an Insight Model to a business process implementation in integrations.
 
@@ -76,7 +76,11 @@ Now your turn to try!
 ## Task 1: Map Indicators
 
 Access your active model and de-active it to return to a Draft model state. You will map 5 Indicators.<br />
+![deactivate](./images/deactivate.jpg " ") <br />
+Open the Draft 
+![draft](./images/draft.jpg " ")  <br />
 Let's start with the **Order Received** Milestone Indicators. Set the **Country** Indicator Extraction Criteria to **$Country**.<br />
+![indicatorproduct](./images/indicator-product.jpg " ")
  Set the **Product** Indicator Extraction Criteria to **$Product**. Set the **Quantity** Indicator Extraction Criteria to **$Quantity**. <br />
 Set the **UnitPrice** Indicator Extraction Criteria to **$UnitPrice**. Set the **Total** Indicator Extraction Criteria to **$Total**. <br />
 Now let's map the new milestone and Identifier <br />
@@ -85,7 +89,9 @@ Now let's map the new milestone and Identifier <br />
 
 Map your **Shipped** Milestone **On Exit** event to the **PrepareShipping** activity. <br />
 Now onto the Identifier. Set your **Order Number** Identifier Extraction Criteria for the **Shipped** Milestone to **$OrderNumber**.<br />
-Set your **Order Number** Identifier Extraction Criteria for the **Order Completed** Milestone to **$OrderNumber**. Go to Task 3 in order to save your work.<br />
+Set your **Order Number** Identifier Extraction Criteria for the **Order Completed** Milestone to **$OrderNumber**.
+![indicator product](./images/shipped-milestone.jpg " ")
+ Go to Task 3 in order to save your work.<br />
      
 ## Task 3: Draft to Configured State 
 
@@ -93,26 +99,15 @@ You may now click **Save** and ensure you receive the message box **Successfully
     
 ## Task 4: Configured State to Active State 
 
-Access your Insight Models, locate your model and ensure it says Configured. Now Activate your model by clicking **Activate** button. You will receive an Activation Confirmation box, click **Activate**. You will see a system response.
+Access your Insight Models, locate your model and ensure it says Configured. Now Activate your model by clicking **Activate** button. 
 
-Congratulation on completing Mapping Indicators! The next exercise will test the mapping and showcase the Console/Dashboards.
-
-## Task 5: 
-
-![deactivate](./images/deactivate.jpg " ") <br />
-![draft](./images/draft.jpg " ")  <br />
-![indicatorproduct](./images/indicator-product.jpg " ")  ![indicator product](./images/shipped-milestone.jpg " ")
-
-
-## Task 6: 
-
-![active map indicators](./images/activate-map-indicators.jpg " ")
-<br />
-
-## Task 7: 
-
+You will receive an Activation Confirmation box, click **Activate**. You will see a system response.
 ![reactivate](./images/reactivate.jpg " ")  <br />
 ![active map indicators](./images/activate-map-indicators.jpg " ")  <br />
+
+
+
+Congratulation on completing Mapping Indicators! The next exercise will test the mapping and showcase the Console/Dashboards.
 
 ## Learn More
 
