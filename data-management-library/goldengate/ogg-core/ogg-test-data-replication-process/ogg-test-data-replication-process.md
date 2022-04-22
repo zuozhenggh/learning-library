@@ -78,5 +78,5 @@ To test the data replication:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Preeti Shukla, Volker Kuhr
+* **Contributors** -  Preeti Shukla, Volker Kuhr, Alex Lima
 * **Last Updated By/Date** - Anuradha Chepuri, May 2022
