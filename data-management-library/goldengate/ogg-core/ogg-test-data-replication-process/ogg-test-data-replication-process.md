@@ -8,8 +8,8 @@ This lab describes how to test whether or not the replication has begun.
 
 ### Objectives
 In this lab, you will:
-* Test Replication process
-*
+* Test the Replication process
+
 
 ### Prerequisites
 This lab assumes that you have:
