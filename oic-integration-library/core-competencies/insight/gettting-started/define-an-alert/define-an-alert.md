@@ -6,17 +6,17 @@ The Lab will cover how to add an alert to your Model.
 
 Estimated Time: 25 minutes
 
+## Prerequisites
+
+This lab assumes you have:
+- Completed Labs 1 through 11
+
 ## Learning Objectives
 
 In this lab, you will learn how to create the following:
 
 - Add an Alert
 - Test the Alert
-
-## Prerequisites
-
-This lab assumes you have:
-    *Completed Labs 1 through 11
 
 First practice the steps to familiarize yourself with the commands and then do the Labs.
 
