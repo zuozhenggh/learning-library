@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastucture.
+In this lab you will make changes and deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastucture.
 
 Estimated time: 10 minutes
 
@@ -38,7 +38,7 @@ In this lab, you will:
 - Host the production build on the Oracle Cloud's object storage
 ### Prerequisites
 
-1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/Helidon)**. This lab also requires admin rights.
+1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/Helidon)**. This lab requires sudo privileges (if you can successfully issue a sudo command, you have admin privileges)
 
 2. Make sure the `npm` command is installed.
 
@@ -59,7 +59,7 @@ In this lab, you will:
 6. Make sure **git** is installed; if not please follow the instructions @ `https://bit.ly/3DXyjiL`.
 
 ## **Task 1**: Configure API.js
-In this task you will edit API.js to point to the correct endpoint that will be allowed to access the APIs used in your application
+In this task you will edit API.js to point to the correct endpoint that has been been allowed (in the previous lab) to access the APIs used in your application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -99,7 +99,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	</copy>
 	```
   Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
-  If npm version < 6.14.x then install the latest Node using
+  If the npm version < 6.14.x then install the latest Node using
    https://bit.ly/3evGlEo
 
 4. Update API_LIST in API.js
