@@ -33,7 +33,7 @@ Estimated time: 5 minutes
 
     ![Click Autonomous Data Warehouse.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
 
-4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
+4. Make sure your workload type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. Enter the first part of your user name located under **Workshop Details**, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
     ![Check the workload type on the left.](images/livelabs-compartment.png " ")
 

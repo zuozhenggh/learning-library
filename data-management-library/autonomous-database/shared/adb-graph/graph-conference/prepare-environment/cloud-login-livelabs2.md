@@ -22,7 +22,7 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
 ## Task 2: Request Workshop Reservation
 
-1. Using your *Oracle Account Login* go to [Knowledge Graph Conference 2022](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wec=1100-GKDQ-GBPP-RDBC) and click  ![](images/reserve.png) to request a reservation for this workshop.
+1. Using your *Oracle Account Login* go to [Knowledge Graph Conference 2022](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wec=1100-GKDQ-GBPP-RDBC) and click ![](images/run-on-livelabs-sandbox.png) to request a reservation for this workshop.
 
 2. After creating a reservation for a LiveLab Workshop, you will receive an e-mail indicating that your reservation is being processed, followed by an e-mail indicating that your environment has been created.
 
@@ -34,13 +34,14 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
   ![](images/ll-reservations.png " ")
 
-4. Follow the instructions provided to log in to your Oracle Cloud account, change your password, and complete your login to Oracle Cloud.
+5. Copy the password provided under **Workshop Details** and then click on **Launch Console**.
+
+  ![](images/workshop-details.png " ")
+
+6. Follow the instructions provided to log in to your Oracle Cloud account, change your password, and complete your login to Oracle Cloud.
 
   ![](images/launch-ll-workshop.png " ")
 
-5. Finally, open the lab instructions by choosing one of the two options.
-
-  ![](images/open-workshop.png " ")
 
 You may now **proceed to the next lab**.
 
