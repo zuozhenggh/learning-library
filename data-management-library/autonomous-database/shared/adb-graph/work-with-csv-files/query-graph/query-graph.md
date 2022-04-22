@@ -83,11 +83,25 @@ The code snippet in that paragraph is:
 
 ```
 %java-pgx
-// The first step is to load the graph into the in-memory server
+// #2.1 The first step is to load the graph from the database into the in-memory server as a copy
+// We first check to see if the graph is already in memory and load it only if it isn't
 // To do this we use the builtin session object 
 // We specify the graph by its name. The second argument to readGraphByName indicates that the graph is defined as a view on underlying database tables or views
 // And we store a handle to it in a PgxGraph object
-PgxGraph bankgraph = session.readGraphByName("BANK_GRAPH", GraphSource.PG_VIEW);
+var GRAPH_NAME="BANK_GRAPH";
+// try getting the graph from the in-memory graph server
+PgxGraph bankgraph = session.getGraph(GRAPH_NAME);
+// if it does not exist read it into memory
+if (bankgraph == null) {
+    session.readGraphByName(GRAPH_NAME, GraphSource.PG_VIEW);
+    out.println ("Graph "+ GRAPH_NAME + " successfully loaded");
+    bankgraph = session.getGraph(GRAPH_NAME);
+} else {
+   // out.println ("Graph "+ GRAPH_NAME + " already loaded");
+   out.println ("Graph '"+ bankgraph.getName() + "' already loaded");
+}
+out.println ("# of Vertices: "+bankgraph.getNumVertices());
+out.println ("# of Edges: "+bankgraph.getNumEdges());
 ```
 
 ![ALT text is no available for this image](images/1-java-read-graph.png " ")  
@@ -299,8 +313,12 @@ Execute the paragrah containing the following code snippet.
 
 ```
 %java-pgx
-// PgxGraph bgraph = session.getGraph("BANK_GRAPH");
-analyst.pagerank(bankgraph);
+// #2.11 Specify a VertexProperty which will contain the computed pagerank value
+// then run the pagerank algorithm
+// the 0.001, 0.85, and 100 are the default values for the required parameters 
+
+VertexProperty<Integer, Double> rank = graph.getOrCreateVertexProperty(PropertyType.DOUBLE, "pagerank");
+analyst.pagerank(bankgraph, 0.001, 0.85, 100, rank);
 ```  
 
 ![ALT text is not available for this image](images/53-java-pagerank.png " ")
