@@ -75,14 +75,14 @@ Save and Close.
 
 ## Task 5: Map Milestone and Indicators
 
-Now, you need to map the **Backordered** Milestone **ON Exit** event to the **Backordered** activity. Set the **Order Number** Identifier Extraction Criteria for the **Backordered** Milestone to **$Backordered Quantity**. Map the **Backordered** Milestone Indicators by setting the **Backordered Quantity** Indicator Extraction Criteria to **$BackorderedQuantity**.
+Now, you need to map the *Backordered* Milestone *ON Exit* event to the *Backordered* activity. Set the *Order Number* Identifier Extraction Criteria for the *Backordered* Milestone to *$Backordered Quantity*. Map the *Backordered* Milestone Indicators by setting the *Backordered Quantity* Indicator Extraction Criteria to *$BackorderedQuantity*.
 Save your work. 
 
 Verify your Insight Model is in the Configured state and then Activate you Insight Model.
 
 ## Task 6: Testing your Alert
 
-Open the Integration named **Order Processing Lab** in Test.  Invoke the **orderReceived** operation by copying the following information:
+Open the Integration named **Order Processing Lab** in Test.  Invoke the *OrderReceived* operation by copying the following information:
 
 ```
     <copy>
@@ -97,18 +97,18 @@ Open the Integration named **Order Processing Lab** in Test.  Invoke the **order
     </copy>
 ```
 Wait at least 1 minute and invoke the **shipping** operation by copying the following information:
-
-...
-  <copy>
+```
+    <copy>
 {  
-"orderId": "1002",  
-"quantity": 250,
-"availableQuantity": 250
+"orderId": "1002",
+"quantity": 250,  
+"availableQuantity": 250,    
 } 
-  </copy>
-...
+    </copy>
+```
 
-Go to your email and verify you received 2 emails. One with the subject: **Backordered Quantity exceeded threshold** , and another with the subject: **Backorder has delayed shipping**
+Go to your email and verify you received 2 emails. One with the subject: **Backordered Quantity exceeded threshold** , and another with the subject: **Backorder has delayed shipping**. 
+
 Try running some of your own test instances (Order Id 1000+ are reserved for lab test data)
 
 ## Summary
