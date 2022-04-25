@@ -156,8 +156,9 @@ Watch the video below for a quick walk-through of the lab.
 
 ## Task 4: Run Tests Against Oracle DB + AQ Implementations
 
+   ()
 
-1. Add Inventory until there is a value of 10 for sushi.
+1. Click `Delete All Orders` button and then click `Add Inventory` until there is a value of 10 for sushi.
 
     ![Get Inventory](images/getinventory10.png " ")
 
@@ -220,6 +221,10 @@ Watch the video below for a quick walk-through of the lab.
 
 
 You may now proceed to the next lab.
+
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
