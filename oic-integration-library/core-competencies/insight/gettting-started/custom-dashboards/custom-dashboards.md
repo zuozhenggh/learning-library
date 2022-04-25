@@ -56,7 +56,7 @@ First practice the steps to familiarize yourself with the commands and then do t
 
  You will create one of each chart type. You will test your mapping and then view the results of the order(s) in the created Console and Dashboards.
 
-## Task 1: Bar Chart
+## Task 1: Pie Chart
 
 Name: Average Daily Order Value
 Chart Type: Bar Chart
@@ -65,11 +65,11 @@ Y Axis:
 
 Measure: Total
 Aggregating Function: Average
-X Axis: Instance Start Time (Ignore empty valuBar Ces)
+X Axis: Instance Start Time (Ignore empty valueBar)
 
 ## Task 2: Bubble Chart
 
-Name: Products by Quantity Sold by Country 
+Name: Products by Quantity Sold by Country
 Chart Type: Bubble Chart <br />
 X Axis: <br />
 Measure: Quantity <br />
@@ -97,7 +97,7 @@ X Axis: Instance Start Time (Ignore empty values) <br />
 
 Grouping: Country (Ignore empty values) <br />
 
-## Task 4: Pie Chart
+## Task 4: Area Chart
 
 Name: Quantity Sold by Product <br />
 Chart Type: Pie Chart <br />
@@ -108,7 +108,7 @@ Aggregating Function: Sum <br />
 
 X Axis: Product (Ignore empty values) <br />
 
-## Task 5: Area Chart
+## Task 5: Line Chart
 
 Name: Quantity Sold by Country <br />
 Chart Type: Area Chart <br />
@@ -119,9 +119,20 @@ Aggregating Function: Sum <br />
 
 X Axis: Country (Ignore empty values) <br />
 
-## Task 6: Test
+## Task 6: Scatter Chart
 
-Now that you completed the charts. It's time to test them. Open the <Order Processing Lab> in Test. Invoke the <bulkOrder> operation using   TBD      test data file.
+Name: Quantity Sold by Country <br />
+Chart Type: Area Chart <br />
+Y Axis:  <br />
+Measure: Quantity <br />
+
+Aggregating Function: Sum <br />
+
+X Axis: Country (Ignore empty values) <br />
+
+## Task 7: Test
+
+Now that you completed the charts. It's time to test them. Open the <Order Processing Lab> in Test. Invoke the <bulkOrder> operation using   **TBD**      test data file.
 Review custom dashboards.
 You may now [proceed to the next lab].
 
