@@ -3,7 +3,7 @@
     "help": "livelabs-help-oci_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Getting Started",
+            "title": "Get Started",
             "description": "Sign up for and log into the Oracle Cloud",
             "filename": "../../../../../../common/labs/cloud-login/cloud-login.md"
         },
@@ -41,6 +41,12 @@
             "title": "Lab 6: (Advanced) How to Preprocess Raw Data",
             "description": "How to preprocess your raw dataset for training the model and detecting",
             "filename": "../../anomalies/anomaly-detection-data-preprocessing.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
         }
+        
     ]
 }
