@@ -4,22 +4,6 @@
 
 We'll go over how to implement certain common markdown features and tips in this optional lab.
 
-<!-- Here up some resources front and center in case you missed them in the last lab:
-
-- [LiveLabs Lab Markdown Template (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Use+the+LiveLabs+Lab+Markdown+Template)
-
-- [Quick Tour of Markdown Syntax (Confluence)](https://confluence.oraclecorp.com/confluence/display/DCS/Quick+Tour+of+Markdown+Syntax)
-
-- [Basic Writing and Formatting Syntax](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
-
-- [LiveLabs Markdown Template New Features (Confluence)](https://confluence.oraclecorp.com/confluence/display/DBIDDP/LiveLabs+Markdown+Template+What%27s+New)
-
-- [LiveLabs Sample Workshop](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier)
-
-- [LiveLabs OCI Menu Navigation Common Path Pictures](https://oracle.github.io/learning-library/sample-livelabs-templates/sample-workshop/workshops/freetier/?lab=provision#STEP0:UsetheseStandardizedPicturesforOracleCloudNavigation(CommonlyforProvisioning))
-
-- [Porting Workshop to LiveLabs - Checklist](https://confluence.oraclecorp.com/confluence/display/LIVELABS/Porting+Workshop+to+LiveLabs+-+Checklist) -->
-
 In this lab, you will learn how to implement certain common markdown features and tips in this optional lab.
 
 ### Objectives

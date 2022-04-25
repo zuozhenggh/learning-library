@@ -19,7 +19,6 @@ Although OKE is used as the example in this workshop, the approach of using the 
   ![EMCC console Middleware Home Page monitoring WLS on Kubernetes  ](images/emcc.png " ")
 
 
-
 ### Prerequisites
 
 * This workshop uses a simple WebLogic web application running on a Kubernetes cluster as the target application to trace the user transactions. Before starting this workshop, you need to first complete Labs 1-4 in the  **[Migrating WebLogic Server to Kubernetes on OCI](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=567)** workshop.

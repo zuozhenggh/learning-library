@@ -1,4 +1,4 @@
-# Set Up Oracle Cloud Infrastructure for Java Management Service
+# Set up Oracle Cloud Infrastructure for Java Management Service
 
 ## Introduction
 Before you can use Java Management Service, you must ensure that your Oracle Cloud Infrastructure environment is set up correctly to allow the communication flow between all required components and cloud services.
