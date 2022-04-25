@@ -50,7 +50,7 @@ First practice the steps to familiarize yourself with the commands and then do t
         6. Click <Done> and <Save>
 
 
-Now that we have instructed you on how to create an alert, it's your turn
+Now that we have instructed you on how to create an alert, it's your turn.
 
 You will be using your existing Active Model. You will be creating alerts by adding new milestones, indicators and add an alert for them. You will be testing your alert as well.
 
@@ -60,17 +60,17 @@ Open your existing Model and move it into Draft mode.
 
 ## Task 2: Add Milestones
 
-You will need to add an **error milestone** named **Backordered** and move this new Milestone before the existing **Shipped** Milestone. Add the **Backordered** milestone to the **Order Number** Identifier.
+You will need to add an *error milestone* named *Backordered* and move this new Milestone before the existing *Shipped* Milestone. Add the *Backordered* milestone to the *Order Number* Identifier.
 
 ## Task 3: Add Indicators
 
-Add **Backordered** milestone Indicators named **Backordered Quantity** (Measure of type Integer)
+Add *Backordered* milestone Indicators named *Backordered Quantity* (Measure of type Integer)
 
 ## Task 4: Add Alert
 
-Create the Indicator type Alert named **Backordered Quantity**. Set the condition to **Backorderd Quantity > 100**. Set the **Action to Send email**>** and enter your email address and configure the email. Select your OIC instance for the Email **from** field. Set the email Subject to **Backordered Quantity **exceeded** threshold. Set the email Body to **You have an excess backorder of ${Backorderd Quantity} units for product ${Product}**.
-Next, create a Milestone Type Alert named **Shipping Delay**, set the From Milestone to **Backordered**. Set the To Milestone to **Shipped**. Set the condition to **Not Passed** with **1** minute. Set the **Action Email** and enter your email address and configure the email by selecting your OIC instance fro the email From field. SE
-setting the email Subject to **Backorder has delayed shipping**. Set the email Body to **You have a backorder of ${Backordered Quantity} units for product ${Product} which is delaying shipping**.
+Create the Indicator type Alert named **Backordered Quantity**. Set the condition to *Backordered Quantity > 100*. Set the *Action to Send email>* and enter your email address and configure the email. Select your OIC instance for the Email *from* field. Set the email Subject to *Backordered Quantity* **exceeded** threshold. Set the email Body to *You have an excess backorder of ${Backordered Quantity} units for product ${Product}*.
+Next, create a Milestone Type Alert named **Shipping Delay**, set the From Milestone to *Backordered*. Set the To Milestone to *Shipped*. Set the condition to *Not Passed* with *1* minute. Set the *Action Email* and enter your email address and configure the email by selecting your OIC instance fro the email From field. SE
+setting the email Subject to *Backorder has delayed shipping*. Set the email Body to *You have a backorder of ${Backordered Quantity} units for product ${Product} which is delaying shipping*.
 Save and Close.
 
 ## Task 5: Map Milestone and Indicators
@@ -96,7 +96,7 @@ Open the Integration named **Order Processing Lab** in Test.  Invoke the *OrderR
 } 
     </copy>
 ```
-Wait at least 1 minute and invoke the **shipping** operation by copying the following information:
+Wait at least 1 minute and invoke the *shipping* operation by copying the following information:
 ```
     <copy>
 {  
