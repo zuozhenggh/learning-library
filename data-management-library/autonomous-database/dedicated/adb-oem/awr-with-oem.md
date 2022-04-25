@@ -82,6 +82,7 @@ As a Database Administrator:
 
     ![This image shows the result of performing the above step.](./images/us1-13.png " ")
 
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
