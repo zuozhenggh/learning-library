@@ -11,8 +11,7 @@
         "title": "Get Started",
         "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
         "filename": "../../prepare-environment/cloud-login-livelabs2.md"
-    },
-
+      },
       {
           "title": "Lab 1: Provision an ADB Instance",
           "description": "Provisioning an Autonomous Database Instance",
