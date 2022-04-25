@@ -29,7 +29,7 @@ As OCI Governance administrator and DB users:
 
 ![This image shows the result of performing the above step.](./images/tag2.png " ")
 
-**NOTE**: Import Standard Tags** is only available from **root compartment**. 
+**NOTE**: Import Standard Tags is only available from **root compartment**. 
 
 - Select **root compartment** from **Compartment** dropdown, and click **Import Standard Tags**. 
 
@@ -41,7 +41,7 @@ As OCI Governance administrator and DB users:
 
 Here you see the Tag Key Definition for Oracle-Standard Namespace, similarly you can click on OracleApplicationName Namespaces to view Tag Key Definitions. 
 
-- Select **Oracle-Standard** Tag Namespace and click **Import****
+- Select **Oracle-Standard** Tag Namespace and click **Import**
 
 ![This image shows the result of performing the above step.](./images/tag4.png " ")
 
