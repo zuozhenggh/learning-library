@@ -6,11 +6,11 @@ Estimated Time: 50 minutes
 
 In this workshop, you will explore how to use SpringBoot to build microservices to build and deploy a Cloud Native application. You will serve the data to the React.js frontend and persist your data in Oracle Autonomous database, while utilizing Oracle Cloud Infrastructure (OCI) services.
 
-![springboot-image](images/springboot-image.png "")
+![springboot-image](images/springboot-image.png "springboot")
 
 
 
-![application](images/Application.png " ")
+![application](images/application.png "application")
 
 ### About Product/Technology
 
@@ -18,7 +18,7 @@ Learn how to use Autonomous Database, the Oracle Container Registry (OCR), Oracl
 
 <!-- 
 include architecture diagram here -->
-![intro architecture](images/architecture.png " ")
+![intro architecture](images/architecture.png "architecture-diagram")
 
 ### Objectives
 

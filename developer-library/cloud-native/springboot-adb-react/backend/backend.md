@@ -29,7 +29,7 @@ The backend is implemented using the following Java classes (under ./backend/src
 * OracleConfiguration.java: Connects SpringBoot backend to Oracle Autonomous Database
 * ToDoItemService.java: Implements the SpringBoot service and exposes the REST APIs
 * ToDoItemController.java: Implements the endpoints and populates data 
-![bcknd apis](images/Backend-APIs.png)
+![bcknd apis](images/backend-apis.png "backend-apis")
 
 ### Objectives
 
@@ -51,7 +51,7 @@ The OCI Container Registry is where your Docker images are managed. A container 
 
     - Locate the following code fragment
 
-    ![](images/allowed-origins.png " ")
+    ![](images/allowed-origins.png "allowed-origins")
     - Replace `us-phoenix-1` in  `"https://objectstorage.us-phoenix-1.oraclecloud.com"` with your region
 
     - Save the file
@@ -72,7 +72,7 @@ This will allow the appropriate object storage bucket to access your application
     - Go to the Console, click the hamburger menu in the top-left corner and open
     **Developer Services > Container Registry**.
 
-    ![](images/build-image.png)
+    ![](images/build-image.png "build-image")
 
 ## **Task 2**: Deploy on Kubernetes and Check the Status
 
@@ -87,7 +87,7 @@ This will allow the appropriate object storage bucket to access your application
 
    If everything runs correctly the script will output something like this.
 
-    ![](images/deploy-output.png)
+    ![](images/deploy-output.png "deploy-output")
 
 
 2. Check the status using the following commands
@@ -99,7 +99,7 @@ This will allow the appropriate object storage bucket to access your application
         </copy>
         ```
     This will run `kubectl get services` (but the setup script creates aliases for ease of use). After running the command above, it should output the external IP address.
-        ![](images/services.png)
+        ![](images/services.png "kubectl-services")
 
 3. The following command returns all the pods running in your kubernetes cluster:
     ```
@@ -109,7 +109,7 @@ This will allow the appropriate object storage bucket to access your application
     ```
     Pods is an alias for `kubectl get services`.
 
-    ![](images/get-pods.png)
+    ![](images/get-pods.png "kubectl get pods")
 
 4. You can tail the log of one of the pods by running:
 
@@ -123,7 +123,7 @@ This will allow the appropriate object storage bucket to access your application
 
   Example: `kubectl -n mtdrworkshop logs -f todolistapp-springboot-deployment-54c967665-6482r`
 
-    ![](images/deploy-success.png)
+    ![](images/deploy-success.png "deploy-success")
 
   If the logs return 'Tomcat started on port(s): 8080 (http) with context path', then you can move on to task 4!
 ## **Task 3**: UnDeploy (optional)
@@ -149,13 +149,13 @@ Rather than exposing the SpringBoot service directly, we will use the API Gatewa
 The setup script already creates an API gateway, but you still need to create the deployments in the API gateway.
 
 1. From the hamburger menu navigate to **Developer Services** > **API Management > Gateways**
-   ![](images/api-gateway-navigate.png)
+   ![](images/api-gateway-navigate.png "api-gateway-navigate")
 
 2. Click on the todolist gateway that has been created for you
-   ![](images/select-gateway.png)
+   ![](images/select-gateway.png "select-gateway")
 
 3. Create a todolist deployment by clicking Create Deployment
-   ![](images/create-deployment.png)
+   ![](images/create-deployment.png "create-deployment")
 
 4. Configure Cross-origin resource sharing (CORS) policies with the details below
   - CORS is a security mechanism that will prevent loading resources from unspecified origins (domain, scheme, or port).
@@ -166,31 +166,31 @@ The setup script already creates an API gateway, but you still need to create th
 
   To configure additional origins, click `Another Origin` in the bottom right of the figure below
 
-  ![](images/cors-information.png)
+  ![](images/cors-information.png "cors-information")
 
 5. Configure the Headers
 
-  ![](images/headers-new.png)
+  ![](images/headers-new.png "headers-new")
 
 6. Configure the routes: we will define two routes:
     - /todolist for the first two APIs: GET, POST and OPTIONS
 
-        ![](images/route-1-new.png)
+        ![](images/route-1-new.png "route-1-new")
 
     - /todolist/{id} for the remaining three APIs: (GET, PUT and DELETE)
 
-        ![](images/route-2-new.png)
+        ![](images/route-2-new.png "route-2-new")
 
 
 ## **Task 5**: Testing the Backend Application Through the API Gateway
 
 1. Navigate to the newly create Gateway Deployment Detail and copy the endpoint
 
-   ![](images/copy-endpoint.png " ")
+   ![](images/copy-endpoint.png "copy-endpoint")
 
 2. To test the endpoint, copy the gateway endpoint in your browser and append "todolist"
 
-   ![](images/endpoint-successful.png " ")
+   ![](images/endpoint-successful.png "endpoint-successful")
 
   It should display the Todo Item(s) in the TodoItem table that was created during the setup.
 

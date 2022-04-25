@@ -112,15 +112,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	```
  In the Cloud console, navigate to **Developer Services > API Management >Gateways**
 
- 	![](images/api-gateway-navigate.png)
+ 	![](images/api-gateway-navigate.png "api-gateway-navigate")
 
    Click on your Gateway and go to Deployment
    Copy the Deployment Endpoint
 
-	![](images/Api-gtw-deploy.png)
+	![](images/api-gtw-deploy.png "api-gateway-deploy")
 
  - Paste the endpoint as the value of API_LIST and append "/todolist"
-    ![](images/update_api.png)
+    ![](images/update_api.png "update_api")
   Example:
   const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
@@ -153,7 +153,7 @@ Here you will run the application locally in development mode, then run in produ
 	```
 It correctly bundles React in production mode (into the build folder) and optimizes the build for the best performance.
 
-  ![](images/Run-build.png " ")
+  ![](images/run-build.png "run-build")
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
@@ -166,17 +166,17 @@ The build folder will be uploaded to object storage so you can access your appli
 1. Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
 
-  ![](images/object-store-navigate.png)
+  ![](images/object-store-navigate.png "object-store-navigate")
   Create the 'mtdrworkshop' (or another name if that's taken) bucket
 
-  ![](images/Create-bucket.png)
+  ![](images/create-bucket.png "create-bucket")
 
   Enter in the bucket details.
-  ![](images/bucket-details.png)
+  ![](images/bucket-details.png "bucket-details")
 
   Edit visibility to public
 
-  ![](images/edit-visibility.png)
+  ![](images/edit-visibility.png "edit-visibility")
 2. Install the Staci utility for copying directories to OCI object storage
    bucket with folder hierarchies
 
@@ -233,11 +233,11 @@ The build folder will be uploaded to object storage so you can access your appli
 
 - Click on the index.html object and copy the URL of the index object
 
-  ![](images/bucket-index.png " ")
+  ![](images/bucket-index.png "bucket-index")
 
 - You may now run the application from Object store, using the URL of the index that you've copied above.
 
-  ![](images/my-todo.png " ")
+  ![](images/my-todo.png "my-todo")
   
 You may now **proceed to the next lab**.
 
