@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab you will deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastucture.
+In this lab you will make changes and deploy a pre-built ReactJS application locally then build it for production and host it on Oracle Cloud Infrastucture.
 
 Estimated time: 10 minutes
 
@@ -10,11 +10,7 @@ Watch the video below for a quick walk through of the lab.
 
 Mac:
 
-[](youtube:cEEKcV3-yTQ)
-
-Windows:
-
-[](youtube:rHAf4ZW4XP0)
+[](youtube:xCVhmx7KAm8)
 
 
 ### Understand the ReactJS Application
@@ -42,7 +38,7 @@ In this lab, you will:
 - Host the production build on the Oracle Cloud's object storage
 ### Prerequisites
 
-1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/Helidon)**. This lab also requires admin rights.
+1. This lab requires the completion of **Setup Dev Environment** and **Backend (Java/SpringBoot)**. This lab requires sudo privileges (if you can successfully issue a sudo command, you have admin privileges)
 
 2. Make sure the `npm` command is installed.
 
@@ -63,7 +59,7 @@ In this lab, you will:
 6. Make sure **git** is installed; if not please follow the instructions @ `https://bit.ly/3DXyjiL`.
 
 ## **Task 1**: Configure API.js
-In this task you will edit API.js to point to the correct endpoint that will be allowed to access the APIs used in your application
+In this task you will edit API.js to point to the correct endpoint that has been been allowed (in the previous lab) to access the APIs used in your application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -72,14 +68,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	<copy>
 	mkdir reacttoo
 	cd reacttodo
-	git clone https://github.com/oracle/oci-react-samples.git
+	git clone -b springboot --single-branch https://github.com/oracle/oci-react-samples.git
+	cd oci-react-samples/MtdrSpring
 	</copy>
 	```
 
 2. Navigate to frontend
 	```
 	<copy>
-	cd oci-react-samples/mtdrworkshop/frontend
+	cd frontend
 	</copy>
 	```
 
@@ -102,7 +99,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	</copy>
 	```
   Ideally, npm -version should return > 6.14.x AND Node version > 14.16.x
-  If npm version < 6.14.x then install the latest Node using
+  If the npm version < 6.14.x then install the latest Node using
    https://bit.ly/3evGlEo
 
 4. Update API_LIST in API.js
@@ -115,15 +112,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 	```
  In the Cloud console, navigate to **Developer Services > API Management >Gateways**
 
- 	![](images/api-gateway-navigate.png)
+ 	![](images/api-gateway-navigate.png "api-gateway-navigate")
 
    Click on your Gateway and go to Deployment
    Copy the Deployment Endpoint
 
-	![](images/Api-gtw-deploy.png)
+	![](images/api-gtw-deploy.png "api-gateway-deploy")
 
  - Paste the endpoint as the value of API_LIST and append "/todolist"
-
+    ![](images/update_api.png "update_api")
   Example:
   const API_LIST = 'https://xxxxxxxxxx.apigateway.eu-frankfurt-1.oci.customer-oci.com/todolist';
 
@@ -156,7 +153,7 @@ Here you will run the application locally in development mode, then run in produ
 	```
 It correctly bundles React in production mode (into the build folder) and optimizes the build for the best performance.
 
-  ![](images/Run-build.png " ")
+  ![](images/run-build.png "run-build")
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
@@ -169,17 +166,17 @@ The build folder will be uploaded to object storage so you can access your appli
 1. Open up the hamburger menu in the top-left corner of the Console and select
 **Object Storage > Object Storage**.
 
-  ![](images/object-store-navigate.png)
+  ![](images/object-store-navigate.png "object-store-navigate")
   Create the 'mtdrworkshop' (or another name if that's taken) bucket
 
-  ![](images/Create-bucket.png)
+  ![](images/create-bucket.png "create-bucket")
 
   Enter in the bucket details.
-  ![](images/bucket-details.png)
+  ![](images/bucket-details.png "bucket-details")
 
   Edit visibility to public
 
-  ![](images/edit-visibility.png)
+  ![](images/edit-visibility.png "edit-visibility")
 2. Install the Staci utility for copying directories to OCI object storage
    bucket with folder hierarchies
 
@@ -236,11 +233,11 @@ The build folder will be uploaded to object storage so you can access your appli
 
 - Click on the index.html object and copy the URL of the index object
 
-  ![](images/bucket-index.png " ")
+  ![](images/bucket-index.png "bucket-index")
 
 - You may now run the application from Object store, using the URL of the index that you've copied above.
 
-  ![](images/my-todo.png " ")
+  ![](images/my-todo.png "my-todo")
   
 You may now **proceed to the next lab**.
 
