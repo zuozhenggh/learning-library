@@ -307,7 +307,7 @@ A Map action named Map to createERPInvoice is automatically created. We'll defin
 
 Define Global Variable to store the createInvoice Response. We need this because the createInvoice Response variable is created automatically within the scope of Switch condition. To access the response payload we will use Data Stitch Activity to achieve the requirement.
 
-1.  Select ***(x)*** Global Variables partner
+1.  Select ***(x)*** Global Variables from the Right hand side palette
 
 2.  Select ***Add Variable***.
 
@@ -369,7 +369,7 @@ The response we got from ERP Cloud for **createERPInvoice** needs to be mapped t
     | Accounting Date | Accounting Date |
     | Description | Description |
 
-3.  Click ***Validate*** and Select ***Close**. ***Save*** the Integration Flow
+3.  Click ***Validate*** and Select ***Close***. ***Save*** the Integration Flow
 
 
 ### *Defining the Otherwise conditional flow*
@@ -406,11 +406,9 @@ Manage business identifiers that enable you to track fields in messages during r
 1. Click the ***Actions*** menu on the top right, then select ***Tracking***.
     ![Open Business Identifiers For Tracking](images/open-business-identifiers.png)
 
-2. From the **Source** section, expand ***execute** > **request-wrapper***, Drag the ***InvoiceNumber*** , ***OrderNumber*** and ***InvoiceDate***  fields from Source to the *Drag a trigger field here* section:
+2. From the **Source** section, expand ***execute > request-wrapper***, Drag the ***InvoiceNumber*** , ***OrderNumber*** and ***InvoiceDate***  fields from Source to the *Drag a trigger field here* section:
 
     ![Assign Business Identifiers](images/assign-business-identifiers.png)
-
-    > **Note:** Only the Used fields are displayed due to the *Filter* on the top left side of the screen.
 
 3. Click ***Save***.
 
@@ -486,12 +484,16 @@ We will test the end to end Integration flow using the built in Test Client. In 
     ```
     Modify the above payload with the values captured from ERP Cloud for **Business Unit, Supplier and Supplier Site**. Provide a unique **Invoice Number**
 
-  3.  Click on ***Test***
+  3.  Click on ***Test***. Observe the **Response** payload returned.
 
       ![Activity Stream](images/activity-stream.png)
 
-  4.  Modify the **Request Payload** with an Invalid Business Unit. Observe the Custom Fault Payload  
-      returned.
+  4.  Select the Instance Id and View the Integration flow
+
+      ![Activity Stream Success](images/acitivity-stream-success.png)
+
+  5.  Modify the **Request Payload** with an Invalid Business Unit and Test the Integration Flow. Observe
+      the Custom Fault Payload returned and the **Otherwise** condition is executed.
 
 ## Task 11: Extend the Usecase (Bonus Lab)
 
@@ -499,7 +501,7 @@ We will test the end to end Integration flow using the built in Test Client. In 
 
 ### *Validate Supplier Activity*
 
-  1.  Use **ERP Cloud** and configure the REST resources to invoke ***SupplierLOV > getAll*** operation
+  1.  Use **ERP Cloud** Connection and configure the REST resources to invoke ***SupplierLOV > getAll*** operation
 
   2.  In the **Child Resources** page Select ***sitesLOV***
 
@@ -521,11 +523,11 @@ We will test the end to end Integration flow using the built in Test Client. In 
 
   1.  Create Otherwise condition for Supplier and Supplier Site to return fault payload accordingly
 
-      Your Final Integration Flow after the Bonus Lab Activity should per below
+      Your Final Integration Flow after the Bonus Lab Activity should be per below
 
       ![Final Bonus Integration Flow](images\final-integration-flow-bonus.png)
 
-**Congratulations!** You have learnt how to discover ERP Cloud REST API with the Out of the box adapter capabilities. ERP Cloud Adapter abstracts the API/Services/Business Objects and provides an intuitive interface which Simplifies the task to perform Real Time Synchronization.
+**Congratulations!** You have learnt how to invoke ERP Cloud REST API with the Out of the box adapter capabilities. ERP Cloud Adapter abstracts the API/Services/Business Objects and provides an intuitive interface which Simplifies the task to perform Real Time Synchronization.
 
 You may now **proceed to the next lab**.
 
