@@ -224,7 +224,8 @@ You may now proceed to the next lab.
 
 ## Learn More
 
-* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)  
+Search for and join the `oracle-db-microservices` channel. 
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
