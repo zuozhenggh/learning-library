@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section we will see various Out of the Box Adapter capabilities w.r.t design patterns described earlier. You will be executing an hands on lab exercise after understanding the functional usage of the adapter capabilities.
+In this section we will see functional usage of ERP Cloud Adapter and its capabilities w.r.t design patterns described earlier.
 
 Estimated Time: 15 minutes
 
@@ -18,13 +18,13 @@ This lab assumes you have:
 
 * All previous labs successfully completed.
 
-##	Task	1: ERP Cloud Adapter usage roles
+##	Task	1: Understanding ERP Cloud Adapter usage roles
 
 Adapters Identify and Select pattern of Integration upfront. The adapter wizard provides an intuitive way to select task of choice by listing out relevant integration artifacts which provides an abstract view to the Integration Developer
 
-### When used as a trigger role
+### **When used as a trigger role**
 
-Adapter Configuration wizard supports ability to process events, expose an object interface, subscription to completed FBDI jobs
+Adapter Configuration wizard supports ability to process business events, expose an object interface, subscription to completed FBDI jobs
 
 ![ERP Cloud Adapter Trigger Role](images/erp-adapter-trigger-role.png)
 
@@ -53,13 +53,26 @@ Gives functional view of the ERP Cloud objects to expose a comprehensive interfa
 ![ERP Cloud Adapter Business Objects](images/trigger-business-objects.png)
 
 
-### When used as a invoke role
-Adapter Configuration wizard supports ability to invoke SOAP/REST services, simplify invocation of FBDI jobs, send FBDI files to ERP Cloud
+### **When used as a invoke role**
+Adapter Configuration wizard supports ability to invoke SOAP/REST services, simplify invocation of FBDI jobs, send import files (FBDI/Non-FBDI) to ERP Cloud
 
 ![ERP Cloud Adapter Webservices](images/invoke-business-services.png)
 
-##	Task	2: (Exercise) Explore ERP Cloud connection with trigger/invoke roles
+* ***Query, Create, Update, or Delete Information:*** Provides the standard configuration path for selecting a business object or service. This option displays the standard Operations and Response pages.
+Select to browse by business object or service. There is a one-to-one correspondence between the business object and service. The service acts on the business document. The Adapter supports:
 
+    - Business Objects: Select to browse a list of available business objects.
+
+    - Services: Select to browse a list of available services.
+
+    - Business (REST) Resource: Select to browse a list of available Oracle Fusion Applications REST API resources.
+
+
+* ***Import Bulk Data into Oracle ERP Cloud:*** Provides a scenario for loading and orchestrating data from a secure FTP location to Oracle ERP Cloud.
+
+Data is loaded into a selected product interface table and then imported into the related main product application tables. A callback notification may also be configured to send when the data import completes. This option also shows a modified Operations page and a unique Response page in the Adapter Endpoint Configuration Wizard for importing data.
+
+* ***Send Files to ERP Cloud:*** Select to upload files (FBDI/NonFBDI) to Oracle WebCenter Content (Universal Content Manager) in encrypted or unencrypted format.
 
 You may now **proceed to the next lab**.
 

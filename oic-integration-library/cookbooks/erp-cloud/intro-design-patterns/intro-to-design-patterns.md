@@ -48,11 +48,12 @@ Customers choose to have some of the modules running on-premise and many of them
 | Subscribe to Business events from FA applications. | Import bulk data into the SaaS application using FBDI compliant bulk operations. | Receive callback from FA when bulk import/export operation completes. | Invoke business services using the Service Catalog WSDL (SOAP) or Interface Catalog (REST) using CRUD operations. | Upload files to Oracle WebCenterContent (UCM) when using ‘Import Bulk Data’ is not appropriate (non FBDI files)|
 | Direction:  INBOUND | Direction: OUTBOUND | Direction:  INBOUND (using a business event) | Direction: INBOUND/OUTBOUND | Direction:  OUTBOUND |
 
-##	Task	2: Real Time Synchronization
+##	Task	2: Real Time Integration
 
-There are couple of ways to Synchronize data from ERP Cloud into downstream applications
+There are several ways to Synchronize data between ERP Cloud and downstream applications
 - Business Events - Oracle Integration subscribes to events from ERP Cloud
-- Business Objects (APIs) – ERP Cloud invokes Oracle Integration Endpoints exposed using Business Object Interface
+- Business Object – ERP Cloud invokes Oracle Integration Endpoints exposed using Business Object Interface
+- Business Services (API's) - ERP/SCM Cloud provides REST/SOAP API's which includes how to create, update and fetch records in Real Time Integration scenarios.
 
 ### *Business Events Integration*
 
@@ -71,14 +72,34 @@ Acme Corp works with various Medical Providers wherein its employees avail treat
 ### *Business Objects Integration*
 ERP Cloud do not support Business Events in every module/object under its umbrella. It is imperative that if Real Time Sync needs to be triggered, especially when event is not available a groovy script can be coded using Application Composer Tool in Fusion Applications to call external Service with an object interface.
 
-### Usecase - Custom Application pages trigger Integration Flow
+### **Usecase - Custom Application pages trigger Integration Flow**
 Let's say we are building a custom application which is designed in ERP Cloud using Application Composer. The data needs to be submitted to downstream systems on click of a button which is backed by groovy script.
 
 ![Business Objects Integration Architecture](./images/business-objects-integration-hla.png)
 
 In the above case a Callable endpoint will be created in OIC by leveraging ERP Cloud Adapter Business Object functionality to expose an Interface.
 
-##	Task	3: Bulk Import
+### *Business Services Integration*
+ERP Cloud supports REST/SOAP API's in every module/object under its umbrella. It is imperative that if Real Time Sync of Inbound data is needed in several usecases.
+
+### **Usecase - Opportunity to Order Synchronization**
+Let's say we want to create new sales order and a customer (if new) in Oracle ERP Cloud, when an opportunity closes in Salesforce in real time with the below requirements
+
+-	When an opportunity closes in Salesforce, a new sales order is created in Oracle Enterprise Resource Planning Cloud. Sales representatives can see the order immediately.
+-	If the customer is new, then a customer account is also created.
+-	If the sales order reports an error, then the opportunity is reopened
+
+In the above usecase a Sales Order needs to be created in Real Time when an Opportunity is closed in a CRM Application. The integration leverages ERP CLoud REST API to create a Customer and an Order.
+
+### **Usecase - e-Invoice Sending and Receiving Invoice documents**
+E-Invoicing solutions enables companies to easily and cost-effectively send and receive e-invoices with their trading partners globally. A common set of requirements could be to
+
+- Accept invoices from suppliers without changes required at their end while getting completely rid of paper in accounts payable in Oracle ERP Cloud
+- Receive invoices electronically from anywhere around the world through e-Invoice solution and push the invoice system of record and source attachments to ERP Cloud
+
+In the above usecase an Invoice along with the source Invoice attachment needs to be created synhronously as and when Invoice is uploaded by Suppliers to consider for quick Accounting process. ERP Cloud REST API can be leveraged to address the Real Time Inbound Invoice creation to post it from Accounting.
+
+##	Task	3: Bulk Import Integration
 
 FBDI is one of the ways in Oracle ERP Cloud to import data in bulk. FBDI stands for File Based Data Import. However, in some of the usecases non-FBDI Bulk Import mechanism exists for ex: Import of Accounting Transactions into Fusion Accounting Hub from 3rd party applications
 
@@ -91,13 +112,13 @@ There are several scenarios where data from on-premise or external business syst
 - Bulk import of suppliers from an EBS application or from an external 3rd party enterprise applications usually from an FTP server in to Oracle Procurement Cloud
 - Importing Accounts Receivables Invoices
 
-### Usecase – General Ledger Import
+### **Usecase – General Ledger Import**
 Acme Corp.  has multiple business systems that they maintain for a variety of business activities each of which generates large volumes of financial transactions on a daily basis.  Requirement is to have all of these externally generated transactions to be automatically integrated into Oracle Cloud ERP to post to the General Ledger providing a single consolidated view. Acme Corp. wanted an interface designed to integrate the daily GL journal transactions from the external systems to Oracle Cloud ERP via data files.  And these transactions should be processed every day scheduled at specific times and the whole integration process needs to be automated
 
-### Usecase – Import Supplier Bank Information
+### **Usecase – Import Supplier Bank Information**
 Acme Corp need to have Supplier banking information's in Oracle ERP cloud to do the payments for their invoices or bills. These banking information's involved Supplier Bank, Branch , Bank Account , IFSC code , BIC code and many other banking related important information's. Acme Corp can maintain these information in Oracle ERP Cloud manually in the supplier master but if we are importing the supplier form external application then we will definitely have the mass banking data for the supplier and the manual job is very time consuming. It very much important to automate the import of mass banking information of the suppliers.
 
-##	Task	4: Bulk Extract
+##	Task	4: Bulk Extract Integration
 
 Oracle ERP Cloud has provided a very useful functionality which empowers business enterprises to extract financials data from Oracle Cloud ERP and integrate it with on-premise systems, legacy systems and other Cloud Applications.
 

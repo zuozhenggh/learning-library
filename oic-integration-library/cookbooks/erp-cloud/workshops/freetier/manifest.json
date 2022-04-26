@@ -21,8 +21,8 @@
             "filename": "../../../../../common/enable-file-server/enable-file-server.md"
         },
         {
-            "title": "Lab 3: Setup Workshop Prerequisites",
-            "filename": "../../setup/setup.md"
+            "title": "Lab 3: Configure ERP Cloud for Oracle Integration",
+            "filename": "../../../../common/configure-erpcloud-for-oic/configure-erpcloud-for-oic.md"
         },
         {
             "title": "Lab 4: Introduction to Design Patterns",
@@ -41,8 +41,8 @@
             "filename": "../../business-events/business-events-integration.md"
         },
         {
-            "title": "Lab 8: Business Objects Integration",
-            "filename": "../../business-objects/business-objects-integration.md"
+            "title": "Lab 8: Business Services Integration",
+            "filename": "../../business-services/business-services-integration.md"
         },
         {
             "title": "Need Help?",
