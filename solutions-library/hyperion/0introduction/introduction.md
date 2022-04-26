@@ -1,4 +1,4 @@
-# Introduction: Deploying Hyperion on Oracle Cloud Infrastructure
+# Introduction: Deploy Hyperion on Oracle Cloud Infrastructure
 
 ## About this Workshop
 

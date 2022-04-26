@@ -73,7 +73,7 @@ Make sure you followed the installation instructions to set up Docker as root an
     ```bash
     <copy>
     cd ~/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/K8b9Ukl0uoyVkdZhM1s8Msud7_CoOiwvzuOK1LnIn750O1OgLxWjIdQrw7TIeggb/n/orasenatdpltintegration01/b/images/o/tomcat-to-oci.zip
     </copy>
     ```
 
@@ -85,7 +85,7 @@ Make sure you followed the installation instructions to set up Docker as root an
     </copy>
     ```
 
-You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip).
+You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K8b9Ukl0uoyVkdZhM1s8Msud7_CoOiwvzuOK1LnIn750O1OgLxWjIdQrw7TIeggb/n/orasenatdpltintegration01/b/images/o/tomcat-to-oci.zip).
 
 ### **Mac OS X**
 
@@ -94,7 +94,7 @@ You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.
     ```bash
     <copy>
     cd ~/
-    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/K8b9Ukl0uoyVkdZhM1s8Msud7_CoOiwvzuOK1LnIn750O1OgLxWjIdQrw7TIeggb/n/orasenatdpltintegration01/b/images/o/tomcat-to-oci.zip
     </copy>
     ```
 
@@ -113,11 +113,11 @@ You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.
     </copy>
     ```
 
-You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip).
+You can also [download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K8b9Ukl0uoyVkdZhM1s8Msud7_CoOiwvzuOK1LnIn750O1OgLxWjIdQrw7TIeggb/n/orasenatdpltintegration01/b/images/o/tomcat-to-oci.zip).
 
 ### **Windows**
 
-1. [Download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Wc0_WknE3Q8cRz0zAhDBtaSULux3Nruli_wDfvQrvL5sjvafKTC7CeC6XTOFoiRh/n/ocisateam/b/images/o/tomcat-to-oci.zip).
+1. [Download the code](https://objectstorage.us-ashburn-1.oraclecloud.com/p/K8b9Ukl0uoyVkdZhM1s8Msud7_CoOiwvzuOK1LnIn750O1OgLxWjIdQrw7TIeggb/n/orasenatdpltintegration01/b/images/o/tomcat-to-oci.zip).
 
 2. Unzip the file with your preferred tool.
 

@@ -4,7 +4,7 @@
 
 In this lab, you will learn about plotting the data on a map, binning, filtering and downloading the data.
 
-_Estimated Lab Time_: 20 minutes
+_Estimated Time_: 20 minutes
 
 ![Connect Data Sets](../geo-maps/images/geo-maps.png)
 
@@ -15,15 +15,8 @@ _Estimated Lab Time_: 20 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud Free Tier or Paid account
-* You should have completed  
-    * Lab 1: Provisioning your Autonomous Database instance
-    * Lab 2: Provisioning your Oracle Analytics Cloud instance
-    * Lab 3: Connecting OAC to ADW and adjusting Data Set properties
-    * Lab 5: Gaining Insights with Visual Data Dialog
-    * Lab 6: Monitoring and Ad-hoc scaling up ADW activity for optimal OAC experience
-    * Lab 7: Building simple Interactive Analysis
-    * Lab 8: Mashing up additional Data Sets, Contextual Data Preparation
+* An [_Oracle Cloud Free Tier Account_](https://www.oracle.com/cloud/free/) or a Paid account
+* All previous labs successfully completed
 
 ## Task 1: Custom Binning
 
@@ -44,11 +37,12 @@ Select **MARITAL\_STATUS** and Drag and Drop it to **SUB\_CATEGORY**.
 3.  Check the new visualization.  
 Still difficult to interpret.
 
-    ![Add Data Set](../geo-maps/images/add-maritalstatus2.png)
+    ![Add Marital Status](../geo-maps/images/add-maritalstatus2.png)
 
 4.  Lets analyze by **Age**.  
 Select **AGE** and Drag and Drop it on **MARITAL\_STATUS**. **MARITAL\_STATUS** will be replaced with **Age**.
 
+    ![Age](../geo-maps/images/replace-with-age.png)
     ![Age](../geo-maps/images/replacewithage.png)
 
 5.  It's better, but Age is too dense and we need to bin them into **age groups**.  
@@ -134,18 +128,18 @@ Click on **KY** State.
 
     ![KY](../geo-maps/images/newvizmapuseasfilterky.png)
 
-6.  It's easy to create a custom filter by **drawing a polygon** on the map and select certain points.  
-On the Visualization Toolbar, Click the **Polygon Selection** tool and drag a freehand border around the points or area you want to select on the map
+6.  It's easy to create a custom filter by **drawing a Radial or Polygon** on the map and select certain points.  
+On the Visualization Toolbar, Click the **Radial Selection** tool and drag a freehand border around the points or area you want to select on the map
 
-    ![Polygon](../geo-maps/images/newvizmapuseasfilterpolygon.png)
+    ![Radial](../geo-maps/images/newvizmapuseasfilterradial.png)
 
 7.  Draw the Polygon as you see in the image below.
 
-    ![Polygon](../geo-maps/images/newvizmapuseasfilterpolygon1.png)
+    ![Radial](../geo-maps/images/newvizmapuseasfilterradial1.png)
 
 8.  Lets rename the canvas as **Demographics** and create a **Duplicate** of the canvas.  
 
-    ![Demographis](../geo-maps/images/canvasrenamedemographicssmall.png) ![Duplicate Canvas](../geo-maps/images/canvasrenameduplicatesmall.png)
+    ![Duplicate Canvas](../geo-maps/images/canvasrenameduplicatesmall.png)
 
 9. Add **Gender** to the **Filter**.  
 Select **Gender** Drag and Drop to Filter Area.
@@ -157,61 +151,55 @@ Click **M** to move Male to the Selections and click anywhere in the Filter Area
 
     ![M](../geo-maps/images/filtergender1small.png)
 
-11. Add **Gender** to the **Filter**.  
-Select **Gender** Drag and Drop to Filter Area.
-
-    ![Gender Filter](../geo-maps/images/filtergender.png)
-
-12. Move Map Visualization to the top.  
+11. Move Map Visualization to the top.  
 **Rearrange** a visualization on the canvas using drag and drop to a space between visualizations where you want to place it. The **target drop area** is displayed with a **blue outline**.
 Select **STATE # Customers** visualization and Drag it to the top of the Canvas.
 
     ![Move Map Visualization](../geo-maps/images/moveviztotop.png)
 
 
-13. Lets create a detailed tabular report.  
+12. Lets create a detailed tabular report.  
 Select: **CUST\_ID, FIRST\_NAME, LAST\_NAME, GENDER, AGE, ZIPCODE, CITY, STATE**, Right Click  and Select **Pick Visualization**.
 
     ![Pick Visualization](../geo-maps/images/pickvizsmall.png)
 
-14. Select **Table**.
+13. Select **Table**.
 
     ![Table Visualization](../geo-maps/images/pickviztablesmall.png)
 
 
-15. **Resize** viz to see all the columns.  
+14. **Resize** viz to see all the columns.  
 Resize a visualization by dragging its edges to the appropriate dimensions.
-
-    ![Resize Visualization](../geo-maps/images/pickviztableresize0.png)
+ 
     ![Resize Visualization](../geo-maps/images/pickviztableresize.png)
 
 
-16. Switch **STATE** with **CITY**.  
+15. Switch **STATE** with **CITY**.  
 Go to Grammar Panel Rows section click **STATE** and and dropping it over **CITY**.
 
     ![Swap Data Elements](../geo-maps/images/pickviztableswitchstate1.png)
 
 
-17. Use Map as a filter.  
+16. Use Map as a filter.  
 Select the Map visualization, Right Click and Select **Use as Filter**.
 
     ![Map Use as Filter](../geo-maps/images/statecustomersuseasfilter.png)
 
-18. Filter for **Florida**.  
+17. Filter for **Florida**.  
 Click on **FL**.
 
     ![FL Filter](../geo-maps/images/statecustomersuseasfilterfl.png)
 
-19. Export the Table visualization.  
+18. Export the Table visualization.  
 Select Table visualization, go to **Export** icon on top right and select **File**.
 
     ![Export](../geo-maps/images/exporttabel.png)
 
-20. In the pop-up window Select **Format** as **Data (csv**).
+19. In the pop-up window Select **Format** as **Data (csv**).
 
     ![Export](../geo-maps/images/exporttabel2small.png)
 
-21. Check the downloaded csv file.  
+20. Check the downloaded csv file.  
 Notice that it has exported the entire data from the filtered table (FL)
 
     ![Export](../geo-maps/images/exporttabel3small.png)  
@@ -220,7 +208,7 @@ Notice that it has exported the entire data from the filtered table (FL)
 
 You have just finished learning about geo visualization, binning, filtering and download your data.
 
-You may now [proceed to the next lab](#next)
+You may now **proceed to the next lab**.
 
 ## Want to Learn More?
 
@@ -229,7 +217,7 @@ You may now [proceed to the next lab](#next)
 
 ## **Acknowledgements**
 
-- **Author** - Lucian Dinescu, Product Strategy, Analytics
-- **Contributors** -
-- **Reviewed by** - Shiva Oleti, Product Strategy, Analytics
-- **Last Updated By/Date** - Lucian Dinescu, April 2021
+- **Author** - Lucian Dinescu (Oracle Analytics Product Strategy)
+- **Contributors** - 
+- **Reviewed by** - Shiva Oleti (Oracle Analytics Product Strategy), Sebastien Demanche, Andor Imre (Oracle Cloud Center of Excellence)
+- **Last Updated By/Date** - Lucian Dinescu (Oracle Analytics Product Strategy), February 2022

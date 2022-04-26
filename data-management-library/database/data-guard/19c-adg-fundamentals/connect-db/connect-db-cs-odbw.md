@@ -41,13 +41,13 @@ Watch the video below for a quick walk through of the lab.
 
   ![](./images/nodes-1.png)
 
-5. Open the **Cloud Shell** using the icon next to the region.
+5. Open the **Cloud Shell** using the icon next to the region.  If you get a policy error, ensure you have chosen the correct compartment you were assigned.
 
   ![](./images/cloud-shell.png)
 
   The Cloud Shell opens after a few seconds and shows the **prompt**.
 
-7. Download the private key for the Oracle Database World live lab using the below command in the Cloud Shell.
+7. Download the private key for the Oracle Database World LiveLab using the below command in the Cloud Shell.
     ````
     <copy>wget http://bit.ly/cloudshellkey</copy>
     ````

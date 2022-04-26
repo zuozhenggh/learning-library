@@ -2,12 +2,16 @@
 
 ### About this Workshop
 
-Oracle MySQL Database Service is a fully managed database service that lets developers quickly develop and deploy secure, cloud native applications using the world’s most popular open-source database. MySQL Database Service is the only MySQL cloud service with an integrated, high performance, in-memory query accelerator—HeatWave. MySQL HeatWave enables customers to run sophisticated analytics directly against their operational MySQL databases—eliminating the need for complex, time-consuming, and expensive data movement and integration with a separate analytics database. HeatWave accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. Optimized for Oracle Cloud Infrastructure, it is the only database service which runs on MySQL Enterprise Edition, and is 100% built, managed, and supported by the Oracle Cloud Infrastructure and MySQL engineering teams.
+Oracle MySQL Database Service is a fully-managed database service that lets developers quickly develop and deploy secure, cloud-native applications using the world’s most popular open-source database. MySQL Database Service is the only MySQL cloud service with an integrated, high-performance, in-memory query accelerator—HeatWave. MySQL HeatWave enables customers to run sophisticated analytics directly against their operational MySQL databases—eliminating the need for complex, time-consuming, and expensive data movement and integration with a separate analytics database. HeatWave accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. Optimized for Oracle Cloud Infrastructure, it is the only database service that runs on MySQL Enterprise Edition. It is 100% built, managed, and supported by the Oracle Cloud Infrastructure and MySQL engineering teams.
 
-In this workshop, you will learn how to create a MySQL HeatWave Cluster, connect to the cluster using MySQL Shell and MySQL Workbench, and run queries on HeatWave. You will learn how easy it is to create and manage MySQL HeatWave, and how MySQL HeatWave enables you to make informed business-critical decision with real-time insights.
+In this workshop, you will learn how to create a MySQL HeatWave Cluster, connect to the cluster using MySQL Shell and MySQL Workbench, run queries on HeatWave, run Analytics workloads in Oracle Cloud, and create a LAMP application.
+
+Overall this workshop will show you how easy it is to create and manage MySQL HeatWave and how MySQL HeatWave enables you to make informed business-critical decisions with real-time insights.
 
 
-Estimated Lab Time: 90 minutes
+_Estimated Lab Time:_ 2 hours +
+
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/ppolVUzOBSQ).</if>
 
 ### About Product/Technology
 MySQL HeatWave is a massively parallel, high performance, in-memory query accelerator for Oracle MySQL Database Service that accelerates MySQL performance by orders of magnitude for analytics and mixed workloads. It is the only service that enables customers to run OLTP and OLAP workloads directly from their MySQL database without the need of ETL process. MySQL Autopilot uses advanced machine-learning techniques to automates the database lifecycle operations including provisioning, data loading, query processing, and error handling. This minimizes manual administrative work and further improves HeatWave’s usability, performance, and scalability. MySQL HeatWave is also integrated with other Oracle Cloud services such as Data Integration Service and Oracle Analytics Cloud to provide a seamless end-to-end integration.
@@ -44,6 +48,10 @@ In this lab, you will be guided through the following steps:
 - Run queries in HeatWave and MySQL and see the performance improvement in HeatWave!
 - Run MySQL Autopilot to get performance improvement suggestions
 - Run queries again in HeatWave and see the improvement!
+- Perform development tasks
+    - Use Workbench
+    - Create Lamp test application
+    - Use Oracle Anayltics Cloud 
 
 ### Prerequisites
 
@@ -53,4 +61,4 @@ In this lab, you will be guided through the following steps:
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributors** - Mandy Pang, MySQL Principal Product Manager,  Priscila Galvao, MySQL Solution Engineering, Nick Mader, MySQL Global Channel Enablement & Strategy Manager
-* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, September 2021
+* **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, February 2022

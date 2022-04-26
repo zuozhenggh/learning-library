@@ -30,6 +30,7 @@ In this lab, you will:
 *List the prerequisites for this lab using the format below. Fill in whatever knowledge, accounts, etc. is needed to complete the lab. **Do NOT list** each previous lab as a prerequisite.*
 
 This lab assumes you have:
+
 * An Oracle account
 * All previous labs successfully completed
 
@@ -45,13 +46,13 @@ This lab assumes you have:
 
     ![](images/sample1.png)
 
-    The image alt text is optional.
+	The image alt text is optional.
 
     ![image alt text](images/sample1.png)
 
-2. Image with a link to the text description below it. This provides screen readers with an accessible way to "see" the image. The `sample1.txt` file must be added to the `files` folder.
+2.	Image with a link to the text description below it. This provides screen readers with an accessible way to "see" the image. The `sample1.txt` file must be added to the `files` folder. 
 
-    ![Image alt text](images/sample1.png "Image title")
+	![Image alt text](images/sample1.png "Image title")
 
 3. Inline image icon ![Image alt text](images/sample2.png) click **Navigation**.
 
@@ -69,7 +70,7 @@ This lab assumes you have:
  | 2 |Some text or a link | More text |
  | 3 | Some text or a link | More text |
 
-6. You can also include bulleted lists - make sure to indent 4 spaces:
+6.	You can also include bulleted lists - make sure to indent 4 spaces:
 
     - List item 1
     - List item 2
@@ -253,15 +254,19 @@ This lab assumes you have:
 
 1. Files that you want the reader to download:
 
-  When the file type is not recognized by the browser, you can use this format:
+  When the file type is not recognized by the browser, you can use the following format.
+
+  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
   Download the [starter SQL code](files/starter-file.sql).
 
-  When the file type is recognized by the browser, it will attempt to render it. So you can use this format to force the download dialog box:
+  When the file type is recognized by the browser, it will attempt to render it. So you can use the following format to force the download dialog box.
+
+  > **Note:** _The filename must be in lowercase letters and CANNOT include any spaces._
 
   Download the [sample JSON code](files/sample.json?download=1).
 
-  *Note: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
+  *IMPORTANT: do not include zip files, CSV, PDF, PSD, JAR, WAR, EAR, bin or exe files - you must have those objects stored somewhere else. We highly recommend using Oracle Cloud Object Store and creating a PAR URL instead. See [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)*
 
 3. Conditional content example (type="livelabs")
 

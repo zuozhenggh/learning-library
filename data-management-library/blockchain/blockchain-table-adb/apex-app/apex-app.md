@@ -23,7 +23,8 @@ In this lab, you will:
 
 This workshop assumes you have:
 
-- All previous labs completed.
+* LiveLabs Cloud Account
+* Successfully completed the previous labs
 
 ## Task 1: Create APEX Workspace
 
@@ -42,7 +43,7 @@ This workshop assumes you have:
 
 4. Enter the password for the Administration Services and click **Sign In to Administration**. The password is the same as the one entered for the ADMIN user when creating the Oracle Autonomous Transaction Processing instance.
 
-    In the lab, give the **password - WElcome123##** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in to Administration** to sign in to APEX Workspace.
+    In the lab, give the **password - _WElcome123##_** for the ADMIN user you created when you provisioned your Oracle Autonomous Database instance and click **Sign in to Administration** to sign in to APEX Workspace.
 	![](./images/task1-4.png " ")
 
 5. Click **Create Workspace**.
@@ -51,7 +52,7 @@ This workshop assumes you have:
 
 6. In the Create Workspace dialog, enter the following and click **Create Workspace**.
     - Database User: DEMOUSER
-    - Password : WElcome123## *Note:* The password field will be disabled as DEMOUSER is an existing database user.
+    - Password : _WElcome123##_ **Note:** The password field will be disabled as DEMOUSER is an existing database user.
     - Workspace Name : DEMOUSER
 
 	![](./images/task1-6.png " ")
@@ -61,7 +62,7 @@ This workshop assumes you have:
     Note: This will log you out of APEX Administration so that you can log into your new workspace.
     ![](./images/task1-7.png " ")
 
-8. On the APEX Workspace log in page, enter the **Password - WElcome123##** for the DEMOUSER workspace, check the Remember workspace and username checkbox, and then click **Sign In**.
+8. On the APEX Workspace log in page, enter the **Password - _WElcome123##_** for the DEMOUSER workspace, check the Remember workspace and username checkbox, and then click **Sign In**.
 
     ![](./images/task1-8.png " ")
 
@@ -74,7 +75,7 @@ This workshop assumes you have:
 	![](./images/task1-101.png " ")
     ![](./images/task1-102.png " ")
 
-11. Navigate back to the APEX workspace, paste the email address in the Email Address field, give the **Password - W3lcome123##** and confirm the password for the `demouser` and click **Apply Changes**.
+11. Navigate back to the APEX workspace, paste the email address in the Email Address field, give the **Password - _W3lcome123##_** and confirm the password for the `demouser` and click **Apply Changes**.
 
 	![](./images/task1-111.png " ")
 	![](./images/task1-112.png " ")
@@ -98,7 +99,7 @@ APEX application will interact with the blockchain tables using REST API through
     Also, notice how clicking on modules shows that there are no modules defined.
     ![](./images/task2-32.png " ")
 
-4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/nlUdle-us1TMJ-yTOL-sVxXazoDqQegCYakiXiA8zIONnFMWsaCt2u3tNHlz4sUx/n/c4u04/b/data-management-library-files/o/blockchain/ORDS-REST-Blockchain.sql) to download the ORDS-REST-Blockchain.sql file that has the SQL Script to REST Enable this schema and also to create modules for the bank_ledger table with the appropriate handlers.
+4. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/blockchain/ORDS-REST-Blockchain.sql) to download the ORDS-REST-Blockchain.sql file that has the SQL Script to REST Enable this schema and also to create modules for the bank_ledger table with the appropriate handlers.
 
 5. Let's import the modules by clicking on **Import**.
 
@@ -176,7 +177,7 @@ APEX application will interact with the blockchain tables using REST API through
 
 Now, we have the blockchain module, the handlers, and the templates defined. Let's import the apex application.
 
-1. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iKksQSRJLdhamFt0fsQ4Fb0KhipXg-y5OP9hdFHqVH0CCLeSl_H9WV5HlBtujS8U/n/c4u04/b/data-management-library-files/o/blockchain/Blockchain-APEX-Application.sql) to download the Blockchain-APEX-Application.sql.
+1. Click [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/blockchain/Blockchain-APEX-Application.sql) to download the Blockchain-APEX-Application.sql.
 
 2.  Click on the **App Builder** drop-down menu and select **Import**.
 
@@ -199,7 +200,7 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
     ![](./images/task3-6.png " ")
 
-7. In the Blockchain APEX application sign in page, give the **Username - DEMOUSER**, **Password - W3lcome123##** and click **Sign In**.
+7. In the Blockchain APEX application sign in page, give the **Username - DEMOUSER**, **Password - _W3lcome123##_** and click **Sign In**.
 
     ![](./images/task3-7.png " ")
 
@@ -265,4 +266,4 @@ Now, we have the blockchain module, the handlers, and the templates defined. Let
 
 * **Author** - Mark Rakhmilevich, Anoosha Pilli
 * **Contributors** - Anoosha Pilli, Salim Hlayel, Brianna AmblerProduct Manager, Oracle Database
-* **Last Updated By/Date** - Anoosha Pilli, September 2021
+* **Last Updated By/Date** - Marion Smith, April 2022

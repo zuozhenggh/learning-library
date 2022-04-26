@@ -19,6 +19,10 @@ This lab assumes you have:
 - SSH Keys
 - Performed *Lab: Prepare Setup*
 
+Watch the video below for a quick walk through of the lab.
+
+[](youtube:4KdA855RwIo)
+
 ## Task 1A: Create Stack:  Compute + Networking
 1.  Identify the ORM stack zip file downloaded in *Lab: Prepare Setup*
 2.  Login to Oracle Cloud
@@ -287,7 +291,7 @@ To save all your settings:
 3.  In the category section, **Click** session.
 4.  In the saved sessions section, name your session, for example ( EM13C-ABC ) and **Click** Save.
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Appendix 1:  Terraform and Resource Manager
 Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently.  Configuration files describe to Terraform the components needed to run a single application or your entire datacenter.  In this lab a configuration file has been created for you to build network and compute components.  The compute component you will build creates an image out of Oracle's Cloud Marketplace.  This image is running Oracle Linux 7.

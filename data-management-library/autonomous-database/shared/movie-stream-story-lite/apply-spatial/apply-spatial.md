@@ -4,7 +4,7 @@
 
 #### Video Preview
 
-[](youtube: kFB9C36oIaw)
+[](youtube:kFB9C36oIaw)
 
 Time to run a promotion to help keep our at-risk customers. Run a localized promotion by finding these customers' local pizza locations using Oracle Spatial's nearest neighbor algorithm.
 
@@ -31,17 +31,13 @@ In this lab, you will:
 
 - This lab requires completion of Labs 1&ndash;2 in the Contents menu on the left.
 
-
-> **Note:** If you have a **Free Trial** account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
-
 ## Task 1: Open a SQL Worksheet
 
 In this lab you will run a series of SQL queries as the MOVIESTREAM user. You concluded Lab 2 by running a script in a SQL Worksheet to load data as the MOVIESTREAM user. You may return to that SQL Worksheet to perform this Lab. If that Worksheet was closed then open a new SQL Worksheet.
 
-1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Launch **Database Actions** by clicking the **Tools** tab and then click **Open Database Actions**.
+1. Navigate to the Details page of the Autonomous Database you provisioned in the "Provision an ADW Instance" lab. In this example, the database name is "My Quick Start ADW." Click the **Database Actions** button.
 
-    ![Details page of your Autonomous Database](images/2878884319.png " ")
+    ![Click Database Actions](images/launchdbactions.png " ")
 
 2. Enter MOVIESTREAM for the username and click **Next**. On the next form, enter the MOVIESTREAM password - which is the one you entered when creating your MOVIESTREAM user. Click **Sign in**.
 

@@ -1,4 +1,4 @@
-create or replace procedure add_datasets 
+create or replace procedure add_datasets
 as 
 
     user_name       varchar2(100) := 'moviestream';
@@ -9,7 +9,7 @@ as
 
     csv_format      varchar2(1000) := '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":",", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}';
     pipe_format     varchar2(1000) := '{"dateformat":"YYYY-MM-DD", "skipheaders":"1", "delimiter":"|", "ignoreblanklines":"true", "removequotes":"true", "blankasnull":"true", "trimspaces":"lrtrim", "truncatecol":"true", "ignoremissingcolumns":"true"}';
-    json_format     varchar2(1000) := '{"skipheaders":"0", "delimiter":"\n", "ignoreblanklines":"true"}';
+    json_format     varchar2(1000) := '{"skipheaders":"0", "delimiter":"\\n", "ignoreblanklines":"true"}';
     parquet_format  varchar2(1000) := '{"type":"parquet",  "schema": "all"}';
     type table_array IS VARRAY(24) OF VARCHAR2(30); 
     table_list table_array := table_array( 'ext_genre',
@@ -37,6 +37,7 @@ as
                                             'customer_nearest_pizza',
                                             'time');
     start_time date := sysdate;
+    l_found number;
 
 
 
@@ -47,14 +48,20 @@ begin
     -- initialize
     moviestream_write('** dropping tables **');
 
-    -- Loop over tables and drop
+    -- Loop over tables and drop if found
     for i in 1 .. table_list.count loop
         begin
-            moviestream_write(' - ' || table_list(i));
-            moviestream_exec ( 'drop table ' || table_list(i), true );
+            select count(*)
+            into l_found
+            from user_tables
+            where lower(table_name) = table_list(i);
+
+            if l_found > 0 then                
+                moviestream_exec ( 'drop table ' || table_list(i), true );
+            end if;
         exception
             when others then
-                moviestream_write(' - ...... tried to delete ' || table_list(i) || ' but table was not found');
+                moviestream_write(' - ...... failed to drop table ' || table_list(i));
         end;
     end loop;
     
@@ -121,7 +128,7 @@ begin
         dbms_cloud.create_external_table(
             table_name => 'ext_movie',
             file_uri_list => uri_gold || '/movie/*.json',
-            format => json_format,
+            format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true'),
             column_list => 'doc varchar2(30000)'
             );
 
@@ -592,7 +599,7 @@ begin
             file_uri_list => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o/movie/*.json',
             column_list => 'doc varchar2(32000)',
             field_list => 'doc char(30000)',
-            format => json_format
+            format => json_object('skipheaders' value '0', 'delimiter' value '\n','ignoreblanklines' value 'true')
             );            
 
      end;
@@ -700,7 +707,8 @@ begin
 
      
      moviestream_write('done.');
-     moviestream_write('Total time(m):  ' || to_char((start_time - sysdate) * 1440, '99.99'));
+     moviestream_write('Total time(m):  ' || to_char((sysdate - start_time ) * 1440, '99.99'));
      
  
 end add_datasets;
+/

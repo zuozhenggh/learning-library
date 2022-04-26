@@ -25,7 +25,7 @@ You must have OLL administrator privileges to view and edit content entries in O
 6. Enter the **Content Entry Details**. A few entries are highlighted here:
     * **Link**: Enter the complete URL for the lab on GitHub, for example, https://oracle.github.io/learning-library/workshops/adwc4dev/?version=Self-Guided&page=L100.md.
 
-    ![](./images/content-entry-link.png " ")
+    ![Enter the content entry](./images/content-entry-link.png " ")
     * **Type**: Select **OBE**. (Older labs were called Oracle By Example or tutorials.)
 
 ## Task 2: Create the Target URL for a Lab
@@ -43,7 +43,7 @@ You must have OLL administrator privileges to view and edit content entries in O
 
 ## Task 3: Add a Link to the Lab from Oracle Help Center
 To add a link to a lab from an OHC Tutorials page:
-1. Open the [Self Publishing OHC Interface Page V3 application](https://apex.oraclecorp.com/pls/apex/f?p=40100:1:101812173799316:::::).
+<!-- 1. Open the [Self Publishing OHC Interface Page V3 application](https://apex.oraclecorp.com/pls/apex/f?p=40100:1:101812173799316:::::).
 2. In the **Search** field, enter your Product name and press **Enter**.
 3. Edit the release page for your Product to which, you want to add the lab.
     [](./images/ohc-edit-Pages.png " ")
@@ -51,12 +51,10 @@ To add a link to a lab from an OHC Tutorials page:
     [](./images/ohc-section-topics.png " ")
 5. Click **Topics** and then click **Create Topic**.
 
-6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**STEP 2:** Create the Target URL for a Lab".
+6. In the **Create Topic** section, enter the title of the lab and, in **Href**, enter the URL you created in "**STEP 2:** Create the Target URL for a Lab". -->
 
 This concludes this lab. You may now proceed to the next lab.
 
-## Want to Learn More?
-* [Add GitHub Hosted Tutorials to OHC](https://confluence.oraclecorp.com/confluence/display/DBIDDP/Add+GitHub-Hosted+Tutorials+to+the+Oracle+Help+Center)
 
 ## Acknowledgements
 
@@ -64,6 +62,4 @@ This concludes this lab. You may now proceed to the next lab.
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
 * **Contributors:**
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
-
-* **Last Updated By/Date:** Anuradha Chepuri, October 2021
+* **Last Updated By/Date:** Andres Quintana, March 2022

@@ -16,17 +16,18 @@
       "title": "Lab 1: Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
       "publisheddate": "09/28/2020",
-      "filename": "../../prepare-setup/prepare-setup.md"
+      "filename": "../../prepare-setup/prepare-setup.md",
+      "type": "default"
     },
     {
       "title": "Lab 2: Environment Setup",
       "description": "How to provision the workshop environment and connect to it",
       "publisheddate": "06/30/2020",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc.md"
+      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
     },
     {
       "title": "Lab 3: Initialize Environment",
-      "description": "Labs that follow the introduction are numbered, starting with Lab 1",
+      "description": "Initialize Environment",
       "filename": "../../initialize-environment/initialize-environment.md"
     },
     {

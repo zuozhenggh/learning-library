@@ -6,7 +6,7 @@ This lab walks you through the steps to create the required resources you'll use
 
 > **Note:** *This workshop uses Oracle Autonomous Databases as the source and target. If you plan to use Oracle Database, ensure that you use the CDB user to capture data from the PDBs.*
 
-Estimated time: 20 mins
+Estimated time: 20 minutes
 
 ### Objectives
 
@@ -80,7 +80,7 @@ You can click View VCN Details and see both a Public and Private subnet created.
 
 1.  Click the following link to download the database schema.
 
-    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/GBBFZbbFdladZV7maRiV3egDpZ_jCOglhpEWyqOgEuKZzIjxqeDgbrq9_WRhzjR5/n/c4u04/b/data-management-library-files/o/Archive.zip)
+    [Archive.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/Archive.zip)
 
 2.  Save `Archive.zip` to a download directory, and then unzip the file.
 
@@ -88,9 +88,9 @@ You can click View VCN Details and see both a Public and Private subnet created.
 
     ![](./images/02-03-atp.png " ")
 
-4.  Click the **Tools** tab, and then click **Open Database Actions**.
+4.  Click **Database Actions**.
 
-    ![](./images/02-04-db-actions.png " ")
+    ![](./images/03-04-dbactions.png " ")
 
 5.  Log in with the ADMIN user and password provided when you created the ATP instance.
 
@@ -162,9 +162,7 @@ You can click View VCN Details and see both a Public and Private subnet created.
 
     ![](./images/04-01-adw.png " ")
 
-2.  Click the **Tools** tab, and then click **Open Database Actions**.
-
-	![](./images/05-04-db-actions.png " ")
+2.  Click **Database Actions**.
 
 3.  Log in with the ADMIN user and password provided when you created the ADW instance.
 
@@ -193,5 +191,5 @@ You can now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Jenny Chan, Consulting User Assistance Developer
-- **Last Updated By/Date** - Jenny Chan, September 2021
+- **Last Updated By/Date** - Jenny Chan, February 2022
 - **PAR Expiration date** - March 31, 2022

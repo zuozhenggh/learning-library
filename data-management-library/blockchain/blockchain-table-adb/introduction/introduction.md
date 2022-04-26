@@ -6,6 +6,8 @@ In this workshop, you will provision an Oracle Autonomous Database instance, man
 
 Estimated Workshop Time: 1 hour, 15 minutes
 
+<if type="odbw">If you would like to watch us do the workshop, click [here](https://youtu.be/Frv6V1-gzR8).</if>
+
 ### Objectives
 
 In this workshop, you will:
@@ -20,7 +22,7 @@ In this workshop, you will:
 
 This workshop assumes you have:
 
-* An Oracle Free Tier, Always Free, Paid, or LiveLabs Cloud Account
+* LiveLabs Cloud Account
 
 You may now proceed to the next lab.
 
@@ -28,4 +30,4 @@ You may now proceed to the next lab.
 
 * **Author** - Anoosha Pilli, Database Product Manager
 * **Contributors** -  Anoosha Pilli, Database Product Management
-* **Last Updated By/Date** - Anoosha Pilli, September 2021
+* **Last Updated By/Date** - Marion Smith, Technical Program Manager, April 2022

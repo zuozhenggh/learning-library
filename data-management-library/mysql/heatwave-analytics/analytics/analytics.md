@@ -20,9 +20,11 @@ In this lab, you will:
 ## Task 1: Create Oracle Analytics Cloud Instance 
 
 1. From the Cloud shell connect to MySQL DB System:
-    
+	
+	 Note: replace the `**PASSWORD**` with the password you have used creating MySQL DB System at Lab1/Task5.4.
+
     ```
-    <copy>mysqlsh --user=admin --password=Oracle.123 --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
+    <copy>mysqlsh --user=admin --password=**PASSWORD** --host=<mysql_private_ip_address> --port=3306 --database=airportdb --sql</copy>
     ```
   
   	![connect to mysql shell](./images/Lab4-task1.1.png)
@@ -80,6 +82,8 @@ In this lab, you will:
 
 5. To create the connection, fill out with the following information:
 
+	 Note: replace the `**PASSWORD**` with the password you have used creating MySQL DB System at Lab1/Task5.4.
+
     ```
     Connection Name: <copy>MySQL_Connection</copy>
     ```
@@ -96,7 +100,7 @@ In this lab, you will:
     Username: <copy>admin</copy>
     ```
     ```
-    Password: <copy>Oracle.123</copy>
+    Password: **PASSWORD**
     ```
   
   	After you filled out the information, click _**Save**_.
@@ -141,9 +145,9 @@ In this lab, you will:
 
 4. Now you can see the data that has been retrieved. From the _**Recommendations**_ column on the right we could use the suggestions to clean the data. We will leave this topic for another time but feel free to check **[Oracle's documentation](https://docs.oracle.com/en/cloud/paas/analytics-cloud/acubi/data-enrichment-and-transformation-oracle-analytics.html)** on how to use this useful feature!
 
-   	To move forward click on _**Create Project**_  button on the top right corner. You will see the Visualisation screen where you can start building your dashboards! 
+   	To move forward click on _**Create Project/Workbook**_  button on the top right corner. You will see the Visualisation screen where you can start building your dashboards! 
    
-   	If **Create Project** button is not activated, make sure you have saved the Data Set name as shown in the _Task 2.3_ .
+   	If **Create Project/Workbook** button is not activated, make sure you have saved the Data Set name as shown in the _Task 2.3_ .
 
   	![Oracle Analytics dashboard create project](./images/Lab4-task2.4.png)
 
@@ -182,22 +186,22 @@ In this lab, you will:
 
   	![recover pridiction Oracle Analytics dashboard best visualization](./images/Lab4-task2.5-8.png)
 
-   	Finally, save the project by clicking on the Disk icon at the top right of the screen. Give it a name like **Departure Flights Revenue**.
+   	Finally, save the project/workbook by clicking on the Disk icon at the top right of the screen. Give it a name like **Departure Flights Revenue**.
 
   	![save Oracle Analytics dashboard best visualization](./images/Lab4-task2.5-9.png)
 
-  	You can see the name of the Project on the top left corner of the dashboard.
+  	You can see the name of the Project/Workbook on the top left corner of the dashboard.
 
   	![save Oracle Analytics dashboard best visualization](./images/Lab4-task2.5-10.png)
 
 
-6. You can also share your project by email or social media. Have a look at the possibilities.
+6. You can also share your project/workbook by email or social media. Have a look at the possibilities.
 
    	Select the **Export** icon and select **File** or **Print**.
 
   	![export Oracle Analytics dashboard best visualization](./images/Lab4-task2.6.png)
 
-   	You can choose to **Save** your project in a wide variety of standard formats such as PowerPoint (pptx), Acrobat (pdf), Image (png), Data (csv), Package (dva).  Also, you can choose which parts of your project to include, such as All Canvas, only the Active Canvas or the Active Visual. 
+   	You can choose to **Save** your project/workbook in a wide variety of standard formats such as PowerPoint (pptx), Acrobat (pdf), Image (png), Data (csv), Package (dva).  Also, you can choose which parts of your project/workbook to include, such as All Canvas, only the Active Canvas or the Active Visual. 
 
   	![save Oracle Analytics dashboard best visualization](./images/Lab4-task2.6-1.png)
 
@@ -205,7 +209,7 @@ In this lab, you will:
 
   	![download Oracle Analytics dashboard best visualization](./images/Lab4-task2.6-2.png)
 
-   	When you select **Print**, you can choose which parts of your project to include in the Printed output, such as All Canvas, only the Active Canvas or the Active Visual, etc.
+   	When you select **Print**, you can choose which parts of your project/workbook to include in the Printed output, such as All Canvas, only the Active Canvas or the Active Visual, etc.
 
   	![print Oracle Analytics dashboard best visualization](./images/Lab4-task2.6-3.png)
 

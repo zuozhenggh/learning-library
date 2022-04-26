@@ -14,7 +14,14 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: [oiri-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFttTcCqZvJ1WCvrpbo8rv-_WHSTXg8zp-TqCfAtR40K-MnPYu9RULyEAlUQHN1p/n/natdsecurity/b/stack/o/oiri-mkplc-freetier.zip)
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment:
+
+<if type="default">
+    - [oiri-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/iFttTcCqZvJ1WCvrpbo8rv-_WHSTXg8zp-TqCfAtR40K-MnPYu9RULyEAlUQHN1p/n/natdsecurity/b/stack/o/oiri-mkplc-freetier.zip)
+</if>
+<if type="app-onboarding">
+    - [oiri-mkplc-app-onboarding.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/DTG8immn-5boO9l5E-4MkB8VC2o-iJzTxiLHGlrZViSxhdy6jye8JWN1nICq6qoy/n/natdsecurity/b/stack/o/oiri-mkplc-app-onboarding.zip)
+</if>
 
 2.  Save in your downloads folder.
 

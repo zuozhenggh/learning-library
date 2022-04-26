@@ -8,7 +8,7 @@ When working in the cloud, there are often times when your servers and services 
 
 Today, you will use the Compute Instance to connect from the browser to a MDS DB System
 
-Estimated Lab Time 20 minutes
+_Estimated Lab Time:_ 20 minutes
 
 Watch the video below for a quick walk through of the lab.
 
@@ -97,7 +97,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
     Instances
     ![CONNECT](./images/05compute01.png " ")
 
-5. On Instances in **(root)** Compartment, 'click'  **Create Instance**
+5. On Instances in **(root)** Compartment, click  **Create Instance**
     ![CONNECT](./images/05compute02_00.png " ")
 
 6. On Create Compute Instance 
@@ -110,11 +110,11 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
 8. On Placement, keep the selected Availability Domain
 
-9. On Image and Shape, keep the selected Image, Oracle Linux 7.9 
+9. On Image and Shape, keep the selected Image, Oracle Linux 8 
 
       ![CONNECT](./images/05compute03.png " ")  
 
-10. Select Instance Shape: VM.Standard2.2
+10. Select Instance Shape: VM.Standard.E2.2
 
       ![CONNECT](./images/05compute-shape.png " ")  
 
@@ -122,7 +122,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     'Assign a public IP address' should be set to Yes 
    
-  ![CONNECT](./images/05compute04.png " ")
+    ![CONNECT](./images/05compute04.png " ")
 
 12. On Add SSH keys, paste the public key from the notepad. 
   
@@ -133,11 +133,9 @@ You will need a compute Instance to connect to your brand new MySQL database.
 14. The New Virtual Machine will be ready to use after a few minutes. The state will be shown as 'Provisioning' during the creation
     ![CONNECT](./images/05compute07.png " ")
 
-15.	The state 'Runing' indicates that the Virtual Machine is ready to use. 
+15.	The state 'Running' indicates that the Virtual Machine is ready to use. 
 
-    On the **MDS-Client** Instance page under 'Instance Access', **Copy and save the Public IP Address** 
-    ![CONNECT](./images/05compute08.png " ")
-
+    ![CONNECT](./images/05compute08-a.png " ")
 ## Task 3: Connect to MySQL Database System
 
 1. Copy the public IP address of the active Compute Instance to your notepad
@@ -147,8 +145,9 @@ You will need a compute Instance to connect to your brand new MySQL database.
             Instances
     ![CONNECT](./images/db-list.png " ")
 
-    - 'click' the `MDS-Client` Compute Instance link
-    ![CONNECT](./images/db-active.png)
+    - Click the `MDS-Client` Compute Instance link
+    
+    ![CONNECT](./images/05compute08-b.png " ")
     
     - Copy `MDS-Client` plus  the `Public IP Address` to the notepad
 
@@ -159,7 +158,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
             MySQL
      ![](./images/db-list.png " ")
 
-    - 'click' the `MDS-HW` Database System link
+    - Click the `MDS-HW` Database System link
 
      ![CONNECT](./images/db-active.png " ")
     
@@ -202,7 +201,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
 
     ![CONNECT](./images/06connect03.png " ")
 
-7.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the cammand. Also enter the admin user password
+7.  Use the following command to connect to MySQL using the MySQL Shell client tool. Be sure to add the MDS-HW private IP address at the end of the command. Also enter the admin user and the db password created on Lab 1
 
     (Example  **mysqlsh -uadmin -p -h10.0.1..   --sql**)
 
@@ -220,7 +219,7 @@ You will need a compute Instance to connect to your brand new MySQL database.
         
     ![CONNECT](./images/airportdb-list.png " ") 
     
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab.
 
 ## Learn More
 
@@ -230,4 +229,4 @@ You may now [proceed to the next lab](#next).
 ## Acknowledgements
 * **Author** - Perside Foster, MySQL Solution Engineering 
 * **Contributor** - Frédéric Descamps, MySQL Community Manager 
-* **Last Updated By/Date** - Perside Foster, September 2021
+* **Last Updated By/Date** - Perside Foster, February 2022

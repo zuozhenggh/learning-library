@@ -30,7 +30,7 @@ In this lab, you will:
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, and so on. By default, a root compartment was created for you when you created your tenancy (that is, when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
 
-1. Click the three-line menu, which is on the top left of the console. Scroll down till the bottom of the menu, click **Identity & Security -> Compartments**. 
+1. Click the three-line menu, which is on the top left of the OCI console. Scroll down till the bottom of the menu, click **Identity & Security -> Compartments**. 
 
   ![Click Identity & Security then Compartments.](images/click-identity-and-security-then-compartments.png " ")
  
@@ -46,7 +46,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 ## Task 2: Choose Autonomous Data Warehouse from the Services Menu
 
-1. From the three-line menu, which is on the top left of the console, click the navigation menu in the upper left to show top level navigation choices.
+1. From the three-line menu, which is on the top left of the OCI console, click the navigation menu in the upper left to show top level navigation choices.
    
   Click **Autonomous Database**.
 
@@ -59,11 +59,11 @@ A compartment is a collection of cloud assets, like compute instances, load bala
   > **Note:** Avoid the use of the `ManagedCompartmentforPaaS` compartment as this is an Oracle default used for Oracle Platform Services.
 
 
-3. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, for example). You can also sort by __Workload Type__. Here, the __Data Warehouse__ workload type is selected.
+3. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated, for example). You can also sort by __Workload Type__. The different options are shown below.
 
   ![Autonomous Databases console.](./images/no-adb-freetier.png " ")
 
-4. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
+4. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current **region** in the top, right hand corner of the page.  If you are on Free Tier you can only deploy services in your **Home Region**.
 
   ![Select region on the far upper-right corner of the page.](./images/Region.png " ")
 
@@ -79,47 +79,46 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 3. Give basic information for the autonomous database:
 
-  - __Choose a compartment__ - Select the compartment you just created.
-  - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __OML LABS__.
-  - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters (no underscores). For this lab, use __OMLLABS__.
+    - __Choose a compartment__ - Select the compartment you just created.
+    - __Display Name__ - Enter a memorable name for the database for display purposes. For this lab, use __OML LABS__.
+    - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters (no underscores). For this lab, use __OMLLABS__.
 
   ![Enter the required details.](./images/create-adb-screen-freetier.png " ")
 
 4. Choose a workload type. Select the workload type for your database from the choices:
 
-  - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.  This workload is built for decision support and data warehouse workloads. Fast queries over large volumnes of data.
-  - __Transaction Processing__ - Or, you could also choose __Transaction Processing__ as the workload type.  This workload is built for transactional workloads. High concurrency for short-running queries and transactions.
+    - __Data Warehouse__ - For this lab, choose __Data Warehouse__ as the workload type.  This workload is built for decision support and data warehouse workloads. Fast queries over large volumnes of data.
+    - __Transaction Processing__ - Or, you could also choose __Transaction Processing__ as the workload type.  This workload is built for transactional workloads. High concurrency for short-running queries and transactions.
 
   ![Choose a workload type.](./images/create-adb-workload-type.png " ")
 
 5. Choose a deployment type. Select the deployment type for your database from the choices:
 
-  - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
+    - __Shared Infrastructure__ - For this lab, choose __Shared Infrastructure__ as the deployment type.
  
   ![Choose a deployment type.](./images/create-adb-deployment-type.png " ")
 
 6. Configure the database:
 
-  - __Always Free__ - Oracle Cloud Infrastructure's Always Free Autonomous Database is part of Oracle Cloud Infrastructure's Free Tier of services. You can provision up to two Always Free Autonomous Databases (with 1 OCPU and 20 GB of storage) in the home region of your tenancy.
-  - __Choose database version__ - Select 19c as the database version.
-  - __OCPU count__ - Number of CPUs for your service. For this lab, specify __1 CPU__. If you choose an Always Free database, it comes with 1 CPU.
-  - __Storage (TB)__ - Select your storage capacity in terabytes. For this lab, specify __1 TB__ of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
-  - __Auto Scaling__ - For this lab, keep auto scaling enabled, to enable the system to automatically use up to three times more CPU and IO resources to meet workload demand. If Always Free is selected, then auto scaling is disabled.
-  - __New Database Preview__ - If a checkbox is available to preview a new database version, do NOT select it.
+    - __Always Free__ - Oracle Cloud Infrastructure's Always Free Autonomous Database is part of Oracle Cloud Infrastructure's Free Tier of services. You can provision up to two Always Free Autonomous Databases (with 1 OCPU and 20 GB of storage) in the home region of your tenancy.  For this Workshop, select **Always Free**.
+    - __Choose database version__ - Select 19c as the database version.
+    - __OCPU count__ - Number of CPUs for your service. If you have not selected an Always Free configuration (which comes with 1 OCPU), specify __1 CPU__.
+    - __Storage (TB)__ - Storage in terabytes. If you have not selected an Always Free configuration (which comes with 20 GB of free storage), select your storage capacity in terabytes. For this workshop, the default of __1 TB__ of storage is enough. 
+    - __Auto Scaling__ - Enables the system to automatically use up to three times more CPU and IO resources to meet workload demand. If you have not selected an Always Free configuration (which automatically disables this option), then enable it.
+  
+    > **Note:** You cannot scale up/down an Always Free autonomous database, nor change its storage size.
 
-  > **Note:** You cannot scale up/down an Always Free autonomous database, nor change its storage size.
-
-  ![Choose the remaining parameters.](./images/create-adb-instance-config.png " ")
+    ![Choose the remaining parameters.](./images/create-adb-instance-config.png " ")
 
 7. Create administrator credentials:
 
   __Password and Confirm Password__ - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
-   - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-   - The password cannot contain the username.
-   - The password cannot contain the double quote (") character.
-   - The password must be different from the last 4 passwords used.
-   - The password must not be the same password that you set less than 24 hours ago.
-   - Re-enter the password to confirm it. Make a note of this password.
+    - The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
+    - The password cannot contain the username.
+    - The password cannot contain the double quote (") character.
+    - The password must be different from the last 4 passwords used.
+    - The password must not be the same password that you set less than 24 hours ago.
+    - Re-enter the password to confirm it. Make a note of this password.
 
     ![Enter password and confirm password.](./images/create-adb-admin-credentials.png " ")
 
@@ -130,7 +129,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
     ![Choose the network access.](./images/create-adb-network-access.png " ")
 
-9. Choose a license type. <if type="freetier">For this lab, choose __License Included__.</if><if type="livelabs">For this lab, choose __Bring Your Own License (BYOL)__.</if> The two license types are:
+9. Choose a license type. <if type="freetier">For this workshop, we can choose the same default for Always Free, which is __License Included__.</if><if type="livelabs">For this workshop, choose __Bring Your Own License (BYOL)__.</if> The two license types are:
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
@@ -156,21 +155,11 @@ The SQL scripts will drop and recreate the `OMLUSER` and `OMLUSER2` user schemas
 
 >**<span style="color:red">Warning:</span>  Any work and notebooks that might have been stored previously by OMLUSER or OMLUSER2 users (if you had created them before) will be deleted - so save your work!**
 
-1. Connect to Autonomous Database Actions as the ADMIN user
-
-  In your Autonomous Database details page, click the Tools tab. Click **Open Database Actions**.
+1. To access the Autonomous Database Actions as the ADMIN user, in your Autonomous Database details page, click the **Database Actions** button.
 
     ![Click on Tools, then Database Actions](images/launchdbactions.png " ")
 
-2. On the login screen, enter the username ADMIN, then click the blue **Next** button.
-   
-    ![Type ADMIN then click Next](images/firstloginadbactions.png " ")
-
-3. In the next screen, enter ADMIN and the password for the ADMIN user you set up when you provisioned your Autonomous Database instance in **Task 3**, **Step 7**. Then click the blue **Sign in** button. 
-   
-    ![Type ADMIN plus password and click Next](images/secondloginadbactions.png " ")
-
-4. Open the SQL Worksheet from the Launchpad:
+2. Open the SQL Worksheet from the Launchpad:
 
     ![Click on SQL from the Launchpad](images/launchpad.png " ")
 
@@ -182,42 +171,42 @@ Now that you're in the SQL worksheet, you will run the code that will initialize
 
 1. Copy the script below into the worksheet and click Run Script (F5).
 
-  ```
-  <copy>
-  -- The following commands should be run before running the labs, 
-  -- since it creates the OML users required to 
-  -- sign-in to OML Notebooks 
+    ```
+    <copy>
+    -- The following commands should be run before running the labs, 
+    -- since it creates the OML users required to 
+    -- sign-in to OML Notebooks 
 
-  -- Click F5 to run all the scripts at once
+    -- Click F5 to run all the scripts at once
 
-  -- Drop the schema OMLUSER
-  BEGIN
-         EXECUTE IMMEDIATE 'DROP USER OMLUSER CASCADE';
-         EXCEPTION WHEN OTHERS THEN NULL;
-  END;
-  /  
+    -- Drop the schema OMLUSER
+    BEGIN
+          EXECUTE IMMEDIATE 'DROP USER OMLUSER CASCADE';
+          EXCEPTION WHEN OTHERS THEN NULL;
+    END;
+    /  
 
-  -- Drop the schema OMLUSER2
-  BEGIN
-         EXECUTE IMMEDIATE 'DROP USER OMLUSER2 CASCADE';
-         EXCEPTION WHEN OTHERS THEN NULL;
-  END;
-  /
+    -- Drop the schema OMLUSER2
+    BEGIN
+          EXECUTE IMMEDIATE 'DROP USER OMLUSER2 CASCADE';
+          EXCEPTION WHEN OTHERS THEN NULL;
+    END;
+    /
 
-  CREATE USER OMLUSER IDENTIFIED BY "AAbbcc123456";
-  GRANT DWROLE TO OMLUSER;
-  GRANT OML_DEVELOPER TO OMLUSER;
-  ALTER USER OMLUSER GRANT CONNECT THROUGH OML$PROXY;
-  ALTER USER OMLUSER QUOTA UNLIMITED on DATA;
+    CREATE USER OMLUSER IDENTIFIED BY "AAbbcc123456";
+    GRANT DWROLE TO OMLUSER;
+    GRANT OML_DEVELOPER TO OMLUSER;
+    ALTER USER OMLUSER GRANT CONNECT THROUGH OML$PROXY;
+    ALTER USER OMLUSER QUOTA UNLIMITED on DATA;
 
-  CREATE USER OMLUSER2 IDENTIFIED BY "AAbbcc123456";
-  GRANT DWROLE TO OMLUSER2;
-  GRANT OML_DEVELOPER TO OMLUSER2;
-  ALTER USER OMLUSER2 GRANT CONNECT THROUGH OML$PROXY;
-  ALTER USER OMLUSER2 QUOTA UNLIMITED on DATA;
+    CREATE USER OMLUSER2 IDENTIFIED BY "AAbbcc123456";
+    GRANT DWROLE TO OMLUSER2;
+    GRANT OML_DEVELOPER TO OMLUSER2;
+    ALTER USER OMLUSER2 GRANT CONNECT THROUGH OML$PROXY;
+    ALTER USER OMLUSER2 QUOTA UNLIMITED on DATA;
 
-  </copy>
-  ```
+    </copy>
+    ```
 
 2. The result of running the SQL steps is displayed in the bottom section of the screen (the Script Output), as shown below.
 
