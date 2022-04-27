@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Oracle GoldenGate Veridata performs comparisons on tables to identify data discrepancies. The **Repair** functionality allows you to eliminate these descrepancies and makes the data identical.
+Oracle GoldenGate Veridata performs comparisons on tables to identify data discrepancies. The **Repair** functionality allows you to eliminate these discrepancies and makes the data identical.
 
 Oracle GoldenGate Veridata provides the Download Repair SQL functionality which downloads SQL files for the source and target tables associated with the out-of-sync jobs.
 
