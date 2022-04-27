@@ -36,6 +36,11 @@ In this workshop, you will:
 
 You may now [proceed to the next lab](#next).
 
+Watch this short video on adding Database Credentials, Extract, and Replicat Processes in Oracle GoldenGate Microservices on MySQL database:
+
+  [](youtube:h0J070YIK4E)
+
+
 ## Learn More
 
 Use these links to get more information about Oracle GoldenGate:
@@ -47,4 +52,4 @@ Use these links to get more information about Oracle GoldenGate:
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Preeti Shukla, Volker Kuhr
-* **Last Updated By/Date** - Anuradha Chepuri, April 2022
+* **Last Updated By/Date** - Anuradha Chepuri, May 2022

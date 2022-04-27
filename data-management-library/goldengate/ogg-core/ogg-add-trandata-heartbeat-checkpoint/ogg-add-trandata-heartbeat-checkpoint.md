@@ -60,7 +60,7 @@ To add the Heartbeat tables:
 
     ```
     <copy>
-    ADD HEARTBEATTABLE TARGETONLY
+    ADD HEARTBEATTABLE
     <copy>
 
     ```
@@ -70,14 +70,14 @@ To add the Heartbeat tables:
 
     ```
     <copy>
-    INFO HEARTBEATTABLE TARGETONLY
+    INFO HEARTBEATTABLE
     <copy>
     ```
 The HEARTBEAT table gets added and the output is as follows:
 
   ```
   <copy>
-  OGG (http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9012 ggdepdev as ggwest@ORCL/PDBWEST) 24> ADD HEARTBEATTABLE,TARGETONLY
+  OGG (http://phoenix98251.dev3sub1phx.databasede3phx.oraclevcn.com:9012 ggdepdev as ggwest@ORCL/PDBWEST) 24> ADD HEARTBEATTABLE
   2022-04-19T12:59:16Z  INFO    OGG-14101  Successfully added heartbeat table.
   <copy>
 
