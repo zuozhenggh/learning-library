@@ -12,7 +12,7 @@ This lab is the second part of the Time Series livelab. Please make sure to comp
 
 You will be introduced to Oracle Cloud and gain a high level overview of the products involved in Data Science and Machine Learning. You will learn at a high level about OCI Data Science, Oralce Advanced Data Science (ADS) SDK, OCI Model Catalog and OCI Object Storage.
 
-Estimated time: 60 minutes
+Estimated Time: 60 minutes
 
 ### Objectives
 
@@ -24,12 +24,16 @@ In this workshop you will:
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported.
+
+**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
+
+**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
+
 * Additional prerequisites (cloud services) are mentioned per lab
 
-## Product Overview
 
-
+You may now **proceed to the next lab**
 
 ## Acknowledgements
 * **Authors** - Simon Weisser, Cloud Engineer

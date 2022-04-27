@@ -59,37 +59,38 @@ This guide shows you how to create a new user for your autonomous database and g
 
 1. On your instance, click the Tools tab and then click Open Oracle ML User Administration.
 
-![](./images/2.1.png)
+    ![](./images/2.1.png)
 
 2. Sign in as admin with the password you used when you created your Autonomous instance.
 
-![](./images/2.2.png)
+    ![](./images/2.2.png)
 
 3. Click on Create
 
-![](./images/2.3.png)
+    ![](./images/2.3.png)
 
-4. On the Create User tab, enter the username omluser, an email address (you can use admin@oracle.com), uncheck Generate Password, and enter a password you will remember.
-   You can use the same password you used for ADMIN account. Then click Create.
+4. Create User
 
-![](./images/2.4.png)
+    On the Create User tab, enter the username omluser, an email address (you can use admin@oracle.com), uncheck Generate Password, and enter a password you will remember. You can use the same password you used for ADMIN account. Then click Create.
+
+    ![](./images/2.4.png)
 
 5. Return to you ADW instance on the OCI service console, and click on Open Database Actions.
 
-![](./images/3.1.png)
+    ![](./images/3.1.png)
 
 6. Login as ADMIN using the same password you created for ADMIN when you created the ADW instance.
 
-![](./images/3.2.1.png)
-![](./images/3.2.2.png)
+    ![](./images/3.2.1.png)
+    ![](./images/3.2.2.png)
 
 7. From Database Action menu, select SQL.
 
-![](./images/3.3.png)
+    ![](./images/3.3.png)
 
 8. Dismiss the Help by clicking the X in the popup.
 
-![](./images/3.4.png)
+    ![](./images/3.4.png)
 
 9. Copy and paste the SQL below into the SQL panel to allow OMLUSER to use the Database Actions.
 
@@ -111,8 +112,8 @@ This guide shows you how to create a new user for your autonomous database and g
 
 10. Click Run Script to execute the SQL.
 
-![](./images/3.6.png)
-![](./images/3.6.2.png)
+    ![](./images/3.6.png)
+    ![](./images/3.6.2.png)
 
 ## Task 3: Upload Data to ADW
 
