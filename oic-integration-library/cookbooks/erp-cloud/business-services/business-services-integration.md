@@ -61,7 +61,7 @@ This lab assumes you have:
     Accept all other default values.
 
 5. Click ***Create***
-**Note**: If you get an error that the identifier already exists, change the Connection Name by suffixing username or so and remember this name for later use in the workshop.
+**Note**: If you get an error that the identifier already exists, change the Integration Name by suffixing username or so and remember this name for later use in the workshop.
 6. Select Layout to ***Horizontal*** and Click ***Save*** to apply changes.
 
 ## Task 3: Create the REST Interface Trigger
@@ -406,7 +406,7 @@ Manage business identifiers that enable you to track fields in messages during r
 1. Click the ***Actions*** menu on the top right, then select ***Tracking***.
     ![Open Business Identifiers For Tracking](images/open-business-identifiers.png)
 
-2. From the **Source** section, expand ***execute > request-wrapper***, Drag the ***InvoiceNumber*** , ***OrderNumber*** and ***InvoiceDate***  fields from Source to the *Drag a trigger field here* section:
+2. From the **Source** section, expand ***execute > request-wrapper***, Drag the ***InvoiceNumber*** , ***BusinessUnit*** and ***InvoiceDate***  fields from Source to the *Drag a trigger field here* section:
 
     ![Assign Business Identifiers](images/assign-business-identifiers.png)
 
