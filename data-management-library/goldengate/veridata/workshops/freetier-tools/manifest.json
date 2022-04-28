@@ -58,11 +58,6 @@
     },
 
     {
-      "title": "Lab 9:  Repair Out-of-Sync Jobs and Download Repair SQL Files ",
-      "description": "This lab walks you through the Purge Data and Delete Directories features in Oracle GoldenGate Veridata.",
-      "filename": "./../../ggv-repair-data/ggv-repair-data.md"
-    },
-    {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
