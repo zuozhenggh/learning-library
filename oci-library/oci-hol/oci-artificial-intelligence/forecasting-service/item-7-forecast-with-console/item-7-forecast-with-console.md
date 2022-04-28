@@ -14,7 +14,7 @@ In this lab, you will:
 - Learn how to create a forecast project from console
 - Learn how to upload data into Oracle object storage
 - Learn how to create data asset to refer data in Oracle object storage
-- Learn to train an forecasting model with created data asset
+- Learn to train a forecasting model with created data asset
 - Explore forecast results and prediction intervals
 
 ### Prerequisites
@@ -86,8 +86,7 @@ In this lab, you will:
 ### **Data Validations**
 For a successful forecast, the input data should pass the following data validations:
 
-* Number of rows for a time series >= 10 and <= 5000
-* Series length >= 3 X Forecast Horizon
+* Number of rows for a time series >= 5 and <= 5000
 * Series length >= 2 X Major Seasonality
 * If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
 * If ensemble method is selected, at least 2 other methods need to be selected as well.
@@ -103,7 +102,7 @@ The data should contain one timestamp column and other columns for target variab
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
-**Note**: The column names used in the examples here are just for representation and actual data can have diffrent custom names.  
+**Note**: The column names used in the examples here are just for representation and actual data can have different custom names.  
 
 Currently, our APIs support datasets that can be in one of the following formats:
 
@@ -184,19 +183,15 @@ Currently, our APIs support datasets that can be in one of the following formats
     ....
     ....
     ```
-    The service currently accepts *Inline Data* that can be generated from csv files.
-    Steps on how to generate inline data from csv files are given in Task 3 below.
-    
     **Note:**
-    * Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1).
-    * The last row of input data should be an observation and not an empty row. 
+    * Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1)
 
 ## Task 3: Download Sample Data
 
 Here is a sample dataset to help you to easily understand how the input data looks like, Download the files to your local machine.
 
-* [Primary data](files/favorita-13-beverages-primary.csv)
-* [Additional data](files/favorita-13-beverages-add.csv)
+* [Primary data](files/favorita-13-beverages-primary_v1.csv)
+* [Additional data](files/favorita-13-beverages-add_v1.csv)
   
 
 ## Task 4: Upload Data to Object Storage
@@ -230,9 +225,6 @@ After downloading the dataset , you need to upload the sample training data into
 
     - Browse to file which you desire to upload and click  Upload button at the botton
     ![](images/lab5-bucket-upload-files-meta.png " ")
-
-
-
 
     More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
@@ -283,7 +275,6 @@ Project is a way to organize multiple data assets, models, deployments to the sa
     Now , select the Addtional Data Asset created just now , and click Next
     ![](images/lab5-select-created-additional-data-asset.png " ")
 
-       
 
 2.  Configure Schema :
 
@@ -307,15 +298,15 @@ Project is a way to organize multiple data assets, models, deployments to the sa
     ![](images/lab5-forecast-page.png " ")
 
 
-The Create and Train Model will take user to a form with the option to either choose an existing dataset or create a new dataset. Select `Create a new data asset` radio button.
-![](images/6_specify_ocs.png " ")
+## Task 7: Forecast Results
+1. Forecast Status:
+    After 2.32 minutes the status will change to **Active**.Now , click on the Forecast Link as you can see below
+    ![](images/lab5-forecast-active-page.png " ")
 
-Create a new dataset navigates the User to a form, where they can specify the compartment of Object storage that houses the data. Click Create Button.
-![](images/7_create_data_asset_form.png " ")
-
-
-## Task 7: Train a Forecast Model and Create Forecasts
-
+2. Review Forecast Results:
+    
+    Now, let's review  forecast results
+    ![](images/lab5-forecast-result-page.png " ")
 
 ## Task 8: Explore the Forecast and Explainability  
 

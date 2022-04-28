@@ -122,7 +122,7 @@ In this lab, you will:
 
     def plot_local_feature_importance(get_forecast_explanations, time_step):
         df_imps = pd.DataFrame()
-        local_feature_importance = get_forecast_explanations['explanations'][t]['localFeatureImportance']['influencingFeatures'][time_step]
+        local_feature_importance = get_forecast_explanations['explanations'][time_step]['localFeatureImportance']['influencingFeatures'][time_step]
         df_imps['Feature_Importance'] = local_feature_importance.values()
 
         feature_names = local_feature_importance.keys()
