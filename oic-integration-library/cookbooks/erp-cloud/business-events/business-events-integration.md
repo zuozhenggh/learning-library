@@ -8,9 +8,8 @@ This Lab explores the use of Oracle Integration to subscribe to Oracle ERP Cloud
 push the relevant event information to downstream systems. As part of the lab you will build the following use case scenario:
 
 1.  You create and activate an integration that subscribes to an ERP Cloud Purchase Order (PO) event
-
 2.  You then create a PO in ERP Cloud and a PO event is triggered.
-3. Your integration receives the PO event and pushes the data
+3.  Your integration receives the PO event and pushes the data
     into the File Server.
 
     The following diagram shows the runtime interaction between the systems involved in this use case:
@@ -22,7 +21,9 @@ Estimated Time: 30 minutes
 
 In this lab, you will:
 
-* Understand different authentication schemes supported by ERP Cloud Adapter
+* Understand how to subscribe to business events in Oracle ERP cloud leveraging out of the box ERP cloud
+  adapter capabilities
+* Connect to file server to write data records
 
 ### Prerequisites
 
@@ -32,7 +33,7 @@ This lab assumes you have:
 
 ## Task 1: Configure File Server
 
-Configure File Server settings. This is required as you are using Embeded File Serve of Oracle Integration and using File Server as a target application in your integration flow.
+Configure File Server settings. This is required as you are using Embedded File Serve of Oracle Integration and using File Server as a target application in your integration flow.
 
 1. Starting at the Oracle Integration **Home** page, select ***Settings***, then ***File Server*** from the left Navigation pane.
 2. Select ***Settings*** from left Navigation pane to open the File Server Settings page and review the File Server status and configurations. Make a note of IP and port number.
@@ -45,9 +46,9 @@ Configure File Server settings. This is required as you are using Embeded File S
 ![Workshop Folder structure](images/fs-permissions.png)
 **Note**: You will be using the above Folder structure in the lab.
 10. Click ***Add Permissions*** and select your user. Click ***Add***.
-![Add user to Folder permissions](images/user-permissions.png)
+![Add user to Folder permissions](images/user-permissions-1.png)
 11. Select ***All*** and ***Propagate to subfolders***. All of the permission check boxes should be checked. Click ***Save*** and exit the Permissions page.
-![Folder permissions](images/user-permissions1.png)
+![Folder permissions](images/user-permissions1-1.png)
 
 ## Task 2: Connect to File Server with FTP Client
 
@@ -58,12 +59,12 @@ To access files on the File Server you will need to use an FTP Client. You will 
 * Your Oracle Integration username.
 * Your Oracle Integration password.
 
-1. To obtain the File Server IP Address and Port, select **Settings** from left Navigation pane. The IP and Port are located in the **IP and Port Information** section of the **Settings** page.
+1. To obtain the File Server IP Address and Port, select ***Settings*** from left Navigation pane. The IP and Port are located in the **IP and Port Information** section of the **Settings** page.
 2. Using your FTP Client choice, connect to the File Server using the SFTP - SSH File Transfer Protocol.  
 ![Example FTP Client configuration](images/ftpclient1.png)
 A example configuration using FileZilla FTP Client.  
 If the permissions are configured correctly, you should be able to list, read, and write files on the **Output** folder.
-![Example FTP Client directory listing](images/ftpclient2.png)
+![Example FTP Client directory listing](images/ftpclient2-1.png)
 
 ## Task 3: Creating Connection with File Server
 
@@ -91,13 +92,13 @@ To access the File Server from an Integration, you will need to create an FTP Co
 1. In the left Navigation pane, click ***Integrations*** > ***Integrations***.
 2. On the **Integrations page**, click ***Create***.
 3. On the **Integration Style** dialog, select ***App Driven Orchestration***, followed by ***Select***
-![Select Integration Style](images/select-integration-style.png)
+![Select Integration Style](images/select-integration-style-1.png)
 4. In the **Create New Integration** dialog, enter the following information:
 
     | **Element**        | **Value**          |       
     | --- | ----------- |
     | Name         | `ERPPOEvent`       |
-    | Description  | `ERP Event integration for LiveLabs demo` |
+    | Description  | `ERP Event integration for LiveLabs` |
 
 
     Accept all other default values.
@@ -113,7 +114,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 2. Select the ERP Cloud connection which you have created in the previous labs. This invokes the Oracle ERP Cloud Endpoint Configuration Wizard.
 
-3. On the Basic Info page, for *What do you want to call your endpoint?* element, enter ***POEvent***.
+3. On the Basic Info page, for **What do you want to call your endpoint?** element, enter ***POEvent***.
 
 4. Click ***Next***.
 
@@ -144,13 +145,13 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 9. On the integration canvas, from the Layout list, choose ***Horizontal***.
 
-    ![Horizontal Flow layout](images/horizontal-flow-layout.png)
+    ![Horizontal Flow layout](images/horizontal-flow-layout-1.png)
 
 10. Click ***Save*** to persist changes.
 
 ## Task 6: Add the FTP Adapter as invoke activity
 Add the FTP Adapter invoke to the integration canvas.
-1. Hover you cursor over the arrow in the integration canvas to display the ***+*** sign. Click the ***+*** sign and select the FTP Connection created in previous labs.
+1. Hover your cursor over the arrow in the integration canvas to display the ***+*** sign. Click the ***+*** sign and select the FTP Connection created in previous lab.
 This invokes the FTP adapter Configuration Wizard.
 2. On the **Basic Info** page, select the following values:
   | **Element**        | **Value**          |       
@@ -163,18 +164,35 @@ This invokes the FTP adapter Configuration Wizard.
     | --- | ----------- |
     | Select Operation | Write File  |
     | Output Directory | /home/users/***your username***/Output  |
-    | File Name Pattern | PO%SEQ%.txt  |
-3. On the **Schema page**, select the ***Sample JSON document*** from the drop down
-4. On the **File Contents - Definition** page, upload the file [Purchase Order JSON](files/PurchaseOrder.json?download=1).
-5. Click ***Next*** and Review the **Summary** page and click on ***Done***
-6. Click on ***Save***
+    | File Name Pattern | PO%SEQ%.json  |
+
+    Leave the rest as defaults.
+3. On the **Schema page**, select the ***Sample JSON document*** from the drop down. In the **Do you want to specify the structure of the contents of the file?** as ***Yes***
+4. Copy the below json content into a file and save it to your desktop. Name it as ***PurchaseOrder.json***
+
+```
+<copy>
+  {
+    "poHeaderId":"US164985",
+    "orderNumber":"300000245105090",
+    "procurementBUId":"300000046987012",
+    "procurementBusinessUnit":"US1 Business Unit",
+    "supplierId":"300000047414679",
+    "supplier":"Dell Inc.",
+    "soldToLegalEntity":"US1 Legal Entity"
+  }
+</copy>
+```
+5. On the **File Contents - Definition** page, upload the file **PurchaseOrder.json** saved in the previous step
+6. Click ***Next*** and Review the **Summary** page and click on ***Done***
+7. Click on ***Save***
 
 ## Task 7: Map data between ERP trigger and FTP invoke
 Use the mapper to drag fields from the source structure (POEvent)  to the target structure (Write2FTP) to map elements between the two.
 
 When we added the FTP invoke to the integration, a map icon was automatically added.
 
-1. Hover you cursor over the Map to Write2FTP **Mapper** icon, click once, then select ***Edit***.
+1. Hover your cursor over the **Map to Write2FTP** Mapper icon, click once, then select ***Edit***.
    ![Edit ERP-FTP Mapper](images/mapper-edit-erp-ftp.png)
 
 2. Use the mapper to drag element nodes in the source ERP Cloud structure to element nodes in the target FTP structure.
@@ -202,11 +220,11 @@ When we added the FTP invoke to the integration, a map icon was automatically ad
     | Sold To Legal Entity Id | soldToLegalEntity |
     | supplierId | supplierId |
     | supplier | supplier |
-    |
 
-   ![Completed Mapping](images/mapper-completed-erp-ftp.png)
 
-3. Click ***Validate***, then wait for the confirmation message *Mapping is valid and ready to use.*
+   ![Completed Mapping](images/mapper-completed-erp-ftp-1.png)
+
+3. Click ***Validate***, then wait for the confirmation message **Mapping is valid and ready to use.**
 
 4. Click ***Close***
 
@@ -220,7 +238,7 @@ Manage business identifiers that enable you to track fields in messages during r
 1. Click the ***Actions*** menu on the top right, then select ***Tracking***.
     ![Open Business Identifiers For Tracking](images/open-business-identifiers.png)
 
-2. From the *Source* section, expand ***getPurchaseOrderResponse*** > ***result***, click ***Load more***, expand ***Value***, and click ***Load more***. Drag the ***POHeaderId*** and ***OrderNumber***  fields from ERP PO source to the *Drag a trigger field here* section:
+2. From the **Source** section, expand ***getPurchaseOrderResponse*** > ***result***, click ***Load more***, expand ***Value***, and click ***Load more***. Drag the ***POHeaderId*** and ***OrderNumber***  fields from **ERP PO source** to the **Drag a trigger field here** section:
 
     ![Assign Business Identifiers](images/assign-business-identifiers.png)
 
@@ -240,7 +258,7 @@ Manage business identifiers that enable you to track fields in messages during r
 
 3. Click ***Activate***.
 
-    The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to *Active*.
+    The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to **Active**.
 
 ## Task 10: Create Purchase Order in ERP Cloud
 Access your ERP Cloud environment.
@@ -259,18 +277,17 @@ Access your ERP Cloud environment.
 5. Under the **Orders** section, select ***Create Order***.
       ![Create Order](images/create-order-action.png)
 
-  The *Create Order* dialog is displayed.
+  The **Create Order** dialog is displayed.
 
-6. Enter a valid entry in the *Supplier* field, for example `ABC Consulting`, and select the corresponding supplier in the drop down.
+6. Enter a valid entry in the **Supplier** field, for example `ABC Consulting`, and select the corresponding supplier in the drop down.
 
   **Tip:** You can also search for valid suppliers using the **Search** icon.
-
 
 7. Click ***Create***.
 
       ![Create Purchase Order](images/create-po.png)
 
-  The *Edit Document (Purchase Order)* page is displayed.
+  The **Edit Document (Purchase Order)** page is displayed.
 
 8. In the **Lines** Tab, click ***+*** to add a Purchase Order line row.
       ![Add PO Line](images/add-po-line.png)
@@ -282,7 +299,7 @@ Access your ERP Cloud environment.
       | Line | `1` (Default)       |
       | Type | `Goods` |
       | Item | Choose a valid item. For example, start typing `AS`, and choose an item from the resulting drop-down (or hit the search button to select a valid item)
-      | Description | Remove the existing description and enter the same value used for *Lab 7 > Task 2 > Step 5: Filter Expr for Purchase Order Event*. For example: `Lan Cable <your-initials>`|
+      | Description | Remove the existing description and enter the same value used for **Lab 7 > Task 5 > Step 5: Filter Expr for Purchase Order Event**. For example: `Lan Cable <your-initials>`|
       | Quantity | Enter a valid number, eg. `2` |
       | UOM | `Ea` (Default) |
       | Base Price | Enter a valid number, eg. `2`
@@ -299,19 +316,19 @@ Access your ERP Cloud environment.
 
 12. Click ***OK*** at the top right of the *Edit Line* page and return to the parent window.
 
-13. Click ***Submit*** to initiate the the Purchase Order processing.
+13. Click ***Submit*** to initiate the Purchase Order processing.
 
-    After submitting the Purchase Order, a confirmation message should appear with the PO number. Please note down the PO number
+    After submitting the Purchase Order, a confirmation message should appear with the PO number. Make a note of the **PO number**
 
 14. Click ***OK*** to close the confirmation dialog.
 
 
 ## Task 11: Validate Purchase Order status
-  After the PO is submitted, the initial status becomes *Pending Approval*. The PO Create event will occur once the status changes to *Open*.
+  After the PO is submitted, the initial status becomes **Pending Approval**. The PO Create event will occur once the status changes to **Open**.
 
 1. In the **Overview** section, click ***Tasks*** button on the right.
 
-    This opens the *Tasks* menu.
+    This opens the **Tasks** menu.
 
 2. Under the **Orders** section, click on ***Manage Orders***.
 
@@ -321,7 +338,7 @@ Access your ERP Cloud environment.
 
    **Tip:** The last created PO should generally be the top one in the list.
 
-5. Validate the PO Status. If it's *Open* then the Business Event has occurred.
+5. Validate the PO Status. If it's **Open** then the Business Event has occurred.
 
     **Note:** If PO has another Status, such as *Pending Approval*, then wait a couple of minutes and keep refreshing the page until the desired PO Status appears.
 
@@ -353,9 +370,11 @@ Use the Oracle Integration dashboard to see the data flow resulting from the cre
 
 Follow these steps to view the file in the FTP Server
 
-1. In the Integration navigation pane, click ***Home*** > ***Settings*** > ***File Server*** > ***Files*** > ***home*** > ***users*** > ***Select your username*** > ***Ouput*** > You should see the PO%.txt file.
+1. In the Integration navigation pane, click ***Home*** > ***Settings*** > ***File Server*** > ***Files*** > ***home*** > ***users*** > ***Select your username*** > ***Output*** > You should see the **PO%.json** file.
 
   **Note:** Currently, you can not view the contents of the file using Oracle Integration console but, you can use any third party tools like FileZilla to connect to this file server and pull the file from the FTP server to your local machine and view the file contents
+
+**Congratulations!** You have learnt how to subscribe ERP Cloud Business Events configuring the Out of the box ERP Cloud adapter. The Adapter abstracts the Business Events experience and provides an intuitive interface to select from the Catalog which greatly simplifies the task to perform Real Time Synchronization.
 
 You may now **proceed to the next lab**.
 

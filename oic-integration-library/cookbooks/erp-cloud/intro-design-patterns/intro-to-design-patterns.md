@@ -147,7 +147,7 @@ You may now **proceed to the next lab**.
 
 ## Learn More
 
-* [TBD - Add References](https://oracle.com)
+* [Implement Common Patterns Using the ERP Cloud Adapter](https://docs.oracle.com/en/cloud/paas/integration-cloud/erp-adapter/implement-common-patterns-using-oracle-erp-cloud-adapter.html)
 
 ## Acknowledgements
 

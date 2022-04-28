@@ -49,7 +49,7 @@ This lab assumes you have:
 1. In the left Navigation pane, Click ***Integrations*** > ***Integrations***.
 2. On the **Integrations page**, click ***Create***.
 3. On the **Integration Style** dialog, select ***App Driven Orchestration***, followed by ***Select***
-![Select Integration Style](images/select-integration-style.png)
+![Select Integration Style](images/select-integration-style-1.png)
 4. In the **Create New Integration** dialog, enter the following information:
 
     | **Element**        | **Value**          |       
@@ -528,8 +528,6 @@ We will test the end to end Integration flow using the built in Test Client. In 
       ![Final Bonus Integration Flow](images\final-integration-flow-bonus.png)
 
 **Congratulations!** You have learnt how to invoke ERP Cloud REST API with the Out of the box adapter capabilities. ERP Cloud Adapter abstracts the API/Services/Business Objects and provides an intuitive interface which Simplifies the task to perform Real Time Synchronization.
-
-You may now **proceed to the next lab**.
 
 ## Learn More
 
