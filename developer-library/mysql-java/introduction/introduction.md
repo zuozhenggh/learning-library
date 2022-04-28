@@ -1,5 +1,7 @@
 # Introduction
 
+Estimated Workshop Time: 90 minutes
+
 ## About this Workshop
 
 In this workshop, you will: 

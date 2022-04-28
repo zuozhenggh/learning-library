@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection",
+  "workshoptitle": "Detect anomalies with OML4SQL using one-class support vector machine (SVM)",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
@@ -9,8 +9,8 @@
     },
     {
    "title": "Get Started",
-   "description": "This is the prerequisites for customers using Free Trial and Paid tenancies, and Always Free accounts (if applicable). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
-   "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/pre-register-free-tier-account.md"
+   "description": "Prerequisites for LiveLabs (Oracle-owned tenancies). The title of the lab and the Contents Menu title (the title above) match for Prerequisite lab. This lab is always first.",
+   "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
    },
    {
    "title": "Lab 1: Prepare Setup",
@@ -19,23 +19,23 @@
    "filename": "../../prepare-setup/prepare-setup.md"
    },
    {
-   "title": "Lab 2 Environment Setup",
+   "title": "Lab 2: Set up environment",
    "description": "How to provision the workshop environment and connect to it",
    "publisheddate": "06/30/2020",
    "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute-generic/setup-compute-novnc-ssh.md"
    },
    {
-   "title": "Lab 3: Initialize Environment",
-   "description": "Initialize Environment",
+   "title": "Lab 3: Initialize environment",
+   "description": "Initialize environment.",
    "filename": "../../initialize-environment-novnc/initialize-environment-novnc.md"
    },
     {
-      "title": "Lab 4: OML4SQL - Use Case",
+      "title": "Lab 4: Understand customer insurance use case",
       "description": "Understanding the use case for this lab.",
       "filename": "./../../oml4sql-use-case/oml4sql-use-case.md"
     },
     {
-      "title": "Lab 5: OML4SQL - Anomaly Detection",
+      "title": "Lab 5: Detect anomalies with OML4SQL using one-class support vector machine (SVM)",
       "description": "Handson lab for using OML4SQL.",
       "filename": "./../../oml4sql-anomaly-detection/oml4sql-anomaly-detection.md"
     },

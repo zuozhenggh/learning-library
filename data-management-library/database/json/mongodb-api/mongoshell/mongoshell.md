@@ -1,10 +1,14 @@
-# Working with JSON collections using the SODA (Simple Oracle Document Access) API
+# Using Mongo Shell with Autonomous Database
 
 ## Introduction
 
 In this lab, we are going to connect to the Autonomous Database we provisioned in Lab 2, from the MongoDB shell tool that we installed into our Compute node in Lab 1.
 
-Estimated Time: 20 minutes
+Watch this video for an overview of how to connect the MongoDB shell tool to the Autonomous Database.
+
+[This video shows an overview of the steps in this lab.](youtube:zsGEVvtA4us)
+
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -48,17 +52,15 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
     ```
     <copy>
-    ssh -i ssh-key-2022-03-14.key opc@11.22.33.44
+    ssh -i ssh-key-YYYY-MM-DD.key opc@11.22.33.44
     </copy>
     ```
 
-## Task 3: Edit the connection URL and use it to connect MongoDB shell to Autonomous Database
+## Task 3: Edit the connection URL
 
-**NOTE** Maybe this could be two tasks - the title is too long as it is!
+1. Find the URL you saved earlier and edit it in a text editor
 
-1. Find the URLs you saved earlier and edit them in a text editor
-
-	* Change the [user:password@] to admin:YourPassword at the start of the URL. Substitute the password you chose earlier for the YourPassword.
+	* Change the [user:password@] to admin:YourPassword@ at the start of the URL. Substitute the password you chose earlier for the YourPassword.
 	* Change the [user] string in the middle to admin
 
    	For example, let's say your password is "Password123", and your original connection string is mongodb://[user:password@]MACHINE-JSONDB.oraclecloudapps.com:27017/[user]?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
@@ -75,14 +77,20 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
 	**IMPORTANT NOTE:** if your password contains any special characters in the set / : ? # [ ] @, you will need to escape them as follows:
 
-	* /	  %25
-	* :	  %3A
-	* #	  %23
-	* [	  %5B
-	* ]   %5D
-	* @	%40
+	| Character | Escape Sequence |
+	| :---:     | :---: |
+	| /	 | %25 |
+	| :	 | %3A |
+	| #	 | %23 |
+	| [	 | %5B |
+	| ]  | %5D |
+	| @	 | %40 |
 
-2. In the ssh shell prompt, enter "mongosh" followed by a space followed the first edited URL (the one with 27017 in it) in single-quotes.
+	So if your password was **P@ssword#123** you would encode it as **P%40ssword%23123**.
+
+## Task 4: Connect MongoDB shell to Autonomous Database
+
+1. In the ssh shell prompt, enter "mongosh" followed by a space followed the edited URL from the previous task in **single-quotes**.
 
 	![](./images/mongosh-login.png)
 
@@ -92,8 +100,9 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 	* Is your password correct, with any special characters quoted as above?
 	* Did you leave any [ square brackets ] in the URL where they should have been removed?
 	* Do you have the : sign between the user and password, and the @ sign after the password? 
+	* Is the whole command on a single line with no line breaks?
 
-## Task 4: Create a collection
+## Task 5: Create, populate and search a collection
 
 You should now be in Mongo Shell. This is a command-line utility to interact with MongoDB databases (and, by extension, any other database which implements the MongoDB API). Other tools are available such as the graphical Compass tool, but we will stick with the command line to avoid complexities of installing a GUI-based tool.
 
@@ -106,12 +115,13 @@ You should now be in Mongo Shell. This is a command-line utility to interact wit
 	db.createCollection('emp')
     </copy>
 	```
+    ![](./images/create-collection.png)
 
 	That will have created a new document collection called "emp". If you wish, you can type "show collections" to confirm it has been created.
 
 2.	Add some employee documents to the collection.
 
-	Copy the following into mongosh:
+	Copy the following into mongosh, pressing the enter key after each:
 
 	```
 	<copy>
@@ -121,12 +131,91 @@ You should now be in Mongo Shell. This is a command-line utility to interact wit
 	</copy>
 	```
 
-**Note** the LiveLab basically follows my Blog from this point on: (https://blogs.oracle.com/database/post/mongodb-api)[https://blogs.oracle.com/database/post/mongodb-api].  The next lab should be Database Actions where we view the data we have created in JSON, and then SQL.
+	That created a single employee record documemt. Now we'll create another two. Notice that the second one has an email address, which the first doesn't. With JSON we can change the schema at will.
 
-After that, we can consider adding a more advanced section where we load some significant amount of data using mongoimport, and do some more advanced queries, including graphs.
+	```
+	<copy>
+	db.emp.insertOne(
+		{ "name":"Smith", "job": "Programmer", "salary": 60000, "email" : "smith@example.com" }
+	)
+	</copy>
+	```
+
+	```
+	<copy>
+	db.emp.insertOne(
+		{ "name":"Miller", "job": "Programmer", "salary": 70000 }
+	)	
+	</copy>
+	```
+3.	Do some searches against the data we just inserted
+
+	Queries in MongoDB (and most JSON databases) use '**Query By Example**' or **QBE**. For a simple QBE, you provide a JSON document fragment, and the system returns all documents that contain that fragment. For example:
+
+	```
+	<copy>
+ 	db.emp.find({"name":"Miller"})
+	</copy>
+	```
+
+	will return all documents which have a name field of "Miller". Try it now.
+
+	Note: MongoDB Shell allows a "relaxed" JSON syntax where the key name strings don't need to be quoted. So you could use **{name:"Miller"}** 
+	instead of **{"name":"Miller"}**. We will use that syntax in some of the following examples.
+
+	A more advanced QBE will use special match operators. For example, **$gt** means "greater than". So:
+
+	```
+	<copy>
+	db.emp.find({"salary":{"$gt":50000}}) 
+	<copy>
+	```
+
+	will find all documents where the salary field is numeric, and contains a value greater than 50,000.
+
+    ![QBE to find salary greater than 50000](./images/find-salary.png)
+
+4.	Projection
+
+	In the QBEs used so far, the database has returned the entire document involved. Not a problem here where the documents are short, but we may only want specific parts of the documents. Doing that is called "projection" and is similar to a SELECT clause in a SQL statement. Let's say we want just the name and salary info for our programmers. To get that we specify a second argument to the **find** command, which is a JSON document specifying the parts of the document to return:
+
+	```
+	<copy>
+	db.emp.find({ job:"Programmer" }, { name:1, salary:1 })
+	<copy>
+	```
+
+	![](./images/projection.png " ")
+
+5.	Updates
+
+	We can use the updateOne or updateMany commands to make changes to one, or a number, of documents. They both take a first argument which is a QBE specifying which documents to update, and a second argument which is the changes to be made to the document. For example the following will add an email address to our "Miller" employer.
+
+	```
+	<copy>
+	db.emp.updateOne({name:"Miller"}, {$set: {email:"miller@example.com"}})
+	<copy>
+	```
+	
+	When you've run that, you should see confirmation that one record has been found, and one modified. You can check the modification has worked with:
+
+	```
+	<copy>
+	db.emp.find({name:"Miller"})
+	<copy>
+	```
+	
+	![](./images/qbe-update.png " ")
+
+That's all we're going to cover in MongoDB Shell, but there are some important points to remember:
+
+* This will work just as well with GUI tools such as Atlas, or from your own programs using MongoDB libraries
+* All the data is held in Oracle Autonomous Database, and can be accessed from any SQL-based programs just as easily as from MongoDB programs.
+
+In the next lab we'll cover Autonomous Database tools, including JSON Workshop and SQL.
 
 ## Acknowledgements
 
-- **Author** - Beda Hammerschmidt, Architect
-- **Contributors** - Anoosha Pilli, Product Manager, Oracle Database
-- **Last Updated By/Date** - Anoosha Pilli, Brianna Ambler, June 2021
+- **Author** - Roger Ford, Principal Product Manager
+- **Contributors** - Kamryn Vinson, Andres Quintana
+- **Last Updated By/Date** - Roger Ford, March 2022

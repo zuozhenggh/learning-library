@@ -1,17 +1,17 @@
 {
-    "workshoptitle": "LiveLabs Sprints",
-    "help": "livelabs-help-db_us@oracle.com",
-    "tutorials": [
-        {
-            "title": "How do I get table compression ratio?",
-            "description": "",
-            "filename": "sprint-dbms-compression.md"
-        },
-        {
-            "title": "How do I connect to the instance via SSH?",
-            "description": "",
-            "filename": "../sprint-connect-to-instance-via-ssh/instance-ssh.md"
-        }
-
-    ]
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-db_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "How do I see the current table compression ratio?",
+         "description": "",
+         "filename": "sprint-dbms-compression.md"
+      },
+      {
+         "title": "How do I enable OLTP table compression?",
+         "description": "",
+         "filename": "../sprint-oltp-compression/sprint-oltp-compression.md"
+      }
+   ],
+   "task_type": "Sections"
 }

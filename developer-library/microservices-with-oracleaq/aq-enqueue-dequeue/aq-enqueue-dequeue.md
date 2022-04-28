@@ -87,7 +87,36 @@ This lab will give an understanding of Advanced Queues creation using different 
 
     You can view the source code for this lab [here.](https://github.com/oracle/microservices-datadriven/tree/main/workshops/oracleAQ/aqJava/src/main/java/com/examples/enqueueDequeueAQ/EnqueueDequeueAQ.java)
 
-## Task 5: Drop queues
+## Task 5: Create AQ, Enqueue and Dequeue using Python
+
+1. Create AQ using PLSQL
+
+      - Execute the following sequence of commands into cloud shell:
+
+        ```bash
+        <copy>cd $ORACLEAQ_HOME; source createAQPython.sh;
+        </copy>
+        ```
+
+2. Enqueue, Dequeue AQ for Payload ADT, RAW and JMS using Python
+
+      - Execute the following sequence of commands into cloud shell:
+
+        ```bash
+        <copy>cd $ORACLEAQ_HOME; pyhton3 PythonAQ.py;
+        </copy>
+        ```
+
+3. Clean up for Python AQ
+
+      - Execute the following sequence of commands into cloud shell:
+
+        ```bash
+        <copy>cd $ORACLEAQ_HOME; source cleanupAQPython.sh;
+        </copy>
+        ```
+
+## Task 6: Drop queues
 
 1. Below are the code samples to cleanup AQ
 
@@ -111,5 +140,5 @@ You may now **proceed to the next lab.**
 ## Acknowledgements
 
 - **Author** - Mayank Tayal, Developer Advocate
-
+- **Contributors** - Sanjay Goil, VP Microservices and Oracle Database; Paul Parkinson, Developer Evangelist; Paulo Simoes, Developer Evangelist; Richard Exley, Maximum Availability Architecture; Shivani Karnewar, Senior Member Technical Staff
 - **Last Updated By/Date** - Mayank Tayal, February 2022

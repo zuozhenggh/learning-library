@@ -19,7 +19,7 @@ Estimated Time:  5 minutes
 ## Task 1: Modify metrics exporter config
 
 1.    Modify and save  
-   `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml`
+   `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-orderpdb-exporter-metrics.toml`
    and/or 
    `$GRABDISH_HOME/observability/db-metrics-exporter/db-metrics-inventorypdb-exporter-metrics.toml and run the following command.`
    
@@ -62,6 +62,10 @@ Estimated Time:  5 minutes
 The observability-exporter image corresponding to the repos at https://github.com/oracle/oracle-db-appdev-monitoring  will soon be available as will more advanced customization of the DB log exporter, etc.
 
 You may now **proceed to the next lab.**.
+
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
