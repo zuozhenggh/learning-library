@@ -12,7 +12,7 @@ Estimated Time: 50 minutes
 
 
 
-![application](images/application.png "application")
+![application](images/application-1.png "application")
 
 ### About Product/Technology
 
