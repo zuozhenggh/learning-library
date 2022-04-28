@@ -4,11 +4,11 @@
 
 This lab walks you through the steps to get started using the Oracle Autonomous JSON Database [AJD] on Oracle Cloud. In this lab, you will provision a new AJD instance and connect to the Autonomous Database using JSON.
 
+Watch this video for an overview of how to provision an Oracle Autonomous JSON Database.
+
+[This video shows an overview of the steps in this lab.](youtube:Hgyg5VJEfk0)
+
 Estimated Time: 10 minutes
-
-Watch the video below for a quick walk through of the lab.
-
-[](youtube:ICHM8bDast0)
 
 ### Objectives
 
@@ -150,10 +150,6 @@ In this lab, you will:
     ![](./images/add-access-rule.png " ")
 
     ![](./images/network-add-ip.png " ")
-    You can then click "Add My IP Address" to allow access from your current IP address. You should avoid any VPN or proxy server access which may mask or change your actual IP address. If you have any issues with this, you can add a __CIDR Block__ (under __IP notation type__) of __0.0.0.0/0__, which will allow access from any IP address.
-
-
-    ![](./images/network-access.png " ")
 
 9. Choose a license type:
 
@@ -182,13 +178,13 @@ In this lab, you will:
 
     ![](./images/service-console-dev.png)
 
-3. Scroll down to the bottom of the Development page, and you should see a card titled Oracle Database API for MongoDB (if you don't, it's possible you didn't set up secure access to your database). There are two URLs listed, copy them both and save them in an editor somewhere for later use.
+3. Scroll down to the bottom of the Development page, and you should see a card titled Oracle Database API for MongoDB (if you don't, it's possible you didn't set up secure access to your database). There are two URLs listed, copy the first one and save it in a text file somewhere for later use.
 
     ![](./images/mongo-urls.png)
 
 Again, make sure you have saved these URLs for the next lab.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Learn More
 
@@ -197,4 +193,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager, Oracle Database
+- **Contributors** - Kamryn Vinson, Andres Quintana
 - **Last Updated By/Date** - Roger Ford, March 2022

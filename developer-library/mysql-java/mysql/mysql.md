@@ -4,7 +4,7 @@
 
 In this lab, we will create the MySQL database service.
 
-Estimated Lab Time: 20 - minutes
+Estimated Time: 20 minutes
 
 ### About MySQL 
 The MySQL Database Service (MDS) is a database service that is 100% developed, managed, and supported by the MySQL team. 
@@ -17,7 +17,7 @@ MySQL Database Service is a fully managed service, running on Oracle Cloud Infra
 * Create the table
 
 ## Task 1: Clone the GIT repository
-Open the Oracle Cloud Console and clone this repository:
+Open the Oracle Cloud Shell and clone this repository:
 
 ```
 <copy>git clone https://github.com/mgueury/oke_mysql_java_101.git</copy>
@@ -28,9 +28,9 @@ Open the Oracle Cloud Console and clone this repository:
 * Option 2: Install MySQL inside the Kubernetes cluster
 * Or both !
 
-## Option 1: Install MySQL Database Service
+## Option 1 - Part 1: Install MySQL Database Service
 
-We will install MySQL Database service:
+To install the MySQL Database service, follow these steps:
 
 1. In the Oracle Cloud Menu, go to Database / MySQL. Click "Create MySQL Database System"
 
@@ -45,82 +45,85 @@ We will install MySQL Database service:
 
 	![MySQL Create](images/mysql-create.png)
 
-3. Click Create. 
+3. Click Create.
+
 4. When the database is installed. Please note the Private IP Address (##4##). The MySQL port will be 3306.
 
 	![MySQL IP](images/mysql-ip.png)
 
 ## Option 1 - Part 2: Create a bastion to create a SSH Tunnel to our MySQL DB System
 
-A longer explanation is available here:[https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
-
+Let's install a Bastion. A longer explanation is available here: [https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service](https://blogs.oracle.com/mysql/post/using-oci-cloud-shell-bastion-with-mysql-database-service)
 
 1. The Bastion Service’s dashboard is located in Identity & Security
 
-  - Menu / Identity & Security
-  - Click Bastion
-  - Choose the VCN where MySQL is installed (##2##)
-  - Choose the Subnet where MySQL is installed (##3##)
-  - Use 0.0.0.0/0 for the CIDR allow block (See the blog above for more secure solution)
+      - Menu / Identity & Security
+      - Click Bastion
+      - Choose the VCN where MySQL is installed (##2##)
+      - Choose the Subnet where MySQL is installed (##3##)
+      - Use 0.0.0.0/0 for the CIDR allow block (See the blog above for more secure solution)
 
-  ![Image alt text](images/bastion-create.png)
+	![Image alt text](images/bastion-create.png)
 
-2 Create a SSL Certificate
+2. Create a SSL Certificate
 
-  - Back the Cloud shell
-  - Create a SSH Certificate
+      - Back the Cloud shell
+      - Create a SSH Certificate
 
-```
-ssh-keygen -t rsa
-(Press Enter a lot of times)
-cat $HOME/.ssh/id_rsa.pub
-```
-```
-ssh-rsa abcdefghijklAADAQABAAABAQDF9jXWObkl6n482Gxxxxxxxxxxxxxx marc_gueur@06671dff81b6
-```
+	```
+	ssh-keygen -t rsa
+	(Press Enter a lot of times)
+	cat $HOME/.ssh/id_rsa.pub
+	```
 
-Copy the key (##5##)
+	```
+	ssh-rsa abcdefghijklAADAQABAAABAQDF9jXWObkl6n482Gxxxxxxxxxxxxxx marc_gueur@06671dff81b6
+	```
+
+      - Copy the key (##5##)
 
 3. Create a Bastion Session
 
-  - Back in the Bastion screen
-  - Click Create session
-  - Enter
-    - Session Type: SSH Port forwarding session
-    - IP Address: 10.0.10.2 (your value from ##4##)
-    - Port: 3306
-    - Paste SSH Key (##5##)
+      - Back in the Bastion screen
+      - Click Create session
+      - Enter
+       - Session Type: SSH Port forwarding session
+       - IP Address: 10.0.10.2 (your value from ##4##)
+       - Port: 3306
+       - Paste SSH Key (##5##)
 
 	![Image alt text](images/bastion-create-session.png)
 
-- Click on the 3 dots ... next to the session
-- Copy SSH commands. It will look like this:
+      - Click on the 3 dots ... next to the session
+      - Copy SSH commands. It will look like this:
 
-```
-ssh -i &lt;privateKey&gt; -N -L &lt;localPort&gt;:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com
-```
+	```
+	ssh -i <privateKey> -N -L <localPort>:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com
+	```
+
 4. Try to connect through the bastion 
 
-- Back to the Cloud console
-- Modify the command
-    - Remove the  -i <privateKey>, since it is the default key
-    - Replace &lt;localPort&gt; with 3306
-    - Add the flag -4
-    - Add & at the end of the command to run in background
+      - Back to the Cloud Shell
+      - Modify the command
+          - Remove the  -i <privateKey>, since it is the default key
+          - Replace &lt;localPort&gt; with 3306
+          - Add the flag -4
+          - Add & at the end of the command to run in background
 
-- Example
-```
-<copy>ssh -4 -N -L 3306:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com &
-</copy>
-````
+	Example
+     
+	```
+	<copy>ssh -4 -N -L 3306:10.0.10.2:3306 -p 22 ocid1.bastionsession.oc1.eu-frankfurt-1.abcdefgxxcujoii55b7kq@host.bastion.eu-frankfurt-1.oci.oraclecloud.com &
+	</copy>
+	````
 
-- Connect to the database
+	Connect to the database
 
-```
-<copy>mysqlsh root@127.0.0.1:3306 --password=Welcome1! --sql
-\exit
-</copy>
-```
+	```
+	<copy>mysqlsh root@127.0.0.1:3306 --password=Welcome1! --sql
+	\exit
+	</copy>
+	```
 
 Note the command to connect to the database (##1##)
 
@@ -137,7 +140,7 @@ kubectl create -f setup/oke_mysql.yaml
 </copy>
 ```
 
-To allow the connection to the MySQL database from your console you need
+To allow the connection to the MySQL database from your Oracle Cloud Shell, you need
 to run the following MySQL commands:
 
 ```
@@ -149,9 +152,9 @@ exit
 exit
 </copy>
 ```
-This will connect to MySQL in the container. And create a user that may log in from the console.
+This will connect to MySQL in the container. And create a user that may log in from the shell.
 
-Then forward the MySQL port to your console and check if it works:
+Then forward the MySQL port to your Oracle Cloud Shell and check if it works:
 
 ```
 <copy>kubectl port-forward deployment/mysql 3306 &
