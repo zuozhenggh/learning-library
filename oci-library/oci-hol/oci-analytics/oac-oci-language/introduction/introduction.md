@@ -30,9 +30,6 @@ This lab assumes you have:
 * Familiarity with Oracle Cloud Infrastructure (OCI)
 * Some understanding of cloud, database and visualization fundamentals
 
-## **Task 1**: Verify the Prerequisites
-
-In this lab you will familiarize yourself with the workshop prerequisites.
 
 ## Learn More
 
