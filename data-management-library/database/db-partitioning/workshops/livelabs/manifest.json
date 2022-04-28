@@ -15,7 +15,8 @@
         {
           "title": "Lab 1: Connect to you Autonomous Database",
           "description": "Connect to you Autonomous Database",
-          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md"
+          "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/sqldevweb-login/sqldevweb-login.md",
+          "type" : "livelabs"
         },
         {
             "title": "Lab 2: Range Partitioning",
