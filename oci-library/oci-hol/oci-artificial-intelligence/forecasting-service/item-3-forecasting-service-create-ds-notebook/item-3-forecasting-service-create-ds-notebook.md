@@ -75,10 +75,10 @@ In this lab, you will:
     
     ![](images/lab1-task3-step6-open.png " ")
 
-7.  A New Notebook can be created by using Python 3 kernel. Also a new folder can be created and given a custom name by using the + button:
+7.  A new notebook can be created by using Python 3 kernel. Also a new folder can be created and given a custom name by using the + button:
     ![](images/lab1-task3-step7-python3.png " ")
 
-8.  Setting Up Authorization for to use forecasting APIs
+8.  Setting up authorization for to use forecasting APIs
 Use the tenancy, user and fingerprint from the configuration file as shown in API key generation step. Also upload the private API key that you downloaded in the API key generation step and give its path to private_key_file. Don’t change the pass_phrase. 
 
     ```Python

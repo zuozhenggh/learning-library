@@ -26,15 +26,15 @@ For a successful forecast, the input data should pass the following data validat
 * Number of rows for a time series >= 5 and <= 5000
 * Series length >= 2 X Major Seasonality
 * If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
-* If ensemble method is selected, at least 2 other methods need to be selected as well.
+* If ensemble method is selected, at least 2 other methods need to be selected as well
 * Number of missing values <= 10% of series length
-* If there are missing values for 5 consecutive time steps, throw an error.
-* All the timestamps in the primary data source should exist in the secondary data source also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
-* Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data).
+* If there are missing values for 5 consecutive time steps, throw an error
+* All the timestamps in the primary data source should exist in the secondary data source, also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency)
+* Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data)
 * All values have to be >= 0
 
 ### **Data format requirements**
-The data should contain one timestamp column and other columns for target variable and series id (if using grouped data).
+The data should contain one timestamp column and other columns for target variable and series id (if using grouped data)
 - timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format e.g., 2020-07-13T00:00:00Z. If the input date doesn't follow this format then it needs to be converted in the required format. Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab.
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
@@ -55,7 +55,7 @@ Currently, our APIs support datasets that can be in one of the following formats
     ...
     ...
     ```
-2.  Multiple time series without any additional data:** 
+2.  Multiple time series without any additional data:
     The input data can have multiple time series in it(grouped data). For such datasets there must be a column to identify different time-series.
 
     **Here is a sample CSV-formatted data:**
@@ -77,7 +77,7 @@ Currently, our APIs support datasets that can be in one of the following formats
     ....
     ....
     ``` 
-3.  Time series with additional data:** 
+3.  Time series with additional data:
     The input data can have additional influencers that help in forecasting. We call the two datasets as primary and additional. The primary data should have three columns - timestamp, target column and a column for series id. The additional data should have a timestamp column, a series id column and columns for additional influencers.   
 
     **Here is a sample CSV-formatted data:**

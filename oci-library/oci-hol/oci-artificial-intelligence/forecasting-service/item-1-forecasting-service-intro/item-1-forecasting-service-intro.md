@@ -12,7 +12,7 @@ The *OCI Forecasting Service* is a fully managed, serverless and multi-tenant se
 
 This workshop contains four lab sessions for users to get familiar with data requirements and the full cycle of building the forecasting model and generate forecasts. At the end of the workshop, users will be able to understand how the data should be prepared and leverage the APIs for model training and getting forecast along with explainability. 
 
-*Estimated Workshop Time*: 90 minutes (4 lab sessions)
+*Estimated Workshop Time*: 120 minutes (5 lab sessions)
 
 ### Objectives:
 
@@ -33,6 +33,7 @@ This workshop contains four lab sessions for users to get familiar with data req
 
 ## Forecasting Service Concepts
 * Data Science Notebook Session: Learn how to to set up a [Data Science Notebook Session](https://docs.oracle.com/en-us/iaas/data-science/using/use-notebook-sessions.htm)
+* Using OCI Forecasting Service Console 
 * Project: Projects are collaborative workspaces for organizing data assets, models, and forecasting portals.
 * Data Assets: An abstracted data format to contain primary, additional and meta information of the actual data source for model training; it supports only *inline data generated from csv files* as data sources
 * Model: The ML model that was trained by forecasting algorithms and can forecast using univariate/multivariate time-series data along with meta data. A few parameters with default values are exposed so that user can choose to select.
@@ -46,7 +47,8 @@ At a high level, here are the process of completing a full cycle of using foreca
 2. Create a project. A project is used to include and organize different assets, models and private endpoints for data connection in the same workspace.
 3. Create a data asset. Data asset is an abstracted data representation for a data source.Currently it supports inline data generated from  csv files uploaded in the notebook session folder. 
 4. Train a model. After specifying a data asset and the training parameters, you can train a forecasting  model.It will take 5-10 minutes or longer depending on the data size and number of models to be trained as parameter. Once a model is trained successfully, it is deployed automatically with an endpoint ready to generate forecast.
-5. Forecasting with new data. Users can send new data with same attributes of the training data to the deployment endpoint to get forecast results.
+5. Forecasting with new data. Users can send new data with same attributes of the training data to the deployment endpoint to get forecast results
+6. Using OCI forecasting service using OCI console
 
 Note that one project can have multiple data assets and multiple models.
 
@@ -58,6 +60,6 @@ You may now proceed to the next lab
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, 19th-January 2022
+    * Last Updated By/Date: Ravijeet Kumar, 29th-April 2022
 
 
