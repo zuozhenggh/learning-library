@@ -2,17 +2,18 @@
 
 ## About this Workshop
 
-This workshop covers the basics needed to create and provision a Siebel Environment using OCI.
+This workshop covers the basics needed to create and provision a PeopleSoft Environment using OCI.
 
-After completing this workshop you should have a better understanding of OCI as well as the ability to create and access a Siebel environment that you created as well as view all of the components that were created during the lab to make that possible. After the completion of the lab you will teardown, or destroy, all created components.
+After completing this workshop you should have a better understanding of OCI, the ability to create and access a PeopleSoft environment that you created as well as view all of the components that were created during the lab to make that possible. After the completion of the lab you will teardown, or destroy, all created components.
 
-Estimated Lab Time: 1 hour and 45 minutes
+Estimated Lab Time: 2 hours
 
 Notes:
 
 * The workshop is quite detailed and technical. PLEASE take your time and DO NOT skip any steps.
 * IP addresses and URLs in the screenshots in this workbook may differ from what you use in the labs as these are dynamically generated.
 * For security purposes, some sensitive text (such as IP addresses) may be redacted in the screenshots in this workbook.
+* The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes of Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
 
 UNIX commands (usually executed in an SSH session using PuTTY) are displayed in a monospace font within a box, as follows:
 
@@ -20,34 +21,16 @@ UNIX commands (usually executed in an SSH session using PuTTY) are displayed in 
 $ sudo yum install wget -y $ wget -O bitnami-mean-linux-installer.run https://bitnami.com/stack/mean/download_latest/linux-x64
 ```
 
-### Workshop Overview
-
-This workshop uses the following components:
-
-* Trial accounts (one per attendee)
-
-  - Virtual Cloud Network and related resources
-    - User-generated using Resource Manager and provided Terraform script
-
-  - Oracle Siebel instance
-    - User-provisioned using Oracle Marketplace image
-
-  - Siebel Application
-    - User deployed through Jenkins
-
-  - Siebel CRM Application
-
 
 ### Objectives
 
 In this lab, you will:
 * Create a Sub-Compartment
 * Create Virtual Cloud Network (VCN)
-* Provison a Siebel Marketplace image
-* Establish Security List Rules for Siebel Instance
-* Use Jenkins to deploy an instance of Siebel
-* Access Siebel CRM application
-* TErminate and teardown all of the resources that you have created
+* Provison a PeopleSoft Marketplace image
+* Establish Security List Rules for PeopleSoft Instance
+* Access PeopleSoft application
+* Terminate and teardown all of the resources that you have created
 
 ### Prerequisites
 
@@ -57,11 +40,16 @@ You will need the following in order to complete this workshop:
 * A secure remote login (Secure Shell, or SSH) utility
         - Such as PuTTY - downloaded from [here](https://www.ssh.com/ssh/putty/download)
 * Knowledge of basic UNIX commands and the ability to copy and use them
+* You must have subscribed to resources in OCI to install and run PeopleSoft.
+* Access to OCI Marketplace to deploy PeopleSoft
+* Minimum Shape: VMStandard2.1 (1 OCPUs and 15 GB memory).
+* Boot Volume Storage of 300 GB.
 
 ## Appendix
-### Terminology
 
-The following terms are commonly employed in Oracle E-Business Suite cloud operations and used throughout our documentation:
+*Terminology*
+
+The following terms are commonly employed in Peoplesoft cloud operations and used throughout our documentation:
 
 **Availability Domain** – One or more data centers located within a region.
 
@@ -69,30 +57,21 @@ The following terms are commonly employed in Oracle E-Business Suite cloud opera
 
 **Compartments** – Allows you to organize and control access to your cloud resources. A compartment is a collection of related resources (such as instances, virtual cloud networks, block volumes) that can be accessed only by certain groups.
 
-**Oracle E-Business Suite Cloud Backup Module** – The Oracle E-Business Suite Cloud Backup Module is a stand-alone tool that interviews the user to establish settings, and then uses those settings to back up an Oracle E-Business Suite environment to Oracle Cloud Infrastructure Object Storage.
-
-**Oracle E-Business Suite Cloud Manager** - Oracle E-Business Suite Cloud Manager is a graphical user interface used for creating, managing, and configuring Oracle E-Business Suite environments on Oracle Cloud Infrastructure. Oracle E-Business Suite Cloud Manager can be used with the Oracle E-Business Suite Cloud Backup Module to lift and shift or clone environments from on-premises to Oracle Cloud Infrastructure.
-
-**EBS Cloud Manager infrastructure** – Virtual network resources, compute resources, and policies required to run EBS Cloud Manager on Oracle Cloud Infrastructure.
-
-**EBS Sandbox Virtual Cloud Network (VCN)** – Networking and compute resources required to run EBS on Oracle Cloud Infrastructure. The EBS Sandbox VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle E-Business Suite on OCI.
-
-**Oracle Cloud Infrastructure Load Balancing Service** - The Oracle Cloud Infrastructure Load Balancing service provides automated traffic distribution from one entry point to multiple servers reachable from your virtual cloud network (VCN). The service offers a load balancer with your choice of a public or private IP address, and provisioned bandwidth.
+**Virtual Cloud Network (VCN)** – Networking and compute resources required to run PSFT on Oracle Cloud Infrastructure. The PSFT VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle Peoplesoft on OCI.
 
 **Oracle Cloud Infrastructure (OCI)** – Combines the elasticity and utility of public cloud with the granular control, security, and predictability of on-premises infrastructure to deliver high-performance, high availability, and cost-effective infrastructure services.
 
 **Region** – Oracle Cloud Infrastructure are hosted in regions, which are located in different metropolitan areas. Regions are completely independent of other regions and can be separated by vast distances – across countries or even continents. Generally, you would deploy an application in the region where it is most heavily used, since using nearby resources is faster than using distant resources.
 
+**Subnet, Private** - Instances created in private subnets do not have direct access to the Internet. In this lab, we will be provisioning the Cloud Manager stack in Resource Manager, and creating private subnets. We will then choose to create a "jump host", or bastion host, as part of the installation. The IP for a private subnet cannot be accessed directly from the Internet. To access our CM instance in a private subnet, we will set up a jump host to enable SSH tunneling and Socket Secure (SOCKS) proxy connection to the Cloud Manager web server (PIA). The jump host is created using an Oracle Linux platform image, and will be created inside the VCN.
+
+**Subnet, Public** - Instances that you create in a public subnet have public IP addresses, and can be accessed from the Internet.
+
 **Tenancy** – When you sign up for Oracle Cloud Infrastructure, Oracle creates a tenancy for your company, which is a secure and isolated partition within Oracle Cloud Infrastructure where you can create, organize, and administer your cloud resources.
 
-**Virtual Cloud Network (VCN)** – A virtual version of a traditional network – including subnets, route tables, and gateways – on which your instances run. A cloud network resides within a single region, but can cross multiple availability domains.
 
 ## Acknowledgements
-* **Authors**
-  - JB Anderson, Cloud Engineering
-  - Chris Wegenek, Cloud Engineering
-  - Naresh Sanodariya, Cloud Engineering
-* **Contributors** -  Arunkumar Ravichandran, Cloud Engineering
-* **Last Updated By/Date** - JB Anderson, Cloud Engineering, Dec 2020
-
+* **Authors** - Deepak Kumar M, Principal Cloud Architect
+* **Contributors** - Deepak Kumar M, Principal Cloud Architect
+* **Last Updated By/Date** - Deepak Kumar M, Principal Cloud Architect, April 2022
 
