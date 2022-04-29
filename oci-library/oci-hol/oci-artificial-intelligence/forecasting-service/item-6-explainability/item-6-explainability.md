@@ -181,7 +181,9 @@ In this lab, you will:
 
     Similarly, by changing the time step, you can get the local feature importance for that corresponding forecast.
 
-Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.
+**Congratulations on completing this lab!**
+
+You may now proceed to the next lab
 
 
 ## Acknowledgements

@@ -339,7 +339,7 @@ Project is a way to organize multiple data assets, models, deployments to the sa
     ![](images/lab5-forecast-local.png " ")
 
 
-Congratulations on completing this lab!
+Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.
 
 You may now proceed to the next lab
 
