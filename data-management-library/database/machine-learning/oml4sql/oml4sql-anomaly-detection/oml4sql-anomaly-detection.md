@@ -1,4 +1,4 @@
-# OML4SQL using One-Class Support Vector Machine (SVM) for Anomaly Detection
+# Detect anomalies with OML4SQL using one-class support vector machine (SVM)
 
 ## Introduction
 
@@ -39,9 +39,6 @@ In this lab, you will:
 * Access the Oracle database containing the customer insurance table and run the scripts to configure the user and prepare data. The virtual machine used for this lab is the same VM that was used in the OML4PY Workshop of the previous lab.
 * SSH private key with which you created your VM on OCI.
 
->**Note:** If you have a Free Trial account, when your Free Trial expires your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available. **[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
-
 
 ## Task 1: Business Understanding
 
@@ -70,22 +67,20 @@ To see the service name, open other Linux Terminal and execute lsnrctl status co
 
   ![view-SSH-Hosts](../oml4sql-anomaly-detection/images/view-ssh.png)
 
-3. Right clic on SSH Hots and then do clic in New SSH Host, write values in each field and then clic Ok. The public and private IP can be obtained from OCI, entering Compute/Instances and you will be able to see and copy this data.
+3. Right click on SSH Hosts and then click New SSH Host, write values in each field and then click Ok. The public and private IP can be obtained from OCI, entering Compute/Instances and you will be able to see and copy this data.
 
   ![ssh-remote-host](../oml4sql-anomaly-detection/images/ssh-remote-host.png)
 
-4. Right clic on the first oml4sql tab in SSH Hosts an clic connect, and then right clic in the submenu oml4sql tab an clic connect.
-Notice how the small padlock closes in both options, which represents that you are already remotely connected to your VM and you are ready to create a connection to your
-
-5. schema from SQL Developer.
+4. Right click on the first oml4sql tab in SSH Hosts an click connect, and then right click in the submenu oml4sql tab an click connect.
+Notice how the small padlock closes in both options, which represents that you are already remotely connected to your VM and you are ready to create a connection to your schema from SQL Developer.
 
   ![conection-ssh](../oml4sql-anomaly-detection/images/conection-ssh.png)
 
-6. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_** and service name: mlpdb1.livelabs.oraclevcn.com
+5. Create SQL Developer new database connection with **SYS** user to your Oracle 21c Pluggable Database, and test connectivity with password: **MLlearnPTS#21_** and service name: mlpdb1.livelabs.oraclevcn.com
 
   ![database-connection](../oml4sql-anomaly-detection/images/database-connection.png)
 
-7. Once the database connection is open and SQL Developer Worksheet is ready, execute this script to create the user oml4sqluser and grant privileges to work with OML4SQL API, and generate a copy of table CUST\_INSUR\_LTV.
+6. Once the database connection is open and SQL Developer Worksheet is ready, execute this script to create the user oml4sqluser and grant privileges to work with OML4SQL API, and generate a copy of table CUST\_INSUR\_LTV.
 
     ````
     <copy>
@@ -110,11 +105,11 @@ Notice how the small padlock closes in both options, which represents that you a
     </copy>
     ````
 
-8. Create SQL Developer new database connection with oml4sqluser user to your Oracle 21c Pluggable Database, and test connectivity with password: oml4sqluser.
+7. Create SQL Developer new database connection with oml4sqluser user to your Oracle 21c Pluggable Database, and test connectivity with password: oml4sqluser.
 
   ![oml4sql-user-connection](../oml4sql-anomaly-detection/images/oml4sql-user-connection.png)
 
-9. Copy and execute this script with oml4sqluser:
+8. Copy and execute this script with oml4sqluser:
 
     ````
     <copy>
@@ -152,23 +147,23 @@ Notice how the small padlock closes in both options, which represents that you a
     </copy>
     ````
 
-10. Check that there are no errors in the output of the script.
+9. Check that there are no errors in the output of the script.
 
-11. Review your settings table:
+10. Review your settings table:
 
     ![settings-table](../oml4sql-anomaly-detection/images/settings-table.png)
 
 
 ## Task 4: Modeling
 
-* CREATE A Model with the name: SVMO\_CUST\_Class_sample
+1. CREATE A Model with the name: SVMO\_CUST\_Class_sample
   We use One-Class Support Vector Machine, Support Vector Machine (SVM) as a one-class classifier is used for detecting anomalies. Oracle Machine Learning for SQL uses SVM as the one-class classifier for anomaly detection. When SVM is used for anomaly detection, it has the classification machine learning function but no target.
 
   One-class SVM models, when applied, produce a prediction and a probability for each case in the scoring data. If the prediction is 1, the case is considered typical. If the prediction is 0, the case is considered anomalous. This behavior reflects the fact that the model is trained with normal data.
 
   Note the NULL specification for target column name.
 
-* For more information about SVM in Oracle check this link: [Support Vector Machine](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344).
+  For more information about SVM in Oracle, check this link: [Support Vector Machine](https://docs.oracle.com/en/database/oracle/machine-learning/oml4sql/21/dmcon/support-vector-machine.html#GUID-FD5DF1FB-AAAA-4D4E-84A2-8F645F87C344).
 
     ````
     <copy>
@@ -185,7 +180,7 @@ Notice how the small padlock closes in both options, which represents that you a
     </copy>
     ````
 
-* DISPLAY MODEL SETTINGS
+2. DISPLAY MODEL SETTINGS
 
     ````
     <copy>
@@ -198,7 +193,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
     ![settings-model](../oml4sql-anomaly-detection/images/settings-model.png)
 
-* Review your model attributes. DISPLAY MODEL SIGNATURE
+3. Review your model attributes. DISPLAY MODEL SIGNATURE
 
     ````
     <copy>
@@ -211,7 +206,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
     ![model-attributesl](../oml4sql-anomaly-detection/images/model-attributes.png)
 
-* Review your model details. Model details are available only for SVM models with linear kernel.
+4. Review your model details. Model details are available only for SVM models with linear kernel.
 
     ````
     <copy>
@@ -234,7 +229,7 @@ Notice how the small padlock closes in both options, which represents that you a
 
     ![model-details](../oml4sql-anomaly-detection/images/model-details.png)
 
-* Review your model views that are generated.
+5. Review your model views that are generated.
 
     ````
     <copy>
@@ -325,7 +320,7 @@ Necessary data preparation on the input attributes is performed automatically du
     ![case-3](../oml4sql-anomaly-detection/images/case-3.png)
 
 
-BUSINESS USE CASE 4
+BUSINESS CASE 4
 
 * Identify rows that are most atypical in the input dataset.
 Consider each type of marital status to be separate, so the most anomalous rows per married status group should be returned.
@@ -361,9 +356,4 @@ With this practice, we can conclude that the SVM algorithm is very useful to sol
 
 ## Acknowledgements
 * **Authors** - Adrian Castillo Mendoza, Milton Wan, Valentin Leonard Tabacaru, Rajeev Rumale.
-* **Last Updated By/Date** -  Adrian Castillo Mendoza, February 2022.
-
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.
+* **Last Updated By/Date** -  Kamryn Vinson, April 2022.

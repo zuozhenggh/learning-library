@@ -7,6 +7,7 @@ This lab walks you through the steps to sign into Oracle Machine Learning, creat
 Estimated Time: 15 minutes
 
 ### About Oracle Machine Learning Notebooks
+
 Oracle Machine Learning Notebooks is a collaborative user interface supporting data scientists, analysts, developers, and DBAs. You can work with SQL, PL/SQL, and Python in the same notebook—using the most appropriate language for the problem at hand. You can also view notebook changes by team members in real time, interactively. Data science team members can explicitly share notebooks and version notebooks as well as schedule notebooks to run at a set time or a repeating schedule. By virtue of being included in Oracle Autonomous Database, machine learning functionality is automatically provisioned and managed. Through Oracle Machine Learning Notebooks, you have access to the in-database algorithms and analytics functions to explore and prepare data, build and evaluate models, score data, and deploy solutions.
 
 ### Objectives
@@ -23,7 +24,6 @@ In this lab, you will learn how to:
 This lab assumes you have:
 * An Oracle Machine Learning account
 * Access to Oracle Machine LearningUSER account.
-
 
 ## Task 1: Sign into Oracle Machine Learning User Interface
 
@@ -43,7 +43,6 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 	![ADW Service Console](images/service-console.png)
 
-
 4. On the Service Console page, click **Development** on the left pane.
 
 	![Development option in ADW Service Console](images/adw-development.png)
@@ -54,13 +53,13 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 6. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning home page.
 
-	>**Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
+	> **Note:** The credential is what you have defined while creating the Oracle Machine Learning user.
 
 	![Oracle Machine Learning UI Sign in page](images/oml-signin-page.png)
 </if>
 
-<if type="livelabs">
-1. On your Livelabs workshop page, click **Launch Workshop** under **My Reservations**.
+<if type="workshops">
+1. On your workshop page, click **Launch Workshop** under **My Reservations**.
 
 	![Launch Workshop](images/launch-workshop.png)
 
@@ -70,16 +69,15 @@ A notebook is a web-based interface for data analysis, data discovery, data visu
 
 3. Enter your user credentials and click **Sign in**. This opens the Oracle Machine Learning home page.
 
-	>**Note:** The username is `OMLUSER`, and password is `AAbbcc123456`.
+	> **Note:** The username is `OMLUSER`, and password is `AAbbcc123456`.
 
 	![Oracle Machine Learning UI Sign in page](images/oml-signin-page.png)
 
 </if>
 This completes the task of accessing Oracle Machine Learning.
 
-
-
 ## Task 2: Create a Notebook and define paragraphs using the md, SQL, PL/SQL, and Python interpreters
+
 To create a notebook:
 
 1. On the Oracle Machine Learning home page, click **Notebooks**. The Notebooks page opens.
@@ -91,7 +89,8 @@ To create a notebook:
 	![Notebooks option in hamburger](images/hamburger-notebooks.png)
 
 2. On the Notebooks page, click **Create**. The Create Notebook dialog opens.
-	<if type="livelabs">![Create Notebook dialog](images/create-notebook.png) </if>
+
+	<if type="workshops">![Create Notebook dialog](images/create-notebook.png) </if>
 
 	<if type="freetier"> ![Create Notebook dialog](images/create-notebook-freetier.png) </if>
 
@@ -103,10 +102,10 @@ To create a notebook:
 
 6. Click **OK**. Your notebook is created and it opens in the notebook editor.
 
-
 You can now use it to create a Markdown paragraph, SQL paragraph, and Python paragraph and do the following:
 
 ### Call the Markdown interpreter and generate static html from Markdown plain text
+
 To call the Markdown interpreter and generate static html from Markdown plain text:
 
 7. In the Test Notebook, type ``%md`` and press Enter.
@@ -121,8 +120,6 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 	Alternatively, you may copy the code and paste it in the notebook just below `%md`, and click the Run icon ![run icon](images/run.png) as shown in the screenshot:
 
-
-
 		<copy>
 		"Hello World"
 		**Hello World**
@@ -130,9 +127,7 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 		_Hello World_
 		</copy>
 
-
 	![Markdown tags for plain text and other formatting](images/run-md-text-formatting.png)
-
 
 	After running the paragraph, the output is displayed, and a new paragraph is automatically created. Also, you can manually create additional paragraphs.
 
@@ -140,12 +135,10 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 9. To display the text in a bulleted list, prefix * (asterisk) to the text `Hello World`, as shown in the screenshot below.
 
-
 		<copy>
 		* Hello World
 		* We welcome you
 		 </copy>
-
 
 	![Markdown tags for bulleted points](images/md-bullets.png)
 
@@ -163,12 +156,9 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 		### Hello World
 		 </copy>
 
-
-
 12. Now, scroll up the notebook and click the Run All icon present in the notebook toolbar, as shown in the screenshot here.  
 
 	![Run all paragraphs](images/run-all-paragraphs.png)
-
 
 13. Click **OK** in the Run All dialog to confirm.
 
@@ -176,12 +166,10 @@ To call the Markdown interpreter and generate static html from Markdown plain te
 
 	The two paragraphs run and the output is displayed in the respective paragraphs, as shown in the screenshot.
 
-
-
 	 ![Run all paragraphs](images/md-paragraph-output.png)
 
-
 ### Call the SQL Interpreter and run SQL Statements
+
 Let’s create another paragraph to call the SQL interpreter and run SQL statements:
 
 14. To create another paragraph, hover your cursor over the paragraph border. This brings up the Add Paragraph option. Click **Add Paragraph** to create a new paragraph.
@@ -203,7 +191,6 @@ Let’s create another paragraph to call the SQL interpreter and run SQL stateme
 
 	![SQL commands](images/sql-commands.png)
 
-
 ### Call the PL/SQL Interpreter and run PL/SQL Scripts
 
 Create another paragraph to call the PL/SQL interpreter and run PL/SQL scripts:
@@ -212,7 +199,6 @@ Create another paragraph to call the PL/SQL interpreter and run PL/SQL scripts:
 	![PL/SQL Paragraph](images/tag-script.png)
 
 18. Type the following command and click ![run icon](images/run.png). Alternatively, you can press Shift+Enter keys to run the paragraph.
-
 
 		<copy>
 		CREATE TABLE small_table
@@ -231,20 +217,16 @@ Create another paragraph to call the PL/SQL interpreter and run PL/SQL scripts:
 		END LOOP;
 		COMMIT;
 		END;
-
 		</copy>
-
-
 
 	![PL/SQL script](images/plsql-script.png)
 
 The PL/SQL script successfully creates the table SMALL_TABLE. The PL/SQL script in this example contains two parts:
 * The first part of the script contains the SQL statement CREATE TABLE to create a table named ``small_table``. It defines the table name, table column, data types, and size. In this example, the column names are ``NAME, ID1, ID2, ID3, ID4, and TEXT``.
-
 * The second part of the script begins with the keyword ``BEGIN``. It inserts 100 rows into the table ``small_table``
 
-
 ### Call the Python Interpreter and run Python Statements
+
 Let’s create another paragraph to call the Python interpreter and run Python statements:
 19. To call the python interpreter, edit the paragraph tag, type ``%python`` and press Enter.
 
@@ -261,7 +243,6 @@ Let’s create another paragraph to call the Python interpreter and run Python s
 	</copy>
 	```
 
-
 	The ``z.show`` command displays the SUPPLEMENTARY_DEMOGRAPHICS table present in the SH schema, as shown in the screenshot here. Use the ``z.show`` command to display Python objects, proxy object content, and to display the desired data in the notebook. You will learn more about ``z.show`` in the lab on Oracle Machine Learning for Python.
 
 	![Python script](images/python-commands.png)
@@ -269,16 +250,17 @@ Let’s create another paragraph to call the Python interpreter and run Python s
 ## Task 3: Create a Notebook using a Template Example
 
 This task demonstrates how to create notebooks based on Example templates. You will learn how to:
-
 * Create the OML4Py Classification notebook based on the OML4Py Classification DT example template. The template builds and applies the classification Decision Tree algorithm to build a classification model based on the relationships between the predictor values and the target values. The template uses the Sales History (`SH`) schema.
 * Create the Time Series notebook based on the OML4SQL Time Series ESM example template. This template forecasts sales by using the Exponential Smoothing Algorithm for Time Series Data. It also used the `Sales` table in the SH schema.
 
 ### Create an OML4Py Notebook using the Classification DT Template Example
+
 This step demonstrates how to create the OML4Py Classification notebook based on the OML4Py Classification DT (Decision Tree) Example template:
 
 1. Go to the Examples page by clicking the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu. On the left navigation menu, click **Examples**.
 
 	![Oracle Machine Learning home page](images/hamburger-gen.png)
+
 	![Oracle Machine Learning home page](images/hamburger-examples.png)
 
   Alternatively, on the Oracle Machine Learning home page, click **Examples** in the Quick Actions section to go Examples.
@@ -296,11 +278,9 @@ This step demonstrates how to create the OML4Py Classification notebook based on
 
 	![Create Classification DT notebook from example template](images/create-notebook-classification.png)
 
-
 4. Once the notebook is created, the message _Notebook "OML4PY Classification DT (1)" created in project "OMLUSER Project"_ is displayed, as shown in the screenshot. The notebook is now available in the Notebooks page.
 
 	![Create notebook message](images/notebook-created-message.png)
-
 
 5. To view the notebook that you just created, click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu. Click **Notebooks** to go to the Notebooks page.
 
@@ -308,14 +288,12 @@ This step demonstrates how to create the OML4Py Classification notebook based on
 
 	![Notebooks in left navigation menu](images/notebooks-left-nav-pane.png)
 
-
 6. The OML4PY Classification DT (1) notebook is now listed on the Notebooks page, as shown in the screenshot. Click it to open the notebook in the Notebooks editor. Note that you will run this notebook in the subsequent steps.
 
-	<if type="livelabs"> ![Notebook listed](images/notebook-listed.png) </if>
+	<if type="workshops"> ![Notebook listed](images/notebook-listed.png) </if>
 	<if type="freetier"> ![Notebook listed](images/notebooks-3.png) </if>
 
 This completes the task of creating a notebook from an Example template.
-
 
 ### Create a Time Series Notebook using the OML4SQL Time Series Template Example
 
@@ -337,27 +315,24 @@ These steps demonstrate how to create the Time Series notebook based on the Exam
 
 	![Create Time Series notebook from example template](images/create-notebook-time-series.png)
 
-
 10. Once the notebook is created, the message _Notebook "OML4SQL Time Series ESM (1)" created in project "OMLUSER Project"_ is displayed. The notebook is now available in the Notebooks page.
 
 	![Time Series notebook message](images/esm-notebook-message.png)
 
-
 11. To view the notebook, click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu. Click **Notebooks** to go to the Notebooks page.
 
 	![hamburger](images/hamburger-gen.png)
+
 	![Notebooks in left navigation menu](images/notebooks-left-nav-pane.png)
 
 
 12. The notebook **Notebook "OML4SQL Time Series ESM (1)** is now listed on the Notebooks page, as shown in the screenshot. Click on the notebook to open it in the Notebooks editor and work on it.
 
-	<if type="livelabs"> ![Notebook listed](images/notebook-list-1.png)</if>
+	<if type="workshops"> ![Notebook listed](images/notebook-list-1.png)</if>
+
 	<if type="freetier">![Notebook listed](images/notebooks-4.png) </if>
 
 This completes the task of creating the Time Series notebook from the OML4SQL Time Series ESM Example template.
-
-
-
 
 ## Task 4: Change Interpreter Bindings Order
 
@@ -380,11 +355,13 @@ In this step, you learn how to set the interpreter bindings:
 1. Go to the Notebooks page by clicking the hamburger icon on the top left corner of the page. On the left navigation menu, click **Notebooks**.
 
 	![hamburger](images/hamburger-gen.png)
+
 	![Notebooks in left navigation menu](images/notebooks-left-nav-pane.png)
 
 2. On the Notebooks page, click on the **OML4PY Classification_DT (1)** notebook to open it in the Notebook editor.
 
-	<if type="livelabs"> ![Open Classification notebook](images/open_classification_dt.png) </if>
+	<if type="workshops"> ![Open Classification notebook](images/open_classification_dt.png) </if>
+
 	<if type="freetier"> ![Open Classification notebook](images/open-notebooks-4.png) </if>
 
 3. Click ![gear icon](images/gear.png) on the top right corner of the notebook. This opens the interpreter settings.
@@ -395,8 +372,7 @@ In this step, you learn how to set the interpreter bindings:
 
 	![Drag and drop an interpreter binding](images/drag-int-binding.png)
 
-	>**Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it (turns from white to blue). However, this does not require dragging the enabled interpreters above the disabled ones.
-
+	> **Note:** You can disable a particular binding by deselecting it (turns from blue to white) or enable it by selecting it (turns from white to blue). However, this does not require dragging the enabled interpreters above the disabled ones.
 
 	![Enable and disable interpreter binding](images/enable-disable-int-bindings.png)
 
@@ -407,12 +383,15 @@ In this step, you learn how to set the interpreter bindings:
 Clicking **Save** records the changes and hides the interpreter settings. You can verify it again by clicking the gear icon ![gear icon](images/gear.png). This completes the task of changing the interpreter binding order.
 
 ## Task 5: Create Jobs to Schedule Notebook Run
+
 Jobs allow you to schedule the running of notebooks. On the Jobs page, you can create jobs, duplicate jobs, start and stop jobs, delete jobs, and monitor job status by viewing job logs, which are read-only notebooks. In this lab, you will learn how to create a job to schedule the running of the notebook Classification_DT.
 
 To create a job:
 
 1. Click the hamburger icon ![hamburger icon](images/hamburger.png) on the top left corner of the page to open the left navigation menu, and click **Jobs** to go to the Jobs page. You can also go to Jobs from the Oracle Machine Learning home page by clicking **Jobs**.
+
 	![hamburger](images/hamburger-gen.png)
+
 	![Job](images/jobs.png)
 
 2. On the Jobs page, click **Create**. The Create Job dialog opens.
@@ -449,24 +428,19 @@ To create a job:
 
 	![Job created](images/job-created1.png)
 
-
 9. Click on the job row to enable the options to either **Edit**, **Duplicate**, **Start**, or **Delete** the selected job.
-
 
 	![Job created](images/job-created.png)
 
-
 This completes the task of creating a job.
 
-You may now proceed to the next lab.
-
 ## Learn More
-
 
 * [Oracle Machine Learning UI](https://docs.oracle.com/en/database/oracle/machine-learning/oml-notebooks/)
 * [Interactive Tour - Oracle Machine Learning UI](https://docs.oracle.com/en/cloud/paas/autonomous-database/oml-tour/)
 
 ## Acknowledgements
+
 * **Author** -  Moitreyee Hazarika, Principal User Assistance Developer, Database User Assistance Development
 * **Contributors** -   Mark Hornick, Senior Director, Data Science and Machine Learning; Marcos Arancibia Coddou, Product Manager, Oracle Data Science; Sherry LaMonica, Consulting Member of Tech Staff, Machine Learning
 * **Last Updated By/Date** - Moitreyee Hazarika, March 2022

@@ -1,5 +1,5 @@
 {
-  "workshoptitle": "Get Started with Oracle AQ and Oracle TEQ Events and Messaging",
+  "workshoptitle": "Get started with Oracle AQ and Oracle TEQ events and messaging",
   "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
       {
@@ -11,7 +11,7 @@
         "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/event-register-free-tier-account.md"
       },
       {
-        "title": "Lab 1: Set up the Environment",
+        "title": "Lab 1: Set up the environment",
         "filename": "../../setup/setup.md"
       },
       {
