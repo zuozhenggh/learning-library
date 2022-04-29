@@ -82,13 +82,13 @@ This lab assumes you have:
   ```
 3. Retrieve the Public IP of the ingress controller services
 
-  ```
-  <copy>
-    kubectl get service -n ingress-nginx --watch
-	</copy>
+	```
+<copy>
+kubectl get service -n ingress-nginx --watch
+</copy>
 ```
 
-  Once you have the External IP provisioned, you can press CTL+C to terminate the command
+	Once you have the External IP provisioned, you can press CTL+C to terminate the command
 
 ## Task 4: Deploy sample 'hello world' application
 

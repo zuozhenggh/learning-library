@@ -94,7 +94,9 @@ kubectl -n jhub get svc proxy-public -o jsonpath='{.status.loadBalancer.ingress[
 
 	Enter **admin/admin** to log into Jupyter notebook
 
-  ![Jupyter Login](images/jupyter-login.png)
+	![Jupyter Login](images/jupyter-login.png)
+
+	>Note: When you login to Jupyter for the first time, you will need to wait for Jupyter to complete a few setup task before you can start using it
 
 ## Task 3: Connect Jupyter to MySQL HeatWave
 
@@ -133,6 +135,12 @@ pip3 install pymysql
 
 5. Create a new notebook
 
+	Click on File, New Launcher
+
+	![New launcher](images/jupyter-new-launcher.png)
+
+	Click on Notebook
+
 	![New notebook](images/jupyter-new-notebook.png)
 
 6. Execute SQL codes
@@ -147,13 +155,30 @@ pip3 install pymysql
 %sql mysql+pysql://admin:Oracle#123@<mysql_private_ip>/airportdb
 </copy>
 ```
-	```
-%sql select * from airport limit 5
+```
+<copy>
+%sql select * from airport limit 10
+</copy>
 ```
 
-	![Run SQL](images/run-sql-notebook.png)
+	```
+<copy>
+%sql select airline.airlinename, count(*) as nb_people from booking, flight, airline, passengerdetails \
+where booking.flight_id=flight.flight_id and \
+airline.airline_id=flight.airline_id and \
+booking.passenger_id=passengerdetails.passenger_id and \
+country in ("SWITZERLAND", "FRANCE", "ITALY") \
+group by \
+airline.airlinename \
+order by \
+airline.airlinename, nb_people \
+limit 10;
+</copy>
+```
 
-5. Access MySQL HeatWave using python
+	![Execute SQL](images/jupyter-sql.png)
+
+6. [Optional] Another way to access MySQL HeatWave using python
 
 	```
 <copy>
@@ -166,9 +191,7 @@ print(db)
 </copy>
 ```
 
-   ![Run notebook](images/notebook-run.png)
-
-  You may now **proceed to the next lab.**
+	You may now **proceed to the next lab.**
 
 ## Acknowledgements
 

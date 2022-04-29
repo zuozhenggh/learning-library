@@ -4,6 +4,8 @@
 
 This workshop will cover the flexibility of using popular open-source tools such as Superset, Grafana and Zepplin with MySQL HeatWave to leverage the cloud-scale capabilities of Oracle Cloud Infrastructure to implement cloud-native analytics. We will walk you through the process of
 
+We will walk you through the process of
+
 * Creating Oracle Kubernetes Engine and MySQL HeatWave
 * Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
 * Deploying open-source analytics tools (Superset, Grafana, Zeppelin) to analyze data in MySQL HeatWave

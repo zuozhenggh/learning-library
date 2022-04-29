@@ -161,6 +161,8 @@ kubectl get service -n grafana --watch
 1. Open a browser and access your PHP application using the external IP address. (e.g. <http://xxx.xxx.xxx.xxx:3000/>). Login using admin/admin as username/password
 
     ![Grafana Login](images/grafana-login.png)
+  
+  >Note: Grafana may take a while complete the initialization. If you can't access the portal, please wait for a while and try again
 
 2. You can change the password accordingly
 
@@ -255,65 +257,7 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 	![Dashboard](images/grafana-save-dashboard.png)
 
-	You may now **proceed to the next lab.**
-
-## Task 8: Accelerate SQL with MySQL HeatWave
-
-- This is to create 2 panels to compare the performance with and without Heatwave Engine for the aiportdb which has loaded secondary engine data - for country IN ("SWITZERLAND", "FRANCE", "ITALY")
-
-1. The following SQL is used with SQL Hints  
-```text
-/*+ SET_VAR(use_secondary_engine=off)*/ 
-```
-* to turn off secondary engine.  This indicates the SQL execution for purely InnoDB engine SELECT.
-
-	The now() as time column is added to allow grafana to do charting with time series.
-
-  ```sql
-  SELECT /*+ SET_VAR(use_secondary_engine=off) */
-  now() as time, airline.airlinename,
-  count(*) as nb_people
-  FROM
-  booking, flight, airline, passengerdetails
-  WHERE
-  booking.flight_id=flight.flight_id AND
-  airline.airline_id=flight.airline_id AND
-  booking.passenger_id=passengerdetails.passenger_id AND
-  country IN ("SWITZERLAND", "FRANCE", "ITALY")
-  GROUP BY
-  airline.airlinename
-  ORDER BY
-  airline.airlinename, nb_people
-  LIMIT 10;
-  ```
-
-2. The following SQL is used with SQL Hints  
-```text
-/*+ SET_VAR(use_secondary_engine=off)*/
-```
-* to turn on secondary engine.  This indicates the SQL execution on Heatwave if it is possible.
-
-- The now() as time column is added to allow grafana to do charting with time series.
-
-  ```sql
-  SELECT /*+ SET_VAR(use_secondary_engine=on) */
-  now() as time, airline.airlinename,
-  count(*) as nb_people
-  FROM
-  booking, flight, airline, passengerdetails
-  WHERE
-  booking.flight_id=flight.flight_id AND
-  airline.airline_id=flight.airline_id AND
-  booking.passenger_id=passengerdetails.passenger_id AND
-  country IN ("SWITZERLAND", "FRANCE", "ITALY")
-  GROUP BY
-  airline.airlinename
-  ORDER BY
-  airline.airlinename, nb_people
-  LIMIT 10;
-  ```
-
-## Task 9: Create charts panel
+## Task 8: Create 2 panels for comparisons
 
 1. Click on the **Add panel** icon in the dashboard
 
@@ -349,6 +293,9 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
   </copy>
   ```
 
+  >Note: the ""SET_VAR(use_secondary_engine=on)"" will instruct the optimizer to route the SQL statement to HeatWave
+  The function ""now()"" is added to the SQL Statement so that we can create time chart in Grafana
+
 	![Dashboard](images/grafana-edit-panel-paste-sql.png)
 
 5. Change the Visualization settings using Pie Chart as shown
@@ -366,6 +313,9 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 8. Edit the Panel to change the SQL Hint with /*+ SET_VAR(use_secondary_engine=off)*/
 
 	![Dashboard](images/grafana-edit-panel-off-secondary.png)
+
+  >Note: the ""SET_VAR(use_secondary_engine=off)"" will instruct the optimizer to route the SQL statement to MySQL instance instead of HeatWave
+  The function ""now()"" is added to the SQL Statement so that we can create time chart in Grafana
 
 9. Apply and switching back to the dashboard; Click Save icon to save the dashboard.
 

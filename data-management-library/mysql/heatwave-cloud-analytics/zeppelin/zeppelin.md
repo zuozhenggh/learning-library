@@ -92,7 +92,12 @@ Task 3: Connect to MySQL HeatWave
 	![Interpreter](images/interpreter.png)
 
 2. Click on **Create** to create a new JDBC driver for MySQL HeatWave. Fill up the details as indicated in the diagram
-  Replace the private ip address of your MySQL instance in the **JDBC URL**
+    Replace the private ip address of your MySQL instance in the **JDBC URL**, admin user and password
+
+    * default.url: jdbc:mysql://private-ip-address:3306
+    * default.user: admin
+    * default.password: your_mds_password
+    * default.driver: com.mysql.cj.jdbc.Driver
 
    ![MySQL JDBC](images/mysql-jdbc.png)
 
@@ -108,7 +113,32 @@ Task 3: Connect to MySQL HeatWave
 
 	![Interactive Query](images/notebook-query.png)
 
-  Congratulations! You have completed all the labs
+    ```
+<copy>
+%mysql
+use airportdb;
+select * from airline limit 10;
+</copy>
+```
+
+    ```
+<copy>
+%mysql
+use airportdb;
+select airline.airlinename, count(*) as nb_people from booking, flight, airline, passengerdetails
+where booking.flight_id=flight.flight_id and
+airline.airline_id=flight.airline_id and
+booking.passenger_id=passengerdetails.passenger_id and
+country in ("SWITZERLAND", "FRANCE", "ITALY")
+group by
+airline.airlinename
+order by
+airline.airlinename, nb_people
+limit 10;
+</copy>
+```
+
+    Congratulations! You have completed all the labs
 
 ## Acknowledgements
 
