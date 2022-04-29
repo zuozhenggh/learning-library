@@ -9,7 +9,7 @@ Estimated Lab Time: 10 minutes
 
 In this lab, you will:
 
-* Provision an Integration Recipe
+* Import an Integration Recipe
 
 ### Prerequisites
 
@@ -19,7 +19,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Provision an Integration Recipe
+## Task 1: Import an Integration Recipe
 
 1. Click the hamburger menu at the top left hand site of the home screen. Then, select the **Home** button.
 
