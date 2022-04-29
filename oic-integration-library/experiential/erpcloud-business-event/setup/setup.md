@@ -13,7 +13,9 @@ In this lab, you will:
 
 
 ### Prerequisites
-* Completion of the **Provision an Oracle Autonomous Database** section in the **Contents** menu on the left
+This lab assumes you have:
+* An Oracle Cloud account
+* All previous labs successfully completed
 
 
 ## Task 1: Obtain Database Connection details
