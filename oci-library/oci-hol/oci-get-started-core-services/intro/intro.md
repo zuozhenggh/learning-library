@@ -11,7 +11,7 @@ Estimated Workshop Time: 2 hours and 30 minutes
 ### Objectives
 In this workshop, you will:
 - Generate SSH keys
-- Use Identity and Acceess Management to control users' access to resources
+- Use Identity and Access Management to control users' access to resources
 - Create virtual cloud networks
 - Create a compute service
 - Create and attach a Block Volume
@@ -38,8 +38,7 @@ Click on the next lab in this workshop to get started.
 
 ## Acknowledgements
 
-- **Author** - Flavio Pereira, Larry Beausoleil
-- **Adapted by** -  Tom McGinn, Database Product Management
+- **Author** - Flavio Pereira, Larry Beausoleil 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
 - **Last Updated By/Date** - Arabella Yao, December 2021
 

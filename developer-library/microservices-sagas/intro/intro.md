@@ -17,7 +17,7 @@ PL/SQL, Java, and (in the near future) Apex Workflow saga examples will be demon
 ### Prerequisites
 
 - This workshop assumes you have an Oracle cloud account and have signed in to the account.
-
+- The workshop also requires Always Free 21c ATP instances and so is currently limited to the following regions: Ashburn (IAD), Phoenix (PHX), Frankfurt (FRA) and London (LHR) regions
 
 
 A travel booking application is used to demonstrate.
@@ -36,7 +36,7 @@ The TravelAgency contacts the Coordinator in order to begin a saga and then call
 
 ![](./images/sagaflow.png " ")
 
-The following table shows a comparison of support between the MicroProfile Long Running Actions specification*, the Oracle Database Saga implementation (*which follows the LRA spec), the case where neither LRA nor the Oracle Database Saga support are used.
+The following table shows a comparison of support between the MicroProfile Long Running Actions specification*, the Oracle Database Saga implementation, the case where neither LRA nor the Oracle Database Saga support are used.
 
 ![](./images/osagacomparison.png " ")
 
@@ -46,8 +46,9 @@ You may now **proceed to the next lab.**..
 
 ## Want to Learn More?
 
+* [Blog On This Workshop](https://dzone.com/articles/simplify-microservice-transactions-with-oracle-dat)
+* [Related Blogs](https://dzone.com/users/4571557/paulparkinson.html)
 * [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
-* [Blogs](https://dzone.com/users/4571557/paulparkinson.html)
 * [https://developer.oracle.com/](http://developer.oracle.com/microservices/)
 
 ## Acknowledgements

@@ -35,13 +35,18 @@ In this workshop, you will:
 
 * An Oracle Cloud Account
 *	Oracle Cloud Account Administrator role or manage apm-domains permission in the target compartment
-*	This lab uses My ToDo List Application that you can build with the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) workshop. Complete the Tutorials 1 to 3 in the workshop and ensure the application runs on the OCI API Gateway. Note: Do not perform the Tutorial 4 as it is a cleanup lab that removes the application setup.
+*	This lab uses My ToDo List Application that you can build with the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=814) workshop. Complete the Tutorials 1 to 3 in the workshop and ensure the application runs on the OCI API Gateway. Note: Do not perform the Tutorial 4 as it is a cleanup lab that removes the application setup.
 
   ![](images/1-1-todoapp.png " ")
 
 ### Reference
 
-*  Oracle LiveLabs **[React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196)** Workshop
+*  Oracle LiveLabs **[React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=814)** Workshop
+
+### More APM Workshops
+-	**[Use OpenTracing for Microservices with Helidon Utilizing Oracle Application Performance Monitoring](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=917)**  Workshop
+-	**[Monitor Traces for Oracle WebLogic Server on Kubernetes Using Oracle Application Performance Monitoring](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=932)** Workshop
+
 
 ### Learn More
 -	**[Create an APM Domain](https://docs.oracle.com/en-us/iaas/application-performance-monitoring/doc/create-apm-domain.html)**
@@ -55,4 +60,4 @@ In this workshop, you will:
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-- **Last Updated By/Date** - Yutaka Takatsu, December 2021
+- **Last Updated By/Date** - Yutaka Takatsu, February 2022

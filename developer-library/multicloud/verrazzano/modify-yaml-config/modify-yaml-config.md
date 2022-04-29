@@ -1,8 +1,10 @@
-# Modify the Bob's Books Configuration YAML File
+# Modify the Bobby's Books Configuration YAML File
 
 ## Introduction
 
 In Lab 6, we pushed the updated Docker image for *bobby-helidon-stock-application*. Now, we want Verrazzano to redeploy the updated application and components without affecting the services. For this, we need to configure the YAML file so that Verrazzano picks up the new image and starts a pod for it. After the pod is in the *Running* state, it terminates the pod associated with the previous application and components.
+
+Estimated time: 10 minutes
 
 ### Objectives
 
@@ -30,7 +32,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>vi bobs-books-comp.yaml</copy>
     ```
 
-    ![Open file](images/6.png " ")
+    ![Open file](images/openfile.png " ")
 
 3. As part of Lab 5, you saved your Docker image full name. You need to copy the following line and paste it in your text editor. Then, you need to replace `docker image full name` with your Docker image name. Then copy the modified line and press *i* to insert the text in the `*bobs-books-comp.yaml*` file. Paste the output at line number 153 (make sure you keep the indentation) and comment out the exiting line with *#* as shown in the following image, then press *Esc* and then type *:wq* to save the file.
 
@@ -38,7 +40,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>image:  `docker image full name`</copy>
     ```
 
-    ![Insert line](images/3.png " ")
+    ![Insert line](images/insertline.png " ")
 
 ## Task 2: Apply the Changes using `kubectl`
 
@@ -48,7 +50,7 @@ You should have a text editor, where you can paste the commands and URLs and mod
     <copy>kubectl apply -f bobs-books-comp.yaml</copy>
     ```
 
-    ![Apply changes](images/4.png " ")
+    ![Apply changes](images/applychanges.png " ")
 
     You can observe in the output; only *component.core.oam.dev/bobby-helidon* is configured and other components are unchanged.
 
@@ -62,25 +64,25 @@ You should have a text editor, where you can paste the commands and URLs and mod
 
     ```bash
     $ kubectl get pods -n bobs-books
-    NAME                                               READY  STATUS   RESTARTS  AGE
-    bobbys-coherence-0                                 2/2    Running  0         130m
-    bobbys-front-end-adminserver                       4/4    Running  0         127m
-    bobbys-front-end-managed-server1                   4/4    Running  0         126m
-    bobbys-helidon-stock-application-64fb55cd5b-f8zzp  0/2    PodInitializing  0         10s
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  2/2    Running  0         130m
-    bobs-bookstore-adminserver                         4/4    Running  0         127m
-    bobs-bookstore-managed-server1                     4/4    Running  0         126m
-    mysql-65d864bf8c-xf64p                             2/2    Running  0         130m
-    robert-helidon-bfdfb58b8-58qfs                     2/2    Running  0         130m
-    robert-helidon-bfdfb58b8-lkw8m                     2/2    Running  0         130m
-    roberts-coherence-0                                2/2    Running  0         130m
-    roberts-coherence-1                                2/2    Running  0         130m
-    bobbys-helidon-stock-application-64fb55cd5b-f8zzp  1/2    Running  0         28s
-    bobbys-helidon-stock-application-64fb55cd5b-f8zzp  2/2    Running  0         34s
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  2/2    Terminating  0         130m
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
-    bobbys-helidon-stock-application-77867fc8dd-wl8h5  0/2    Terminating  0         130m
+    NAME                                         READY  STATUS   RESTARTS  AGE
+    bobbys-coherence-0                           2/2    Running      0         130m
+    bobbys-front-end-adminserver                 4/4    Running      0         127m
+    bobbys-front-end-managed-server1             4/4    Running      0         126m
+    bobbys-helidon-stock-application-64fb55-zzp  0/2    PodInitializing  0     10s
+    bobbys-helidon-stock-application-77867f-8h5  2/2    Running      0         130m
+    bobs-bookstore-adminserver                   4/4    Running      0         127m
+    bobs-bookstore-managed-server1               4/4    Running      0         126m
+    mysql-65d864bf8c-xf64p                       2/2    Running      0         130m
+    robert-helidon-bfdfb58b8-58qfs               2/2    Running      0         130m
+    robert-helidon-bfdfb58b8-lkw8m               2/2    Running      0         130m
+    roberts-coherence-0                          2/2    Running      0         130m
+    roberts-coherence-1                          2/2    Running      0         130m
+    bobbys-helidon-stock-application-64fb55-zzp  1/2    Running      0         28s
+    bobbys-helidon-stock-application-64fb55-zzp  2/2    Running      0         34s
+    bobbys-helidon-stock-application-77867f-8h5  2/2    Terminating  0         130m
+    bobbys-helidon-stock-application-77867f-8h5  0/2    Terminating  0         130m
+    bobbys-helidon-stock-application-77867f-8h5  0/2    Terminating  0         130m
+    bobbys-helidon-stock-application-77867f-8h5  0/2    Terminating  0         130m
     $
     ```
 
@@ -92,4 +94,4 @@ Leave the *Cloud Shell* open as we also need it for our last lab.
 
 * **Author** -  Ankit Pandey
 * **Contributors** - Maciej Gruszka, Peter Nagy
-* **Last Updated By/Date** - Kamryn Vinson, January 2022
+* **Last Updated By/Date** - Ankit Pandey, April 2022

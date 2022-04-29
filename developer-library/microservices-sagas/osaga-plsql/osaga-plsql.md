@@ -13,7 +13,6 @@ Estimated Time:  10 minutes
 ### Prerequisites
 
 * An Oracle Cloud paid account or free trial in a region with Oracle database 21c available. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
-* The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
 
 ### Objectives
 
@@ -36,12 +35,14 @@ Estimated Time:  10 minutes
     ```
 
 3.    Enter the following command and then enter your password when prompted to connect to `sagadb1`
+
     ```
     <copy>connect admin@sagadb1_tp</copy>
     ```  
-        The output should look similar to the following.
+    
+   The output should look similar to the following.
 
-        ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
+   ![SQLcl login to sagadb1](images/connectwithSQLcl.png " ")
       
 4.   Enter the following command to install the saga broker, coordinator, and `TravelAgencyPLSQL` participant/initiator along with it's associated saga callback package.
 
@@ -147,12 +148,26 @@ Estimated Time:  10 minutes
 
 ## Task 3: Conduct saga rollback test
 
-1.    In the TravelAgency/sagadb2 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
+
+1.   In the Participant/sagadb2 SQLcl console, check the initial inventory level of one or more participants by copying and pasting the following. 
+    
+      ```
+      <copy>select * from cars;</copy>
+      ```
+    
+      Note the value.
+
+      ![Car count of 2](images/carcount2.png " ")
+      
+2.    In the TravelAgency/sagadb1 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
+
     ```
     <copy>
     declare
       saga_id raw(16);
-      request JSON;
+      flightrequest JSON;
+      hotelrequest JSON;
+      carrequest JSON;
      begin
       saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
       flightrequest := json('[{"flight":"myflight"}]');
@@ -162,18 +177,9 @@ Estimated Time:  10 minutes
       carrequest := json('[{"car":"mycar"}]');
       dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
     end;
-    /</copy>
+    /
+    </copy>
     ```
-
-2.   In the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
-    
-      ```
-      <copy>select * from cars;</copy>
-      ```
-    
-      Note the value.
-
-      ![Car count of 2](images/carcount2.png " ")
       
 3.    Check the existence and status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
 
@@ -185,7 +191,7 @@ Estimated Time:  10 minutes
 
        ![Active saga status](images/selectsagastatus-active.png " ")
       
-4.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
+4.    Again check the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
   
          ```
          <copy>select * from cars;</copy>
@@ -195,7 +201,7 @@ Estimated Time:  10 minutes
    
        ![Car count of 1](images/carcount1.png " ")
                
-5.    In the Participant/sagadb2 SQLcl console, copy and paste the following `rollback_saga` command, replacing `REPLACE_THIS_WITH_SAGAID` with the saga id from the query in step 3.
+5.    In the TravelAgency/sagadb1 SQLcl console, copy and paste the following `rollback_saga` command, replacing `REPLACE_THIS_WITH_SAGAID` with the saga id from the query in step 3.
          ```
          <copy>exec dbms_saga.rollback_saga('TravelAgencyPLSQL', 'REPLACE_THIS_WITH_SAGAID');</copy>
          ```
@@ -225,12 +231,24 @@ Estimated Time:  10 minutes
       
 ## Task 4: Conduct saga commit test
 
-1.    In the TravelAgency/sagadb2 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
+1.   In the Participant/sagadb2 SQLcl console, check the initial inventory level of one or more participants by copying and pasting the following. 
+    
+      ```
+      <copy>select * from cars;</copy>
+      ```
+    
+      Note the value.
+
+      ![Car count of 2](images/carcount2.png " ")
+      
+2.    In the TravelAgency/sagadb1 SQLcl console, begin a saga and enroll participants by copying and pasting the following.
         ```
       <copy>
         declare
           saga_id raw(16);
-          request JSON;
+          flightrequest JSON;
+          hotelrequest JSON;
+          carrequest JSON;
          begin
           saga_id := dbms_saga.begin_saga('TravelAgencyPLSQL');
           flightrequest := json('[{"flight":"myflight"}]');
@@ -240,19 +258,10 @@ Estimated Time:  10 minutes
           carrequest := json('[{"car":"mycar"}]');
           dbms_saga.enroll_participant(saga_id, 'TravelAgencyPLSQL', 'HotelPLSQL', 'TravelCoordinator', carrequest);
         end;
-        / </copy>
+        / 
+      </copy>
       ```
 
-2.   In the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
-
-        ```
-        <copy>select * from cars;</copy>
-        ```
-    
-        Note the value.
-
-        ![Car count of 2](images/carcount2.png " ")
-      
 3.    Check the existence and status of the saga on both the TravelAgency/sagadb1 and Participants/sagadb2 by copying and pasting the following into SQLcl
 
         ```
@@ -263,7 +272,7 @@ Estimated Time:  10 minutes
 
        ![Active saga status](images/selectsagastatus-active.png " ")
       
-4.    Once again, in the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
+4.    Again check the Participant/sagadb2 SQLcl console, check the inventory level of one or more participants by copying and pasting the following. 
   
          ```
          <copy>select * from cars;</copy>
@@ -273,7 +282,7 @@ Estimated Time:  10 minutes
    
        ![Car count of 1](images/carcount1.png " ")
                
-5.    In the Participant/sagadb2 SQLcl console, copy and paste the following `commit_saga` command, replacing `REPLACE_THIS_WITH_SAGAID` with the saga id from the query in step 3.
+5.    In the TravelAgency/sagadb1 SQLcl console, copy and paste the following `commit_saga` command, replacing `REPLACE_THIS_WITH_SAGAID` with the saga id from the query in step 3.
          ```
          <copy>exec dbms_saga.commit_saga('TravelAgencyPLSQL', 'REPLACE_THIS_WITH_SAGAID');</copy>
          ```
@@ -288,7 +297,7 @@ Estimated Time:  10 minutes
         <copy>select id, initiator, coordinator, owner, begin_time, status from saga$ order by begin_time asc;</copy>
         ```
     
-       You should notice the saga and it's status as `3` indicating it is in the committed/completed state.
+       You should notice the saga and it's status as `2` indicating it is in the committed/completed state.
 
        ![Committed saga status](images/sagastatus2-commit.png " ")
             

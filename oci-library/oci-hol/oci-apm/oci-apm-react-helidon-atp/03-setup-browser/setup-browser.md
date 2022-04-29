@@ -16,11 +16,11 @@ Estimated time: 15 minutes
 ### Prerequisites
 
 * This lab requires completion of lab 1, lab 2 and lab 3 of this workshop
-* This Lab also assumes you have completed the tutorials 1, 2 and 3 in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196).
+* This Lab also assumes you have completed the tutorials 1, 2 and 3 in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=814).
 
 ## Task 1: Add APM headers to the API Gateway
 
-To run the application from the Gateway, you will need to add headers, which are required by APM, to the CORS policy in the API Gateway that you setup in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop. APM Tracer uses several different headers. In this lab, to simplify the steps, we will add an asterisk to accept all headers in the CORS policy.
+To run the application from the Gateway, you will need to add headers, which are required by APM, to the CORS policy in the API Gateway that you setup in the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=814) Workshop. APM Tracer uses several different headers. In this lab, to simplify the steps, we will add an asterisk to accept all headers in the CORS policy.
 
 1. From the OCI menu, select **Developer Services** > **Gateways**.
 
@@ -46,7 +46,7 @@ To run the application from the Gateway, you will need to add headers, which are
 
 	![OCI Gateway](images/9-6-0-gateway.png " ")
 
-  External IP can be found by the kubectl get services command.
+  External IP can be found by the **kubectl get services -n mtdrworkshop** command.
 
   ![OCI Gateway](images/9-6-2-gateway.png " ")
 
@@ -84,12 +84,11 @@ To run the application from the Gateway, you will need to add headers, which are
 
 To capture traces from the browser, the **APM Browser Agent** needs to be deployed to the application's frontend. In this lab, you will  insert a JavaScript that configures the APM agent to ***index.html*** file.
 
-  > **NOTE:** This task assumes you completed the Tutorials of the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=814&p210_type=1&session=10648029398196) Workshop, and cloned the workshop git repository on your laptop.
+  > **NOTE:** This task assumes you completed the Tutorials of the [React+Java+ADB = Native Cloud App](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=814) Workshop, and cloned the workshop git repository on your laptop.
 
 1.	On your laptop, open a terminal. Go to your React JS project directory, which you created in the Native Cloud App Workshop, and change to ***mtdrworkshop/frontend*** directory.
 
-	```
-	bash
+	``` bash
 	<copy>
 	cd <project directory on your laptop>/oci-react-samples/mtdrworkshop/frontend
 	</copy>
@@ -98,8 +97,7 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 	![frontend directory](images/10-1-1-frontend.png " ")
 
 2.	from the ***frontend/public*** directory, open ***index.html*** with an editor.
-	```
-	bash
+	``` bash
 	<copy>
 	vi public/index.html
 	</copy>
@@ -107,12 +105,11 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 3.	Insert the following JavaScript to the ***index.html*** file, just below the ***&lt;head&gt;*** section.
 
-	```
-	bash
+	```	bash
 	<copy>
 	<script>
 	window.apmrum = (window.apmrum || {});
-	window.apmrum.serviceName='todolist browser ';
+	window.apmrum.serviceName='todolist browser';
 	window.apmrum.webApplication='My TodoList App';
 	window.apmrum.ociDataUploadEndpoint='<ociDataUploadEndpoint>';
 	window.apmrum.OracleAPMPublicDataKey='<APM_Public_Datakey>';
@@ -134,8 +131,7 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 
 1.	Make sure you are in the ***frontend*** directory, then run the **npm run build** command. It packages the build files into the ***‘build’*** folder for the deployment.
 
-	```
-  bash
+	``` bash
 	<copy>
 	npm run build
 	</copy>
@@ -242,4 +238,4 @@ To capture traces from the browser, the **APM Browser Agent** needs to be deploy
 - **Contributors** - Steven Lemme, Senior Principal Product Manager,<br>
 David Le Roy, Director, Product Management,<br>
 Avi Huber, Senior Director, Product Management
-- **Last Updated By/Date** - Yutaka Takatsu, December 2021
+- **Last Updated By/Date** - Yutaka Takatsu, February 2022

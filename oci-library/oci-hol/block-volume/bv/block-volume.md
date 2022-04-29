@@ -4,6 +4,8 @@
 ## Introduction
 
 The Oracle Cloud Infrastructure Block Volume service lets you dynamically provision and manage block storage volumes. You can create, attach, connect and move volumes as needed to meet your storage and application requirements. Once attached and connected to an instance, you can use a volume like a regular hard drive. Volumes can also be disconnected and attached to another instance without the loss of data.
+
+Estimated Time: 40 minutes
  
 This video provides an overview of creating and attaching Oracle Cloud Infrastructure Block Volumes:
 
@@ -130,8 +132,7 @@ A common usage of Block Volume is adding storage capacity to an Oracle Cloud Inf
 
 ## Acknowledgements
 
-- **Author** - Rajeshwari Rai, Prasenjit Sarkar
-- **Adapted by** -  Tom McGinn, Database Product Management
+- **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
 - **Last Updated By/Date** - Arabella Yao, December 2021
 

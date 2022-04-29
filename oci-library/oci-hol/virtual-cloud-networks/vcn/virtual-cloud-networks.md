@@ -8,9 +8,15 @@ Be sure to review [Overview of Networking](https://docs.cloud.oracle.com/iaas/Co
 
 [](youtube:mIYSgeX5FkM)
 
+Estimated Time: 15 minutes
+
 Here is an instructional video, going through the process of making a VCN:
 
 [](youtube:eOGPej8n_ws)
+
+### Objectives
+In this lab, you will:
+- Create a virtual cloud network
 
 ### Prerequisites
 
@@ -72,8 +78,7 @@ This VCN will contain all of the other assets that you will create during this s
 
 ## Acknowledgements
 
-- **Author** - Rajeshwari Rai, Prasenjit Sarkar
-- **Adapted by** -  Tom McGinn, Database Product Management
+- **Author** - Rajeshwari Rai, Prasenjit Sarkar 
 - **Contributors** - Oracle LiveLabs QA Team (Kamryn Vinson, QA Intern, Arabella Yao, Product Manager, DB Product Management)
 - **Last Updated By/Date** - Arabella Yao, December 2021
 
