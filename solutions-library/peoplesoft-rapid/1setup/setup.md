@@ -1,8 +1,8 @@
-# Set Up OCI for Siebel Deployment
+# Set Up OCI for PeopleSoft Deployment
 
 ## Introduction
 
-In this lab, the recently provisioned OCI Trial tenancy will be set up for the Siebel Application.
+In this lab, the recently provisioned OCI Trial tenancy will be set up for the PeopleSoft Application.
 
 
 Estimated Lab Time: 20 minutes
@@ -12,7 +12,7 @@ Estimated Lab Time: 20 minutes
 To set up the OCI tenancy, in this lab, you will:
 *   Create a Sub-Compartment
 *   Create a Virtual Cloud Network (VCN)
-*   Establish Security List Rules to allow access to our Siebel Instance
+*   Establish Security List Rules to allow access to our PeopleSoft Instance
 
 ### Prerequisites
 * A user with 'manage' access to Networking and Compute, compartment, and marketplace access
