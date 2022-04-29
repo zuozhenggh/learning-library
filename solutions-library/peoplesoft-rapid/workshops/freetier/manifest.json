@@ -25,12 +25,12 @@
         {
             "title": "Lab 3: Provisioning the PeopleSoft Application",
             "description": "In this exercise, you will provision your PeopleSoft application by leveraging OCI Marketplace PeopleSoft image.",
-            "filename": "../../provision/provision.md"
+            "filename": "../../2provision/provision.md"
         },
         {
             "title": "Lab 4: Teardown Your Oracle PeopleSoft Environment",
             "description": "Teardown Your PeopleSoft Environment",
-            "filename": "../../teardown/teardown.md"
+            "filename": "../../3teardown/teardown.md"
         },
         {
             "title": "Need Help?",

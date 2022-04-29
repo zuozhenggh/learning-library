@@ -53,7 +53,7 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
   ![Select the Oracle CLoud icon at the top of the screen](./images/home.png " ")
 
 
-##  **STEP 2:**  Create a Virtual Cloud Network (VCN)
+## Task 2:  Create a Virtual Cloud Network (VCN)
 
 To create a VCN on Oracle Cloud Infrastructure:
 
