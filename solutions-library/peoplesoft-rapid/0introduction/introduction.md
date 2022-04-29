@@ -15,11 +15,7 @@ Notes:
 * For security purposes, some sensitive text (such as IP addresses) may be redacted in the screenshots in this workbook.
 * The user interface for the Oracle Cloud Infrastructure is constantly evolving. As a result the screens depicted in this tutorial may not exactly coincide with the current release. This tutorial is routinely updated for functional changes of Oracle Cloud Infrastructure, at which time any differences in the user interface will be reconciled.
 
-UNIX commands (usually executed in an SSH session using PuTTY) are displayed in a monospace font within a box, as follows:
 
-```
-$ sudo yum install wget -y $ wget -O bitnami-mean-linux-installer.run https://bitnami.com/stack/mean/download_latest/linux-x64
-```
 
 
 ### Objectives
