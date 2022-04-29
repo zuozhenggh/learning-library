@@ -15,7 +15,7 @@ Estimated Lab Time: 35 minutes
 
 ### Prerequisites
 
-* An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account
+* An Oracle Account
 * SSH Keys
   
 ## Task 1: Create a Virtual Cloud Network instance
