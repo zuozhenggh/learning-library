@@ -19,7 +19,7 @@ This lab assumes you have:
 * All previous labs successfully completed
 
 
-## Task 1: Install an Integration Recipe
+## Task 1: Install Integration Recipe
 
 1. Click the hamburger menu at the top left hand site of the home screen. Then, select the **Home** button.
 
