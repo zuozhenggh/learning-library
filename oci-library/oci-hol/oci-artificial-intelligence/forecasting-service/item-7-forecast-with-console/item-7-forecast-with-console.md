@@ -62,6 +62,8 @@ In this lab, you will:
         ```
         Allow dynamic-group DynamicGroupRPSTAccess to manage objects in tenancy
         Allow dynamic-group DynamicGroupRPSTAccess to read buckets in tenancy
+        Allow dynamic-group DynamicGroupRPSTAccess to manage objects in compartment <compartment-name>
+        Allow dynamic-group DynamicGroupRPSTAccess to read buckets in compartment <compartment-name>       
         ```
 
         ![](images/lab5-create-policy.png " ")
@@ -75,10 +77,12 @@ In this lab, you will:
 4.  In addition to above, ***tenancy admin** should allow group to manage forecasting service
     Admin can do so by modifying the existing policy for the user group or new policy for user group
     ```
-    Allow group <group-name> to manage ai-service-forecasting-family in <tenancy>
-    Allow group <group-name> to manage ai-service-forecasting-family in <compartment>
+    Allow group <group-name> to manage ai-service-forecasting-family in tenancy
+    Allow group <group-name> to manage ai-service-forecasting-family in compartment <compartment-name>
     ```
-    ``` <group-name> ``` is the name of the group to which user is added   
+    ``` <group-name> ``` is the name of the group to which user is added
+
+    ``` <compartment-name> ``` is the name of the compartment to which user is added 
  
 
 ## Task 2: Understand Data Requirements
@@ -190,8 +194,8 @@ Currently, our APIs support datasets that can be in one of the following formats
 
 Here is a sample dataset to help you to easily understand how the input data looks like, Download the files to your local machine.
 
-* [Primary data](files/favorita-13-beverages-primary_v1.csv)
-* [Additional data](files/favorita-13-beverages-add_v1.csv)
+* [Primary data](files/favorita_13_beverages_primary_v1.csv)
+* [Additional data](files/favorita_13_beverages_add_v1.csv)
   
 
 ## Task 4: Upload Data to Object Storage
@@ -226,7 +230,7 @@ After downloading the dataset , you need to upload the sample training data into
     - Browse to file which you desire to upload and click  Upload button at the botton
     ![](images/lab5-bucket-upload-files-meta.png " ")
 
-    More details on Object storage can be found on this page. [Object Storage Upload Page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
+    More details on Object storage can be found on this [page](https://oracle.github.io/learning-library/oci-library/oci-hol/object-storage/workshops/freetier/index.html?lab=object-storage) to see how to upload.
 
 ## Task 5: Create a project 
 
@@ -306,13 +310,34 @@ Project is a way to organize multiple data assets, models, deployments to the sa
 2. Review Forecast Results:
     
     Now, let's review  forecast results
+    1. We get general information like OCID (forecast ID) , description etc.
+    2. We get generation time of forecast , total number of series provided for forecast and forecast horizon
+    3. Dropdown list of series for which we want to see visualization of forecast
     ![](images/lab5-forecast-result-page.png " ")
 
 ## Task 8: Explore the Forecast and Explainability  
+1.  Forecast:
+
+    Next step is to explore the forecast graph which has forecast and historical data along with prediction intervals
+    - Highlighted box 1 highlights forecast for a particular time step
+    - Highlighted box 2 highlights information on forecast metrics like lowest error metric measure, number of methods ran etc.
+    ![](images/lab5-forecast-graph-page.png " ")
+
+2.  Explainability: 
+
+    Forecast will also give explainability for each of the target time series in the dataset. Explainability report includes both global and local level explanations. Explanations provides insights on the features that are influencing the forecast. Global explanation represents the general model behaviour - e.g., which features does the model consider important ? Local explanation tells the impact of each feature at a single time step level. Forecast provides local explanations for all the forecasts that it generates. Here we get global and local explanation for the best model chosen by forecast, inorder to understand the features that are influencing the forecast
+
+    ![](images/lab5-explain-forecast-all.png " ")
 
 
+    - Global Feature Importance:
+    ![](images/lab5-global-explain.png " ")
 
-**Note** : It is not needed to create new projects everytime . A project once created can be used again to create new forecast
+    
+    - Local Feature Importance:
+       We can select the time step for which we want to see the local feature importance
+    ![](images/lab5-forecast-local.png " ")
+
 
 Congratulations on completing this lab!
 
@@ -325,4 +350,4 @@ You may now proceed to the next lab
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, 19th-January 2022
+    * Last Updated By/Date: Ravijeet Kumar, 29th-April 2022
