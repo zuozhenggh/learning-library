@@ -145,23 +145,25 @@ pip3 install pymysql
 
 6. Execute SQL codes
 
-	```
+	```sql
 <copy>
 %load_ext sql
 </copy>
 ```
-	```
+	
+	```sql
 <copy>
 %sql mysql+pysql://admin:Oracle#123@<mysql_private_ip>/airportdb
 </copy>
 ```
-```
+
+	```sql
 <copy>
 %sql select * from airport limit 10
 </copy>
 ```
 
-	```
+	```sql
 <copy>
 %sql select airline.airlinename, count(*) as nb_people from booking, flight, airline, passengerdetails \
 where booking.flight_id=flight.flight_id and \
@@ -175,7 +177,6 @@ airline.airlinename, nb_people \
 limit 10;
 </copy>
 ```
-
 	![Execute SQL](images/jupyter-sql.png)
 
 6. [Optional] Another way to access MySQL HeatWave using python

@@ -39,7 +39,7 @@ In this lab, you will:
 2. Install the helm client
 
 	>**Note** Skip this step if you have installed helm client
-	
+
 	```
 <copy>
 curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |bash -
@@ -77,6 +77,7 @@ EOM
 helm upgrade --install -f my-values.yaml my-release redash/redash --namespace redash --create-namespace
 </copy>
 ```
+
 6. Get the pod information of Redash
 
 	```
@@ -84,6 +85,7 @@ helm upgrade --install -f my-values.yaml my-release redash/redash --namespace re
 kubectl get pods --namespace redash -l "app.kubernetes.io/name=redash,app.kubernetes.io/instance=my-release" -o jsonpath="{.items[0].metadata.name}"
 </copy>
 ```
+	>Note: the installation of Redash may take a while, please be patient
 
 7. Create port-forward to Redash
 
@@ -94,6 +96,7 @@ kubectl get pods --namespace redash -l "app.kubernetes.io/name=redash,app.kubern
 kubectl --namespace redash port-forward <POD_NAME> 8082:5000 --address 0.0.0.0 &
 </copy>
 ```
+
 8. Navigate to **Virtual Cloud Network**, select **oke-vcn**, select **Security List** on the left panel, and select **operator-seclist**
 
 	![operator security list](images/operator-seclist.png)
@@ -103,12 +106,11 @@ kubectl --namespace redash port-forward <POD_NAME> 8082:5000 --address 0.0.0.0 &
 	![add ingress](images/add-ingress-rule.png)
 	![add ingress rule](images/vcn-seclist.png)
 
-
 9. Access the deployed Redash dashboard using your browser, http:://&lt;oke-operator&#95;PUBLIC&#95;IP&gt;:8082/.
 
 	Upon your first login, you need to create an admin user with password. (For example, **admin/admin** to create the admin and password)
 
-  ![Redash Login](images/redash-initial-setup.png)
+	![Redash Login](images/redash-initial-setup.png)
 
 ## Task 3: Connect Redash to MySQL HeatWave
 
@@ -121,6 +123,22 @@ kubectl --namespace redash port-forward <POD_NAME> 8082:5000 --address 0.0.0.0 &
 	![Create MySQL connector](images/redash-create-mysql.png)
 
 3. You are now ready to query the MySQL HeatWave
+
+	```
+sql
+<copy>
+select airline.airlinename, count(*) as nb_people from booking, flight, airline, passengerdetails
+where booking.flight_id=flight.flight_id and
+airline.airline_id=flight.airline_id and
+booking.passenger_id=passengerdetails.passenger_id and
+country in ("SWITZERLAND", "FRANCE", "ITALY")
+group by
+airline.airlinename
+order by
+airline.airlinename, nb_people
+limit 10;
+</copy>
+```
 
 	![Run query](images/redash-query.png)
 

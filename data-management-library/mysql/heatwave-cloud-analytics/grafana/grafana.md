@@ -273,30 +273,31 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 4. Paste the SQL text to the query text field
 
-  ```sql
-  <copy>
-  SELECT /*+ SET_VAR(use_secondary_engine=on) */
-  now() as time, airline.airlinename,
-  count(*) as nb_people
-  FROM
-  booking, flight, airline, passengerdetails
-  WHERE
-  booking.flight_id=flight.flight_id AND
-  airline.airline_id=flight.airline_id AND
-  booking.passenger_id=passengerdetails.passenger_id AND
-  country IN ("SWITZERLAND", "FRANCE", "ITALY")
-  GROUP BY
-  airline.airlinename
-  ORDER BY
-  airline.airlinename, nb_people
-  LIMIT 10;
-  </copy>
   ```
+sql
+<copy>
+SELECT /*+ SET_VAR(use_secondary_engine=on) */
+now() as time, airline.airlinename,
+count(*) as nb_people
+FROM
+booking, flight, airline, passengerdetails
+WHERE
+booking.flight_id=flight.flight_id AND
+airline.airline_id=flight.airline_id AND
+booking.passenger_id=passengerdetails.passenger_id AND
+country IN ("SWITZERLAND", "FRANCE", "ITALY")
+GROUP BY
+airline.airlinename
+ORDER BY
+airline.airlinename, nb_people
+LIMIT 10;
+</copy>
+```
 
-  >Note: the ""SET_VAR(use_secondary_engine=on)"" will instruct the optimizer to route the SQL statement to HeatWave
-  The function ""now()"" is added to the SQL Statement so that we can create time chart in Grafana
+  >Note: the **SET_VAR(use_secondary_engine=on)** will instruct the optimizer to route the SQL statement to HeatWave.  
+  The function **now()** is added to the SQL Statement so that we can create time chart in Grafana
 
-	![Dashboard](images/grafana-edit-panel-paste-sql.png)
+  ![Dashboard](images/grafana-edit-panel-paste-sql.png)
 
 5. Change the Visualization settings using Pie Chart as shown
 
@@ -312,7 +313,7 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 8. Edit the Panel to change the SQL Hint with /*+ SET_VAR(use_secondary_engine=off)*/
 
-	![Dashboard](images/grafana-edit-panel-off-secondary.png)
+  ![Dashboard](images/grafana-edit-panel-off-secondary.png)
 
   >Note: the ""SET_VAR(use_secondary_engine=off)"" will instruct the optimizer to route the SQL statement to MySQL instance instead of HeatWave
   The function ""now()"" is added to the SQL Statement so that we can create time chart in Grafana
@@ -330,10 +331,10 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 ## Acknowledgements
 
 * **Author**
-  * Ivan Ma, MySQL Solution Engineer, MySQL APAC
-  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors**
-  * Perside Foster, MySQL Solution Engineering
-  * Rayes Huang, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering
+	* Rayes Huang, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022
