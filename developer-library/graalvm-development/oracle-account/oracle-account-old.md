@@ -2,7 +2,7 @@
 
 ## Introduction
 
-このハンズオンの実施には有効なOracleアカウントとリソースの予約が必要となります。フリーのOracleアカウントでリソースの予約を行い、またその他OracleサポートやOracle一般公開コンテンツにアクセスすることができます。
+このハンズオンの実施には有効なOracleアカウント（OCIアカウントではない）とリソースの予約が必要です。Oracleアカウントを使用して演習環境のリソースの予約を行い、またその他OracleサポートやOracle一般公開コンテンツにアクセスすることができます。
 
 既にOracleアカウントをお持ちの場合、Task2へ移動してください。
 
@@ -12,7 +12,7 @@
 
 Oracleアカウントは以下二つのステップで作成できます。
 
-1. [oracle.com](http://www.oracle.com)へナビゲートし,  *View Account*をクリックして *Create an Account*を選択します。
+1. ブラウザより[oracle.com](http://www.oracle.com)へナビゲートします。  *View Account*をクリックして *Create an Account*を選択します。
 
   ![](images/create-account-oracle-1.png " ")
 
@@ -42,11 +42,11 @@ Oracleアカウントは以下二つのステップで作成できます。
 
   ![](images/open-workshop.png " ")
 
-You may now proceed to the next lab.
+次の演習にお進みください。
 
 
 ## Acknowledgements
 
-- **Created By/Date** - Tom McGinn, Database Product Management, March 2020
+- **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022
 - **Contributors** - Rene Fontcha, Kamryn Vinson, Anoosha Pilli
-- **Last Updated By/Date** - Tom McGinn, Brianna Ambler, June 2021
+- **Last Updated By/Date** - Jun Suzuki, April 2022

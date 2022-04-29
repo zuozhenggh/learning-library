@@ -1,18 +1,19 @@
 # 事前準備
 
-## Introduction
 
-このハンズオンの実施には有効なOracleアカウントとリソースの予約が必要となります。フリーのOracleアカウントでリソースの予約を行い、またその他OracleサポートやOracle一般公開コンテンツにアクセスすることができます。
+このハンズオンを実施するためには有効なOracleアカウント（OCIアカウントではない）とリソースの予約が必要です。Oracleアカウントを使用して演習環境のリソースの予約を行う、またその他OracleサポートやOracle一般公開コンテンツにアクセスすることができます。
 
-既にOracleアカウントをお持ちの場合、Task2へ移動してください。
+既にOracleアカウントをお持ちの場合、下記Task2へ移動してください。
 
-既に事前にリソース予約済みの場合、本演習をスキップし、次の「ハンズオン概要」へ移動してください。
+既に事前にリソース予約済みの場合、この章をスキップし、次の章「ハンズオン概要」へ移動してください。
+##   
+   
 
 ## Task 1: Oracleアカウントの作成
 
 Oracleアカウントは以下二つのステップで作成できます。
 
-1. [oracle.com](http://www.oracle.com)へナビゲートし,  *View Account*をクリックして *Create an Account*を選択します。
+1. ブラウザより[oracle.com](http://www.oracle.com)へナビゲートします。  *View Account*をクリックして *Create an Account*を選択します。
 
   ![](images/create-account-oracle-1.png " ")
 
@@ -22,31 +23,32 @@ Oracleアカウントは以下二つのステップで作成できます。
 
 ## Task 2: ハンズオンワークショップリソースの予約
 
-1. *Oracle Account Login* より [LiveLabs 2.0](http://bit.ly/golivelabs) へナビゲートし、 ![](images/reserve.png) をクリックして、本ハンズオン専用リソースを予約します。
+1. [LiveLabs 2.0](http://bit.ly/golivelabs) へナビゲートし、「次世代Java高速実行基盤GraalVMハンズオン」のトップページにある「Run On Livelabs Sandbox」をクリックします。
+　![](images/run-on-livelabs.png)
 
-2. リソースの予約が完了後、予約が進行中および予約完了の計2通のe-mailが届きます。
+2. Oracleアカウントログイン画面より事前に作成したユーザ名、パスワードを入力してログインします。
+　![](images/run-on-livelabs2.png)
 
-  ![](images/livelab-env-created-email.png " ")
+ > **Note:** Oracleアカウント未作成の場合、画面下部の「Create Account」をクリックし、Task1の手順に従ってOracleアカウントを作成してください。
 
-  *Note: 予約時間を選択した場合、その時間になる直前に2通目のe-mailが届きます。*
+3. ハンズオンの予約画面にて、「Start Workshop Now?」がオンになっていることを確認し、「I consent to recieve reservation emails」をチェックし、「Submit Reservation」をクリックします。
+　![](images/run-on-livelabs3.png)
+   
+   これによりクラウド上のハンズオン用環境のプロビジョニングが開始されます。次の画面より「View your reservation」をクリックして、プロビジョニング状況を確認します。
+　![](images/run-on-livelabs4.png)
+> **Note:** プロビジョニング中、計3通のステータス確認メールが登録のメールアドレス宛に届きます。
 
-3. LiveLabsへログインして、 **My Reservations**をクリックします。 **Launch Workshop**のリンクをクリックし、該当ハンズオンを選択します。
+4. プロビジョニング完了のステータスに変わりましたら、「Launch workshop」をクリックします。
+　![](images/run-on-livelabs5.png)
 
-  ![](images/ll-reservations.png " ")
-
-4. 画面の指示に従ってOracleアカウントへログインし、初期パスワードを変更した上、Oracle Cloudへのログインを完了します。
-
-  ![](images/launch-ll-workshop.png " ")
-
-5. Finally, open the lab instructions by choosing one of the two options.
+5. ハンズオン内容の表示方法を選択します。
 
   ![](images/open-workshop.png " ")
 
-次の演習にお進みください。
-
+*以上でハンズオンの事前準備が完了しましたので、次の章「ハンズオン概要」に進めてください。*
 
 ## Acknowledgements
 
 - **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022
-- **Contributors** - Rene Fontcha, Kamryn Vinson, Anoosha Pilli
+- **Contributors** - 
 - **Last Updated By/Date** - Jun Suzuki, April 2022

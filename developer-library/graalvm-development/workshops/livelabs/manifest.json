@@ -13,24 +13,19 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "演習 1: OCIインスタンスをプロビジョニング",
-            "description": "Labs that follow the introduction are numbered, starting with Lab 1",
-            "filename": "../../provision/provision.md"
-        },
-        {
-            "title": "演習 2: GraalVM Enterprise Edition をインストール",
+            "title": "演習 1: GraalVM Enterprise Edition のインストール",
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "演習 3: 高性能JITコンパイラ",
+            "title": "演習 2: 高性能JITコンパイラ",
             "filename": "../../graal-jit/graal-jit.md"
         },
         {
-            "title": "演習 4: 高速に起動するNative Image",
+            "title": "演習 3: 高速に起動するNative Image",
             "filename": "../../graal-aot/graal-aot.md"
         },
         {
-            "title": "演習 5: Cloud Nativeアプリケーション開発",
+            "title": "演習 4: Cloud Nativeアプリケーション開発",
             "filename": "../../cloud-native/cloud-native.md"
         },
         {

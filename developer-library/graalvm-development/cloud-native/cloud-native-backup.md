@@ -144,31 +144,17 @@ This lab assumes you have:
 1. Spring Bootのサンプルソースコードをダウンロードします。
 
     ```
-    <copy>mkdir demo</copy>
+    <copy>git clone https://github.com/spring-guides/gs-rest-service</copy>
     ```
     ```
-    <copy>cd demo</copy>
-    ```
-    ```
-    <copy>curl https://start.spring.io/starter.zip -d dependencies=web,native -d javaVersion=11 -o demo.zip</copy>
-    ```
-    ```
-    <copy>unzip demo.zip</copy>
-    ```
-    ```
-    <copy>rm demo.zip</copy>
+    <copy>cd gs-rest-service/complete</copy>
     ```
 
 
 2. HTTPリクエストをハンドリングするResource Controller。src/main/java/com/example/restservice/GreetingController.java
 
     ```
-    <copy>nano src/main/java/com/example/demo/GreetingController.java</copy>
-    ```
-       
-    ```
-    <copy>
-    package com.example.demo;
+    package com.example.restservice;
 
     import java.util.concurrent.atomic.AtomicLong;
 
@@ -179,44 +165,15 @@ This lab assumes you have:
     @RestController
     public class GreetingController {
 
-            private static final String template = "Hello, %s!";
-            private final AtomicLong counter = new AtomicLong();
+      private static final String template = "Hello, %s!";
+      private final AtomicLong counter = new AtomicLong();
 
-            @GetMapping("/greeting")
-            public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-                return new Greeting(counter.incrementAndGet(), String.format(template, name));
-            }
+      @GetMapping("/greeting")
+      public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+      }
     }
-    </copy>
     ```
-    ```
-    <copy>nano src/main/java/com/example/demo/Greeting.java</copy>
-    ```
-    ```
-    <copy>
-    package com.example.demo;
-
-    public class Greeting {
-
-        private final long id;
-        private final String content;
-
-        public Greeting(long id, String content) {
-            this.id = id;
-            this.content = content;
-        }
-
-        public long getId() {
-            return id;
-        }
-
-        public String getContent() {
-            return content;
-        }
-    }
-    </copy>
-    ```
-    
    
 3. Plain Java Objectクラス。src/main/java/com/example/restservice/Greeting.java
 
