@@ -21,5 +21,13 @@ This lab assumes you have:
 
 ## Task 1: Provision an Integration Recipe
 
-1. Click the hamburger at the top left hand site of the home screen. Then, select the **Home** button.
+1. Click the hamburger menu at the top left hand site of the home screen. Then, select the **Home** button.
+
+2. Scroll down to Accelerators & Recipes. Then click **Search All**.
+
+3. Enter `Order Process` in the search field located on the top left side of the screen, then press **Enter**. 
+
+    ![Import Recipe](images/recipe-import.png)
+
+4. 
 
