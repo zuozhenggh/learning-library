@@ -41,7 +41,7 @@ This lab assumes you have:
     ![Import Recipe](images/recipe-configure.png)
 
 
-3. On the Configuration Editor page, move to the connection and click the **Edit** icon. 
+3. On the Configuration Editor page, find the Order Process connection under the *Connections* section and click the **Edit** icon. 
 
    ![Import Recipe](images/recipe-configure-connection.png)
 
