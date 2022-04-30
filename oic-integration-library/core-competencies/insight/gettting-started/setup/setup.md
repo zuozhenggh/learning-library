@@ -45,7 +45,7 @@ This lab assumes you have:
 
    ![Import Recipe](images/recipe-configure-connection.png)
 
-4. In the Connection page, copy the Oracle Integration host name from the browser address bar and past it into the field **ERP Cloud Host**
+4. In the Connection page, copy the Oracle Integration host name from the browser address bar and past it into the field **Connection URL**.
 
     ![Import Recipe](images/recipe-configure-connection-hostname.png)
 
