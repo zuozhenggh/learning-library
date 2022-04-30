@@ -273,7 +273,7 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 4. Paste the SQL text to the query text field
 
-  ```
+    ```
 sql
 <copy>
 SELECT /*+ SET_VAR(use_secondary_engine=on) */
@@ -294,8 +294,8 @@ LIMIT 10;
 </copy>
 ```
 
-  >Note: the **SET_VAR(use_secondary_engine=on)** will instruct the optimizer to route the SQL statement to HeatWave.  
-  The function **now()** is added to the SQL Statement so that we can create time chart in Grafana
+    >Note: the **SET_VAR(use_secondary_engine=on)** will instruct the optimizer to route the SQL statement to HeatWave.  
+    The function **now()** is added to the SQL Statement so that we can create time chart in Grafana
 
   ![Dashboard](images/grafana-edit-panel-paste-sql.png)
 
