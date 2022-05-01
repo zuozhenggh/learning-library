@@ -138,7 +138,7 @@ limit 10;
 </copy>
 ```
 
-    Congratulations! You have completed all the labs
+    You may now **proceed to the next lab.**
 
 ## Acknowledgements
 
