@@ -178,6 +178,7 @@ This lab assumes you have:
 * **Author**
 	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
 	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+
 * **Contributors**
 	* Perside Foster, MySQL Solution Engineering
 	* Rayes Huang, OCI Solution Specialist, OCI APAC

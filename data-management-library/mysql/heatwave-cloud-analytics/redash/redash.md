@@ -147,10 +147,10 @@ limit 10;
 ## Acknowledgements
 
 * **Author**
-  * Ivan Ma, MySQL Solution Engineer, MySQL APAC
-  * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
 * **Contributors**
-  * Perside Foster, MySQL Solution Engineering
-  * Rayes Huang, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering
+	* Rayes Huang, OCI Solution Specialist, OCI APAC
 
 * **Last Updated By/Date** - Ryan Kuan, March 2022

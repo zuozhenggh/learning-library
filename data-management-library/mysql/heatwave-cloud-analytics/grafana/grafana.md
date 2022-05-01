@@ -161,8 +161,8 @@ kubectl get service -n grafana --watch
 1. Open a browser and access your PHP application using the external IP address. (e.g. <http://xxx.xxx.xxx.xxx:3000/>). Login using admin/admin as username/password
 
     ![Grafana Login](images/grafana-login.png)
-  
-  >Note: Grafana may take a while complete the initialization. If you can't access the portal, please wait for a while and try again
+
+    >Note: Grafana may take a while complete the initialization. If you can't access the portal, please wait for a while and try again
 
 2. You can change the password accordingly
 
@@ -187,7 +187,7 @@ kubectl get service -n grafana --watch
 
 1. Connect to the **oke-operator** compute instance using OCI Cloud Shell
 
-	![Connect to VM](images/connect-to-vm.png)
+	  ![Connect to VM](images/connect-to-vm.png)
 
 2. Create my2 database for dashboard using script
 
@@ -261,15 +261,15 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 1. Click on the **Add panel** icon in the dashboard
 
-	![Dashboard](images/grafana-add-panel-menu.png)
+	  ![Dashboard](images/grafana-add-panel-menu.png)
 
 2. Click on 'Add an empty panel'
 
-	![Dashboard](images/grafana-panel-add.png)
+	  ![Dashboard](images/grafana-panel-add.png)
 
 3. Click on the **Edit SQL** button
 
-	![Dashboard](images/grafana-panel-edit-sql.png)
+	  ![Dashboard](images/grafana-panel-edit-sql.png)
 
 4. Paste the SQL text to the query text field
 
@@ -297,15 +297,15 @@ LIMIT 10;
     >Note: the **SET_VAR(use_secondary_engine=on)** will instruct the optimizer to route the SQL statement to HeatWave.  
     The function **now()** is added to the SQL Statement so that we can create time chart in Grafana
 
-  ![Dashboard](images/grafana-edit-panel-paste-sql.png)
+    ![Dashboard](images/grafana-edit-panel-paste-sql.png)
 
 5. Change the Visualization settings using Pie Chart as shown
 
-	![Dashboard](images/grafana-edit-panel-pie-chart.png)
+	  ![Dashboard](images/grafana-edit-panel-pie-chart.png)
 
 6. Click 'Apply' button at the right top meu
 
-	![Dashboard](images/grafana-edit-panel-apply.png)
+	  ![Dashboard](images/grafana-edit-panel-apply.png)
 
 7. Switch back to the dashboard and from click on the panel and choose Duplicate a new one
 
@@ -315,8 +315,8 @@ LIMIT 10;
 
   ![Dashboard](images/grafana-edit-panel-off-secondary.png)
 
-  >Note: the ""SET_VAR(use_secondary_engine=off)"" will instruct the optimizer to route the SQL statement to MySQL instance instead of HeatWave
-  The function ""now()"" is added to the SQL Statement so that we can create time chart in Grafana
+    >Note: the ""SET_VAR(use_secondary_engine=off)"" will instruct the optimizer to route the SQL statement to MySQL instance instead of HeatWave
+    The function ""now()"" is added to the SQL Statement so that we can create time chart in Grafana
 
 9. Apply and switching back to the dashboard; Click Save icon to save the dashboard.
 
