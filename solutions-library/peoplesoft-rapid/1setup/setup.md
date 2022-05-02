@@ -5,7 +5,7 @@
 In this lab, the recently provisioned OCI Trial tenancy will be set up for the PeopleSoft Application.
 
 
-Estimated Lab Time: 20 minutes
+Estimated Time: 20 minutes
 
 ### Objectives
 

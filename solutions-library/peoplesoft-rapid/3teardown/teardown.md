@@ -3,7 +3,7 @@
 ## Introduction
 In this lab we will destroy your Siebel environment by deleting all the resources we created in OCI.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 
 ### Objectives

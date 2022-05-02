@@ -4,7 +4,7 @@
 
 In this exercise, you will create your Siebel application by setting up the Siebel Marketplace image and then use Jenkins to deploy an instance of Siebel.
 
-Estimated Lab Time: 1 hour 15 minutes
+Estimated Time: 1 hour 15 minutes
 
 ### Objectives
 
