@@ -9,8 +9,7 @@ Estimated Time: 1 hour 30 minutes
 ### Objectives
 
 To deploy the PeopleSoft Instance, in this lab, you will:
-*   Launching Instance of PeopleSoft from Marketplace
-*   Deploy the PeopleSoft Application
+*   Launching and deploying instance of PeopleSoft from Marketplace
 *   Access PeopleSoft instance
 
 ### Prerequisites
@@ -38,7 +37,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
   ![Select any of the PeopleSoft images to install](./images/marketplace1.png " ")
 
 
-4. In the instance page select the PeopleSoft HCM Update Image Demo version and then select the compartment you made earlier. Then click ***Launch Instance***
+4. In the instance page, select the PeopleSoft HCM Update Image Demo version and then select the compartment you made earlier. Then click ***Launch Instance***
 
   ![Select the desired compartment then select Launch Instance](./images/marketplace2.png " ")
 
@@ -70,21 +69,20 @@ To deploy the PeopleSoft Instance, in this lab, you will:
     ![Select existing virtual cloud network, selct existing subnet, select assign a public IP adress, add your own ssh key then click create](./images/marketplace4.png " ")
     ![provide the ssh key created earlier](./images/marketplace5.png " ")
 
-    g. Click Show advanced options,On the Management tab select the option Paste cloud-init script and enter the configuration information using the JSON format in these examples.
+    g. Click Show advanced options, on the management tab select the option Paste cloud-init script and enter the configuration information using the JSON format in these examples.
       
-        ```   
-        <copy> 
-        {
-       "connect_pwd":  "password",
-       "access_pwd":  "password",
-       "admin_pwd":  "password",
-       "weblogic_admin_pwd":  "password",
-       "webprofile_user_pwd":  "password",
-       "gw_user_pwd":  "password",
-       "domain_conn_pwd":  "password",
-       "opr_pwd": "password"
-        }</copy
-        ```
+          ```   
+            <copy>{
+            "connect_pwd":  "password",
+            "access_pwd":  "password",
+            "admin_pwd":  "password",
+            "weblogic_admin_pwd":  "password",
+            "webprofile_user_pwd":  "password",
+            "gw_user_pwd":  "password",
+            "domain_conn_pwd":  "password",
+            "opr_pwd": "password"
+            }</copy
+          ```
     
     g. Now review your settings and click ***Create*** at the bottom of the page when you are ready
 6. Now you will be taken to the Instance Page and will see that your newly created instance is provisioning
@@ -93,54 +91,6 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
      ![Once the orange box changes to a green box your intance will have been succesfully provisioned](./images/6.png " ")
 
-
-## Task 2: Deploying the PeopleSoft Application
-
-After you have created the instance, you have to generate two URLs:
-*	Jenkins URL: To deploy PeopleSoft application
-*	Application domain URL: To create PeopleSoft industry specific application
-
-Generating Jenkins URL
-
-1.	Copy the Public IP Address from your previously created Instance
-
-  ![Copy the public IP adress of the instance you created ](./images/2.1.png " ")
-
-2.	Add the port 8080 preceded with a colon and paste the URL in a browser window to open the Jenkins application like this "<public IP address>:port number"
-
-    For example, you would type: 111.111.111.11:8080 into you browser search bar
-
-    **Note:** If your instance was created recently you may not be able to access the Jenkins URL right away, it may take an additional 5 min before you can complete this step
-
-3. Once you arrive at the Jenkins site you will enter the information as follows
-
-  USERNAME AND PASSWORD :  PeopleSoft/oracle
-
-  ![After reaching the site enter the username PeopleSoft, and password oracle. All lowercase](./images/2.3.png " ")
-
-4. After you have logged in you will see the Jenkins Home Screen. Select the ***PeopleSoftDeploy*** option from the list
-
-  ![When logged in you will see this home screen, select PeopleSoft deploy](./images/2.4.png " ")
-
-5. Now select the ***Open Blue Ocean*** Option from the dropdown on the lefthand side of the screen
-
-  ![Select blue ocean from the left hand menu](./images/2.5.png " ")
-
-6. Select the ***Run*** button to create your new instance
-
-  ![SSelect the run button on the lefthand side of the screen](./images/2.6.png " ")
-
-7. In the window that opens you can specify the PeopleSoft version and Industry that you desire. For this Lab we will choose PeopleSoft version ***20.8*** and select ***Sales*** as the industry; then click the ***Run*** button
-
-  ![Select verion 20.8 , Then select Sales. Select sample version of docker](./images/2.7.png " ")
-
-8. After hitting run you will see that your new PeopleSoft instance is being created, by clicking on it you can see more details
-
-    **This can take 40 minutes to fully deploy**
-
-    ![Wait unti the instance shows that it was successfully deployed. When finished it will have the green circle](./images/2.8.png " ")
-
-    Once it is finished provisioning you will see its status change to a green circle with a check signifying that it is complete and that you may move onto the next step
 
 ## Task 3: Generating application domain URL
 
