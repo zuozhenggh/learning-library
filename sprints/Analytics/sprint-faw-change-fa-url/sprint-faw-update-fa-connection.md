@@ -1,4 +1,5 @@
 # How can I change my Fusion Application connection in Fusion Analytics Warehouse?
+
 Duration: 5 minutes
 
 ## Update Fusion Connection
@@ -16,6 +17,6 @@ Duration: 5 minutes
 ![FAW updated](images/updated.png)
 
 You have now successfully learned how to update your Fusion Application connection in Fusion Analytics Warehouse.
-## Learn More
 
+## Learn More
 * [Update Data Source Connection Details](https://docs.oracle.com/en/cloud/saas/analytics/21r3/fawag/update-data-source-connection-details.html)
