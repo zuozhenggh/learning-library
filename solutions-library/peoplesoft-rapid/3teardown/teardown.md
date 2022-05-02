@@ -20,7 +20,7 @@ Estimated Time: 15 minutes
 
 2. Use the dropdown menu located in the upper lefthand corner of the screen and select **Compute** then **Instances**.
 
-    ![Use the dropdown menu located in the upper lefthand corner to select instances](./images/dropdown_compute_instance.png " ")
+    ![Use the dropdown menu located in the upper lefthand corner to select instances](./images/dropdown-compute.png " ")
 
 3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected.
 
@@ -30,11 +30,11 @@ Estimated Time: 15 minutes
 
     Now click on the three dots to the right of your Siebel instance and then select **Terminate**.
 
-    ![Use the small dropdown menu and click terminate](./images/terminate_instance.png " ")
+    ![Use the small dropdown menu and click terminate](./images/terminate-instance.png " ")
 
     Once the image has finished terminating you will see its state change to terminated.
 
-    ![Status should be terminated as shown](./images/terminated_instance.png " ")
+    ![Status should be terminated as shown](./images/terminated-instance.png " ")
 
 ## Task 2: Terminating the VCN
 
@@ -42,7 +42,7 @@ Estimated Time: 15 minutes
     ![Navigate to compartments using the dropdown menu](./images/network.png " ")
 
 2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected.
-    ![](./images/correct_compartment.png " ")
+    ![](./images/correct-comp.png " ")
 
 3. You shoud now be able to se the VCN that you created in the "Setup" lab.
 
@@ -56,23 +56,23 @@ Estimated Time: 15 minutes
 
     **Note:** It may take a moment for all of the resources to load.
 
-    ![Terminate vcn menu](./images/terminate_confirm.png " ")
+    ![Terminate vcn menu](./images/terminate-confirm.png " ")
 
     After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
 
 ## Task 3: Deleting the test Compartment
 
-1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity** then **Compartments**.
+1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity & Security** then **Compartments**.
 
-    ![Navigate to compartments using the dropdown menu](./images/dropdown_compartment.png " ")
+    ![Navigate to compartments using the dropdown menu](./images/oci-comp.png " ")
 
     From this screen navigate to the compartment you created in the "Setup" lab.
 
-    ![Click the delete button to delete the compartment](./images/delete_compartment.png " ")
+    ![Click the delete button to delete the compartment](./images/delete-comp.png " ")
 
     After some time the status will be shown as deleted.
 
-    ![The compartment is shown as deleted](./images/deleted_compartment.png " ")
+    ![The compartment is shown as deleted](./images/deleted-comp.png " ")
 
 
 You have now removed all the resources you created for the PeopleSoft Marketplace environment.
