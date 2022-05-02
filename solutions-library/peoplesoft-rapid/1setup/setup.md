@@ -1,4 +1,4 @@
-# Set Up OCI for PeopleSoft Deployment
+# Set Up OCI for PeopleSoft deployment
 
 ## Introduction
 
@@ -19,7 +19,7 @@ To set up the OCI tenancy, in this lab, you will:
 * SSH key
 
 
-## Task 1: Create a Sub-Compartment
+## Task 1: Create a sub-compartment
 
 In this part of the lab, we create a sub-compartment to organize the resources we will create
 
@@ -116,7 +116,7 @@ To create a VCN on Oracle Cloud Infrastructure:
     ![Click on the view virtual cloud network button on the bottom lefthand side of the screen](./images/network6.png " ")
 
 
-## Task 3:  Establish Security List Rules for PeopleSoft
+## Task 3:  Establish security list rules for PeopleSoft
 
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN
 

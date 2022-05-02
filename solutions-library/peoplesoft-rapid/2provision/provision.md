@@ -17,7 +17,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 * SSH key
 * VCN setup from the previous lab
 
-## Task 1:  Launching Instance of PeopleSoft from Marketplace
+## Task 1:  Launching instance of PeopleSoft from OCI marketplace
 
 1. Make sure you are on the Oracle Cloud Infrastructure site
 

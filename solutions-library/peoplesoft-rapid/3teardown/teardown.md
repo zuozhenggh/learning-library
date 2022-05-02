@@ -1,4 +1,4 @@
-# Teardown Your Oracle PeopleSoft Environment
+# Teardown your Oracle PeopleSoft Environment
 
 ## Introduction
 In this lab, we will decommission the PeopleSoft environment by deleting all the resources we created in OCI.
@@ -14,7 +14,7 @@ Estimated Time: 15 minutes
 * Tenancy Admin User
 * Tenancy Admin Password
 
-## Task 1: Delete the PeopleSoft Virtual Machine In OCI
+## Task 1: Delete the PeopleSoft virtual machine
 
 1. Navigate to the OCI home page.
 
@@ -60,7 +60,7 @@ Estimated Time: 15 minutes
 
     After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
 
-## Task 3: Deleting the test Compartment
+## Task 3: Deleting the test compartment
 
 1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity & Security** then **Compartments**.
 
