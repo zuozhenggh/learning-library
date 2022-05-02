@@ -70,9 +70,9 @@ Estimated Time: 15 minutes
 
     ![Click the delete button to delete the compartment](./images/delete-comp.png " ")
 
-    After some time the status will be shown as deleted.
+    Click the delete button to delete the compartment,after some time the status will be shown as deleted.
 
-    ![The compartment is shown as deleted](./images/deleted-comp.png " ")
+    
 
 
 You have now removed all the resources you created for the PeopleSoft Marketplace environment.
