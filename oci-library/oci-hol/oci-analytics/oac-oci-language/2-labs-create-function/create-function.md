@@ -22,7 +22,7 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
+* All previous labs completed
 
 
 ## **Task 1**: Background
@@ -78,7 +78,7 @@ Sample **Oracle Data Integration Function Input**:
 		<copy>{				"data":"eyJpZCI6MSwiaW5mbyI6Ilpvb20gbm93IGNsYWltcyB0byBoYXZlIDMwMCBtaWxsaW9uIG1lZXRpbmcgcGFydGljaXBhbnRzIHBlciBkYXkuIEl0IGNob3NlIE9yYWNsZSBDb3Jwb3JhdGlvbiBjby1mb3VuZGVkIGJ5IExhcnJ5IEVsbGlzb24gYW5kIGhlYWRxdWFydGVyZWQgaW4gUmVkd29vZCBTaG9yZXMgLCBmb3IgaXRzIGNsb3VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnRzIG92ZXIgdGhlIGxpa2VzIG9mIEFtYXpvbiwgTWljcm9zb2Z0LCBHb29nbGUsIGFuZCBldmVuIElCTSB0byBidWlsZCBhbiBlbnRlcnByaXNlIGdyYWRlIGV4cGVyaWVuY2UgZm9yIGl0cyBwcm9kdWN0LiBUaGUgc2VjdXJpdHkgZmVhdHVyZSBpcyBzaWduaWZpY2FudGx5IGxhY2tpbmcgYXMgaXQgYWxsb3dzIHBlb3BsZSB3aXRoIGRpc3R1cmJpbmcgem9vbWJvbWIuIn0KeyJpZCI6MiwiaW5mbyI6Ikx1aXMgbGlrZXMgdG8gd29yayBhdCBPcmFjbGUgYW5kIGxlYXJuIGFib3V0IGRhdGEgaW50ZWdyYXRpb24ifQ==","parameters":{"column":"info"}
     }</copy>
 
-Note that the encoded data is the base 64 encode version of a set of JSON Lines format (each line is a JSON for each record). Each record has an ID that will be used to associate the output.
+Note that the encoded data is the base 64 encoded version of a set of JSON Lines format (each line is a JSON for each record). Each record has an ID that will be used to associate the output.
 
    	<copy>{
 			"id":1,"info":"Zoom now claims to have 300 million meeting participants per day. It chose Oracle Corporation co-founded by Larry Ellison and headquartered in Redwood Shores , for its cloud 	  infrastructure deployments over the likes of Amazon, Microsoft, Google, and even IBM to build an enterprise grade experience for its product. The security feature is significantly lacking as it allows people with disturbing zoombomb."
@@ -87,7 +87,7 @@ Note that the encoded data is the base 64 encode version of a set of JSON Lines 
 		{"id":2,"info":"Luis likes to work at Oracle and learn about data integration"
 		}</copy>
 
-The output of the **Oracle Data Integration Function** will be a list of results that has the shape of a table. Currently Oracle Data Integration does not support nesting of complex structures.
+The output of the **Oracle Data Integration Function** will be a list of results that has the shape of a table. Currently, Oracle Data Integration does not support the nesting of complex structures.
 
 This is what the sample output should look like. Notice that it does not have nested structures.
 
@@ -137,7 +137,7 @@ Since we need to integrate the OCI Language service through an Oracle Function, 
 
 ## **Task 2**: Create an Application
 
-In order to add a function, first we need to create an **Application**.
+To add a function, first, we need to create an **Application**.
 1.	Go to cloud console (cloud.oracle.com) and navigate to **Developer Services** > **Applications**
 
    ![Create Application](./images/createapplication.png " ")
@@ -155,12 +155,12 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 
 2.	Click **Cloud Shell Setup**
 3.	Click the **Launch Cloud Shell** button.
- This will start a Linux virtual machine with all the configuration to set up functions.
+ This will start a Linux virtual machine with all the configurations to set up functions.
 4.	Follow steps **1** through **7** under the “Setup fn CLI on Cloud Shell” section
  	* If you need guidance, see this [Video](https://www.youtube.com/watch?app=desktop&t=483&v=TdQ6BL58Zfk&feature=youtu.be)
 	* If you need more specific and detailed instructions, see this [Document](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatefncontext.htm)
 	* You can select any term for OCIR-REPO, it is just a prefix that will be used as the name of the container registry to use to deploy the function.
-5.	Before proceeding to the next lab test connection to the docker and log in :steps **8** to **11**
+5.	Before proceeding to the next lab test the connection to the docker and log in: steps **8** to **11**
 
    ![Test CLI](./images/testcloudshell.png " ")
 
@@ -168,7 +168,7 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 
 ## **Task 3**: Create a Sentiment Function
 
-We will now create the function in the application. The function will do sentiment analysis on the input. The input will conform to the format that OCI Data Integration will generate (base 64 encoded jason lines).The fastest way to set things up is to have the system generate a **python template** for us that then we will modify.
+We will now create the function in the application. The function will do sentiment analysis on the input. The input will conform to the format that OCI Data Integration will generate (base 64 encoded Jason lines). The fastest way to set things up is to have the system generate a **python template** for us that then we will modify.
 
 1.	Run the following commands on the cloud shell:
 
@@ -265,12 +265,12 @@ We will now create the function in the application. The function will do sentime
 		    return str
 		</copy>
 
-6. Verify your 3 files look exactly as above with no spaces, additional code and etc.
+6. Verify your 3 files look exactly as above with no spaces, additional code, etc.
 
 
 ## **Task 4**: Deploy the Function
 
-Once you have edited the files in **Task 3**, deploy the function to your application , by running this cloud shell command. Make sure to replace **app-name** for the name of your application
+Once you have edited the files in **Task 3**, deploy the function to your application, by running this cloud shell command. Make sure to replace **app-name** for the name of your application
 
   	<copy>fn -v deploy -app app-name</copy>
 
@@ -347,7 +347,7 @@ We need to map your newly created function to an API endpoint that is accessible
 
 		<copy>https://ingszpbimsiu7cr4e6t3o4xhcq.apigateway.us-ashburn-1.oci.customer-oci.com/language</copy>
 
-14.	Append your route information to hit the endpoint, for example try making this Post call from [Postman](https://www.postman.com/downloads/) or any other tool that allows you to issue **POST** commands.
+14.	Append your route information to hit the endpoint, for example, try making this Post call from [Postman](https://www.postman.com/downloads/) or any other tool that allows you to issue **POST** commands.
 
    For **POST** command
 

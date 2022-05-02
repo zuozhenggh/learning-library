@@ -2,9 +2,9 @@
 
 ## About this Workshop
 
-About 80% of the worlds’ data is in an unstructured format: Video files, PDFs, spreadsheets, images, and so on. Many of these unstructured documents contain plain text written in prose. Even databases have many semi-structured tables because they contain textual fields, such as descriptions or customer support requests. Dealing with large quantities of text data is a complex task, but this information is valuable!
+About 80% of the world's data is in an unstructured format: Video files, PDFs, spreadsheets, images, and so on. Many of these unstructured documents contain plain text written in prose. Even databases have many semi-structured tables because they contain textual fields, such as descriptions or customer support requests. Dealing with large quantities of text data is a complex task, but this information is valuable!
 
-What if we could apply state-of-the-art AI models to unstructured data to extract insights from it? Oracle Cloud Infrastructure (OCI) now offers several AI services that allow you to harness the power of artificial intelligence. They offer pretrained models ready for you to use and easy-to-train custom models that any developer can tweak. AI Services are geared toward developers, and you don’t need to be an expert data scientist to consume them.
+What if we could apply state-of-the-art AI models to unstructured data to extract insights from it? Oracle Cloud Infrastructure (OCI) now offers several AI services that allow you to harness the power of artificial intelligence. They offer pre-trained models ready for you to use and easy-to-train custom models that any developer can tweak. AI Services are geared toward developers, and you don’t need to be an expert data scientist to consume them.
 
 In this workshop, we describe a pattern where we use OCI Language, one of our AI services, as part of an enrichment pipeline that allows you to ingest unstructured textual data and extract insights from it to analyze and visualize insights in OAC.
 
@@ -26,9 +26,9 @@ In this workshop, you will learn how to:
 ### Prerequisites
 
 This lab assumes you have:
-* Ability to read code (in this case python) can be beneficial
+* Ability to read code (in this case Python) can be beneficial
 * Familiarity with Oracle Cloud Infrastructure (OCI)
-* Some understanding of cloud, database and visualization fundamentals
+* Some understanding of cloud, database, and visualization fundamentals
 
 
 ## Learn More

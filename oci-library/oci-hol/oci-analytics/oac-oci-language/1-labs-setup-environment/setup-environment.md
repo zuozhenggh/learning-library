@@ -11,7 +11,7 @@ Estimated Time: 90 minutes
 In this lab, you will:
 * Verify Compartment and Group
 * Set up Policies
-* Create VCN with right access
+* Create VCN with the right access
 * Create an API Gateway
 * Confirm access to OCI Language Services
 
@@ -20,12 +20,12 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
+* All previous labs completed
 
 
 ## **Task 1**: Create Compartment and Group
 
-Talk to your Administrator to verify the name of compartment you are to use for this lab as well as the group. In our scenario we are using compartment "oac-compartment" and "oac-developer" for the group. If these are not created you can refer to below steps to create.
+Talk to your Administrator to verify the name of compartment you are to use for this lab as well as the group. In our scenario, we are using compartment "oac-compartment" and "oac-developer" for the group. If these are not created you can refer to the below steps to create.
 
 1.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Compartments**. A list of the compartments you have access to is displayed.
 
@@ -39,7 +39,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
     * **Name**: A unique name for the compartment (maximum 100 characters, including letters, numbers, periods, hyphens, and underscores). The name must be unique across all the compartments in your tenancy. Avoid entering confidential information.
     * **Description**: A friendly description. You can change this later if you want to.
     * **Compartment**: The compartment you are in is displayed. To choose another compartment to create this compartment in, select it from the list.
-    **Tags**: If you have permissions to create a resource, then you also have permissions to apply free-form tags to that resource. To apply a defined tag, you must have permissions to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
+    **Tags**: If you have permission to create a resource, then you also have permission to apply free-form tags to that resource. To apply a defined tag, you must have permission to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
 
     ![Create Compartment](./images/createcompartmenttwo.png " ")
 
@@ -56,19 +56,19 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 7. Enter the following:
     * **Name**: A unique name for the group. The name must be unique across all groups in your tenancy. You cannot change this later. The name must be 1-100 characters long and can include the following characters: lowercase letters a-z, uppercase letters A-Z, 0-9, and the period (.), dash (-), and underscore (_). Spaces are not allowed. Avoid entering confidential information.
     * **Description**: A friendly description. You can change this later if you want to.
-    * **Tags**: If you have permissions to create a resource, then you also have permissions to apply free-form tags to that resource. To apply a defined tag, you must have permissions to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
+    * **Tags**: If you have permission to create a resource, then you also have permission to apply free-form tags to that resource. To apply a defined tag, you must have permission to use the tag namespace. For more information about tagging, see Resource Tags. If you are not sure whether to apply tags, skip this option (you can apply tags later) or ask your administrator.
 
     ![Create Group](./images/creategrouptwo.png " ")
 
 8. Click **Create Group**.
 
-  In the next steps you will create policies for the group.    
+  In the next steps, you will create policies for the group.    
 
   For Groups : See [Documentation](https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managinggroups.htm) for more details.
 
 ## **Task 2**: Setup Policies
 
-  Talk to your Administrator and make sure you can: Create VCN Networks, Function, API Gateways, use AI Services (Language) and Data Integration.
+  Talk to your Administrator and make sure you can: Create VCN Networks, Functions, API Gateways, use AI Services (Language) and Data Integration.
 
 1.	Open the Oracle Cloud Infrastructure Console navigation menu and click **Identity & Security**. Under **Identity**, click **Policies**
 
@@ -81,7 +81,7 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
    ![Create Policies](./images/createpolicy.png " ")
 
-   **Note** When creating policies the one which says 'in tenancy' must be created/run in the root compartment of tenancy. All other policies should be created in the respective compartments.
+   **Note** When creating policies the one which says 'in tenancy' must be created/run in the root compartment of the tenancy. All other policies should be created in the respective compartments.
 
 4.	The following policies should be set:
 
@@ -229,10 +229,10 @@ See [Documentantion](https://docs.oracle.com/en-us/iaas/Content/APIGateway/Tasks
 
 
 ## **Task 5**: Confirm access to OCI Language Services
-This step ensures you are able to access OCI Language Service.
+This step ensures you can access OCI Language Service.
 
 Policy Pre-requisites:
-Please verify below policy that was created on Task 2, if it does not exists go ahead and add it.
+Please verify the below policy that was created on Task 2, if it does not exist go ahead and add it.
 
 
     <copy>
@@ -245,7 +245,7 @@ Get familiar with the Language AI Service
 
    ![Open AI Language](./images/openlanguageai.png " ")
 
-2.	In the Pre-trained models section, you can enter any text to analyze (or just keep the text there)
+2.	In the Pre-trained models' section, you can enter any text to analyze (or just keep the text there)
 
    ![Open AI Language](./images/openlanguageaitwo.png " ")
 

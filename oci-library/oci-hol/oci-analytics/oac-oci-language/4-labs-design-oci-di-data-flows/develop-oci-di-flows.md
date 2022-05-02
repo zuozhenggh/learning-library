@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to create the components necessary to create a data flow like the one shown in the graph below. In order to create source and target components, first we need to create a set of “data assets”. The data assets represent each of the elements in the diagram. We’ll start by creating the data asset for the source, and then the target.
+This lab walks you through the steps to create the components necessary to create a data flow like the one shown in the graph below. To create source and target components, first, we need to create a set of “data assets”. The data assets represent each of the elements in the diagram. We’ll start by creating the data asset for the source, and then the target.
 
    ![Data Flow](./images/odidataflow.png " ")
 
@@ -20,9 +20,9 @@ In this lab, you will:
 ### Prerequisites
 
 This lab assumes you have:
-* All previous labs successfully completed
-* You have the rights to use OCI Data Integration. Below are steps to check your access:
-    - Work with you administrator to create your DI Workspace and the policies that will allow you to use the data integration service and grant your DI workspace the ability to read data from storage buckets. Follow the setup steps that are described at [Connect to Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/tutorial/tutorials/01-connecting-to-dis.htm#getting-workspace-ocid)
+* All previous labs completed
+* You have the right to use OCI Data Integration. Below are steps to check your access:
+    - Work with your administrator to create your DI Workspace and the policies that will allow you to use the data integration service and grant your DI workspace the ability to read data from storage buckets. Follow the setup steps that are described at [Connect to Data Integration](https://docs.oracle.com/en-us/iaas/data-integration/tutorial/tutorials/01-connecting-to-dis.htm#getting-workspace-ocid)
     - If you are the administrator you can follow this [Create Workspace](https://docs.oracle.com/en-us/iaas/data-integration/using/workspaces.htm#workspaces) on steps to create a workspace
     - If you chose 'Enable Private Network' and If your source and target data sources are in a different network or region, you must separately configure appropriate gateways to establish routing between the networks. If you don't see your subnets, it could be because they weren't created as regional subnets.
     - From the Console, click **Analytics & AI** > **Data Integration**.
@@ -43,7 +43,7 @@ This lab assumes you have:
 
 3.	On the **Create Data Asset** page, complete the General Information fields:
     - For **Name**, enter reviews-data-source without any spaces. You can use alphanumeric characters, hyphens, periods, and underscores only.
-    - For **Description**, enter a description about your data asset.
+    - For **Description**, enter a description of your data asset.
     - From the **Type** dropdown, select **Oracle Object Storage**.
     - For **Tenant OCID**, enter the tenancy OCID. If needed, you can navigate to your tenancy information from the Profile icon on the top right corner of your cloud console.
     - For **OCI region**, you can copy the code that is shown in the url for instance “us-phoenix-1”
@@ -52,7 +52,7 @@ This lab assumes you have:
 
 4.	Test the connection and **Create** the data asset.
 
-   Repeat the same steps for your “staging” bucket location (if it is different). Currently the name of the data asset for the staging location needs to be capitalized.
+   Repeat the same steps for your “staging” bucket location (if it is different). Currently, the name of the data asset for the staging location needs to be capitalized.
 
 
 ## **Task 2**: Create a data asset for your target
@@ -90,7 +90,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 ## **Task 3**: Create the Data flow
 
-  To create a data flow, first you need to create a project in Data Integration. To create a project and a data flow:
+  To create a data flow, first, you need to create a project in Data Integration. To create a project and a data flow:
 
 1.	On your workspace **Home** page, click **Projects**. You can also click **Open** tab (plus icon) in the tab bar and select **Projects**.
 
@@ -100,7 +100,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
 3.	On the **Create Project** page, enter “language-lab” for **Name**, and then click **Create**.
 
-   Now we will create a data flow to ingest data the hotels review file we just ingested.
+   Now we will create a data flow to ingest data from the hotels' review file we just ingested.
 4.	On the **language-lab** project details page, click **Data Flows** in the submenu on the left.
 
 5.	Click **Create Data Flow**. The data flow designer opens in a new tab.
@@ -121,7 +121,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     - In **Details**, select the source asset your created (data-lake)
     - **Connection**: Keep “Default connection”
     - In **Schema**, select the bucket with the hotel reviews file.
-    - In **Data Entity** select the hotels review data file and enter **CSV** as the File Type.
+    - In **Data Entity** select the hotels' review data file and enter **CSV** as the File Type.
 
     ![Create Data Flow](./images/createdataflowthree.png " ")
 
@@ -130,13 +130,13 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
     ![Data Flow Source](./images/dataflowsource.png " ")
 
 10.	First, we will add an expression to change the format of our **REVIEW\_ID** field.
-    - Right click on the 3 vertical dots next to the **data source name.review\_id** field
+    - Right-click on the 3 vertical dots next to the **data source name.review\_id** field
     - Select **Change Data Type** and select Integer and click **Apply**
     - This will create a new expression step in your dataflow
     - Set the **Name** to REVIEW\_ID
 
 11.	Now we will perform a second transformation.  We will make sure that the date is treated as a Date. Start by navigating to the Data tab in the Properties pane while selecting the Expression.
-    - Right click on the 3 vertical dots next to the **data source name.review\_date** field
+    - Right-click on the 3 vertical dots next to the **data source name.review\_date** field
     - Select **Change Data Type** and select Data Type **Date** and the Date Format that matches the CSV format (in this case yyyy-MM-dd)
     - Set the **Name** to REVIEW\_DATE
 
@@ -147,11 +147,11 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
    Now we will connect the function you created in **Lab 2** to extract the aspect level sentiment from the review text.
 
-14.	From the operators toolbar, drag the Function (fn) operator into the canvas, and connect the output of your expression as the input into the function.
+14.	From the operators' toolbar, drag the Function (fn) operator into the canvas and connect the output of your expression as the input into the function.
 
     ![Verify Expression](./images/expressiontwo.png " ")
 
-15.	Select the function you just added, in the **Properties** pane, navigate to the **Details** Pane. Change the identifier to: SENTIMENT_FUNCTION
+15.	Select the function you just added, in the **Properties** pane and navigate to the **Details** Pane. Change the identifier to SENTIMENT_FUNCTION
 
 16.	Click the **Select** button to select the OCI Function. Select the application you created earlier in **Lab 2** and pick the “sentiment” OCI Function. Click **OK** to confirm your changes.
 
@@ -169,13 +169,13 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
    ![Function Parameters](./images/functionparameters.png " ")
 
-18.	Once you are done, navigate to the **Map** tab, and map the review field from the source attributes into the info field Function Input. You do this by “dragging” review in the left table into the info field.
+18.	Once you are done, navigate to the **Map** tab, and map the review field from the source attributes into the info field Function Input. You do this by “dragging” the review in the left table into the info field.
 
     ![Function Mapping](./images/functionmapping.png " ")
 
    Now we will map the output of the sentiment analysis to the Data Warehouse Table we created for this purpose during **Lab 3**
 
-19.	From the operator’s toolbar, drag the **Target** operator into the canvas, and connect the output of your sentiment function as the input into the target operator.
+19.	From the operator’s toolbar, drag the **Target** operator into the canvas and connect the output of your sentiment function as the input into the target operator.
 
 
 20.	In the details properties tab for the target, set the following fields:
@@ -204,7 +204,7 @@ In Data Integration, we need to create a data asset for the data warehouse we ju
 
    ![Create Task](./images/completedataflow.png " ")
 
-23. Follow steps 19 - 22 to configure Target table for Raw Reviews table. When done you mappings should look like below image.
+23. Follow steps 19 - 22 to configure the Target table for the Raw Reviews table. When done your mappings should look like the below image.
 
     ![Raw Reviews Details](./images/rawreviewstargetone.png " ")
 
@@ -218,13 +218,13 @@ Now we need to execute the data flow. The process is as follows.
 
     ![Integration Task](./images/integrationtask.png " ")
 
-   As part of the process of creation you need to select the project and the data flow you just created in **Task 3**. If there are any errors with the data flow you would need to fix those until it successful validates as shown in the image below.
+   As part of the process of creation, you need to select the project and the data flow you just created in **Task 3**. If there are any errors with the data flow you would need to fix those until it successfully validates as shown in the image below.
 
     ![Create Task](./images/createtasktwo.png " ")
 
 2.	Go to your data integration workspace and select the **Applications** link. Then click **Create an Application**. Give it a name and click **Create**.
 
-3.	Navigate back to the data integration workspace. Click on the **Projects** link in the workspace and selecting the project you created in **Task 3**.
+3.	Navigate back to the data integration workspace. Click on the **Projects** link in the workspace and select the project you created in **Task 3**.
 
 4.	Click on the Tasks link in the **Details** menu, select the contextual menu for the task you just created, and click **Publish to Application**. Select the application you just created.
 

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis, in this case a set of hotel reviews.We will also create the buckets and databases to save the processed data.
+This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis, in this case, a set of hotel reviews. We will also create the buckets and databases to save the processed data.
 
 Estimated Time: 60 minutes
 
@@ -18,12 +18,12 @@ In this lab, you will:
 
 This lab assumes you have:
 * An Oracle account
-* All previous labs successfully completed
+* All previous labs completed
 
 
 ## **Task 1**: Create Object Storage Bucket
 
-In this task we'll create 2 buckets one for storing source file with reviews and the other for staging. The staging bucket is a 'location' that OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse.
+In this task, we'll create 2 buckets one for storing source files with reviews and the other for staging. The staging bucket is a 'location' where OCI Data Integration needs to dump intermediate files before publishing data to a data warehouse.
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
@@ -43,7 +43,7 @@ In this task we'll create 2 buckets one for storing source file with reviews and
 
 For this exercise, we will assume that you have a set of customer reviews for a set of hotels.
 
-1. 	Download this [Dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip ) to your local machine. This file contents hotel reviews for a handful of hotels, and we will use that as our data-source. We will perform sentiment 		 analysis using Data Integration and AI Services.
+1. 	Download this [Dataset](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ei1_2QRw4M8tQpk59Qhao2JCvEivSAX8MGB9R6PfHZlqNkpkAcnVg4V3-GyTs1_t/n/c4u04/b/livelabsfiles/o/oci-library/hotel.zip ) to your local machine. This file contains hotel reviews for a handful of hotels, and we will use that as our data source. We will perform sentiment analysis using Data Integration and AI Services.
 
 2.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Storage**, and then select **Buckets**.
 
@@ -60,7 +60,7 @@ For this exercise, we will assume that you have a set of customer reviews for a 
 
 ## **Task 3**: Prepare Target Database
 
-In this task we'll create and configure your target Autonomous Data Warehouse database to add a schema and a table.
+In this task, we'll create and configure your target Autonomous Data Warehouse database to add a schema and a table.
 
 1.	In the Oracle Cloud Infrastructure Console navigation menu, go to **Oracle Database**, and then select **Autonomous Data Warehouse**.
 
