@@ -29,24 +29,24 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
 1.  Please log into to your OCI tenancy, if you are not already signed in. Example for Ashburn location - https://console.us-ashburn-1.oraclecloud.com/
 
-2.  On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu   in the upper-left corner, select Identity, and then select the Compartments option.
+2.  On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu   in the upper-left corner, select Identity & Security, and then select the Compartments option.
 
-  ![In the OCI council select identity, and then compartments, from the drop down menu on the left hand side of the screen](./images/1.22.png " ")
+  ![In the OCI council select identity, and then compartments, from the drop down menu on the left hand side of the screen](./images/oci-comp.png" ")
 
 3.	If you only have a root compartment you can click the Create Compartment button
 
     If have a development compartment click on its name to open it. Inside of there we will click on the create compartment button and create a child as shown
 
-    ![Click the blue create compartment button near the center of the screen](./images/my_compartment.png " ")
+    ![Click the blue create compartment button near the center of the screen](./images/compartment.png " ")
 
 
 
 
-4.	Choose a Name (e.g. “**siebelchild**”), fill out the form and click the ***Create Compartment*** button
+4.	Choose a Name test compartment, fill out the form and click the ***Create Compartment*** button
 
   **Note:** that the parent compartment should be either in your the root compartment or your root compartment itself
 
-  ![Fill in the desired name, decription, and then select the parent compartment you want](./images/1.23.png " ")
+  ![Fill in the desired name, decription, and then select the parent compartment you want](./images/compartment1.png " ")
 
   Now you can click the Oracle icon at the top of your screen to go to the home page and move onto the next step
 
