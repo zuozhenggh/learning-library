@@ -142,7 +142,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
 In this lab, you launched an instance of PeopleSoft from the OCI marketplace, deployed the PeopleSoft application, and then accessed the PeopleSoft Application.
 
-
+You may now **proceed to the next lab.**
 
 
 ## Acknowledgements

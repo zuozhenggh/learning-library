@@ -151,6 +151,8 @@ These Ingress Rules will be sufficient to allow the network traffic required for
 
 In this lab, OCI has been set up for the networking required to be able to access the PeopleSoft environment that will be created in the next lab
 
+You may now **proceed to the next lab.**
+
 ## Acknowledgements
 * **Authors** - Deepak Kumar M, Principal Cloud Architect
 * **Contributors** - Deepak Kumar M, Principal Cloud Architect
