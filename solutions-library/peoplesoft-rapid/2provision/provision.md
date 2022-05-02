@@ -173,11 +173,8 @@ In this lab you launched an instance of Siebel from the OCI marketplace, deploye
 
 
 ## Acknowledgements
-* **Authors**
-  - JB Anderson, Cloud Engineering
-  - Chris Wegenek, Cloud Engineering
-  - Naresh Sanodariya, Cloud Engineering
-* **Contributors** -  Arunkumar Ravichandran, Cloud Engineering
-* **Last Updated By/Date** - Chris Wegenek, Cloud Engineering, Jan 2021
+* **Authors** - Deepak Kumar M, Principal Cloud Architect
+* **Contributors** - Deepak Kumar M, Principal Cloud Architect
+* **Last Updated By/Date** - Deepak Kumar M, Principal Cloud Architect, April 2022
 
 
