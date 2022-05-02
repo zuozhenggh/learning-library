@@ -17,7 +17,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 * SSH key
 * VCN setup from the previous lab
 
-## Task:  Launching Instance of PeopleSoft from Marketplace
+## Task 1:  Launching Instance of PeopleSoft from Marketplace
 
 1. Make sure you are on the Oracle Cloud Infrastructure site
 
@@ -61,13 +61,17 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
     *   ***PASTE PUBLIC KEYS*** and paste the data within the keyfile if you have the file open
 
-    f.  **Configure boot volume:** You can leave this as default
+    
 
     
 
     ![Fill in desired name, compartment, AD, and leave everthing else as is](./images/marketplace3.png " ")
     ![Select existing virtual cloud network, selct existing subnet, select assign a public IP adress, add your own ssh key then click create](./images/marketplace4.png " ")
     ![provide the ssh key created earlier](./images/marketplace5.png " ")
+   
+    f.  **Configure boot volume:** change the size from default to 300GB
+
+    ![Set boot volume size as 300GB](./images/marketplace6.png " ")
 
     g. Click Show advanced options, on the management tab select the option Paste cloud-init script and enter the configuration information using the JSON format in these examples.
       
@@ -84,67 +88,61 @@ To deploy the PeopleSoft Instance, in this lab, you will:
             }</copy
           ```
     
-    g. Now review your settings and click ***Create*** at the bottom of the page when you are ready
+    ![custom cloud-init script](./images/marketplace7.png " ")
+    h. Now review your settings and click ***Create*** at the bottom of the page when you are ready
 6. Now you will be taken to the Instance Page and will see that your newly created instance is provisioning
 
      Once you see the small orange box change to green your instance will have provisioned successfully and now you can move onto the next step in the Lab
 
-     ![Once the orange box changes to a green box your intance will have been succesfully provisioned](./images/6.png " ")
+     ![Once the orange box changes to a green box your intance will have been succesfully provisioned](./images/compute.png " ")
+     ![Once the orange box changes to a green box your intance will have been succesfully provisioned](./images/compute1.png " ")
 
 
-## Task 3: Generating application domain URL
+## Task 2: Access the PeopleSoft Application 
 
-Generating the Application domain URL
 
-1. You can create the application URL using the port 4430, that you opened in the previous lab, and the industry you selected while deployment
 
-  **NOTE:** For this step you Google Chrome may not allow you to access the site, we recommend using an alternative such as Firefox for this step
+1. The PeopleSoft OCI marketplace image provisioned can be accessed by logging in with the below url and port number. 
 
+       ```
+       http://<fully-qualified-hostname>:8000/
+       ```
+
+
+
+  **NOTE:** Before you access the fully qualified hostname or fully qualified domain name (FQDN), it is necessary to add the FQDN or fully qualified hostname of the compute VM in the etc hosts file
+  
+  For example, if you are a windows user or MAC user, you can navigate to below path on the  system as an administrator and modify the hosts file with the below entries.
+   
+    * Windows hosts file path - C:\Windows\System32\drivers\etc\hosts
+    * Mac hosts file path - /private/etc/hosts
+
+
+         ```
+        IP address    fully-qualified-hostname
+         ```
+        ![Hosts file entry, sample from windows](./images/compute2.png " ")
+  
   The url you will need to type into your browser's search bar should look like this:
 
-  ```
-https://<public IP address>:4430/PeopleSoft/app/<industry>/enu
-```
 
-  For example, if you selected Sales, your application URL for Sales industry  could be the following.
 
-    https://111.111.111.11:4430/PeopleSoft/app/sales/enu
+      http://psfthcm.sub05021003250.testvcn.oraclevcn.com:8000/
 
-    **NOTE:** Make sure your url has ***"https"*** and not ***"http"*** at the beginning of it otherwise you will not obtain access
+    
 
-    ![Type the appropriate url into the firefox searchbar](./images/blast.png " ")
+    ![Type the appropriate url into the firefox searchbar](./images/PIA.png " ")
 
-2. When accessing the url you may come across a "Potential Security Risk" warning message
+    The login user id for PeopleSoft HCM application is PS, the password was supplied during the cloud-init script for opr_pwd
 
-    ![Click the advanced button on this warning screen](./images/bblast.png " ")
+    ![Look and feel of PeopleSoft HCM](./images/PIA1.png " ")
 
-    Since this is the url and IP address that you created, you know that it is safe and that you can safely bypass the warning
 
-    You can do this on Firefox by first clicking the ***Advanced Settings*** button and then clicking ***Accept Risk and Continue*** button
 
-    ![Click the accept the risk and continue button](./images/aclast.png " ")
 
-3. Now you should see the proper site where you can log in with the default PeopleSoft credentials
+In this lab, you launched an instance of PeopleSoft from the OCI marketplace, deployed the PeopleSoft application, and then accessed the PeopleSoft Application.
 
-  USERNAME AND PASSWORD :    SADMIN/Welcome1
 
-  ![On this login screen enter the default PeopleSoft credentials, username SADMIN andd the password Welcome1](./images/last.png " ")
-
-  Please also note that the application URL will be specific to the Industry you select for deployment, for example, the URL could be:
-
-  For Service - https://"your ip address":4430/PeopleSoft/app/callcenter/enu
-
-  For PeopleSoft Management Console (SMC) - https://"your ip address":4430/PeopleSoft/smc
-
-# Extension to provision
-Verify PeopleSoft version on home screen
-login home Page
-from the health menu - check technical support Option
-popup box will show PeopleSoft version, db connection, etc.
-
-In this lab you launched an instance of PeopleSoft from the OCI marketplace, deployed the PeopleSoft application, and then deployed the PeopleSoft CRM Application.
-
-***Congratulations*** on completing this interactive lab and integrating PeopleSoft with OCI. Please continue to work within the OCI environment using our other tutorials and explore our countless other features and possibilities
 
 
 ## Acknowledgements
