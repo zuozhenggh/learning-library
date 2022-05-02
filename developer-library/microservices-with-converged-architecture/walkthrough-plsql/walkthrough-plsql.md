@@ -22,7 +22,7 @@ Estimated Time: 10 minutes
 
    ![Select Transactional Functionality](images/tx-select.png " ")
 
-3. Check the inventory of a given item such as sushi, by typing `sushi`
+6. Check the inventory of a given item such as sushi, by typing `sushi`
     in the `food` field and clicking **Get Inventory**. You should see the inventory
     count result 0.
 
