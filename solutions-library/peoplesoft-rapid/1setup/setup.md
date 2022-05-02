@@ -46,7 +46,7 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
   **Note:** that the parent compartment should be either in your the root compartment or your root compartment itself
 
-  ![Fill in the desired name, decription, and then select the parent compartment you want](./images/compartment1.png " ")
+  ![Fill in the desired name, description, and then select the parent compartment you want](./images/compartment1.png " ")
 
   Now you can click the Oracle icon at the top of your screen to go to the home page and move onto the next step
 
@@ -124,7 +124,7 @@ With the VCN in place, define the open inbound and outbound ports that will be a
   ![From this page select the Security lists option from the Resources list on the lefthand side of the screen](./images/network7.png " ")
 
 2.	In the Security Lists section, click the Default ***Security List*** for ***testvcn*** link  
-  ![Select the Default Security list for testvcn from the options under ther Security Lists in siebelchild Compartment](./images/network8.png " ")
+  ![Select the Default Security list for testvcn from the options under the Security Lists in testvcn Compartment](./images/network8.png " ")
 
 3.	On Default Security List, under Resources, click the Add Ingress Rules button.
   ![](./images/network9.png " ")

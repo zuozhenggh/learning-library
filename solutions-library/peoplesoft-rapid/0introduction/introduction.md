@@ -23,7 +23,7 @@ Notes:
 In this lab, you will:
 * Create a Sub-Compartment
 * Create Virtual Cloud Network (VCN)
-* Provison a PeopleSoft Marketplace image
+* Provision a PeopleSoft Marketplace image
 * Establish Security List Rules for PeopleSoft Instance
 * Access PeopleSoft application
 * Terminate and teardown all of the resources that you have created
@@ -53,7 +53,7 @@ The following terms are commonly employed in Peoplesoft cloud operations and use
 
 **Compartments** – Allows you to organize and control access to your cloud resources. A compartment is a collection of related resources (such as instances, virtual cloud networks, block volumes) that can be accessed only by certain groups.
 
-**Virtual Cloud Network (VCN)** – Networking and compute resources required to run PSFT on Oracle Cloud Infrastructure. The PSFT VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle Peoplesoft on OCI.
+**Virtual Cloud Network (VCN)** – Networking and compute resources required to run PSFT on Oracle Cloud Infrastructure. The PSFT VCN includes the recommended networking resources (VCN, subnets routing tables, internet gateway, security lists, and security rules) to run Oracle PeopleSoft on OCI.
 
 **Oracle Cloud Infrastructure (OCI)** – Combines the elasticity and utility of public cloud with the granular control, security, and predictability of on-premises infrastructure to deliver high-performance, high availability, and cost-effective infrastructure services.
 
