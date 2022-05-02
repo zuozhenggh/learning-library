@@ -111,9 +111,9 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     ![You screen should have the Virtual Cloud Network creation complete dialog after completing the previous steps and waiting for provisioning to complete](./images/network5.png " ")
 
-    Then click on the View Virtual CLoud Network Button shown
+    Then click on the View Virtual Cloud Network Button shown
 
-    ![Click on the view virtual cloud network button on the bottom lefthand side of the screen](./images/network6.png " ")
+    ![Click on the view virtual cloud network button on the bottom left hand side of the screen](./images/network6.png " ")
 
 
 ## Task 3:  Establish security list rules for PeopleSoft

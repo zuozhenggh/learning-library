@@ -18,9 +18,9 @@ Estimated Time: 15 minutes
 
 1. Navigate to the OCI home page.
 
-2. Use the dropdown menu located in the upper lefthand corner of the screen and select **Compute** then **Instances**.
+2. Use the dropdown menu located in the upper left hand corner of the screen and select **Compute** then **Instances**.
 
-    ![Use the dropdown menu located in the upper lefthand corner to select instances](./images/dropdown-compute.png " ")
+    ![Use the dropdown menu located in the upper left hand corner to select instances](./images/dropdown-compute.png " ")
 
 3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected.
 
@@ -28,7 +28,7 @@ Estimated Time: 15 minutes
 
 4.   You should now be able to see the PeopleSoft instance you created previously.
 
-    Now click on the three dots to the right of your Siebel instance and then select **Terminate**.
+    Now click on the three dots to the right of your PeopleSoft instance and then select **Terminate**.
 
     ![Use the small dropdown menu and click terminate](./images/terminate-instance.png " ")
 
@@ -38,13 +38,13 @@ Estimated Time: 15 minutes
 
 ## Task 2: Terminate the VCN
 
-1. Use the dropdown menu located in the upper lefthand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
+1. Use the dropdown menu located in the upper left hand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
     ![Navigate to compartments using the dropdown menu](./images/network.png " ")
 
 2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected.
     ![](./images/correct-comp.png " ")
 
-3. You shoud now be able to se the VCN that you created in the "Setup" lab.
+3. You should now be able to se the VCN that you created in the "Setup" lab.
 
     Now click on the three dots to the right of your VCN and then select **Terminate**.
 
@@ -58,11 +58,11 @@ Estimated Time: 15 minutes
 
     ![Terminate vcn menu](./images/terminate-confirm.png " ")
 
-    After all the resouces have terminated the VCN itself will terminate and you may then click the close button.
+    After all the resources have terminated the VCN itself will terminate and you may then click the close button.
 
 ## Task 3: Deleting the test compartment
 
-1.  Use the dropdown menu located in the upper lefthand corner of the screen and select **Identity & Security** then **Compartments**.
+1.  Use the dropdown menu located in the upper left hand corner of the screen and select **Identity & Security** then **Compartments**.
 
     ![Navigate to compartments using the dropdown menu](./images/oci-comp.png " ")
 

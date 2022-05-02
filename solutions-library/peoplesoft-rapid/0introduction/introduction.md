@@ -45,7 +45,7 @@ You will need the following in order to complete this workshop:
 
 *Terminology*
 
-The following terms are commonly employed in Peoplesoft cloud operations and used throughout our documentation:
+The following terms are commonly employed in PeopleSoft cloud operations and used throughout our documentation:
 
 **Availability Domain** – One or more data centers located within a region.
 

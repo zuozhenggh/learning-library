@@ -49,24 +49,24 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
     c.  **Placement:** You can leave this as it is by default for this Lab
 
-    d.   For the next **Configure networking** section you will choose the ***SELECT EXISTING VIRTUAL CLOUD NETWORK*** option and choose the ***SELECT EXSISTING SUBNET*** option before selecting the Network and Subnet you created in the prevous lab
+    d.   For the next **Configure networking** section you will choose the ***SELECT EXISTING VIRTUAL CLOUD NETWORK*** option and choose the ***SELECT EXSISTING SUBNET*** option before selecting the Network and Subnet you created in the previous lab
 
     Make sure that ***ASSIGN A PUBLIC IP ADDRESS*** is also selected since we will use this to deploy our PeopleSoft application
 
-    e. **Add SSH keys:** here you will need to selct the ssh key you created earlier. You can either use the
+    e. **Add SSH keys:** here you will need to select the ssh key you created earlier. You can either use the
 
     *   ***CHOOSE PUBLIC KEY FILES*** and open the public key file you made if you know its location
 
         or you can use the
 
-    *   ***PASTE PUBLIC KEYS*** and paste the data within the keyfile if you have the file open
+    *   ***PASTE PUBLIC KEYS*** and paste the data within the key file if you have the file open
 
     
 
     
 
-    ![Fill in desired name, compartment, AD, and leave everthing else as is](./images/marketplace3.png " ")
-    ![Select existing virtual cloud network, selct existing subnet, select assign a public IP adress, add your own ssh key then click create](./images/marketplace4.png " ")
+    ![Fill in desired name, compartment, AD, and leave everything else as is](./images/marketplace3.png " ")
+    ![Select existing virtual cloud network, select existing subnet, select assign a public IP address, add your own ssh key then click create](./images/marketplace4.png " ")
     ![provide the ssh key created earlier](./images/marketplace5.png " ")
    
     f.  **Configure boot volume:** change the size from default to 300GB
@@ -94,8 +94,8 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
      Once you see the small orange box change to green your instance will have provisioned successfully and now you can move onto the next step in the Lab
 
-     ![Once the orange box changes to a green box your intance will have been succesfully provisioned](./images/compute.png " ")
-     ![Once the orange box changes to a green box your intance will have been succesfully provisioned](./images/compute1.png " ")
+     ![Once the orange box changes to a green box your instance will have been successfully provisioned](./images/compute.png " ")
+     ![Once the orange box changes to a green box your instance will have been successfully provisioned](./images/compute1.png " ")
 
 
 ## Task 2: Access the PeopleSoft Application 
@@ -131,7 +131,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
     
 
-    ![Type the appropriate url into the firefox searchbar](./images/psft-web.png " ")
+    ![Type the appropriate url into the firefox search bar](./images/psft-web.png " ")
 
     The login user id for PeopleSoft HCM application is PS, the password was supplied during the cloud-init script for opr_pwd
 
