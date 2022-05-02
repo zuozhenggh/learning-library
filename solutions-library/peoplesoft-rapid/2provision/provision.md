@@ -1,4 +1,4 @@
-# Provisioning the PeopleSoft Application
+# Provision the PeopleSoft Application
 
 ## Introduction
 
@@ -9,7 +9,7 @@ Estimated Time: 1 hour 30 minutes
 ### Objectives
 
 To deploy the PeopleSoft Instance, in this lab, you will:
-*   Launching and deploying instance of PeopleSoft from Marketplace
+*   Launch & deploy instance of PeopleSoft from Marketplace
 *   Access PeopleSoft instance
 
 ### Prerequisites
@@ -17,7 +17,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 * SSH key
 * VCN setup from the previous lab
 
-## Task 1:  Launching instance of PeopleSoft from OCI marketplace
+## Task 1:  Launch PeopleSoft instance from OCI marketplace
 
 1. Make sure you are on the Oracle Cloud Infrastructure site
 

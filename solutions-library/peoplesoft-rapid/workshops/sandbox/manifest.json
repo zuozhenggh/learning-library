@@ -23,7 +23,7 @@
           "filename": "../../1setup/setup.md"
       },
       {
-          "title": "Lab 3: Provisioning the PeopleSoft Application",
+          "title": "Lab 3: Provision the PeopleSoft Application",
           "description": "In this exercise, you will provision your PeopleSoft application by leveraging OCI Marketplace PeopleSoft image.",
           "filename": "../../2provision/provision.md"
       },

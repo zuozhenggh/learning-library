@@ -36,7 +36,7 @@ Estimated Time: 15 minutes
 
     ![Status should be terminated as shown](./images/terminated-instance.png " ")
 
-## Task 2: Terminating the VCN
+## Task 2: Terminate the VCN
 
 1. Use the dropdown menu located in the upper lefthand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
     ![Navigate to compartments using the dropdown menu](./images/network.png " ")
