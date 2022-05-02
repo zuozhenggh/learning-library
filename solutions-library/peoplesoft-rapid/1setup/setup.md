@@ -5,7 +5,7 @@
 In this lab, the recently provisioned OCI Trial tenancy will be set up for the PeopleSoft Application.
 
 
-Estimated Time: 20 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 
@@ -57,23 +57,27 @@ When your tenancy is provisioned, a root compartment is created for you. Your ro
 
 To create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard
+1. On the Oracle Cloud Infrastructure Console Home page, click the Navigation Menu in the upper-left corner, select Networking, and then select the Virtual Cloud Networks option
 
-  ![Select the Set up a network with wizard option from the quick actions menu in the center of the screen](./images/2.11.png " ")
+  ![Select the Set up a network with wizard option from the quick actions menu in the center of the screen](./images/network.png " ")
+
+2.	Select the newly created compartment and then click Start VCN Wizard
+
+  ![Select VCN with Internet Connectivity, and then click Start VCN Wizard](./images/network1.png " ")
 
 2.	Select VCN with Internet Connectivity, and then click Start VCN Wizard
 
-  ![Select VCN with Internet Connectivity, and then click Start VCN Wizard](./images/2.2.png " ")
+  ![Select VCN with Internet Connectivity, and then click Start VCN Wizard](./images/network2.png " ")
 
-3. In this window, fill in the following fields with the information shown below:
+3. In this window, testvcn is the name of the VCN network to be created and leave the rest of the following fields with the information shown below:
 
     **VCN NAME:**
 
-        Siebel_VCN     (or any other unique name for the VCN)
+        testvcn     (or any other unique name for the VCN)
 
     **COMPARTMENT:**
 
-        siebelchild        (or any other compartment previously created)
+        test-compartment        (or any other compartment previously created)
 
     **VCN CIDR BLOCK:**
 
@@ -91,11 +95,13 @@ To create a VCN on Oracle Cloud Infrastructure:
 
         Make sure this is checked
 
-    ![Fill in the screen with the appropriate information then select next](./images/2.33.png " ")
+    ![Fill in the screen with the appropriate information then select next](./images/network3.png " ")
 
     Then, scroll down to the bottom and click the ***Next*** button.
 
 4.	On the “Review and Create” page, click on the create button.
+
+    ![](./images/network4.png " ")
 
 
 
@@ -103,44 +109,47 @@ To create a VCN on Oracle Cloud Infrastructure:
 
     **NOTE:** If any of the necessary resources fail to be created simply click the retry button and it should correct the issue immediately
 
-    ![You screen should have the Virtual Cloud Network creation complete dialog after completing the previous steps and waiting for provisioning to complete](./images/2.44.png " ")
+    ![You screen should have the Virtual Cloud Network creation complete dialog after completing the previous steps and waiting for provisioning to complete](./images/network5.png " ")
 
     Then click on the View Virtual CLoud Network Button shown
 
-    ![Click on the view virtual cloud network button on the bottom lefthand side of the screen](./images/2.5.png " ")
+    ![Click on the view virtual cloud network button on the bottom lefthand side of the screen](./images/network6.png " ")
 
 
-## Task 3:  Establish Security List Rules for Siebel
+## Task 3:  Establish Security List Rules for PeopleSoft
 
 With the VCN in place, define the open inbound and outbound ports that will be available to instances created within the VCN
 
-1.	From the details page of the Siebel_VCN, under the ***Resources*** section in the left pane, select ***Security Lists***
-  ![From this page select the Security lists option from the Resources list on the lefthand side of the screen](./images/3.11.png " ")
+1.	From the details page of the testvcn, under the ***Resources*** section in the left pane, select ***Security Lists***
+  ![From this page select the Security lists option from the Resources list on the lefthand side of the screen](./images/network7.png " ")
 
-2.	In the Security Lists section, click the Default ***Security List*** for ***Siebel_VCN*** link  
-  ![Select the Default Security list for Siebel_VCN from the options under ther Security Lists in siebelchild Compartment](./images/3.22.png " ")
+2.	In the Security Lists section, click the Default ***Security List*** for ***testvcn*** link  
+  ![Select the Default Security list for testvcn from the options under ther Security Lists in siebelchild Compartment](./images/network8.png " ")
 
 3.	On Default Security List, under Resources, click the Add Ingress Rules button.
-  ![Click on the Add Ingress Rules button under the Ingress Rules section of the screen](./images/3.3.png " ")
+  ![](./images/network9.png " ")
+  ![Click on the Add Ingress Rules button under the Ingress Rules section of the screen](./images/network10.png " ")
 
-4.   Within the interface, click the + ***Additional Ingress Rules*** button and add 2 new rows with the following criteria
+4.   Within the interface, click the + ***Additional Ingress Rules*** button and add rule with the following criteria
 
         | Stateless | Source Type |	Source CIDR | IP Protocol | Source Port Range |	Destination Port |
         | --- | --- | --- | --- | --- | --- |
-        | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	4430 |
-        | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	8080 |
+        
+        | Unchecked | CIDR|	0.0.0.0/0 |	TCP | All |	8000 |
 
-        Click the ***Add Ingress Rules***  button when complete
+     Click the ***Add Ingress Rules***  blue button when complete
 
-        After you have created the two new rules your Security List should look like this
+     ![](./images/network11.png " ")
 
-        ![After creating the new security Ingress Rules you should see them under the Ingress rules section of the screen](./images/3.55.png " ")
+    After you have created the  new rule your security list should look like this
 
-These Ingress Rules will be sufficient to allow the network traffic required for the Siebel environment
+     ![After creating the new security Ingress Rules you should see them under the Ingress rules section of the screen](./images/network12.png " ")
+
+These Ingress Rules will be sufficient to allow the network traffic required for the PeopleSoft environment
 
 ## **Summary**
 
-In this lab, OCI has been set up for the networking required to be able to access the Siebel environment that will be created in the next lab
+In this lab, OCI has been set up for the networking required to be able to access the PeopleSoft environment that will be created in the next lab
 
 ## Acknowledgements
 * **Authors** - Deepak Kumar M, Principal Cloud Architect
