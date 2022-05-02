@@ -131,11 +131,11 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
     
 
-    ![Type the appropriate url into the firefox searchbar](./images/PIA.png " ")
+    ![Type the appropriate url into the firefox searchbar](./images/psft-web.png " ")
 
     The login user id for PeopleSoft HCM application is PS, the password was supplied during the cloud-init script for opr_pwd
 
-    ![Look and feel of PeopleSoft HCM](./images/PIA1.png " ")
+    ![Look and feel of PeopleSoft HCM](./images/psft-web1.png " ")
 
 
 
