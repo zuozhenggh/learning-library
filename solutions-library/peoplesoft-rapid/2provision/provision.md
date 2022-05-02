@@ -18,7 +18,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 * SSH key
 * VCN setup from the previous lab
 
-## Task 1: Launching Instance of PeopleSoft from Marketplace
+## Task:  Launching Instance of PeopleSoft from Marketplace
 
 1. Make sure you are on the Oracle Cloud Infrastructure site
 
@@ -26,21 +26,29 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
   ![From the menu bar in OCI console, click on Marketplace](./images/marketplace.png " ")
 
-3. In the search bar type in PeopleSoft and hit search. Click on ***PeopleSoft CRM 20.x install Container w/Sample Database*** image
+3. In the search bar type in PeopleSoft and hit search.There are 6 PeopleSoft DEMO environments which can be installed
+   
+    * PeopleSoft HCM
+    * PeopleSoft FSCM
+    * PeopleSoft ELM
+    * PeopleSoft CRM
+    * PeopleSoft Campus Solutions
+    * PeopleSoft Interaction Hub
 
-  ![Select the PeopleSoft CRM 20.x install Container w/sample database image option](./images/3.png " ")
+  ![Select any of the PeopleSoft images to install](./images/marketplace1.png " ")
 
-4. In the instance page select the most up to date version and then select the compartment you made earlier. Then click ***Launch Instance***
 
-  ![Select the desired compartment then select Launch Instance](./images/4.png " ")
+4. In the instance page select the PeopleSoft HCM Update Image Demo version and then select the compartment you made earlier. Then click ***Launch Instance***
+
+  ![Select the desired compartment then select Launch Instance](./images/marketplace2.png " ")
 
 5. In the Create Compute Instance page you will need to fill in additional info for your Instance
 
-    a.  **Name:** You can name it whatever you like, such as "PeopleSoft_instance"
+    a.  **Name:** You can name it whatever you like, such as "psfthcm"
 
     b.  **Select compartment:** Select the compartment that you created earlier
 
-    c.  **Configure placement and hardware:** You can leave this as it is by default for this Lab
+    c.  **Placement:** You can leave this as it is by default for this Lab
 
     d.   For the next **Configure networking** section you will choose the ***SELECT EXISTING VIRTUAL CLOUD NETWORK*** option and choose the ***SELECT EXSISTING SUBNET*** option before selecting the Network and Subnet you created in the prevous lab
 
@@ -56,11 +64,29 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
     f.  **Configure boot volume:** You can leave this as default
 
+    
+
+    ![Fill in desired name, compartment, AD, and leave everthing else as is](./images/marketplace3.png " ")
+    ![Select existing virtual cloud network, selct existing subnet, select assign a public IP adress, add your own ssh key then click create](./images/marketplace4.png " ")
+    ![provide the ssh key created earlier](./images/marketplace5.png " ")
+
+    g. Click Show advanced options,On the Management tab select the option Paste cloud-init script and enter the configuration information using the JSON format in these examples.
+      
+        ```   
+        <copy> 
+        {
+       "connect_pwd":  "password",
+       "access_pwd":  "password",
+       "admin_pwd":  "password",
+       "weblogic_admin_pwd":  "password",
+       "webprofile_user_pwd":  "password",
+       "gw_user_pwd":  "password",
+       "domain_conn_pwd":  "password",
+       "opr_pwd": "password"
+        }</copy
+        ```
+    
     g. Now review your settings and click ***Create*** at the bottom of the page when you are ready
-
-    ![Fill in desired name, compartment, AD, and leave everthing else as is](./images/5.1.png " ")
-    ![Select existing virtual cloud network, selct existing subnet, select assign a public IP adress, add your own ssh key then click create](./images/5.2.png " ")
-
 6. Now you will be taken to the Instance Page and will see that your newly created instance is provisioning
 
      Once you see the small orange box change to green your instance will have provisioned successfully and now you can move onto the next step in the Lab
