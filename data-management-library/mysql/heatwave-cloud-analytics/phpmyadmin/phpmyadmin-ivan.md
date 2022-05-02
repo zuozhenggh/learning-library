@@ -113,7 +113,7 @@ kubectl port-forward service/phpmyadmin-svc -n phpmyadmin --address 0.0.0.0 8080
 
 	  ![PhpMyAdmin](images/phpmyadmin.png)
 
-	  You may now **proceed to the next lab.**
+	  Congratulations! You have completed all the labs.
 
 ## Acknowledgements
 
