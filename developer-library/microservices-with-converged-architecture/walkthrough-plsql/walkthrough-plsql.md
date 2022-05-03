@@ -13,12 +13,11 @@ Estimated Time: 10 minutes
 
 ### Prerequisites
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
 * The Grabdish application you deployed in Lab 2
 
 ## Task 1: Verify the Order and Inventory Functionality of GrabDish Store
 
-1. Click **Transactional** under **Labs**.
+1.  Click **Transactional** under **Labs**.
 
    ![Select Transactional Functionality](images/tx-select.png " ")
 

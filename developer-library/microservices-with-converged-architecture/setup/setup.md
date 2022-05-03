@@ -1,5 +1,5 @@
 # Setup
-REXLEY TODO 21c regions
+
 ## Introduction
 
 In this lab, we will provision and setup the resources to execute microservices in your tenancy.  
@@ -76,15 +76,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
    > **Note:** Cloud shell may disconnect after a period of inactivity. If that happens, you can reconnect and then rerun the command to resume the setup.
 
-   The setup process will typically take around 10 minutes to complete.  
+   The setup process will typically take around 4 minutes to complete.  
 
 2. The setup will create the workshop resources in a compartment within your tenancy. You will be prompted to enter the compartment information.  You may choose to use an existing compartment or create a new one.
 
-  To use an existing compartment, enter the OCID of the compartment.
+  - To use an existing compartment, enter the OCID of the compartment.
 
-  To create a new compartment, enter the name you would like to use.
-
-  If you chose to create a new compartment, you will also be asked to enter the OCID of the parent compartment in which the new compartment is to be created.  Enter the parent compartment OCID or hit enter to use the root compartment of your tenancy.
+  - To create a new compartment, enter the name you would like to use. If you chose to create a new compartment, you will also be asked to enter the OCID of the parent compartment in which the new compartment is to be created.  Enter the parent compartment OCID or hit enter to use the root compartment of your tenancy.
 
   To get the OCID of an existing compartment, click on the Navigation Menu in the upper left of Cloud Console, navigate to **Identity & Security** and click on **Compartments**:
 
@@ -110,11 +108,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
   ![Oracle Cloud Infrastructure User OCID Example](images/example-user-ocid.png " ")
 
-4. The setup will ask you to enter an admin password for the databases. For simplicity, the same password will be used for both the order and inventory databases. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". Make a note of the password as you will need it later.  
-
-5. The setup will also ask you to enter a UI password that will be used to enter the microservice frontend user interface. The UI password must be 8 to 30 characters. Make a note of the password as you will need it later.  
-
-## Task 8: Monitor the Setup
+## Task 7: Monitor the Setup
 
 The setup will provision the following resources in your tenancy:
 
@@ -133,7 +127,7 @@ The setup will provision the following resources in your tenancy:
 
   > **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
 
-## Task 9: Complete the Setup
+## Task 8: Complete the Setup
 
 1. The setup will provide a summary of the setup status as it proceeds. Once everything has completed you will see the message: **SETUP COMPLETED**.
 
@@ -145,27 +139,8 @@ The setup will provision the following resources in your tenancy:
    </copy>
    ```
 
-3. You can monitor log files located in the $GRABDISH_LOG directory.
-
-    ```
-   <copy>
-   ls -al $GRABDISH_LOG
-   </copy>
-   ```
-
    Once the setup has completed you are ready to [move on to Lab 2](#next).
 
-   > **Note:** Builds may continue to run even after the setup has completed.
-
-4. The status of the builds can be monitored with this command:
-
-   ```
-   <copy>
-   status
-   </copy>
-   ```
-
-You may now proceed to the next lab.
 
 ## Acknowledgements
 

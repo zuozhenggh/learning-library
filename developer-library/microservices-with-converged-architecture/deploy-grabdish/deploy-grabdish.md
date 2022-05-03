@@ -1,4 +1,4 @@
-# Deploy the Grabdish Application
+# Deploy the Grabdish Application and Logon
 
 ## Introduction
 
@@ -9,6 +9,7 @@ Estimated Time: 5 minutes
 ### Objectives
 
 -   Deploy the microservices
+-   Logon to the GrabDish Application
 
 ### Prerequisites
 
@@ -23,29 +24,43 @@ Estimated Time: 5 minutes
     <copy>deploy</copy>
     ```
 
-   ![](images/deploy-all.png " ")
+2.  The deploy script will ask you to enter an admin password for the database. Database passwords must be 12 to 30 characters and contain at least one uppercase letter, one lowercase letter, and one number. The password cannot contain the double quote (") character or the word "admin". Make a note of the password as you will need it later.  
 
-2.  Once successfully complete, move on to task 2.
+3.  The deploy script will also ask you to enter a UI password that will be used to enter the microservice frontend user interface. The UI password must be 8 to 30 characters. Make a note of the password as you will need it later.  
 
-## Task 2: Access the FrontEnd UI
+4.  The deployment script performs the following actions:
+    * Sets the DB password
+    * Creates the ORDS schema in the database
+    * Configures the ORDS server
+    * Deploys the GrabDish Application in the ORDS server
+    * Deploys Grabdish in the database
+    * Starts the ORDS server
 
-You are ready to access the frontend page. Open a new browser tab and enter the external IP URL:
+5.  Once the deployment script has successfully completed the **GrabDish is DEPLOYED** status will be displaye.
 
-`https://<EXTERNAL-IP>`
+   ![GrabDish is DEPLOYED Status is Displayed](images/deployed.png " ")
 
-Note that for convenience a self-signed certificate is used to secure this https address and so it is likely you will be prompted by the browser to allow access.
+## Task 2: Login to the Grabdish Application
 
-You will be prompted to authenticate to access the Front End microservices. The user is `grabdish` and the password is the one you entered in Lab 1.
+1.  Get the status of the workshop:
 
-![Application Login UI](images/frontendauthlogin.png " ")
+    ```
+    <copy>status</copy>
+    ```
 
-You should then see the Front End home page. You've now accessed your first microservice of the lab!
+2.  Click on the **GrabDish URL**.  A new tab will open in your browser.
 
-![Application Front End UI](images/ui-home-page.png " ")
+    ![Clicking the GrabDish URL](images/grabdish-url.png " ")
 
-We created a self-signed certificate to protect the frontend-helidon service. This certificate will not be recognized by your browser and so a warning is displayed. It will be necessary to instruct the browser to trust this site to display the frontend. In a production implementation a certificate that is officially signed by a certificate authority should be used.
+3. You will be prompted to authenticate to access the Front End microservices. The user is `grabdish` and the password is the one you entered in Task 1 of this lab.
 
-You may now proceed to the next lab.
+    ![Application Login UI](images/frontendauthlogin.png " ")
+
+3. You should then see the Front End home page.
+
+    ![Application Front End UI](images/ui-home-page.png " ")
+
+**Note** We created a self-signed certificate to protect the frontend-helidon service. This certificate will not be recognized by your browser and so a warning is displayed. It will be necessary to instruct the browser to trust this site to display the frontend. In a production implementation a certificate that is officially signed by a certificate authority should be used.
 
 ## Acknowledgements
 * **Author** - Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
