@@ -51,7 +51,7 @@ In this part, you will create an *Autonomous Transaction Processing* database an
 
     ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
-2. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.</if> Click **Create Autonomous Database**.
+2. Click **Create Autonomous Database**.
 
     ![](images/click-create-autonomous-database.png " ")
 
