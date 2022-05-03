@@ -6,6 +6,10 @@ This lab walks you through the steps to provision a Compute Node. This is where 
 
 Estimated Time: 10 minutes
 
+
+Watch the video below for an overview of the provision a compute node lab.
+[](youtube:yU3uW5hFNtc)
+
 ### Objectives
 
 In this lab, you will:
@@ -179,4 +183,5 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager, Oracle Database
+- **Contributors** - Kamryn Vinson, Andres Quintana
 - **Last Updated By/Date** - Roger Ford, March 2022

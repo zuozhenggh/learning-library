@@ -4,6 +4,10 @@
 
 In this lab, we are going to connect to the Autonomous Database we provisioned in Lab 2, from the MongoDB shell tool that we installed into our Compute node in Lab 1.
 
+Watch this video for an overview of how to connect the MongoDB shell tool to the Autonomous Database.
+
+[This video shows an overview of the steps in this lab.](youtube:zsGEVvtA4us)
+
 Estimated Time: 15 minutes
 
 ### Objectives
@@ -213,4 +217,5 @@ In the next lab we'll cover Autonomous Database tools, including JSON Workshop a
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
+- **Contributors** - Kamryn Vinson, Andres Quintana
 - **Last Updated By/Date** - Roger Ford, March 2022
