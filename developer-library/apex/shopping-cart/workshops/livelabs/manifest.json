@@ -7,8 +7,9 @@
         "filename": "../../intro/intro.md"
       },
       {
-        "title": "Getting Started",
-        "filename": "../../signup-up-apex/sign-up-apex.md"
+        "title": "Get Started",
+        "filename": "../../../common/1-sign-up-apex/1-sign-up-apex.md",
+        "type": "livelabs"
       },
       {
         "title": "Lab 1: Install a Sample Dataset",
