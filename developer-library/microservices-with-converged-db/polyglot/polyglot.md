@@ -114,7 +114,7 @@ In this step you can choose between six different implementations of the Invento
 
     ```
     <copy>
-    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
+    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot inventory-micronaut inventory-quarkus; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
     cd $GRABDISH_HOME/inventory-micronaut ; ./undeploy-native-image.sh
     cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
     cd $GRABDISH_HOME
@@ -123,9 +123,14 @@ In this step you can choose between six different implementations of the Invento
 
 You may now proceed to the next lab.
 
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack)   
+Search for and join the `oracle-db-microservices` channel.
+
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Developer Evangelist; Mayank Tayal, Developer Advocate
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Mayank Tayal, August 2021
+* **Last Updated By/Date** - Irina Granat, March 2022
