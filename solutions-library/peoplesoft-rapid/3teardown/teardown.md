@@ -24,7 +24,7 @@ Estimated Time: 15 minutes
 
 3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected.
 
-    ![List scope compartment portion](./images/compute.png " ")
+    ![List scope compartment portion](./images/compute-page.png " ")
 
 4.   You should now be able to see the PeopleSoft instance you created previously.
 
@@ -39,10 +39,10 @@ Estimated Time: 15 minutes
 ## Task 2: Terminate the VCN
 
 1. Use the dropdown menu located in the upper left hand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
-    ![Navigate to compartments using the dropdown menu](./images/network.png " ")
+    ![Navigate to compartments using the dropdown menu](./images/dropdown-network.png " ")
 
 2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected.
-    ![](./images/correct-comp.png " ")
+    ![](./images/vcn-compartment.png " ")
 
 3. You should now be able to se the VCN that you created in the "Setup" lab.
 
@@ -56,7 +56,7 @@ Estimated Time: 15 minutes
 
     **Note:** It may take a moment for all of the resources to load.
 
-    ![Terminate vcn menu](./images/terminate-confirm.png " ")
+    ![Terminate vcn menu](./images/terminate-vcn-confirm.png " ")
 
     After all the resources have terminated the VCN itself will terminate and you may then click the close button.
 
@@ -64,18 +64,18 @@ Estimated Time: 15 minutes
 
 1.  Use the dropdown menu located in the upper left hand corner of the screen and select **Identity & Security** then **Compartments**.
 
-    ![Navigate to compartments using the dropdown menu](./images/oci-comp.png " ")
+    ![Navigate to compartments using the dropdown menu](./images/dropdown-compartment.png " ")
 
     From this screen navigate to the compartment you created in the "Setup" lab.
 
-    ![Click the delete button to delete the compartment](./images/delete-comp.png " ")
+    ![Click the delete button to delete the compartment](./images/delete-compartment.png " ")
 
     Click the delete button to delete the compartment,after some time the status will be shown as deleted.
 
     
+## Summary
 
-
-You have now removed all the resources you created for the PeopleSoft Marketplace environment.
+In this lab, you have removed all the resources you created for the PeopleSoft Marketplace environment.
 
 
 
