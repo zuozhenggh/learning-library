@@ -34,7 +34,7 @@ The Oracle ERP Cloud Adapter provides the following key benefits:
 
 ##	Task	1: Take a look at this ERP Cloud Integration Patterns Video
 
-[TBD - ERP Cloud Integration Patterns Video](<replace youtube video link here>)
+[ERP Cloud Integration Patterns](youtube:nKXbh2ZPuMI)
 
 ### What Will You Learn?
 
