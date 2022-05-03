@@ -34,8 +34,6 @@ Estimates Time: 5 minutes
 
 1. In the Oracle Cloud Console navigate to the Compartments screen in the Identity section. Select the compartment that was created for the workshop and delete it. Note, even when the script in step 1 has completed, it can take some time for Oracle Cloud Infrastructure to fully remove all the resources. It will not be possible to delete the compartment until this has completed.
 
-You may now proceed to the next lab.
-
 ## Acknowledgements
 
 * **Author** - Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
