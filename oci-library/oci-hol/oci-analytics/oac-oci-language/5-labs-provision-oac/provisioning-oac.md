@@ -22,7 +22,7 @@ Estimated Time 15 minutes.
 Return to the Oracle Cloud Infrastructure Console accessing from **Oracle Home Page** (oracle.com) and sign in into your cloud account.
 Click in **View Account** and **Sign in to Cloud**.
 
-![Oracle Console SignIn](./images/lab200_1.png)
+![Oracle Console SignIn](./images/laboac_one.png)
 
 1. Go to the **Home Console Page** and navigate to **Analytics & AI** section and then **Analytics Cloud**.
 
@@ -46,19 +46,19 @@ Click in **View Account** and **Sign in to Cloud**.
 
 3. Select **Create**.
 
-    ![OAC Instance Creation](./images/lab200_6.png)
+    ![OAC Instance Creation](./images/laboac_six.png)
 
 4. On the **Confirmation** screen, select **Create**.
 
     The Analytics instance page will be displayed with a status of **CREATING**.
 
-    ![OAC Instance Creating](./images/lab200_7.png)
+    ![OAC Instance Creating](./images/laboac_seven.png)
 
     ***Reminder***: Provisioning an Oracle Analytics Cloud instance can take over **40 minutes**.
 
 5. The Analytics instance page will be displayed with a status of **ACTIVE**.
 
-    ![OAC Instance Active](./images/lab200_8.png)
+    ![OAC Instance Active](./images/laboac_eight.png)
 
 This concludes this lab. You may now **proceed to the next lab**.
 
@@ -66,4 +66,4 @@ This concludes this lab. You may now **proceed to the next lab**.
 
 - **Author** - Priscila Iruela - Technology Product Strategy Director, Juan Antonio Martin Pedro - Analytics Business Development
 - **Contributors** - Victor Martin, Melanie Ashworth-March, Andrea Zengin
-- **Last Updated By/Date** - Kamryn Vinson, October 2020
+- **Last Updated By/Date** - Chenai Jarimani, May 2022
