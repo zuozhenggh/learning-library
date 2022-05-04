@@ -15,7 +15,6 @@ In this lab, you will:
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
 - You have completed all the tasks in Lab 2 
-- Download the sample python [notebook](files/ForecastingAPI_LiveLabs_SampleNotebook.ipynb) : We will be using for explaining on how to use Forecasting Service APIs
 
 ## Task 1: Create a Forecast model
 
@@ -43,7 +42,7 @@ In the example below we show how to create the payload for calling create foreca
 - "targetVariables": name of the column in primary data having the target values
 - models: models selected for training. Here we are showing some the models implemented in our service.Our AutoML service selects the best model out of all the models selected for training. 
 - "forecastHorizon": number of future timesteps for which to forecast 
-- "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on forecast frequency required 
+- "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and customer frequency depending on forecast frequency required 
 - "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
 - "columnData": inline data (Please refer Task 4: Inline Data preparation in Lab 2)
 - "columnSchema": provide column name and data type for each column in the data source

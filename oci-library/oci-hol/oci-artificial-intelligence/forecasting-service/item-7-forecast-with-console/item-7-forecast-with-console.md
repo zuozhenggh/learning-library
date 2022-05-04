@@ -98,11 +98,10 @@ For a successful forecast, the input data should pass the following data validat
 * If there are missing values for 5 consecutive time steps, throw an error.
 * All the timestamps in the primary data source should exist in the secondary data source also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
 * Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data).
-* All values have to be >= 0.
 
 ### **Data format requirements**
 The data should contain one timestamp column and other columns for target variable and series id (if using grouped data).
-- timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format e.g., 2020-07-13T00:00:00Z. If the input date doesn't follow this format then it needs to be converted in the required format. Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab.
+- timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
@@ -188,7 +187,7 @@ Currently, our APIs support datasets that can be in one of the following formats
     ....
     ```
     **Note:**
-    * Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1)
+    * Missing values are permitted (with empty), and boolean flag values should be converted to numeric (0/1)
 
 ## Task 3: Download Sample Data
 

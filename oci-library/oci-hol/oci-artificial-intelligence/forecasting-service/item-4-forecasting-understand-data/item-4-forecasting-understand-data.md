@@ -31,15 +31,15 @@ For a successful forecast, the input data should pass the following data validat
 * If there are missing values for 5 consecutive time steps, throw an error
 * All the timestamps in the primary data source should exist in the secondary data source, also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency)
 * Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data)
-* All values have to be >= 0
 
 ### **Data format requirements**
 The data should contain one timestamp column and other columns for target variable and series id (if using grouped data)
-- timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format e.g., 2020-07-13T00:00:00Z. If the input date doesn't follow this format then it needs to be converted in the required format. Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab.
+- timestamp column should contain dates in standard [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format e.g., 2020-07-13T00:00:00Z. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
+- If the input date doesn't follow allowed format then it needs to be converted in the required format. Sample Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab for  "yyyy-MM-dd HH:mm:ss"
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
-**Note**: The column names used in the examples here are just for representation and actual data can have diffrent custom names.  
+**Note**: The column names used in the examples here are just for representation and actual data can have different custom names.  
 
 Currently, our APIs support datasets that can be in one of the following formats:
 
@@ -124,7 +124,7 @@ Currently, our APIs support datasets that can be in one of the following formats
     Steps on how to generate inline data from csv files are given in Task 3 below.
     
     **Note:**
-    * Missing values are permitted (with empty), data is sorted by timestamp, and boolean flag values should be converted to numeric (0/1)
+    * Missing values are permitted (with empty), and boolean flag values should be converted to numeric (0/1)
 
 ## Task 2: Download Sample Data
 
@@ -175,14 +175,8 @@ Click on upload and then browse to file which you desire to upload:
     df_add['date'] = pd.to_datetime(df_add['date'],
                                             format='%d/%m/%y').apply(lambda x: str(x))
     ```
-4.  Sort the data
 
-    ```Python
-    df_primary.sort_values(by = "date" , inplace = True)  
-    df_add.sort_values(by = "date" , inplace = True)      
-    ```
-
-5.  Setting variables to create forecast with below commands
+4.  Setting variables to create forecast with below commands
     - prim_load : is the variable having inline primary data
     - add_load : is the variable having inline additional data 
 
@@ -243,7 +237,7 @@ Click on upload and then browse to file which you desire to upload:
   Once, the data is prepared , you  will learn how to create the forecasting service project.
 
   In the payload:
-  * compartmentId  will be same as tenancy id. Please visit Lab1 API Key generation.  
+  * compartmentId  will be same as tenancy id if is root compartment else provide desired compartment id. Please visit Lab1 API Key generation. In the below eg. we will be using root compartment
   * displayName can be given any custom name
   * description can be customized
 
