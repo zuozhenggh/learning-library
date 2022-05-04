@@ -3,56 +3,62 @@
 ## Introduction
 This lab walks you through the setup required to complete this demo workshop.
 
-Estimated Lab Time: 10 minutes
+Estimated Lab Time: 5 minutes
 
 ### Objectives
 
 In this lab, you will:
-
-* Install an Integration Recipe
+* Install and Configure an Integration Recipe
 
 ### Prerequisites
 
 This lab assumes you have:
-
 * An Oracle Cloud account
 * All previous labs successfully completed
 
 
-## Task 1: Install Integration Recipe
+## Task 1: Install and Configure an Integration Recipe
 
-1. Click the hamburger menu at the top left hand site of the home screen. Then, select the **Home** button.
+On your Oracle Integration instance, install the recipe package to deploy and configure the integration and associated resources.
 
-2. On the **Home** page, scroll to the **Accelerators & Recipes** section.
+1. On the Oracle Integration home page, scroll to the **Accelerators & Recipes** section.
+
+2. Click **Search All**.
 
 3. Enter `Order Process` in the search field located on the top left side of the screen, then press **Enter**. 
 
-4. Find the *Order Process* recipe, and then click the **Install (+)** icon. 
+4. Find the *Order Process* recipe, then select it and click the **Install (+)** icon. 
 
     ![Import Recipe](images/recipe-import.png)
 
+Wait for the Recipe installation to complete.
 
-## Task 2: Configure Recipe 
-
-1. On the **Accelerators & Recipes**, select the *Order Process* recipe you want to edit.
-
-2. Click the **Configure** icon.
+5. After the package is installed, click the **Configure** icon on the recipe card to configure the resources deployed by the package.
 
     ![Import Recipe](images/recipe-configure.png)
 
+6. On the Configuration Editor page, find the Order Process connection under the *Connections* section and click the **Edit** icon. 
 
-3. On the Configuration Editor page, find the Order Process connection under the *Connections* section and click the **Edit** icon. 
+    The Configuration Editor page opens, displaying all the resources of the recipe package. 
 
-   ![Import Recipe](images/recipe-configure-connection.png)
+    ![Import Recipe](images/recipe-configure-connection.png)
 
-4. In the Connection page, copy the Oracle Integration host name from the browser address bar and past it into the field **Connection URL**.
+7. In the Connection Properties section, copy the Oracle Integration host name from the browser address bar and past it into the field **Connection URL**.
 
     ![Import Recipe](images/recipe-configure-connection-hostname.png)
 
-5. Under *Security*, select **Username Password Token** Security Policy, and enter the same credentials used for accessing OCI Integration.
+8. Under *Security*, select **Basic Authentication** Security Policy, and enter the same credentials used for accessing your OCI Integration instance.
 
     ![Import Recipe](images/recipe-configure-connection-security.png)
 
-6. Click **Test**, wait for confirmation, then click **Save**. 
+9. Click **Test** to ensure that your connection is successfully configured. 
+A confirmation message is displayed if your test is successful.
+
+10. Click **Save**, wait for confirmation, then click **Back (<)** on the top left corner of the canvas to return to the Configuration Editor page. 
+
+You may now **proceed to the next lab**.
 
 
+## Acknowledgements
+* **Author** - Ravi Chablani, Product Management - Oracle Integration
+* **Last Updated By/Date** - Ravi Chablani, April 2022
