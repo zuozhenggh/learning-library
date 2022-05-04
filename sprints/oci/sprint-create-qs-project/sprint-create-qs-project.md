@@ -23,7 +23,7 @@ _**Note: Petr submitted a ticket to add Query Service under Data Lake, Jira # CS
     * **Project Description:** Enter a description which is at least 6 characters long.
     * **Connect Data Catalog:** Select the compartment that contains the Data Catalog to which you want to connect from the drop-down list. Click the **Change Compartment** link to search for Data Catalog if it's in a different compartment. In this example, we selected the **`query-service-sandbox`** compartment which contains a data catalog named **DataLake**.
 
-    >**Note:** If you don't have a Data Catalog instance, click **Create Data Catalog** to create a new one. Next, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop for detailed information on how to create and harvest a data asset..
+    >**Note:** If you don't have a Data Catalog instance, click **Create Data Catalog** to create a new one. Next, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop for detailed information on how to create and harvest a data asset.
 
       ![The completed Create Query Service project panel is displayed.](./images/create-dcat-instance.png " ")
 
