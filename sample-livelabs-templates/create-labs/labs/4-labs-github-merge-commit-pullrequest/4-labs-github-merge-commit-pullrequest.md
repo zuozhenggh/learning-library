@@ -271,5 +271,6 @@ This concludes this lab. You may now **proceed to the next lab**.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Kamryn Vinson, Product Manager, Database
     * Arabella Yao, Product Manager, Database
+    * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Madhusudhan Rao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, Apr 2022
