@@ -44,11 +44,8 @@ As the stewards of Java, Oracle can provide answers to these questions. Oracle u
 
 ### Prerequisites
 
+* This workshop requires an Oracle Cloud account. You may use your existing account or create one in the following lab.
 * A host(desktop/laptop/server/virtual machine) with Linux/Windows Operating System
-* An Oracle Cloud Account - Please view this workshop's LiveLabs landing page to see which environments are supported. 
-  >**Note:** If you have a **Free Trial** account, when your Free Trial expires, your account will be converted to an **Always Free** account. You will not be able to conduct Free Tier workshops unless the Always Free environment is available.
-**[Click here for the Free Tier FAQ page.](https://www.oracle.com/cloud/free/faq.html)**
-
 
 ## Extension Workshops
 After the completion of this workshop, you may proceed to explore further workshops that demonstrate the advanced features that JMS has to offer with [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/home).
