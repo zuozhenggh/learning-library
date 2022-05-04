@@ -15,6 +15,7 @@ In this lab, you will:
 ### Prerequisites
 - A Free tier or paid tenancy account in OCI
 - You have completed all the tasks in Lab 2 
+- Download the sample python [notebook](files/ForecastingAPI_LiveLabs_SampleNotebook.ipynb) : We will be using for explaining on how to use Forecasting Service APIs
 
 ## Task 1: Create a Forecast model
 

@@ -175,8 +175,14 @@ Click on upload and then browse to file which you desire to upload:
     df_add['date'] = pd.to_datetime(df_add['date'],
                                             format='%d/%m/%y').apply(lambda x: str(x))
     ```
+4.  Sort the data
 
-4.  Setting variables to create forecast with below commands
+    ```Python
+    df_primary.sort_values(by = "date" , inplace = True)  
+    df_add.sort_values(by = "date" , inplace = True)      
+    ```
+
+5.  Setting variables to create forecast with below commands
     - prim_load : is the variable having inline primary data
     - add_load : is the variable having inline additional data 
 
