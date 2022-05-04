@@ -16,6 +16,8 @@ In this lab, you will:
 ### Prerequisites:
 *	A free tier or paid tenancy account in OCI
 *   You have completed all the tasks in Getting Started.  
+*   Download the sample python [notebook](files/ForecastingAPI_LiveLabs_SampleNotebook.ipynb) : We will be using for explaining on how to use Forecasting Service APIs
+
 
 ## Task 1: API key generation  
 1.  Log in to your Oracle Cloud account, expand the Profile menu and click on User Settings:
