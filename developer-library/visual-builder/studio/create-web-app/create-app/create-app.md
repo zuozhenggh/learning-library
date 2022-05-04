@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows you how to create a web app in your visual application project. It also shows how to add business objects to store your web app's data.
+This lab shows you how to create a web app in your visual application project and add business objects to store your web app's data.
 
 Estimated Time: 15 minutes
 
@@ -37,7 +37,7 @@ Add your first web app to the HR visual application that you've just created. A 
 
     The visual application opens on the Designer's Welcome page.
 
-    ![](images/visual-app-welcome.png " ")
+    ![](images/visual-app-welcome.png "This image shows part of the HR Visual Application's Welcome page. The page contains tiles in three sections: Connect to Data, Create Apps, and Add Artifacts. On  the right are Learn and Help sections with references to documentation and other resources.")
 
     The Welcome page contains a set of tiles in three groups: **Connect to Data**, **Create Apps**, and **Add Artifacts**.
 
@@ -45,7 +45,7 @@ Add your first web app to the HR visual application that you've just created. A 
 
     Take note of the header elements:
 
-    ![](images/header.png " ")
+    ![](images/header.png "This image shows the header in the HR Visual Application workspace. The workspace name HR Visual Application is on the left. Next to it, the Git repository and current branch tutorial-hr-project.git / hrbranch are visible. On the right are icons that let you perform other actions: Undo, Redo, Preview, Publish Changes, Product Feedback, Go to File, and Menu.")
 
     On the left is the name of your current workspace, **HR Visual Application**; next to it is the project's Git repository (**tutorial-hr-project.git**) and the branch currently associated with your workspace (**hrbranch**). Click each option to see other actions that you can perform from here. Clicking ![Go to Project Page icon](images/go-to-project-home-icon.png) will take you back to the Project Home page.
 
@@ -55,24 +55,24 @@ Add your first web app to the HR visual application that you've just created. A 
 
     The Web Apps pane opens in the navigator.
 
-    ![](images/web-apps.png " ")
+    ![](images/web-apps.png "This image shows the Web Apps pane of the Navigator. There is a plus sign at the top and a + Web Application button at the bottom.")
 
 3.  Click **\+ Web Application** (or click the **+** sign at the top of the pane).
 4.  In the Create Web Application window, enter `hrwebapp` as the **Application Name**. (You can specify uppercase as well as lowercase characters in the application name, but the name is converted to lowercase.) Leave the **Navigation Style** set to the default, **None**, and click **Create**.
 
-    The application opens on the `main-start` page, which is the default name of your application's  home page, created by default for you. By convention, a page name has its flow name as a prefix. This simple application uses only the `main` flow. More complex applications can have more than one flow. (You can ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
+    The application opens on the `main-start` page, which is the default name of your application's  home page, created automatically for you. By convention, a page name has its flow name as a prefix. This simple application uses only the `main` flow. More complex applications can have more than one flow. (You can ignore the **This dot says that you have made some changes** dialog that appears in the header for now; we'll explore Git changes in a later lab.)
 
-    ![](images/designer.png " ")
+    ![](images/designer.png "This image shows the Web Apps pane after the hrwebapp has been created. The hrwebapp node shows on the Web Apps pane. The app itself is open on the right, on the main-start page, showing the Components Palette. On the far right, the Properties tab shows the Page view.")
 
-    What you see under the `main-start` tab is your application's main work area. Just under `main-start` are several other tabs: Page Designer, Actions, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, showing the Components palette, the Data palette, and the Structure view on the left. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the Structure view provides a structural view of the components on the canvas.
+    What you see under the `main-start` tab is your application's main work area. Just under `main-start` are several other tabs: Page Designer, Actions, Event Listeners, and so on. Each tab provides editors to help you examine and modify artifacts used in the page. By default, the page opens in the Page Designer, showing the Components palette, the Data palette, and the Structure view on the left edge of the work area. To design your pages, you'll drag components from the Components palette to the canvas. Once you add components, the Structure view provides a structural view of the components on the canvas.
 
     On the far right is the Properties pane, which lets you view or edit a component's properties. When the entire page is selected (as it is now), the Properties pane shows the Page view, where you can choose a preferred page layout. Click **Properties** (the vertical tab located along the right-most edge of your browser) to hide the Properties pane and expand your work area.
 
     You can also move different panes to customize your work area. For example, right-click **Structure** at the bottom of your work area, then select **Move to Top Left** to move the Structure view right under **Components** and **Data**.
 
-    ![](images/structure-view-move.png " ")
+    ![](images/structure-view-move.png "This image shows the Structure view's right-click menu, with the option to 'Move to Top Left' selected.")
 
-    Lastly, expand the **hrwebapp** and **main** nodes in the Web Apps pane to get a tree view of your web application.
+    Finally, expand the **hrwebapp** and **main** nodes in the Web Apps pane to get a tree view of your web application.
 
 ## Task 2: Create a Location business object and import data
 
