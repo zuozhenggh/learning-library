@@ -96,8 +96,11 @@ For a successful forecast, the input data should pass the following data validat
 * If ensemble method is selected, at least 2 other methods need to be selected as well.
 * Number of missing values <= 10% of series length
 * If there are missing values for 5 consecutive time steps, throw an error.
+* Input Data Frequency : 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
+* Forecast Frequency : 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required . For custom frequency : If input dataFrequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. 
+Eg. If Input Data Frequency : 2HOURS , then forecastFrequency: 24HOURS if you want Forecast Frequency to be a DAY level
 * All the timestamps in the primary data source should exist in the secondary data source also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
-* Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data).
+* Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data)
 
 ### **Data format requirements**
 The data should contain one timestamp column and other columns for target variable and series id (if using grouped data).

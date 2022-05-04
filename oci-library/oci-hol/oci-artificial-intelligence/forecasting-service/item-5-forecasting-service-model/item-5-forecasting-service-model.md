@@ -42,12 +42,12 @@ In the example below we show how to create the payload for calling create foreca
 - "targetVariables": name of the column in primary data having the target values
 - models: models selected for training. Here we are showing some the models implemented in our service.Our AutoML service selects the best model out of all the models selected for training. 
 - "forecastHorizon": number of future timesteps for which to forecast 
-- "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and customer frequency depending on forecast frequency required 
+- "tsColName": name of the timestamp column  
+- "dataFrequency": 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
+- "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required . For custom frequency : If input dataFrequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. Eg.  If dataFrequency : 2HOURS  , then forecastFrequency: 24HOURS if you want forecastFrequency to be a DAY level
 - "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
 - "columnData": inline data (Please refer Task 4: Inline Data preparation in Lab 2)
 - "columnSchema": provide column name and data type for each column in the data source
-- "dataFrequency": 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' depending on frequency of input data
-- "tsColName": name of the timestamp column 
 - "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data
 - "models" : We can use any of the available algorithms are univariate and multivariate methods. 
 
