@@ -1,4 +1,4 @@
-# Create SSH Keys Using Oracle Cloud Shell
+# Create SSH keys using Oracle Cloud shell
 
 ## Introduction
 
@@ -80,6 +80,6 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Contributors** - Jaden McElvey, Kamryn Vinson
-* **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, December 2021
+* **Contributors** - Jaden McElvey, Kamryn Vinson, Arabella
+* **Last Updated By/Date** - Arabella Yao, Product Manager, Database Product Management, March 2022
 * **Workshop (or Lab) Expiry Date** - May 2022

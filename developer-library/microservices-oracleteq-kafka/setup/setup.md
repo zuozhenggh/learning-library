@@ -77,7 +77,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 1. To work with the application code, you need to make a clone from the GitHub repository using the following command.  
 
     ```bash
-    <copy>git clone -b 22.2.2 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
+    <copy>git clone -b 22.4.2 --single-branch https://github.com/oracle/microservices-datadriven.git</copy>
     ```
 
    You should now see the directory `microservices-datadriven` in the directory that you created.
@@ -86,11 +86,13 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
     ```bash
     <copy>
-    echo "export LAB_HOME=~/lab8022/microservices-datadriven/workshops/oracleteq-kafka" >>~/.bashrc
-    export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2
-    echo "export JAVA_HOME=~/graalvm-ce-java11-22.0.0.2" >>~/.bashrc
-    echo "export PATH=$JAVA_HOME/bin/:$PATH" >>~/.bashrc
-    source ~/.bashrc
+    echo "# LiveLab Setup -- BEGIN" >>${HOME}/.bashrc
+    echo "export LAB_HOME=${HOME}/lab8022/microservices-datadriven/workshops/oracleteq-kafka" >>${HOME}/.bashrc
+    export JAVA_HOME=${HOME}/graalvm-ce-java11-22.0.0.2
+    echo "export JAVA_HOME=${HOME}/graalvm-ce-java11-22.0.0.2" >>${HOME}/.bashrc
+    echo "export PATH=$JAVA_HOME/bin/:$PATH" >>${HOME}/.bashrc
+    echo "# LiveLab Setup -- END" >>${HOME}/.bashrc
+    source ${HOME}/.bashrc
     </copy>
     ```
 
