@@ -4,7 +4,7 @@ Duration: 5 minutes
 ### Prerequisites
 * An Oracle Cloud Account.
 * An optional compartment for your Query Service project and resources.
-* An OCI Data Catalog that contains at least one Oracle Object Storage data asset that have been harvested to generate the logical data entities that will be used by Query Service. For a detailed instructions on creating a Data Catalog data asset and harvesting it, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop.
+* An OCI Data Catalog that contains at least one Oracle Object Storage data asset that have been harvested to generate the logical data entities that will be used by Query Service. For detailed instructions on creating a Data Catalog data asset and harvesting it, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop.
 
 * The required policies to allow access to the Data Catalog, Object Storage, and Query Service projects.
 
@@ -31,7 +31,7 @@ _**Note: Petr submitted a ticket to add Query Service under Data Lake, Jira # CS
 
       ![The completed Create Query Service project panel is displayed.](./images/create-qs-project.png " ")
 
-5. The Query Service project is created and displayed in the **Query Service Projects** page.   
+5. Click **Create Project**. The Query Service project is created and displayed in the **Query Service Projects** page.   
 
     ![The newly created Query Service project is displayed with an Active state.](./images/new-qs-project.png " ")
 
