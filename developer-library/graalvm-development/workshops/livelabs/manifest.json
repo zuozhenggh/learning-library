@@ -25,7 +25,11 @@
             "filename": "../../graal-aot/graal-aot.md"
         },
         {
-            "title": "演習 4: Cloud Nativeアプリケーション開発",
+            "title": "演習 4: GraalVMとマクロサービスフレームワークによるRESTFulサービス開発",
+            "filename": "../../graal-fw/graal-fw.md"
+        },
+        {
+            "title": "演習 5: Cloud Nativeアプリケーション開発",
             "filename": "../../cloud-native/cloud-native.md"
         },
         {

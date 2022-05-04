@@ -20,16 +20,16 @@
 
 ## Task 1: SSH接続よりインスタンスへアクセス
 
-1. OCIコンソール上、左上にあるナビゲーションメニューをクリックし、**Compute** → **instance** をクリックし、演習１で作成したインスタンスの**Public IP**をコピーします。(下記例では**152.70.134.51**になります。)
+1. OCIコンソール上、左上にあるナビゲーションメニューをクリックし、**Compute** → **instance** をクリックし、演習１で作成したインスタンスの**Public IP**をコピーします。
 
   ![image of instance creation](/../images/provisioning-instance2.png)
 
-
-2. 受講者のPC上コマンドプロンプト(Windowsの場合）あるいはターミナル(Linuxの場合）を立ち上げ、SSHキーを保存しているディレクトリーに移動します。SSHコマンドでインスタンスに接続します。
-    ```
+```
     <copy>ssh -i <your-private-key-file> opc@<x.x.x.x></copy>
         
     ```
+2. 受講者のPC上コマンドプロンプト(Windowsの場合）あるいはターミナル(Linuxの場合）を立ち上げ、SSHキーを保存しているディレクトリーに移動します。SSHコマンドでインスタンスに接続します。
+    
 
     For Windows:
     ![image of instance creation](/../images/ssh.png)

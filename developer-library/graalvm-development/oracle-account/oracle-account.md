@@ -1,9 +1,9 @@
 # 事前準備
 
 
-このハンズオンを実施するためには有効なOracleアカウント（OCIアカウントではない）とリソースの予約が必要です。Oracleアカウントを使用して演習環境のリソースの予約を行う、またその他OracleサポートやOracle一般公開コンテンツにアクセスすることができます。
+このハンズオンを実施するためには有効なOracleアカウント（OCIアカウントではありません）が必要です。Oracleアカウントを使用して演習環境のリソースの予約を行い、またその他OracleサポートやOracle一般公開コンテンツにアクセスすることができます。
 
-既にOracleアカウントをお持ちの場合、下記Task2へ移動してください。
+既にOracleアカウントをお持ちの場合、下記Task2へ移動してください。  
 
 既に事前にリソース予約済みの場合、この章をスキップし、次の章「ハンズオン概要」へ移動してください。
 ##   
@@ -13,7 +13,7 @@
 
 Oracleアカウントは以下二つのステップで作成できます。
 
-1. ブラウザより[oracle.com](http://www.oracle.com)へナビゲートします。  *View Account*をクリックして *Create an Account*を選択します。
+1. [oracle.com](https://www.oracle.com/index.html)へアクセスし、 *View Account*をクリックして *Create an Account*を選択します。
 
   ![](images/create-account-oracle-1.png " ")
 

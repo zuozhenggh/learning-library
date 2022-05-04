@@ -25,15 +25,19 @@
             "filename": "../../setup/setup.md"
         },
         {
-            "title": "演習 3: JITパフォーマンスを比較",
+            "title": "演習 3: 高性能JITコンパイラ",
             "filename": "../../graal-jit/graal-jit.md"
         },
         {
-            "title": "演習 4: AOTパフォーマンス比較",
+            "title": "演習 4: 高速に起動するNative Image",
             "filename": "../../graal-aot/graal-aot.md"
         },
         {
-            "title": "演習 5: Cloud Nativeアプリケーション開発",
+            "title": "演習 5: GraalVMとマクロサービスフレームワークによるRESTFulサービス開発",
+            "filename": "../../graal-fw/graal-fw.md"
+        },
+        {
+            "title": "演習 6: GraalVMとマクロサービスフレームワークによるRESTFulサービス開発",
             "filename": "../../cloud-native/cloud-native.md"
         },
         {

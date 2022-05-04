@@ -20,28 +20,34 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
 
 * 演習１「GraalVM Enterprise Editionのインストール」を実施済みであること
 
-## Task 1: サンプルアプリケーションの導入
+## Task 1: サンプルアプリケーションの導入  
 
-このサンプルはJava Stream APIを利用して、指定したディレクトリー配下のファイル一覧を表示するプログラムとなります。同じプログラムをJITモードとネイティブモードの両方で実行し、所要時間を比較します。
+このサンプルはJava Stream APIを利用して、指定したディレクトリー配下のファイル一覧を表示するプログラムとなります。同じプログラムをJITモードとネイティブモードの両方で実行し、所要時間を比較します。  
 
-1. 演習１の中でGitHubよりダウンロードしたGraalVM Demosサンプルアプリケーションを利用します。  
-サンプルソースをダウンロードしたフォルダー配下の"native-list-dir"フォルダーに移動してください。
+1. 演習１の中でGitHubよりダウンロードしたGraalVM Demosサンプルアプリケーションを利用します。 
+        > **Note:** まだダウンロードしていない場合、演習2のTask1に従ってサンプルをダウンロードしてください。
+        サンプルソースをダウンロードしたフォルダー配下の"native-list-dir"フォルダーに移動してください。
 
-    ```
-    <copy>cd graalvm-demos</copy>
-    ```
-       
-    ```
-    <copy>cd native-list-dir</copy>
-    ```
+        ```
+        <copy>cd graalvm-demos</copy>
 
-2. サンプルコードの中身を確認します。
+        ```  
 
-   エディターでサンプルソースコードの内容を確認します。
+        ```
+        <copy>cd native-list-dir</copy>
+        ```
+
+        > ** Note:** 上記サンプル以外に、GraalVMの[複数サンプル](https://github.com/graalvm/graalvm-demos)をご参照頂けます。
+
+
+2. サンプルコードの中身を確認します。 
+  エディターでサンプルソースコードの内容を確認します。
+
     ```
     <copy>nano /graalvm-demos/native-list-dir/ListDir.java</copy>
-    ```  
-       
+
+    ```
+
     ```
     import java.io.File;
     import java.nio.file.Files;
@@ -49,26 +55,30 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
     import java.nio.file.Paths;
     import java.util.stream.Stream;
 
-    public class ListDir {
-      public static void main(String[] args) throws java.io.IOException {
-        String root = ".";
-        if(args.length > 0) {
-                root = args[0];
+        public class ListDir {
+                public static void main(String[] args) throws java.io.IOException {
+
+                        String root = ".";
+                        if(args.length > 0) {
+                                root = args[0];
+                        }
+                        System.out.println("Walking path: " + Paths.get(root));
+
+                        long[] size = {0};
+                        long[] count = {0};
+
+                        try (Stream<Path> paths = Files.walk(Paths.get(root))) {
+                                paths.filter(Files::isRegularFile).forEach((Path p) -> {
+                                        File f = p.toFile();
+                                        size[0] += f.length();
+                                        count[0] += 1;
+                                });
+                        }
+
+                        System.out.println("Total: " + count[0] + " files, total size = " + size[0] + " bytes");
+                }
         }
-        System.out.println("Walking path: " + Paths.get(root));
-        long[] size = {0};
-        long[] count = {0};
-        try (Stream<Path> paths = Files.walk(Paths.get(root))) {
-                paths.filter(Files::isRegularFile).forEach((Path p) -> {
-                        File f = p.toFile();
-                        size[0] += f.length();
-                        count[0] += 1;
-                });
-        }
-        System.out.println("Total: " + count[0] + " files, total size = " + size[0] + " bytes");
-      }
-    }
-    ```
+     ```  
 
 ## Task 2: サンプルアプリケーションのビルドおよび実行
 
@@ -77,34 +87,29 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
     ```
     <copy>cd native-list-dir</copy>
     ```
-    ListDir.javaをコンパイルします。  
 
     ```
-    <copy>javac ListDir.java</copy>
-    ```
-    生成されたJavaクラス"ListDir.class"に対してnative imageの生成を実施します。
-
-    ```
-    <copy>native-image ListDir</copy>
+    <copy>./build.sh</copy>
     ```
 このシェルの中で、以下二つのコマンドを実行されています。
 
-2. JITモードでJavaクラスを実行し、その実行時間を計測します。javaコマンドの引数に任意のディレクトリーのパスを渡します。例えば、ログインユーザーのホームディレクトリー配下のファイル数を集計する場合、以下のコマンドを実行します。
-    ```
-    <copy>time java ListDir ~/.</copy>
-    ```
+    - $JAVA_HOME/bin/javac ListDir.java
+    - $JAVA_HOME/bin/native-image ListDir
+それぞれ通常のJavaクラスとNative Imageが生成されます。
+    - ListDir.class
+    - listdir
 
-3. ネイティブモードで実行し、実行時間を計測します。
+2. JITモードとAOTモードでそれぞれ実行します。引数をディレクトリーのパスを渡します。例えば、ログインユーザーのホームディレクトリー配下のパスを引数としてして
+  ```
+    <copy>cd native-list-dir</copy>
     ```
-    <copy>time ./listdir ~/.</copy>
-    ```
-
-4. 1本のシェルで二つのモードでアプリの実行時間を比較します。  
 
     ```
     <copy>./run.sh ~/.</copy>
     ```
-    ![Image of run.sh](/../images/graal-aot-run.png)
+
+3. 二つのモードで同じアプリの実行時間を比較します。 
+![Image of run.sh](/../images/graal-aot-run.png)
 
 
 ## Learn More
