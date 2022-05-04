@@ -33,7 +33,7 @@ This lab assumes you have:
 
 To be able to access your compute instance, you need to configure egress and ingress security rules in your VCN's security list.
 
-> **Note**: If you let Resource Manager create a new VCN for you when you create your compute instance (recommended), you can skip this task and proceed to Task 2.
+> **Note:** If you let Resource Manager create a new VCN for you when you create your compute instance (recommended), you can skip this task and proceed to Task 2.
 
 1. From the navigation menu in Oracle Cloud Infrastructure, select **Networking**, and then **Virtual Cloud Networks**.
 
@@ -150,7 +150,7 @@ To be able to access your compute instance, you need to configure egress and ing
 
     You are automatically logged in to your compute instance and presented with a user-friendly desktop. If you don't wait, you may get a message stating that the proxy could not connect to the destination in time.
 
-    ![workshop-installed noVNC desktop](images/workshop-installed-noVNC-desktop.png "workshop-installed noVNC desktop")
+    ![workshop-installed noVNC desktop](images/workshop-installed-novnc-desktop.png "workshop-installed noVNC desktop")
 
 
 
@@ -162,5 +162,5 @@ To be able to access your compute instance, you need to configure egress and ing
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Principal User Assistance Developer, Database Development
+- **Author**- Matthew McDaniel, Austin Specialist Hub
 - **Last Updated By/Date** - Matthew McDaniel, Austin Specialists Hub, March 28 2022
