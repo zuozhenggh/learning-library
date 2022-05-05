@@ -8,6 +8,7 @@ Notes:
 Capture updates made to the script below.
 
 ID05042022: ganrad: (Bugfix) Script was throwing exception for 'date_today' - Unknown function (line # 164).
+ID05052022: ganrad: Commented out print statement to reduce verbose output.
 """
 
 import os
@@ -176,9 +177,11 @@ for index, row in df.iterrows():
     dItem = DataItem(timestamp=timestamp, values=values)
     payloadData.append(dItem)
 
-print("*********** Detect Payload ************");
-print(payloadData)
-print("*********** Detect Payload ************");
+# ID05052022.so
+#print("*********** Detect Payload ************");
+#print(payloadData)
+#print("***************************************");
+# ID05052022.eo
 
 inline = InlineDetectAnomaliesRequest(model_id=model_id, request_type="INLINE", signal_names=signalNames, data=payloadData)
 
