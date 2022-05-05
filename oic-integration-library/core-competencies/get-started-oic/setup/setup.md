@@ -4,7 +4,7 @@
 
 This lab walks you through the setup required to complete the workshop.
 
-Estimated Lab Time: 5 minutes
+Estimated Lab Time: 15 minutes
 
 ### Objectives
 In this lab, you will:

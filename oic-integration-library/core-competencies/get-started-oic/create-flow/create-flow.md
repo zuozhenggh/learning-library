@@ -3,6 +3,8 @@
 ## Introduction
 This lab will walk you through the steps to create an end-to-end integration of reading a file from File Server and insert the data set in an ADW Table.
 
+Estimated Lab Time: 15 minutes
+
 ### Objectives
 You will execute the following:
 - Initiate a Scheduled integration flow
