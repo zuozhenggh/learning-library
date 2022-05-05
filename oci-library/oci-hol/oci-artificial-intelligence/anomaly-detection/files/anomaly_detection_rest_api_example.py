@@ -37,14 +37,14 @@ from oci.ai_anomaly_detection.models.inline_detect_anomalies_request import Inli
 # change the following constants accordingly
 # ## If using the instance in data science platform, please refer this page https://dzone.com/articles/quick-and-easy-configuration-of-oracle-data-scienc to setup the content of config file
 
-CONFIG_FILENAME = "/Users/gagaradh/.oci/config" # TODO: Update USERNAME
+CONFIG_FILENAME = "/Users/USERNAME/.oci/config" # TODO: Update USERNAME
 SERVICE_ENDPOINT="https://anomalydetection.aiservice.us-ashburn-1.oci.oraclecloud.com" # Need to Update propery if different
-NAMESPACE = "ax3dvjxgkemg" # Need to Update propery if different
-BUCKET_NAME = "cust-test-bucket-20220321-1933" # Need to Update propery if different
+NAMESPACE = "UPDATE_NS" # Need to Update propery if different
+BUCKET_NAME = "UPDATE_BUCKET_NAME" # Need to Update propery if different
 training_file_name="demo-training-data.csv" # Need to Update propery if different
 
-compartment_id = os.getenv('C') #Compartment of the project, Need to Update propery if different
-#print(compartment_id)
+#compartment_id = os.getenv('OCI_COMPARTMENT') #Compartment of the project, Need to Update propery if different
+compartment_id = "ocid1.tenancy.oc1..aaaa........" #Compartment of the project, Need to Update propery if different
 print("-*-*- Compartment ID=[" + compartment_id + "] -*-*-")
 
 config = from_file(CONFIG_FILENAME)
