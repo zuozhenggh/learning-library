@@ -139,4 +139,5 @@ Congratulations on completing this lab!
     * Jason Ding - Principal Data Scientist - Oracle AI Services
     * Haad Khan - Senior Data Scientist - Oracle AI Services
 * **Last Updated By/Date**
+    * Ganesh Radhakrishnan - Product Manager, May 2022
     * Jason Ding - Principal Data Scientist, Jan 2022
