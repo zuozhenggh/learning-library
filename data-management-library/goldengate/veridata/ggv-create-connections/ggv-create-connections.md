@@ -30,13 +30,13 @@ To get started with Oracle GoldenGate Veridata, you must define a connection to 
 To create connections:
 1. From the left navigation pane, click **Configuration** and then click **Connection Configuration** to display the **Connection configuration** page.
 
-    ![](./images/2-connection-configuration.png " ")
+    ![Connection Configuration](./images/2-connection-configuration.png " ")
 
 2. Click **New** to display the **New Connection Assistant** page to create one connection for the source database.
 
 3. Enter the **Connection Name**, for example, **SourceConnection** and click **Next**.
 
-    ![](./images/3-connection-name-description.png " ")
+    ![Connection Name](./images/3-connection-name-description.png " ")
 
 4. Enter the following details:
 
@@ -74,7 +74,7 @@ To create connections:
     * **User**: source
     * **Password**: source
 
-    ![](./images/5-new-connection-assistant-datasource-credentials.png " ")
+    ![Connection Credentials](./images/5-new-connection-assistant-datasource-credentials.png " ")
 
 6. Click **Test Connection**.
 
@@ -86,8 +86,8 @@ To create connections:
 
     * **User**: target
     * **Password**: target
-    
-    ![](./images/6-new-connection-create-another-connection.png " ")  
+
+    ![Target Connection](./images/6-new-connection-create-another-connection.png " ")  
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
@@ -99,5 +99,5 @@ You may now [proceed to the next lab](#next).
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Sukin Varghese , Jonathan Fu, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021
+* **Contributors** -  Sukin Varghese, Jonathan Fu
+* **Last Updated By/Date** - Anuradha Chepuri, May 2022
