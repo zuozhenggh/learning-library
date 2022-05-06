@@ -144,4 +144,4 @@ To delete directories:
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
 * **Contributors** -  Sukin Varghese, Jonathan Fu, Meghana Banka
-* **Last Updated By/Date** - Anuradha Chepuri, permanently 2022
+* **Last Updated By/Date** - Anuradha Chepuri, May 2022
