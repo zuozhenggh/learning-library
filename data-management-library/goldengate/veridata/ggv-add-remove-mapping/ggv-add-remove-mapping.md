@@ -49,36 +49,36 @@ To Remove Column Mapping:
    The control moves to the **Existing Compare Pairs** tab.
 
 6. Click **Edit** under **Column Mapping**.
-    ![Column Mapping Edit](./images/ColumnMapping_Edit.png " ")
+    ![Column Mapping Edit](./images/columnmappingedit.png " ")
 
 7. Click **User Defined** under **Comparison Column Mapping Method**.
 
-    ![Comparison Column Mapping Method](./images/ClickUserDefined.png " ")
+    ![Comparison Column Mapping Method](./images/clickuserdefined.png " ")
 
 8. Select the columns to remove and then click **Remove Mapping**.
 
-    ![Remove Mapping](./images/Select_Columns-to_Remove.png " ")
+    ![Remove Mapping](./images/select-columns-to-remove.png " ")
 
     The columns get removed.
 
-    ![Columns are removed.](./images/Columns_Removed.png " ")
+    ![Columns are removed.](./images/columnsremoved.png " ")
 
 9. Click **Save**.
 
   On the **Existing Column Mapping** tab, the remaining mapped columns **DUMMY\_KEY** and **DUMMY\_DATE** are displayed.
 
-    ![Remaining Mapped Columns displayed.](./images/Remaining-Columns.png " ")
+    ![Remaining Mapped Columns displayed.](./images/remaining-columns.png " ")
 
 10. Click **Job Configuration**, click **New** to create a new job by Job Name **Job\_Mapping** by following the steps in **Lab - Create Jobs and Execute Jobs**, and then select **Group\_Mapping** group you created to add group to this job.
 
 11. Run the Job **Job\_Mapping**.
 
 12. On the Home Page, click the **out-of-sync** link for job **Job_Mapping**.
-    ![Out-of-sync link](./images/FinishedJobs_Click-Out-of-Sync.png " ")
+    ![Out-of-sync link](./images/finishedjobs-click-out-of-sync.png " ")
 
     Comparison is now complete for the columns **DUMMY\_KEY** and **DUMMY\_DATE**. The other 2 mapped columns (**DUMMY\_STRING** and **DUMMY\_NUMBER**) have been skipped from being mapped and compared.
 
-    ![Removed columns are skipped from mapping](./images/ColumnsRemoved_Comparison_Complete.png " ")
+    ![Removed columns are skipped from mapping](./images/columnsremoved-comparison-complete.png " ")
 
 ## **Task 2:** Add Mappings
 
@@ -102,20 +102,20 @@ To add mappings:
    The control moves to the **Existing Compare Pairs** tab.
 
 6. Click **Edit** under **Column Mapping**.
-    ![Column Mapping](./images/ColumnMapping_Edit.png " ")
+    ![Column Mapping](./images/columnmappingedit.png " ")
 
 7. Select the columns (both Source and Target Columns) and click **Add Mapping** to add the columns for mapping.
 
-    ![Add Mapping](./images/Select_Column_for_Add_Mapping.png " ")
+    ![Add Mapping](./images/select-column-for-add-mapping.png " ")
 
       The columns **DUMMY\_STRING** and **DUMMY\_NUMBER** are added for mapping.
 
-    ![Columns added for mapping.](./images/Columns-Added-for-Mapping.png " ")
+    ![Columns added for mapping.](./images/columns-added-for-mapping.png " ")
 
 8. Click **Save**
     These columns are added for comparison.
 
-    ![Columns get added for comparison](./images/Columns-Added-for-Comparison.png " ")
+    ![Columns get added for comparison](./images/columns-added-for-comparison.png " ")
 
 9. Click **Job Configuration**, click **New** to create a new job by Job Name **Job_Mapping** by following the steps in **Lab - Create Jobs and Execute Jobs**, and then select **Group_Mapping** group you created to add group to this job.
 
@@ -123,7 +123,7 @@ To add mappings:
 
 11. On the Home Page, click the **out-of-sync** link for job **Job_Mapping**.
 
-      ![Out-of-sync link](./images/Expand_Columns-to_View_Mappings.png " ")
+      ![Out-of-sync link](./images/expand-columns-to-view-mappings.png " ")
 
 12. Expand **DUMMY\_TABLE-DUMMY\_TABLE** notice that the **DUMMY\_STRING** and **DUMMY\_DATE** columns have also been added for comparison along the **DUMMY\_KEY** and **DUMMY\_NUMBER** columns.
 
