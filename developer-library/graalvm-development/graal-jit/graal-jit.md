@@ -144,14 +144,8 @@ JavaSimpleStreamBenchmark.testMethod  avgt    3  250.740 ± 37.220  ns/op
     ```
 
 
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+- **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022
+- **Contributors** - 
+- **Last Updated By/Date** - Jun Suzuki, April 2022

@@ -388,15 +388,8 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     RESTfulサービスの起動時間はわずか0.024秒で、従来のJITモードより70倍以上の速さでサービスを起動しました。
     ![Image alt text](/../images/spring-start3.png)
        
-  
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
-* [URL text 1](http://docs.oracle.com)
-* [URL text 2](http://docs.oracle.com)
-
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+- **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022
+- **Contributors** - 
+- **Last Updated By/Date** - Jun Suzuki, April 2022

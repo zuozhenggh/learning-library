@@ -87,6 +87,7 @@
 
 
 ## Acknowledgements
-* **Author** - <Name, Title, Group>
-* **Contributors** -  <Name, Group> -- optional
-* **Last Updated By/Date** - <Name, Month Year>
+
+- **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022
+- **Contributors** - 
+- **Last Updated By/Date** - Jun Suzuki, April 2022
