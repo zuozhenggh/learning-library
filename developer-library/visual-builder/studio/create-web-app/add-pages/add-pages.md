@@ -31,17 +31,15 @@ Let's create a table to display your departments on the `main-start` page. The T
 
     Click the **Web Applications** tab to close the Navigator pane and expand your work area. You can also widen your browser window.
 
-3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the title text uses the Bind Text component. Click  **Structure** to view the selected component in the page hierarchy. (If you're having trouble selecting the component on the page, you'll need to expand the canvas area to view all elements.)
+3.  Let's give this `main-start` page a title. Click `main` on the page canvas—notice how the title text uses the Bind Text component, also selected in the Structure view. (If you're having trouble selecting the component on the page, you'll need to expand the canvas area to view all elements.)
 
     ![](images/department-heading.png "This image shows the Page Designer tab for the main-start page, with the 'main' text featured in the Bind Text component selected on the canvas.")
-
-    Take a second to look at the hierarchical view of the page's components in the Structure view. Components that aren't currently shown on the page fade into the background, allowing you to focus on parts of the page, a section at a time.
 
 4.  In the Bind Text component's Properties pane, replace `main` with `Departments` in the **Value** field.
 
     ![](images/departments.png "This image shows the Bind Text's Properties pane, with the Value  field set to Departments.")
 
-5.  Now click **Components** to open the Components palette and scroll down to Collection. Drag and drop a **Table** component onto the canvas.
+5.  Now click **Components** to open the Components palette, scroll down to Collection, then drag and drop a **Table** component onto the canvas.
 
    ![](images/department-add-table.png "This image shows a Table component being dragged onto the page canvas.")
 
@@ -71,7 +69,7 @@ Let's create a table to display your departments on the `main-start` page. The T
 
     ![](images/departments-table.png "This image shows three columns added to the Departments table: Id, Name, and Name.")
 
-11.  To make the location name column more descriptive, click the **Data** tab in the Properties pane. Under **Table Columns**, click ![Column Detail icon](images/columndetail-icon.png) **Column Detail** next to Name (locationObject). You won't see the icon until you hover the mouse next to the field.  
+11.  To make the location name column more descriptive, click the **Data** tab in the Properties pane. Under **Table Columns**, click ![Column Detail icon](images/columndetail-icon.png) next to **Name (locationObject)**. You won't see the icon until you hover the mouse next to the field.  
 
     ![](images/department-table-location-name.png "This image shows the Data tab for the Table component. Under Table Columns, the Column Detail arrow is selected, allowing the label of the last Name column to be changed.")
 
@@ -108,11 +106,9 @@ Now that we have a way to show departments, we'll add a Create page that lets us
 
     ![](images/department-add-create-live.png "This image shows the use of the Create Department page when you run the application. Administration has been entered in the Name field, and Floor 1 has been selected from the Location list.")
 
-    Click **Save**. A message appears briefly and you are taken to the application's Diagram tab.  
+    Click **Save**. A message appears briefly and you are taken to the application's Diagram tab, which displays the application's `main` flow and navigational relationships between pages in a flow.  
 
     ![](images/department-add-create-mainflow.png "This image shows the web application's main flow, with the main-start page pointing to the main-create-department page.")
-
-    The Diagram view visually displays the application's `main` flow and navigational relationships between pages in a flow. It also includes its own Components palette with pages and actions—but we won't explore those details in this workshop.
 
     **Tip:** A page that's marked with a warning triangle usually indicates that the page's code has issues that you might want to review. For example, the warning for the `main-start` page here relates to a translation issue, which you can safely ignore. If you want, click **Audits** at the bottom of the screen to review and resolve issues in the Audits pane. You can also select messages that you don't want to be flagged and disable reporting for those messages in the page's Code view.
 
@@ -137,11 +133,11 @@ We'll now create a page to display employees, similar to the one you created to 
     The `main-employees` page opens in the Page Designer.
 
 3.  Click the **main-employees** Bind Text component on the page. Click **Properties** if necessary, then in the Properties pane, change `main employees` to `Employees` in the **Value** field.
-4.  Now let's add a table to display employees. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* that lets you design pages with data sources as the starting point. To see this in action, click **Data** to open the Data palette, expand **Business Objects**, then the **Employee** business object.
+4.  Now let's add a table to display employees. This time, instead of using the Components palette, let's use the Data palette, which provides a *data-first approach* where data sources serve as the starting point for your page design. To see this in action, click **Data** to open the Data palette, expand **Business Objects**, then the **Employee** business object.
 
     ![](images/data-palette-employee-object.png "This image shows the Data palette. The Employee business object under Business Objects is expanded to show its REST endpoints.")
 
-  You see all the REST endpoints that VB Studio created for you when the Employee business object was created.
+  You'll see all the REST endpoints that VB Studio created when the Employee business object was created.
 
 5. Drag and drop the **Get Many** REST endpoint (which fetches a list of employees) onto the canvas to bring up the **Render as** pop-up.
 
@@ -161,7 +157,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
     An empty Employees table is displayed. If all the fields don't show, resize the table to see all fields.
 
-10.  To make the second Name column (which refers to the Department name field) descriptive, click **Data** in the table's Properties pane. Under **Table Columns**, click ![Column Detail icon](images/columndetail-icon.png) **Column Detail** next to Name  (departmentObject).
+10.  To make the second Name column (which refers to the Department name field) descriptive, click **Data** in the table's Properties pane. Under **Table Columns**, click ![Column Detail icon](images/columndetail-icon.png) next to **Name  (departmentObject)**.
 
     ![](images/employees-table-department-name.png)
 
@@ -180,14 +176,14 @@ Add a Create page that lets your users create new employees.
 3.  On the Page Detail step, select **hireDate**, **email**, and **department**, in that order (**name** is already selected because it's a required field).
 4.  Leave the Button label field and other fields set to their default values. Click **Finish**.
 
-    ![](images/employees-add-create.png " ")
+    ![](images/employees-add-create.png "This image shows the Select Endpoint page of the Add Create Page quick start. Under request, the department, email, hireDate, and name check boxes are selected, and those fields are shown under Fields. The Button label field is set to Create Employee. The Page title is Create Employee, and the Page name is main-create-employee. ")
 
     A **Create Employee** button appears above the table, and the `main-create-employee` page appears in the pages list.
 
 5.  In the pages list, click the **main-create-employee** page to open it in the Page Designer.
 6.  Click within the form on the page but outside of a component (that is, in the Form Layout component on the page). In the **General** tab of the Form Layout's properties, set the **Max Columns** value to **2**.
 
-    ![](images/employees-add-create-max-columns.png " ")
+    ![](images/employees-add-create-max-columns.png "This image shows the Form Layout component selected on the main-create-employee page. The Max Columns field in the General tab of the Properties pane is set to 2, so that the Name, Hire Date, Email, and Department fields show in two columns on the page.")
 
     The fields now appear in two columns. If you don't see the change, click **Properties** to hide the Properties pane and expand your view.
 
@@ -195,16 +191,16 @@ Add a Create page that lets your users create new employees.
 
     VB Studio briefly displays a message and then places you in the `main` page flow of your application.
 
-    ![](images/employees-add-create-mainflow.png " ")
+    ![](images/employees-add-create-mainflow.png "This image shows the page flow for the web application's main flow. The main-employees page points to the main-create-employee page, and  the main-start page points to the main-create-department page.")
 
 8.  Return to the `main-employees` page. (You can double-click the page tile in the page flow, in addition to using other navigation mechanisms.) Click **Reload page** ![Reload page icon](images/reload-icon.png) to display the row you created.
 9.  Click **Code** (next to **Design** in the Page Designer toolbar) to view the HTML code for the `main-employees` page. You can see the code for the page title, the toolbar, and the table within `div` elements. You could edit this code to create a customized user interface. The components and classes all begin with `oj-`, indicating that they are Oracle JavaScript Extension Toolkit (JET) components.  
 
-    ![](images/employees-add-create-code.png " ")
+    ![](images/employees-add-create-code.png "This image shows the HTML code for the main-employees page. ")
 
-10.  Click **Design** to return to the `main-employees` page, then click **Structure** to view the component structure on the page.
+10.  Click **Design** to return to the `main-employees` page, then click **Structure** to view a hierarchical view of components on the page. Note how components that aren't visible on the page fade into the background, allowing you to focus on the visible parts of the page, a section at a time.
 
-    ![](images/employees-add-create-structure.png " ")
+    ![](images/employees-add-create-structure.png "This image shows the component Structure of the main-employees page.")
 
 11.  Click **Structure** again to close the Structure view.
 
@@ -215,17 +211,17 @@ It makes sense at this point to change the name of the `main-start` page to `mai
 
 1.  In the Web Apps pane, right-click the **main-start** page and select **Rename**.
 
-    ![](images/main-start-rename.png " ")
+    ![](images/main-start-rename.png "This image shows the hrwebapp and main nodes expanded in the Navigator. The options menu for the main-start page is open, and the Rename menu item is selected. ")
 
 2.  In the Rename dialog box, replace `start` with `departments` in the **ID** field and click **Rename**.
 3.  Click **main**. The page flow Diagram shows the now renamed page.
 
-    ![](images/main-start-rename-mainflow.png " ")
+    ![](images/main-start-rename-mainflow.png "This image shows the page flow of the main flow after main-start has been renamed. The main-departments page still points to the main-create-department page, and the main-employees page points to the main-create-employee page. ")
 
 4.  Double-click the **main-departments** tile to go to that page again.
 5.  Although you have changed its name, the `main-departments` page will continue to be the page where your application starts when you run it. To find out why, click **Source** ![Source icon](images/sourceview-icon.png) in the Navigator. Under **webApps**, expand the **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json** to open it.
 
-    ![](images/mainflow-json.png " ")
+    ![](images/mainflow-json.png "This image shows the Source view pane, with the webApps, hrwebapp, flows, and main nodes expanded. The main-flow.json file has been selected and is open. In it, the "defaultPage" property is set to the value "main-departments".")
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 
@@ -233,4 +229,4 @@ It makes sense at this point to change the name of the `main-start` page to `mai
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2022
+* **Last Updated By/Date** - Sheryl Manoharan, May 2022
