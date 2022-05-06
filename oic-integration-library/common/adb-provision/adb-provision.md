@@ -10,7 +10,7 @@ Estimated Time: 5 minutes
 
 Watch the video below for a quick walk through of the lab.
 
-[](youtube:a6Jm7lYaCWI)
+[Provision Autonomous Database Instance](youtube:a6Jm7lYaCWI)
 
 ### Objectives
 
@@ -72,7 +72,7 @@ In this lab, you will:
     | Compartment | (Defaut) | |
     | Display Name | `OICDemo` | Enter a memorable name for the database for display purposes |
     | Database Name | `OICDEMO` | Use letters and numbers only, starting with a letter. Maximum length is 14 characters. |
-    | 
+    |
 
 
 4. Choose a workload type. Select the workload type for your database from the choices:
@@ -141,7 +141,7 @@ In this lab, you will:
 
 10. Click **Create Autonomous Database**.
 
-    ![](./images/task2-10.png " ")
+    ![Create Autonomous Database](./images/task2-10.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from *Provisioning* to *Available*. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
@@ -151,7 +151,7 @@ In this lab, you will:
 <if type="freetier">
     ![Database instance available](images/adb-available-freetier.png)
 </if>
-     
+
 
 Please *proceed to the next lab*.
 
@@ -164,4 +164,4 @@ Go to [the documentation](https://docs.oracle.com/en/cloud/paas/autonomous-data-
 - **Author** - Nilay Panchal, Oracle Autonomous Database Product Management
 - **Adapted for Cloud by** - Richard Green, Principal Developer, Database User Assistance
 - **Contributors** - Oracle LiveLabs QA Team (Jeffrey Malcolm Jr, Intern | Arabella Yao, Product Manager Intern)
-- **Last Updated By/Date** - Ravi Chablani, March 2022
+- **Last Updated By/Date** - Ravi Chablani - March 2022, Kishore Katta - May 2022

@@ -79,7 +79,6 @@ Now you have an external table which will be used in the Integration flow.
 
 2.  Select the compartment that you want to create your bucket in.
     Click **Create Bucket**
-    ![Select Compartment](images/select-compartment.png)
 
 3.  Fill out the dialog box:
       - Bucket Name: Provide a name

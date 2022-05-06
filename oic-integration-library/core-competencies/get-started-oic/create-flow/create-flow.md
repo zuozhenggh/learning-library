@@ -145,12 +145,14 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 
     ```
     downloadSalesOrders Response(FTP) > DownloadFileToICSResponse > Download Response > ICSFiles > ICSFile
+    
     ```
 
     Expand the **Target** node:
 
     ```
     insertSalesOrders Request
+
     ```
 
     Complete the mapping as below:    
