@@ -24,7 +24,7 @@ This lab assumes you have:
 
 ## Task 1: Create an action chain to navigate from the Departments page to the Employees page
 
-1.  Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then click **HR Visual Application** in the Workspaces table.
+1.  Click **Workspaces**![Workspaces icon](images/vbs-workspaces-icon.png), then **HR Visual Application** in the Workspaces table.
 2.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), then **main-departments** under the **hrwebapp** and **main** nodes.
 3.  In the Page Designer, click **Components** to open the Components palette. Then, drag a **Button** from the Common components to the Toolbar, to the right of the Create Department button on the `main-departments` page.
 
@@ -68,14 +68,9 @@ This lab assumes you have:
     The action now has the label `Navigate main-departments`.
 
 7.  Click **Preview** ![Preview icon](images/preview-icon.png) to test the pages and navigation. The application opens in another browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
-8.  Click **main**, then **Diagram** to view the application's modified page flow. Click the **main-departments** page to see two navigation icons (![Green navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png)) appear on the `main-employees` page, indicating that you can now navigate from `main-departments` to `main-employees` and back.
+8.  Click **main**, then **Diagram** to view the application's modified page flow. You'll see bi-directional arrows flowing between the `main-department` page and the `main-employees` page. You'll also see ![Green navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png) navigation icons appear in the page's Properties pane, indicating that you can now navigate from `main-departments` to `main-employees` and back.
 
     ![](images/page-flow.png " ")
-
-    Navigation details also show in the page's Properties pane.
-
-    ![](images/page-flow-properties.png " ")
-
 
 ## Task 3: Import data for the business objects
 
@@ -115,4 +110,4 @@ Let's now add data for the Department and Employee business objects. Instead of 
 
 ## Acknowledgements
 * **Author** - Sheryl Manoharan, VB Studio User Assistance, November 2021
-* **Last Updated By/Date** - Sheryl Manoharan, February 2022
+* **Last Updated By/Date** - Sheryl Manoharan, May 2022
