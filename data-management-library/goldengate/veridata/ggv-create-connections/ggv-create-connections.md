@@ -68,7 +68,7 @@ To create connections:
 
     * **Datasource Type**: The datasource that is associated with this agent. Click **Verify**.
 
-    ![](./images/new-connection-assistant.png " ")
+    ![New Connection Assistant](./images/new-connection-assistant.png " ")
 
 5. Click **Next** to enter the Datasource Connection credentials:
 
