@@ -14,7 +14,7 @@ This lab assumes you have:
 - An Oracle Free Tier or Paid Cloud account
 
 ## Task 1: Download Oracle Resource Manager (ORM) stack zip file
-1.  Click on the link below to download the Resource Manager zip file you need to build your environment: **This needs to be created. Check Killian's downloads files for test-oas-mkplc-freetier folder.**
+1.  Click on the link below to download the Resource Manager zip file you need to build your environment: **Insert Resource Manager zip.**
 
 2.  Save in your downloads folder.
 
