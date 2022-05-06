@@ -107,16 +107,16 @@ To create compare pairs on the **Pattern Mapping** tab:
 
     - **Map Source and Target Tables Using Exact Names**: Let's select this option here:
 
-    ![Pattern Mapping](./images/pattern-mapping-pair-mapping-option1.png " ")
+    ![Pattern Mapping with Exact Names](./images/pattern-mapping-pair-mapping-option1.png " ")
 
-    - Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**.
+    - **Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**.
 
         Enter:
         * Where Source Names Like: **%\_Table**
 
         * Where Target Names Like: **%\_Table**
 
-    ![Pattern Mapping - Option 2](./images/pattern-mapping-pair-mapping-option2.png " ")
+    ![Pattern Mapping - Using % Wildcard option](./images/pattern-mapping-pair-mapping-option2.png " ")
 
     - **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**.
 
@@ -125,7 +125,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 
         * Pattern for Target Names: *****
 
-    ![Pattern Mapping - Wildcard pattern](./images/pattern-mapping-pair-mapping-option3.png " ")
+    ![Pattern Mapping - Using * Wildcard Option](./images/pattern-mapping-pair-mapping-option3.png " ")
 
 4. Click **Generate Mappings**. The control moves to the **Preview** tab. Here, option **3b** has been selected.
 
