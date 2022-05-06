@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This workshop will walk you through the steps to create an end-to-end integration of reading a file from File Server and insert the data set in an ADW Table leveraging out of the box adapters.
+This workshop will walk you through the steps to create an end-to-end integration of reading a file from File Server and insert the data set in an Oracle Autonomous Date Warehouse(ADW) Table leveraging out of the box adapters.
 
 ![Integration Architecture](images/get-started-integration-scenario.png)
 

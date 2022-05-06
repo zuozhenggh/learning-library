@@ -1,7 +1,7 @@
 # Create Integration flow
 
 ## Introduction
-This lab will walk you through the steps to create an end-to-end integration of reading a file from File Server and insert the data set in an ADW Table.
+This lab will walk you through the steps to create an end-to-end integration of reading a file from File Server and insert the data set in an Oracle Autonomous (ADW) Table.
 
 Estimated Lab Time: 15 minutes
 
@@ -103,7 +103,7 @@ Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canva
     | Select Table | Select **V\_SALES\_ORDERS**|
     | Table columns | Click **>>** to move all the fields to the *Selected* box|
 
-    **Note:** The selected order of the columns should be as per the input sales_order.csv data
+    **Note:** The selected order of the columns should be per the input sales_order.csv data
 
     ![Choose Table in AWD Wizard](images/adw-wizard-choose-table.png)
 
@@ -145,7 +145,7 @@ When we added the ADW invoke to the integration, a map icon was automatically ad
 
     ```
     downloadSalesOrders Response(FTP) > DownloadFileToICSResponse > Download Response > ICSFiles > ICSFile
-    
+
     ```
 
     Expand the **Target** node:

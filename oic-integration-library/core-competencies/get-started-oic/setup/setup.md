@@ -74,7 +74,7 @@ Now you have an external table which will be used in the Integration flow.
 
 ## Task 2: Create Object Storage Bucket
 
-1.  Navigate to *OCI Console* Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
+1.  Navigate to *Oracle Cloud Console* Click the **Navigation Menu** in the upper left, navigate to **Storage**, and select **Buckets**.
     ![Select Object Storage](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/storage-buckets.png)
 
 2.  Select the compartment that you want to create your bucket in.
@@ -114,15 +114,15 @@ Now you have an external table which will be used in the Integration flow.
 
 7. Click **Close**.
 
-8.  We need Object Storage Region. In OCI Console Navigate to **Regions** from the Top Banner. Select **Manage Regions**. Make a note of the **Region Identifier** (example: us-ashburn-1) where the Object Storage Bucket is created.
+8.  We need Object Storage Region. In Oracle Cloud Console Navigate to **Regions** from the Top Banner. Select **Manage Regions**. Make a note of the **Region Identifier** (example: us-ashburn-1) where the Object Storage Bucket is created.
 
     ![Region Identifier](images/region-identifier.png)
 
-9.  We need *Object Storage Tenancy OCID*. In OCI Console Navigate to **Profile** at the Right Corner. Select **Tenancy:<your-tenant-id>** . In the Tenancy Details page make a note of *OCID*. We need this to Create Autonomous Database connection in Oracle Integration
+9.  We need *Object Storage Tenancy OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Corner. Select **Tenancy:<your-tenant-id>** . In the Tenancy Details page make a note of *OCID*. We need this to Create Autonomous Database connection in Oracle Integration
 
 10.  We need *Object Storage Compartment OCID*. Navigate to **Identity & Security > Compartments**. Select the Compartment in which Object Storage bucket is created in the previous task. In the Compartment Details page make a note of *OCID*.
 
-11. We need one more detail which is *Object Storage User OCID*. In OCI Console Navigate to **Profile** at the Right Corner. Select your **username**. In the User details page make a note of *OCID*.
+11. We need one more detail which is *Object Storage User OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Corner. Select your **username**. In the User details page make a note of *OCID*.
 
 12. In the *User Details* page from the *Resources* sections Select **API Keys**. Click on **Add API Key**.
 
