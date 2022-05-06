@@ -48,9 +48,9 @@ As the stewards of Java, Oracle can provide answers to these questions. Oracle u
 * A host(desktop/laptop/server/virtual machine) with Linux/Windows Operating System
 
 ## Extension Workshops
-After the completion of this workshop, you may proceed to explore further workshops that demonstrate the advanced features that JMS has to offer with [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/home).
+After the completion of this workshop, you may proceed to explore further workshops that demonstrate the advanced features that JMS has to offer with [Perform Java Lifecycle Management with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3202).
 
-If you would like to learn more about using JMS together with other OCI services, you may explore [Integrate OCI Services with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/home).
+If you would like to learn more about using JMS together with other OCI services, you may explore [Integrate OCI Services with Java Management Service](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=3203).
 
 
 ## Learn More
