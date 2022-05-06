@@ -27,21 +27,21 @@ To create a job:
 
 1. From the left navigation pane, click **Configuration** and **Job configuration** to display the **Job Configuration** page.
 
-    ![Job Configuration](./images/1a-select-job-configuration.png " ")
+    ![Job Configuration](./images/select-job-configuration.png " ")
 
 2. Click **New** to display the **New Job Assistant** page.
 
 3. Enter a **Name** and **Description** for the new job, click **Next**.
 
-    ![New Job Name and Description](./images/12-new-job-create-job.png " ")
+    ![New Job Name and Description](./images/new-job-create-job.png " ")
 
 4. Enter the **Group Name** that you want to link to this job and click **Apply Filter**.
 
-    ![Group Name](./images/13-create-job-select-group-apply-filter.png " ")
+    ![Group Name](./images/create-job-select-group-apply-filter.png " ")
 
 5. Select the Group and click **Finish**.
 
-    ![Select Group](./images/14-create-job-select-group-click-Finish.png " ")
+    ![Select Group](./images/create-job-select-group-click-Finish.png " ")
 
 A new job is created for the compare pair.
 
@@ -50,23 +50,23 @@ To execute a job:
 
 1. From the left navigation pane, click **Run/Execute Job** to display the **Run configuration** page.
 
-    ![Run Configuration](./images/15a-run-job-run-configuration-page.png " ")
+    ![Run Configuration](./images/run-job-run-configuration-page.png " ")
 
 2. Select the job you just created from the **Job** drop-down list.
 
-    ![Select Job](./images/15-run-job.png " ")
+    ![Select Job](./images/run-job.png " ")
 
 3. Click **Retrieve Compare Pair List** to display the list of Compare Pairs and then click **Run Job**.
 
-    ![Retrieve Compare Pair List](./images/15b-select-job-retrieve-job.png " ")
+    ![Retrieve Compare Pair List](./images/select-job-retrieve-job.png " ")
 
 4. From the left navigation pane, click **Running Jobs** to display the status of the jobs that are running.
 
-  ![Running Jobs](./images/16-running-jobs-status.png " ")
+  ![Running Jobs](./images/running-jobs-status.png " ")
 
 5. From the left navigation pane, click **Finished Jobs** to display the completed job and the details of the compare pairs.
 
-    ![Finished Jobs](./images/17-completed-jobs-compare-pair-status-chart.png " ")
+    ![Finished Jobs](./images/completed-jobs-compare-pair-status-chart.png " ")
 
 You may now [proceed to the next lab](#next).
 

@@ -31,13 +31,13 @@ To get started with Oracle GoldenGate Veridata, you must define a connection to 
 To create connections:
 1. From the left navigation pane, click **Configuration** and then click **Connection Configuration** to display the **Connection configuration** page.
 
-    ![Connection Configuration](./images/2-connection-configuration.png " ")
+    ![Connection Configuration](./images/connection-configuration.png " ")
 
 2. Click **New** to display the **New Connection Assistant** page to create one connection for the source database.
 
 3. Enter the **Connection Name**, for example, **SourceConnection** and click **Next**.
 
-    ![Connection Name](./images/3-connection-name-description.png " ")
+    ![Connection Name](./images/connection-name-description.png " ")
 
 4. Enter the following details:
 
@@ -68,14 +68,14 @@ To create connections:
 
     * **Datasource Type**: The datasource that is associated with this agent. Click **Verify**.
 
-    ![](./images/4-new-connection-assistant.png " ")
+    ![](./images/new-connection-assistant.png " ")
 
 5. Click **Next** to enter the Datasource Connection credentials:
 
     * **User**: source
     * **Password**: source
 
-    ![Connection Credentials](./images/5-new-connection-assistant-datasource-credentials.png " ")
+    ![Connection Credentials](./images/new-connection-assistant-datasource-credentials.png " ")
 
 6. Click **Test Connection**.
 
@@ -88,7 +88,7 @@ To create connections:
     * **User**: target
     * **Password**: target
 
-    ![Target Connection](./images/6-new-connection-create-another-connection.png " ")  
+    ![Target Connection](./images/new-connection-create-another-connection.png " ")  
 
 9. Click **OK** to display the **New Connection Assistant** page.
 

@@ -34,19 +34,19 @@ To create a group:
 
 1. From the left navigation pane, click **Configuration** and then click **Group Configuration** to display the **Group configuration** page.
 
-    ![Group Configuration](./images/1-group-configuration.png " ")
+    ![Group Configuration](./images/group-configuration.png " ")
 
 2. Click **New** to display the **New Group Assistant** page to create a group.
 
 3. Enter the **Name** and **Description** for the Group and click **Next**.
 
-  ![Group Name and Description](./images/2-new-group-from-name-description.png " ")
+  ![Group Name and Description](./images/new-group-from-name-description.png " ")
 
 4. Click **Next** to enter the connection information.
 
 5. Browse to select the **Source Connection** and **Target Connection** (that you have created in **Lab: Create Datasource Connections**).
 
-  ![Select Connections](./images/3-new-group-connection-information.png " ")
+  ![Select Connections](./images/new-group-connection-information.png " ")
 
 6. Click **Finish**.
 
@@ -59,7 +59,7 @@ To create compare pairs on the **Manual Mapping** tab:
 
 2. Click **OK**.
 
-    ![Compare Pair Configuration](./images/4-new-group-create-compare-pair-checkbox.png " ")
+    ![Compare Pair Configuration](./images/new-group-create-compare-pair-checkbox.png " ")
 
 3. Click **Manual Mapping**.
 
@@ -70,19 +70,19 @@ To create compare pairs on the **Manual Mapping** tab:
     * Source Table: **CHAR_TYPES**
     * Target Table: **CHAR_TYPES**
 
-    ![Manual Mapping](./images/5-compare-pair-manual-mappng-select-tables.png " ")
+    ![Manual Mapping](./images/compare-pair-manual-mappng-select-tables.png " ")
 
 5. Click **Generate Compare Pair** to add the compare pair to the preview list.
 
-    ![Generate Compare Pair](./images/6-generate-compare-pair-manual-mappng.png " ")
+    ![Generate Compare Pair](./images/generate-compare-pair-manual-mappng.png " ")
 
 6. Go the **Preview** tab and click **Save** to save the generated compare pair.
 
-    ![Preview the generated compare pair.](./images/6A-generate-compare-pair-manual-mapping-preview.png " ")
+    ![Preview the generated compare pair.](./images/generate-compare-pair-manual-mapping-preview.png " ")
 
     The control moves to the **Existing Compare Pairs** tab.
 
-    ![Existing Compare Pairs](./images/7-compare-pair-manual-mapping-generated-saved-existingCPtab.png " ")
+    ![Existing Compare Pairs](./images/compare-pair-manual-mapping-generated-saved-existingCPtab.png " ")
 
 Similarly, you can create any number of compare pairs for other tables.
 
@@ -96,7 +96,7 @@ If you don’t want to add new compare pairs, you may directly jump to **Lab Cre
 To create compare pairs on the **Pattern Mapping** tab:
 1. In the **Compare Pair Configuration** page, click **Pattern Mapping**.
 
-    ![Compare Pair Configuration](./images/9a-click-pattern-mapping-tab.png " ")
+    ![Compare Pair Configuration](./images/click-pattern-mapping-tab.png " ")
 
 2. Select a Source **Schema** and a Target **Schema** under **Datasource Information**. Enter:
 
@@ -107,7 +107,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 
     - **Map Source and Target Tables Using Exact Names**: Let's select this option here:
 
-    ![Pattern Mapping](./images/9-pattern-mapping-pair-mapping-option1.png " ")
+    ![Pattern Mapping](./images/pattern-mapping-pair-mapping-option1.png " ")
 
     - Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**.
 
@@ -116,7 +116,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 
         * Where Target Names Like: **%\_Table**
 
-    ![Pattern Mapping - Option 2](./images/8-pattern-mapping-pair-mapping-option2.png " ")
+    ![Pattern Mapping - Option 2](./images/pattern-mapping-pair-mapping-option2.png " ")
 
     - **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**.
 
@@ -125,15 +125,15 @@ To create compare pairs on the **Pattern Mapping** tab:
 
         * Pattern for Target Names: *****
 
-    ![Pattern Mapping - Wildcard pattern](./images/10-pattern-mapping-pair-mapping-option3.png " ")
+    ![Pattern Mapping - Wildcard pattern](./images/pattern-mapping-pair-mapping-option3.png " ")
 
 4. Click **Generate Mappings**. The control moves to the **Preview** tab. Here, option **3b** has been selected.
 
-    ![Generate Mappings](./images/10-pattern-mapping-pair-mapping-option3b_has_been_selected.png " ")
+    ![Generate Mappings](./images/pattern-mapping-pair-mapping-option3b_has_been_selected.png " ")
 
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
 
-    ![Existing Compare Pairs](./images/11-pattern-mapping-pair-saved-existing-compare-pairs.png " ")
+    ![Existing Compare Pairs](./images/pattern-mapping-pair-saved-existing-compare-pairs.png " ")
 
 You may now [proceed to the next lab](#next).
 
