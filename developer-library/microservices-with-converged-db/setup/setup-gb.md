@@ -4,7 +4,7 @@
 
 In this lab, we will provision and setup the resources to execute microservices in your environment.
 
-Estimates Lab Time - 20 minutes
+Estimates Time: 20 minutes
 
 ### Objectives
 
@@ -143,7 +143,8 @@ You may now proceed to the next lab.
 
 ## Learn More
 
-* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack)  
+Search for and join the `oracle-db-microservices` channel. 
 
 ## Acknowledgements
 
