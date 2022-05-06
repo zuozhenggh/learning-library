@@ -38,19 +38,19 @@ To purge data:
 
 1. Click **Purge Data** from the Left Navigation pane.
 
-    ![Click Purge Data](./images/ClickPurgeData.png " ")
+    ![Click Purge Data](./images/clickpurgedata.png " ")
 
 2. Select the Date and Time until which you want the data to be purged and click **Purge**.
 
-    ![Select Date and Time](./images/DateTimePurge.png " ")
+    ![Select Date and Time](./images/datetimepurge.png " ")
 
     Data has been purged for the selected Date and time.
 
-    ![Data purged](./images/DataPurged.png " ")
+    ![Data purged](./images/datapurged.png " ")
 
 3. Click **Reports** and notice that there are no reports under **Existing Reports**.
 
-    ![Existing Reports](./images/ExistingReportsPurge.png " ")
+    ![Existing Reports](./images/existingreportsrurge.png " ")
 
 The metadata of the Reports get deleted from the repository. However, the reports are available on Oracle GoldenGate Veridata server.
 
@@ -77,19 +77,19 @@ To delete directories:
     <copy>
     ```
 
-    ![Run command to create a user-defined file](./images/DeleteDir-LabTestTouchCommand.png " ")
+    ![Run command to create a user-defined file](./images/deletedir-labtesttouchcommand.png " ")
 
 2. In the UI, select **Finished Jobs**, and select the Job you want to delete and click **Delete**.
 
-    ![Delete Job](./images/DeleteDir.png " ")
+    ![Delete Job](./images/deletedir.png " ")
 
 3. Click **OK** in the displayed popup.
 
-    ![Selected item gets permanently deleted](./images/DeleteDir-ClickOK-Popup-DelDirUnchecked.png " ")
+    ![Selected item gets permanently deleted](./images/deletedir-clickok-popup-deldirunchecked.png " ")
 
 4. In the terminal, verify that except for the user-defined file (`lab_test`), the other files are deleted.
 
-      ![Files are deleted](./images/User-Defined-File-NotDeleted-terminal.png " ")
+      ![Files are deleted](./images/user-defined-file-notdeleted-terminal.png " ")
 
   User-defined files created within the reports directories will not be deleted.
 
@@ -120,17 +120,17 @@ To delete directories:
 
 2. In the UI, select **Finished Jobs**, select the Job you want to delete, select the **Delete Directories Completely** check box, and then click **Delete**.
 
-  ![Delete Directories completely](./images/DeleteDir-ClickOK-DelDirCompletely-Popup.png " ")
+  ![Delete Directories completely](./images/deletedir-clickok-deldircompletely-popup.png " ")
 
 3. Click **OK** in the displayed popup.
 
 4. In the terminal, verify that the entire directory has been deleted.
 
-    ![Entire directory deleted](./images/DeletedDirectories_Terminal.png " ")
+    ![Entire directory deleted](./images/deleteddirectories-terminal.png " ")
 
 5. Click **Reports** and notice that there are no reports under **Existing Reports**.
 
-    ![Existing Reports](./images/ExistingReportsPurge.png " ")
+    ![Existing Reports](./images/existingreportspurge.png " ")
 
 
 ## Learn More
