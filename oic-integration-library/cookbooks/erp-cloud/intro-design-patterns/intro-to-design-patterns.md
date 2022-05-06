@@ -22,7 +22,7 @@ This lab assumes you have:
 
 Across virtually every industry for almost 30 years, ERP has been at the foundation of the business. ERPs act as the system of record or data master for most of an organization’s data and transactions, containing important customer and business information across most essential business functions in finance, human capital management, enterprise performance management, and supplier relationship management. With the explosion of best-of-breed solutions across every industry, today’s tech stacks expand far beyond ERP. Companies increasingly rely on modern CRM systems to act as a system of engagement.
 
-Customers choose to have some of the modules running on-premise and many of them in cloud. Integrating with best of breed applications is important to keep the end to end business process intact for a given organization. Let’s see some of the connectivity capabilities.
+Customers choose to have some modules running on-premise and many of them in cloud. Integrating with best of breed applications is important to keep the end to end business process intact for a given organization. Let’s see some connectivity capabilities.
 
 ![ERP SCM Connectivity](./images/erp-scm-connectivity.png)
 
@@ -67,13 +67,13 @@ Irrespective of Consolidation or Centralized Style of implementation of Oracle P
 ### Usecase - Medical Invoice Compliance System
 ![Medical Invoice Compliance System](./images/ap-invoice-synchronization.png)
 
-Acme Corp works with various Medical Providers wherein its employees avail treatment. After the treatment is completed it is a standard process of  Medical Providers to send invoices to Acme Corp. As part of the Payables process when an Accounts Payable Invoice is created Acme Corp’s backend team verifies if the Medical Bill raised is as per Usual Customary and Reasonable (UCR) and approve the invoice accordingly and a Credit Memo is applied. Oracle Integration orchestrates the whole process of capturing the AP Invoice event integrating with ERP cloud which triggers a workflow process for an authority to approve and finally apply credit memo into ERP cloud. Eventually payments to Medical Providers is handled. Real time capture of Financial events happens at the inception of record creation and wherein the whole process kick off.
+Acme Corp works with various Medical Providers wherein its employees avail treatment. After the treatment is completed it is a standard process of  Medical Providers to send invoices to Acme Corp. As part of the Payables process when an Accounts Payable Invoice is created Acme Corp’s backend team verifies if the Medical Bill raised is per Usual Customary and Reasonable (UCR) and approve the invoice accordingly and a Credit Memo is applied. Oracle Integration orchestrates the whole process of capturing the AP Invoice event integrating with ERP cloud which triggers a workflow process for an authority to approve and finally apply credit memo into ERP cloud. Eventually payments to Medical Providers is handled. Real time capture of Financial events happens at the inception of record creation and wherein the whole process kick off.
 
 ### *Business Objects Integration*
-ERP Cloud do not support Business Events in every module/object under its umbrella. It is imperative that if Real Time Sync needs to be triggered, especially when event is not available a groovy script can be coded using Application Composer Tool in Fusion Applications to call external Service with an object interface.
+ERP Cloud do not support Business Events in every module/object under its umbrella. It is imperative that if Real Time Sync must be triggered, especially when event is not available a groovy script can be coded using Application Composer Tool in Fusion Applications to call external Service with an object interface.
 
 ### **Usecase - Custom Application pages trigger Integration Flow**
-Let's say we are building a custom application which is designed in ERP Cloud using Application Composer. The data needs to be submitted to downstream systems on click of a button which is backed by groovy script.
+Let's say we are building a custom application which is designed in ERP Cloud using Application Composer. The data must be submitted to downstream systems on click of a button which is backed by groovy script.
 
 ![Business Objects Integration Architecture](./images/business-objects-integration-hla.png)
 
@@ -89,7 +89,7 @@ Let's say we want to create new sales order and a customer (if new) in Oracle ER
 -	If the customer is new, then a customer account is also created.
 -	If the sales order reports an error, then the opportunity is reopened
 
-In the above usecase a Sales Order needs to be created in Real Time when an Opportunity is closed in a CRM Application. The integration leverages ERP CLoud REST API to create a Customer and an Order.
+In the above usecase a Sales Order must be created in Real Time when an Opportunity is closed in a CRM Application. The integration leverages ERP CLoud REST API to create a Customer and an Order.
 
 ### **Usecase - e-Invoice Sending and Receiving Invoice documents**
 E-Invoicing solutions enables companies to easily and cost-effectively send and receive e-invoices with their trading partners globally. A common set of requirements could be to
@@ -97,23 +97,23 @@ E-Invoicing solutions enables companies to easily and cost-effectively send and 
 - Accept invoices from suppliers without changes required at their end while getting completely rid of paper in accounts payable in Oracle ERP Cloud
 - Receive invoices electronically from anywhere around the world through e-Invoice solution and push the invoice system of record and source attachments to ERP Cloud
 
-In the above usecase an Invoice along with the source Invoice attachment needs to be created synhronously as and when Invoice is uploaded by Suppliers to consider for quick Accounting process. ERP Cloud REST API can be leveraged to address the Real Time Inbound Invoice creation to post it from Accounting.
+In the above usecase an Invoice along with the source Invoice attachment must be created synchronously as and when Invoice is uploaded by Suppliers to consider for quick Accounting process. ERP Cloud REST API can be leveraged to address the Real Time Inbound Invoice creation to post it from Accounting.
 
 ##	Task	3: Bulk Import Integration
 
-FBDI is one of the ways in Oracle ERP Cloud to import data in bulk. FBDI stands for File Based Data Import. However, in some of the usecases non-FBDI Bulk Import mechanism exists for ex: Import of Accounting Transactions into Fusion Accounting Hub from 3rd party applications
+FBDI is one of the ways in Oracle ERP Cloud to import data in bulk. FBDI stands for File Based Data Import. However, in some usecases non-FBDI Bulk Import mechanism exists for ex: Import of Accounting Transactions into Fusion Accounting Hub from third-party applications
 
 ### *Automation of FBDI Import Usecases*
-There are several scenarios where data from on-premise or external business systems needs to be imported into Oracle ERP Cloud to consummate business transactions such as
+There are several scenarios where data from on-premise or external business systems must be imported into Oracle ERP Cloud to consummate business transactions such as
 
 - On premise applications require to import recurring billing transaction into ERP cloud in a co-existent scenario
-- Import  daily exchange rates needs to be implemented in Oracle General Ledger to make use of the currency exchange rate interface, since it provides a convenient and automated way for multicurrency processing within Oracle ERP Cloud Financials module. We can make use of this interface to report financials in a common currency as well as to perform inter-company transactions between companies that have 2 different functional currencies.
+- Import  daily exchange rates must be implemented in Oracle General Ledger to make use of the currency exchange rate interface, since it provides a convenient and automated way for multicurrency processing within Oracle ERP Cloud Financials module. We can make use of this interface to report financials in a common currency as well as to perform inter-company transactions between companies that have 2 different functional currencies.
 - Claims generated from on-premise insurance claim processing applications, which require the creation of Payables invoices for remitting payments
-- Bulk import of suppliers from an EBS application or from an external 3rd party enterprise applications usually from an FTP server in to Oracle Procurement Cloud
+- Bulk import of suppliers from an EBS application or from an external third-party enterprise applications usually from an FTP server in to Oracle Procurement Cloud
 - Importing Accounts Receivables Invoices
 
 ### **Usecase – General Ledger Import**
-Acme Corp.  has multiple business systems that they maintain for a variety of business activities each of which generates large volumes of financial transactions on a daily basis.  Requirement is to have all of these externally generated transactions to be automatically integrated into Oracle Cloud ERP to post to the General Ledger providing a single consolidated view. Acme Corp. wanted an interface designed to integrate the daily GL journal transactions from the external systems to Oracle Cloud ERP via data files.  And these transactions should be processed every day scheduled at specific times and the whole integration process needs to be automated
+Acme Corp.  has multiple business systems that they maintain for a variety of business activities each of which generates large volumes of financial transactions on a daily basis.  Requirement is to have these externally generated transactions to be automatically integrated into Oracle Cloud ERP to post to the General Ledger providing a single consolidated view. Acme Corp. wanted an interface designed to integrate the daily GL journal transactions from the external systems to Oracle Cloud ERP through, by using data files.  And these transactions should be processed every day scheduled at specific times and the whole integration process must be automated
 
 ### **Usecase – Import Supplier Bank Information**
 Acme Corp need to have Supplier banking information's in Oracle ERP cloud to do the payments for their invoices or bills. These banking information's involved Supplier Bank, Branch , Bank Account , IFSC code , BIC code and many other banking related important information's. Acme Corp can maintain these information in Oracle ERP Cloud manually in the supplier master but if we are importing the supplier form external application then we will definitely have the mass banking data for the supplier and the manual job is very time consuming. It very much important to automate the import of mass banking information of the suppliers.
@@ -124,7 +124,7 @@ Oracle ERP Cloud has provided a very useful functionality which empowers busines
 
 One very common business scenario in an enterprise is to generate extracts of financials data like Journals, Payables Invoices, Payments, Receivable and send it to a data warehouse or  legacy or third party partner systems
 
-Let's see the Outbound mechanisms and the purpose of each of them based on the volume of data that needs to be sent to downstream applications
+Let's see the Outbound mechanisms and the purpose of each of them based on the volume of data that must be sent to downstream applications
 
 ### *BIP Extract - Large Data sets*
 Designed to extract incremental data for scenarios ex:
@@ -135,13 +135,13 @@ Designed to extract incremental data for scenarios ex:
 
 Designed to extract lookup values/metadata/transaction details of a transaction ex:
 
-To automate an entire extraction process using Oracle Integration there are couple of ways to do this. Automate the entire process of extraction as per below recommendations:
+To automate an entire extraction process using Oracle Integration there are couple of ways to do this. Automate the entire process of extraction per below recommendations:
 
 a.	When the report size is greater than 10 MB it is recommended to leverage extract process which pushes the file to a Content Server (UCM) which can be fetched later for further processing. This is purely an asynchronous invocation.
 
 b.	For smaller data sets less than 10 MB it is recommended to leverage synchronous Invocation of report service which produces the report response instantly. Ideally, client applications which may wanted to show data set values instantly to the end user to take further course of action.
 
-Irrespective of the method a BIP Report needs to exist in ERP Cloud.
+Irrespective of the method a BIP Report must exist in ERP Cloud.
 
 You may now **proceed to the next lab**.
 

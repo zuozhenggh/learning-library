@@ -198,9 +198,9 @@ A Map action named Map to validateBusinessUnit is automatically created. We'll d
     | In the expression field enter concat("BusinessUnitName=", /nssrcmpr:execute/nssrcdfl:request-wrapper/nssrcdfl:BusinessUnit) | Query |
 
     ```
-    Note: The xpath expression namespace might vary. So, always Drag and drop the element which will capture the correct namespace.
+    Note: The xpath expression namespace might vary. So, always drag the element which will capture the correct namespace.
 
-    Note: You can drag and drop functions from the Component section, expand Functions, and then expand String Category
+    Note: You can drag functions from the Component section, expand Functions, and then expand String Category
     ```
 
 4.  Click the ***Tick Mark*** in the expression editor. Click ***Validate***. A message confirming the expression is valid appears. Click ***Close*** and ***Save*** the Integration Flow.
@@ -215,13 +215,13 @@ Two flow branches appear in the flow:
   - Undefined: this branch checks the **count of items**. If the expression evaluates to true, the instance follows the flow in this branch.
   - the instance follows this branch when the routing expression for the initial branch resolves to false. We will configure a fault return if the Business Unit is Invalid.
 
-### *Defining the IF conditional flow*
+### *Define the IF conditional flow*
 
 1.  Select ***Undefined***
 
 2.  Click ***Edit*** Icon. The Expression builder appears
 
-3.  Define an expression to check if any business units returned as per the query parameter.
+3.  Define an expression to check if any business units returned per the query parameter.
 
     - In the **Expression Name** field, enter ***BusinessUnitFound***
     - In the **Source** section, select $validateBusinessUnit/nsmpr5:getAllResponse/nsmpr5:items
@@ -303,7 +303,7 @@ A Map action named Map to createERPInvoice is automatically created. We'll defin
 
 4.  Click ***Validate***. A message confirming the expression is valid appears. Click ***Close*** and ***Save*** the Integration Flow.
 
-### *Defining the Global Variable*
+### *Define the Global Variable*
 
 Define Global Variable to store the createInvoice Response. We need this because the createInvoice Response variable is created automatically within the scope of Switch condition. To access the response payload we will use Data Stitch Activity to achieve the requirement.
 
@@ -319,20 +319,20 @@ Define Global Variable to store the createInvoice Response. We need this because
 
 5.  ***Save*** the Integration Flow
 
-6.  Hover over the outgoing arrow for the **createERPInvoice** activity and click ***+***. Search for **Data Stitch** activity. (Alternatively, you can drag and drop from the **Actions** palette)
+6.  Hover over the outgoing arrow for the **createERPInvoice** activity and click ***+***. Search for **Data Stitch** activity. (Alternatively, you can drag from the **Actions** palette)
 
 7.  In the **Properties** pane provide **Name** as ***storeInvoiceResponse*** and Click ***Configure***
 
 8.  A New pane for the Data Stitch activity appears. Here we select the Variable and Values.
 
-    - Select the Tools Icon next to the  **Variable (x)** box to Switch to Developer View. From the **Sources** view select ***$invoice\_response\_var*** drag and drop into the **Variable (x)** box.
+    - Select the Tools Icon next to the  **Variable (x)** box to Switch to Developer View. From the **Sources** view select ***$invoice\_response\_var*** drag into the **Variable (x)** box.
     - Select **Operation** as ***Assign***
-    - In the **Value (x)** box (Switch to Developer view if required) Select ***$createERPInvoice > createResponse > Invoices*** drag and drop into the **Value (x)** box
+    - In the **Value (x)** box (Switch to Developer view if required) Select ***$createERPInvoice > createResponse > Invoices*** drag into the **Value (x)** box
     - Click on ***Close*** and ***Save*** the Integration flow
 
-### *Defining the Response mapping (createInvoice)*
+### *Define the Response mapping (createInvoice)*
 
-The response we got from ERP Cloud for **createERPInvoice** needs to be mapped to Integration Flow response to send back to the client. We will be mapping only few elements to indicate that a New Invoice is Created in ERP Cloud.
+The response we got from ERP Cloud for **createERPInvoice** must be mapped to Integration Flow response to send back to the client. We will be mapping only few elements to indicate that a New Invoice is Created in ERP Cloud.
 
 1.  Select the ***Map to createInvoice*** and Click ***Edit***
 
@@ -372,9 +372,9 @@ The response we got from ERP Cloud for **createERPInvoice** needs to be mapped t
 3.  Click ***Validate*** and Select ***Close***. ***Save*** the Integration Flow
 
 
-### *Defining the Otherwise conditional flow*
+### *Define the Otherwise conditional flow*
 
-1.  Select ***Actions*** and drag and drop ***Fault Return*** Activity. This activity returns a Custom
+1.  Select ***Actions*** and drag ***Fault Return*** Activity. This activity returns a Custom
     Fault
 
 2.  Select the ***Map to createInvoice*** to configure Fault details.
@@ -449,7 +449,7 @@ We, will be testing the Integration flow with a happy case and fault case by mod
 
 ## Task 10: Test the Integration Flow
 
-We will test the end to end Integration flow using the built in Test Client. In an ideal scenario request would be posted from a Web, Mobile Client etc.,
+We will test the end to end Integration flow using the built in Test Client. In an ideal scenario request would be posted from a Web, Mobile Client and so on, and so forth.
 
 1. From **Integrations** page Hover over the **Invoice Validation** Integration Flow and Select ***Run*** and Click on ***Test***
 
@@ -505,7 +505,7 @@ We will test the end to end Integration flow using the built in Test Client. In 
 
   2.  In the **Child Resources** page Select ***sitesLOV***
 
-### *Defining the Map to validateSupplier*
+### *Define the Map to validateSupplier*
 
   1.  In **validateSupplier Request** provide Query Parameters per below
       - Expand -> "sitesLOV"

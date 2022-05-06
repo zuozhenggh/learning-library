@@ -298,7 +298,7 @@ Access your ERP Cloud environment.
       | --- | ----------- |
       | Line | `1` (Default)       |
       | Type | `Goods` |
-      | Item | Choose a valid item. For example, start typing `AS`, and choose an item from the resulting drop-down (or hit the search button to select a valid item)
+      | Item | Choose a valid item. For example, start typing `AS`, and choose an item from the resulting drop-down (or press the search button to select a valid item)
       | Description | Remove the existing description and enter the same value used for **Lab 7 > Task 5 > Step 5: Filter Expr for Purchase Order Event**. For example: `Lan Cable <your-initials>`|
       | Quantity | Enter a valid number, eg. `2` |
       | UOM | `Ea` (Default) |
