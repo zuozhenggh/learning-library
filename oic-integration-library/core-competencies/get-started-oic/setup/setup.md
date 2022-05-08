@@ -118,11 +118,11 @@ Now you have an external table which will be used in the Integration flow.
 
     ![Region Identifier](images/region-identifier.png)
 
-9.  We need *Object Storage Tenancy OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Corner. Select **Tenancy:<your-tenant-id>** . In the Tenancy Details page make a note of *OCID*. We need this to Create Autonomous Database connection in Oracle Integration
+9.  We need *Object Storage Tenancy OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Top Corner. Select **Tenancy:<your-tenant-id>** . In the Tenancy Details page make a note of *OCID*. We need this to Create Autonomous Database connection in Oracle Integration
 
-10.  We need *Object Storage Compartment OCID*. Navigate to **Identity & Security > Compartments**. Select the Compartment in which Object Storage bucket is created in the previous task. In the Compartment Details page make a note of *OCID*.
+10.  We need *Object Storage Compartment OCID*. In Oracle Cloud Console Navigate to **Identity & Security > Compartments**. Select the Compartment in which Object Storage bucket is created in the previous task. In the Compartment Details page make a note of *OCID*.
 
-11. We need one more detail which is *Object Storage User OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Corner. Select your **username**. In the User details page make a note of *OCID*.
+11. We need one more detail which is *Object Storage User OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Top Corner. Select your **username**. In the User details page make a note of *OCID*.
 
 12. In the *User Details* page from the *Resources* sections Select **API Keys**. Click on **Add API Key**.
 
