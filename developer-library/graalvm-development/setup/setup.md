@@ -1,8 +1,8 @@
-# GraalVM Enterprise Edition のインストール
+# GraalVMのインストール
 
 ## 概要
 
-この演習では、SSH接続を使用して、OCI上に事前にプロビジョニング済みの演習用インスタンスに接続し、GraalVM Enterprise Editionをインストールします。
+この演習では、OCI上に事前にプロビジョニング済みの演習用インスタンスにSSH接続を行い、GraalVM Enterprise Editionをインストールします。
 
 *所要時間: 10分*
 
@@ -14,36 +14,27 @@
 ### ■前提条件
 
 * 「事前準備」の手順を完了し、OCI上演習専用のインスタンスが作成済みであること
-* インスタンスにアクセスするためのSSHキーを受講者PCにダウンロード済みであること
-
-> **Note:** 演習中SSH接続の関係で有線LANで接続されていることが望ましい
+* クライアントPC上SSHキー・ペアが事前に生成済みであること
 
 ## Task 1: SSH接続よりインスタンスへアクセス
+以下の手順はWindows10を前提にしていますが、MacOSとLinuxの場合もそれに準ずる手順となります。
 
-1. OCIコンソール上、左上にあるナビゲーションメニューをクリックし、**Compute** → **instance** をクリックし、演習１で作成したインスタンスの**Public IP**をコピーします。
+1. コマンドプロンプトを立ち上げ、SSHキーを保存してある*C:¥Users¥<ユーザ名>￥.ssh*配下に移動します。以下のコマンドを用いて演習用インスタンスに対してopcユーザ名でアクセスします。
 
-  ![image of instance creation](/../images/provisioning-instance2.png)
-
-```
+    ``` 
     <copy>ssh -i <your-private-key-file> opc@<x.x.x.x></copy>
         
     ```
-2. 受講者のPC上コマンドプロンプト(Windowsの場合）あるいはターミナル(Linuxの場合）を立ち上げ、SSHキーを保存しているディレクトリーに移動します。SSHコマンドでインスタンスに接続します。
-    
+    ![image of instance creation](images/ssh.png)
 
-    For Windows:
-    ![image of instance creation](/../images/ssh.png)
-
-    > **Note:** SSHキーをユーザフォルダー配下に置く必要があります。   
-    例：C:\Users\<ユーザ名>   
-    your-private-key-fileはSSHプライベートキー、x.x.x.xは接続先インスタンスのIPです。  
-    SSH接続を確立する際の確認メッセ時が表示されたら、yesと入力してください。
+    > **Note:** 
+    事前準備の章に沿った手順でSSHキーを作成した場合、your-private-key-fileは*id_rsa*になります。x.x.x.xは接続先インスタンスのIPです。  
+    SSH接続を確立する際の確認メッセージが表示されたら、yesと入力してください。
    
     For Linux:
     > **Note:** SSHキーをアクセス権を限定する必要があります。   
     例：chmod 600 ./your-private-key-file
 
-    
 
 ## Task 2: GraalVM Enterprise Edition 21.3をインストール
 
@@ -53,6 +44,8 @@
     <copy>sudo yum install graalvm21-ee-11-jdk</copy>
     ```
     ![image of instance creation](/../images/install-graalvm2.png)
+
+    インストールが正常終了の場合*Complete!*のメッセージが表示されます。
 
 
 2. 以下のコマンドを入力します。GraalVMのクラスパスを設定します。
@@ -98,7 +91,7 @@
     GraalVM 21.3.1 Java 11 EE (Java Version 11.0.14+8-LTS-jvmci-21.3-b07)
     ```
 
-## Task 3: その他必要なパッケージをインストール
+## Task 3: 演習用に必要なその他ソフトをインストール
 
 1. Mavenのインストール   
     以降の演習でJavaアプリケーションをビルドするため、Mavenを導入します。以下のコマンドを実行します。導入時の確認メッセージに対して、yesと入力してインストールを開始します。
@@ -107,7 +100,7 @@
     <copy>sudo yum install maven</copy>
     ```
 
-    *Complete!*　というメッセージを確認し、Mavenが正常に導入されることを確認します。
+    *Complete!*　のメッセージを確認し、Mavenが正常に導入されることを確認します。
 
 2. gitのインストール  
     以降の演習でGitHubよりサンプルソースコードをダウンロードする必要がありますので、gitを導入します。以下のコマンドを実行します。導入時の確認メッセージに対して、yesと入力してインストールを開始します。
@@ -116,7 +109,7 @@
     <copy>sudo yum install git</copy>
     ```
 
-    *Complete!*　というメッセージを確認し、gitが正常に導入されることを確認します。
+    *Complete!*　のメッセージを確認し、gitが正常に導入されることを確認します。
 
 3. Dockerのインストール。  
     以降の演習でJavaアプリケーションをコンテナ化する作業があるため、Dockerを導入します。以下のコマンドを実行します。導入時の確認メッセージに対して、yesと入力してインストールを開始します。
@@ -125,7 +118,7 @@
     <copy>sudo yum install docker-engine</copy>
     ```
 
-    *Complete!*　というメッセージを確認し、Dockerが正常に導入されることを確認します。
+    *Complete!*　のメッセージを確認し、Dockerが正常に導入されることを確認します。
     
     以下のコマンドでDockerを起動します。
     ```

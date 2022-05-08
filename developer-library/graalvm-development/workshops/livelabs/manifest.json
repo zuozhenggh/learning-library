@@ -1,6 +1,6 @@
 {
-    "workshoptitle": "次世代Java高速実行基盤GraalVMハンズオン",
-    "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "workshoptitle": "[Japanese] Launch GraalVM to accelerate java workload 次世代Java高速実行基盤GraalVMハンズオン",
+    "help": "livelabs-help-jp_us@oracle.com",
     "tutorials": [
         {
             "title": "事前準備",
@@ -13,7 +13,7 @@
             "filename": "../../introduction/introduction.md"
         },
         {
-            "title": "演習 1: GraalVM Enterprise Edition のインストール",
+            "title": "演習 1: GraalVMのインストール",
             "filename": "../../setup/setup.md"
         },
         {
@@ -21,15 +21,15 @@
             "filename": "../../graal-jit/graal-jit.md"
         },
         {
-            "title": "演習 3: 高速に起動するNative Image",
+            "title": "演習 3: Native Image",
             "filename": "../../graal-aot/graal-aot.md"
         },
         {
-            "title": "演習 4: GraalVMとマクロサービスフレームワークによるRESTFulサービス開発",
+            "title": "演習 4: GraalVMとJavaフレームワーク",
             "filename": "../../graal-fw/graal-fw.md"
         },
         {
-            "title": "演習 5: Cloud Nativeアプリケーション開発",
+            "title": "演習 5: GraalVMとDockerコンテナ",
             "filename": "../../cloud-native/cloud-native.md"
         },
         {

@@ -2,7 +2,11 @@
 
 ## 概要
 
-GraalVM Enterprise Edition(GraalVM EE) は高い信頼性と安全性を提供するOracle JDKをベースに開発した次世代多言語実行環境です。GraalVMはJavaアプリケーションに対して二つの稼働方法を提供します。
+GraalVM Enterprise Edition(GraalVM EE) は高い信頼性と安全性を提供するOracle JDKをベースに開発した次世代多言語実行環境です。下記はGraalVM EEのアーキテクチャ・オーバービューです。
+
+![Image of compartment creation](images/architecture.png)
+
+GraalVMはJavaアプリケーションに対して二つの稼働方法を提供します。
 
 1. Just-In-Timeコンパイラ(JIT)モード
 
@@ -15,27 +19,27 @@ GraalVM Enterprise Edition(GraalVM EE) は高い信頼性と安全性を提供�
   
 2. Native Imageモード
 
-    GraalVMのAOTコンパイラ(事前コンパイラ)は、JavaクラスをOSプラットフォーム固有なnative実行ファイル（Native Image）に変換します。実行時JVMを必要とせず、JITモード実行時のオームアップタイムが不要のため、軽量で高速に起動できるとともに、瞬時にピーク時スループットを達成することができます。
+    GraalVMのAOTコンパイラ(事前コンパイラ)は、JavaクラスをOSプラットフォーム固有なネイティブ実行ファイル（Native Image）に変換します。実行時JVMを必要とせず、JITモード実行時のウォームアップが不要のため、軽量で高速に起動できるとともに、瞬時にピーク時スループットに達成することができます。
 
 
-このハンズオンでは、GraalVM Enterprise Editionの導入から、GraalVMの高性能JITコンパイラの活用、Native Imageを利用してCloud Naitveアプリケーションの開発まで、GraalVMの重要な二つの機能を体験できます。
+このハンズオンでは、GraalVM Enterprise Editionの導入から、GraalVMの高性能JITコンパイラの活用、Native Imageを利用してCloud Naitveアプリケーションの開発まで、GraalVMの二つの重要な機能を体験できます。
 
 *予定時間：60分*
 
 ### ■目標
 
-このハンズオンを実施することにより、以下の目標を目指します：
+このハンズオンを実施することにより、以下を目指します：
 * GraalVM Enterprise EditionをLinux環境に導入
 * GraalVMのJITモードで既存Javaアプリケーションを実行
-* フレームワークによるNative Image開発
+* JavaフレームワークによるNative Image開発
 * コンテナ化したNative Imageのデプロイと実行
 
 ### ■前提条件
 
 以下の項目の完了が前提としています：
 * 事前にOracleアカウントを取得済みで、そのアカウントで [LiveLabs 2.0](http://bit.ly/golivelabs) より本ハンズオンの演習環境リソースを予約済みであること
-* リモートSSH接続を使用してクラウド上の演習環境に接続する必要があるため、安定したLAN環境が望ましい
-* Javaについて基本知識や開発経験が望ましいが、必須ではない
+* クライアントPC上にSSHキー・ペアを生成済みであること
+* Javaについて基本知識や開発経験は望ましいが、必須ではない
 
 ## Learn More
 

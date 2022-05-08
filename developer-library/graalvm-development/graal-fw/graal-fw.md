@@ -1,9 +1,9 @@
-# GraalVMとマクロサービスフレームワークによるRESTFulサービス開発
+# GraalVMとJavaフレームワーク
 
 ## 概要
 
 この演習では、代表的なマイクロサービスフレームワークMicrounautとSpring Bootを使用してRESTfulサービスを作成します。  
-native imageの高速起動と小さいフットプリントはJavaベースのマイクロサービス構築には有力なソリューションであるため、Spring Bootを始め現在主要なマイクロサービスフレームワークはJavaアプリのネイティブビルドを対応しています。本演習で使用するMicronautとSpring Bootはそれぞれnaitve imageをビルドするためのプラグインを提供し、MavenやGradleなどのビルドツールで簡単にネイティブビルドを実現できます。
+native imageの高速起動と小さいフットプリントはJavaベースのマイクロサービス構築には有効のため、Spring Bootを始め現在主要なマイクロサービスフレームワークはJavaアプリのネイティブビルドに対応しています。本演習で使用するMicronautとSpring Bootはそれぞれnaitve imageをビルドするためのプラグインを提供し、MavenやGradleなどのビルドツールで簡単にネイティブビルドを実現できます。
 
 *所要時間: 15分*
 
@@ -15,12 +15,17 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 * 演習１「GraalVM Enterprise Editionのインストール」を実施済みであること
 
 ## Task 1: Micronautアプリケーションを開発  
- Micronautはマイクロサービスとサーバレスアプリケーションを構築するためのモダンなJVMベースフレームワークです。フルスタックのSpring Bootに比べて、軽量で且つ高速に起動し、ランタイム時のリフレクションを回避することが特徴となっています。[micronaut.io/launch](https://micronaut.io/launch)よりJavaのバージョンやgraalvmのフィーチャなど指定してMicronautアプリケーションのテンプレートを簡単に作成することが可能です。
+ Micronautはマイクロサービスとサーバレスアプリケーションを構築するためのモダンなJavaフレームワークです。フルスタックのSpring Bootに比べて、軽量で且つ高速に起動し、ランタイム時のリフレクションを回避することが特徴となっています。[micronaut.io/launch](https://micronaut.io/launch)よりJavaのバージョンやgraalvmのフィーチャなど指定してMicronautアプリケーションのテンプレートを簡単に作成することが可能です。
     ![Image alt text](/../images/micronaut-start2.png)  
    
-このタスクの中で、リクエストにHello Worldの文字列を返す簡単なRESTfulサービスを作成します。  
+このタスクの中で、HTTPリクエストにHello Worldの文字列を返す簡単なRESTfulサービスを作成します。  
 
-1. Micronautのテンプレートをダウンロードします。以下のコマンドを実行します。
+1. Micronautのテンプレートをダウンロードします。 プロンプトを立ち上げ、SSH接続でOCIインスタンスにアクセスします。
+    ```
+    <copy>ssh -i <your-private-key-file> opc@<x.x.x.x></copy>
+        
+    ```
+   SSH接続成立した後、以下のコマンドを発行し、Micronautプロジェクトのテンプレートをダウンロードします。
 
     ```
     <copy>curl --location --request GET 'https://launch.micronaut.io/create/default/com.example.mndemo?lang=JAVA&build=MAVEN&test=JUNIT&javaVersion=JDK_11&features=graalvm' --output mndemo.zip</copy>
@@ -94,7 +99,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
 	![Image alt text](/../images/micronaut-start.png)
 
-   別ターミナルを立ち上げ、SSH接続でOCIインスタンスにアクセスします。
+   別プロンプトを立ち上げ、SSH接続でOCIインスタンスにアクセスします。
     ```
     <copy>ssh -i <your-private-key-file> opc@<x.x.x.x></copy>
         
@@ -124,7 +129,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 8. Micronautサービスの起動時間を確認します。この例では14msです。
 
 	![Image alt text](/../images/micronaut-start1.png)
-    別ターミナルを立ち上げ、RESTfulサービスに対してリクエストを発行し、”Hello World”の文字列が正常にリターンされることを確認します。
+    別プロンプトを立ち上げ、RESTfulサービスに対してリクエストを発行し、”Hello World”の文字列が正常にリターンされることを確認します。
     ```
     <copy>curl http://localhost:8080/hello</copy>
     ```
@@ -139,7 +144,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
 ## Task 2: Spring Bootアプリケーションの開発
 
- Spring Bootはフルスタックのフレームワークです。[spring initializr](https://start.spring.io/)よりJavaのバージョンやgraalvmのフィーチャなど指定してSpring Bootアプリケーションのテンプレートを簡単に作成することが可能です。
+ Spring Bootはnaitve imageをビルドするためのMavenプラグインを提供しています。[spring initializr](https://start.spring.io/)よりJavaのバージョンやgraalvmのフィーチャなど指定してSpring Bootプロジェクトのテンプレートを簡単に作成することが可能です。
     ![Image alt text](/../images/spring-start.png)  
    
  このタスクの中で、リクエストにHello Worldの文字列を返す簡単なRESTfulサービスを作成します。
@@ -234,14 +239,14 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     この例では、Web Serviceの起動時間は約1.4秒。
     ![Image alt text](/../images/spring-start1.png)
        
-    別ターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
+    別プロンプトを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
         
     ```      
     $ curl http://localhost:8080/greeting
     {"id":1,"content":"Hello, World!"}   
     ```
        
-5. Spring Bootアプリケーションのテンプレートを作成時、dependencyをSpring Nativeを指定したため、pom.xmlの中にnative imageをビルドするためのプラグイン定義が自動追加されます。その内容を確認します。spdemo配下で以下のコマンドを実行し、pom.xmlの中身を確認します。
+5. Spring Bootアプリケーションのテンプレートを作成時、dependencyをSpring Nativeを指定したため、pom.xmlの中にnative imageをビルドするためのプラグイン定義が自動追加されます。spdemo配下で以下のコマンドを実行し、pom.xmlの中身を確認します。
     ```
     <copy>
     cat pom.xml

@@ -1,10 +1,10 @@
-# Cloud Nativeアプリケーション開発
+# GraalVMとDockerコンテナ
 
 ## 概要
 
-この演習では、演習4で作成したSpring BootのRESTFulサービスをDockerコンテナにビルドします。jar形式とnaitve image形式でそれぞれコンテナにビルドし、両者のパフォーマンスを比較します。
+この演習では、演習4で作成したSpring BootのRESTFulサービスをDockerコンテナにビルドします。jar形式とnaitve image形式でそれぞれコンテナにビルドし、両者のパフォーマンスを比較します。以下３種類のDockerイメージを作成します。
 * openjdkのベースイメージにFat.jarを組み込む
-* Oracle Linux7のベースイメージにnative imageを組み込む
+* Oracle Linux8のベースイメージにnative imageを組み込む
 * Distrolessのベースイメージにstaticなnative imageを組み込む
 
 *所要時間: 15分
