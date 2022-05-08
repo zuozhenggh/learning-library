@@ -105,9 +105,9 @@ Follow these steps to view the sales orders record in the designated DB table.
 7. The SQL Worksheet appears. In the *Navigator* on the left, select the **V\_SALES\_ORDERS** table, then right-click on **Open**.
     ![Open SO table](images/open-so-table.png)
 
-    This opens the *ADMIN.PURCHASEORDER* table window.
+    This opens the *ADMIN.V\_SALES\_ORDERS* table window.
 
-8. Click on **Data** in the left menu to display the table data. Verify your PO record is available.
+8. Click on **Data** in the left menu to display the table data. Verify your inserted Sales Orders records.
    ![Show SO data](images/show-so-data.png)
 
 ## Task 4: Verify sales orders file in Object Storage

@@ -66,7 +66,7 @@ Follow these steps to create a DB table which will be used as part of this works
     </copy>
     ```
 
-6. Paste the script in the SQL Worksheet, then click **Run It** button. This will create the **V_SALES_ORDERS** table. The table is created successfully when you see the notification in the *Script Output* window.
+6. Paste the script in the SQL Worksheet, then click **Run It** button. This will create the **V\_SALES\_ORDERS** table. The table is created successfully when you see the notification in the *Script Output* window.
 
     ![Past SQL Script](images/paste-run-sql-script.png)
 
