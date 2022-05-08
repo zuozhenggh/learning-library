@@ -7,7 +7,7 @@
 * Oracle Linux8のベースイメージにnative imageを組み込む
 * Distrolessのベースイメージにstaticなnative imageを組み込む
 
-*所要時間: 15分
+*所要時間: 15分*
 
 ### ■目標
 * 3種類のベースイメージを使用して、より軽量で高速起動するコンテナイメージを作成
