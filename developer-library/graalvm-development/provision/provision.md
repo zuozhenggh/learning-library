@@ -11,12 +11,10 @@
 このハンズオンを実施することにより、以下の目標達成を目指します：
 * ハンズオン専用コンパートメントを作成
 * ハンズオン専用インスタンスを作成
-* Oracle Linuxを導入
-* その他
 
 ### ■前提条件
 
-* *事前に有効なOCIアカウントを取得すること*
+* 事前に有効なOCIアカウントを取得すること
 
 ## Task 1: コンパートメントを作成する
 
@@ -79,11 +77,6 @@
 6. 数分後、インスタンスがプロビジョニングされたことを確認します。
 
   ![Image of instance creation](/../images/provisioning-instance1.png)
-
-## Learn More
-
-*(optional - include links to docs, white papers, blogs, etc)*
-
 
 
 ## Acknowledgements
