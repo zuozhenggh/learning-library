@@ -28,26 +28,26 @@ This lab assumes you have:
 2.  Click **Web Applications** ![Web Applications icon](images/web-applications-icon.png), then **main-departments** under the **hrwebapp** and **main** nodes.
 3.  In the Page Designer, click **Components** to open the Components palette. Then, drag a **Button** from the Common components to the Toolbar, to the right of the Create Department button on the `main-departments` page.
 
-    ![](images/departments-button.png " ")
+    ![](images/departments-button.png "This image shows the main-departments page, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.")
 
 4.  If necessary, click **Properties**. Then in the General tab of the Properties pane, change the **Text** field to `Display Employees`.
 5.  Select the button (if necessary) and click the **Events** tab, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action for a button click.
 
-    ![](images/departments-button-events.png " ")
+    ![](images/departments-button-events.png "This image shows the New Event menu on a Button component's Events tab. The On 'ojAction' option is selected.")
 
     An action chain with the ID ButtonActionChain is created. It contains only the Start action.
 
 6.  From the Navigation section of the Actions palette, drag the **Navigate** action to the **+** sign pointed to by the Start action.
 7.  In the Navigate action's properties, select **main-employees** from the **Page** list.
 
-    ![](images/departments-button-events-navigate.png)
+    ![](images/departments-button-events-navigate.png "This image shows the Action Chain editor, with the Navigate action added to the action chain, and main-employees under Peer Pages selected in the Page drop-down list. A warning icon appears on the Navigate icon because the target has not yet been selected.")
 
     The action now has the label `Navigate main-employees`.
 
 8.  Click **Preview** ![Preview icon](images/preview-icon.png) in the header to run the application and see how the pages will appear to the user.
 
     The application opens in another browser tab.
-    ![](images/preview.png)
+    ![](images/preview.png "This image shows a preview of the application as designed so far. The Departments page shows a table with three columns: Id, Name, and Location. A single row with Id 1, Name Administration, and Location Floor 1 has been added. The app also includes a header with the default 'My Application' title on the left and Settings, Like, Bookmark and User icons on the right.")
 
 9.  Click **Create Department** and add another department (`IT` on `Floor 2`, for example), then click **Save**. A success message is displayed briefly.
 10.  Click **Display Employees**, then click **Create Employee**. Add another employee, specifying the new department, and click **Save**. You'll notice there's no way to get back to the `main-departments` page from the `main-employees` page. Close the browser tab.
@@ -70,7 +70,7 @@ This lab assumes you have:
 7.  Click **Preview** ![Preview icon](images/preview-icon.png) to test the pages and navigation. The application opens in another browser tab. Make sure you can get to the Departments page from the Employees page. Close the browser tab.
 8.  Click **main**, then **Diagram** to view the application's modified page flow. You'll see bi-directional arrows flowing between the `main-department` page and the `main-employees` page. You'll also see ![Green navigation icon](images/diagram-navigation-icon-green.png) ![Black navigation icon](images/diagram-navigation-icon-black.png) navigation icons appear in the page's Properties pane, indicating that you can now navigate from `main-departments` to `main-employees` and back.
 
-    ![](images/page-flow.png " ")
+    ![](images/page-flow.png "This image shows the web app's page flow. The main-departments page points to both the main-create-department page and the main-employees page. The main-employees page points to both the main-create-employee page and the main-departments page. The main-departments page is selected to show more details in the Properties pane.")
 
 ## Task 3: Import data for the business objects
 
@@ -88,13 +88,13 @@ Let's now add data for the Department and Employee business objects. Instead of 
 
 6.  In the Import Data dialog box, select the **Replace** option if it's not already selected. Then click the upload box, browse to select the `Department.csv` file, and click **Import**.
 
-   ![](images/department-data-import.png " ")
+   ![](images/department-data-import.png "This image shows the Import Data dialog. The Department.csv file is selected, along with the Replace option that overwrites existing Development data. The Import button is highlighted. ")
 
    (If you run into an error, you'll need to delete the new department and the new employee you created in the previous task. To do this, go to the Employee business object's **Data** tab, select the new employee, and click the **Delete Row** icon. Do the same for the new department. Then try the import again.)
 
 	Click **Close** after the file has been successfully imported. Six departments are displayed in the table.
 
-	![](images/department-data-import-result.png " ")
+	![](images/department-data-import-result.png "This image shows part of the Data tab for the Department business object after you import data for it. The table shows the Id, Name, and Location fields for each department. A total of six departments show. ")
 
 7.  Click **Employee** under Business Objects, then click **Data**.
 
@@ -104,7 +104,7 @@ Let's now add data for the Department and Employee business objects. Instead of 
 
    Click **Close** after the file has been successfully imported. Nine employees are displayed in the table.
 
-	![](images/employees-data-import-result.png " ")
+	![](images/employees-data-import-result.png "This image shows part of the Data tab for the Employee business object after you import data for it. The table shows the Id, Name, Department, Hire Date, and Email fields for each employee. Nine employees show in total. ")
 
    You may **proceed to the next lab**.
 

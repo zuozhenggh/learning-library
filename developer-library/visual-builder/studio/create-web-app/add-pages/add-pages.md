@@ -159,7 +159,7 @@ We'll now create a page to display employees, similar to the one you created to 
 
 10.  To make the second Name column (which refers to the Department name field) descriptive, click **Data** in the table's Properties pane. Under **Table Columns**, click ![Column Detail icon](images/columndetail-icon.png) next to **Name  (departmentObject)**.
 
-    ![](images/employees-table-department-name.png)
+    ![](images/employees-table-department-name.png "This image shows the Data tab for the Table component. Under Table Columns, the Column Detail arrow for the Name (departmentObject) is selected, allowing the label to be changed.")
 
 11.  In the **Columns, Header Text** field, change `Name` to `Department`, then click ![Back to Table icon](images/backtotable-icon.png) **Table Columns** to return to the main **Data** tab.
 
@@ -221,7 +221,7 @@ It makes sense at this point to change the name of the `main-start` page to `mai
 4.  Double-click the **main-departments** tile to go to that page again.
 5.  Although you have changed its name, the `main-departments` page will continue to be the page where your application starts when you run it. To find out why, click **Source** ![Source icon](images/sourceview-icon.png) in the Navigator. Under **webApps**, expand the **hrwebapp**, **flows**, and **main** nodes. Then click **main-flow.json** to open it.
 
-    ![](images/mainflow-json.png "This image shows the Source view pane, with the webApps, hrwebapp, flows, and main nodes expanded. The main-flow.json file has been selected and is open. In it, the "defaultPage" property is set to the value "main-departments".")
+    ![](images/mainflow-json.png "This image shows the Source view pane, with the webApps, hrwebapp, flows, and main nodes expanded. The main-flow.json file has been selected and is open. In it, the 'defaultPage' property is set to the value 'main-departments'.")
 
     You can see that the `defaultPage` property has been set to the value `main-departments`, making it the starting page for the web application flow. (If we'd looked before, it would have been set to `main-start`.)
 

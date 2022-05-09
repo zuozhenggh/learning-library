@@ -11,7 +11,7 @@ Web and mobile applications in VB Studio take shape within the _Designer_, a ric
 
 In this lab, you'll create the Employee, Department, and Location business objects for the HR web application. Each business object has its own set of fields as shown here:
 
-![](/images/dbdiagram.png "This illustration shows the database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Name. The Department table has two user-defined fields, Name and Location. The Employee table has four user-defined fields: Name, Department, Hire Date, and Email. A Location can have any number of Departments. A Department can have zero or one Location. A Department can have any number of Employees. An Employee can have zero or one Department.")
+![](/images/dbdiagram.png "This illustration shows the database schema for the HR visual web application. Every table has a system-defined Id field. The Location table has one user-defined field, Name. The Department table has two user-defined fields, Name and Location. The Employee table has four user-defined fields: Name, Department, Hire Date, and Email.")
 
 Once you have your business objects, you'll use them to build the HR web application in which every employee belongs to a department, and every department has a location.
 
