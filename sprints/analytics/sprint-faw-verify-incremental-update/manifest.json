@@ -1,0 +1,12 @@
+{
+   "workshoptitle": "LiveLabs Sprints",
+   "help": "livelabs-help-analytics_us@oracle.com",
+   "tutorials": [
+      {
+         "title": "Sprint - How can I verify that the incremental update has started and been completed in Fusion Analytics?",
+         "description": "Learn how to verify that your incremental updates have started and been completed in Fusion Analytics Warehouse (FAW)",
+         "filename": "sprint-faw-verify-incremental-update.md"
+      }
+   ],
+   "task_type": "Sections"
+}
