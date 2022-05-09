@@ -25,7 +25,7 @@ This lab assumes you have:
     - Database Server Instance
         - ORCL
 
-    ![](./images/login.png " ")
+    ![Remote desktop landing page](./images/login.png " ")
 
 2. Run the following from the *Terminal* session, to validate that the expected processes are up.
 
@@ -36,7 +36,7 @@ This lab assumes you have:
         </copy>
         ```
 
-        ![](./images/db-service-status.png " ")
+        ![terminal db service status check](./images/db-service-status.png " ")
 
     - IAM Service
         ```
@@ -44,7 +44,7 @@ This lab assumes you have:
         systemctl status oracle-iam.service
         </copy>
         ```
-        ![](./images/iam-service-status.png " ")
+        ![terminal iam service status check](./images/iam-service-status.png " ")
 
     If all expected processes are shown in your output as seen above, then your environment is ready for the next task.
 
@@ -61,17 +61,17 @@ This lab assumes you have:
     Password: <copy>IAMUpgrade12c##</copy>
     ```
 
-    ![](./images/login1.png " ")
+    ![Identity Manager Admin Console login](./images/login1.png " ")
 
 
-    ![](./images/oim-landing.png " ")
+    ![Identity Manager Admin Console home page](./images/oim-landing.png " ")
 
 
 ## Task 2: Review the ReadMe.txt and Binaries
 
 1. Review environment details to learn more about the setup. Navigate to the file browser as shown below and open *ReadMe.txt*.
 
-    ![](./images/review.png " ")
+    ![review readme.txt](./images/review.png " ")
 
 2. For your convenience, all software binaries needed throughout the workshop have been staged on the instance. Refer to the details below to review
 
@@ -83,7 +83,7 @@ This lab assumes you have:
     ```
     <copy>ls -ltrh /home/oracle/Downloads/11gbits </copy>
     ```
-    ![](./images/review2.png " ")
+    ![folder structure of binaries](./images/review2.png " ")
 
 
 You may now [proceed to the next lab](#next).

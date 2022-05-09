@@ -118,7 +118,7 @@ This lab assumes you have:
     - Perform all the steps listed in the section to upgrade OAM
     - Please note that *step 4*, needs to be done once for OIM and once for OAM
 
-  ![](./images/step2.png " ")
+  ![Oracle Support Upgrade Advisor](./images/step2.png " ")
 
 3. Apply 12.2.1.3 patches mentioned in the Stack Patch Bundle:
     Apply Stack Patch Bundle for Oracle Identity Management Products using the MOS document link provided below:
@@ -136,14 +136,14 @@ This lab assumes you have:
     - [Upgrade to Oracle Access Manager 12cR2 PS4](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=320632596387945&id=2564763.2&_adf.ctrl-state=13r3ivrcxc_167)
     - Navigate to *step 4: Configure* and select *Upgrade*
 
-    ![](./images/step6.png " ")
+    ![Upgrade Advisor for OAM 12cR2 PS4 (OAM 12.2.1.4.0)](./images/step6.png " ")
 
 3. Upgrade OIG 12.2.1.3 to 12.2.1.4
     Upgrade OIG using the Upgrade Advisor for OIG 12cR2 PS4 (OAM 12.2.1.4.0)
     - [Upgrade Advisor for Oracle Identity Governance/Oracle Identity Manager 12cR2 PS4](https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=320673956019924&id=2667893.2&_adf.ctrl-state=13r3ivrcxc_220)
      - Navigate to *step 4: Configure/Upgrade*
 
-    ![](./images/step7.png " ")
+    ![Upgrade Advisor for OIG 12cR2 PS4 (OAM 12.2.1.4.0)](./images/step7.png " ")
 
 4. Apply 12.2.1.4 patches mentioned in stack patch Bundle:
     Apply Stack Patch Bundle for Oracle Identity Management Products using the MOS document link provided below:
