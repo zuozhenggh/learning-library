@@ -50,7 +50,7 @@ To purge data:
 
 3. Click **Reports** and notice that there are no reports under **Existing Reports**.
 
-    ![Existing Reports](./images/existingreportsrurge.png " ")
+    ![Existing Reports](./images/existingreportspurge.png " ")
 
 The metadata of the Reports get deleted from the repository. However, the reports are available on Oracle GoldenGate Veridata server.
 
@@ -77,7 +77,7 @@ To delete directories:
     <copy>
     ```
 
-    ![Run command to create a user-defined file](./images/deletedir-labtesttouchcommand.png " ")
+
 
 2. In the UI, select **Finished Jobs**, and select the Job you want to delete and click **Delete**.
 
@@ -116,7 +116,7 @@ To delete directories:
       <copy>
       ```
 
-      ![Run command to create User-defined file](./images/DeleteDir-LabTestTouchCommand.png " ")
+    ![Run command to create User-defined file](./images/DeleteDir-LabTestTouchCommand.png " ")
 
 2. In the UI, select **Finished Jobs**, select the Job you want to delete, select the **Delete Directories Completely** check box, and then click **Delete**.
 
