@@ -23,12 +23,33 @@ This lab assumes you have:
     - Database Listener
         - LISTENER
     - Database Server Instance
-        - IAMDB
+        - ORCL
 
     ![](./images/login.png " ")
 
+2. Run the following from the *Terminal* session, to validate that the expected processes are up.
 
-2. Test the base installation by accessing the *Identity Manager Admin Console* which has been pre-launched on the *Chrome* window on your remote desktop session using the below credentials :
+    - Database service
+        ```
+        <copy>
+        systemctl status oracle-database.service
+        </copy>
+        ```
+
+        ![](./images/db-service-status.png " ")
+
+    - IAM Service
+        ```
+        <copy>
+        systemctl status oracle-iam.service
+        </copy>
+        ```
+        ![](./images/iam-service-status.png " ")
+
+    If all expected processes are shown in your output as seen above, then your environment is ready for the next task.
+
+
+3. Test the base installation by accessing the *Identity Manager Admin Console* which has been pre-launched on the *Chrome* window on your remote desktop session using the below credentials :
 
     ```
     URL: <copy>http://wsidmhost.idm.oracle.com:7778/oim</copy>
@@ -70,34 +91,71 @@ You may now [proceed to the next lab](#next).
 
 ## Appendix 1: Managing Startup Services
 
-1. To *start* all components as **oracle** user :
-    ```
-    <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
-    ```
+1. Database service (Database and Standard Listener).
 
-    ![](./images/start-all.png " ")
-
-    ***Note:*** This will take between 20-30 minutes.
-2. To *restart* all processes you can use one of the following options:
-
-  - Reboot the instance as user *opc* from the SSH terminal session you started using the SSH key (not the remote desktop session).
+    - Start
 
     ```
-    <copy>sudo init 6</copy>
+    <copy>
+    sudo systemctl start oracle-database
+    </copy>
     ```
-
-  - Restart processes
-
-    ```
-    <copy>/u01/app/oracle/config/scripts/stopall.sh</copy>
-    ```
-    ```
-    <copy>systemctl restart oracle-database</copy>
-    ```
+    - Stop
 
     ```
-    <copy>/u01/app/oracle/config/scripts/startall.sh</copy>
+    <copy>
+    sudo systemctl stop oracle-database
+    </copy>
     ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-database
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-database
+    </copy>
+    ```
+2. IAM service
+
+    - Start
+
+    ```
+    <copy>
+    sudo systemctl start oracle-iam.service
+    </copy>
+    ```
+    - Stop
+
+    ```
+    <copy>
+    sudo systemctl stop oracle-iam.service
+    </copy>
+    ```
+
+    - Status
+
+    ```
+    <copy>
+    systemctl status oracle-iam.service
+    </copy>
+    ```
+
+    - Restart
+
+    ```
+    <copy>
+    sudo systemctl restart oracle-iam.service
+    </copy>
+    ```
+
 
 ## Learn More
 Use these links to get more information about Oracle Identity and Access Management:
