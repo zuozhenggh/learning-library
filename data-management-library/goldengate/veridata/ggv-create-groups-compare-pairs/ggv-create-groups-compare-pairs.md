@@ -82,7 +82,7 @@ To create compare pairs on the **Manual Mapping** tab:
 
     The control moves to the **Existing Compare Pairs** tab.
 
-    ![Existing Compare Pairs](./images/compare-pair-manual-mapping-generated-saved-existingCPtab.png " ")
+    ![Existing Compare Pairs](./images/compare-pair-manual-mapping-generated-saved-existingcptab.png " ")
 
 Similarly, you can create any number of compare pairs for other tables.
 
