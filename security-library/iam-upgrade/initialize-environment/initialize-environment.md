@@ -61,7 +61,7 @@ This lab assumes you have:
     Password: <copy>IAMUpgrade12c##</copy>
     ```
 
-    ![](./images/wsidmhost.png " ")
+    ![](./images/login1.png " ")
 
 
     ![](./images/oim-landing.png " ")
