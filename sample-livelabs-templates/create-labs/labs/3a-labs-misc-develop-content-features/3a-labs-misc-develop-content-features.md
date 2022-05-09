@@ -74,6 +74,8 @@ Sometime you may want to link to something within your lab or workshop.  Most co
 ## Task 4: Adding Videos
 Adding videos is very similar to adding images. We most commonly see videos added in the introductions for labs to familiarize the audience with the product before they dive into the workshop.
 
+Click [here](https://otube.oracle.com/media/t/1_83fawpro) to watch the video on adding videos to your labs.
+
 1. Take a look at this example of a video linked in the introduction of a workshop.
 
   ![Example of a video link.](./images/youtube-vsc.png " ")
