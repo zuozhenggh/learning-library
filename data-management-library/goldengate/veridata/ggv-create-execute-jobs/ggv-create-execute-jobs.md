@@ -41,7 +41,7 @@ To create a job:
 
 5. Select the Group and click **Finish**.
 
-    ![Select Group](./images/create-job-select-group-click-Finish.png " ")
+    ![Select Group](./images/create-job-select-group-click-finish.png " ")
 
 A new job is created for the compare pair.
 
