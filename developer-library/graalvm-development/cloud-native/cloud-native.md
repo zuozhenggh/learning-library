@@ -41,7 +41,7 @@
     sudo docker build -f Dockerfile.openjdk -t spring:openjdk .
     </copy>
     ```
-    ![Image alt text](/../images/docker-spring.png)
+    ![docker in spring](images/docker-spring.png)
        
 3. コンテナイメージが生成されたことを確認し、コンテナを実行します。
     ```
@@ -49,14 +49,14 @@
     sudo docker images
     </copy>
     ```
-    ![Image alt text](/../images/docker-spring1.png)
+    ![docker in spring1](images/docker-spring1.png)
        
     ```
     <copy>
     sudo docker run --rm -p 8080:8080 spring:openjdk
     </copy>
     ```
-    ![Image alt text](/../images/docker-spring2.png)
+    ![docker in spring2](images/docker-spring2.png)
 
     RESTfulサービスの起動時間を確認します。この例では1.441秒です。  
 
@@ -65,7 +65,7 @@
     ```      
     <copy>curl http://localhost:8080/greeting</copy>
     ```
-    ![Image alt text](/../images/docker-spring3.png)
+    ![docker in spring3](images/docker-spring3.png)
 
 5. Ctrl+CでDockerコンテナからexitします。
 
@@ -96,7 +96,7 @@
     sudo docker build -f Dockerfile.native -t spring:native .
     </copy>
     ```
-    ![Image alt text](/../images/docker-spring4.png)
+    ![docker in spring4](images/docker-spring4.png)
 
        
 3. コンテナイメージが生成されたことを確認し、コンテナを実行します。
@@ -106,20 +106,20 @@
     sudo docker images
     </copy>
     ```
-    ![Image alt text](/../images/docker-spring5.png)
+    ![docker in spring5](images/docker-spring5.png)
 
     ```
     <copy>
     sudo docker run --rm -p 8080:8080 spring:native
     </copy>
     ```
-    ![Image alt text](/../images/docker-spring6.png)
+    ![docker in spring6](images/docker-spring6.png)
 
 4. 別ターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
     ```      
     <copy>curl http://localhost:8080/greeting</copy>
     ```
-    ![Image alt text](/../images/docker-spring3.png)
+    ![docker in spring3](images/docker-spring3.png)
        
     RESTfulサービスの起動時間を確認します。この例では0.022秒です。JITモードより100倍速く起動できました。
 
@@ -180,7 +180,7 @@
     sudo docker images
     </copy>
     ```
-    ![Image alt text](/../images/docker-spring7.png)
+    ![docker in spring7](images/docker-spring7.png)
        
     ```
     <copy>
@@ -188,7 +188,7 @@
     </copy>
     ```
 
-    ![Image alt text](/../images/docker-spring8.png)
+    ![docker in spring8](images/docker-spring8.png)
     RESTfulサービスの起動時間を確認します。この例では0.026秒です。JITモードより100倍速く起動できました。
 
 6. 別ターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。

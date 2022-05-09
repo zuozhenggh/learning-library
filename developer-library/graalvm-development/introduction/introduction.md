@@ -4,7 +4,7 @@
 
 GraalVM Enterprise Edition(GraalVM EE) は高い信頼性と安全性を提供するOracle JDKをベースに開発した次世代多言語実行環境です。下記はGraalVM EEのアーキテクチャ・オーバービューです。
 
-![Image of compartment creation](images/architecture.png)
+![graalvm architecture](images/architecture.png)
 
 GraalVMはJavaアプリケーションに対して二つの稼働方法を提供します。
 

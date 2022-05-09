@@ -7,7 +7,7 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
 * ポインタ解析（Points-to analysis）:　AOTコンパイラが、実行時に到達可能なクラス、メソッド、フィールド、依存ライブラリ、必要なJDKクラスを判別して、ネイティブ実行ファイルに格納します。
 * ビルド時初期化（Initializations at build time）： ビルド時クラスを初期化し、実行時のオーバーヘッドを軽減します。
 * ヒープスナップショット（Heap snapshotting）： 初期化オブジェクト、到達可能なオブジェクトをJVMヒープ上に事前に書き込みすることによって、実行時スピードを大幅に高めます。
-![image of instance creation](/../images/native-image-build.png)
+![build native image](images/native-image-build.png)
 
 
 *所要時間: 10分*
@@ -103,7 +103,7 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
     ```
     <copy>./run.sh ~/.</copy>
     ```
-    ![Image of run.sh](/../images/graal-aot-run.png)
+    ![Image of run.sh](images/graal-aot-run.png)
 
 
 ## Acknowledgements

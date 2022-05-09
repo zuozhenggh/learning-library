@@ -25,7 +25,7 @@
     <copy>ssh -i <your-private-key-file> opc@<x.x.x.x></copy>
         
     ```
-    ![image of instance creation](images/ssh.png)
+    ![ssh connection](images/ssh.png)
 
     > **Note:** 
     事前準備の章に沿った手順でSSHキーを作成した場合、your-private-key-fileは*id_rsa*になります。x.x.x.xは接続先インスタンスのIPです。  
@@ -43,7 +43,7 @@
     ```
     <copy>sudo yum install graalvm21-ee-11-jdk</copy>
     ```
-    ![image of instance creation](/../images/install-graalvm2.png)
+    ![install graalvm2](images/install-graalvm2.png)
 
     インストールが正常終了の場合*Complete!*のメッセージが表示されます。
 
@@ -79,7 +79,7 @@
     ```
     <copy>sudo yum install graalvm21-ee-11-native-image</copy>
     ```
-    ![image of instance creation](/../images/install-nativeimage.png)
+    ![install native image](images/install-nativeimage.png)
 
     以下のコマンドで導入したnative imageのバージョンを確認します。
     ```

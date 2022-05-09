@@ -19,7 +19,7 @@
 ## Task 1: コンパートメントを作成する
 
 1. OCIコンソール上、左上にあるナビゲーションメニューをクリックします。
-    ![image of console navigation to compartments](/../images/console-navigation.png)
+    ![image of console navigation to compartments](images/console-navigation.png)
     &nbsp;
 
  * ステップをよりブレークダウンする際にここに記述
@@ -27,16 +27,16 @@
   > **Note:** OCIにサインインした後、Oracleがあなた専用のテナントにルートコンパートメントを自動的的に作成します。プロジェクトごとに個別にコンパートメントを作成することをお勧めします。
   
 2. **Identity & Security**をクリックします。 **Identity & Security**メニューの下にある **Compartments**をクリックします。
-   ![Image of compartment creation](/../images/console-navigation-compartment.png)
+   ![Image of compartment creation](images/console-compartment.png)
     &nbsp;
 
 3. **Create Compartment** をクリックします。
- ![Image of compartment creation](/../images/console-compartment-create.png)
+ ![Image of compartment creation](images/compartment-create.png)
 
 4. 作成するコンパートメントの情報を入力します。
   * Name：GraalVM_Compartment
   * Parent Compartment: ルートコンパートメントを選択
- ![Image of compartment creation](/../images/console-compartment-create2.png) 
+ ![Image of compartment creation](images/compartment-create2.png) 
 
   * **Create Compartment** をクリックします。
   
@@ -44,7 +44,7 @@
 ## Task 2: インスタンスを作成する
 
 1.  OCIコンソール上、左上にあるナビゲーションメニューをクリックし、**Compute** → **instance** をクリックします。
-  ![image of instance creation](/../images/create-instance.png)
+  ![image of instance creation](images/create-instance.png)
     &nbsp;
 
   Use tables sparingly:
@@ -56,10 +56,10 @@
   | 3 | Some text or a link | More text |
 
 2. インスタンス作成画面にて、**GraalvM_Compartment**を選択した状態で、**Create instance**ボタンをクリックします。 
-![Image of instance creation](/../images/create-instance1.png)
+![Image of instance creation](images/create-instance1.png)
 
 3. インスタンス作成画面にて、インスタンス名の**Name**フィールドに任意の名前を入力し、**Placement**セクションの内容をデフォルトのままにします。**Image and Shape** セクションの**Edit** をクリックします。
-![Image of instance creation](/../images/create-instance2.png)
+![Image of instance creation](images/create-instance2.png)
 
 
 4. 以下のスペック選択し、**Select Shape** をクリックしてインスタンスを作成します。
@@ -68,15 +68,15 @@
     - **OCPU count** 4
     - **Memory** 32GB
     - **Network**
-  ![Image of instance creation](/../images/create-instance4.png)
+  ![Image of instance creation](images/create-instance4.png)
 
 5. SSHキーをダウンロードします。最後に**Create**をクリックします。
 
-  ![Image of instance creation](/../images/create-instance5.png)
+  ![Image of instance creation](images/create-instance5.png)
 
 6. 数分後、インスタンスがプロビジョニングされたことを確認します。
 
-  ![Image of instance creation](/../images/provisioning-instance1.png)
+  ![Image of instance creation](images/provisioning-instance1.png)
 
 
 ## Acknowledgements

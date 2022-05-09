@@ -16,7 +16,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
 ## Task 1: Micronautアプリケーションを開発  
  Micronautはマイクロサービスとサーバレスアプリケーションを構築するためのモダンなJavaフレームワークです。フルスタックのSpring Bootに比べて、軽量で且つ高速に起動し、ランタイム時のリフレクションを回避することが特徴となっています。[micronaut.io/launch](https://micronaut.io/launch)よりJavaのバージョンやgraalvmのフィーチャなど指定してMicronautアプリケーションのテンプレートを簡単に作成することが可能です。
-    ![Image alt text](/../images/micronaut-start2.png)  
+    ![start micronaut2](images/micronaut-start2.png)  
    
 このタスクの中で、HTTPリクエストにHello Worldの文字列を返す簡単なRESTfulサービスを作成します。  
 
@@ -97,7 +97,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
 5. RESTfulサービスの起動時間を確認します。この例では821msです。
 
-	![Image alt text](/../images/micronaut-start.png)
+	![start micronaut](images/micronaut-start.png)
 
    別プロンプトを立ち上げ、SSH接続でOCIインスタンスにアクセスします。
     ```
@@ -109,7 +109,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     <copy>curl http://localhost:8080/hello</copy>
         
     ```
-    ![Image alt text](/../images/micronaut-start3.png)
+    ![start micronaut3](images/micronaut-start3.png)
 
    RESTFulサービスが起動しているターミナル画面にて、Ctrl+CでMicrounautアプリケーションを停止します。
     > **Note:** RESTFulサービスが起動しているターミナルでSSH接続が既に切断されている場合、SSH接続を再度実行し、8080番ポートを開いでいるjavaプロセスを特定し、終了してください。
@@ -128,7 +128,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
 8. Micronautサービスの起動時間を確認します。この例では14msです。
 
-	![Image alt text](/../images/micronaut-start1.png)
+	![start micronaut1](images/micronaut-start1.png)
     別プロンプトを立ち上げ、RESTfulサービスに対してリクエストを発行し、”Hello World”の文字列が正常にリターンされることを確認します。
     ```
     <copy>curl http://localhost:8080/hello</copy>
@@ -145,7 +145,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 ## Task 2: Spring Bootアプリケーションの開発
 
  Spring Bootはnaitve imageをビルドするためのMavenプラグインを提供しています。[spring initializr](https://start.spring.io/)よりJavaのバージョンやgraalvmのフィーチャなど指定してSpring Bootプロジェクトのテンプレートを簡単に作成することが可能です。
-    ![Image alt text](/../images/spring-start.png)  
+    ![start spring](images/spring-start.png)  
    
  このタスクの中で、リクエストにHello Worldの文字列を返す簡単なRESTfulサービスを作成します。
 
@@ -237,7 +237,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     ```
        
     この例では、Web Serviceの起動時間は約1.4秒。
-    ![Image alt text](/../images/spring-start1.png)
+    ![start spring1](images/spring-start1.png)
        
     別プロンプトを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
         
@@ -382,7 +382,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     ```
     <copy>./mvnw -Pnative -DskipTests package</copy>
     ```
-    ![Image alt text](/../images/spring-start2.png)
+    ![start spring2](images/spring-start2.png)
 
 7. native imageのビルドが成功したメッセージを確認し、以下のコマンドでnative imageを実行します。
    
@@ -391,7 +391,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     ```
        
     RESTfulサービスの起動時間はわずか0.024秒で、従来のJITモードより70倍以上の速さでサービスを起動しました。
-    ![Image alt text](/../images/spring-start3.png)
+    ![start spring3](images/spring-start3.png)
        
 ## Acknowledgements
 

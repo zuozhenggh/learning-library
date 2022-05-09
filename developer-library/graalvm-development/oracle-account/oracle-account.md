@@ -13,7 +13,7 @@
 
 Oracleアカウントは以下二つのステップで作成できます。
 
-1. [oracle.com](https://www.oracle.com)へアクセスし、 *View Account*をクリックして *Create an Account*を選択します。
+1. ブラウザから[oracle.com](https://www.oracle.com)にアクセスします。 *View Account*をクリックして *Create an Account*を選択します。
 
   ![](images/create-account-oracle-1.png " ")
 
