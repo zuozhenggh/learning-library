@@ -107,7 +107,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 
     - **Map Source and Target Tables Using Exact Names**: Let's select this option here:
 
-    ![Pattern Mapping with Exact Names](./images/pattern-mapping-pair-mapping-option1.png " ")
+    ![Pattern Mapping with Exact Names](./images/pattern-mapping-pair-mapping-option-exactnames.png " ")
 
     - **Map Source and Target Tables Using SQL % Wildcard Pattern. (Use only one % on each side.)**.
 
@@ -116,7 +116,7 @@ To create compare pairs on the **Pattern Mapping** tab:
 
         * Where Target Names Like: **%\_Table**
 
-    ![Pattern Mapping - Using % Wildcard option](./images/pattern-mapping-pair-mapping-option2.png " ")
+    ![Pattern Mapping - Using % Wildcard option](./images/pattern-mapping-pair-mapping-option-wildcard-percentage.png " ")
 
     - **Map Source and Target Tables Using GoldenGate * Wildcard Pattern. (Use only one * on each side.)**.
 
@@ -125,11 +125,11 @@ To create compare pairs on the **Pattern Mapping** tab:
 
         * Pattern for Target Names: *****
 
-    ![Pattern Mapping - Using * Wildcard Option](./images/pattern-mapping-pair-mapping-option3.png " ")
+    ![Pattern Mapping - Using * Wildcard Option](./images/pattern-mapping-pair-mapping-option-star.png " ")
 
 4. Click **Generate Mappings**. The control moves to the **Preview** tab. Here, option **3b** has been selected.
 
-    ![Generate Mappings](./images/pattern-mapping-pair-mapping-option3b_has_been_selected.png " ")
+    ![Generate Mappings](./images/pattern-mapping-pair-mapping-option-starb_has_been_selected.png " ")
 
 5. Click **Save** to save the generated compare pair. The control moves to the **Existing Compare Pairs** tab.
 
