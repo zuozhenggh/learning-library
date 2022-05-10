@@ -161,16 +161,16 @@ This guide shows you how to create a new user for your autonomous database and g
 
 2. Open the OCI Data Science notebook that you created earlier in the lab. You can do so by selecting the hamburger menu icon -> Data Science (under Machine Learning) -> the project you created -> the active notebook session -> blue 'Open' button
 
-   ![Open DS](images/opends.png)
+    ![Open DS](images/opends.png)
 
 3. Create a new folder inside your notebook session by selecting the folder icon with a + sign
    and name this new folder 'wallet'.
 
-   Note: it is okay if your notebook is not identical to this example one. At this point, you should only have a conda folder, and the onlineretailnotebook.ipynb file.
+    Note: it is okay if your notebook is not identical to this example one. At this point, you should only have a conda folder, and the onlineretailnotebook.ipynb file.
 
-   ![Create Folder](images/folder.png)
+    ![Create Folder](images/folder.png)
 
-   ![DS Environment](images/dslooks.png)
+    ![DS Environment](images/dslooks.png)
 
 4. Unzip the wallet file that you downloaded from the ADW instance and move all the conents from its folder into the wallet folder in your data science notebook.
 
@@ -178,24 +178,24 @@ This guide shows you how to create a new user for your autonomous database and g
 
 5. Move to the first cell under Oracle Autonomous Database (ADB).
 
-   First we will fetch the ADW SID. Inside the wallet folder, open the tnsnames.ora file. Copy the name the ends with "low" and paste it as the value in the ADW SID line.
+    First we will fetch the ADW SID. Inside the wallet folder, open the tnsnames.ora file. Copy the name the ends with "low" and paste it as the value in the ADW SID line.
 
-   ![TNS Low](images/dblow.png)
+    ![TNS Low](images/dblow.png)
 
-   ![Get SID](images/adw-sid.png)
+    ![Get SID](images/adw-sid.png)
 
-   The TNS ADMIN should be set to the path of the wallet folder which we created earlier. In this case, it would be /home/datascience/wallet. This wallet path must also
-   be specificied in the sqlnet.ora file inside the wallet folder. Open the file and set DIRECTORY="/home/datascience/wallet".
+    The TNS ADMIN should be set to the path of the wallet folder which we created earlier. In this case, it would be /home/datascience/wallet. This wallet path must also
+    be specificied in the sqlnet.ora file inside the wallet folder. Open the file and set DIRECTORY="/home/datascience/wallet".
 
-   ![SQLNet](images/sqlnet.png)
+    ![SQLNet](images/sqlnet.png)
 
-   Set the ADW_USER to omluser (which we created earlier) and the password that you set. The cell should look like this.
+    Set the ADW_USER to omluser (which we created earlier) and the password that you set. The cell should look like this.
 
-   ![Set User](images/cell-final.png)
+    ![Set User](images/cell-final.png)
 
-   Go ahead and run the cell. The cell tests your connection to the database. If successful, the output should appear as follows.
+    Go ahead and run the cell. The cell tests your connection to the database. If successful, the output should appear as follows.
 
-   ![Test Output](images/sqloutput.png)
+    ![Test Output](images/sqloutput.png)
 
 6. The next cell defines a URI as your connection source. It also creates an engine to connect to your database. Go ahead and run it.
 
