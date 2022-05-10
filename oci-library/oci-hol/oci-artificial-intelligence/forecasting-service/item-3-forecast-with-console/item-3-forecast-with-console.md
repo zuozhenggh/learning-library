@@ -1,8 +1,8 @@
-# Lab 5: Learn how to access Forecast Service from OCI Console
+# Lab 1: Learn how to access Forecast Service from OCI Console
 
 ## Introduction
 
-In this session, we will show you how to create the forecast project, upload data into object storage, create the data assets , train model , get forecasts and predictions intervals for the forecast horizon from OCI console 
+In this section, we will show you how to create the forecast project, upload data into object storage, create the data assets , train model , get forecasts and predictions intervals for the forecast horizon from OCI console 
 
 ***Estimated Time***: 20 minutes
 
@@ -306,7 +306,7 @@ Project is a way to organize multiple data assets, models, deployments to the sa
 
 ## Task 7: Forecast Results
 1. Forecast Status:
-    After 2.32 minutes the status will change to **Active**.Now , click on the Forecast Link as you can see below
+    After 3-4 minutes the status will change to **Active**.Now , click on the Forecast Link as you can see below
     ![](images/lab5-forecast-active-page.png " ")
 
 2. Review Forecast Results:
@@ -341,8 +341,9 @@ Project is a way to organize multiple data assets, models, deployments to the sa
     ![](images/lab5-forecast-local.png " ")
 
 
-Congratulations on completing this lab! You now have finished all the sessions of this lab, please feel free to contact us if any additional questions.
+Congratulations on completing this lab! Additionally, You can also try out Lab 2 also which is Optional if you want to use data science notebook. 
 
+Please feel free to contact us if any additional questions.
 
 ## Acknowledgements
 * **Authors**
@@ -350,4 +351,4 @@ Congratulations on completing this lab! You now have finished all the sessions o
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, 29th-April 2022
+    * Last Updated By/Date: Ravijeet Kumar, 10th-May 2022
