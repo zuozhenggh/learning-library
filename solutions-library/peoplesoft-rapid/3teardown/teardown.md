@@ -18,9 +18,9 @@ Estimated Time: 15 minutes
 
 1. Navigate to the OCI home page.
 
-2. Use the dropdown menu located in the upper left hand corner of the screen and select **Compute** then **Instances**.
+2. Use the dropdown menu located in the upper left-hand corner of the screen and select **Compute** then **Instances**.
 
-    ![Use the dropdown menu located in the upper left hand corner to select instances](./images/dropdown-compute.png " ")
+    ![Use the dropdown menu located in the upper left-hand corner to select instances](./images/dropdown-compute.png " ")
 
 3. You are now on the **Instances** page. Make sure that you have the compartment you created in the "Setup" lab selected.
 
@@ -32,19 +32,19 @@ Estimated Time: 15 minutes
 
     ![Use the small dropdown menu and click terminate](./images/terminate-instance.png " ")
 
-    Once the image has finished terminating you will see its state change to terminated.
+    Once the image has finished terminating, you will see its state change to terminated.
 
     ![Status should be terminated as shown](./images/terminated-instance.png " ")
 
 ## Task 2: Terminate the VCN
 
-1. Use the dropdown menu located in the upper left hand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
+1. Use the dropdown menu located in the upper left-hand corner of the screen and select **Networking** then **Virtual Cloud Networks**.
     ![Navigate to compartments using the dropdown menu](./images/dropdown-network.png " ")
 
-2. You will now see you are in the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected.
+2. You will now see you are on the **Virtual Cloud Networks** page. Make sure that you have the compartment you created in the "Setup" lab selected.
     ![](./images/vcn-compartment.png " ")
 
-3. You should now be able to se the VCN that you created in the "Setup" lab.
+3. You should now be able to see the VCN that you created in the "Setup" lab.
 
     Now click on the three dots to the right of your VCN and then select **Terminate**.
 
@@ -52,25 +52,25 @@ Estimated Time: 15 minutes
 
 4. On the next screen you will see a list of all of the Associated Resources.
 
-    After the window has finished loading all of the resources you can click the terminate all button.
+    After the window has finished loading all of the resources, you can click the terminate all button.
 
     **Note:** It may take a moment for all of the resources to load.
 
     ![Terminate vcn menu](./images/terminate-vcn-confirm.png " ")
 
-    After all the resources have terminated the VCN itself will terminate and you may then click the close button.
+    After all the resources have terminated, the VCN itself will terminate and you may then click the close button.
 
-## Task 3: Deleting the test compartment
+## Task 3: Delete the test compartment
 
-1.  Use the dropdown menu located in the upper left hand corner of the screen and select **Identity & Security** then **Compartments**.
+1.  Use the dropdown menu located in the upper left-hand corner of the screen and select **Identity & Security** then **Compartments**.
 
     ![Navigate to compartments using the dropdown menu](./images/dropdown-compartment.png " ")
 
-    From this screen navigate to the compartment you created in the "Setup" lab.
+    From this screen, navigate to the compartment you created in the "Setup" lab.
 
     ![Click the delete button to delete the compartment](./images/delete-compartment.png " ")
 
-    Click the delete button to delete the compartment,after some time the status will be shown as deleted.
+    Click the delete button to delete the compartment, after some time the status will be shown as deleted.
 
     
 ## Summary
