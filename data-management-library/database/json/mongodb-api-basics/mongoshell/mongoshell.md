@@ -33,11 +33,11 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
 1. Go to the main Oracle Cloud page (you may need to close any Service Console or Database Actions tabs that you have open). Click on the square icon with ">" in it at the top right.
 
-	![](./images/open-console.png)
+	![open console](./images/open-console.png)
 
 2. The console will open at the bottom of your screen. You should see a Linux command prompt. If you wish, you can expand the console window to fill your browser screen by clicking on the diagonal double-arrow. You can resize the font if needed using your browser's normal zoom operation (e.g. CMD-+ on a Mac)
 
-	![](./images/cloud-shell.png)
+	![cloud shell](./images/cloud-shell.png)
 
 ## Task 2: Install the Mongo Shell tool
 
@@ -50,11 +50,11 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
 2. Go back to the cloud shell, and type "wget" and a space, followed by the link you just copied
 
-	![](./images/wget-mongosh.png)
+	![wget mongosh](./images/wget-mongosh.png)
 
 3. This willl download a compressed tar file which you will need to unzip. Do that with "tar xvf " followed by the name of the downloaded file. In my case, this would be "tar xvf mongosh-1.2.3-linux-x64.tgz" but it may change with newer versions.
 
-	![](./images/unzip.png)
+	![unzip the tar file](./images/unzip.png)
 
 4. Finally set the PATH variable so it includes the mongosh executable.
 
@@ -106,7 +106,7 @@ Cloud Shell is a Linux command prompt provided for your user. You can upload fil
 
 1. In the ssh shell prompt, enter "mongosh" followed by a space followed the edited URL from the previous task in **single-quotes**.
 
-	![](./images/mongosh-login.png)
+	![mongosh login](./images/mongosh-login.png)
 
 	If all goes well you will see an "admin>" prompt. If not, check your URL carefully:
 
@@ -129,7 +129,7 @@ You should now be in Mongo Shell. This is a command-line utility to interact wit
 	db.createCollection('emp')
     </copy>
 	```
-    ![](./images/create-collection.png)
+    ![create collection](./images/create-collection.png)
 
 	That will have created a new document collection called "emp". If you wish, you can type "show collections" to confirm it has been created.
 
@@ -199,7 +199,7 @@ You should now be in Mongo Shell. This is a command-line utility to interact wit
 	<copy>
 	```
 
-	![](./images/projection.png " ")
+	![projection](./images/projection.png " ")
 
 5.	Updates
 
@@ -219,7 +219,7 @@ You should now be in Mongo Shell. This is a command-line utility to interact wit
 	<copy>
 	```
 	
-	![](./images/qbe-update.png " ")
+	![qbe update](./images/qbe-update.png " ")
 
 That's all we're going to cover in MongoDB Shell, but there are some important points to remember:
 

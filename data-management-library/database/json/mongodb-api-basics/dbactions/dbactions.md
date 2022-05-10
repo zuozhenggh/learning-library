@@ -54,7 +54,7 @@ In this lab, you will:
 <if type="freetier">
     ![Check the workload type on the left.](./images/compartments.png " ")
 </if>
-    ![](./images/workload-type.png " ")
+    ![Check the workload type on the left](./images/workload-type.png " ")
 
 <if type="freetier">
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
@@ -62,12 +62,12 @@ In this lab, you will:
 
 6. You should see your database **JSONDB** listed in the center. Click on the database name "JSONDB".
 
-    ![](./images/database-name.png " ")
+    ![Choose database name](./images/database-name.png " ")
 
 
 7.  On the database page, choose __Database Actions__.
 
-    ![](./images/dbactions-button.png " ")
+    ![Choose dbactions button](./images/dbactions-button.png " ")
 
 8.  You are now in Database Actions.
 
@@ -77,18 +77,18 @@ In this lab, you will:
     * SQL - allows you to work with a relational, **SQL-based** view of your data
     * Charts - generate charts over data in Autonomous Database
 
-    ![](./images/dbactions-menu.png " ")
+    ![illustrates dbactions menu](./images/dbactions-menu.png " ")
 
 
 ## Task 2: JSON in Database Actions
 
 1. You should be in the Database Actions panel. Click on the **JSON** card
 
-    ![](./images/dbactions-menu-json.png " ")
+    ![dbactions menu - choose json](./images/dbactions-menu-json.png " ")
 
     When you first enter JSON, you will get a tour of the features. We recommend you step through it, but you can skip the tour by clicking on the "X". The tour is available at any time by clicking the tour button.
 
-    ![](./images/json-tour-2.png " ")
+    ![json tour](./images/json-tour-2.png " ")
 
     After the tour, you should see the 'emp' collection you created in Mongo Shell on the left. If it's not shown, click the refresh circle.
 
@@ -102,19 +102,19 @@ In this lab, you will:
     </copy>
     ```
 
-    ![](./images/job-programmer.png " ")
+    ![QBE query for job=programmer](./images/job-programmer.png " ")
 
     We can see only two records are fetched as a result of that search. Let's give Miller a pay rise. Click on the "Edit" button to the right of the Miller document:
 
-    ![](./images/edit-miller.png " ")
+    ![edit miller](./images/edit-miller.png " ")
 
     That drops us into a JSON editor. In the JSON Document Content, change Miller's salary to 80000 and click the "Save" button. If you make an error which would produce invalid JSON, the editor will not let you save the content.
 
-    ![](./images/miller-salary.png " ")
+    ![miller salary](./images/miller-salary.png " ")
 
     We can now see that Miller's salary is 80000. Let's add another document to the collection. Click on the "New JSON Document" button immediately below the the collection name on the top panel.
 
-    ![](./images/new-document-button.png " ")
+    ![new document button](./images/new-document-button.png " ")
 
 
     That will bring up the JSON editor again, this time with an empty document. Copy the following document in:
@@ -131,7 +131,7 @@ In this lab, you will:
 
     Since there's already an empty document in there, make sure you don't end up with two sets of braces (curly brackets) around the JSON. Click "Create" when done.
 
-    ![](./images/new-jones.png)
+    ![new document for jones](./images/new-jones.png)
 
     Click the "Clear" button for the existing search, then run another empty search to see all documents.
 
@@ -141,7 +141,7 @@ In this lab, you will:
 
     On the right, click "Add Clause" and choose "$orderby". This will guide us through adding an order-by clause to our (currently empty) query.
 
-    ![](./images/order-by.png " ")
+    ![order by](./images/order-by.png " ")
 
     That will change our query to have two parts - a $query part and a $orderby part. The $query part is the default if neither are specified.
 
@@ -149,13 +149,13 @@ In this lab, you will:
 
     We need to complete some details for the $orderby. We want to sort by salary, so change the path to "salary". It's a number, so change datatype from "varchar2" to "number". And finally change the order from "asc" (ascending) to "desc" (descending), so we get largest first. 
 
-    ![](./images/orderby-edit.png " ")
+    ![orderby edit](./images/orderby-edit.png " ")
 
     Use the scrollbar to confirm that we have fetched back the records in descending order of salary.
 
     Before we leave JSON, let's just create a new collection. On the left side, click the "New Collection" button. 
 
-    ![](./images/new-col-button.png " ")
+    ![new col button](./images/new-col-button.png " ")
 
     On the right, give our collection the name "newcollection" and check the "MongoDB Compatible" box. 
     
@@ -163,7 +163,7 @@ In this lab, you will:
 
     When done, click "Create".  We won't do anything else with this collection, but it illustrates a point in the next section.
 
-    ![](./images/new-collection.png " ")
+    ![new collection](./images/new-collection.png " ")
 
     You can refresh the collection list on the left hand side to check the new collection is there.
 
@@ -179,11 +179,11 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
 
     If you've just finished the previous task, click on 'Database Actions' in the top bar. If you've closed that window, then follow the instructions for Task 3 to get to the Database Actions menu.
 
-    ![](./images/back-to-dbactions.png " ")
+    ![back to dbactions](./images/back-to-dbactions.png " ")
 
     Now we want to open SQL. Click on the SQL panel in Database Actions
 
-    ![](./images/dbactions-menu-sql.png " ")
+    ![dbactions menu sql](./images/dbactions-menu-sql.png " ")
 
 2.  Examine the EMP table
 
@@ -192,7 +192,7 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
 
     Open the EMP collection by clicking on the triangle next to it, to list the columns in the table.
 
-    ![](./images/emp-columns.png " ")
+    ![emp columns](./images/emp-columns.png " ")
 
     You can see that there are various "housekeeping" columns in the table, and a mysterious one called "DATA". We'll learn more about that later.
     In the top right "Worksheet" pane, enter the following query and click the "Run Statement" button:
@@ -202,7 +202,7 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
     select * from emp
     </copy>
     ```
-    ![](./images/select-star.png " ")
+    ![select star](./images/select-star.png " ")
 
     In the output, you can see four rows. And we know that our "emp" collection has four documents in it, so we can deduce that:
 
@@ -249,7 +249,7 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
     </copy>
     ```
 
-    ![](./images/avg-salary.png " ")
+    ![avg salary](./images/avg-salary.png " ")
 
     Simple dot notation is great for straightforward "flat" JSON. There are many other JSON functions available to access data within JSON, such as JSON\_VALUE, JSON\_OBJECT and JSON\_TABLE, but we won't go into those here.
 
@@ -265,7 +265,7 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
 
     Since this is producing some quite long output, it's best if we use the "Run Script" button rather than "Run Statement". Scroll through the output to see the elements discovered in the JSON.
 
-    ![](./images/dataguide.png " ")
+    ![dataguide](./images/dataguide.png " ")
 
 
 
@@ -295,7 +295,7 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
     </copy>
     ```
 
-    ![](./images/create-view.png " ")
+    ![create view](./images/create-view.png " ")
 
     That created a view based on the elements within our JSON. On the left hand side, choose "Views" rather than "Tables" and open the "EMP_VIEW" view.
 
@@ -318,19 +318,19 @@ Now we're going to look at a SQL view of the same data, showing how you can swap
 
     Let's see if we can get that last query output in a more pleasing visual pattern. Click on "Database Actions" at the top of the page, and then choose Charts from the Database Actions menu.
 
-    ![](./images/dbactions-button-2.png " ")
+    ![dbactions button 2](./images/dbactions-button-2.png " ")
 
-    ![](./images/dbactions-menu-charts.png " ")
+    ![dbactions menu charts](./images/dbactions-menu-charts.png " ")
 
     As usual, the first time you enter Charts you will see a tutorial. You can step through it or skip it for now.
 
     Click on "+ Create" in the top right, and then "New Chart"
 
-    ![](./images/chart-create.png " ")
+    ![chart create](./images/chart-create.png " ")
 
     Give your chart a name "Salary Breakdown" and a description of "Total Salaries by job". Set the "Protected by Privilege" drop-down to "Not protected". When done, click "Next".
 
-    ![](./images/chart-create-2.png " ")
+    ![chart create 2](./images/chart-create-2.png " ")
 
     In the next panel, enter the SQL aggregation query we used earlier in the "Enter a valid SQL query" box.
 

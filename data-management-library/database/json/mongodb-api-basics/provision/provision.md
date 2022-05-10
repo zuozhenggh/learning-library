@@ -56,7 +56,7 @@ In this lab, you will:
 <if type="freetier">
     ![Check the workload type on the left.](./images/compartments.png " ")
 </if>
-    ![](./images/workload-type.png " ")
+    ![workload type](./images/workload-type.png " ")
 
 <if type="freetier">
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
@@ -87,7 +87,7 @@ In this lab, you will:
 <if type="livelabs">
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONDB__ and append you LiveLabs user id. For example, __JSONDB7199__.
 
-    ![](./images/adb-info-livelabs.png)
+    ![adb info livelabs](./images/adb-info-livelabs.png)
 </if>
 
 4. Choose a workload type: Select the workload type for your database from the choices:
@@ -142,11 +142,11 @@ In this lab, you will:
 
     We will then set a CIDR block to allow access from any IP address. This should *never* be done for a production database, but makes it simpler for our databas to be accessed from Cloud Shell in the next lab.
 
-    ![](./images/network-access.png " ")
+    ![network access](./images/network-access.png " ")
 
     Now under __IP notation type__ select "CIDR Block". Under __Values__ enter "0.0.0.0/0".
 
-    ![](./images/network-cidr.png " ")
+    ![network cidr](./images/network-cidr.png " ")
 
 
 9. Choose a license type:
@@ -155,7 +155,7 @@ In this lab, you will:
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
-    ![](./images/license-type.png " ")
+    ![license type](./images/license-type.png " ")
 
 10. Click __Create Autonomous Database__.
 
@@ -170,15 +170,15 @@ In this lab, you will:
 
 1. On the Autonomous Database Details page, click on the Service Console button.
 
-    ![](./images/service-console.png)
+    ![service console](./images/service-console.png)
 
 2. On the Service Console, click on __Development__ on the left-hand side
 
-    ![](./images/service-console-dev.png)
+    ![service console dev](./images/service-console-dev.png)
 
 3. Scroll down to the bottom of the Development page, and you should see a card titled Oracle Database API for MongoDB (if you don't, it's possible you didn't set up secure access to your database). There are two URLs listed, copy the first one and save it in a text file somewhere for later use.
 
-    ![](./images/mongo-urls.png)
+    ![mongo urls](./images/mongo-urls.png)
 
 Again, make sure you have saved these URLs for the next lab.
 
