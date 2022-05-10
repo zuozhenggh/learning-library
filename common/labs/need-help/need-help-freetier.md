@@ -57,3 +57,8 @@ If any of these three conditions are true, some ports in your network may be clo
 2. If you are connected to a corporate network, try switching to a public or a "clear" network if allowed.
 
 3. Alternatively, contact your IT Administrator to see if adding exceptions to your network or firewall would be viable.
+
+
+## Cannot Create Password for Database Users?
+
+1. Make sure the password you enter only contains upper case letters, lower case letters, numbers, and underscores as special characters.
