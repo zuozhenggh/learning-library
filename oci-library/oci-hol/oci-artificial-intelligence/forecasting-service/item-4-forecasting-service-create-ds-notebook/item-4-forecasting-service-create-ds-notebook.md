@@ -124,7 +124,7 @@ For a successful forecast, the input data should pass the following data validat
 
 The data should contain one timestamp column and other columns for target variable and series id (if using grouped data)
 - timestamp column should contain dates in standard [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format e.g., 2020-07-13T00:00:00Z. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
-- If the input date doesn't follow allowed format then it needs to be converted in the required format. Sample Python code for converting different date strings to ISO 8601 format is provided in Step 2 of Task 4 in this lab for  "yyyy-MM-dd HH:mm:ss"
+- If the input date doesn't follow allowed format then it needs to be converted in the required format. Sample Python code for converting different date strings to ISO 8601 format is provided in Step 3 of Task 6 in this lab for  "yyyy-MM-dd HH:mm:ss"
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
@@ -400,8 +400,8 @@ Creating a model requires 3 actions to kick off training the forecasting model.
     ```
 
 In the example below we show how to create the payload for calling create forecast API. 
-- "compartmentId": is same as tenancy id(refer Task 5 : Create Project ID in Lab 2)
-- "projectId": the one you get after creating a project (refer Task 5 : Create Project ID in Lab 2)
+- "compartmentId": is same as tenancy id
+- "projectId": the one you get after creating a project
 - "targetVariables": name of the column in primary data having the target values
 - models: models selected for training. Here we are showing some the models implemented in our service.Our AutoML service selects the best model out of all the models selected for training. 
 - "forecastHorizon": number of future timesteps for which to forecast 
@@ -409,7 +409,7 @@ In the example below we show how to create the payload for calling create foreca
 - "dataFrequency": 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
 - "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required . For custom frequency : If input dataFrequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. Eg.  If dataFrequency : 2HOURS  , then forecastFrequency: 24HOURS if you want forecastFrequency to be a DAY level
 - "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
-- "columnData": inline data (Please refer Task 4: Inline Data preparation in Lab 2)
+- "columnData": inline data 
 - "columnSchema": provide column name and data type for each column in the data source
 - "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data
 - "models" : We can use any of the available algorithms are univariate and multivariate methods. 
