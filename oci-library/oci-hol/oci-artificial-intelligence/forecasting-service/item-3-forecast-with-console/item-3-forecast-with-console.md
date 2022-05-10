@@ -341,10 +341,9 @@ Project is a way to organize multiple data assets, models, deployments to the sa
     ![](images/lab5-forecast-local.png " ")
 
 
-Congratulations on completing this lab! 
-Please feel free to contact us if any additional questions.
-Additionally, You can also try out Lab 2 also which is Optional if you want to use data science notebook. 
+Congratulations on completing this lab! Additionally, You can also try out Lab 2 also which is Optional if you want to use data science notebook. 
 
+Please feel free to contact us if any additional questions.
 
 ## Acknowledgements
 * **Authors**
@@ -352,4 +351,4 @@ Additionally, You can also try out Lab 2 also which is Optional if you want to u
     * Anku Pandey - Data Scientist - Oracle AI Services
     * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, 29th-April 2022
+    * Last Updated By/Date: Ravijeet Kumar, 10th-May 2022

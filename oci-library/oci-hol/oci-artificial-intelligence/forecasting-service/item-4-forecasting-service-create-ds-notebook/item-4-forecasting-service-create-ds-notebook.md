@@ -832,8 +832,8 @@ Here is a case study on using the forecast api to get the global and local expla
 
     Similarly, by changing the time step, you can get the local feature importance for that corresponding forecast.
 
-
-
+Congratulations on completing this workshop! 
+Please feel free to contact us if any additional questions.
 
 ## Acknowledgements
 * **Authors**
