@@ -15,11 +15,11 @@ Oracleアカウントは以下二つのステップで作成できます。
 
 1. ブラウザから[oracle.com](https://www.oracle.com)にアクセスします。 *View Account*をクリックして *Create an Account*を選択します。
 
-  ![](images/create-account-oracle-1.png " ")
+  ![create oracle account1](images/create-account1.png " ")
 
 2. フォーム内容を入力し、 *Create Account*をクリックします。
 
-  ![](images/create-account-oracle-2.png " ")
+  ![create oracle account2](images/create-account2.png " ")
 
 
 ## Task 2: SSHキー・ペアの生成
@@ -153,27 +153,27 @@ Windows 10においては、早期ビルドを除けば、SSHキー生成機能"
 ## Task 3: ハンズオンワークショップリソースの予約
 
 1. [LiveLabs 2.0](http://bit.ly/golivelabs) へナビゲートし、「次世代Java高速実行基盤GraalVMハンズオン」のトップページにある「Run On Livelabs Sandbox」をクリックします。
-　![](images/livelabs01.png)
+　![Navigate to workshp page.](images/livelabs01.png)
 
 2. Oracleアカウントログイン画面より事前に作成したユーザ名、パスワードを入力してログインします。
-　![](images/run-on-livelabs2.png)
+　![Login to workshp page.](images/run-on-livelabs2.png)
 
  > **Note:** Oracleアカウント未作成の場合、画面下部の「Create Account」をクリックし、Task1の手順に従ってOracleアカウントを作成してください。
 
 3. ハンズオンの予約画面にて、Task2で作成した*public key* `id_rsa.pub`をnotepadなどのテキストエディターで開き、中身をコピーして、*Public SSH key required to set up this workshop*ウィンドウに貼り付けます。「Start Workshop Now?」がオンになっていることを確認し、「I consent to recieve reservation emails」をチェックし、「Submit Reservation」をクリックします。
-　![](images/livelabs02.png)
+　![Paste the public key.](images/livelabs02.png)
    
    これによりクラウド上のハンズオン用環境のプロビジョニングが開始されます。次の画面より「View your reservation」をクリックして、プロビジョニング状況を確認します。
-　![](images/livelabs03.png)
-  ![](images/livelabs04.png)
+　![View reservation status.](images/livelabs03.png)
+  ![View reservation status.](images/livelabs04.png)
 > **Note:** プロビジョニング中、計3通のステータス確認メールが登録のメールアドレス宛に届きます。
 
 4. プロビジョニング完了のステータスに変わりましたら、「Launch workshop」をクリックします。
-　![](images/livelabs05.png)
+　![Launch workshp.](images/livelabs05.png)
 
 5. プロビジョニング済みのインスタンスの情報を確認します。パブリックIPアドレスは後の演習でSSH接続時必要になりますので、手元にメモをしておいてください。
 
-  ![](images/livelabs06.png)
+  ![Note the public IP.](images/livelabs06.png)
 
 *以上でハンズオンの事前準備が完了しましたので、次の章「ハンズオン概要」に進めてください。*
 

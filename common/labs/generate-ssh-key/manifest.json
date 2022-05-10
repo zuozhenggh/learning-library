@@ -8,6 +8,11 @@
             "filename": "generate-ssh-keys.md"
         },
         {
+            "title": "Lab: Create SSH Key JP",
+            "description": "Generate SSH Key",
+            "filename": "generate-ssh-keys-jp.md"
+        },
+        {
             "title": "Lab: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "filename": "../cloud-login/cloud-login.md"
@@ -17,5 +22,6 @@
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
         }
+        
     ]
 }
