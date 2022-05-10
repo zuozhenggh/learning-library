@@ -59,38 +59,38 @@ This guide shows you how to create a new user for your autonomous database and g
 
 1. On your instance, click the Tools tab and then click Open Oracle ML User Administration.
 
-    ![ML Administration](./images/2.1.png)
+    ![ML Administration](./images/ml-user-admin.png)
 
 2. Sign in as admin with the password you used when you created your Autonomous instance.
 
-    ![Sign In](./images/2.2.png)
+    ![Sign In](./images/admin-login.png)
 
 3. Click on Create
 
-    ![Add User](./images/2.3.png)
+    ![Add User](./images/create-user.png)
 
 4. Create User
 
     On the Create User tab, enter the username omluser, an email address (you can use admin@oracle.com), uncheck Generate Password, and enter a password you will remember. You can use the same password you used for ADMIN account. Then click Create.
 
-    ![Give User Credentials](./images/2.4.png)
+    ![Give User Credentials](./images/user-credential.png)
 
 5. Return to you ADW instance on the OCI service console, and click on Open Database Actions.
 
-    ![DB Actions](./images/3.1.png)
+    ![DB Actions](./images/opendb.png)
 
 6. Login as ADMIN using the same password you created for ADMIN when you created the ADW instance.
 
-    ![Login as ADMIN](./images/3.2.1.png)
-    ![Login as ADMIN](./images/3.2.2.png)
+    ![Login as ADMIN](./images/admin-username.png)
+    ![Login as ADMIN](./images/admin-login.png)
 
 7. From Database Action menu, select SQL.
 
-    ![Choose SQL](./images/3.3.png)
+    ![Choose SQL](./images/sql-dev.png)
 
 8. Dismiss the Help by clicking the X in the popup.
 
-    ![Dismiss Help](./images/3.4.png)
+    ![Dismiss Help](./images/dismiss-help.png)
 
 9. Copy and paste the SQL below into the SQL panel to allow OMLUSER to use the Database Actions.
 
@@ -112,8 +112,8 @@ This guide shows you how to create a new user for your autonomous database and g
 
 10. Click Run Script to execute the SQL.
 
-    ![Run Script](./images/3.6.png)
-    ![Run SQL](./images/3.6.2.png)
+    ![Run Script](./images/run-sql.png)
+    ![Run SQL](./images/run-sql-again.png)
 
 ## **Task 3**: Upload Data to ADW
 
@@ -128,16 +128,16 @@ This guide shows you how to create a new user for your autonomous database and g
 
 3. This time sign in as omluser
 
-    ![Sign In as OMLUSER](./images/5.2.png)
-    ![Sign In as OMLUSER](./images/5.2.2.png)
+    ![Sign In as OMLUSER](./images/omluser-signin.png)
+    ![Sign In as OMLUSER](./images/omluser-signin2.png)
 
 4. Select Data Load from Database Actions
 
-    ![Data Load](./images/5.3.png)
+    ![Data Load](./images/dataload.png)
 
 5. Leave the default selections (Load Data and Local File) and click Next.
 
-    ![Default Credentials](./images/5.4.png)
+    ![Default Credentials](./images/defaultcred.png)
 
 6. When the upload is complete, click Start and click Run in the confirmation dialog.
 

@@ -120,7 +120,7 @@ This guide shows how to use the Resource Manager to provision the service using 
 1. Open a terminal window by clicking on **File**, **New** and then **Terminal**.
 2. Run the command: 
    
-    ```python
+   ```python
    <copy>
    odsc conda install -s mlcpuv1
    </copy>
