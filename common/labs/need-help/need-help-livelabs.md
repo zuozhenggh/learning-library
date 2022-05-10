@@ -79,3 +79,8 @@ If the workshop asks you to open cloud shell, but you cannot access it, please m
 
    ![Policy Missing Error](images/private-ssh-key-denied.png " ")
 1. If you cannot connect to your compute instance using your private SSH key, please make sure the private key you provide and use matches the public SSH key you provide when you reserve the workshop on LiveLabs.
+
+
+## Cannot Create Password for Database Users?
+
+1. Make sure the password you enter only contains upper case letters, lower case letters, numbers, and underscores as special characters.
