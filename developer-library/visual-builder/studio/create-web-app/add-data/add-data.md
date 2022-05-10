@@ -30,7 +30,7 @@ This lab assumes you have:
 
     ![](images/departments-button.png "This image shows the main-departments page, with a Button component being dragged from the Components palette into the toolbar, next to the Create Department button.")
 
-4.  If necessary, click **Properties**. Then in the General tab of the Properties pane, change the **Text** field to `Display Employees`.
+4.  If necessary, click **Properties**. Then in the General tab of the Properties pane, change the **Label** field to `Display Employees`.
 5.  Select the button (if necessary) and click the **Events** tab, then click the **\+ New Event** button. From the menu, select **On 'ojAction'**, the default action for a button click.
 
     ![](images/departments-button-events.png "This image shows the New Event menu on a Button component's Events tab. The On 'ojAction' option is selected.")
@@ -57,7 +57,7 @@ This lab assumes you have:
 
 1.  In the Web Apps pane, click **main-employees** under the **hrwebapp** and **main** nodes. If necessary, click **Reload page** ![Reload page icon](images/reload-icon.png) to display the new employee you created.
 2.  From the Components palette, drag a **Button** component to the Toolbar, to the right of the Create Employee button.
-3.  In the button's Properties pane, change the **Text** field to `Display Departments`.
+3.  In the button's Properties pane, change the **Label** field to `Display Departments`.
 4.  Click the **Events** tab, then click **+ New Event** and select **On 'ojAction'**.
 
     Another empty action chain with the ID ButtonActionChain is created. Because this action chain is for a different page, it doesn't matter that it has the same name as the one for the `main-departments` page.
