@@ -17,7 +17,7 @@ System Administrators will have set an Incremental Execution Time which automati
 ## Verify incremental updates
 The following steps will guide you to verify that the incremental updates have started and been completed in your FAW environment.
 
-  *Note: You must have 'Data Warehouse Refresh and Usage Tracking Analysis Duty' application role to successfully complete these steps.*
+  > **Note:** You must have 'Data Warehouse Refresh and Usage Tracking Analysis Duty' application role to successfully complete these steps.
 
 1. Click on the **hamburger menu** and navigate to **Projects**. This will direct you to the console that manages the embedded Oracle Analytics Cloud service that is a part of your FAW environment.
 
