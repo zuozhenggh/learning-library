@@ -2,9 +2,24 @@
 
 ## About this Workshop
 
-This workshop shows you how to create two connections using Oracle Integration - One for File Server and one for an On Oracle Autonomous Database. You will learn how to create an integration flow that reads a file from File Server and insert records into Oracle Autonomous Database.
+This workshop shows you how to create two connections using Oracle Integration - One for a File Server and one for an On Oracle Autonomous Database. You will learn how to create an integration flow that reads a file from the File Server and insert records into Oracle Autonomous Database.
 
 Estimated Time: 1 hour 30 minutes
+
+### What Will You Learn?
+
+In this workshop, you will learn how to:
+
+* Provision Oracle Integration in Oracle Cloud Infrastructure
+* Learn several Integrations specific concepts
+* Creating Connections
+* Design a Scheduled Integration Flow
+* Test and Monitor Integration Flow
+
+### What Do You Need?
+
+* An Oracle Free Tier or Paid Cloud Account.
+* A Chrome browser.
 
 ### What is Oracle Integration?
 
@@ -26,24 +41,7 @@ Oracle Integration changes all that. It empowers you to:
 
   - Gain 360-degree views across your entire business. Easily monitor and analyze every application, integration, and workflow spanning the business process life cycle.
 
-##	Task	1: Take a look at this Introduction to Integrations Overview Video
-
-[Introduction to Integrations](youtube:avAbtEYbWeQ)
-
-### What Will You Learn?
-
-In this workshop, you will learn how to:
-
-* Provision Oracle Integration in Oracle Cloud Infrastructure.
-* Learn several Integrations specific concepts
-* Creating Connections
-* Design a Scheduled Integration Flow
-* Test and Monitor Integration Flow
-
-### What Do You Need?
-
-* An Oracle Free Tier or Paid Cloud Account.
-* A Chrome browser.
+  [Introduction to Integrations](youtube:avAbtEYbWeQ)
 
 You may now **proceed to the next lab**.
 
@@ -54,5 +52,4 @@ You may now **proceed to the next lab**.
 ## Acknowledgements
 
 * **Author** - Kishore Katta, Product Management, Oracle Integration & Process Automation
-* **Contributors** -
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022

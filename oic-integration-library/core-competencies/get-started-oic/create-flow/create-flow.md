@@ -1,9 +1,9 @@
 # Create Integration flow
 
 ## Introduction
-This lab will walk you through the steps to create an end-to-end integration of reading a file from File Server and insert the data set in an Oracle Autonomous (ADW) Table.
+This lab will walk you through the steps to create an end-to-end integration of reading a file from the File Server and inserting the data set in an Oracle Autonomous (ADW) Table.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 You will execute the following:
@@ -47,7 +47,7 @@ We will start by creating a new integration and adding some basic info.
 ## Task 2: Define FTP Invoke Activity
 Add FTP Invoke to integration canvas.
 
-1. Change the Layout to Horizontal from the Tool bar on the top. Hover over the outgoing arrow from the *Scheduled* activity and Click the **+** sign in the integration canvas.
+1. Change the Layout to Horizontal from the Toolbar on the top. Hover over the outgoing arrow from the *Scheduled* activity and Click the **+** sign in the integration canvas.
 
 2. Select the configured FTP Adapter connection which is created in the previous lab. This invokes the Oracle ERP Cloud Endpoint Configuration Wizard.
 
@@ -69,7 +69,7 @@ Add FTP Invoke to integration canvas.
 
 6. Click **Next**.
 
-7. On the Summary page, review the configuration click **Done**.
+7. On the Summary page, review the configuration and click **Done**.
 
 8. Click on **Save** to apply your changes.
 
@@ -78,7 +78,7 @@ Add FTP Invoke to integration canvas.
 ## Task 3: Add the ADW invoke activity
 Add the Oracle Autonomous Data Warehouse Adapter invoke to the integration canvas.
 
-1. Hover you cursor over the outgoing arrow of *downloadSalesOrders* activity in the integration canvas to display the **+** sign. Click the **+** sign and select the ADW connection created in the previous lab.
+1. Hover your cursor over the outgoing arrow of *downloadSalesOrders* activity in the integration canvas to display the **+** sign. Click the **+** sign and select the ADW connection created in the previous lab.
 
     ![Add ADW Connection](images/add-adw-connection.png)
 
@@ -197,7 +197,7 @@ Manage business identifiers that enable you to track fields in messages during r
 
 3. Click **Activate**.
 
-    The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to *Active*.
+    The activation will be complete in a few seconds. Once activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to *Active*.
 
 
 You may now **proceed to the next lab**.
@@ -211,4 +211,4 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Kishore Katta, Product Management - Oracle Integration
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022

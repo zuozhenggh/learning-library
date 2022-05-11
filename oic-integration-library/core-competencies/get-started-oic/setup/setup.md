@@ -4,7 +4,7 @@
 
 This lab walks you through the setup required to complete the workshop.
 
-Estimated Lab Time: 15 minutes
+Estimated Time: 15 minutes
 
 ### Objectives
 In this lab, you will:
@@ -23,11 +23,11 @@ This lab assumes you have:
 ## Task 1: Create a database table using a SQL script
 Follow these steps to create a DB table which will be used as part of this workshop.
 
-1.  If you are not already logged in to SQL Worksheet, in your ADW Database Details page, click the **Database Actions** button.
+1.  If you are not already logged in to SQL Worksheet, on your ADW Database Details page, click the **Database Actions** button.
 
     ![Click Database Actions](images/click-database-actions.png)
 
-    > **Note:** If you are redirected to the Database Actions page, then skip to Step 4. Otherwise, follow the next step to log-in manually.  
+    > **Note:** If you are redirected to the Database Actions page, then skip to Step 4. Otherwise, follow the next step to log in manually.  
 
 2. A sign-in page opens for Database Actions. For this lab, simply use your database instance's default administrator account `ADMIN` and click **Next**.
 
@@ -98,9 +98,9 @@ Now you have an external table which will be used in the Integration flow.
 
     ![Select Autonomous Database](images/select-adb-instance.png)
 
-    > **Note:** Similar steps apply to either Autonomous Data Warehouse and Autonomous Transaction Processing.
+    > **Note:** Similar steps apply to both Autonomous Data Warehouse and Autonomous Transaction Processing.
 
-3.  In your Autonomous Database Details page, click the **DB Connection** button.
+3.  On your Autonomous Database Details page, click the **DB Connection** button.
 
     ![Click Database Connection](images/click-database-connection.png)
 
@@ -108,7 +108,7 @@ Now you have an external table which will be used in the Integration flow.
 
 5. Provide a Wallet password, then click **Download**. Save the wallet file (ZIP) on your local machine. This file will be used later when creating the Autonomous Database connection in Oracle Integration.
 
-6. Under *Connection Strings*, select one of the *TNS Name* entries and write it down. This value will used later when creating the Autonomous Database connection in Oracle Integration.
+6. Under *Connection Strings*, select one of the *TNS Name* entries and write it down. This value will be used later when creating the Autonomous Database connection in Oracle Integration.
 
     ![Select Connection TNS Name](images/database-connection-tnsname.png)
 
@@ -118,11 +118,11 @@ Now you have an external table which will be used in the Integration flow.
 
     ![Region Identifier](images/region-identifier.png)
 
-9.  We need *Object Storage Tenancy OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Top Corner. Select **Tenancy:<your-tenant-id>** . In the Tenancy Details page make a note of *OCID*. We need this to Create Autonomous Database connection in Oracle Integration
+9.  We need *Object Storage Tenancy OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Top Corner. Select **Tenancy:<your-tenant-id>** . On the Tenancy Details page make a note of *OCID*. We need this to Create Autonomous Database connection in Oracle Integration
 
-10.  We need *Object Storage Compartment OCID*. In Oracle Cloud Console Navigate to **Identity & Security > Compartments**. Select the Compartment in which Object Storage bucket is created in the previous task. In the Compartment Details page make a note of *OCID*.
+10.  We need *Object Storage Compartment OCID*. In Oracle Cloud Console Navigate to **Identity & Security > Compartments**. Select the Compartment in which Object Storage bucket is created in the previous task. On the Compartment Details page make a note of *OCID*.
 
-11. We need one more detail which is *Object Storage User OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Top Corner. Select your **username**. In the User details page make a note of *OCID*.
+11. We need one more detail which is *Object Storage User OCID*. In Oracle Cloud Console Navigate to **Profile** at the Right Top Corner. Select your **username**. On the User details page make a note of *OCID*.
 
 12. In the *User Details* page from the *Resources* sections Select **API Keys**. Click on **Add API Key**.
 
@@ -137,7 +137,7 @@ Now you have an external table which will be used in the Integration flow.
 Configure File Server settings. This is required as you are using Embedded File Serve of Oracle Integration and using File Server as a target application in your integration flow.
 
 1. Starting at the Oracle Integration *Home* page, select **Settings**, then **File Server** from the left Navigation pane.
-2. Select **Settings** from left Navigation pane to open the File Server Settings page and review the File Server status and configurations. Make a note of IP and port number.
+2. Select **Settings** from the left Navigation pane to open the File Server Settings page and review the File Server status and configurations. Make a note of IP and port number.
 ![File Server Settings page](images/file-server-settings.png)
 **Note**: Ensure the *Authentication Type* is set to **Password or Key**.
 3. Select **Files** from left Navigation pane.
@@ -160,10 +160,10 @@ To access files on the File Server you will need to use an FTP Client. You will 
 * Your Oracle Integration username.
 * Your Oracle Integration password.
 
-1. To obtain the File Server IP Address and Port, select **Settings** from left Navigation pane. The IP and Port are located in the *IP and Port Information* section of the *Settings* page.
+1. To obtain the File Server IP Address and Port, select **Settings** from the left Navigation pane. The IP and Port are located in the *IP and Port Information* section of the *Settings* page.
 2. Using your FTP Client choice, connect to the File Server using the SFTP - SSH File Transfer Protocol.  
 ![Example FTP Client configuration](images/ftpclient1.png)
-A example configuration using FileZilla FTP Client.  
+An example configuration using FileZilla FTP Client.  
 If the permissions are configured correctly, you should be able to list, read, and write files on the *Output* folder.
 
 
@@ -172,4 +172,4 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Kishore Katta, Product Management - Oracle Integration
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022

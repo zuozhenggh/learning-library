@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This workshop will walk you through the steps to create an end-to-end integration of reading a file from File Server and insert the data set in an Oracle Autonomous Date Warehouse(ADW) Table leveraging out of the box adapters.
+This workshop will walk you through the steps to create an end-to-end integration of reading a file from the File Server and inserting the data set in an Oracle Autonomous Date Warehouse(ADW) Table leveraging out of the box adapters.
 
 ![Integration Architecture](images/get-started-integration-scenario.png)
 
-This  lab will walk you through the steps to create connections for all the services which will used in the Integration Flow.
+This lab will walk you through the steps to create connections for all the services which will be used in the Integration Flow.
 
 Estimated Time: 10 minutes
 
@@ -67,7 +67,7 @@ To access the File Server from an Integration, you will need to create an FTP Co
 
 1. Starting at the Oracle Integration *Home* page, select **Integrations**, then **Connections** from the left Navigation pane.
 2. Click **Create**, then select the **FTP** Adapter and click **Select**.
-3. From the *Create Connection* dialog, *Name* your connection **File Server** and leave the rest of the configurations as defaulted. Click **Create**.  
+3. From the *Create Connection* dialog, *Name* your connection **File Server** and leave the rest of the configurations as default. Click **Create**.  
 **Note**: If you get an error that the identifier already exists, change the Connection Name and remember this name for use later in the workshop.
 4. Enter the following configurations in the *FTP Connection* with the information you previously gathered from the File Server Settings page.  
 | Field                   | Value                                                 |
@@ -92,4 +92,4 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Kishore Katta, Product Management - Oracle Integration
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022

@@ -7,20 +7,20 @@ Estimated Time: 10 minutes
 
 ### Objectives
 In this lab, you will:
-- Create a file in File Server
-- Execute an adhoc run of Scheduled Integration Flow
+- Create a file in the File Server
+- Execute an Adhoc run of Scheduled Integration Flow
 - Track message flow triggered
-- Verify sales orders record in ADW Table
-- Verify sales orders file in Object Storage
+- Verify the sales orders records in ADW Table
+- Verify the sales orders file in Object Storage
 
 ### Prerequisites
 This lab assumes you have:
 - Completed all previous labs successfully
 
 
-## Task 1: Create sales order file in File Server
+## Task 1: Create a sales order file in the File Server
 
-1.  Copy the below data set in a file **sales_orders.csv** and save it to your  desktop.
+1.  Copy the below data set in a file **sales_orders.csv** and save it to your desktop.
 
     ```
     <copy>
@@ -37,7 +37,7 @@ This lab assumes you have:
 
 ## Task 2: Run the Scheduled Integration Flow
 
-Submit an adhoc run of Scheduled Integration Flow
+Submit an Adhoc run of Scheduled Integration Flow
 
 1. From the **Integrations** page, hover over the Integration Flow and Select **Run** and Click on **Submit Now**.
 
@@ -89,7 +89,7 @@ Follow these steps to view the sales orders record in the designated DB table.
 
     ![Select Autonomous Database](../setup/images/click-database-actions.png)
 
-4. Sign-in with your database instance's default administrator account, Username = `ADMIN` and click **Next**.
+4. Sign in with your database instance's default administrator account, Username = `ADMIN` and click **Next**.
 
    ![Enter DB username](../setup/images/enter-username.png)
 
@@ -119,7 +119,7 @@ Verify sales orders file archived in OCI Object storage
 
 2.  Select the **Compartment** and Click on the Bucket example: *bucket-demo* created earlier.
 
-3.  In the list of *Objects* notice **sales_orders.csv** file uploaded. The object storage is used as intermediary storage to import data set in ADW. From the adapter configuration page you can always select to delete the file after operation if required.
+3.  In the list of *Objects* notice **sales_orders.csv** file uploaded. The object storage is used as intermediary storage to import data set in ADW. From the adapter configuration page, you can always select to delete the file after the operation if required.
 
     ![Verify File in Object Storage](images/verify-file-so-os.png)
 
@@ -133,4 +133,4 @@ Verify sales orders file archived in OCI Object storage
 
 ## Acknowledgements
 * **Author** - Kishore Katta, Product Management - Oracle Integration
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022
