@@ -1,4 +1,5 @@
-# How can I verify that the incremental update has started and been completed in Fusion Analytics?
+# How can I verify that the incremental update has been completed in Fusion Analytics warehouse?
+
 Duration: 4 minutes
 
 If you have set up an Incremental Execution Time for incremental updates in the Pipeline Parameters of your FAW instance, you may have noticed that incremental updates are not recorded in the Request History.
@@ -9,8 +10,8 @@ When you extract your data in FAW, you have the option to set certain specificat
 System Administrators will have set an Incremental Execution Time which automatically loads  data at a time specified to ensure that their data is up-to-date.
 
 ###**Why do I need to verify that incremental updates have run successfully?**
-* Sanity check to make sure your system is running as you've specified
 * Verify that your critical records have been imported as scheduled
+* Sanity check to make sure your system is running as you've specified
 * Ensure that your data is current
 
 ## **Verify incremental updates**
@@ -19,11 +20,11 @@ The following steps will guide you to verify that the incremental updates have s
 ###Prerequisites
 * Must have 'Data Warehouse Refresh and Usage Tracking Analysis Duty' application role
 
-1. Click on the **hamburger menu** and navigate to **Projects**. This will direct you to Oracle Analytics Cloud (OAC).
+1. Click on the **hamburger menu** and navigate to **Projects**. This will direct you to the console that manages the embedded Oracle Analytics Cloud service that is a part of your FAW environment.
 
 ![Navigate to Projects](images/projects.png)
 
-2. Within OAC, click on **Create Workbook** and you will be prompted to add a dataset.
+2. Within the OAC console, click on **Create Workbook** and you will be prompted to add a dataset.
 
 ![Create workbook](images/create-workbook.png)
 
@@ -42,7 +43,7 @@ The following steps will guide you to verify that the incremental updates have s
 
 ![Create table](images/create-table.png)
 
-Congratulations! You have just learned how to verify that your incremental updates have started and been completed in Fusion Analytics Warehouse and when and why you would need to do this.
+Congratulations! You have just learned how to verify that your incremental updates have been completed in Fusion Analytics Warehouse and when and why you would need to do this.
 
 
 ## Learn More
