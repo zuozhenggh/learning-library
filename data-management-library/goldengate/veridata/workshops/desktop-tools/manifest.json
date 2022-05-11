@@ -1,11 +1,11 @@
 {
   "workshoptitle": "Column Mapping and Purging Data in Oracle GoldenGate Veridata",
-  "help": "livelabs-help-**enterarea**_us@oracle.com",
-"tutorials": [
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
   {
     "title": "Introduction",
       "description": "This lab provides an introduction of Oracle GoldenGate Veridata.",
-    "filename": "../../intro/intro.md"
+    "filename": "../../intro/intro-tools.md"
   },
   {
     "title": "Get Started with noVNC Remote Desktop",
@@ -22,13 +22,11 @@
     "description": "Provisioning the Lab Environment",
     "filename": "../../provision/provision.md"
   },
-
   {
       "title": "Lab 3: Create Datasource Connections",
       "description": "This lab walks you through the steps to create datasource connections.",
       "filename": "./../../ggv-create-connections/ggv-create-connections.md"
     },
-
     {
       "title": "Lab 4: Create Groups and Compare Pairs ",
       "description": "This lab walks you through the steps to create groups and compare pairs.",
@@ -49,7 +47,6 @@
       "description": "This lab walks you through the Purge Data and Delete Directories features in Oracle GoldenGate Veridata.",
       "filename": "./../../ggv-purge-delete-directories/ggv-purge-delete-directories.md"
     },
-
     {
       "title": "Need Help?",
       "description": "Solutions to Common Problems and Directions for Receiving Live Help",

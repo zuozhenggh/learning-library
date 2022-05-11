@@ -1,16 +1,11 @@
 {
   "workshoptitle": "Column Mapping and Purging Data in Oracle GoldenGate Veridata",
-  "include": {
-    "starter-file.sql": "../../data-load/files/starter-file.sql",
-    "sample.json": "../../data-load/files/sample.json",
-    "step2.md": "../../data-load/files/step2.md"
-  },
-  "help": "livelabs-help-**enterarea**_us@oracle.com",
+  "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
-      "filename": "../../intro/intro.md"
+      "filename": "../../intro/intro-tools.md"
     },
     {
       "title": "Getting Started",
@@ -63,7 +58,6 @@
       "description": "This lab walks you through the Purge Data and Delete Directories features in Oracle GoldenGate Veridata.",
       "filename": "./../../ggv-purge-delete-directories/ggv-purge-delete-directories.md"
     },
-
     {
     "title": "Need Help?",
     "description": "Solutions to Common Problems and Directions for Receiving Live Help",
