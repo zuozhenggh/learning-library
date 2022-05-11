@@ -1,0 +1,16 @@
+{
+    "workshoptitle": "SSHキー・ペア生成手順",
+    "help": "livelabs-help-db_us@oracle.com",
+	"tutorials": [
+        {
+            "title": "Lab1: SSHキー・ペアの生成",
+            "description": "Generate SSH Key",
+            "filename": "generate-ssh-keys-jp.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+            "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-livelabs.md"
+        }
+    ]
+}
