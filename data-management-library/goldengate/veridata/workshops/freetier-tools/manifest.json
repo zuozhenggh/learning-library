@@ -1,11 +1,11 @@
 {
-  "workshoptitle": "Get Started with Oracle GoldenGate Veridata",
+  "workshoptitle": "Column Mapping and Purging Data in Oracle GoldenGate Veridata",
   "help": "livelabs-help-db_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
       "description": "This lab provides an overview of Oracle GoldenGate Veridata.",
-      "filename": "../../intro/intro.md"
+      "filename": "../../intro/intro-tools.md"
     },
     {
       "title": "Getting Started",
@@ -15,7 +15,8 @@
     {
       "title": "Lab 1: Prepare Setup",
       "description": "How to download your ORM stack and update security rules for an existing VCN",
-      "filename": "../../prepare-setup/prepare-setup.md"
+      "filename": "../../prepare-setup/prepare-setup.md",
+      "type": "basics"
     },
     {
       "title": "Lab 2: Environment Setup",
@@ -48,19 +49,19 @@
       "filename": "./../../ggv-create-execute-jobs/ggv-create-execute-jobs.md"
     },
     {
-      "title": "Lab 8: Repair Jobs and Generate SQL Files ",
-      "description": "This lab walks you through the steps to repair jobs and data.",
-      "filename": "./../../ggv-repair-data/ggv-repair-data.md"
+      "title": "Lab 8:  Add and Remove Mappings ",
+      "description": "This lab walks you through the steps to add and remove mappings in Oracle GoldenGate Veridata.",
+      "filename": "./../../ggv-add-remove-mapping/ggv-add-remove-mapping.md"
     },
     {
-      "title": "Lab 9: View Reports ",
-      "description": "This lab walks you through the steps to view comparision Reports.",
-      "filename": "./../../ggv-reports/ggv-reports.md"
+      "title": "Lab 9:  Purge Data and Delete Directories ",
+      "description": "This lab walks you through the Purge Data and Delete Directories features in Oracle GoldenGate Veridata.",
+      "filename": "./../../ggv-purge-delete-directories/ggv-purge-delete-directories.md"
     },
     {
-      "title": "Need Help?",
-      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
-      "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
-    }
+    "title": "Need Help?",
+    "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+    "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/need-help/need-help-freetier.md"
+  }
   ]
 }
