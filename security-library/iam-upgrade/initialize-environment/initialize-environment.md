@@ -23,7 +23,7 @@ This lab assumes you have:
     - Database Listener
         - LISTENER
     - Database Server Instance
-        - ORCL
+        - orcl
 
     ![Remote desktop landing page](./images/login.png " ")
 
@@ -49,7 +49,7 @@ This lab assumes you have:
     If all expected processes are shown in your output as seen above, then your environment is ready for the next task.
 
 
-3. Test the base installation by accessing the *Identity Manager Admin Console* which has been pre-launched on the *Chrome* window on your remote desktop session using the below credentials :
+3. Test the base installation by accessing the *Identity Manager Admin Console* , which has been pre-launched on the *Chrome* window on your remote desktop session, using the below credentials :
 
     ```
     URL: <copy>http://wsidmhost.idm.oracle.com:7778/oim</copy>
