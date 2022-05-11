@@ -36,7 +36,7 @@ This lab assumes you have:
 Configure File Server settings. This is required as you are using Embedded File Serve of Oracle Integration and using File Server as a target application in your integration flow.
 
 1. Starting at the Oracle Integration **Home** page, select ***Settings***, then ***File Server*** from the left Navigation pane.
-2. Select ***Settings*** from left Navigation pane to open the File Server Settings page and review the File Server status and configurations. Make a note of IP and port number.
+2. Select ***Settings*** from the left Navigation pane to open the File Server Settings page and review the File Server status and configurations. Make a note of the IP and port number.
 ![File Server Settings page](images/file-server-settings.png)
 **Note**: Ensure the **Authentication Type** is set to ***Password or Key***.
 3. Select ***Files*** from left Navigation pane.
@@ -47,7 +47,7 @@ Configure File Server settings. This is required as you are using Embedded File 
 **Note**: You will be using the above Folder structure in the lab.
 10. Click ***Add Permissions*** and select your user. Click ***Add***.
 ![Add user to Folder permissions](images/user-permissions-1.png)
-11. Select ***All*** and ***Propagate to subfolders***. All of the permission check boxes should be checked. Click ***Save*** and exit the Permissions page.
+11. Select ***All*** and ***Propagate to subfolders***. All of the permission checkboxes should be checked. Click ***Save*** and exit the Permissions page.
 ![Folder permissions](images/user-permissions1-1.png)
 
 ## Task 2: Connect to File Server with FTP Client
@@ -59,10 +59,10 @@ To access files on the File Server you will need to use an FTP Client. You will 
 * Your Oracle Integration username.
 * Your Oracle Integration password.
 
-1. To obtain the File Server IP Address and Port, select ***Settings*** from left Navigation pane. The IP and Port are located in the **IP and Port Information** section of the **Settings** page.
+1. To obtain the File Server IP Address and Port, select ***Settings*** from the left Navigation pane. The IP and Port are located in the **IP and Port Information** section of the **Settings** page.
 2. Using your FTP Client choice, connect to the File Server using the SFTP - SSH File Transfer Protocol.  
 ![Example FTP Client configuration](images/ftpclient1.png)
-A example configuration using FileZilla FTP Client.  
+An example configuration using FileZilla FTP Client.  
 If the permissions are configured correctly, you should be able to list, read, and write files on the **Output** folder.
 ![Example FTP Client directory listing](images/ftpclient2-1.png)
 
@@ -73,7 +73,7 @@ To access the File Server from an Integration, you will need to create an FTP Co
 
 1. Starting at the Oracle Integration **Home** page, select ***Integrations***, then ***Connections*** from the left Navigation pane.
 2. Click ***Create***, then select the ***FTP*** Adapter and click ***Select***.
-3. From the **Create Connection** dialog, **Name** your connection ***File Server*** and leave the rest of the configurations as defaulted. Click ***Create***.  
+3. From the **Create Connection** dialog, **Name** your connection ***File Server*** and leave the rest of the configurations as default. Click ***Create***.  
 **Note**: If you get an error that the identifier already exists, change the Connection Name and remember this name for use later in the workshop.
 4. Enter the following configurations in the **FTP Connection** with the information you previously gathered from the File Server Settings page.  
 | Field                   | Value                                                 |
@@ -114,7 +114,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 2. Select the ERP Cloud connection which you have created in the previous labs. This invokes the Oracle ERP Cloud Endpoint Configuration Wizard.
 
-3. On the Basic Info page, for **What do you want to call your endpoint?** element, enter ***POEvent***.
+3. On the Basic Info page, for the **What do you want to call your endpoint?** element, enter ***POEvent***.
 
 4. Click ***Next***.
 
@@ -135,7 +135,7 @@ Add ERP PO Event trigger to the empty integration canvas.
     > **Tip:** If you are working on a shared ERP Cloud environment, it is recommended to use a distinct value in the filter expression under **ItemDescription**. For example `Lan Cable <your-initials>`. The value you enter is case sensitive. Write down this value for later use.
 
 
-    > **Note:** The filter is not required, however it does allow you to control which integration should be triggered. This is useful if there are multiple integrations subscribed to the PO Event in the same ERP Cloud environment. Without the filter expression, all integrations subscribed to the PO Event would get triggered whenever that specific event occurs.
+    > **Note:** The filter is not required, however, it does allow you to control which integration should be triggered. This is useful if there are multiple integrations subscribed to the PO Event in the same ERP Cloud environment. Without the filter expression, all integrations subscribed to the PO Event would get triggered whenever that specific event occurs.
 
 6. Click ***Next***.
 
@@ -151,7 +151,7 @@ Add ERP PO Event trigger to the empty integration canvas.
 
 ## Task 6: Add the FTP Adapter as invoke activity
 Add the FTP Adapter invoke to the integration canvas.
-1. Hover your cursor over the arrow in the integration canvas to display the ***+*** sign. Click the ***+*** sign and select the FTP Connection created in previous lab.
+1. Hover your cursor over the arrow in the integration canvas to display the ***+*** sign. Click the ***+*** sign and select the FTP Connection the previous lab.
 This invokes the FTP adapter Configuration Wizard.
 2. On the **Basic Info** page, select the following values:
   | **Element**        | **Value**          |       
@@ -166,8 +166,8 @@ This invokes the FTP adapter Configuration Wizard.
     | Output Directory | /home/users/***your username***/Output  |
     | File Name Pattern | PO%SEQ%.json  |
 
-    Leave the rest as defaults.
-3. On the **Schema page**, select the ***Sample JSON document*** from the drop down. In the **Do you want to specify the structure of the contents of the file?** as ***Yes***
+    Leave the rest as default.
+3. On the **Schema page**, select the ***Sample JSON document*** from the drop-down. In the **Do you want to specify the structure of the contents of the file?** as ***Yes***
 4. Copy the below json content into a file and save it to your desktop. Name it as ***PurchaseOrder.json***
 
 ```
@@ -258,7 +258,7 @@ Manage business identifiers that enable you to track fields in messages during r
 
 3. Click ***Activate***.
 
-    The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to **Active**.
+    The activation will be complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to **Active**.
 
 ## Task 10: Create Purchase Order in ERP Cloud
 Access your ERP Cloud environment.
@@ -269,7 +269,7 @@ Access your ERP Cloud environment.
 
 3. Click ***Purchase Orders***.
 
-4. In the **Overview** section, click ***Tasks*** button on the right.
+4. In the **Overview** section, click the ***Tasks*** button on the right.
        ![Tasks in Overview section](images/overview-tasks.png)
 
         This opens the Tasks menu.
@@ -279,7 +279,7 @@ Access your ERP Cloud environment.
 
   The **Create Order** dialog is displayed.
 
-6. Enter a valid entry in the **Supplier** field, for example `ABC Consulting`, and select the corresponding supplier in the drop down.
+6. Enter a valid entry in the **Supplier** field, for example, `ABC Consulting`, and select the corresponding supplier in the dropdown.
 
   **Tip:** You can also search for valid suppliers using the **Search** icon.
 
@@ -306,7 +306,7 @@ Access your ERP Cloud environment.
 
       ![Review PO line](images/review-po-line.png)
 
-10. Click the ***EDIT*** button under *Lines* section.
+10. Click the ***EDIT*** button under the *Lines* section.
       ![Edit PO line](images/edit-po-line.png)
 
       This opens the *Edit Line* page for the current purchase order line.
@@ -372,9 +372,9 @@ Follow these steps to view the file in the FTP Server
 
 1. In the Integration navigation pane, click ***Home*** > ***Settings*** > ***File Server*** > ***Files*** > ***home*** > ***users*** > ***Select your username*** > ***Output*** > You should see the **PO%.json** file.
 
-  **Note:** Currently, you can not view the contents of the file using Oracle Integration console but, you can use any third party tools like FileZilla to connect to this file server and pull the file from the FTP server to your local machine and view the file contents
+  **Note:** Currently, you can not view the contents of the file using the Oracle Integration console but, you can use any third-party tools like FileZilla to connect to this file server and pull the file from the FTP server to your local machine and view the file contents
 
-**Congratulations!** You have learnt how to subscribe ERP Cloud Business Events configuring the Out of the box ERP Cloud adapter. The Adapter abstracts the Business Events experience and provides an intuitive interface to select from the Catalog which greatly simplifies the task to perform Real Time Synchronization.
+**Congratulations!** You have learnt how to subscribe to ERP Cloud Business Events by configuring the Out of the box ERP Cloud adapter. The Adapter abstracts the Business Events experience and provides an intuitive interface to select from the Catalog which greatly simplifies the task to perform Real-Time Synchronization.
 
 You may now **proceed to the next lab**.
 
@@ -387,4 +387,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Subhani Italapuram, Director Product Management, Oracle Integration
 * **Contributors** - Kishore Katta, Director Product Management, Oracle Integration
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022

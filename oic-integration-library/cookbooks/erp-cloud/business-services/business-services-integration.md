@@ -2,12 +2,12 @@
 
 ## Introduction
 
-This lab walks you through the steps to create Integration flow which invokes ERP Cloud REST API.
+This lab walks you through the steps to create an Integration flow which invokes ERP Cloud REST API.
 
 This Lab explores the use of Oracle Integration to invoke Oracle ERP Cloud Business Services which
-validates the data on fly and creates a Payables Invoice in ERP Cloud . As part of the lab you will build the following use case scenario:
+validates the data on the fly and creates a Payables Invoice in ERP Cloud. As part of the lab you will build the following use case scenario:
 
-1.  You create and activate an integration that invokes Business services for example: Financials Business Unit, Suppliers LOV and Invoice REST API. The Integration flow validates data from source Request and conditionally creates Invoices after Validation.
+1.  You create and activate an integration that invokes Business services for example Financials Business Unit, Suppliers LOV and Invoice REST API. The Integration flow validates data from source Request and conditionally creates Invoices after Validation.
 2.  You then trigger the Integration flow from Oracle Integration Tester.
 3.  Your integration receives the request, validates various data elements and finally creates an Invoice in ERP Cloud
 
@@ -161,13 +161,13 @@ The Configure REST Endpoint wizard appears.
 
 5.  In the **Actions** page Select ***Query,Create,Update or Delete Information***. Click ***Next***
 
-6.  In the **Operations** page
+6.  On the **Operations** page
     - In the **Browse by** list of values Select ***Business (REST) Resources***
     - **Select a Service Application** Select ***fscmRestApp***
-    - **Select a Business Resource** search for ***FinBusinessUnitsLOV*** and Select the Resources
+    - **Select a Business Resource** to search for ***FinBusinessUnitsLOV*** and Select the Resources
     - **Select the operation** as ***getAll*** and Click ***Next***
 
-7.  In the **Summary** page Select ***Done***
+7.  On the **Summary** page Select ***Done***
 
 ## Task 5: Define the Data Mapping (validateBusinessUnit)
 
@@ -226,7 +226,7 @@ Two flow branches appear in the flow:
     - In the **Expression Name** field, enter ***BusinessUnitFound***
     - In the **Source** section, select $validateBusinessUnit/nsmpr5:getAllResponse/nsmpr5:items
     - Click ***>***
-      The $validateBusinessUnit/nsmpr5:getAllResponse/nsmpr5:items element appears in the first part of the expression, and a **green** check mark appears next to the node.
+      The $validateBusinessUnit/nsmpr5:getAllResponse/nsmpr5:items element appears in the first part of the expression, and a **green** checkmark appears next to the node.
     - Formulate the expression as count($validateBusinessUnit/nsmpr5:getAllResponse/nsmpr5:items). This returns # of items nodes
 
 4.  In the **New Condition** box, enter ***1.0*** in the field after the equal operator
@@ -298,16 +298,16 @@ A Map action named Map to createERPInvoice is automatically created. We'll defin
     | Invoice Lines > Prorate Across All Items Flag | Invoice Lines > Prorate Across All Items Flag |
 
     ```
-    Note: You can easily find a Source or Target Element by using Search functionality
+    Note: You can easily find a Source or Target Element by using the Search functionality
     ```
 
 4.  Click ***Validate***. A message confirming the expression is valid appears. Click ***Close*** and ***Save*** the Integration Flow.
 
 ### *Define the Global Variable*
 
-Define Global Variable to store the createInvoice Response. We need this because the createInvoice Response variable is created automatically within the scope of Switch condition. To access the response payload we will use Data Stitch Activity to achieve the requirement.
+Define Global Variable to store the createInvoice Response. We need this because the createInvoice Response variable is created automatically within the scope of the Switch condition. To access the response payload we will use Data Stitch Activity to achieve the requirement.
 
-1.  Select ***(x)*** Global Variables from the Right hand side palette
+1.  Select ***(x)*** Global Variables from the Right-hand side palette
 
 2.  Select ***Add Variable***.
 
@@ -332,7 +332,7 @@ Define Global Variable to store the createInvoice Response. We need this because
 
 ### *Define the Response mapping (createInvoice)*
 
-The response we got from ERP Cloud for **createERPInvoice** must be mapped to Integration Flow response to send back to the client. We will be mapping only few elements to indicate that a New Invoice is Created in ERP Cloud.
+The response we got from ERP Cloud for **createERPInvoice** must be mapped to the Integration Flow response to send back to the client. We will be mapping only a few elements to indicate that a New Invoice is Created in ERP Cloud.
 
 1.  Select the ***Map to createInvoice*** and Click ***Edit***
 
@@ -422,13 +422,13 @@ Manage business identifiers that enable you to track fields in messages during r
 
 3. Click ***Activate***
 
-    The activation will complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to **Active**.
+    The activation will be complete in a few seconds. If activation is successful, a status message is displayed in the banner at the top of the page, and the status of the integration changes to **Active**.
 
 ## Task 9: Formulate Request Payload to Create Invoice
 
-We, will be testing the Integration flow with a happy case and fault case by modifying the request payload.
+We will be testing the Integration flow with a happy case and fault case by modifying the request payload.
 
-1.  Login to ERP Cloud. Identify the user which has role to Create Invoices
+1.  Login to ERP Cloud. Identify the user who has the role of Create Invoices
 
 2.  Navigate to ***Payables > Invoices***
 
@@ -445,11 +445,11 @@ We, will be testing the Integration flow with a happy case and fault case by mod
       - Supplier
       - Supplier Site
 
-    Do not create the Invoice. We will need valid values to formulate Test Request payload.
+    Do not create the Invoice. We will need valid values to formulate the Test Request payload.
 
 ## Task 10: Test the Integration Flow
 
-We will test the end to end Integration flow using the built in Test Client. In an ideal scenario request would be posted from a Web, Mobile Client and so on, and so forth.
+We will test the end to end Integration flow using the built-in Test Client. In an ideal scenario, the request would be posted from a Web, Mobile Client and so on.
 
 1. From **Integrations** page Hover over the **Invoice Validation** Integration Flow and Select ***Run*** and Click on ***Test***
 
@@ -497,7 +497,7 @@ We will test the end to end Integration flow using the built in Test Client. In 
 
 ## Task 11: Extend the Usecase (Bonus Lab)
 
-    There are few hints provided in the Bonus Lab to extend the usecase which will Validate Supplier and Supplier Site. Refer the Introduction section for High Level Flow
+    There are a few hints provided in the Bonus Lab to extend the use case which will Validate the Supplier and Supplier Site. Refer to the Introduction section for High-Level Flow
 
 ### *Validate Supplier Activity*
 
@@ -527,7 +527,7 @@ We will test the end to end Integration flow using the built in Test Client. In 
 
       ![Final Bonus Integration Flow](images\final-integration-flow-bonus.png)
 
-**Congratulations!** You have learnt how to invoke ERP Cloud REST API with the Out of the box adapter capabilities. ERP Cloud Adapter abstracts the API/Services/Business Objects and provides an intuitive interface which Simplifies the task to perform Real Time Synchronization.
+**Congratulations!** You have learnt how to invoke ERP Cloud REST API with the Out of the box adapter capabilities. ERP Cloud Adapter abstracts the API/Services/Business Objects and provides an intuitive interface which Simplifies the task to perform Real-Time Synchronization.
 
 ## Learn More
 
@@ -538,4 +538,4 @@ We will test the end to end Integration flow using the built in Test Client. In 
 
 * **Author** - Kishore Katta, Director Product Management, Oracle Integration
 * **Contributors** - Subhani Italapuram, Director Product Management, Oracle Integration
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022

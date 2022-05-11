@@ -148,7 +148,7 @@ Configure File Server settings. This is required as you are using Embedded File 
 **Note**: You will be using the above Folder structure in the lab.
 10. Click **Add Permissions** and select your user. Click **Add**.
 ![Add user to Folder permissions](images/user-permissions-1.png)
-11. Select **All** and **Propagate to subfolders**. All of the permission check boxes should be checked. Click **Save** and exit the Permissions page.
+11. Select **All** and **Propagate to subfolders**. All of the permission checkboxes should be checked. Click **Save** and exit the Permissions page.
 ![Folder permissions](images/user-permissions1-1.png)
 
 ## Task 5: Connect to File Server with FTP Client

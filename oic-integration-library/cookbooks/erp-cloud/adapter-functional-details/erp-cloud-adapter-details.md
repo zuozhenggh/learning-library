@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this section we will see functional usage of ERP Cloud Adapter and its capabilities w.r.t design patterns described earlier.
+In this section, we will see the functional usage of the ERP Cloud Adapter and its capabilities w.r.t the design patterns described earlier.
 
 Estimated Time: 15 minutes
 
@@ -20,11 +20,11 @@ This lab assumes you have:
 
 ##	Task	1: Understand ERP Cloud Adapter usage roles
 
-Adapters Identify and Select pattern of Integration upfront. The adapter wizard provides an intuitive way to select task of choice by listing out relevant integration artifacts which provides an abstract view to the Integration Developer
+Adapters Identify and Select the pattern of Integration upfront. The adapter wizard provides an intuitive way to select the task of choice by listing out relevant integration artefacts which provide an abstract view to the Integration Developer
 
 ### **When used as a trigger role**
 
-Adapter Configuration wizard supports ability to process business events, expose an object interface, subscription to completed FBDI jobs
+Adapter Configuration wizard supports the ability to process business events, expose an object interface, subscription to completed FBDI jobs
 
 ![ERP Cloud Adapter Trigger Role](images/erp-adapter-trigger-role.png)
 
@@ -48,13 +48,13 @@ ERP Cloud Adapter Supports Events from various modules such as
 
 ### *Configure Business Objects*
 
-Gives functional view of the ERP Cloud objects to expose a comprehensive interface
+Gives a functional view of the ERP Cloud objects to expose a comprehensive interface
 
 ![ERP Cloud Adapter Business Objects](images/trigger-business-objects.png)
 
 
 ### **When used as a invoke role**
-Adapter Configuration wizard supports ability to invoke SOAP/REST services, simplify invocation of FBDI jobs, send import files (FBDI/Non-FBDI) to ERP Cloud
+Adapter Configuration wizard supports the ability to invoke SOAP/REST services, simplify invocation of FBDI jobs, and send import files (FBDI/Non-FBDI) to ERP Cloud
 
 ![ERP Cloud Adapter Webservices](images/invoke-business-services.png)
 
@@ -85,4 +85,4 @@ You may now **proceed to the next lab**.
 
 * **Author** - Kishore Katta, Product Management, Oracle Integration
 * **Contributors** - Subhani Italapuram, Product Management, Oracle Integration
-* **Last Updated By/Date** -
+* **Last Updated By/Date** - Kishore Katta, May 2022

@@ -41,6 +41,8 @@ Oracle Integration changes all that. It empowers you to:
 
   - Gain 360-degree views across your entire business. Easily monitor and analyze every application, integration, and workflow spanning the business process life cycle.
 
+### Video Preview
+
   [Introduction to Integrations](youtube:avAbtEYbWeQ)
 
 You may now **proceed to the next lab**.
