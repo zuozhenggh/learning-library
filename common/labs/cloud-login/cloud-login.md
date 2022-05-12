@@ -1,4 +1,4 @@
-# Get Started #
+# Get started
 
 ## Introduction
 
@@ -27,23 +27,23 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com) and enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
-    ![](images/cloud-oracle.png " ")
+    ![Cloud Account Name](images/cloud-oracle.png " ")
 
 2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
 
-    ![](images/cloud-login-tenant.png " ")
+    ![Expand Oracle Cloud Infrastructure Direct Sign-In](images/cloud-login-tenant.png " ")
 
 3. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
-    ![](images/oci-signin.png " ")
+    ![Sign in](images/oci-signin.png " ")
 
 4. You are now signed in to Oracle Cloud!
 
-    ![](images/oci-console-home-page.png " ")
+    ![OCI Console Home Page](images/oci-console-home-page.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Created By/Date** - Kay Malcolm, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
-- **Last Updated By** - Madhusudhan Rao, Database Product Management, Apr 2022
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Madhusudhan Rao
+- **Last Updated By** - Arabella Yao, Database Product Management, May 2022
