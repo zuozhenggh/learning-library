@@ -41,13 +41,13 @@ This workshop requires a certain number of ports to be available, a requirement 
 
 1.  Go to *Networking >> Virtual Cloud Networks*
 2.  Choose your network
-3.  Under Resources, select Security Lists
-4.  Click on Default Security Lists under the Create Security List button
-5.  Click Add Ingress Rule button
+3.  Under **Resources**, select **Security Lists**.
+4.  Click Default Security Lists under **Create Security**.
+5.  Click **Add Ingress Rules**.
 6.  Enter the following:  
     - Source CIDR: 0.0.0.0/0
     - Destination Port Range: *Refer to above table*
-7.  Click the Add Ingress Rules button
+7.  Click **Add Ingress Rules**.
 
 ## Task 3: Setup Compute   
 Using the details from the two steps above, proceed to the lab *Environment Setup* to setup your workshop environment using Oracle Resource Manager (ORM) and one of the following options:
@@ -56,5 +56,5 @@ Using the details from the two steps above, proceed to the lab *Environment Setu
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Nisharahmed Soneji, Sukin Varghese , Rene Fontcha
+* **Contributors** -  Nisharahmed Soneji, Sukin Varghese, Rene Fontcha
 * **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, June 2021

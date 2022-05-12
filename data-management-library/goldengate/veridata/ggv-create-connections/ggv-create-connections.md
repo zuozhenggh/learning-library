@@ -3,7 +3,8 @@
 ## Introduction
 This lab describes how to configure datasource connections. The Oracle GoldenGate Veridata  Server must be able to connect to an Oracle GoldenGate Veridata Agent for each database that contains source and target data that you want to compare. A connection is defined by a host, the port number of an Oracle GoldenGate Veridata Agent (or Manager, if a C-agent), and the datasource that is accessed by the agent. You need to create connections before you create any of the GoldenGate Veridata objects, such as groups, compare pairs, profiles, or jobs.
 
-Watch this short video on how to create datasource connections, groups, compare pairs, jobs, and repair data:
+### Video Preview
+  Watch this short video on how to create datasource connections, groups, compare pairs, jobs, and repair data:
 
 [](youtube:DiAapnWt0No)
 
@@ -30,13 +31,13 @@ To get started with Oracle GoldenGate Veridata, you must define a connection to 
 To create connections:
 1. From the left navigation pane, click **Configuration** and then click **Connection Configuration** to display the **Connection configuration** page.
 
-    ![](./images/2-connection-configuration.png " ")
+    ![Connection Configuration](./images/connection-configuration.png " ")
 
 2. Click **New** to display the **New Connection Assistant** page to create one connection for the source database.
 
 3. Enter the **Connection Name**, for example, **SourceConnection** and click **Next**.
 
-    ![](./images/3-connection-name-description.png " ")
+    ![Connection Name](./images/connection-name-description.png " ")
 
 4. Enter the following details:
 
@@ -67,14 +68,14 @@ To create connections:
 
     * **Datasource Type**: The datasource that is associated with this agent. Click **Verify**.
 
-    ![](./images/4-new-connection-assistant.png " ")
+    ![New Connection Assistant](./images/new-connection-assistant.png " ")
 
 5. Click **Next** to enter the Datasource Connection credentials:
 
     * **User**: source
     * **Password**: source
 
-    ![](./images/5-new-connection-assistant-datasource-credentials.png " ")
+    ![Connection Credentials](./images/new-connection-assistant-datasource-credentials.png " ")
 
 6. Click **Test Connection**.
 
@@ -86,18 +87,20 @@ To create connections:
 
     * **User**: target
     * **Password**: target
-    
-    ![](./images/6-new-connection-create-another-connection.png " ")  
+
+    ![Target Connection](./images/new-connection-create-another-connection.png " ")  
 
 9. Click **OK** to display the **New Connection Assistant** page.
 
 You may now [proceed to the next lab](#next).
 
 ## Learn More
+* [Get Started with Oracle GoldenGate Veridata Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=833&clear=180&session=4555570607052)
+* [Master Oracle GoldenGate Veridata Advanced Features Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=913&clear=180&session=4555570607052)
 * [Oracle GoldenGate Veridata Documentation](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/index.html)
 * [Configuring Connections](https://docs.oracle.com/en/middleware/goldengate/veridata/12.2.1.4/gvdug/configure-workflow-objects.html#GUID-75005B4D-5C24-4467-A68B-1FE66A168905)
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Sukin Varghese , Jonathan Fu, Rene Fontcha
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, November 2021
+* **Contributors** -  Sukin Varghese, Jonathan Fu
+* **Last Updated By/Date** - Anuradha Chepuri, May 2022
