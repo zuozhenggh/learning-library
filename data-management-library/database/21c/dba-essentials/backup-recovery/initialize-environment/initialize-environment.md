@@ -49,14 +49,19 @@ Alternatively, you may run the script file `.set-env-db.sh` from the home locati
 
 In this task, you download and execute the SQL script file using the following steps.
 
-1. Download and save the [backup-and-recovery-operations-prerequisities.sql](backup-and-recovery-operations-prerequisities.sql) script file.
+1. Download and save the [backup-and-recovery-operations-prerequisities.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/wVaLF_P62mfpzEzA7rRaCh7CgG8WtfStsG5MQ_kmRI6JkWNwErWWnQREmO0FLXcv/n/c4u04/b/livelabsfiles/o/labfiles/backup-and-recovery-operations-prerequisities.zip) file.
 
-2. Open the backup-and-recovery-operations-prerequisities.sql and update the following details in the script file.
+2. Extract the contents from the zip file using the following command.
+    ```
+    $ <copy>unzip backup-and-recovery-operations-prerequisities.zip</copy>
+    ```
+
+3. Open the backup-and-recovery-operations-prerequisities.sql script file, update the following details, and save.
     * password - Provide your password.
     * host name - Provide the host name of the machine where the database is installed.
     * port - Provide the port name. Usually port number is 1521.
 
-3. Start the SQL\*Plus prompt and connect as the sysdba user.
+4. Start the SQL\*Plus prompt and connect as the sysdba user.
     ```
     $ <copy>./sqlplus / as sysdba</copy>
     ```
@@ -72,12 +77,12 @@ In this task, you download and execute the SQL script file using the following s
     Version 21.3.0.0.0
     ```
 
-4. Run the following command to run the SQL script file.
+5. Run the following command to run the SQL script file.
     ```
     SQL> <copy>START backup-and-recovery-operations-prerequisities.sql</copy>
     ```
 
-5. Exit the SQL\*Plus prompt.
+6. Exit the SQL\*Plus prompt.
 
 
 You may now **proceed to the next lab**.
