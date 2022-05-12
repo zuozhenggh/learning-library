@@ -61,7 +61,7 @@ If you already have a cloud account, skip to **Task 2**.
           ![Verify My Code](images/free-tier-address-4.png " ")
 
 10. Click the **Add payment verification method** button.
-          ![Payment Verification](images/free-tier-payment-1.png " ")  
+          ![Payment Verification](images/free-tier-payment-1.png " ")
 
 11. Choose the verification method. In this case, click the **Credit Card** button. Enter your information and payment details.
 
