@@ -4,7 +4,7 @@
 
 In this lab you will build the Prohpet model based off of the historical data available to predict future SP500 values (at market close). You will then deploy this model to the OCI Model Catalog.
 
-Estimated time: 45 minutes
+Estimated Time: 45 minutes
 
 ### Objectives
 
@@ -18,12 +18,11 @@ In this lab you will:
 * An Oracle Free Tier, Always Free, Paid or LiveLabs Cloud Account (see prerequisites in workshop menu)
 * OCI Data Science service with dependencies (see previous lab)
 
-## Task 1: Prepare for Prophet
+## **Task 1:** Prepare for Prophet
 
-1. Run the cell under the header "Prepare for Prophet". This cell will create a new pandas dataframe, that will rename the columns and take the log value of the
-   SP500 closing value.
+1. Run the cell under the header "Prepare for Prophet". This cell will create a new pandas dataframe, that will rename the columns and take the log value of the SP500 closing value.
 
-## Task 2: Running Prophet
+## **Task 2:** Running Prophet
 
 1. Run the cell under the heading "Running Prophet". This cell first defines the Prophet model you will use, and then fits that model to the SP500 historical data.
    Next you create a new dataframe for future predictions. This new dataframe, called "future", will list all the dates for the next 365 days (since we are predicting the SP500
@@ -31,14 +30,12 @@ In this lab you will:
    historical data.
 
 
-## Task 3: Plotting the Forecast
+## **Task 3:** Plotting the Forecast
 
-1. Run all the under the header "Plotting the Forecast". There are detailed descriptions of what each cell does inside the notebook itself. At a high level, 
-   what these cells do is determine the usefullness and statistical significance of this model. You will also analyze how the projected forecast differs from what
-   the actual data shows.
+1. Run all the under the header "Plotting the Forecast". There are detailed descriptions of what each cell does inside the notebook itself. At a high level, what these cells do is determine the usefullness and statistical significance of this model. You will also analyze how the projected forecast differs from what the actual data shows.
 
 
-## Task 4: Deploy model to model catalog
+## **Task 4:** Deploy Model to Model Catalog
 
 1. Create working model
 
@@ -74,8 +71,7 @@ In this lab you will:
 
     Now we're going to deploy this model to its own compute instance. This will take the model from the catalog and create a runtime version of it that's ready to receive requests. This uses normal OCI compute shapes. Next, choose "Create Deployment".
 
-    ![](./images/go-to-model-catalog3.png)
-    ![](./images/create-deployment-button.png)
+    ![Deploy Model](./images/go-to-model-catalog3.png)
 
     - Give the model deployment a name, e.g. "prophet forecasting model deployment"
     - Choose the right model (prophet-forecasting-model)
@@ -83,13 +79,13 @@ In this lab you will:
 
     Finally, submit the deployment. This should take about 10 minutes. Finally, you should see that the compute instance is active.
 
-    ![](./images/deployed-model3.png)
+    ![Submit Deployment](./images/deployed-model3.png)
     
 Congratulations on completing this lab!
 
 You may now proceed to the next lab.
 
 ## Acknowledgements
-* **Authors** - Simon Weisser - Cloud Engineer 
+* **Authors** - Simon Weisser - Cloud Engineer, Tom McGinn - Database Innovations Architect, Database Product Management
 * **Last Updated By/Date** - Simon Weisser, Dec 2021
 
