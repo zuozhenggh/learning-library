@@ -156,7 +156,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     ```
 
     ```
-    <copy>unzip spdemo.zip -d ./</copy>
+    <copy>unzip spdemo.zip -d ./spdemo</copy>
     ```
     ```
     <copy>cd spdemo</copy>
