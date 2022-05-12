@@ -3,7 +3,7 @@
    "help": "livelabs-help-analytics_us@oracle.com",
    "tutorials": [
       {
-         "title": "How can I verify that the incremental update has been completed in Fusion Analytics?",
+         "title": "How can I verify that the incremental update has been completed in Fusion Analytics Warehouse (FAW)?",
          "description": "Learn how to verify that your incremental updates have been completed in Fusion Analytics Warehouse (FAW)",
          "filename": "sprint-faw-verify-incremental-update.md"
       },
