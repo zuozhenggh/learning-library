@@ -2,81 +2,32 @@
 
 ## Introduction
 
-Before you get started, you will need an Oracle Cloud account. This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
+Oracle Cloud is the industry's broadest and most integrated cloud provider, with deployment options ranging from the public cloud to your data center. Oracle Cloud offers best-in-class services across Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).
 
 ### Existing Cloud Accounts
 
 If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **Task 2** to sign in to your cloud tenancy.
 
-### Two Cloud Offers in One
+### Types of Cloud Accounts
 
-Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first.
+We offer two types of Cloud Accounts:
 
-![Free trial.](images/freetrial.png " ")
+*Free Tier Accounts*:  After you sign up for the free Oracle Cloud promotion or sign up for a paid account, you’ll get a welcome email. The email provides you with your cloud account details and sign in credentials.
 
-### What you will need
+*Oracle Cloud Paid Accounts*:  When your tenancy is provisioned, Oracle sends an email to the default administrator at your company with the sign-in credentials and URL. This administrator can then create a user for each person who needs access to the Oracle Cloud. Check your email or contact your administrator for your credentials and account name.
 
-* A valid email address
-* Ability to receive SMS text verification (only if your email isn't recognized)
+### Objectives
+
+- Learn how to login to your Oracle Cloud Account
+
+### Prerequisites
+- Cloud Account Name - The name of your tenancy (supplied by the administrator or in your Oracle Cloud welcome email)
+- Username
+- Password
 
 > **Note**: Interfaces in the following screenshots may look different from the interfaces you will see.
 
-## Task 1: Create Your Free Trial Account
-
-If you already have a cloud account, skip to **Task 2**.
-
-1. Open up a web browser to access the Oracle Cloud account registration form at [oracle.com/cloud/free](https://signup.cloud.oracle.com).
-
-   You will be presented with a registration page.
-       ![Registration](images/cloud-infrastructure.png " ")
-2.  Enter the following information to create your Oracle Cloud Free Tier account.
-    * Choose your **Country**
-    * Enter your **Name** and **Email**
-
-3. Once you have entered a valid email address, select the **Verify my email** button.
-    The screen will appear as follows after you select the button:
-       ![Verify Email](images/verify-email.png " ")
-
-4. Go to your email. You will see an account validation email from Oracle in your inbox. The email will be similar to the following:
-       ![Verification Mail](images/verification-mail.png " ")
-
-5. Select the link (if possible) or copy and paste the link into your browser.
-
-6. Enter the following information to create your Oracle Cloud Free Tier account.
-    - Choose a **Password**
-    - Enter your **Company Name**
-    - Your **Cloud Account Name** will generate automatically based on your inputs. You can change that name by entering a new value. Remember what you wrote. You'll need this name later to sign in.
-    - Choose a **Home Region**.  Your Home Region cannot be changed once you sign-up. Note: Based on the current design of the workshop and resource availability, it is recommended not to use the London region for this workshop at this time.
-    - Click **Continue**
-    ![Account Info](images/account-info.png " ")
-
-
-7.  Enter your Address information.  Click **Continue**.
-          ![Free Tier Address](images/free-tier-address.png " ")
-
-8.  Choose your country and enter a mobile number for verification.   Click the **Text me a code** button.
-          ![Free Tier Country and Mobile Info](images/free-tier-address-2.png " ")
-
-9. Once you receive your code, enter it and click **Verify My Code**.
-          ![Verify My Code](images/free-tier-address-4.png " ")
-
-10. Click the **Add payment verification method** button.
-          ![Payment Verification](images/free-tier-payment-1.png " ")
-
-11. Choose the verification method. In this case, click the **Credit Card** button. Enter your information and payment details.
-
-    >**Note:** This is a free credit promotion account. You will not be charged unless you elect to upgrade the account.
-
-    ![Credit Card](images/free-tier-payment-2.png " ")
-
-12. Once your payment verification is complete, review and accept the agreement by clicking the check box.  Click the **Start my free trial** button.
-
-    ![Start Free Trial](images/free-tier-agreement.png " ")
-
-13. Your account is provisioning and should be available soon! You might want to log out as you wait for your account to be provisioned. You'll receive two emails from Oracle. One email will be the initial notification that provisioning is underway. The other email will be a notification that provisioning is complete. Here is a copy of the final notification:
-       ![Account Provisioned](images/account-provisioned.png " ")
-
-## Task 2: Sign in to Your Account
+## Task 1: Sign in to Your Account
 
 _Please note that while your tenancy is initially created, you will only see a direct login. Once your tenancy is fully provisioned, you will see the screens as described below._
 
@@ -98,12 +49,11 @@ _Please note that while your tenancy is initially created, you will only see a d
 
     ![Cloud Console](images/oci-console-home-page.png " ")
 
-
 You may now **proceed to the next lab**
 
 
 ## **Acknowledgements**
 
 - **Created By/Date** - Kay Malcolm, Database Product Management, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
-- **Last Updated By** - Arabella Yao, Product Manager, Database Product Management, March 2022
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Arabella Yao
+- **Last Updated By** - Arabella Yao, Product Manager, Database Product Management, May 2022
