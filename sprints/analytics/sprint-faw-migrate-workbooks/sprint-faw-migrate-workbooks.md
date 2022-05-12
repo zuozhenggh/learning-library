@@ -39,6 +39,8 @@ When you are done creating your DV workbooks in your test environment with your 
   ![Import button](images/import-button.png)
 
 6. Your DV workbook should now be imported in your production environment.
+    > **Note:** Open the DV Workbook in your production environment to confirm all visuals and canvas have the required data.
+
   ![Result](images/result.png)
 
 Congratulations! You have successfully learned how to migrate your DV workbooks from your test to production environment.
