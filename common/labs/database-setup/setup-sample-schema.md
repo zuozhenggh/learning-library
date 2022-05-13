@@ -67,5 +67,5 @@ The above copyright notice and this permission notice shall be included in all c
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Contributors** - Anoosha Pilli, Anoosha Pilli, LiveLabs Team
-- **Last Updated By/Date** - LiveLabs Team, August 2020
+- **Contributors** - Anoosha Pilli, Arabella Yao, LiveLabs Team
+- **Last Updated By/Date** - Arabella Yao, May 2022
