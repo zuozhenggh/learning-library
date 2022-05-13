@@ -1,4 +1,4 @@
-# Need Help?   
+# Need help?
 
 ## Introduction
 This page is designed to help you solve some common problems users face in this LiveLab. 

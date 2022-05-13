@@ -1,7 +1,7 @@
-# Need Help?   
+# Need help?
 
 ## Introduction
-This page is designed to help you solve some common problems users face in this LiveLab. 
+This page is designed to help you solve some common problems users face in this LiveLab.
 
 If you still find yourself stuck or would like to report an issue with the workshop, click the question mark icon in the upper left corner to contact the LiveLabs team directly via email.  
 
@@ -17,7 +17,7 @@ For more about getting support using our email, click [here](#HowtoFormatYourSup
 ## How to Format Your Support Email Request
 This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. Follow the steps below to contact us and get a quick resolution to your issue.
 
-1. Do not change the subject line. 
+1. Do not change the subject line.
 2. Include the description of your issue and any pertinent information in the contents on your email.
 
     ![](images/e-mail.png)

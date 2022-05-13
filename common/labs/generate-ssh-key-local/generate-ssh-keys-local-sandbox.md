@@ -18,7 +18,7 @@ If you already have an SSH key pair, you may use that to connect to your environ
     <copy>ssh-keygen</copy>
     ````
 
-    ![](images/keylab-028.png " ")
+    ![Generate SSH key](images/ssh-keygen.png " ")
 
 
 3.  Type the following commands in the terminal window to verify that the public and private keys were created.  And to copy the contents of the public key for use in creating your instance in the OCI dialog.
@@ -35,17 +35,17 @@ If you already have an SSH key pair, you may use that to connect to your environ
     <copy>cat id_rsa.pub</copy>
     ```
 
-    ![](images/keylab-032.png " ")
+    ![Examine files](images/ssh-key-content.png " ")
 
     Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 4.  If you're ready to create an instance, copy the contents and paste when prompted for the SSH key. Make sure that you remove any hard returns that may have been added when copying.
 
-    ![](images/keylab-033.png " ")
+    ![](images/copy-ssh-key.png " ")
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Option 2:  Windows 10
 
@@ -53,7 +53,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
 1.  Open a **Powershell** command window on your Windows 10 system by clicking it's icon/tile or by typing 'powershell' in the search field in the Start bar.
 
-    ![](images/keylab-005.png " ")
+    ![Powershell](images/powershell.png " ")
 
 2.  Enter the command ```ssh-keygen``` into the terminal window. Pay particular attention to where the file will be saved so you can locate it later.   ```ssh-keygen``` will default to the standard .ssh directory under the user's base directory.
 
@@ -63,9 +63,9 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
 3.  Press Enter at all of the prompts to accept the default location, default file names, and no passphrase.
 
-    *Note: In Unix variants, a folder with a dot (.) in front of it was usually designated for configuration files and 'hidden' from normal view.   However, a dot (.) doesn't mean anything special in front of Windows folders.  So the folder will exist but won't be hidden.*
+    >**Note:** In Unix variants, a folder with a dot (.) in front of it was usually designated for configuration files and 'hidden' from normal view.   However, a dot (.) doesn't mean anything special in front of Windows folders.  So the folder will exist but won't be hidden.
 
-    ![](images/keylab-006.png " ")
+    ![SSH keygen powershell](images/ssh-keygen-powershell.png " ")
 
 4.  Confirm that your keys exist and were created properly.   Enter the following commands in the Powershell window.
 
@@ -81,24 +81,24 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     <copy>cat id_rsa.pub</copy>
     ```
 
-    ![](images/keylab-007.png " ")
+    ![SSH key content powershell](images/ssh-key-content-powershell.png " ")
 
     You now have a working SSH key pair and can use it for secure communications to instances in the cloud. Do not share the *private key* `id_rsa` with anyone unless you understand what you're doing. You should only ever need to share and copy the *public key* `id_rsa.pub`.
 
 5.  Also note that if you elect to copy/paste the content of the key into certain dialogs for your labs, you will need to locate the file in Windows, either through Powershell, Explorer, or other directory tools, and open the public key file to copy its content. The example below is using Powershell to ```cat``` the content. You can select the text with your mouse but the copy/paste commands aren't available. Use ```<ctrl-c>``` to copy the contents to the clipboard for pasting into other application dialogs.
 
-    ![](images/keylab-008.png " ")
+    ![Copy powershell](images/copy-powershell.png " ")
 
     Or you can just open the file with Notepad, Wordpad, or other text editors.
 
-    *Note: Don't use MS Word or any other rich text editors as they might add extra formatting characters which will render the key unusable.*
+    >**Note:** Don't use MS Word or any other rich text editors as they might add extra formatting characters which will render the key unusable.
 
-    ![](images/keylab-009.png " ")
+    ![SSH key notepad](images/sshkey-notepad.png " ")
 
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Option 3a: Prior Windows Versions - Git for Windows
 
@@ -108,11 +108,12 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     [Click here to download Git for Windows](https://git-scm.com/download/win)
 
-2. Follow the instructions for installation. *Note: Installing Git for Windows is beyond the scope of this lab.*
+2. Follow the instructions for installation.
+    >**Note:** Installing Git for Windows is beyond the scope of this lab.
 
 3.  Once installed, you should have an entry in your Windows Start menu for Git which should include the **Git Bash** command. Click on the **Git Bash** command.
 
-    ![](images/keylab-010.png " ")
+    ![Git Bash](images/git-bash.png " ")
 
 4.  Type ```ssh-keygen``` into the terminal window. Press the Enter key to accept the default location (~/.ssh) and default filename (id_rsa) and ```<Enter>``` two more times for no passphrase.
 
@@ -120,9 +121,9 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
     <copy>ssh-keygen</copy>
     ```
 
-    ![](images/keylab-011.png " ")
+    ![SSH key gen Git Bash](images/sshkey-gen-git-bash.png " ")
 
-    *Note: The tricky part here is that **Git Bash** uses a simulated Unix home directory. In order to view, retrieve, or copy your keys, you will need to navigate into the Windows directory structure.*
+    >**Note:** The tricky part here is that **Git Bash** uses a simulated Unix home directory. In order to view, retrieve, or copy your keys, you will need to navigate into the Windows directory structure.
 
 5.  First navigate 'up' into the root C: directory.
 
@@ -134,23 +135,23 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
     ```
     cd Users/<your home folder name>/.ssh/
     ```
-    *Note: The angle brackets <> should not appear in your code.*
+    >**Note:** The angle brackets <> should not appear in your code.
 
     ```
     <copy>ls</copy>
     ```
 
-    ![](images/keylab-012.png " ")
+    ![Examine files](images/examine-files.png " ")
 
     Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 6.  Make a note of where your SSH public and private key files are located. You may be asked to upload the file or to copy/paste the content in other labs for Oracle Cloud Services. Copy the key content exactly, capturing space after the key characters may render your key invalid. In the example below, you can use the gitbash ```cat``` command to display the public key file content. You can select the key file content and right-click to **Copy** the key.  Or you can upload the file directly.
 
-    ![](images/keylab-013.png " ")
+    ![Copy SSH key Git Bash](images/copy-ssh-key-git-bash.png " ")
 
-    *Note: If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.*
+    >**Note:** If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Option 3b: Windows Versions - PuTTY
 
@@ -166,33 +167,33 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 3.  Open the Windows start menu and navigate to the PuTTY folder. Select the PuTTYgen utility.
 
-    ![](images/keylab-014.png " ")
+    ![PuTTYgen](images/puttygen.png " ")
 
 4.  Verify that the defaults are selected and the key type should be RSA set at 2048 bits.   Click on the **Generate** button.
 
-    ![](images/keylab-015.png " ")
+    ![Generate](images/generate.png " ")
 
 5.  Follow the instructions and move your mouse around the empty grey area to generate random information. PuTTY is using that information to generate a random, secure SSH key.
 
-    ![](images/keylab-016.png " ")
+    ![Move mouse](images/move-mouse.png " ")
 
 6.  In the below screen, PuTTY has taken your mouse information and created a key. We need to do several things here that are a little different than other key generation methods. Although we can't actually use the file for an OCI Instance, we'll still want to save the key for future reference. Click the **Save public key** button.
 
-    *Note: PuTTY does not save keys in an OpenSSH compatible format. Thus, if you upload a public key file created with PuTTY to a Linux/Unix system using OpenSSH, the key will not be read correctly. However, the key information itself, when copied directly from the PuTTYgen application, does work correctly when **pasted** into fields that then use that information to create a proper OpenSSH compatible key. For example, when creating an instance on OCI, you can **paste** the SSH key from PuTTY and it will work correctly.*
+    >**Note:** PuTTY does not save keys in an OpenSSH compatible format. Thus, if you upload a public key file created with PuTTY to a Linux/Unix system using OpenSSH, the key will not be read correctly. However, the key information itself, when copied directly from the PuTTYgen application, does work correctly when **pasted** into fields that then use that information to create a proper OpenSSH compatible key. For example, when creating an instance on OCI, you can **paste** the SSH key from PuTTY and it will work correctly.
 
-    ![](images/keylab-017.png " ")
+    ![Save public key](images/save-public-key.png " ")
 
 7.  In the *Save public key as:* dialog, name your key and add the ```.pub``` extension to the filename. It will also be helpful if save the file in the common ```.ssh``` folder under your Windows username / folder structure. In this example the key-files will be accessible ```C:\Users\<username>\.ssh``` directory. Store the keys here for easy future reference.
 
-    ![](images/keylab-018.png " ")
+    ![Save public key as](images/save-public-key-as.png " ")
 
 8.  Next you will need to save the private key. Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.
 
-    ![](images/keylab-019.png " ")
+    ![Save private key](images/save-private-key.png " ")
 
 9.  Name the key and verify that it's saved with a ```.ppk``` extension to identify the file as the private key file. Do not share your private key with anyone.
 
-    ![](images/keylab-020.png " ")
+    ![Save private key as](images/save-private-key-as.png " ")
 
 10. Now you've saved the keys for future reference, all you have to do is copy the key information from the PuTTY dialog.
 
@@ -208,7 +209,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     Follow below instructions to connect to a cloud instance via SSH using the PuTTY terminal.
 
-### Connecting to an instance using PuTTY
+### Connect to an instance using PuTTY
 
 1.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
 
@@ -286,6 +287,5 @@ You may now proceed to the next lab.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - LiveLabs Team, October 2020
-* **Workshop (or Lab) Expiry Date** - March 27, 2021
-
+* **Contributors** - Arabella Yao, Database Product Management
+* **Last Updated By/Date** - Arabella Yao, May 2022
