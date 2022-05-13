@@ -7,7 +7,7 @@ This lab provides detailed instructions of connecting to Oracle Analytics Server
 
 ### Objectives
 - Validate that the environment has been initialized and is ready
-<if type="external">- Download and stage workshop artifacts (Only needed if not using the remote desktop)</if>
+<if type="external">- Download and stage workshop artifacts (*Only needed if not using the remote desktop*)</if>
 
 ### Prerequisites
 This lab assumes you have:
@@ -104,7 +104,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
 In order to run this workshop, you will need a set of files that have been conveniently packaged and stage on the instance for you. If you are bypassing the remote desktop and  connecting directly to OAS UI from your local computer/workstation, proceed as indicated below.
 
 1. Download and save to a staging area on your laptop or workstation.
-    - [OAS_Retail_LiveLabs_Content.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/aLrO2xRW8wG3CP1M0Lj3TTjXPoktlzmBsurAo7qESaJPLK3MkRKA4ch1Hox2NcfC/n/natdsecurity/b/labs-files/o/OAS_Retail_LiveLabs_Content.zip)
+    - [`OAS_Retail_LiveLabs_Content.zip`](https://objectstorage.us-ashburn-1.oraclecloud.com/p/aLrO2xRW8wG3CP1M0Lj3TTjXPoktlzmBsurAo7qESaJPLK3MkRKA4ch1Hox2NcfC/n/natdsecurity/b/labs-files/o/OAS_Retail_LiveLabs_Content.zip)
 
 2. Uncompress the ZIP archive
 </if>
