@@ -20,7 +20,7 @@ We'll create an Autonomous JSON Database, and connect to it using the standard "
 
 We'll then explore the same data using "Database Actions" in Oracle's Cloud Infrastructure.
 
-You can complete this entire workshop using your web browser. There is no need to install any extra software. For simplicity, we will run the command-line MongoDB shell program from a non-graphical virtual machine (Compute Node).
+You can complete this entire workshop using your web browser. There is no need to install any extra software. For simplicity, we will run the command-line MongoDB shell program from Oracle's Cloud Shell.
 
 If you have MongoDB tools such as MongoDB Shell or MongoDB Atlas installed on your own machine, you could run the MongoDB commands from there instead. However, the workshop will assume at all times that you are following the provided instructions.
 
@@ -79,17 +79,12 @@ Now you know what JSON is and also why so many people love it. Enough theory for
 ### Objectives
 
 In this workshop, you will explore: 
-*	How to start an Oracle Autonomous (JSON) Database,
-*	Fundamentals on the JSON data model and when to use it,
-*	How to store, query and process JSON document in collections using the SODA Api,
-*	How to use SQL to query, generate and process JSON data,
-*	How to convert JSON data to the relational model (for example: for analytics or reporting),
-*	How to generate JSON data from relational sources (for example: to serve a microservice),
-*	How to update JSON data,
-*	How to perform transactions over JSON data,
-*	How to use stored procedures with JSON business logic.
+*	How to provision an Oracle Autonomous (JSON) Database,
+*	How to install MongoDB Shell in Oracle Cloud Shell
+*   How to connect to Autonomous Database from MongoDB Shell and create a collection
+*   How to access the MongoDB collection from JSON Workshop and SQL
 
-### Prerequisites
+## Prerequisites
 
 * An Oracle Cloud Account
 

@@ -1,4 +1,4 @@
-# Install VNC Server- LiveLabs #
+# Install VNC Server - LiveLabs
 
 ## Introduction
 This lab will show you how to install a VNC Server, for graphical applications, on a Compute Instance.
