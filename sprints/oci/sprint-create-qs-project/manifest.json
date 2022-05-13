@@ -2,59 +2,29 @@
    "workshoptitle": "LiveLabs Sprints",
    "help": "livelabs-help-db_us@oracle.com",
    "tutorials": [
-      {
-        "title": "How do I create an OCI Query Service project?",
+     {
+        "title": "How do I create the required Query Service policies?",
         "type": "tenancy",
-        "description": "This lab walks you through how to create a new OCI Data Catalog instance.",
+        "description": " ",
+        "filename": "./../sprint-create-qs-policies/sprint-create-qs-policies.md"
+     },
+      {
+        "title": "How do I create a Query Service project?",
+        "type": "tenancy",
+        "description": " ",
         "filename": "./../sprint-create-qs-project/sprint-create-qs-project.md"
       },
       {
-         "title": "How do I provision a Data Catalog instance?",
-         "type": "freetier",
-         "description": "This lab walks you through how to create a new OCI Data Catalog instance.",
-         "filename": "./../../data-management/sprint-provision-dcat-instance/sprint-provision-dcat-instance.md"
-      },
-      {
-         "title": "How do I find a Data Catalog instance OCID?",
+         "title": "How do I query data in Query Service?",
          "type": "freetier",
          "description": " ",
-         "filename": "./../../oci/sprint-find-data-catalog-ocid/sprint-find-data-catalog-ocid.md"
+         "filename": "./../sprint-query-data-qs/sprint-query-data-qs.md"
       },
       {
-         "title": "How do I create an OCI compartment?",
+         "title": "How do I create an OCI compartment? (Optional)",
          "type": "freetier",
          "description": "This lab walks you through how to create a new OCI compartment.",
          "filename": "./../../oci/sprint-create-compartment/sprint-create-compartment.md"
-      },
-      {
-         "title": "How do I find the compartment OCID?",
-         "type": "freetier",
-         "description": "This lab walks you through how to create a new OCI compartment.",
-         "filename": "./../../oci/sprint-find-compartment-ocid/sprint-find-compartment-ocid.md"
-      },
-      {
-         "title": "How do I find a region identifier?",
-         "type": "freetier",
-         "description": "This lab walks you through how to create a new OCI compartment.",
-         "filename": "./../../oci/sprint-find-region-identifier/sprint-find-region-identifier.md"
-      },
-      {
-         "title": "How do I grant users access to a Data Catalog instance?",
-         "type": "freetier",
-         "description": "",
-         "filename": "./../../oci/sprint-grant-access-data-catalog/sprint-grant-access-data-catalog.md"
-      },
-      {
-         "title": "How do I create a Dynamic Group?",
-         "type": "freetier",
-         "description": "This lab walks you through how to create a new dynamic group.",
-         "filename": "./../../oci/sprint-create-dynamic-group/sprint-create-dynamic-group.md"
-      },
-      {
-         "title": "How do I create an access policy for a Dynamic Group?",
-         "type": "freetier",
-         "description": "This lab walks you through how to create a new dynamic group policy.",
-         "filename": "./../../oci/sprint-create-dynamic-group-access-policy/sprint-create-dynamic-group-access-policy.md"
       }
    ],
    "task_type": "Sections"
