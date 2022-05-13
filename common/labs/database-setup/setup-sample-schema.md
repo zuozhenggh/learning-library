@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to setup your database schemas for the subsequent labs.
 
-## Task: Install Sample Data
+## Task 1: Install Sample Data
 
 In this step, you will install a selection of the Oracle Database Sample Schemas.  For more information on these schemas, please review the Schema agreement at the end of this lab.
 
@@ -11,7 +11,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
 
 1.  Copy the following commands into your terminal. These commands download the files needed to run the lab.  (Note: *You should run these scripts as the opc user*.  Run a *whoami* to ensure the value *opc* comes back.  If you are stil the oracle user, type the **exit** command to return back to opc)
 
-    Note: If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
+    >**Note:** If you are running in Windows using putty, ensure your Session Timeout is set to greater than 0.
     ```
     whoami
     ```
@@ -21,7 +21,7 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     cd /home/opc/
 
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/nfscripts.zip
-    
+
     unzip nfscripts.zip;
 
     chmod +x *.sh
@@ -30,9 +30,8 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     </copy>
     ````
 
-    ![](./images/step1.1-setupscript1.png " " )
+    ![Set up script](./images/step1.1-setupscript1.png " " )
 
-    ![](./images/setupNFresults.png " " )
 
 2.  Switch now to the oracle user and run oraenv to set up your environment.  Enter *ORCL* when prompted for the SID.
     ````
@@ -42,7 +41,6 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     </copy>
     ORCL
     ````
-    ![](./images/oraenv.png " " )
 
 3.  Install the Sample Schemas by running the script below. Accept the default SID *ORCL* when prompted.
 
@@ -51,8 +49,6 @@ By completing the instructions below the sample schemas **SH**, **OE**, and **HR
     . /home/oracle/setupNF_DB.sh
     </copy>
     ````
-
-    ![](./images/setupNFscriptresults.png " " )
 
 Congratulations! Now you have the environment to run the labs.
 
@@ -71,6 +67,5 @@ The above copyright notice and this permission notice shall be included in all c
 ## **Acknowledgements**
 
 - **Author** - Troy Anthony, DB Product Management
-- **Contributors** - Anoosha Pilli, Anoosha Pilli, LiveLabs Team
-- **Last Updated By/Date** - LiveLabs Team, August 2020
-
+- **Contributors** - Anoosha Pilli, Arabella Yao, LiveLabs Team
+- **Last Updated By/Date** - Arabella Yao, May 2022

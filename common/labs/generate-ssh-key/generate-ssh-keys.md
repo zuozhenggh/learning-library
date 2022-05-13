@@ -1,4 +1,4 @@
-# Create SSH Keys
+# Create SSH keys
 
 ## Introduction
 
@@ -20,7 +20,7 @@ Watch the video below for an overview of the Generate SSH Keys Cloud Shell optio
 
 The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
 
-*Note:  If you are making a reservation via the LiveLabs Green Button, you will need to choose the option that matches your laptop.  Your tenancy access will be provided AFTER you create your ssh key locally*
+>**Note:**  If you are making a reservation via the LiveLabs Green Button, you will need to choose the option that matches your laptop.  Your tenancy access will be provided AFTER you create your ssh key locally.
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
@@ -44,7 +44,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ssh-keygen -b 2048 -t rsa -f <<sshkeyname>>
     ````
 
-    *Note: The angle brackets <<>> should not appear in your command.*
+    >**Note:** The angle brackets <<>> should not appear in your command.
 
     ![Generate SSH key in cloud shell.](./images/cloudshell-ssh-keygen.png " ")
 
@@ -60,7 +60,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
 
-    *Note: The angle brackets <<>> should not appear in your command.*
+    >**Note:** The angle brackets <<>> should not appear in your command.
 
     ![Use cat command.](images/cat-in-cloudshell.png " ")
 
@@ -68,7 +68,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
     ![Pasting public key into compute instance.](images/copy-publickey-cloudshell.png " ")
 
-You may now proceed to the next lab or paste it in the LiveLabs reservation page.
+You may now **proceed to the next lab** or paste it in the LiveLabs reservation page.
 
 ## Option 2:  MacOS
 
@@ -110,7 +110,7 @@ Watch the video below for an overview of the Generate SSH Keys Mac option.
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
-You may now proceed to the next lab or paste it in the LiveLabs reservation page.
+You may now **proceed to the next lab** or paste it in the LiveLabs reservation page.
 
 ## Option 3:  Windows 10
 
@@ -166,7 +166,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
 
-You may now proceed to the next lab or paste it in the LiveLabs reservation page.
+You may now **proceed to the next lab** or paste it in the LiveLabs reservation page.
 
 ## Option 4a: Prior Windows Versions - Git for Windows
 
@@ -216,9 +216,9 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     ![Copy the key content exactly.](images/keylab-013.png " ")
 
-    *Note: If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.*
+    >**Note:** If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.
 
-You may now proceed to the next lab or paste it in the LiveLabs reservation page.
+You may now **proceed to the next lab** or paste it in the LiveLabs reservation page.
 
 ## Option 4b: Windows Versions - PuTTY
 
@@ -276,7 +276,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     Follow below instructions to connect to a cloud instance via SSH using the PuTTY terminal.
 
-### Connecting to an instance using PuTTY
+### Connect to an instance using PuTTY
 
 1.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
 
@@ -354,6 +354,5 @@ You may now proceed to the next lab or paste it in the LiveLabs reservation page
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Contributors** - LiveLabs Team, Kamryn Vinson, Anil Nair
-* **Last Updated By/Date** - Madhusudhan Rao, Apr 2022
-
+* **Contributors** - LiveLabs Team, Kamryn Vinson, Anil Nair, Madhusudhan Rao
+* **Last Updated By/Date** - Arabella Yao, May 2022

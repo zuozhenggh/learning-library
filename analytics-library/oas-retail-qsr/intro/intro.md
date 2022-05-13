@@ -40,4 +40,4 @@ This concludes this lab. You may now **proceed to the next lab.**
 ## Acknowledgements
 * **Authors** - Killian Lynch, Nagwang Gyamtso, Luke Wheless, Akash Dharamshi, Solution Engineer Specialist Hub Team, NA Technology
 * **Contributors** - Killian Lynch, Solution Engineer Specialist Hub Team, NA Technology
-* **Last Updated By/Date** - Killian Lynch, Solution Engineer, NA Technology, February 2022
+* **Last Updated By/Date** - Killian Lynch, February 2022
