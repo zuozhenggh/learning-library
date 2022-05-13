@@ -50,7 +50,7 @@ This lab has been designed to be executed end-to-end with any modern browser on 
     If successful, the page above is displayed and as a result your environment is now ready.  
 
     <if type="external">
-    
+
 
 4. If you are still unable to login or the login page is not functioning after reloading the application URL, open a terminal session and proceed as indicated below to validate the services.
 
@@ -157,4 +157,4 @@ Your workshop instance is configured to automatically start all processes needed
 ## Acknowledgements
 * **Authors** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, January 2021
 * **Contributors** - Diane Grace
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2021
+* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, May 2022

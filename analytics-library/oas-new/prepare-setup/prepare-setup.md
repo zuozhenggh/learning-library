@@ -26,6 +26,7 @@ This workshop requires a certain number of ports to be available, a requirement 
 | Port           |Description                            |
 | :------------- | :------------------------------------ |
 | 22             | SSH                                   |
+| 80             | noVNC Remote Desktop (NGINX proxy)    |
 | 6080           | noVNC Remote Desktop                  |
 | 9502           | OAS Presentation service              |
 
