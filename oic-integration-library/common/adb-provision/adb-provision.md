@@ -52,14 +52,14 @@ In this lab, you will:
 <if type="freetier">
 6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
 
-    ![Select region on the far upper-right corner of the page.](./images/task1-6.png " ")
+    ![Select region on the far upper-right corner of the page.](./images/adb-select-region.png " ")
 </if>
 
 ## Task 2: Create an Oracle Autonomous Database instance
 
 1. Click **Create Autonomous Database** to start the instance creation process.
 
-    ![Click Create Autonomous Database.](./images/task2-1.png " ")
+    ![Click Create Autonomous Database.](./images/adb-start-create.png)
 
 
 2.  This brings up the *Create Autonomous Database* screen where you will specify the configuration of the instance.
