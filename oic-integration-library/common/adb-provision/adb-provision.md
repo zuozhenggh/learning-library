@@ -120,7 +120,7 @@ In this lab, you will:
     - If you want a private endpoint, to enable traffic only from the VCN you specify - and to block access to the database from all public IPs or VCNs, select "Private endpoint access only" in the Choose network access area.
     - If you select "Secure access from allowed IPs and VCNs only" or "Private endpoint access only", you can use the checkbox to require mutual TLS (mTLS) authentication to authenticate connections to your database. If you don't select this checkbox, TLS or mTLS can be used.
 
-    ![Choose the network access.](./images/task2-8.png " ")
+    ![Choose the network access.](./images/create-adb-network-access.png " ")
 
 <if type="livelabs">
 9. Choose a license type. For this lab, choose **Bring Your Own License (BYOL)**. The two license types are:
@@ -133,23 +133,23 @@ In this lab, you will:
     - **License Included** - Select this type when you want to subscribe to new database software licenses and the database cloud service.
 
 <if type="livelabs">
-    ![Click Create Autonomous Database](./images/task2-9.png " ")
+    ![Select Network Access](./images/create-adb-license-type.png " ")
 </if>
 <if type="freetier">
-    ![Click Create Autonomous Database](./images/task2-9.png " ")
+    ![Select Network Access](./images/create-adb-license-type.png " ")
 </if>
 
 10. Click **Create Autonomous Database**.
 
-    ![Create Autonomous Database](./images/task2-10.png " ")
+    ![Create Autonomous Database](./images/create-adb.png " ")
 
 11.  Your instance will begin provisioning. In a few minutes, the state will turn from *Provisioning* to *Available*. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
 
 <if type="livelabs">
-    ![Click Create Autonomous Database.](./images/task2-9.png " ")
+    ![Show Autonomous Database](./adb-available-freetier.png)
 </if>
 <if type="freetier">
-    ![Database instance available](images/adb-available-freetier.png)
+    ![Show Autonomous Database](images/adb-available-freetier.png)
 </if>
 
 
