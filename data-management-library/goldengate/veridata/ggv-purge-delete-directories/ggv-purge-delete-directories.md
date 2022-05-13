@@ -5,7 +5,7 @@ This lab describes how to purge data and delete directories in the Oracle Golden
 
 The Purge Data option allows you to delete old Oracle GoldenGate Veridata stats from the product repository.
 
-The Delete Directories option allows you to purge old reports, compare results, and obsolete data from the Oracle GoldenGate Veridata server. Use the Delete Directories completely check box to delete the entire reports directory content, including files, and directories created by the user.
+The Delete Directories option allows you to purge old reports, compare results, and obsolete data from the Oracle GoldenGate Veridata server. Use the **Delete Directories** completely check box to delete the entire reports directory content, including files, and directories created by the user.
 
 *Estimated Lab Time*: 30 minutes
 
@@ -132,7 +132,6 @@ To delete directories:
 
     ![Existing Reports](./images/existingreportspurge.png " ")
 
-You may now **proceed to the next lab**.
 
 ## Learn More
 * [Get Started with Oracle GoldenGate Veridata Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=833&clear=180&session=4555570607052)
