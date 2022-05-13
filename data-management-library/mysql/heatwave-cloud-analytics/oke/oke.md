@@ -56,14 +56,14 @@ In this lab, you will provision the following OCI resources using Resource Manag
 	![Stack Complete](images/resource-manager-stack-complete.png)
 
   You may now **proceed to the next lab.**
-  
+
 ## Acknowledgements
 
 * **Author**
-	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
-	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Ivan Ma, MySQL Solutions Engineer, MySQL Asia Pacific
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL Asia Pacific
 * **Contributors**
-	* Perside Foster, MySQL Solution Engineering
-	* Rayes Huang, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering North America
+	* Rayes Huang, OCI Solution Specialist, OCI Asia Pacific
 
-* **Last Updated By/Date** - Ryan Kuan, March 2022
+* **Last Updated By/Date** - Ryan Kuan, May 2022

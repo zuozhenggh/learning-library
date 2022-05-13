@@ -105,11 +105,11 @@ EOF
 
     ```
 <copy>
-kubectl port-forward service/phpmyadmin-svc -n phpmyadmin --address 0.0.0.0 8080:80
+kubectl port-forward service/phpmyadmin-svc -n phpmyadmin --address 0.0.0.0 8080:80 &
 </copy>
 ```
 
-7. Access the deployed phpMyAdmin application using your browser, http:://&lt;PUBLIC&#95;IP of Operator VM&gt;:8080/
+7. Access the deployed phpMyAdmin application using your browser, http:://&lt;PUBLIC&#95;IP of Operator VM&gt;:8080/. Enter MySQL admin user, **admin**, and password **Oracle#123**
 
 	  ![PhpMyAdmin](images/phpmyadmin.png)
 
@@ -118,11 +118,11 @@ kubectl port-forward service/phpmyadmin-svc -n phpmyadmin --address 0.0.0.0 8080
 ## Acknowledgements
 
 * **Author**
-	 * Ivan Ma, MySQL Solution Engineer, MySQL APAC
-	 * Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Ivan Ma, MySQL Solutions Engineer, MySQL Asia Pacific
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL Asia Pacific
 * **Contributors**
-	 * Perside Foster, MySQL Solution Engineering
-	 * Rayes Huang, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering North America
+	* Rayes Huang, OCI Solution Specialist, OCI Asia Pacific
 
-* **Last Updated By/Date** - Ryan Kuan, March 2022
+* **Last Updated By/Date** - Ryan Kuan, May 2022
 

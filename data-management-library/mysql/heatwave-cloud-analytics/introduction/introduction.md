@@ -2,13 +2,13 @@
 
 ## About this Workshop
 
-This workshop will cover the flexibility of using popular open-source tools such as Superset, Grafana and Zepplin with MySQL HeatWave to leverage the cloud-scale capabilities of Oracle Cloud Infrastructure to implement cloud-native analytics. We will walk you through the process of
+This workshop will cover the flexibility of using popular open-source tools such as Superset, Grafana, Jupyter, Redash and Zeppelin with MySQL HeatWave to leverage the cloud-scale capabilities of Oracle Cloud Infrastructure to implement cloud-native analytics.
 
 We will walk you through the process of
 
 * Creating Oracle Kubernetes Engine and MySQL HeatWave
 * Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
-* Deploying open-source analytics tools (Superset, Grafana, Zeppelin) to analyze data in MySQL HeatWave
+* Deploying open-source analytics tools (Superset, Grafana, Jupyter, Redash and Zeppelin) to analyze data in MySQL HeatWave
 
 [](youtube:pexH2tqI_0E)
 
@@ -29,7 +29,7 @@ In this workshop, you will learn how to:
 
 * Creating Oracle Kubernetes Engine and MySQL HeatWave
 * Loading data into MySQL HeatWave using mysqlsh and auto-pilot utility
-* Deploying open-source analytics tools (Superset, Grafana and Zeppelin) to analyze data in MySQL HeatWave
+* Deploying open-source analytics tools (Superset, Grafana, Jupyter, Redash, Zeppelin) to analyze data in MySQL HeatWave
 
 The following is the OCI architecture with all the components deployed
 
@@ -43,10 +43,10 @@ The following is the OCI architecture with all the components deployed
 ## Acknowledgements
 
 * **Author**
-	* Ivan Ma, MySQL Solution Engineer, MySQL APAC
-	* Ryan Kuan, MySQL Cloud Engineer, MySQL APAC
+	* Ivan Ma, MySQL Solutions Engineer, MySQL Asia Pacific
+	* Ryan Kuan, MySQL Cloud Engineer, MySQL Asia Pacific
 * **Contributors**
-	* Perside Foster, MySQL Solution Engineering
-	* Rayes Huang, OCI Solution Specialist, OCI APAC
+	* Perside Foster, MySQL Solution Engineering North America
+	* Rayes Huang, OCI Solution Specialist, OCI Asia Pacific
 
-* **Last Updated By/Date** - Ryan Kuan, March 2022
+* **Last Updated By/Date** - Ryan Kuan, May 2022
