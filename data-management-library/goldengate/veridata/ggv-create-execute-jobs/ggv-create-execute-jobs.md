@@ -68,7 +68,7 @@ To execute a job:
 
     ![Finished Jobs](./images/completed-jobs-compare-pair-status-chart.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 * [Get Started with Oracle GoldenGate Veridata Workshop](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=833&clear=180&session=4555570607052)
