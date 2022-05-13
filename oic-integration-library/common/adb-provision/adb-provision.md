@@ -29,25 +29,25 @@ In this lab, you will:
 
     > **Note:** You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the __Quick Actions__ section of the dashboard.
 
-    ![Oracle home page.](./images/navigation.png " ")
+    ![Oracle home page.](./images/oci-navigation.png " ")
 
 3. The following steps apply similarly to either Autonomous Data Warehouse or Autonomous Transaction Processing. This lab shows provisioning of an Autonomous Data Warehouse database, so click **Oracle Database**, then **Autonomous Data Warehouse**.
 
-    ![Click Autonomous Data Warehouse.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+    ![Click Autonomous Data Warehouse.](./images/oci-navigation-adw.png " ")
 
 4. Make sure your Workload Type is __Data Warehouse__ or __All__ to see your Autonomous Data Warehouse instances. Use the __List Scope__ drop-down menu to select a compartment. <if type="livelabs">Enter the first part of your user name, for example `LL185` in the Search Compartments field to quickly locate your compartment.
 
-    ![Check the workload type on the left.](images/task1-4.png " ")
+    ![Check the workload type on the left.](images/adb-choose.png " ")
     </if>
     <if type="freetier">
-    ![Check the workload type on the left.](images/task1-4.png " ")
+    ![Check the workload type on the left.](images/adb-choose.png " ")
 
    > **Note:** Avoid the use of the *ManagedCompartmentforPaaS* compartment, as this is an Oracle default used for Oracle Platform Services.
    </if>
 
-5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by __Workload Type__. In this example, __Data Warehouse__ is the workload type.
+5. This console shows that no databases yet exist. If there were a long list of databases, you could filter the list by the **State** of the databases (Available, Stopped, Terminated). You can also sort by **Workload Type**. In this example, **Data Warehouse** is the workload type.
 
-    ![Autonomous Databases console.](./images/task1-5.png " ")
+    ![Autonomous Databases console.](./images/adb-no-database.png " ")
 
 <if type="freetier">
 6. If you are using a Free Trial or Always Free account, and you want to use Always Free Resources, you need to be in a region where Always Free Resources are available. You can see your current default **region** in the top, right hand corner of the page.
