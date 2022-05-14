@@ -1,4 +1,4 @@
-# Setup Oracle Linux Compute Image
+# Set up Oracle Linux compute image
 
 ## Introduction
 This lab will show you how to setup a Oracle Cloud network (VCN) and a compute instance running Oracle Linux.
