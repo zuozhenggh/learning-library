@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to get started with your workshop with a remote desktop session.
 
-*Estimated Lab Time*: 10 minutes
+**Estimated Lab Time**: 10 minutes
 
 ### Objectives
 In this lab, you will:
@@ -108,9 +108,9 @@ This assumes that you already have an RSA type SSH key-pair available on the loc
     </copy>
     ```
 
-    For Putty, please refer to the guide [Generate SSH Keys](https://oracle.github.io/learning-library/common/labs/generate-ssh-key) on how to establish the connection using the *.ppk* private key 
+    For Putty, please refer to the guide [Generate SSH Keys](https://oracle.github.io/learning-library/common/labs/generate-ssh-key) on how to establish the connection using the *.ppk* private key.
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology
-* **Contributors** -
-* **Last Updated By/Date** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, October 2021
+* **Contributors** - Arabella Yao, Database Product Management
+* **Last Updated By/Date** - Arabella Yao, May 2022

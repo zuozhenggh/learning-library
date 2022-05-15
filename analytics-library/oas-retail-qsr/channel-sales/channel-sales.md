@@ -27,7 +27,7 @@ This lab assumes you have:
 
 1. **Select** the plus symbol to open an empty canvas so we can build out our visualizations.
 
-    ![empty canvas](images/empty-dashboard-red-box.png)
+    ![empty canvas](images/main-cards.png)
 
 2. **Rename** the canvas by tapping the arrow, and hitting 'rename'. Rename the canvas to **'Analyze Channel Sales'**
 
@@ -128,4 +128,4 @@ This lab assumes you have:
 
 * **Authors** - Killian Lynch, Nagwang Gyamtso, Luke Wheless, Akash Dharamshi, Solution Engineer Specialist Hub Team, NA Technology
 * **Contributors** - Luke Wheless, Solution Engineer Specialist Hub Team, NA Technology
-* **Last Updated By/Date** - Luke Wheless, Solution Engineer Specialist Hub Team, NA Technology, April 2022
+* **Last Updated By/Date** - Luke Wheless, April 2022
