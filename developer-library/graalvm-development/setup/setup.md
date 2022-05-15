@@ -38,7 +38,12 @@
 
 ## Task 2: GraalVM Enterprise Edition 21.3をインストール
 
-1. 以下のコマンドを入力します。導入するかどうかの確認に対して、yesと入力してインストールを開始します。
+1. ホームディレクトリ配下に移動します。以下のコマンドを入力します。
+    ```
+    <copy>cd ~</copy>
+    ```
+
+    GraalVM Enterprise Edition コア・パッケージを導入します。確認メッセージに対して、yesと入力してインストールを開始します。
 
     ```
     <copy>sudo yum install graalvm21-ee-11-jdk</copy>
@@ -46,9 +51,11 @@
     ![install graalvm2](images/install-graalvm2.png)
 
     インストールが正常終了の場合*Complete!*のメッセージが表示されます。
+    
+    > **Note:** プラットフォーム別の導入ガイドは[GraalVM Enterpriseのインストール](https://docs.oracle.com/cd/F44923_01/enterprise/21/docs/getting-started/#install-graalvm-enterprise)をご参照ください。
 
 
-2. 以下のコマンドを入力します。GraalVMのクラスパスを設定します。
+2. 以下のコマンドを入力します。GraalVM のディレクトリを指すように環境変数を設定します。
 
     ```
     <copy>echo "export JAVA_HOME=/usr/lib64/graalvm/graalvm21-ee-java11" >> ~/.bashrc</copy>

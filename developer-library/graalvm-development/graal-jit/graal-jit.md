@@ -27,13 +27,15 @@
 プログラムを3回の反復実行による平均時間（ナノ秒）を計測します。GraalコンパイラとC2コンパイラでそれぞれ実行し、平均時間を比較します。
 
 1. サンプルアプリケーションをダウンロードします。  
-  コマンドプロンプトを立ち上げ、SSHキーを保存しているディレクトリー配下より演習用インスタンスに接続します。
+    <!--コマンドプロンプトを立ち上げ、SSHキーを保存しているディレクトリー配下より演習用インスタンスに接続します。
+    
     ```
     <copy>ssh -i <your-private-key-file> opc@<x.x.x.x></copy>
 
-    ```  
+    ``` 
+    -->
     
-    GitHubに公開されているGraalVMサンプルのリポジトリを複製（クローン）します。
+    GitHubに公開されているGraalVMサンプルのリポジトリを複製します。
 
     ```
     <copy>git clone https://github.com/graalvm/graalvm-demos.git</copy>
@@ -91,11 +93,9 @@
 
 ## Task 2: ベンチマークを含むプロジェクトのビルドおよび実行
 
-1. 演習１で導入したMavenを利用してプロジェクトをビルドします。
+1. 演習１で導入したMavenを使用してプロジェクトをビルドします。
 
-    ```
-    <copy>cd java-simple-stream-benchmark</copy>
-    ```
+    ```java-simple-stream-benchmark```配下で以下のコマンドを実行します。
 
     ```
     <copy>mvn clean package</copy>

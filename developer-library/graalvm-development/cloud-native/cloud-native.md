@@ -132,7 +132,10 @@
     ```
     <copy>nano pom.xml</copy>
     ```
-    以下の部分をprofileタグのconfiguration部分に追加します。
+    以下の```<configuration>```部分を、```<profile>```タグ-->```<build>```タグ-->```<plugin>```タグの中に追加します。  
+
+    ```<buildArgs>```タグの中に```StaticExecutableWithDynamicLibC```というパラメータを指定します。このパラメータによりnative imageビルド時標準Cライブラリ```libC```以外の依存ライブラリを全て事前に静的ビルドします。
+
     ```
     <copy>
     <configuration>
@@ -143,6 +146,8 @@
     </configuration>
     </copy>
     ```
+    ![docker in spring3](images/docker-spring9.png)
+
     Ctrl＋Xを押し、内容保存の確認メッセージに対し、"Y"を入力し、Enterを押下してソースファイルを保存します。
 
 2. spdemo配下に、以下のコマンドを実行し、native imageを再度ビルドします。
