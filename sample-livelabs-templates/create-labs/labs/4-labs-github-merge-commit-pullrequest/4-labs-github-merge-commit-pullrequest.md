@@ -171,6 +171,8 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 4.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
 
+  >Watch this [video](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/link/LD01624F571709E2FC327BFB5E32116159A71C4F6C54/fileview/D112AFCA31CA715E7674A71FBF4B96897BD7DF942DC5/_Self_QA.mp4) on how to self QA your workshop.
+
 5. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
   ![Self QA Complete](images/self-qa-complete.png " ")
 
@@ -189,11 +191,11 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 	![Request Publishing](images/publishing-tab.png)
 
-2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Always Free Enabled?**, **Free Tier Enbaled?**, **Paid Tier Enabled?**, **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
+2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Paid Tier Enabled?**, and/or **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
 
-    - Always Free On? - Can this workshop be done in an Always Free account using only Always Free services? (i.e. Compute Micro, ADB-Shared, etc). [Here](https://www.oracle.com/cloud/free/#always-free) is a list of Always Free eligible services.
+    - Always Free On? - Turn off this button. This button will be deleted soon.
 
-    - Free Tier On? - Can this workshop be done in a Free Tier account using the $300 (or $500) credit and Always Free services? [Here](https://www.oracle.com/cloud/free/#free-cloud-trial) is a list of Free Tier eligible services.
+    - Free Tier On? - Turn off this button. This button will be deleted soon.
 
     - Paid Tier On? - Can this workshop be done in a customer tenancy?
 
@@ -271,5 +273,6 @@ This concludes this lab. You may now **proceed to the next lab**.
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Kamryn Vinson, Product Manager, Database
     * Arabella Yao, Product Manager, Database
+    * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Madhusudhan Rao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, Apr 2022
