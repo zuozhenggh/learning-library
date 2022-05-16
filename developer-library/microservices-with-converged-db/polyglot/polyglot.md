@@ -10,7 +10,7 @@ For more information on microservices visit http://developer.oracle.com/microser
 
 In this workshop, you'll switch the Inventory microservice to a Python, Node.js, .NET, Go, Spring Boot or Java Helidon SE implementation while retaining the same application functionality.
 
-Estimated Time - 10 minutes
+Estimated Time: 10 minutes
 
 The following video provides a quick walk-through of how to switch the Inventory microservice to Python while retaining the same application functionality.
 
@@ -114,7 +114,7 @@ In this step you can choose between six different implementations of the Invento
 
     ```
     <copy>
-    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
+    for i in inventory-plsql inventory-helidon-se inventory-python inventory-nodejs inventory-dotnet inventory-go inventory-springboot inventory-micronaut inventory-quarkus; do cd $GRABDISH_HOME/$i; ./undeploy.sh; done
     cd $GRABDISH_HOME/inventory-micronaut ; ./undeploy-native-image.sh
     cd $GRABDISH_HOME/inventory-helidon ; ./deploy.sh
     cd $GRABDISH_HOME
@@ -122,6 +122,11 @@ In this step you can choose between six different implementations of the Invento
     ```
 
 You may now proceed to the next lab.
+
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack)   
+Search for and join the `oracle-db-microservices` channel.
 
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture; Paul Parkinson, Developer Evangelist; Mayank Tayal, Developer Advocate

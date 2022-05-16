@@ -2,9 +2,9 @@
 
 ## Introduction
 
-For the course of this Lab we will be creating a repository table in Autonomous database which maps the user with the consumer group, and a Function to validate the user session on connect.
+In this lab, we will be creating a repository table in an Autonomous database that maps the user to the consumer group and a PL/SQL function to validate the user session on connect.
 
-Estimated Time: 2 minutes
+Estimated Time: 5 minutes
 
 ### Objectives
 
@@ -25,35 +25,32 @@ This lab assumes you have:
 
     ---
 
-    
-        CREATE TABLE "ADMIN"."USERS_CONS_GRP" 
+        
+        <copy>CREATE TABLE "ADMIN"."USERS_CONS_GRP" 
         ("USERNAME" VARCHAR2(200 BYTE) NOT NULL, 
         "CONS_GRP" VARCHAR2(20 BYTE) NOT NULL, 
         CONSTRAINT "USERS_CONS_GRP_CHK1" CHECK (cons_grp in ('HIGH','LOW','MEDIUM','TPURGENT','TP'))
         )  
         TABLESPACE "DATA" ;
 
-
+    ![Create table](./images/create-table.png " ")
 
 2. Lets add two users “SCOTT” and “TOTO” and map it to respective consumer group “TP” and “LOW” services.
 
     ---
 
 
-        Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('TOTO','LOW');
+        <copy>Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('TOTO','LOW');
         Insert into ADMIN.USERS_CONS_GRP (USERNAME,CONS_GRP) values ('SCOTT','TP');
 
-
+    ![Add users](./images/add-users.png " ")
 
 3. Lets check the repository table contents
 
     ---
-        Select * from USERS_CONS_GRP
+        <copy>Select * from USERS_CONS_GRP
 
     ![Repository table contents](./images/repo-table.png " ")
-
-
-
 
 
 ## Task 2: Create function to validate User Consumer group mapping
@@ -61,7 +58,7 @@ This lab assumes you have:
 1. Create function “USER\_GRP\_FN” to provide true value when session user fulfils mapped consumer group. We will use this function in database vault rule.
 
     ---
-        CREATE OR REPLACE FUNCTION USER_GRP_FN 
+        <copy>CREATE OR REPLACE FUNCTION USER_GRP_FN 
         RETURN number IS 
         usr number ; 
         BEGIN 
@@ -75,10 +72,14 @@ This lab assumes you have:
         END; 
         /
 
+    ![Create function](./images/create-function.png " ")
+
 2. Grant execute on the function to DVSYS user.
 
     ---
-        grant execute on ADMIN.USER_GRP_FN to dvsys;
+        <copy>grant execute on ADMIN.USER_GRP_FN to dvsys;
+
+    ![Grant execute](./images/grant-execute.png " ")
 
 You may now **proceed to the next lab**.
 
@@ -90,3 +91,4 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Goutam Pal, Senior Cloud Engineer, NA Cloud Engineering
+* **Last Updated By/Date** - Kamryn Vinson, April 2022

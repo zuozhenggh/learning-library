@@ -4,7 +4,7 @@
 
 This lab will show you how to deploy the microservices on your Kubernetes cluster, walk through the functionality and explain how it works.
 
-Estimated Time: 10 minutes
+Estimated Time: 20 minutes
 
 Quick walk through on how to deploy the microservices on your Kubernetes cluster.
 
@@ -17,12 +17,20 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
 ### Prerequisites
 
-* An Oracle Cloud paid account or free trial. To sign up for a trial account with $300 in credits for 30 days, click [Sign Up](http://oracle.com/cloud/free).
+* An Oracle Cloud paid account.
 * The OKE cluster and the Autonomous Transaction Processing databases that you created in Lab 1
 
 ## Task 1: Deploy All the Microservices and the FrontEnd UI
 
-1.  Run the deploy script. This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
+1.  Check the image build status for this lab:
+
+    ```
+    <copy>status</copy>
+    ```
+
+    Keep checking until all the images for this lab have completed (status "Completed").
+
+2.  Run the deploy script. This will create the deployment and pod for all the java images in the OKE cluster `msdataworkshop` namespace:
 
     ```
     <copy>cd $GRABDISH_HOME;./deploy.sh</copy>
@@ -30,7 +38,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
     ![Script Deployment](images/deploy-all.png " ")
 
-2.  Once successfully created, verify deployment pods are running:
+3.  Once successfully created, verify deployment pods are running:
 
     ```
     <copy>kubectl get pods --all-namespaces</copy>
@@ -39,12 +47,12 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
     ![Deployment Pods](images/pods-all-after-deploy.png " ")
 
     Or, you can execute the shortcut command:
-    
+
     ```
     <copy>pods</copy>
     ```
 
-3. Verify the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
+4. Verify the **ingress-nginx-controller** load balancer service is running, and write down the external IP address.
 
     ```
     <copy>kubectl get services --all-namespaces</copy>
@@ -161,9 +169,9 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
     ![Review Transactional Show Order UI](images/tx-show-order-67.png " ")
 
   This demo demonstrates how geocoding (the set of latitude and longitude coordinates of a physical address) can be used to derive coordinates from addresses and how routing information can be plotted between those coordinates.
-  
-  Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay. 
-  
+
+  Oracle JET web component <oj-spatial-map> provides access to mapping from an Oracle Maps Cloud Service and it is being used in this demo for initializing a map canvas object (an instance of the Mapbox GL JS API's Map class). The map canvas automatically displays a map background (aka "basemap") served from the Oracle Maps Cloud Service. This web component allows mapping to be integrated simply into Oracle JET and Oracle Visual Builder applications, backed by the full power of Oracle Maps Cloud Service including geocoding, route-finding and multiple layer capabilities for data overlay.
+
   The Oracle Maps Cloud Service (maps.oracle.com or eLocation) is a full Location Based Portal. It provides mapping, geocoding and routing capabilities similar to those provided by many popular commercial online mapping services.
 
 ## Task 5: Verify AI Food and Wine Pairing Functionality
@@ -193,7 +201,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
     ```
     ![View Pods](images/foodandwinepairingandrestartedinventorypods.png " ")
 
-5. Add inventory if necessary and place another order.  You should see that there is now a wine suggesting for you food order.
+5. Add inventory if necessary and place another order.  You should see that there is now a wine suggestion for your food order.
 
     ![Food & Wine Pairing Order](images/orderwithfoodandwinepairing.png " ")
 
@@ -203,6 +211,15 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 
     > **Note:** This use case for GrabDish is inspired by [this article](https://towardsdatascience.com/robosomm-chapter-5-food-and-wine-pairing-7a4a4bb08e9e)
 
+6. (Optional) Undeploy foodwinepairing-python and return inventory-helidon to default pairing behavior
+
+    Optionally, for example if you want to run the scaling lab later, you can undeploy foodwinepairing-python and return inventory-helidon to default pairing behavior by issuing the following.
+
+    ```
+    <copy>cd $GRABDISH_HOME/foodwinepairing-python;./undeploy.sh ; cd $GRABDISH_HOME/inventory-helidon;./deploy.sh</copy>
+    ```
+
+
 ## Task 6: Show Metrics
 
 1. Notice @Timed and @Counted annotations on placeOrder method of $GRABDISH_HOME/order-helidon/src/main/java/io/helidon/data/examples/OrderResource.java
@@ -210,7 +227,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
     ![Review Annotations](images/metrics-annotations.png " ")
 
 
-2. Click **Tracing, Metrics, and Health**
+2. Click **OpenAPI, Metrics, and Health**
 
     ![Navigate to Metrics Selection Screen](images/metrics-select.png " ")
 
@@ -221,7 +238,7 @@ Quick walk through on how to deploy the microservices on your Kubernetes cluster
 ## Task 7: Verify Health
 
 1. Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) provides health probes which check a given    container for its liveness (checking if the pod is up or down) and readiness (checking if the pod is ready to take
-requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **Tracing, Metrics, and Health** and click **Show Health: Liveness**
+requests or not). In this STEP you will see how the probes pick up the health that the Helidon microservice advertises. Click **OpenAPI, Metrics, and Health** and click **Show Health: Liveness**
 
     ![Verify Health](images/health-liveness.png " ")
 
@@ -341,7 +358,7 @@ To connect to an  'Oracle Autonomous Transaction Processing database you need th
 ## Task 9: Understand How Database Credentials are Used by a Helidon Microservice (Study)
 
 1. Let’s analyze the `microprofile-config.properties` file.
- 
+
     ```
     <copy>
     cat $GRABDISH_HOME/order-helidon/src/main/resources/META-INF/microprofile-config.properties
@@ -395,7 +412,7 @@ The Cloud Shell is extremely convenient for development as it has various softwa
 
 - Building microservices will of course require the software required for a particular service to be installed. For example maven, GraalVM, etc.
 
-- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken. You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc). 
+- Pushing microservices to the OCI repository will require logging into the repos via docker and for this you will need an authtoken. You can re-use the auth token created in the workshop or easily create a new one (see setup lab doc).
 Using the auth token you can then login to docker using the following format (replacing values as appropriate)...
 
     ```
@@ -426,9 +443,14 @@ This can be found under `Developer Services->Kubernetes Clusters` where you will
 
 You may now proceed to the next lab.
 
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack)  
+Search for and join the `oracle-db-microservices` channel. 
+
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Evangelist; Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Irina Granat, March 2022
+* **Last Updated By/Date** - Kamryn Vinson, May 2022

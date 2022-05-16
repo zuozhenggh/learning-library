@@ -1,4 +1,4 @@
-# Need Help?   
+# Need help?
 
 ## Introduction
 This page is designed to help you solve some common problems users face in this LiveLab. 
@@ -13,22 +13,6 @@ For more about getting support using our email, click [here](#HowtoFormatYourSup
   - [Can't Login to Oracle Cloud](#CantLogintoOracleCloud)
   - [Can't Create An Oracle Database? Nothing In Your Compartment?](#CantCreateanOracleDatabase?NothinginYourCompartment?)
   - [Connectivity Issues? Unable To Upload Data or Connect To The database?](#ConnectivityIssues?UnabletoUploadDataorConnecttotheDatabase?)
-
-### **Rate This Workshop**
-When you are finished please don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating. 
-
-1.  Go back to your **Workshop Homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-
-2.  Click on the **Brown Button** to re-access the workshop.  
-
-    ![](images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**.
-
-    ![](images/rate-this-workshop.png " ")
-
-If you still have an active reservation, you can also rate by going to **My Reservations** -> **Launch Workshop**.
-
 
 ## How to Format Your Support Email Request
 This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. Follow the steps below to contact us and get a quick resolution to your issue.
@@ -95,3 +79,8 @@ If the workshop asks you to open cloud shell, but you cannot access it, please m
 
    ![Policy Missing Error](images/private-ssh-key-denied.png " ")
 1. If you cannot connect to your compute instance using your private SSH key, please make sure the private key you provide and use matches the public SSH key you provide when you reserve the workshop on LiveLabs.
+
+
+## Cannot Create Password for Database Users?
+
+1. Make sure the password you enter only contains upper case letters, lower case letters, numbers, and underscores as special characters.
