@@ -17,14 +17,15 @@ Activate the model to allow business executives to view and analyze business pro
 
 This lab assumes you have:
 
-* Completed Labs 1 thru 4 
+* Completed Labs 1 thru 4
 
 ## Learning Objectives
 
 In this lab, you will learn how to create the following:
-- Draft Model
-- Initial and Terminal Milestones
-- Identifier mapped to one of the Milestones through a data type
+
+* Draft Model
+* Initial and Terminal Milestones
+* Identifier mapped to one of the Milestones through a data type
 
 First practice the steps to familiarize yourself with the commands and then do the Labs.
 
@@ -72,20 +73,20 @@ You will create an Insight Model with 2 Milestones, an Initial and a Terminal, a
 
 ## Task 1: Create Model
 
-1. Open Insight and create your Draft Model. 
-2. Name the Draft Model **My Order Processing** and provide the description of **My First Model**. 
-3. You will need to click **Create** to finish. When you've completed it; it will open the Milestone Process for you. Continue to Task 2 to add your Milestones.
-     
+1. Open Insight and create your Draft Model.
+2. Name the Draft Model **My Order Processing** and provide the description of **My First Model**.
+3. You will need to click **Create** to finish. When you've completed it; it will open the Milestone Process for you.
+
 ## Task 2: Create A Milestone
 
-As taught, each Model needs an Initial and Terminal Milestone. For your Initial Milestone (Rocket Symbol), enter Milestone name **Order Received** and for the Description enter **My First Orders Received**. For your Terminal Milestone (Finish Line Flag Symbol), Enter milestone name **Order Completed** and enter Milestone description **Orders Completed via System**; continue to Task 3 to add your Identifier.
-    
+As taught, each Model needs an Initial and Terminal Milestone. For your Initial Milestone (Rocket Symbol), enter Milestone name **Order Received** and for the Description enter **My First Orders Received**. For your Terminal Milestone (Finish Line Flag Symbol), Enter milestone name **Order Completed** and enter Milestone description **Orders Completed via System**.
+
 ## Task 3: Create an Identifier
 
-Finish your Draft Model by creating an Identifier. The Identifier name is  **Order Number**, the Data Type is **String** and assign to **Order Received** and **Order Completed** Milestones.
+Finish your Draft Model by creating an Identifier. The Identifier name is  **Order Number**,  for Milestone select  **Order Received**, the Data Type is **String** and **Order Completed** Milestones.
 Save and Close your Draft Model.
 
-Great job creating your Draft Model.<br /> 
+Great job creating your Draft Model.<br />
 
 You may now **proceed to the next lab**
 

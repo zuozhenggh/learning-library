@@ -7,9 +7,10 @@ While the Console page displays information about performance and preconfigured 
 
 Estimated Time: 15 minutes
 
-## Prerequisites 
+## Prerequisites
 
 This lab assumes you have:
+
 - Completed Labs 1 through 10
 
 ## Learning Objectives
@@ -25,14 +26,14 @@ Custom dashboards use visualization charts, such as pie charts or bar charts, to
 Each custom dashboard is represented by a title and an icon. Custom dashboards can be filtered by a number of different criteria, including when a business transaction started or ended, how long the business transaction took to complete, and which milestones have most recently been passed. There is no limit to the number of custom dashboards that you can create.
 
 There are 6 Chart Types:
-* ![pie](./images/pie-chart.jpg " ") A pie chart is a circular chart where each sector represents the quantity of a dimension you select. The size of each sector is determined by the value of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
-* ![chart](./images/chart.jpg " ")A bar chart is a two-dimensional chart, where the X-axis values are computed based on the values of a dimension you select. Each bar on the graph is optionally grouped by the value of a second dimension. The Y-axis values are computed based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
-A bar chart is the only chart type that lets you group by two different dimensions. You can swap the dimensions used for the X-axis and its grouping to change how the bars are displayed in the chart.
-* ![bubble](./images/bubble-chart.jpg " ") A bubble chart is a three-dimensional chart, where each bubble groups values of a dimension you choose. The size of each bubble is determined based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation). A bubble’s location on the X- and Y- axes is determined based on values of measures you select, aggregated using a function you select (such as average, sum, count, and standard deviation).
-* ![area](./images/area-chart.jpg " ") An area chart is a two-dimensional chart that is a line chart, where the area between the axes and line is shaded to represent the range of measure values for each dimension. The X-axis values are computed based on the values of a dimension you select. The Y-axis values are computed based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
-* ![line](./images/line-chart.jpg " ") A line chart is a two-dimensional chart that is represented by a series of data points connected with a straight line. Line charts are most often used to visualize data that changes over time. The X-axis values are computed based on the values of a dimension you select. The Y-axis values are computed based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
-*  ![scatter](./images/scatter-chart.jpg " ")  A scatter chart shows a single point for each point of data in a series without connecting them, showing patterns across hundreds of instances. The X-axis represents one measure, and the Y-axis represents another measure you select. Each point in the scatter chart is a combination of color and shape that represents a unique value of a dimension you select. <br />
 
+- ![pie](./images/pie-chart.jpg " ") A pie chart is a circular chart where each sector represents the quantity of a dimension you select. The size of each sector is determined by the value of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
+- ![chart](./images/chart.jpg " ")A bar chart is a two-dimensional chart, where the X-axis values are computed based on the values of a dimension you select. Each bar on the graph is optionally grouped by the value of a second dimension. The Y-axis values are computed based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
+A bar chart is the only chart type that lets you group by two different dimensions. You can swap the dimensions used for the X-axis and its grouping to change how the bars are displayed in the chart.
+- ![bubble](./images/bubble-chart.jpg " ") A bubble chart is a three-dimensional chart, where each bubble groups values of a dimension you choose. The size of each bubble is determined based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation). A bubble’s location on the X- and Y- axes is determined based on values of measures you select, aggregated using a function you select (such as average, sum, count, and standard deviation).
+- ![area](./images/area-chart.jpg " ") An area chart is a two-dimensional chart that is a line chart, where the area between the axes and line is shaded to represent the range of measure values for each dimension. The X-axis values are computed based on the values of a dimension you select. The Y-axis values are computed based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
+- ![line](./images/line-chart.jpg " ") A line chart is a two-dimensional chart that is represented by a series of data points connected with a straight line. Line charts are most often used to visualize data that changes over time. The X-axis values are computed based on the values of a dimension you select. The Y-axis values are computed based on values of a measure you select, aggregated using a function you select (such as average, sum, count, or standard deviation).
+- ![scatter](./images/scatter-chart.jpg " ")  A scatter chart shows a single point for each point of data in a series without connecting them, showing patterns across hundreds of instances. The X-axis represents one measure, and the Y-axis represents another measure you select. Each point in the scatter chart is a combination of color and shape that represents a unique value of a dimension you select. <br />
 
 First practice the steps to familiarize yourself with the commands and then do the Labs.
 
@@ -42,7 +43,7 @@ First practice the steps to familiarize yourself with the commands and then do t
         1. On the Models page, <Click> the model for which you want to create a custom dashboard and ensure that the model has indicators (dimensions and measures) defined. If not, follow the steps in Define Indicators in Learning Objective 4.
         
         2. In the model's console, click <Create> The Create Dashboard Dialog will appear.
-            a. ENter a suitable name for the dashboard
+            a. Enter a suitable name for the dashboard
             b. Click the dashboard icon to show the icon picker. Choose an appropriate icon for your dashboard.
             c. Click the chard icon to show the chart picker, Select a chart appropriate for the data visualization.
           
@@ -50,7 +51,6 @@ First practice the steps to familiarize yourself with the commands and then do t
             a. Select the <Measure>, you may select the box to "ignore empty values", if available
             b. Select the <Aggregation Function>, you may select the box to "ignore empty values", if available 
             c. Select the <Grouping>, you may select the box to "ignore empty values", if available
-        
 
  Now let's get you to create on of each chart!
 
@@ -134,7 +134,7 @@ X Axis: Country (Ignore empty values) <br />
 
 Now that you completed the charts. It's time to test them. Open the <Order Processing Lab> in Test. Invoke the <bulkOrder> operation using   **TBD**      test data file.
 Review custom dashboards.
-You may now [proceed to the next lab].
+You may now **proceed to the next lab**.
 
 ## Learn More
 
@@ -142,5 +142,6 @@ More info on Insight Dashboards can be found [here](https://docs.oracle.com/en/c
 
 ## Acknowledgements
 
-* **Author** - Lucy Cortez, Product Enablement Management - Oracle Integration
-* **Last Updated By/Date** - Lucy Cortez, April 2022
+- **Author** - Lucy Cortez, Product Enablement Management - Oracle Integration
+
+- **Last Updated By/Date** - Lucy Cortez, April 2022
