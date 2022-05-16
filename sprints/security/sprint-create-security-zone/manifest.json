@@ -1,11 +1,11 @@
 {
    "workshoptitle": "LiveLabs Sprints",
-   "help": "livelabs-help-**enterarea**_us@oracle.com",
+   "help": "livelabs-help-db_us@oracle.com",
    "tutorials": [
       {
-         "title": "Sprint - Title",
+         "title": "How do I create a security zone?",
          "description": "",
-         "filename": "sprint-title.md"
+         "filename": "sprint-create-security-zone.md"
       },
       {
          "title": "Other related Sprints 1 - How to loreum ipsum larum?",
