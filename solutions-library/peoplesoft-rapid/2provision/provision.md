@@ -2,14 +2,14 @@
 
 ## Introduction
 
-In this exercise, you will create your PeopleSoft application by provisioning the application from the OCI  Marketplace image for PeopleSoft.
+In this lab, you will create your PeopleSoft application by provisioning the application from the OCI  Marketplace image for PeopleSoft.
 
 Estimated Time: 1 hour 30 minutes
 
 ### Objectives
 
 To deploy the PeopleSoft Instance, in this lab, you will:
-*   Launch & deploy instance of PeopleSoft from Marketplace
+*   Launch & deploy an instance of PeopleSoft from Marketplace
 *   Access PeopleSoft instance
 
 ### Prerequisites
@@ -19,13 +19,13 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
 ## Task 1:  Launch PeopleSoft instance from OCI marketplace
 
-1. Make sure you are on the Oracle Cloud Infrastructure site
+1. Make sure you are on the Oracle Cloud Infrastructure console
 
 2. Navigate to ***Oracle Cloud Infrastructure Marketplace*** by using the dropdown menu on the left side of your screen and clicking the ***Marketplace*** and then all applications.
 
-  ![From the menu bar in OCI console, click on Marketplace](./images/oci-marketplace.png " ")
+  ![From the menu bar in the OCI console, click on Marketplace](./images/oci-marketplace.png " ")
 
-3. In the search bar type in PeopleSoft and hit search.There are 6 PeopleSoft DEMO environments which can be installed
+3. In the search bar type in PeopleSoft and hit search. There are 6 PeopleSoft DEMO environments that can be installed
    
     * PeopleSoft HCM
     * PeopleSoft FSCM
@@ -37,11 +37,11 @@ To deploy the PeopleSoft Instance, in this lab, you will:
   ![Select any of the PeopleSoft images to install](./images/select-psft-image.png " ")
 
 
-4. In the instance page, select the PeopleSoft HCM Update Image Demo version and then select the compartment you made earlier. Then click ***Launch Instance***
+4. On the instance page, select the PeopleSoft HCM Update Image Demo version and then select the compartment you made earlier. Then click ***Launch Instance***
 
-  ![Select the desired compartment then select Launch Instance](./images/config-psft-image.png " ")
+  ![Select the desired compartment, then select Launch Instance](./images/config-psft-image.png " ")
 
-5. In the Create Compute Instance page you will need to fill in additional info for your Instance
+5. On the Create Compute Instance page you will need to fill in additional info for your Instance
 
     a.  **Name:** You can name it whatever you like, such as "psfthcm"
 
@@ -49,11 +49,11 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
     c.  **Placement:** You can leave this as it is by default for this Lab
 
-    d.   For the next **Configure networking** section you will choose the ***SELECT EXISTING VIRTUAL CLOUD NETWORK*** option and choose the ***SELECT EXSISTING SUBNET*** option before selecting the Network and Subnet you created in the previous lab
+    d.   For the next **Configure networking** section you will choose the ***SELECT EXISTING VIRTUAL CLOUD NETWORK*** option and choose the ***SELECT EXISTING SUBNET*** option before selecting the Network and Subnet you created in the previous lab
 
     Make sure that ***ASSIGN A PUBLIC IP ADDRESS*** is also selected since we will use this to deploy our PeopleSoft application
 
-    e. **Add SSH keys:** here you will need to select the ssh key you created earlier. You can either use the
+    e. **Add SSH keys:** Here you will need to select the ssh key you created earlier. You can either use the
 
     *   ***CHOOSE PUBLIC KEY FILES*** and open the public key file you made if you know its location
 
@@ -66,35 +66,35 @@ To deploy the PeopleSoft Instance, in this lab, you will:
     
 
     ![Fill in desired name, compartment, AD, and leave everything else as is](./images/create-compute-psft-image.png " ")
-    ![Select the existing compute shape eg. VM Standard 2.1](./images/compute-shape.png " ")
-    ![Select existing virtual cloud network, select existing subnet, select assign a public IP address](./images/compute-network-config.png " ")
+    ![Select the existing compute shape e.g. VM Standard 2.1](./images/compute-shape.png " ")
+    ![Select existing virtual cloud network; select existing subnet, select assign a public IP address](./images/compute-network-config.png " ")
    
     f.  **Configure boot volume:** change the size from default to 300GB
 
     ![Provide the ssh key created earlier and set boot volume size as 300GB](./images/config-ssh-boot-volume.png " ")
 
-    g. Click Show advanced options, on the management tab select the option Paste cloud-init script and enter the configuration information using the JSON format in these examples.
-      
-          ```   
-            <copy>{
-            "connect_pwd":  "password",
-            "access_pwd":  "password",
-            "admin_pwd":  "password",
-            "weblogic_admin_pwd":  "password",
-            "webprofile_user_pwd":  "password",
-            "gw_user_pwd":  "password",
-            "domain_conn_pwd":  "password",
-            "opr_pwd": "password"
-            }</copy
-          ```
+    g. Click Show advanced options, on the management tab, select the option Paste cloud-init script, and enter the configuration information using the JSON format in these examples.
+
+             
+          <copy>{
+          "connect_pwd":  "password",
+          "access_pwd":  "password",
+          "admin_pwd":  "password",
+          "weblogic_admin_pwd":  "password",
+          "webprofile_user_pwd":  "password",
+          "gw_user_pwd":  "password",
+          "domain_conn_pwd":  "password",
+          "opr_pwd": "password"
+          }</copy
+          
     
     ![Provide the custom cloud-init script in the management tab](./images/cloud-init-script.png " ")
     h. Now review your settings and click ***Create*** at the bottom of the page when you are ready
-6. Now you will be taken to the Instance Page and will see that your newly created instance is provisioning
+6. Now you will be taken to the Instance Page, and will see that your newly created instance is provisioning
 
-     Once you see the small orange box change to green your instance will have provisioned successfully and now you can move onto the next step in the Lab
+     Once you see the small orange box change to green, your instance will have provisioned successfully and now you can move onto the next step in the Lab
 
-     ![Once the orange box changes to a green box your instance will have been successfully provisioned](./images/compute-provisioning.png " ")
+     ![Once the orange box changes to a green box, your instance will have been successfully provisioned](./images/compute-provisioning.png " ")
      ![Compute instance successfully provisioned](./images/compute-provisioned.png " ")
 
 
@@ -102,7 +102,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
 
 
-1. The PeopleSoft OCI marketplace image provisioned can be accessed by logging in with the below url and port number. 
+1. The PeopleSoft OCI marketplace image can be accessed by logging in with the below URL and port number. 
 
        ```
        http://<fully-qualified-hostname>:8000/
@@ -112,7 +112,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
   **NOTE:** Before you access the fully qualified hostname or fully qualified domain name (FQDN), it is necessary to add the FQDN or fully qualified hostname of the compute VM in the etc hosts file
   
-  For example, if you are a windows user or MAC user, you can navigate to below path on the  system as an administrator and modify the hosts file with the below entries.
+  For example, if you are a Windows user or MAC user, you can navigate to the below path on the system as an administrator and modify the hosts file with the below entries.
    
     * Windows hosts file path - C:\Windows\System32\drivers\etc\hosts
     * Mac hosts file path - /private/etc/hosts
@@ -123,7 +123,7 @@ To deploy the PeopleSoft Instance, in this lab, you will:
          ```
         ![Hosts file entry, sample from windows](./images/hosts-file.png " ")
   
-  The url you will need to type into your browser's search bar should look like this:
+  The URL you will need to type into your browser's search bar should look like this:
 
 
 
@@ -131,12 +131,12 @@ To deploy the PeopleSoft Instance, in this lab, you will:
 
     
 
-    ![Type the appropriate url into the firefox search bar or Chrome](./images/psft-web.png " ")
+    ![Type the appropriate URL into the Firefox search bar or Chrome](./images/psft-web.png " ")
 
-    The login user id for PeopleSoft HCM application is PS, the password was supplied during the cloud-init script for opr_pwd
+    The login user-id for PeopleSoft HCM application is PS; the password was supplied during the cloud-init script for opr_pwd
 
     ![Look and feel of PeopleSoft HCM after login](./images/psft-web-login.png " ")
-
+    
 
 ## Summary
 
