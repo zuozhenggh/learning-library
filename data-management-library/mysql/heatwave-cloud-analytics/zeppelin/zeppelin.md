@@ -2,7 +2,9 @@
 
 ## Introduction
 
-In this lab, we will deploy the popular <a href="https://zeppelin.apache.org/" target="\_blank">**Apache Zeppelin**</a> notebook to OKE and to create a simple notebook to MySQL HeatWave
+<a href="https://zeppelin.apache.org/" target="\_blank">Zeppelin</a> is Web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala, Python, R and more.
+
+In this lab, we will deploy **Apache Zeppelin** notebook to Oracle Kubernetes infrastructure and to create a simple notebook to MySQL HeatWave
 
 Estimated Time: 2 minutes
 

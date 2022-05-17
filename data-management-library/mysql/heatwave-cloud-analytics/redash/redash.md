@@ -2,7 +2,11 @@
 
 ## Introduction
 
-In this lab, we will deploy a very popular open-source tool, <a href="https://redash.io/", target="\_blank">Redash dashboard</a> to OKE to analyze data in MySQL HeatWave
+<a href="https://redash.io/", target="\_blank">Redash</a> provides a dashboard builder to visualize your data as well as a SQL editor to develop your SQL and reports.
+
+In this lab, we will deploy Redash to Oracle Container Engine for Kubernetes infrastructure to analyze data in MySQL HeatWave.
+
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 Estimated Time: 15 minutes
 
@@ -10,7 +14,7 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-* Create a Kubernetes namespace for phpMyAdmin
+* Create a Kubernetes namespace for Redash
 * Deploy Redash dashboard to OKE
 * Analyze data in MySQL HeatWave
 
