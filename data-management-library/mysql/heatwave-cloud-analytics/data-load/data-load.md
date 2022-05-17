@@ -2,9 +2,7 @@
 
 ## Introduction
 
-**MySQL Database System** is a fully-managed cloud-native database service based on the MySQL Enterprise Edition.
-
-In this lab, we will walk you through the steps to upload the data into **MySQL** using mysql shell.
+In this lab, we will walk you through the steps to upload the data into **MySQL** using mysql shell utility
 
 Estimated Time: 10 minutes
 
