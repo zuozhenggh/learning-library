@@ -8,6 +8,19 @@ If you already have an Oracle Cloud account, you can skip to Step 2.
 
 If you already have a reservation, skip to the next lab to start your workshop!
 
+Estimated Time: 5 minutes
+
+### Objectives
+
+- Create an Oracle cloud account
+- Request workshop reservation on LiveLabs
+- Launch workshop
+
+### Prerequisites
+
+- A valid email address
+- Valid phone number
+
 ## Task 1: Create an Oracle Account
 
 Creating an Oracle account can be summarized in the following two simple steps.
@@ -20,7 +33,7 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
   ![Fill out form](images/create-account-oracle-2.png " ")
 
-## Task 2: **Request Workshop Reservation**
+## Task 2: Request Workshop Reservation
 
 1. Using your *Oracle Account Login* go to [LiveLabs 2.0](http://bit.ly/golivelabs) and click ![Reserve](images/reserve.png) to request a reservation for this workshop.
 
