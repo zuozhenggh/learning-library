@@ -1,4 +1,5 @@
 {
+
    "workshoptitle": "LiveLabs Sprints",
    "help": "livelabs-help-oci_us@oracle.com",
    "tutorials": [
@@ -10,3 +11,4 @@
    ],
    "task_type": "Sections"
 }
+

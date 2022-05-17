@@ -1,7 +1,7 @@
-# Need Help?   
+# Need help?
 
 ## Introduction
-This page is designed to help you solve some common problems users face in this LiveLab. 
+This page is designed to help you solve some common problems users face in this LiveLab.
 
 If you still find yourself stuck or would like to report an issue with the workshop, click the question mark icon in the upper left corner to contact the LiveLabs team directly via email.  
 
@@ -14,26 +14,10 @@ For more about getting support using our email, click [here](#HowtoFormatYourSup
   - [Can't Create An Oracle Database? Nothing In Your Compartment?](#CantCreateanOracleDatabase?NothinginYourCompartment?)
   - [Connectivity Issues? Unable To Upload Data or Connect To The database?](#ConnectivityIssues?UnabletoUploadDataorConnecttotheDatabase?)
 
-### **Rate This Workshop**
-When you are finished please don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating. 
-
-1.  Go back to your **Workshop Homepage** in LiveLabs by searching for your workshop and clicking the Launch button.
-
-2.  Click on the **Brown Button** to re-access the workshop.  
-
-    ![](images/workshop-homepage-2.png " ")
-
-3.  Click **Rate this workshop**.
-
-    ![](images/rate-this-workshop.png " ")
-
-If you still have an active reservation, you can also rate by going to **My Reservations** -> **Launch Workshop**.
-
-
 ## How to Format Your Support Email Request
 This will construct an email in your default mail application that is auto populated to address our LiveLabs support inbox and will also include your current workshop in the subject line. Follow the steps below to contact us and get a quick resolution to your issue.
 
-1. Do not change the subject line. 
+1. Do not change the subject line.
 2. Include the description of your issue and any pertinent information in the contents on your email.
 
     ![](images/e-mail.png)
@@ -73,3 +57,8 @@ If any of these three conditions are true, some ports in your network may be clo
 2. If you are connected to a corporate network, try switching to a public or a "clear" network if allowed.
 
 3. Alternatively, contact your IT Administrator to see if adding exceptions to your network or firewall would be viable.
+
+
+## Cannot Create Password for Database Users?
+
+1. Make sure the password you enter only contains upper case letters, lower case letters, numbers, and underscores as special characters.

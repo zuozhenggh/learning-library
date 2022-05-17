@@ -8,12 +8,6 @@ Before you get started, you will need an Oracle Cloud account. This 5-minute lab
 
 If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **Task 2** to sign in to your cloud tenancy.
 
-### Two Cloud Offers in One
-
-Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first.
-
-![](images/freetrial.png " ")
-
 ### What you will need
 
 * A valid email address
@@ -61,7 +55,7 @@ If you already have a cloud account, skip to **Task 2**.
           ![Verify My Code](images/free-tier-address-4.png " ")
 
 10. Click the **Add payment verification method** button.
-          ![Payment Verification](images/free-tier-payment-1.png " ")  
+          ![Payment Verification](images/free-tier-payment-1.png " ")
 
 11. Choose the verification method. In this case, click the **Credit Card** button. Enter your information and payment details.
 
@@ -104,6 +98,6 @@ You may now **proceed to the next lab**
 
 ## **Acknowledgements**
 
-- **Created By/Date** - Tom McGinn, Database Innovations Architect, Database Product Management, March 2020
+- **Created By/Date** - Kay Malcolm, Database Product Management, Database Product Management, March 2020
 - **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
 - **Last Updated By** - Arabella Yao, Product Manager, Database Product Management, March 2022
