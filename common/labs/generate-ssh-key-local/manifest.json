@@ -3,12 +3,12 @@
     "help": "livelabs-help-db_us@oracle.com",
 	"tutorials": [
         {
-            "title": "Lab: Generate SSH Key Using Local Tools",
+            "title": "Lab 1: Generate SSH Key Using Local Tools",
             "description": "Generate SSH Key",
             "filename": "generate-ssh-keys-local.md"
         },
         {
-            "title": "Lab: Login to Oracle Cloud",
+            "title": "Lab 2: Login to Oracle Cloud",
             "description": "Login to Oracle Cloud",
             "filename": "../cloud-login/cloud-login.md"
         },
