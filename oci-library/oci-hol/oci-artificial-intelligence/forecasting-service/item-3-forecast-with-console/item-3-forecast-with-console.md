@@ -24,7 +24,7 @@ In this section, we will learn how to create the forecast project, upload data i
 ## Task 1: Set up pre-requisites for console
 
 1. If the user tenancy is not subscribed to US West (Phoenix) then we should look for the tenancy region drop-down for US West (Phoenix) and select it as shown below:
-  ![](images/lab5-subscribe-us-west-phnx.png " ")
+        ![](images/lab5-subscribe-us-west-phnx.png " ")
 
 2. Create a Dynamic group in the user tenancy by below steps:
 

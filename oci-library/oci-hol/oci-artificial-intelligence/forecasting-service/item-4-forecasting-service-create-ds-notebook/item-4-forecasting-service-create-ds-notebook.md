@@ -1,12 +1,11 @@
 # Lab 2: (Optional) Forecast using Data Science Notebook 
 
- In this lab, we will learn how to Forecast using Data Science Notebook. We will also learn about data requirements and data formats required by our APIs through some examples. 
+In this lab, we will learn how to Forecast using Data Science Notebook. We will also learn about data requirements and data formats required by the OCI Forecasting Service APIs through some examples.
 
 *Estimated Time*: 50 minutes
 
 ### Objectives:
 
-In this lab, you will:
 *	Learn how to generate API key 
 *	Learn how to create a project in Data Science service 
 *	Learn how to set up a notebook session inside a data science project 
@@ -20,24 +19,24 @@ In this lab, you will:
 
 ### Prerequisites:
 *	A free tier or paid tenancy account in OCI
-* You have completed all the tasks in Getting Started.  
-* Download the sample python [notebook](files/ForecastingAPI_LiveLabs_SampleNotebook.ipynb). We will be using for explaining  how to use Forecasting Service APIs
+* Completed all the tasks in Getting Started
+* Download the sample python [notebook](files/ForecastingAPI_LiveLabs_SampleNotebook.ipynb). It will be used to explain how to use the OCI Forecasting Service APIs
 
 
 ## Task 1: API key generation  
-1.  Log in to your Oracle Cloud account, expand the Profile menu and click on User Settings:
+1.  Log in to the OCI account, expand the Profile menu and click on User Settings:
     ![](images/lab1-task1-step1-login.png " ")
 
-2.  Under User Settings click on the API Keys under Resources on the left :
+2.  Under User Settings, click on the API Keys under Resources on the left:
     ![](images/lab1-task1-step2-apikey.png " ")
 
-3. Click on the Add API Key
+3. Click on Add API Key:
     ![](images/lab1-task1-step3-addkey.png " ")
 
-4. Download the private key on your system. We will use this later for authorization when using the forecasting APIs. After downloading, click on Add button. By clikcing on Add, this key would get listed under API Keys and become active.  
+4. Download the private key. We will use this later for authorization when using the forecasting APIs. After downloading, click on Add button. By clikcing on Add, this key would get listed under API Keys and become active.  
     ![](images/lab1-task1-step4-savekey.png " ")
 
-5. Save the contents of the configuration file preview in a text file on your system. Details such as user, fingerprint, tenancy, region etc. will be needed when setting up authorization for using the forecasting APIs.
+5. Save the contents of the configuration file preview in a text file. Details such as user, fingerprint, tenancy, region etc. will be needed when setting up authorization for using the forecasting APIs.
     ![](images/lab1-task1-step5-configurationfile.png " ")
 
 
@@ -45,7 +44,7 @@ In this lab, you will:
 ## Task 2: Create a Data Science project
 
 
-1.  Log in to your OCI account and search for data science in the top search bar. Click on the Data Science under Services:
+1.  Search for data science in the top search bar. Click on the Data Science under Services:
     ![](images/lab1-task2-step1-login.png " ")
 
 2.  Select the root compartment and press the create project button. 
@@ -58,35 +57,29 @@ In this lab, you will:
 
 ## Task 3: Create a Notebook session
 
-
-1.  Log in to your OCI account and search for data science in the top search bar. Click on the Data Science under Services:
-
-    ![](images/lab1-task3-step1-search.png " ")
-
-2.  Select the root compartment and open the project where you want to create a notebook session. 
+1.  Select the project which we created now to create a notebook session
     
     ![](images/lab1-task3-step2-access.png " ")
 
-3.  On opening a project, you will see the button to create a notebook session. Click the create notebook session: 
+2.  Click on the create a notebook session
     ![](images/lab1-task3-step3-notebooksession.png " ")
 
-4.  Give a name to the notebook session. Select appropriate compute, storage, VCN and subnet. Press the create button
+3.  Give a name to the notebook session. Select appropriate compute, storage, VCN and subnet. Press the create button
     
     ![](images/lab1-task3-step4-sessiondetails.png " ")
 
-5.  It takes a few minutes (5-10 minutes) for the newly created notebook session to become active. It can be seen under the     project. Once it has become active, open it.
+4.  It takes a few minutes (5-10 minutes) for the newly created notebook session to become active. It can be seen under the project. Once it has become active, open it
 
     ![](images/lab1-task3-step5-wait.png " ")
 
-6.  Click on the open button:
+5.  Click on the open button
     
     ![](images/lab1-task3-step6-open.png " ")
 
-7.  A new notebook can be created by using Python 3 kernel. Also a new folder can be created and given a custom name by using the + button:
+6.  A new notebook can be created by using Python 3 kernel. Also a new folder can be created and given a custom name by using the + button:
     ![](images/lab1-task3-step7-python3.png " ")
 
-8.  Setting up authorization for to use forecasting APIs
-Use the tenancy, user and fingerprint from the configuration file as shown in API key generation step. Also upload the private API key that you downloaded in the API key generation step and give its path to private_key_file. Don’t change the pass_phrase. 
+7.  Now, we will set up authorization to use forecasting APIs. Use the tenancy, user and fingerprint from the configuration file as shown in API key generation step. Also upload the private API key that we downloaded in the API key generation step and give its path to private_key_file. Don’t change the pass_phrase. 
 
     ```Python
     from oci.signer import Signer
@@ -105,7 +98,7 @@ Use the tenancy, user and fingerprint from the configuration file as shown in AP
 
 
 ## Task 4: Understand Data, Download Samples, Prepare data, Create Project
-In this task, we will discuss the data requirements and data formats required by our APIs through some examples. Forecasting service provides an AutoML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. For this, there are some data validations and data format requirements that the input data must satisfy.
+OCI forecasting service provides an AutoML solution with multiple univariate/multivariate algorithms that can run on single series or multiple series at once. There are some data validations and data format requirements that the input data must satisfy.
 
 **Data Validations**
 
@@ -114,25 +107,28 @@ For a successful forecast, the input data should pass the following data validat
 * Number of rows for a time series >= 5 and <= 5000
 * Series length >= 2 X Major Seasonality
 * If the series is non-seasonal, at least one non-seasonal method needs to be available for running.
-* If ensemble method is selected, at least 2 other methods need to be selected as well
+* If the ensemble method is selected, at least 2 other methods need to be selected as well.
 * Number of missing values <= 10% of series length
-* If there are missing values for 5 consecutive time steps, throw an error
-* All the timestamps in the primary data source should exist in the secondary data source, also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency)
-* Check if there are any duplicate dates in timeseries after grouping also (Check for both additional and primary data)
+* If there are missing values for 5 consecutive time steps, throw an error.
+* Input Data Frequency: 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
+* Forecast Frequency: 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required. For custom frequency: If the input data frequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. 
+Eg. If Input Data Frequency: 2HOURS , then the forecast frequency: 24HOURS if we want Forecast Frequency to be a DAY level
+* All the timestamps in the primary data source should exist in the secondary data source also the number of rows in the additional data source should be equal to the number of rows in the primary data source + forecast horizon size (adjusted by input and output frequency).
+* Check if there are any duplicate dates in time-series after grouping also (Check for both additional and primary data)
 
 **Data format requirements**
 
-The data should contain one timestamp column and other columns for target variable and series id (if using grouped data)
-- timestamp column should contain dates in standard [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format e.g., 2020-07-13T00:00:00Z. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
+The data should contain one timestamp column and other columns for target variable and series id (if using grouped data):
+- timestamp column should contain dates in standard [ISO 8601]('https://en.wikipedia.org/wiki/ISO_8601') format. Allowed formats: "yyyy-MM-dd","yyyy-MM-dd HH:mm:ss","yyyy-dd-MM HH:mm:ss","MM-dd-yyyy HH:mm:ss" ,"dd-MM-yyyy HH:mm:ss","dd-MM-yyyy","MM-dd-yyyy", "yyyy-dd-MM" 
 - If the input date doesn't follow allowed format then it needs to be converted in the required format. Sample Python code for converting different date strings to ISO 8601 format is provided in Step 3 of Task 6 in this lab for  "yyyy-MM-dd HH:mm:ss"
 - target_column should contain target values of time series. For example it be sales number of a sales data 
 - series_id column should contain identifiers for different series e.g., if the data is having sales for different products, then series id can have product codes. 
 
 **Note**: The column names used in the examples here are just for representation and actual data can have different custom names.  
 
-Currently, our APIs support datasets that can be in one of the following formats:
+Currently, OCI Forecasting Service APIs support datasets that can be in one of the following formats:
 
-1.  Single time series without any additional data:**
+1.  Single time series without any additional data
     Such datasets have only two columns in them. The first column should be a timestamp column and the second column should be the target column.
 
     **Here is a sample CSV-formatted data:**
@@ -144,8 +140,8 @@ Currently, our APIs support datasets that can be in one of the following formats
     ...
     ...
     ```
-2.  Multiple time series without any additional data:
-    The input data can have multiple time series in it(grouped data). For such datasets there must be a column to identify different time-series.
+2.  Multiple time series without any additional data
+    The input data can have multiple time series. Such datasets are called grouped data and there must be a column to identify different time series.
 
     **Here is a sample CSV-formatted data:**
     ```csv
@@ -166,8 +162,8 @@ Currently, our APIs support datasets that can be in one of the following formats
     ....
     ....
     ``` 
-3.  Time series with additional data:
-    The input data can have additional influencers that help in forecasting. We call the two datasets as primary and additional. The primary data should have three columns - timestamp, target column and a column for series id. The additional data should have a timestamp column, a series id column and columns for additional influencers.   
+3.  Time series with additional data
+    The input data can have additional influencers that help in forecasting. We call the two datasets primary and additional. The primary data should have three columns - timestamp, target column, and a column for the series id. The additional data should have a timestamp column, a series id column, and columns for additional influencers. 
 
     **Here is a sample CSV-formatted data:**
 
@@ -210,14 +206,14 @@ Currently, our APIs support datasets that can be in one of the following formats
     ....
     ```
    
-    Steps on how to generate inline data from csv files are given in Task 3 below.
+    Steps on how to generate inline data from csv files are given in Task 6 below.
     
     **Note:**
     * Missing values are permitted (with empty), and boolean flag values should be converted to numeric (0/1)
 
 ## Task 5: Download Sample Data and upload to Data Science Notebook Session
 
-1. Here is a sample dataset to help you to easily understand how the input data looks like, Download the files to your local machine.
+1. Below is the sample dataset to help us to easily understand how the input data looks like, Download the files to the local machine.
 
 * [Primary data](files/favorita_13_beverages_primary_v1.csv)
 * [Additional data](files/favorita_13_beverages_add_v1.csv)
@@ -225,12 +221,12 @@ Currently, our APIs support datasets that can be in one of the following formats
 
 2.  Next, we need to upload the sample training data into data science notebook, to be used for *inline data* preparation for model training in next steps.
 
-Click on upload and then browse to file which you desire to upload:
+Click on upload and then browse to file to be uploaded:
 ![](images/lab1-task3-upload-data.png " ")
 
 ## Task 6: Inline Data preparation
 
-1.  Import below necessary python modules for executing the scripts:
+1.  Import the below necessary python modules for executing the scripts
 
     ```Python
     import pandas as pd
@@ -243,15 +239,15 @@ Click on upload and then browse to file which you desire to upload:
     import simplejson
     ```
 
-2.  You need to load the data in notebook via below mentioned python commands in a data frame
-    Specify the correct path for the csv file that has the time series data.
+2.  Load the data in the notebook via below mentioned python commands in a data frame by specifying the correct 
+path for the csv file that has the time series data
 
     ```Python
-    df_primary = pd.read_csv('favorita_13_beverages_primary_v1.csv')
-    df_add = pd.read_csv('favorita_13_beverages_add_v1.csv')
+    df_primary = pd.read_csv('primary_15_AUTOMOTIVE.csv')
+    df_add = pd.read_csv('add_15_AUTOMOTIVE.csv')
     ```
 
-3.  Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands if not in the right format
+3.  (Optional)Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands if not in the right format
     Use this link https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior for other date time formats
 
     ```Python
@@ -270,8 +266,8 @@ Click on upload and then browse to file which you desire to upload:
     ```
 
 5.  Setting variables to create forecast with below commands
-    - prim_load : is the variable having inline primary data
-    - add_load : is the variable having inline additional data 
+    - prim_load: is the variable having inline primary data
+    - add_load: is the variable having inline additional data 
 
     ```Python
     #primary data
@@ -327,10 +323,11 @@ Click on upload and then browse to file which you desire to upload:
       ```
 
 ## Task 7 : Create Project  
-  Once, the data is prepared , you  will learn how to create the forecasting service project.
+
+  Once, the data is prepared, we will learn how to create the project.
 
   In the payload:
-  * compartmentId  will be same as tenancy id if is root compartment else provide desired compartment id. Please visit Lab1 API Key generation. In the below eg. we will be using root compartment
+  * compartmentId will be same as tenancy id if is root compartment else provide desired compartment id. Please visit API Key generation above. In the below eg. we will be using root compartment
   * displayName can be given any custom name
   * description can be customized
 
@@ -350,7 +347,7 @@ Click on upload and then browse to file which you desire to upload:
     }
     response = requests.request("POST", url, headers=headers, data=payload, auth=auth)
     ```
-    We store the response using below command :
+    We store the response using below command:
     ```Python
     create_project_response = json.loads(response.text)
     create_project_response
@@ -377,17 +374,15 @@ Click on upload and then browse to file which you desire to upload:
 **Note** : It is not needed to create new projects everytime we run this notebook. A project id once created can be used again and again.
 
 ## Task 8: Train Model and Forecast
-In this task, we will show you how to use create and get forecast APIs. 
+In this task, we will learn how to use create and get forecast APIs. 
 
-1. Create a Forecast model
+1. Creating a model requires 3 actions to train the forecasting model
 
-Creating a model requires 3 actions to kick off training the forecasting model.
+    * Pass the inline data in the payload of the forecast train settings
+    * Set other training parameters as show in below code snippet
+    * Create Forecast API Call using the /forecasts url
 
-  * Pass the inline data in the payload of the forecast train settings
-  * Set other training parameters as show in below code snippet
-  * Create Forecast API Call using the /forecasts url
-
-  We pre-define some the parameters of the payload based on the example input data (the one we uploaded in previous lab session)
+   We pre-define some of the parameters of the payload based on the example input data (the one we uploaded in previous lab session)
 
     ```Python 
     date_col = 'date'
@@ -399,24 +394,22 @@ Creating a model requires 3 actions to kick off training the forecasting model.
     forecast_name = "LiveLabs Inline Forecasting Service API "
     ```
 
-In the example below we show how to create the payload for calling create forecast API. 
-- "compartmentId": is same as tenancy id
-- "projectId": the one you get after creating a project
-- "targetVariables": name of the column in primary data having the target values
-- models: models selected for training. Here we are showing some the models implemented in our service.Our AutoML service selects the best model out of all the models selected for training. 
-- "forecastHorizon": number of future timesteps for which to forecast 
-- "tsColName": name of the timestamp column  
-- "dataFrequency": 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
-- "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required . For custom frequency : If input dataFrequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. Eg.  If dataFrequency : 2HOURS  , then forecastFrequency: 24HOURS if you want forecastFrequency to be a DAY level
-- "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
-- "columnData": inline data 
-- "columnSchema": provide column name and data type for each column in the data source
-- "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data
-- "models" : We can use any of the available algorithms are univariate and multivariate methods. 
-
-   - Univariate :"SMA","DMA","HWSM","HWSA","SES","DES","SA","SM","UAM","UHM","HWSMDAMPED","HWSADAMPED", "PROPHET", "ARIMA"
-   
-   - Multivariate : "PROBRNN","APOLLONET","EFE"               
+    In the example below we show how to create the payload for calling create forecast API. 
+    - "compartmentId": will be same as tenancy id if is root compartment else provide desired compartment id. Please visit API Key generation above. In the below eg. we will be using root compartment id
+    - "projectId": we get it after creating a project in the above step
+    - "targetVariables": name of the column in primary data having the target values
+    - "models": models selected for training. Here we are showing some the models implemented in service.The AutoML feature selects the best model out of all the models selected for training
+    - "forecastHorizon": number of future timesteps for which to forecast 
+    - "tsColName": name of the timestamp column  
+    - "dataFrequency": 'MINUTE','HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR'  and custom frequency depending on frequency of input data
+    - "forecastFrequency": 'HOUR', 'DAY', 'WEEK', 'MONTH' or 'YEAR' and custom frequency depending on forecast frequency required . For custom frequency : If input dataFrequency multiplier is more than 1, then the forecast frequency should be also at the same base frequency as the input. Eg.  If dataFrequency : 2HOURS  , then forecastFrequency: 24HOURS if we want forecastFrequency to be a DAY level
+    - "isDataGrouped": True if data is grouped or having additional data. False if using only one series with no additional data
+    - "columnData": inline data 
+    - "columnSchema": provide column name and data type for each column in the data source
+    - "additionalDataSource": column schema for additional data to be provided if using additional data.This field should be removed if there is no additional data
+    - "models": We can use any of the available algorithms are univariate and multivariate methods 
+      - Univariate:"SMA","DMA","HWSM","HWSA","SES","DES","SA","SM","UAM","UHM","HWSMDAMPED","HWSADAMPED", "PROPHET", "ARIMA"
+      - Multivariate: "PROBRNN","APOLLONET","EFE"               
 
     ```Python
     %%time
@@ -513,13 +506,13 @@ In the example below we show how to create the payload for calling create foreca
     create_forecast_response
     ```
    
-2. Get forecast and Prediction Intervals
-- Take the forecast ID from response above and create a *Get forecast API* call using below code snippet
-- Once the results are produced, the  'lifecycleState' changes to 'ACTIVE'. If it is 'CREATING', then you need to re-run the code below after sometimes.
-- The ```forecastResult``` key in the below ```get_forecast_response``` gives us the forecast for the given horizon  
-- We also get Prediction Intervals from ```predictionInterval``` key in the response
+2. Get forecast and prediction intervals
+  - Take the forecast ID from response above and create a *Get forecast API* call using below code snippet
+  - Once the results are produced, the  'lifecycleState' changes to 'ACTIVE'. If it is 'CREATING', then we need to re-run the code below after sometimes.
+  - The ```forecastResult``` key in the below ```get_forecast_response``` gives us the forecast for the given horizon  
+  - We also get prediction intervals from ```predictionInterval``` key in the response
 
-    It can take sometime to create the forecast depending on the models selected and the size of the input data.  For the dataset we have taken, it should take around 3-4 minutes to give results. Till then you can take a break or focus on other task.
+  It can take some time to create the forecast depending on the models selected and the size of the input data. For the dataset we have taken, it should take around 3-4 minutes to give results.
 
     ```Python
     create_forecast_id = create_forecast_response['id']
@@ -640,9 +633,9 @@ The forecast.csv will be saved in the same folder as the notebook file.
 
 3. Get Training Metrics report from the response
 
-* We can also retrieve training metrics report from the response which shows the best model selected using AutoML based on performance on selected error metric. Eg. RMSE in this example. 
-* We also get seasonality, outlier detected and other preprocessing methods applied to the series
-    
+  * We can also retrieve training metrics report from the response which shows the best model selected using AutoML based on performance on selected error metric. Eg. RMSE in this example. 
+  * We also get seasonality, outlier detected and other preprocessing methods applied to the series
+      
     Code to execute:
     ```Python
     get_forecast_response['forecastResult']['metrics']['targetColumns']
@@ -665,15 +658,15 @@ The forecast.csv will be saved in the same folder as the notebook file.
 
 ## Task 9: Get Explainability for Forecast
 
-Forecast will also give explainability for each of the target time series in the dataset. Explainability report includes both global and local level explanations. Explanations provides insights on the features that are influencing the forecast. Global explanation represents the general model behaviour - e.g., which features does the model consider important ? Local explanation tells the impact of each feature at a single time step level. Forecast provides local explanations for all the forecasts that it generates
+The forecast will also give explainability for each of the target time series in the dataset. The explainability report includes both global and local level explanations. Explanations provide insights into the features that are influencing the forecast. Global explanation represents the general model behavior - e.g., which features does the model consider important? A local explanation tells the impact of each feature at a single time step level. The forecast provides local explanations for all the forecasts that it generates
 
-In this task, we will discuss how to get global and local explanation for the best model chosen by forecast, inorder to understand the features that are influencing the forecast
+In this task, we will discuss how to get a global and local explanation for the best model chosen by the forecast, to understand the features that are influencing the forecast
 
-Here is a case study on using the forecast api to get the global and local explanations
+Here is a example on using the forecast explanation API to get the global and local explanations
 
 ### Get Global Explanation
 
-1. Call the explanation API using below code as shown below:
+1. Call the explanation API using below code as shown below
     ```Python
     url = "https://forecasting----.------.------.---.oraclecloud.com/20220101/forecasts/{}/explanations/".format(create_forecast_id)
 
@@ -686,7 +679,7 @@ Here is a case study on using the forecast api to get the global and local expla
 
 2. Sample Json ouput
 
-    The JSON format is also straight-forward, it contains a key `globalFeatureImportance` listing all the influencing features and their feature importance scores - raw and normalized scores
+    The JSON format contains a key `globalFeatureImportance`, listing all the influencing features and their feature importance scores - raw and normalized scores
 
     ```Json
     {'dataSourceType': 'INLINE',
@@ -765,7 +758,7 @@ Here is a case study on using the forecast api to get the global and local expla
         'AgeFeature': {'normalizedScore': -0.0034806142,
         'rawScore': -0.08716557}}]}}]}
     ```
-*The above explanation shows features contributing towards the model output/prediction from the base value. The base value is nothing but the average model output computed over most recent 100 time steps in the training data. If the dataset size is less than 100, then the base value is computed over the whole dataset. The features which have positive feature importance scores, push the prediction higher and the features that have negative feature importance scores, push the prediction lower. The feature importance scores are raw scores and those features with high in magnitude influence the prediction most and the sign of the scores indicates whether the influence is positive or negative.*
+*The above explanation shows features contributing towards the model output/prediction from the base value. The base value is nothing but the average model output computed over the most recent 100-time steps in the training data. If the dataset size is less than 100, then the base value is computed over the whole dataset. The features which have positive feature importance scores, push the prediction higher and the features that have negative feature importance scores, push the prediction lower. The feature importance scores are raw scores and those features with high magnitude influence the prediction most and the sign of the scores indicates whether the influence is positive or negative.*
 
 3. Plotting the global feature importance 
 
@@ -796,8 +789,7 @@ Here is a case study on using the forecast api to get the global and local expla
 
 ### Get Local Explanation
 
-  To get local explanation, there is no seperate api call required. The api call for get explanation will fetch both global and local explanations.
-  The key `localFeatureImportance` in the json output contains all the influencing features and their feature importance scores for all the time steps in the forecast horizon
+  To get local explanation, there is no seperate API call required. The API call for get explanation will fetch both global and local explanations. The key `localFeatureImportance` in the json output contains all the influencing features and their feature importance scores for all the time steps in the forecast horizon
 
 1. Plotting the local feature importance 
 
@@ -830,17 +822,16 @@ Here is a case study on using the forecast api to get the global and local expla
 
     ![Local Feature Importance for step 1 forecast](images/lab1-task2-local-feature-importance.png)
 
-    Similarly, by changing the time step, you can get the local feature importance for that corresponding forecast.
+    Similarly, by changing the time step, we can get the local feature importance for that corresponding forecast.
 
 Congratulations on completing this workshop! 
 Please feel free to contact us if any additional questions.
 
 ## Acknowledgements
 * **Authors**
-    * Ravijeet Kumar - Senior Data Scientist - Oracle AI Services
-    * Anku Pandey - Data Scientist - Oracle AI Services
-    * Sirisha Chodisetty - Senior Data Scientist - Oracle AI Services
-    * Sharmily Sidhartha - Principal Technical Program Manager - Oracle AI Services
-    * Last Updated By/Date: Ravijeet Kumar, 19th-January 2022
-
+    * Ravijeet Kumar,Senior Data Scientist - Oracle AI Services
+    * Anku Pandey, Data Scientist - Oracle AI Services
+    * Sirisha Chodisetty,Senior Data Scientist - Oracle AI Services
+    * Sharmily Sidhartha, Principal Technical Program Manager - Oracle AI Services
+    * Last Updated By/Date: Ravijeet Kumar, May 2022
 
