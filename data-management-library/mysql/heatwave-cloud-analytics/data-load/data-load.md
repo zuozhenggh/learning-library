@@ -36,7 +36,7 @@ This lab assumes you have:
   Click on the icon on the top right corner of OCI Console to launch the Cloud Shell.
 	![Cloud Shell](images/cloud-shell.png)
 
-  OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console to access various OCI services including OCI Compute instances. 
+  OCI Cloud Shell is a web browser-based terminal accessible from the Oracle Cloud Console to access various OCI services including OCI Compute instances.
 
 	![Launch Cloud Shell](images/cloud-shell-launch.png)
 
@@ -100,7 +100,7 @@ This lab assumes you have:
 	</copy>
 	```
 
-7. Load data 
+7. Load data
 
   We will first simulate the data loading to make sure that we are able to load the data without any errors. Note the flag **dryRun** to simulate the data loading without executing the actual data loading
 
