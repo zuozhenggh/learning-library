@@ -31,7 +31,7 @@ A Query Service project is a collection of tables, worksheets, and queries relat
         + **moviestream\_landing**
         + **moviestream_gold**
 
-        When you create a Query Service project, you must choose a Data Catalog instance. When the project is created, Query Service creates an ADB instance associated with the project and synchronizes automatically with the Data Catalog instance. It synchronizes (links) the metadata in ADB with your Data Catalog instance and creates schemas that correspond to your harvested data assets and external tables in those schemas that correspond to the logical entities in the Data Catalog instance.  
+        When you create a Query Service project, you must choose a Data Catalog instance. When the project is created, Query Service creates an ADB instance which is associated with the project and synchronizes it automatically with the Data Catalog instance that you specified. It synchronizes (links) the metadata in ADB with your Data Catalog instance and creates schemas that correspond to your harvested data assets. Query Service also creates the external tables in those schemas that correspond to the logical data entities that were harvested in the Data Catalog instance.  
 
     >**Note:** If you don't have a Data Catalog instance, click **Create Data Catalog** in the **Create Query Service project** panel to create a new one. Next, complete the fields in the **Create Data Catalog** panel. For detailed information on how to create and harvest a data asset from Oracle Object Storage buckets, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop.
 
@@ -48,6 +48,10 @@ A Query Service project is a collection of tables, worksheets, and queries relat
 4. Click **Create Project**. The initial state of the project is **CREATING**. When the project is created successfully, its state changes to **ACTIVE** and it is displayed in the **Query Service Projects** page.   
 
     ![The newly created Query Service project is displayed with an Active state.](./images/new-qs-project.png " ")
+
+    >**Note:** You can use the **State** filter in the **Filters** section on the left side of the page to display projects with only a specific state such as **Active**
+
+    ![The Active filter is selected from the State drop-down list.](./images/state-filter.png " ")
 
 5. To view the project's details page, click the project's name link in the **Name** column.
 
@@ -68,7 +72,7 @@ A Query Service project is a collection of tables, worksheets, and queries relat
 
     >**Note:** To return to the **Query Service Projects** page, click your browser's Back button.
 
-7. From the **Query Service Projects** page, you can also click **Query Editor** to display the Query Editor where you can use Oracle SQL to query your data from Oracle Object Storage buckets.
+7. From the **Query Service Projects** page, you can also click **Query Editor** to display the **Scratchpad** page. This is where you run one or more Oracle SQL to queries against tables in your available schemas (from your Data Catalog instance). To learn how to query data in Query Service, click the **How do I query data in Query Service?** workshop sprint in the **Contents** menu on the left.  
 
 8. Finally, you can click the **Actions** button (three vertical dots) in the row for your Query Service project to display the Context menu and perform a variety of tasks.
 

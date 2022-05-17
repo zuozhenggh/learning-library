@@ -3,10 +3,10 @@
    "help": "livelabs-help-db_us@oracle.com",
    "tutorials": [
      {
-        "title": "How do I query data in Query Service?",
+        "title": "How do I create an Object Storage table in Query Service?",
         "type": "tenancy",
         "description": "",
-        "filename": "./../sprint-query-data-qs/sprint-query-data-qs.md"
+        "filename": "./../sprint-create-obj-table-qs.md"
      }
    ],
    "task_type": "Sections"
