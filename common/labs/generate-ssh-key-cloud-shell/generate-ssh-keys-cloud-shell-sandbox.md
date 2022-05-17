@@ -1,4 +1,4 @@
-# Create SSH Keys Using Oracle Cloud Shell
+# Create SSH keys using Oracle Cloud Shell
 
 ## Introduction
 
@@ -14,11 +14,11 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 
 1.  To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
 
-    ![](./images/cloudshellopen.png " ")
+    ![Open cloud shell](./images/cloudshellopen.png " ")
 
-    ![](./images/cloudshellsetup.png " ")
+    ![Set up cloud shell](./images/cloudshellsetup.png " ")
 
-    ![](./images/cloudshell.png " ")
+    ![Cloud shell](./images/cloudshell.png " ")
 
 2.  Once the cloud shell has started, enter the following command. Choose the key name you can remember. This will be the keyname you will use to connect to any compute instances you create. Press Enter twice for no passphrase.
 
@@ -34,11 +34,11 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     ssh-keygen -b 2048 -t rsa -f <<sshkeyname>>
     ````
 
-    *Note: The angle brackets <<>> should not appear in your code.*
+    >**Note:** The angle brackets <<>> should not appear in your code.
 
-    ![](./images/cloudshell-ssh-keygen.png " ")
+    ![Generate SSH key](./images/cloudshell-ssh-keygen.png " ")
 
-    ![](./images/cloudshell-ssh-keygen-2.png " ")
+    ![SSH key output](./images/cloudshell-ssh-keygen-2.png " ")
 
 3.  Examine the two files that you just created.
 
@@ -46,23 +46,22 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
     <copy>ls</copy>
     ````
 
-    ![](./images/examine-cloudshell-keys.png " ")
+    ![Examine files](./images/examine-cloudshell-keys.png " ")
 
     Note in the output that there are two files, a *private key:* ```<<sshkeyname>>``` and a *public key:* ```<<sshkeyname>>.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 4. To list the contents of the public key, use the cat command ```cat <<sshkeyname>>.pub```
 
-    *Note: The angle brackets <<>> should not appear in your code.*
+    >**Note:** The angle brackets <<>> should not appear in your code.
 
-    ![](images/cat-in-cloudshell.png " ")
+    ![Cat in cloud shell](images/cat-in-cloudshell.png " ")
 
 5.  When pasting the key into the compute instance in future labs, make sure that you remove any hard returns that may have been added when copying. *The .pub key should be one line.*
 
-    ![](images/copy-publickey-cloudshell.png " ")
+    ![Copy public key](images/copy-publickey-cloudshell.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - LiveLabs Team, October 2020
-* **Workshop (or Lab) Expiry Date** - March 27, 2021
+* **Last Updated By/Date** - Arabella Yao, May 2022
