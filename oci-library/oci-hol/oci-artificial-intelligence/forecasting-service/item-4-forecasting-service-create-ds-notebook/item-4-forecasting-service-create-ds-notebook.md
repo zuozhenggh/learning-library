@@ -829,9 +829,9 @@ Please feel free to contact us if any additional questions.
 
 ## Acknowledgements
 * **Authors**
-    * Ravijeet Kumar,Senior Data Scientist - Oracle AI Services
+    * Ravijeet Kumar, Senior Data Scientist - Oracle AI Services
     * Anku Pandey, Data Scientist - Oracle AI Services
-    * Sirisha Chodisetty,Senior Data Scientist - Oracle AI Services
+    * Sirisha Chodisetty, Senior Data Scientist - Oracle AI Services
     * Sharmily Sidhartha, Principal Technical Program Manager - Oracle AI Services
     * Last Updated By/Date: Ravijeet Kumar, May 2022
 
