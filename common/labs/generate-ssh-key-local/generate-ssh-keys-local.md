@@ -199,43 +199,43 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 11. Select the key text in the dialog box from start to finish, then right click and choose **Copy**. You can then paste the key into a Notepad or directly into the instance creation dialog in the OCI console.
 
-    ![](images/keylab-021.png " ")
+    ![Copy SSH key](images/copy-putty.png " ")
 
 12.  Below is an example of the **Add SSH key - Paste SSH keys** dialog in the OCI instance creation form.
 
-    ![](images/keylab-022.png " ")
+    ![Paste SSH keys](images/paste.png " ")
 
     This concludes the section on using PuTTY to generate a SSH key pair for versions of Windows prior to Windows 10.
 
     Follow below instructions to connect to a cloud instance via SSH using the PuTTY terminal.
 
-### Connecting to an instance using PuTTY
+### Connect to an instance using PuTTY
 
 1.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
 
-    ![](images/keylab-023.png " ")
+    ![IP address](images/ip-address.png " ")
 
-    ![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
+    ![Compute Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2.  Under **Category** select **Connection** and then choose the **Data** field. Enter the assigned instance's username. OCI instances will default to the username ```opc```. Enter ```opc```.
 
-    ![](images/keylab-024.png " ")
+    ![Username](images/username.png " ")
 
 3.  Under **Category**, navigate to **Connection** - **SSH** and choose the **Auth** category. Click on the **Browse** button and locate the ```private key file``` you created in the earlier step. Click the **Open** button to initiate the SSH connection to your cloud instance.
 
-    ![](images/keylab-025.png " ")
+    ![Private key](images/private-key.png " ")
 
 4.  Click **Yes** to bypass the Security Alert about the uncached key.
 
-    ![](images/keylab-026.png " ")
+    ![Security Alert](images/security-alert.png " ")
 
 5.  Connection successful. You are now securely connected to an OCI Cloud instance.
 
-    ![](images/keylab-027.png " ")
+    ![Connected](images/connected.png " ")
 
     You are now able to connect securely using the PuTTY terminal utility. You can save the connection information for future use and configure PuTTY with your own custom settings.
 
-    *Note: If you've already installed PuTTY, don't bother with Git for Windows. It's your choice which to use for key generation and terminal access.*
+    >**Note:** If you've already installed PuTTY, don't bother with Git for Windows. It's your choice which to use for key generation and terminal access.
 
     [For more information on using PuTTY](https://the.earth.li/~sgtatham/putty/0.73/htmldoc/)
 
@@ -250,7 +250,7 @@ You may now proceed to the next lab.
     ```
 2. You should run this command from your home directory.  In this case as the user-id ```opc```.   The dialog will default to a hidden directory, ```~/.ssh```.  If you don't already have keys created, accept the default file name ```id_rsa``` by hitting the Enter key.   Press the Enter key two more times to create a key with no passphrase.   The best practice in a production environment would be to use a secure passphrase; however, we don't need to bother with these practice labs.
 
-    ![](images/keylab-001.png " ")
+    ![LINUX commands](images/linux-commands.png " ")
 
     The dialog will indicate that the key pair has been saved in the ```/home/username/.ssh``` directory and is now ready for use.
 
@@ -263,7 +263,7 @@ You may now proceed to the next lab.
     <copy>ls</copy>
     ```
 
-    ![](images/keylab-002.png " ")
+    ![List keys](images/list-keys.png " ")
 
     Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```. Keep the private key safe and don't share its contents with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
@@ -273,19 +273,19 @@ You may now proceed to the next lab.
     <copy>cat id_rsa.pub</copy>
     ```
 
-    ![](images/keylab-003.png " ")
+    ![Public key contents](images/pub-contents.png " ")
 
 5.  In some labs you will be asked to upload or copy (rcp) the public key to an instance in order to facilitate communications. So remember where the file is kept. Other labs will ask for the 'contents' of the key to be pasted into various dialog boxes to facilitate secure connections. Use the ```cat``` command and copy/paste the information from the key starting at the word "ssh-rsa" and copy everything up to the final character in the line. In the example below, you would copy from "ssh-rsa ... " and to exactly after "... -01". Copy the key contents exactly, capturing space after the key characters may render your key invalid.
 
-    ![](images/keylab-004.png " ")
+    ![Copy key](images/copy.png " ")
 
     You have created a public/private SSH key pair and can utilize it in any of the Oracle OCI labs that require an SSH key.
 
     In case you're interested, click [here](https://www.ssh.com/ssh/key) for more details on SSH, a short tutorial on initiating a connection from a Linux instance with the SSH keys we just created.
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Dan Kingsley, Enablement Specialist, OSPA
-* **Last Updated By/Date** - LiveLabs Team, October 2020
-* **Workshop (or Lab) Expiry Date** - March 27, 2021
+* **Contributors** - Arabella Yao, Database Product Management
+* **Last Updated By/Date** - Arabella Yao, May 2022
