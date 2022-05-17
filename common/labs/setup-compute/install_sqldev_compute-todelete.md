@@ -1,4 +1,4 @@
-# Install SQL Developer on a Compute Instance
+# Install SQL Developer on a compute instance
 
 ## Introduction
 This lab will show you how to install SQL Developer on a Compute Instance.
