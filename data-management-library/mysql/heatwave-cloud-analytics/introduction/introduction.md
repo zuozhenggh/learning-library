@@ -2,18 +2,15 @@
 
 ## About this Workshop
 
-The main purpose of this workshop is to teach you how you can implement a cloud-native analytics solution using MySQL HeatWave and various popular open-source tools on Oracle Cloud Infrastructure (OCI). MySQL HeatWave is not only proven to accelerate your most complicated SQL queries with in-memory partitioning technology, but it is also enhanced with Oracle AutoML-based machine learning technology lately to add prediction capabilities to your applications.
+The main purpose of this workshop is to teach you how you can implement a cloud-native analytics solution using **MySQL HeatWave** and various popular open-source tools on Oracle Cloud Infrastructure (OCI). MySQL HeatWave is not only proven to accelerate your most complicated SQL queries with in-memory partitioning technology, but it is also enhanced with Oracle AutoML-based machine learning technology lately to add prediction capabilities to your applications.
 
-We have selected a few popular open-source analytics tools such as Zeppelin, Jupyter, Superset, Redash and Grafana as part of this workshop to help you quickly experiment these tools with MySQL HeatWave on OCI, for example, building a sales performance dashboard with Superset, or exploring data with Zeppelin or Jupyter.
+We have selected a few popular open-source analytics tools such as Zeppelin, Jupyter, Superset, Redash and Grafana as part of this workshop to start using these tools with MySQL HeatWave on OCI, for example, build a sales performance dashboard with Superset, or profile your customer data with Zeppelin or Jupyter. Each of the labs is independent of each other, hence you can just pick which tools you like to work with, for example, if you want to build a dashboard, you can choose the Redash, Grafana or Superset labs. Likewise, you can choose to use Zeppelin or Jupyter for data exploration and analysis.
 
-In this workshop, you will learn
-
-* how easy it is to use MySQL HeatWave to accelerate your analytics workloads without modifications to your SQL queries
-* how quickly you can deploy and use your favorite open-source tools to work with MySQL HeatWave natively on OCI
+With the combination of your preferred analytics tool and **MySQL HeatWave** engine, you will be able to build a solid cloud native data analytics platform to solve your business problems.
 
 [](youtube:pexH2tqI_0E)
 
-Estimated Time: 90 minutes
+Estimated Time: 135 minutes
 
 ### About Oracle MySQL Database Service
 

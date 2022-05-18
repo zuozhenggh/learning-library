@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will build the workshop environment using Oracle Container Engine for Kubernetes (OKE) and MySQL HeatWave using Terraform script with OCI Resource Manager. OKE will be used to deploy various open-source tools to connect and analyze data in MySQL HeatWave.
+In this lab, we will build the workshop environment using Oracle Container Engine for Kubernetes (OKE) and **MySQL HeatWave** using Terraform script with OCI Resource Manager. OKE will be used to deploy various open-source tools to connect and analyze data in MySQL HeatWave.
 
 **Resource Manager** is an OCI service that allows you to automate the process of provisioning your Oracle Cloud Infrastructure resources. Using Terraform, Resource Manager helps you to install, configure, and manage resources through the "infrastructure-as-code" model.
 
