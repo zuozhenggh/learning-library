@@ -33,15 +33,15 @@
          "filename": "./../sprint-create-bucket/sprint-create-bucket.md"
       },
       {
+         "title": "How can I change bucket visibility settings?",
+         "description": " ",
+         "filename": "./../sprint-change-bucket-visibility/sprint-change-bucket-visibility.md"
+      },
+      {
          "title": "How do I upload my files to Object Storage?",
          "type": "tenancy",
          "description": " ",
          "filename": "./../sprint-upload-files/sprint-upload-files.md"
-      },
-      {
-         "title": "How can I change bucket visibility settings?",
-         "description": " ",
-         "filename": "./../sprint-change-bucket-visibility/sprint-change-bucket-visibility.md"
       },
       {
         "title": "How do I create an Object Storage table in Query Service?",
