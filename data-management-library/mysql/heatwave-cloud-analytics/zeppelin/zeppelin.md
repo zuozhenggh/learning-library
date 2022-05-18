@@ -2,11 +2,13 @@
 
 ## Introduction
 
-<a href="https://zeppelin.apache.org/" target="\_blank">Zeppelin</a> is Web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala, Python, R and more.
+<a href="https://zeppelin.apache.org/" target="\_blank">Zeppelin</a> is web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala, Python, R and more.
 
-In this lab, we will deploy **Apache Zeppelin** notebook to Oracle Kubernetes infrastructure and to create a simple notebook to MySQL HeatWave
+In this lab, you will deploy **Apache Zeppelin** notebook to Oracle Kubernetes infrastructure and create a simple notebook to **MySQL HeatWave**.
 
-Estimated Time: 2 minutes
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
+
+Estimated Time: 5 minutes
 
 ### Objectives
 

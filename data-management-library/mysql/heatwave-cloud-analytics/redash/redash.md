@@ -4,7 +4,7 @@
 
 <a href="https://redash.io/", target="\_blank">Redash</a> provides a dashboard builder to visualize your data as well as a SQL editor to develop your SQL and reports.
 
-In this lab, we will deploy Redash to Oracle Container Engine for Kubernetes infrastructure to analyze data in MySQL HeatWave.
+In this lab, we will deploy Redash to Oracle Container Engine for Kubernetes infrastructure to analyze data in **MySQL HeatWave**.
 
 **Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 

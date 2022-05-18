@@ -42,19 +42,19 @@
             "filename": "../../superset/superset.md"
         },
         {
-            "title": "Lab 7: Deploy Jupyter notebook",
+            "title": "Lab 7: Deploy Redash dashboard",
+            "description": "Create dashborad with Redash on MySQL HeatWave",
+            "filename": "../../redash/redash.md"
+        },
+        {
+            "title": "Lab 8: Deploy Jupyter notebook",
             "description": "Analyze data with Jupyter on MySQL HeatWave",
             "filename": "../../jupyter/jupyter.md"
         },
         {
-            "title": "Lab 8: Deploy Zeppelin notebook",
+            "title": "Lab 9: Deploy Zeppelin notebook",
             "description": "Build interactive analytics notebook with Zeppelin on MySQL HeatWave",
             "filename": "../../zeppelin/zeppelin.md"
-        },
-        {
-            "title": "Lab 9: Deploy Redash dashboard",
-            "description": "Create dashborad with Redash on MySQL HeatWave",
-            "filename": "../../redash/redash.md"
         },
         {
             "title": "[OPTIONAL] Lab 10: Deploy phpMyAdmin",
