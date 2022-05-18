@@ -1,14 +1,21 @@
-# Get started
+# Get started - register Free Tier account
 
 ## Introduction
 
-Before you get started, you will need an Oracle Cloud account. This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
+Before you get started, you will need an Oracle Cloud account. This lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
+
+Estimated Time: 5 minutes
 
 ### Existing Cloud Accounts
 
 If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **Task 2** to sign in to your cloud tenancy.
 
-### What you will need
+### Objectives
+
+- Create an Oracle Cloud Free Tier account
+- Sign in to your account
+
+### Prerequisites
 
 * A valid email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
@@ -72,7 +79,7 @@ If you already have a cloud account, skip to **Task 2**.
 
 ## Task 2: Sign in to Your Account
 
-_Please note that while your tenancy is initially created, you will only see a direct login. Once your tenancy is fully provisioned, you will see the screens as described below._
+*Please note that while your tenancy is initially created, you will only see a direct login. Once your tenancy is fully provisioned, you will see the screens as described below.*
 
 1. Go to [cloud.oracle.com](https://cloud.oracle.com). Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
@@ -90,14 +97,12 @@ _Please note that while your tenancy is initially created, you will only see a d
 
 4. You are now signed in to Oracle Cloud!
 
-    ![Cloud Console](images/oci-console-home-page.png " ")
-
+    ![OCI Console Home Page](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/home-page.png " ")
 
 You may now **proceed to the next lab**
-
 
 ## **Acknowledgements**
 
 - **Created By/Date** - Kay Malcolm, Database Product Management, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Arabella Yao
 - **Last Updated By** - Arabella Yao, Product Manager, Database Product Management, March 2022
