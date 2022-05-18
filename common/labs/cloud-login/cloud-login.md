@@ -1,8 +1,10 @@
-# Get started
+# Get started - Cloud login
 
 ## Introduction
 
 Oracle Cloud is the industry's broadest and most integrated cloud provider, with deployment options ranging from the public cloud to your data center. Oracle Cloud offers best-in-class services across Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS).
+
+Estimated Time: 5 minutes
 
 ### Types of Cloud Accounts
 
@@ -15,7 +17,6 @@ We offer two types of Cloud Accounts:
 ### Objectives
 
 - Learn how to login to your Oracle Cloud Account
-
 
 ### Prerequisites
 - Cloud Account Name - The name of your tenancy (supplied by the administrator or in your Oracle Cloud welcome email)
@@ -39,11 +40,11 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 4. You are now signed in to Oracle Cloud!
 
-    ![OCI Console Home Page](images/oci-console-home-page.png " ")
+    ![OCI Console Home Page](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/home-page.png " ")
 
 You may now **proceed to the next lab**.
 
 ## Acknowledgements
 - **Created By/Date** - Kay Malcolm, Database Product Management, March 2020
-- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Madhusudhan Rao
+- **Contributors** - John Peach, Kamryn Vinson, Rene Fontcha, Madhusudhan Rao, Arabella Yao
 - **Last Updated By** - Arabella Yao, Database Product Management, May 2022
