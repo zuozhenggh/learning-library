@@ -334,8 +334,19 @@ A project is a way to organize multiple data assets and forecasts in the same wo
        We can select the time step for which we want to see the local feature importance
     ![](images/lab5-forecast-local.png " ")
 
+## Task 9 (Optional): Download the results zip file 
+1. Finally, we can download the results zip file **Download.zip**. It can be leveraged directly to plot graphs, deep dive results or load into the system for dashboard view etc.
+2. **Download.zip** contains three files:
+    - **forecast_results.csv**: Input and Forecast, Upper Bound and Lower Bound Prediction Intervals
+    - **explanation\_results\_global.csv**: Global Explainability
+    - **explanation\_results\_local.csv**: Local Explainability
 
-Congratulations on completing this lab! Additionally, We can also try out Lab 2 which is Optional if we want to use a data science notebook. 
+    ![](images/lab5-download-zip.png " ")
+
+
+Congratulations on completing this lab! 
+
+Additionally, We can also try out Lab 2 which is Optional if we want to use a data science notebook. 
 
 Please feel free to contact us if any additional questions.
 
