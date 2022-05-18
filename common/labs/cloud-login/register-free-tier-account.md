@@ -1,14 +1,15 @@
-# Sign up for Free Trial
+# Get Started - sign up for Free Trial
 
 ## Introduction
 
-This 5-minute lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
+This lab walks you through the steps of getting an Oracle Cloud Free Tier account and signing in.
 
-### Two Cloud Offers in One
+Estimated Time: 5 minutes
 
-Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$300 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$300 of free credits are consumed or the 30 days has expired, whichever comes first.
+### Objectives
 
-![Free Trial](images/freetrial.png " ")
+- Create an Oracle Cloud Free Tier account
+- Sign in to your account
 
 ### Prerequisites
 
@@ -55,22 +56,22 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
     ![Sign in to Cloud](images/signin-to-cloud.png " ")
 
-4. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
+3. Enter your Cloud Account Name and click **Next**. This is the name you chose while creating your account in the previous section. It's NOT your email address. If you've forgotten the name, see the confirmation email.
 
-    !Cloud Account Name](images/cloud-login-tenant.png " ")
+    ![Cloud Account Name](images/cloud-login-tenant.png " ")
 
-5. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
+4. Enter your Cloud Account credentials and click **Sign In**. Your username is your email address. The password is what you chose when you signed up for an account.
 
     ![Sign in](images/username.png " ")
 
-6. You are now signed in to Oracle Cloud!
+5. You are now signed in to Oracle Cloud!
 
-  ![Cloud Console](images/oci-console-home-page.png " ")
+    ![OCI Console Home Page](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/home-page.png " ")
 
-You may now proceed to the next lab.
+You may now **proceed to the next lab**.
 
 ## Acknowledgements
 
 - **Created By/Date** - Kay Malcolm, Database Product Management, March 2020
-- **Contributors** - John Peach, Madhusudhan Rao
+- **Contributors** - John Peach, Madhusudhan Rao, Arabella Yao
 - **Last Updated By/Date** - Arabella Yao, May 2022

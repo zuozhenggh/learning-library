@@ -64,12 +64,12 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
       A green line appears.  It identifies the location of your visualization. You may drop the visualization to the left, right, top or bottom of the donut visualization.
 
       !["Drag and Drop Elements"](./images/asdvff7.png )
-     
-8.    Oracle Analytics Server provides adaptive charting capabiities. Because we wish to review our measure over a specific period of time, Oracle Analytics chose to deliver the results with a 
+
+8.    Oracle Analytics Server provides adaptive charting capabilities. Because we wish to review our measure over a specific period of time, Oracle Analytics chose to deliver the results with a
       line chart illustrating profit ratio, month over month.
 
       Next, we wish to review profit ratio for each product separately to obtain greater detail.
-   
+
       **Drag** "Product" up to **Trellis Rows**. You should see an individual line chart for each product as shown in the image.
 
       !["Trellis Chart Product by Row"](./images/asdvff8.png )
@@ -80,7 +80,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       Observe that "MicroPod" has declining profit ratios and "SoundX Nano" could also be improved. There could be any number of reasons why this is the case.
 
-9.    We continue our investigation examining product inventory levels. JTC America utilizes a third-party system which captures data regarding inventory and product demand levels. 
+9.    We continue our investigation examining product inventory levels. JTC America utilizes a third-party system which captures data regarding inventory and product demand levels.
       I need this data to complete my   analysis. Oracle Analytics provides the ability to quickly access inventory data and mash it up with our current analysis all within a single platform.  
 
       From the data elements panel, click on "+" and "Add Data Set" to import the inventory dataset into your current workbook.
@@ -91,7 +91,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["locate inventory"](./images/asdvff11.png )
 
-      Navigate to the documents directory on the left side of the dialogue box.  **Click** Live Labs Content, then select the file *“Inventory.xlsx”*.  Open the file. 
+      Navigate to the documents directory on the left side of the dialogue box.  **Click** Live Labs Content, then select the file *“Inventory.xlsx”*.  Open the file.
 
       !["navigate live labs content"](./images/asdvff12.png )
 
@@ -101,7 +101,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["review inventory data and add"](./images/asdvff12-a.png )
 
-11.   Navigate back to the "New Workbook" tab located up above the workbook area. 
+11.   Navigate back to the "New Workbook" tab located up above the workbook area.
 
       !["navigate back to new workbook page"](./images/asdvff12-c.png )
 
@@ -110,7 +110,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
       - **Click**  "inventory"  "Add to workbook"
 
       !["select inventory data set"](./images/asdvff12-f.png )</if>
-    
+
 12.    Let's define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis.
 
        From the top - middle of the workbook, notice three navigation options - "Data"  "Visualize"  "Present"
@@ -125,25 +125,25 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
        A match was not identified, therefore we must create our own.
 
-       - **Click** on "0' in between the two data sources. 
+       - **Click** on "0' in between the two data sources.
 
        - **Click** "Add Another Match"  
 
        !["joining data sources"](./images/asdvff12-h.png )</if>
 
        From inventory
-   
+
        - **Click** on "Select Data" and select the "Product Name” column.  
 
         !["select data product name"](./images/asdvff12-j.png )</if>
 
-        Perform the same steps on "SampleApp" and select "Products - Product" to join the data sources. 
+        Perform the same steps on "SampleApp" and select "Products - Product" to join the data sources.
 
         Notice the data sources are joined.  
 
         !["sample app and inventory diagram join"](./images/asdvff12-k.png )</if>
 
-       - **Navigate** to "Visualize". 
+       - **Navigate** to "Visualize".
 
        !["navigate back to visualize"](./images/asdvff13.png )
 
@@ -161,7 +161,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
         !["select bar chart visualization"](./images/asdvff17.png )
 
-14.  Notice the grammar panel for the bar visualization. Arranging both the metrics "Stock" and "Demand" in the Y axis respectively, the graph should render as shown in the image. 
+14.  Notice the grammar panel for the bar visualization. Arranging both the metrics "Stock" and "Demand" in the Y axis respectively, the graph should render as shown in the image.
 
      !["grammar panel bar chart"](./images/asdvff18.png )
 
@@ -183,7 +183,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["data elements panel including vendor payments source"](./images/asdvff19.png )
 
-16.   Let’s create a visualization to analyze products and vendor payments. 
+16.   Let’s create a visualization to analyze products and vendor payments.
 
       Expand Products and Vendor Payments, **CTRL-Click** *Product* and *OutstandingPayment*. Then, **Right-Click** and **select** "Pick Visualization."
 
@@ -193,15 +193,15 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["select tag cloud visualization"](./images/asdvff21.png )
 
-18.   You should see a new visualization on the canvas. The visual shows that **MicroPod** and **SoundX Nano** are the products with the greatest amount of outstanding vendor payments. 
+18.   You should see a new visualization on the canvas. The visual shows that **MicroPod** and **SoundX Nano** are the products with the greatest amount of outstanding vendor payments.
 
       It is possible that our vendors might not be willing to ship the order quantities if there are substantial outstanding payments on the account.
 
       We must take action to clear up these payment issues.
 
-19.   There are a few more metrics and insights I would like to provide in order to complete my analysis. 
+19.   There are a few more metrics and insights I would like to provide in order to complete my analysis.
 
-      Let's forecast profit ratio and revenue performance for the upcoming months.  Oracle Analytics Server provides easy to use, advanced analytic functions such as trendline, forecast, 
+      Let's forecast profit ratio and revenue performance for the upcoming months.  Oracle Analytics Server provides easy to use, advanced analytic functions such as trendline, forecast,
       clustering and outlier detection.  
 
 20.   Let’s start by adding a new canvas. **Click** on the "+" icon at the bottom to create a new canvas. On the new canvas **Click** the upside
@@ -210,7 +210,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
       !["add new canvas"](./images/asdvff14.png )
 
 21.   **Click** "Auto Fit" and change it to "Freeform." **Click** "Ok".
-  
+
 22.   **Select** "Profit Ratio %", "Revenue" and "Month". RMB Pick Visualization. **Select** "Combo."
 
       !["create combo chart revenue profit ratio month"](./images/asdvff52.png )
@@ -235,23 +235,23 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["adv analytics properties"](./images/asdvff56.png )
 
-26.   Looks like we are trending in the appropriate direction and our forecast looks promising.  Next, I'm going to provide a historical look at revenue performance utilizing a calendar heatmap 
-      custom visualization I found in the Oracle Analytics Extentions Library.  
+26.   Looks like we are trending in the appropriate direction and our forecast looks promising.  Next, I'm going to provide a historical look at revenue performance utilizing a calendar heatmap
+      custom visualization I found in the Oracle Analytics Extensions Library.  
 
-      **Note:**  We've added the custom visualization into the environment for you. If you are interested in learning how to upload custom visualization types, please see the section at the end 
+      **Note:**  We've added the custom visualization into the environment for you. If you are interested in learning how to upload custom visualization types, please see the section at the end
       of this document.
 
       Let’s start by adding a new canvas. **Click** on the "+" icon at the bottom to create a new canvas.
 
       !["create a third canvas"](./images/asdvff27.png )
-   
+
 27.   Expand Time and Revenue Metrics Metrics, **CTRL-Click** *Date* and *Revenue*. Then, **right click** and **select**
       the "Calendar Heatmap" visual.  
 
       !["select calendar heatmap visual"](./images/asdvff31.png )
 
 ## Task 2:  Custom Calculations and Maps
-   Oracle Analytics Server provides advanced mapping capabilities and the ability to create custom calculations. 
+   Oracle Analytics Server provides advanced mapping capabilities and the ability to create custom calculations.
 
 1.    In this exercise we will create two custom calculations and then use Oracle’s self-service built in map capabilities to analyze state and average profit per customer.
 
@@ -267,7 +267,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
 3.    We are going to utilize the expression builder to create a new metric called "Profit by Customer Count".  Notice there are a wide range of functions available for creating custom calculations.
 
-4.    **Select** "Profit Value" from "Profit Metrics" and **drag** and **drop** into the calculation dialog. Type "/" after the "Profit Value" then drag and drop "# of Customers" from "Revenue Metrics" 
+4.    **Select** "Profit Value" from "Profit Metrics" and **drag** and **drop** into the calculation dialog. Type "/" after the "Profit Value" then drag and drop "# of Customers" from "Revenue Metrics"
       after "/."  Click Validate. Click Save.
 
       You have successfully created your own custom calculation that can be used like any other metric.
@@ -276,7 +276,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
 5.    Let’s utilize our custom calculation in a couple of visualizations.
 
-      **Select** "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labeled "Click here or drag data to add filter." **Filter** to 
+      **Select** "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labeled "Click here or drag data to add filter." **Filter** to
       "United States" by typing "uni" and select "United States".
 
       !["country name filter"](./images/asdvff40.png )
@@ -289,7 +289,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       Let’s see what this looks like on a map.
 
-7.    On the upper right corner of the visual, **Click** the three verticle dots and select "Edit" and then "Duplicate Visualization".
+7.    On the upper right corner of the visual, **Click** the three vertical dots and select "Edit" and then "Duplicate Visualization".
 
       !["duplicate bar chart"](./images/asdvff62.9.png )
 
@@ -303,7 +303,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["modify map color scheme"](./images/asdvff62.11.png )
 
-10.   Under Series, locate the metric you created : Profit by Customer Count 
+10.   Under Series, locate the metric you created : Profit by Customer Count
 
       - **Click** the Down arrow next to the color bar.
       - **Select** the red to green gradient second from the bottom right.
@@ -311,17 +311,17 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["red white green gradient"](./images/asdvff47.png )
 
-11.   There are a number of ways to filter information in order to obtain insights regarding different attribute groups, and aggregation levels. The canvas is an extremely dynamic and interactive 
-      palette. 
+11.   There are a number of ways to filter information in order to obtain insights regarding different attribute groups, and aggregation levels. The canvas is an extremely dynamic and interactive
+      palette.
 
-      Recall, at the beginning of the exercise, we reviewed profit ratio by product, and we added a filter to a specific visualization to review profit ratio for the products categorized as Audio 
-      product type.  (Task 1 - Step 8). 
-     
-      In this exercise we added a filter to our canvas to review specific metrics within the United States. 
+      Recall, at the beginning of the exercise, we reviewed profit ratio by product, and we added a filter to a specific visualization to review profit ratio for the products categorized as Audio
+      product type.  (Task 1 - Step 8).
+
+      In this exercise we added a filter to our canvas to review specific metrics within the United States.
 
       Users can quickly interact with visualizations in order to create slices or subsets via a few clicks of the mouse to obtain deeper insights.
 
-      Navigate back to canvas 1. 
+      Navigate back to canvas 1.
 
       **Right Click** on the "Audio" pie slice and  "Keep Selected".
 
@@ -343,25 +343,25 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       !["my folders profit ratio analysis"](./images/asdvff34.png )
 
-      You have successfully created a workbook. 
+      You have successfully created a workbook.
 
 
 ## Task 3:  Auto Insights
 
  So far, we created a workbook based upon a defined and specific scenario.  We asked some questions, and we received answers.  
- As a result, we’ve delivered actionable insights addressing decreasing profit ratios at JTC Americas. 
+ As a result, we’ve delivered actionable insights addressing decreasing profit ratios at JTC Americas.
 
  Can you think of a time, when presented with a data analysis task, you are not quite sure how or where to begin given a voluminous dataset?  
 
- Oracle Analytics Server automatically can deliver powerful insights on any dataset in the system using a feature called Auto Insights. 
-     
- Auto Insight is a handy tool for understanding your data and provides a great starting point for analysis. 
+ Oracle Analytics Server automatically can deliver powerful insights on any dataset in the system using a feature called Auto Insights.
 
- When you create datasets or add datasets to a workbook, Oracle Analytics Server will assess the dataset and generate several suggestions via a visualization card and a descriptive 
+ Auto Insight is a handy tool for understanding your data and provides a great starting point for analysis.
+
+ When you create datasets or add datasets to a workbook, Oracle Analytics Server will assess the dataset and generate several suggestions via a visualization card and a descriptive
  natural language summary.  The summary explains the relationship between attributes, measures, and points of interest.  
 
-1.  Let’s begin by creating a dataset with a spreadsheet titled - ‘sample order lines.xlsx’ located in  the Documents / Live Labs Content directory you accessed earlier. 
-    
+1.  Let’s begin by creating a dataset with a spreadsheet titled - ‘sample order lines.xlsx’ located in  the Documents / Live Labs Content directory you accessed earlier.
+
      !["create a dataset auto insight"](./images/asdvff35a.png)
 
      !["locate data set"](./images/asdvff11.png )
@@ -374,21 +374,21 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
      !["create workbook"](./images/asdvff35c.png )
 
-    Notice a white light bulb icon in the top right hand corner.  Once Auto Insights has assessed the dataset, the icon will turn yellow which indicates that Oracle Analytics Server has 
+    Notice a white light bulb icon in the top right hand corner.  Once Auto Insights has assessed the dataset, the icon will turn yellow which indicates that Oracle Analytics Server has
     identified a series of suggested insights.
 
-3.  **Click** the Auto Insights icon to review the suggested insights in the panel on the far right. 
+3.  **Click** the Auto Insights icon to review the suggested insights in the panel on the far right.
 
      !["auto insights icon"](./images/asdvff35e.png )
 
-     Each visual insight includes a natural language summary to describe the function insight each visualization delivers. 
+     Each visual insight includes a natural language summary to describe the function insight each visualization delivers.
      Hover over the text to see the full description.  
 
-    If you are interested in a specific insight, simply click on the + icon within the visualization or drag the visualization directly into the canvas. 
+    If you are interested in a specific insight, simply click on the + icon within the visualization or drag the visualization directly into the canvas.
 
-    Create a canvas selecting a handful of insights. Add the following: 
-    
-    - Measures Overview 
+    Create a canvas selecting a handful of insights. Add the following:
+
+    - Measures Overview
     - Trending Dimensions
     - City Scatter Plot Chart
     - Top 10 City by Profit
@@ -397,15 +397,15 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
      !["select auto generated insights"](./images/asdvff35f.png )
 
-    Notice each insight exists in the canvas as if you created each visualization object manually. 
+    Notice each insight exists in the canvas as if you created each visualization object manually.
 
-4.  Hover over the title of each insight to review its natural language summary.  You may wish add a text box in order to display the natural language summary within your workbook. 
+4.  Hover over the title of each insight to review its natural language summary.  You may wish add a text box in order to display the natural language summary within your workbook.
 
-    Select the visualization menu on the far left, select Text Box.  Drag the text box above Trending Dimensions. 
+    Select the visualization menu on the far left, select Text Box.  Drag the text box above Trending Dimensions.
 
     !["add a text box"](./images/asdvff35g.png )
 
-    Copy (Ctrl-C) the text in the Title Tooltip field in the left-hand data panel (properties) of the workbook designer and paste (Ctrl-P) it in the 'Edit Text' box within the visualization. 
+    Copy (Ctrl-C) the text in the Title Tooltip field in the left-hand data panel (properties) of the workbook designer and paste (Ctrl-P) it in the 'Edit Text' box within the visualization.
 
     !["use title tooltip for text"](./images/asdvff35h.png )
 
@@ -414,43 +414,43 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
     !["ability to edit tooltip"](./images/asdvff35j.png )
 
     Navigate to the far left and explore the data elements panel and scroll to the bottom.  
-    
+
 5.  Review ‘MyCalculations’.
 
     !["auto insights generates calculations"](./images/asdvff35k.png )
 
     Notice the accompanying custom calculations have been carried over to the data elements panel as a result of your visualization selections.
 
-    Just like any canvas, elements and objects can be filtered, or modified based upon your requirements.  You can use the insight visualization objects as a template to duplicate or 
+    Just like any canvas, elements and objects can be filtered, or modified based upon your requirements.  You can use the insight visualization objects as a template to duplicate or
     modify the visualization objects based upon your analysis needs.  
 
     Right click on 'Top 10 City by Profit Value' calculation.  Notice you can edit the calculation, duplicate it, or copy it to a clipboard.    
 
     Select 'Edit the Calculation.  You can see the syntax and functions utilized for each calculation.
-    
+
     !["can edit auto insight calculations"](./images/asdvff35l.png )
 
-     
+
     !["review calc syntax"](./images/asdvff35m.png )
 
     Let's edit the calculation and review the top 5 cities by profit value.  Save the calculation.  
 
     !["modify syntax"](./images/asdvff35n.png )
 
-    Don't forget to modify the visualization name. 
+    Don't forget to modify the visualization name.
 
     !["review modified visualization"](./images/asdvff35p.png )
 
-6.  Navigate to Data Prep and modify the metadata. 
+6.  Navigate to Data Prep and modify the metadata.
 
-    From top middle,  **Click** data.  **Click** on the pencil icon to navigate to view the data. 
+    From top middle,  **Click** data.  **Click** on the pencil icon to navigate to view the data.
 
     !["metadata modification"](./images/asdvff35q.png )
-    
+
     Navigate to the metadata view,  hint - upper right.
-    
-    !["navigate to metadata view"](./images/asdvff35r.png ) 
-    
+
+    !["navigate to metadata view"](./images/asdvff35r.png )
+
     Make the following modifications:
     - Discount , modify the aggregation from 'Sum' to 'Average'
     - Rename 'Sales' to 'Revenue'
@@ -460,10 +460,10 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
 7.  Once you have applied the script, navigate back to your workbook via your open workbook window.  
 
-     !["navigate back to workbook page"](./images/asdvff35s.png ) 
+     !["navigate back to workbook page"](./images/asdvff35s.png )
 
      Next, navigate to 'Visualize'
-    
+
     Notice the changes to your workbook, and lightbulb icon is white again.   Auto Insights will automatically execute and reassess your data.  
     The lightbulb icon will turn yellow and provide new insights when complete.  
 
