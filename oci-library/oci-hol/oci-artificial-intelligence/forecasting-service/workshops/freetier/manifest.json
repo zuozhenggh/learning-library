@@ -13,7 +13,7 @@
             "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/cloud-login/cloud-login-livelabs2.md"
         },
         {
-            "title": "Lab 1: Generate Forecast from Console",
+            "title": "Lab 1: Generate Forecast from OCI Console",
             "description": "Learn how to generate Forecast from OCI Console",
             "filename": "../../item-3-forecast-with-console/item-3-forecast-with-console.md"
         },
