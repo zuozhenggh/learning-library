@@ -22,13 +22,13 @@ At the end of the workshop, users will understand how the data should be prepare
 
 * Understand high level overview of the OCI Forecasting Service
 * Understand the workflow of services provided in the OCI Forecasting Service
-* Learn to use REST API to interact with Forecasting Service
+* Learn to use REST API to interact with OCI Forecasting Service
 * Learn basic data analysis preprocessing techniques to prepare data for model training
 * Hands-on activities to experience the whole pipeline of machine learning model development from training to forecasting
 
 ### Prerequisites:
 * An OCI Free Tier, or Paid OCI Account
-* Grant proper permission for user to use the Forecasting Service
+* Grant proper permission for user to use the OCI Forecasting Service
 * Additional pre-requisites (cloud services) are mentioned per lab
 * Familiar with services on Oracle Cloud Infrastructure (OCI), such as Data Science Notebooks, Object Storage
 * Familiar with machine learning, data processing, statistics is desirable, but not required
