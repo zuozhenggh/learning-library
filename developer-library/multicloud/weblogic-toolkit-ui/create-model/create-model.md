@@ -45,20 +45,20 @@ For simplicity of lab, we created *`base_project.wktproj`*, which preset the loc
     ![Open WKTUI](images/openwktui.png)
 
 2. To open *base_project.wktproj* project, click *File* -> *Open Project*. 
-    ![Open Project](images/OpenProject.png)
+    ![Open Project](images/openproject.png)
 
 3. Click *Downloads* in left side, then choose *base_project.wktproj* and click *Open Project*.
-    ![Project Location](images/ProjectLocation.png)
+    ![Project Location](images/projectlocation.png)
 
     > **For your information only:**<br>
     > As *Credential Story Policy*, we select **Store in Native OS Credentials Store**. It means the credentials (like for WebLogic Server and datasources) are only stored on the local machine.<br>
     > For *Where would you like the target Oracle Fusion Middleware domain to live?*, we select **Created in the container from the model in the image**. In this case, the set of model-related files are added to the image. So when the WebLogic Kubernetes Operator domain object is deployed, its inspector process runs and creates the WebLogic Server domain inside a running container on-the-fly.<br>
-    ![Project Settings](images/ProjectSettings.png)
+    ![Project Settings](images/projectsettings.png)
     > As *Kubernetes Environment Target Type*, we select **WebLogic Kubernetes Operator**. This means, you want this domain to be deployed in Kubernetes managed by the WebLogic Kubernetes Operator. This settings also determine what sections and their associated actions within the application, to display.<br>
     > we also specify the location for *JAVA HOME* and *ORACLE_HOME*. WebLogic Kubernetes Toolkit UI uses this directory when invoking the WebLogic Deployer Tooling and WebLogic Image Tool. <br>
     > To build new images, inspect images and interact with image repositories, the WKT UI application uses an image build tool, which defaults to docker.<br>
-    ![Kubernetes Cluster Type](images/KubernetesClusterType.png)
-    ![Software Locations](images/SoftwareLocations.png)
+    ![Kubernetes Cluster Type](images/kubernetesclustertype.png)
+    ![Software Locations](images/softwarelocations.png)
 
 4. Enter *welcome1* as **Password** and then click *Unlock*.
     ![unlock](images/unlock.png)
@@ -69,21 +69,21 @@ For simplicity of lab, we created *`base_project.wktproj`*, which preset the loc
 In this task, we perform introspection of an on-premise domain, which creates a model file consisting of the domain configuration.
 
 1. In WebLogic Kubernetes Toolkit UI, Click *Model*.
-    ![Model](images/Model.png)
+    ![Model](images/model.png)
 
 2. Click *File* -> *Add Model* -> *Discover Model(offline)*.
-    ![Discover Model](images/DiscoverModel.png)
+    ![Discover Model](images/discovermodel.png)
 
 3. Click Open folder *icon* to open the *Domain Home*.
-    ![Open Domain Hom](images/OpenDomainHome.png)
+    ![Open Domain Hom](images/opendomainhome.png)
 
 4. In the Home folder, navigate to *`/home/opc/Oracle/Middleware/Oracle_Home/user_projects/domains/`* directory and select *test-domain* folder then  click *Select*. Click *OK*.
-    ![Navigate Location](images/NavigateLocation.png)
-    ![Specify Location](images/SpecifyLocation.png)
+    ![Navigate Location](images/navigatelocation.png)
+    ![Specify Location](images/specifylocation.png)
     > If you look in the console, you will see that this invokes WebLogic Deployer Tool to introspect the domain configuration in offline mode. 
 
 5. You can see the window as shown below, at the end, you will have model ready for you.
-    ![View Model](images/ViewModel.png)
+    ![View Model](images/viewmodel.png)
 
     > The result of this WDT introspection are model(a metadata representation of your domain configuration), placeholder, where you can specify the values (like password for datasource) and application in the application archive.
 
@@ -92,15 +92,15 @@ In this task, we perform introspection of an on-premise domain, which creates a 
 In this task, we validate the model and prepare the model to be deployed on Oracle Kubernetes Cluster (OKE).
 
 1. To Validate the model, click *Validate Model*.
-    ![Validate Model](images/ValidateModel.png)
+    ![Validate Model](images/validatemodel.png)
     > **For your information only:**<br>
     > Validate model invokes the WDT [Validate Model Tool](https://oracle.github.io/weblogic-deploy-tooling/userguide/tools/validate/), which validates that the model and its related artifacts  are well-formed and provides help on the valid attributes and subfolder for a particular model location.
 
 2. Once you see *Validate Model Complete* window, click *Ok*.
-    ![Validate Complete](images/ValidateComplete.png)
+    ![Validate Complete](images/validatecomplete.png)
 
 3. To prepare the model, to be deployed on Kubernetes cluster, click *Prepare Model*
-    ![Prepare Model](images/PrepareModel.png)
+    ![Prepare Model](images/preparemodel.png)
     > **For your information only:**<br>
     > Prepare model invokes the WDT [Prepare Model Tool](https://oracle.github.io/weblogic-deploy-tooling/userguide/tools/prepare/) to modify the model to work in a Kubernetes cluster with WebLogic Kubernetes Operator or Verrazzano installed.<br>
     > Prepare Model does the following:
@@ -111,7 +111,7 @@ In this task, we validate the model and prepare the model to be deployed on Orac
     * Extracts topology information to the application that it uses to generate the resource file used to deploy the domain.
 
 4. Once you see *Prepare Model Complete* window,click *Ok*.
-    ![Prepare Complete](images/PrepareComplete.png)
+    ![Prepare Complete](images/preparecomplete.png)
 
 
 ## Acknowledgements

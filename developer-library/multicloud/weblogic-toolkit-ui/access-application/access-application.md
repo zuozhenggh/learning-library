@@ -38,11 +38,11 @@ In this task, we access the *opdemo* application. We click on refresh icon to ma
     ```bash
     <copy>http://XX.XX.XX.XX/opdemo/?dsname=testDatasource</copy>
     ```
-    ![Open Application](images/OpenApplication.png)
+    ![Open Application](images/openapplication.png)
 
 
 2. If you click on Refresh icon, You can see load balancing between two managed server pods.
-    ![Show Loadbalancing](images/ShowLoadbalancing.png)
+    ![Show Loadbalancing](images/showloadbalancing.png)
 
 
 ## Task 2: Explore WebLogic Domain on Kubernetes Cluster using WebLogic Remote Console
@@ -59,10 +59,10 @@ In this task, we explore the WebLogic Remote Console. We create connection to *A
     Username: weblogic<br>
     Password: welcome1<br>
     URL:  `Copy_IP_From_TextFile`</br>
-    ![Connection Details](images/ConnectionDetails.png)
+    ![Connection Details](images/connectiondetails.png)
 
 4. Click on *Edit Tree* icon, then Select *Services* -> *JDBC System Resources*. You can observe the same Datasouce, which we had seen in on-premise domain.
-    ![Verify Datasources](images/VerifyDatasources.png)
+    ![Verify Datasources](images/verifydatasources.png)
 
 5. Click on **Monitoring Tree** Icon as shown then select **Running Servers**. You can see we have **Admin Server** and 2 Managed Server pods are running. Click on **admin-server**, you can see WebLogic Version is **12.2.1.3.0**.
     ![Running Servers](images/wlsversion.png)

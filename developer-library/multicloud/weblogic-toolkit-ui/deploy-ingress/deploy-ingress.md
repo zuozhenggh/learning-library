@@ -17,12 +17,12 @@ In this lab, you will:
 In this task, we install the *Ingress Controller*.
 
 1. Click *Ingress Controller*. You can see some pre-filled values, let it remain the same and click *Install Ingress Controller*.
-    ![Install Ingress Controller](images/InstallIngressController.png)
+    ![Install Ingress Controller](images/installingresscontroller.png)
     > **For your information only:**<br>
     > This successfully install the *traefik-operator* ingress controller to Kubernetes namespace *traefik-ns*. 
 
 2. Once you see *Ingress Controller Installation Complete*, click *Ok*.
-    ![Ingress Controller Installed](images/IngressControllerInstalled.png)
+    ![Ingress Controller Installed](images/ingresscontrollerinstalled.png)
 
 
 ## Task 2: Update the Ingress Routes to Access the Application
@@ -30,10 +30,10 @@ In this task, we install the *Ingress Controller*.
 In this task, we add the Ingress routes for Accessing the Admin Console, Application. At the end, we get the accessible endpoints.
 
 1. Scroll down and click on *+* icone to add the *Ingress Route Configuration*. 
-    ![Add Ingress Routes](images/AddIngressRoutes.png)
+    ![Add Ingress Routes](images/addingressroutes.png)
 
 2. Click on Edit icon as shown to modify the values.
-    ![Edit Ingress](images/EditIngress.png)
+    ![Edit Ingress](images/editingress.png)
 
 3. Enter the following details and click on *OK*.<br>
         Name: console<br> 
@@ -42,7 +42,7 @@ In this task, we add the Ingress routes for Accessing the Admin Console, Applica
         Target Service: test-domain-admin-server<br>
         Target Port: 7001<br>
 
-    ![Console Ingress](images/ConsoleIngress.png)
+    ![Console Ingress](images/consoleingress.png)
 
 4. In the similar way, add the following *opdemo* Ingress Routes as well:<br>
         Name: opdemo<br>
@@ -50,7 +50,7 @@ In this task, we add the Ingress routes for Accessing the Admin Console, Applica
         Target Service Namespace: test-domain-ns<br>
         Target Service: test-domain-cluster-cluster-1 <br>
         Target Port: 8001<br>
-    ![Opdemo Ingress](images/OpdemoIngress.png)
+    ![Opdemo Ingress](images/opdemoingress.png)
 
 5. In the similar way, add the following *remote-console* Ingress Routes as well:<br>
         Name: remote-console<br>
@@ -58,13 +58,13 @@ In this task, we add the Ingress routes for Accessing the Admin Console, Applica
         Target Service Namespace: test-domain-ns<br>
         Target Service: test-domain-admin-server<br>
         Target Port: 7001<br>
-        ![Remote Console Ingress](images/RemoteConsoleIngress.png)
+        ![Remote Console Ingress](images/remoteconsoleingress.png)
 
 6. To update the Inress Routes, click *Update Ingress Routes*.
-    ![Update Ingress Routes](images/UpdateIngressRoutes.png)
+    ![Update Ingress Routes](images/updateingressroutes.png)
 
 7. Once you see *Ingress Routes Update Complete* window, Click *Ok*.
-    ![Update Ingress Complete](images/UpdateIngressComplete.png)
+    ![Update Ingress Complete](images/updateingresscomplete.png)
     
     > You need to notedown this IP and save it in text file.
 

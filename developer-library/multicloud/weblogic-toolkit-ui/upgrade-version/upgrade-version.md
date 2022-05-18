@@ -20,25 +20,25 @@ In this lab, you will:
 In this task, we update the primary image to use upgraded WebLogic Server 12.2.1.4.0 image.
 
 1. Go back to WebLogic Kubernetes Toolkit UI, click *Image*. Changed the WebLogic Server Tag to *12.2.1.4-slim-ol8*.
-    ![Update Primary Image Tag](images/UpdateprimaryImageTag.png)
+    ![Update Primary Image Tag](images/updateprimaryimagetag.png)
 
 ## Task 2: Update a deployed application by a rolling restart of the server pods
 
 In this task, we re-deploy the WebLogic Domain. Later, we use the WebLogic Remote Console, to verify that server pods are using the updated WebLogic Server 12.2.1.4.0 Image.
 
 1. Click *WebLogic Domain* -> *Deploy Domain*. This will re-deploy the domain.
-    ![Redeploy Domain](images/RedeployDomain.png)
+    ![Redeploy Domain](images/redeploydomain.png)
     > **For your information only:**<br>
     > As we changed our primary image, so we will notice rolling restart of the servers one by one. As you click on *Deploy Domain*, it start an *Introspector job*, which terminates the running admin server pods, and creates a new pod for admin server which uses WebLogic Server 12.2.1.4.0 image. Introspector do the same process with both the managed servers.
 
 2. Once you see *WebLogic Domain Deployment to Kubernetes Complete* window, Click *Ok*.
-    ![Deployment Complete](images/DeploymentComplete.png)
+    ![Deployment Complete](images/deploymentcomplete.png)
 
 3. Go back to *Terminal* and copy the below command and paste in terminal. You will notice rolling restart of servers one by one. First, Admin Server pods terminates and comes in *Running* state.
     ```bash
     <copy>kubectl get pods -n test-domain-ns -w</copy>
     ```
-    ![View Pods](images/ViewPods.png)
+    ![View Pods](images/viewpods.png)
 
 4. To Verify that Admin Server and Managed Server pods are using updated WebLogic Server image, click Monitoring Tree icon and then select Running Servers -> admin-server. You can see, it is using 12.2.1.4.0.
     ![WLS version](images/wlsversion.png)

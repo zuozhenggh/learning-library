@@ -26,15 +26,15 @@ The *Quick Create* feature uses the default settings to create a *quick cluster*
 In this task, we uses the *Quick Create* features to create the Oracle Kubernetes Cluster. 
 
 1. In the Console, select the *Hamburger Menu* -> *Developer Services* -> *Kubernetes Clusters (OKE)* as shown.
-        ![Developer Services](images/DeveloperServices.png)
+        ![Developer Services](images/developerservices.png)
 
 2. In the Cluster List page, select the Compartment of your choice, where you are allowed to create a cluster, and then click *Create Cluster*.
-        ![Select Compartment](images/SelectCompartmentCluster.png)
+        ![Select Compartment](images/selectcompartmentcluster.png)
 > You need to select a compartment in which you are allowed to create a cluster and also, a repository inside the Oracle Container Registry.
 
 3. In the Create Cluster Solution dialog, select *Quick Create* and click *Launch Workflow*. `Quick Create` will create a new cluster with the default settings, along with new network resources for the new cluster.
 
-![Launch Workflow](images/LaunchWorkflow.png)
+![Launch Workflow](images/launchworkflow.png)
 
 4. Specify the following configuration details on the Cluster Creation page (please pay attention to the value you place in the *Shape* field):
 
@@ -48,13 +48,13 @@ In this task, we uses the *Quick Create* features to create the Oracle Kubernete
 
         Click *Next* to review the details you entered for the new cluster.
 
-        ![Cluster Detail1](images/ClusterDetail1.png)
-        ![Cluster Detail](images/ClusterDetail2.png)
+        ![Cluster Detail1](images/clusterdetail1.png)
+        ![Cluster Detail](images/clusterdetail2.png)
 
 5. On the *Review* page, click *Create Cluster* to create the new network resources and the new cluster.
-        ![Create Cluster](images/CreateCluster.png)
+        ![Create Cluster](images/createcluster.png)
     > You see the network resources being created for you. Wait until the request to create the node pool is initiated and then click *Close*.
-      ![Network Resources](images/NetworkResources.png)
+      ![Network Resources](images/networkresources.png)
 
 
     > Then, the new cluster is shown on the *Cluster Details* page. When the master nodes are created, the new cluster gains a status of *Active* (it takes about 7 minutes). Please don't wait and proceed for the next task.
@@ -64,16 +64,16 @@ In this task, we uses the *Quick Create* features to create the Oracle Kubernete
 In this task, you creates a public repository. In lab 5, we will push Auxiliary Image into this repository.
 
 1. In the Console, select the *Hamburger Menu* -> *Developer Services* -> *Container Registry* as shown.
-    ![Container Registry Icon](images/ContainerRegistryIcon.png)
+    ![Container Registry Icon](images/containerregistryicon.png)
 
 2. Select your compartment, where you are allowed to create the repository. Click *Create Repository*.
-    ![Select Compartment](images/SelectCompartment.png)
+    ![Select Compartment](images/selectcompartment.png)
 
 3. Enter *`test-model`* as Repository name and Access as *Public* then click *Create repository*.
-    ![Repository Details](images/RepositoryDetails.png)
+    ![Repository Details](images/repositorydetails.png)
 
 4. Once your repository is ready. Please note down the tenancy namespace in your text file inside the text editor.
-    ![Note Tenancy NameSpace](images/NoteTenancyNamespace.png)
+    ![Note Tenancy NameSpace](images/notetenancynamespace.png)
 
 
 
@@ -83,39 +83,39 @@ In this task, we will generate an *Authentication Token*. In lab 5, we will use 
 
 1. Select the User Icon in the top right corner and then select *MyProfile*.
 
-    ![My Profile](images/MyProfile.png)
+    ![My Profile](images/myprofile.png)
 
 2. Scroll down and select *Auth Tokens* and then click *Generate Token*.
 
-    ![Auth token](images/AuthToken.png)
+    ![Auth token](images/authtoken.png)
 
 3. Copy *`test-model-your_first_name`* and paste it in the *Description* box and click *Generate Token*.
 
-    ![Create Token](images/CreateToken.png)
+    ![Create Token](images/createtoken.png)
 
 4. Select *Copy* under Generated Token and paste it in your text editor. We cannot copy it later. Click *Close*.
 
-    ![Copy Token](images/CopyToken.png)
+    ![Copy Token](images/copytoken.png)
 
 ## Task 4: Accepting the license for WebLogic Server Images 
 
 In this task, we accept the license agreement for WebLogic Server images resides in Oracle Container Registry. As in Lab 3, we will use WebLogic Server 12.2.1.3.0 image as our Primary Image. So, to get access to WebLogic Server Images, we accept the license agreement.
 
 1. Click the link for the Oracle Container Registry [https://container-registry.oracle.com/](https://container-registry.oracle.com/) and sign in. For this, you need an Oracle Account.
-    ![Container Registry Sign In](images/ContainerRegistrySignIn.png)
+    ![Container Registry Sign In](images/containerregistrysignin.png)
     
 2. Enter your *Oracle Account Credentials* in the Username and Password fields, and then click *Sign In*.
-    ![Login Container Registry](images/LoginContainerRegistry.png)
+    ![Login Container Registry](images/logincontainerregistry.png)
 
 3. In the Home page of Oracle Container Registry, Search for *weblogic*.
-    ![Search WebLogic](images/SearchWebLogic.png)
+    ![Search WebLogic](images/searchweblogic.png)
 
 4. Click *weblogic* as shown and select *English* as the language, then click *Continue*.
-    ![Click WebLogic](images/ClickWebLogic.png)
-    ![Select Language](images/SelectLanguage.png)
+    ![Click WebLogic](images/clickweblogic.png)
+    ![Select Language](images/selectlanguage.png)
 
 5. Click *Accept* to accept the license agreement.
-    ![Accept License](images/AcceptLicense.png)
+    ![Accept License](images/acceptlicense.png)
 
 
 
