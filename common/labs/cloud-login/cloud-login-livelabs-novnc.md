@@ -8,6 +8,19 @@ If you already have an Oracle Cloud account, you can skip to Step 2.
 
 If you already have a reservation, skip to the next lab to start your workshop!
 
+Estimated Time: 5 minutes
+
+### Objectives
+
+- Create an Oracle cloud account
+- Request workshop reservation on LiveLabs
+- Launch workshop
+
+### Prerequisites
+
+- A valid email address
+- Valid phone number
+
 ## Task 1: Create an Oracle Account
 
 Creating an Oracle account can be summarized in the following two simple steps.
@@ -16,7 +29,7 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
   ![Create account](images/create-account-oracle-1.png " ")
 
-2. Fill out the form and click *Create Account*
+2. Fill out the form and click *Create Account*.
 
   ![Fill out the form](images/create-account-oracle-2.png " ")
 
@@ -28,13 +41,13 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
   ![Reservation email](images/livelab-env-created-email.png " ")
 
-  *Note: You will receive the second created e-mail just before your selected reservation time.*
+  >**Note:** You will receive the second created e-mail just before your selected reservation time.
 
 3. Log into LiveLabs and click **My Reservations**, then click the **Launch Workshop** link for the Workshop environment you'd like to use. Note that you may have several Workshops listed.
 
   ![My reservations](images/ll-reservations.png " ")
 
-4. Click on the *Remote Desktop* URL to access the VM instance.
+4. Click on the **Remote Desktop** URL to access the VM instance.
 
   ![Remote Desktop](images/launch-ll-workshop-novnc.png " ")
 
@@ -44,7 +57,7 @@ Creating an Oracle account can be summarized in the following two simple steps.
 
 You may now **proceed to the next lab**.
 
-## **Rate this Workshop**
+## Rate this Workshop
 
 When you are finished don't forget to rate this workshop!  We rely on this feedback to help us improve and refine our LiveLabs catalog.  Follow the steps to submit your rating.
 
@@ -64,4 +77,4 @@ If you still have an active reservation, you can also rate by going to My Reserv
 
 - **Created By/Date** - Kay Malcolm, Database Product Management March 2020
 - **Contributors** - Rene Fontcha, Kamryn Vinson, Anoosha Pilli, Arabella Yao
-- **Last Updated By/Date** - Arabella Yao 2022
+- **Last Updated By/Date** - Arabella Yao, 2022
