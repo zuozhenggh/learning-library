@@ -12,7 +12,7 @@ Duration: 5 minutes
 
 ## Create a Query Service Project
 
-A Query Service project is a collection of tables, worksheets, and queries related to a common theme or task. Every Query Service project is associated with a single Data Catalog instance that you specify when you create the project. Every project will have a small Autonomous Database (ADB) instance that is provisioned for you automatically. This ADB instance contains the schemas and external table definitions that are derived (synchronized) from the Data Catalog instance logical entities that you choose when you create the project.
+A Query Service project is a collection of tables, worksheets, and queries related to a common theme or task. Every project will provide access to schemas and external table definitions that are derived (synchronized) from logical entities in the Data Catalog instance that you choose when you create the project. A schema in a Query Service project is a collection of related tables. When you query a table in a schema you need to reference the schema and table in the schema using the syntax **`schema_name.table_name`**.
 
 1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, click the following link to navigate to the [Query Service Console](https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1) (https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1).
 
@@ -31,7 +31,7 @@ A Query Service project is a collection of tables, worksheets, and queries relat
         + **moviestream\_landing**
         + **moviestream_gold**
 
-        When you create a Query Service project, you must choose a Data Catalog instance. When the project is created, Query Service creates an ADB instance which is associated with the project and synchronizes it automatically with the Data Catalog instance that you specified. It synchronizes (links) the metadata in ADB with your Data Catalog instance and creates schemas that correspond to your harvested data assets. Query Service also creates the external tables in those schemas that correspond to the logical data entities that were harvested in the Data Catalog instance.  
+        When you create a Query Service project, you must choose a Data Catalog instance. When the project is created, Query Service is automatically synchronized with the Data Catalog instance that you specified. It synchronizes (links) the metadata in your Data Catalog instance and creates schemas that correspond to buckets in your harvested data assets. Query Service also creates the external tables in those schemas that correspond to the logical data entities that were harvested in the Data Catalog instance.  
 
     >**Note:** If you don't have a Data Catalog instance, click **Create Data Catalog** in the **Create Query Service project** panel to create a new one. Next, complete the fields in the **Create Data Catalog** panel. For detailed information on how to create and harvest a data asset from Oracle Object Storage buckets, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop.
 
@@ -72,7 +72,7 @@ A Query Service project is a collection of tables, worksheets, and queries relat
 
     >**Note:** To return to the **Query Service Projects** page, click your browser's Back button.
 
-7. From the **Query Service Projects** page, you can also click **Query Editor** to display the **Scratchpad** page. This is where you run one or more Oracle SQL to queries against tables in your available schemas (from your Data Catalog instance). To learn how to query data in Query Service, click the **How do I query data in Query Service?** workshop sprint in the **Contents** menu on the left.  
+7. From the **Query Service Projects** page, you can also click **Query Editor** to display an empty **Scratchpad**. This is where you run one or more Oracle SQL queries against tables in your available schemas. The **Scratchpad** is only stored for the duration of your web browser session; therefore, to share or persist the queries across web browsers or web browser sessions, you must save the content of the **Scratchpad** as a worksheet. To learn how to query data in Query Service, click the **How do I query data in Query Service?** workshop sprint in the **Contents** menu on the left.  
 
 8. Finally, you can click the **Actions** button (three vertical dots) in the row for your Query Service project to display the Context menu and perform a variety of tasks.
 

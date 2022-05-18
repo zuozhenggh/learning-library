@@ -1,7 +1,7 @@
 # How do I create an Oracle Object Storage Table in Query Service?
 Duration: 5 minutes
 
-You will create a table in Query Service using a Parquet file stored in a public Object Storage bucket.
+In this workshop sprint, you will create a table in Query Service using a Parquet file stored in a public Object Storage bucket. You will also download the Parquet file to your local computer, create an Oracle Object Storage bucket, change its visibility from Private to Public, and upload the Parquet file to this bucket. Finally, you will create a table in Query Service using the Parquet file in your bucket.
 
 ### Prerequisites
 * An Oracle Cloud Account.
@@ -9,9 +9,13 @@ You will create a table in Query Service using a Parquet file stored in a public
 * A Query Service project.
 * The required policies to allow access to the Data Catalog instance, Oracle Object Storage, and Query Service projects.
 
-## **Create a Table in Query Service Using a Data File in a Public Object Storage Bucket**  
+## **Create a Table Using a Data File in a Public Object Storage Bucket**  
 
-The **PROJECT$** schema contains the tables that Query Service creates and manages. You can create your own tables in this schema. You will create a table over a Parquet file that is stored in a public  Object Storage bucket that is accessible using a URL.
+The **PROJECT$** schema contains the tables that you create and manage using the Query Service interfaces such as the UI Console, SDKs, or the REST API. You can create your own tables in this schema. In this exercise, you will create a table over a Parquet file that is stored in a public Object Storage bucket that you will access using a URL.
+
+### **Method 1: Create a Table Using an Object Storage File's URL**
+
+see [test](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/workshop-attendee-2?p210_workshop_id=3169&p210_type=1&sc=1&clear=210&session=4710193159624)
 
 1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, click the following link to navigate to the [Query Service Console](https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1) (https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1).
 
@@ -79,6 +83,76 @@ The **PROJECT$** schema contains the tables that Query Service creates and manag
     The new worksheet is displayed.
 
     ![The new worksheet is displayed.](./images/new-worksheet-displayed.png " ")  
+
+### **Method 2: Create a Table by Choosing an Object Storage File**
+
+You will first create an Object Storage bucket (unless you already have one), change its visibility from Private to Public, and upload a Parquet file to that bucket. Next, you will create a table by selecting the file in your Public Object Storage bucket.
+
+### Create an Oracle Object Storage Bucket
+
+1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, click the following link to navigate to the [Query Service Console](https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1) (https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1).
+
+2. Copy your web browser URL where you are running Query Service and paste it into a new browser tab.
+
+3. Open the Navigation menu on the left in the Oracle Cloud console and click **Storage**. Under **Object Storage & Archive Storage**, click **Buckets**.
+
+4. In the **List Scope** section, click the **Compartment** drop-down list and choose the Compartment where you want to create your Bucket.
+
+5. Click **Create Bucket**. The **Create Bucket** panel is displayed.
+
+6. In the Create Bucket dialog box:
+    - **Bucket Name:** Provide a name for your Bucket.
+    - **Default Storage Tier:** Choose the default value **Standard** if you need to access the data quickly, immediately, and frequently. For infrequent access, choose Archive.
+    - **Encryption:** Accept the default **Encrypt using Oracle managed keys**.
+
+7. Click **Create** to create the Bucket.
+
+Next, you will download a file to your local storage.
+
+8.  
+
+
+
+
+
+
+
+2. On the **Query Service Projects** page, in the row for your Query Service project, click **Query Editor**.
+
+![The Query Editor button on the Query Service projects page is highlighted.](./images/query-editor-button.png " ")  
+
+3. On the **Scratchpad** worksheet, click the **Select a Schema** drop-down list and select the **`PROJECT$`** schema.
+
+![Select the PROJECT$ Schema from the drop-down list.](./images/select-project$-schema.png " ")  
+
+4. Click **Create Table**. The **Create Table** page is displayed. Specify the following:
+
+  + **Table Name:** Enter **training\_object\_storage\_table**.
+
+      >**Note:** Special characters such as **`&`**, **`-`** (hyphen), and **`/`** are not allowed in table names.
+
+  + **Target Object File Glob:** Click **Copy** to copy the following URL, and then paste it in this field. This is the URL to access a Parquet file named **`custsales-2019-01.parquet`** which is stored in a public Oracle Object Storage bucket in a tenancy named **c4u04** in the **us-ashburn-1** region.
+
+      ```
+      <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o/custsales/month=2019-01/custsales-2019-01.parquet</copy>
+      ```
+
+      The Source to Target columns' mapping is displayed. Click the unchecked checkbox to the left of the **Source Column** label to select all the columns.
+
+      ![The Create a Table page is displayed.](./images/create-table-obj.png " ")    
+
+5. Click **Create Table**. The table status shows as **Creating** (orange color) in the **Tables** section.
+
+![Table status is creating.](./images/table-creating-status.png " ")
+
+6. Click the table's name link to view its details such as the columns names, columns Oracle data types, and state. Click **Close**.
+
+![Table status is creating.](./images/click-table-creating.png " ")   
+
+If the table creation is successful, it is displayed in the **Tables** section.
+
+![Table is created.](./images/table-created.png " ")   
+
 
 ## Learn More
 

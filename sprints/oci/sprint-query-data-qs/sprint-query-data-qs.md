@@ -15,14 +15,14 @@ You will use Query Editor in Query Service to query data using standard Oracle S
 
 Query Service contains the following schemas:
 
-+ **DCAT$:** Schemas whose name starts with **DCAT$** concatenated with the **Data Catalog data asset name**, an **_** (underscore) , followed by the **Object Storage bucket's name**. Those are created by Query Service as part of the automatic synchronization process between your Data Catalog instance and the ADB instance provisioned for your Query Service project.
-+ **PROJECT:** You can connect to this schema using **SQLNet** connections such as JDBC and SQL*Plus. You can then create Query service Project tables manually in this schema and run queries against those tables. It is also the Database User that the service uses to run queries submitted through the OCI Interface (UI/SDK/CLI).
-+ **PROJECT$:** This schema contains the tables that Query Service creates and manages.
++ **DCAT$:** Schemas whose name starts with **DCAT$** concatenated with the **Data Catalog data asset name**, an **_** (underscore) , followed by the **Object Storage bucket's name**. Those are created by Query Service as part of the automatic synchronization process between your Data Catalog instance and your Query Service project.
++ **PROJECT:** You can connect to this schema using any Oracle Database client tools such as Oracle SQL Developer, Oracle SQLcl, or SQL*Plus. You can also use any JDBC client by using the Oracle JDBC driver. You can then create Query service Project tables manually in this schema and run queries against those tables. It is also the Database User that the service uses to run queries submitted through the OCI Interface (UI/SDK/CLI).
++ **PROJECT$:** This schema contains the tables that you create and manage through the Query Service console or other OCI interfaces such as SDKs and REST.
 + **MOVIESTREAM_DEMO:** A sample schema that is available with Query Service.
 
 ### **The DCAT$ Schemas**
 
-When Query Service creates your project, it provisions an ADB instance for the project and synchronizes it automatically with the Data Catalog instance associated with the project (which you specified when you created the project). As part of the synchronization process, Query Service creates schemas that correspond to your harvested data assets and creates external tables in those schemas that correspond to the logical entities. It creates one schema for each Oracle Object Storage bucket. By default, the name of a generated schema in Query Service starts with the keyword **`DCAT$`** concatenated with the **data asset name**, an **_** (underscore) , followed by the **Object Storage bucket's name**.
+As part of the synchronization process, Query Service creates schemas that correspond to your harvested data assets and creates external tables in those schemas that correspond to the logical entities. It creates one schema for each Oracle Object Storage bucket. By default, the name of a generated schema in Query Service starts with the keyword **`DCAT$`** concatenated with the **data asset name**, an **_** (underscore) , followed by the **Object Storage bucket's name**.
 
 ![A box displays the default schema name format as DCAT$<data-asset-name>_<bucket-name>.](./images/schema-format.png " ")
 
@@ -67,11 +67,11 @@ As part of the synchronization process, Query Service also creates schemas that 
 
 ![The Query Editor button on the Query Service projects page is highlighted.](./images/query-editor-button.png " ")  
 
-  The **scratchpad** page is displayed. This is where you enter your SQL queries.
+  The **Query Editor** page is displayed with an empty **Scratchpad**. This is where you enter your SQL queries.
 
   ![The scratchpad page is displayed.](./images/scratchpad-callouts.png " ")  
 
-### **Components of the scratchpad Worksheet**
+### **Components of the Query Editor**
 
 1. **Breadcrumbs:** Click **Projects** in the breadcrumbs to return to the **Query Service Projects** page. Click **Worksheets** to view the project details page which shows your saved worksheets.
 
@@ -81,11 +81,13 @@ As part of the synchronization process, Query Service also creates schemas that 
 
 4. **Tables:** This section displays the tables in the schema that you selected in the **Select a Schema** drop-down list.
 
-5. **Choose Worksheet:** Initially, only the **scratchpad** worksheet is available in this field. When you save your queries as new worksheets, you will be able to select those worksheets from this drop-down list.
+5. **Choose Worksheet:** Initially, only the **Scratchpad** is available in this drop-down list. When you save your queries as new worksheets, you will be able to select those worksheets from this drop-down list.
 
-6. **Tools buttons:** You can use the buttons in this section to run the SQL query in the scratchpad area, run all SQL queries in the currently selected worksheet, save the worksheet, set the query settings, and delete the worksheet.
+    >**Note:** The **Scratchpad** is only stored for the duration of your web browser's session; therefore, to share or persist the queries across web browsers or web browser sessions, you must save the queries as a worksheet.
 
-7. Enter your SQL queries in the scratchpad area.
+6. **Tools buttons:** You can use the buttons in this section to run the current SQL query (at the current cursor location), run all SQL queries in the text editor, save the worksheet, set the query settings, and delete the worksheet.
+
+7. Enter your SQL queries in the text editor area.
 
 8. The **Last Query Result** tab shows the status and output of your query.
 
@@ -105,7 +107,7 @@ Let's query the **CUSTOMER\_CONTACT** external table from the **MOVIESTREAM_DEMO
 
   ![Click table link to display its definition.](./images/click-table.png " ")
 
-6. To query a table, click the **Actions** button next to a table such as **CUSTSALES**, and then select **Query** from the Context menu. The SQL query is displayed in the Scratchpad area. Click **Run Query** to run the query. An information box is displayed briefly. In the **Last Query Result** tab, the status of running the query is displayed, initially **In Progress**. When the query is completed successfully, the results are displayed in the **Last Query Result** tab and the status changes to **Succeeded**.  
+6. To query a table, click the **Actions** button next to a table such as **CUSTSALES**, and then select **Query** from the Context menu. The SQL query is displayed in the text editor area. Click **Run Query** to run the query. An information box is displayed briefly. In the **Last Query Result** tab, the status of running the query is displayed, initially **In Progress**. When the query is completed successfully, the results are displayed in the **Last Query Result** tab and the status changes to **Succeeded**.  
 
   ![Select Query from the Actions context menu associated with CUSTSALES.](./images/query-custsales.png " ")
 
@@ -154,28 +156,6 @@ Let's query the **CUSTOMER\_CONTACT** external table from the **MOVIESTREAM_DEMO
 7. Click the **View Result** link that is associated with the **query-CUSTSALES** to view its output.
 
     ![The query-CUSTSALES and the view result link are highlighted.](./images/query-custsales.png " ")
-
-8. Click **Worksheets** in the breadcrumbs to return to the project's detail page. Click **Edit** to display the **Edit Query Service Project** panel. You can use this panel to edit the project's name, edit or add a description, and edit the project-level settings. When you done with your changes, click **Save Changes**.
-
-    ![The Edit Query Service Project panel is displayed.](./images/edit-project.png " ")
-
-9. In the **Resources** section, click **Tables**. The **Tables** section is displayed. This section was covered in detail earlier in this workshop.
-
-    ![The Tables section is displayed.](./images/tables-section.png " ")
-
-10. In the **Resources** section, click **Query Executions**. The **Query Executions** section is displayed. This section was covered in detail earlier in this workshop.
-
-    ![The Tables section is displayed.](./images/filter-query-executions.png " ")
-
-    >**Note:** You can use the **View Query executions from Worksheet** drop-down list to display all query executions from all of worksheets (default), or choose a specific worksheet.
-
-11. In the **Resources** section, click **Workshop Requests**. The **Workshop Requests** section is displayed. Click one of the **CREATE\_TABLE** links that failed. The **CREATE\_TABLE** page is displayed. By default, the **Log Messages** section is displayed. The messages provides you with important debugging information.
-
-    ![The CREATE_TABLE page is displayed.](./images/create-table-page.png " ")
-
-12. Since this workshop request did fail, click the **Error Messages** link in the **Resources** section to find out more details about the failed job. The error message indicates a problem trying to connect to the tables.  
-
-    ![The CREATE_TABLE page is displayed.](./images/error-message.png " ")
 
 
 ## Learn More

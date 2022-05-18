@@ -21,6 +21,29 @@
          "filename": "./../sprint-query-data-qs/sprint-query-data-qs.md"
       },
       {
+         "title": "How do I use the project detail page in Query Service?",
+         "type": "tenancy",
+         "description": " ",
+         "filename": "./../sprint-explore-qs-project-detail/sprint-explore-qs-project-detail.md"
+      },
+      {
+         "title": "How can I create a bucket in Oracle Cloud?",
+         "type": "tenancy",
+         "description": " ",
+         "filename": "./../sprint-create-bucket/sprint-create-bucket.md"
+      },
+      {
+         "title": "How do I upload my files to Object Storage?",
+         "type": "tenancy",
+         "description": " ",
+         "filename": "./../sprint-upload-files/sprint-upload-files.md"
+      },
+      {
+         "title": "How can I change bucket visibility settings?",
+         "description": " ",
+         "filename": "./../sprint-change-bucket-visibility/sprint-change-bucket-visibility.md"
+      },
+      {
         "title": "How do I create an Object Storage table in Query Service?",
         "type": "tenancy",
         "description": " ",

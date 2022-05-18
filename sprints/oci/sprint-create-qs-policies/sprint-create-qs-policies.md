@@ -6,7 +6,7 @@ Duration: 10 minutes
 
 ## Create a dynamic group and a Dynamic Group Access Policy for your Query Service Project
 
-Before you can create and use a Query Service project, your tenancy must have a dynamic group that contains the project you will create and the policies granting the project access to resources it needs. The dynamic group containing the project must have read access on the Data Catalog instance that it will reference. In addition, the dynamic group containing the project must have read access to the buckets that contain the data to be queried using the Query Builder in the Query Service project.
+Before you can create and use a Query Service project, your tenancy must have a dynamic group that contains the project you will create and the policies granting the project access to resources it needs. The dynamic group containing the project must have manage access on the Data Catalog instance that it will reference. In addition, the dynamic group containing the project must have manage access to the buckets that contain the data to be queried using the Query Builder in the Query Service project.
 
 >**Note:** Optionally, if you want to store your query results in Object Storage buckets, the dynamic group that contains the project must have read and write access to those buckets.
 
