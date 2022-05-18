@@ -27,6 +27,12 @@
          "filename": "./../sprint-explore-qs-project-detail/sprint-explore-qs-project-detail.md"
       },
       {
+        "title": "How do I create an Object Storage table in Query Service?",
+        "type": "tenancy",
+        "description": " ",
+        "filename": "./../sprint-create-obj-table-qs/sprint-create-obj-table-qs.md"
+      },
+      {
          "title": "How can I create a bucket in Oracle Cloud?",
          "type": "tenancy",
          "description": " ",
@@ -42,12 +48,6 @@
          "type": "tenancy",
          "description": " ",
          "filename": "./../sprint-upload-files/sprint-upload-files.md"
-      },
-      {
-        "title": "How do I create an Object Storage table in Query Service?",
-        "type": "tenancy",
-        "description": " ",
-        "filename": "./../sprint-create-obj-table-qs/sprint-create-obj-table-qs.md"
       },
       {
          "title": "How do I create an OCI compartment? (Optional)",
