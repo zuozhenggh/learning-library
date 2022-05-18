@@ -2,21 +2,18 @@
 
 ## Introduction
 
-In this lab, we scale a WebLogic Cluster. In lab 5, we specify the *2* as replicas size. here, we modify the value to *3* and re-deploy the domain.
+In this lab, we scale a WebLogic Cluster. Here, we modify the value to *3* and re-deploy the domain.
 
 ### Objectives
 
 In this lab, you will:
 
-* Scale a WebLogic Cluster using WebLogic Kubernetes Toolkit UI.
+* Scale a WebLogic Cluster.
 
-### Prerequisites
-
-* Successfully created the virtual machine, which consist of all required softwares.
 
 ## Task 1: Scaling a WebLogic Cluster using WebLogic Kubernetes Toolkit UI
 
-In this Task, we scale the size of WebLogic Cluster from 2 to 3. You just need to modify the *Replica* value from 2 to 3 and re-deploy the domain again. Thus, it is easy to scale up WebLogic cluster using WebLogic Kubernetes Toolkit UI application.
+In this task, you just need to modify the *Replica* value from 2 to 3 and re-deploy the domain again. 
 
 1. Go back to WebLogic Kubernetes Toolkit UI,  Click *WebLogic Domain*. Go to *Clusters* section and click on *Edit* icon.  
     ![Cluster Resize](images/ClusterResize.png)
@@ -35,6 +32,15 @@ In this Task, we scale the size of WebLogic Cluster from 2 to 3. You just need t
     <copy>kubectl get pods -n test-domain-ns -w</copy>
     ```
     ![View Scaling](images/ViewScaling.png)
+    > You can see, re-deployment of domain, starts the introspector job, which start the process of creating pod for test-domain-managed-server3 and in sometime, this pod gets into *Running* status.
+
+6. Go back to browser, where you have the application page open. Click Refresh button, you will see the load balancing between three managed server now.
+    ![new server](images/newserver.png)
+
+7. Go back to WebLogic Remote Console, click on Monitoring Tree -> Running Servers. You will notice managed-server3 here also.
+    ![remote console](images/remote-console.png)
+
+
 
 
 ## Acknowledgements
