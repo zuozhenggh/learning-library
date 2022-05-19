@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, you will deploy an ingress-controller on **Oracle Container Enginer for Kubernetes (OKE)** to allow public IP access to Kubernetes services (similar to load balancer). We will be using this ingress-controller to route access to Zeppelin deployed to **OKE**.
+In this lab, you will deploy an ingress-controller on **Oracle Container Enginer for Kubernetes (OKE)** to allow public IP access to Kubernetes services (similar to load balancer). We will be using this ingress-controller to route access to Zeppelin deployed on OKE.
 
 **Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 

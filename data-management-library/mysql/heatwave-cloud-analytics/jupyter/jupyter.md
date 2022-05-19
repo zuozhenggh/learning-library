@@ -4,7 +4,7 @@
 
 <a href="https://www.jubyterlab.org/", target="\_blank">JupyterLab</a> notebook is the latest web-based interactive development environment for notebooks, code, and data. Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning.
 
-In this lab, we will deploy JupyterLab to Oracle Container for Kubernetes Engine and to create a simple notebook to analyze data in **MySQL HeatWave**.
+In this lab, we will deploy **JupyterLab** to Oracle Container for Kubernetes Engine and to create a simple notebook to analyze data in **MySQL HeatWave**.
 
 **Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 

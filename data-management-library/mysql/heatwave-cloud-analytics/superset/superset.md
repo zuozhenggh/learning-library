@@ -4,7 +4,7 @@
 
 <a href="https://superset.apache.org/", target="\_blank">Superset</a> is one of the top Apache projects that offers a set of tools to build dashboards to visual data stored in your database.
 
-In this lab, you will deploy Superset using Helm to Oracle Container Engine for Kubernetes infrastructure, and create a simple dashboard for **MySQL HeatWave**.
+In this lab, you will deploy **Superset** using Helm to Oracle Container Engine for Kubernetes infrastructure, and create a simple dashboard for **MySQL HeatWave**.
 
 **Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
