@@ -8,6 +8,11 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 *IMPORTANT:  If the SSH key is not created correctly, you will not be able to connect to your environment and will get errors.  Please ensure you create your key properly.*
 
+Estimated Time: 5 minutes
+
+### Objectives
+- Generate and access SSH public and private keys
+
 ## Option 1:  MacOS
 
 1.  If you don't already have a shortcut to the terminal application for MacOS, you can find it in the **Applications** > **Utilities** menu or (Shift+Command+U) on your keyboard.
@@ -18,7 +23,7 @@ If you already have an SSH key pair, you may use that to connect to your environ
     <copy>ssh-keygen</copy>
     ````
 
-    ![Generate SSH key](images/ssh-keygen.png " ")
+    ![SSH key Mac option.](images/ssh-keygen-mac.png " ")
 
 
 3.  Type the following commands in the terminal window to verify that the public and private keys were created.  And to copy the contents of the public key for use in creating your instance in the OCI dialog.
@@ -41,7 +46,7 @@ If you already have an SSH key pair, you may use that to connect to your environ
 
 4.  If you're ready to create an instance, copy the contents and paste when prompted for the SSH key. Make sure that you remove any hard returns that may have been added when copying.
 
-    ![](images/copy-ssh-key.png " ")
+    ![Copy the contents when ready to create an instance.](images/copy-ssh-key.png " ")
 
 [Click for the MacOS Terminal User Guide](https://support.apple.com/guide/terminal/welcome/mac)
 
@@ -65,7 +70,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
     >**Note:** In Unix variants, a folder with a dot (.) in front of it was usually designated for configuration files and 'hidden' from normal view.   However, a dot (.) doesn't mean anything special in front of Windows folders.  So the folder will exist but won't be hidden.
 
-    ![SSH keygen powershell](images/ssh-keygen-powershell.png " ")
+    ![Press enter at all of the prompts.](images/ssh-keygen-powershell.png " ")
 
 4.  Confirm that your keys exist and were created properly.   Enter the following commands in the Powershell window.
 
@@ -81,7 +86,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
     <copy>cat id_rsa.pub</copy>
     ```
 
-    ![SSH key content powershell](images/ssh-key-content-powershell.png " ")
+    ![Confirm keys were created properly.](images/ls-cat.png " ")
 
     You now have a working SSH key pair and can use it for secure communications to instances in the cloud. Do not share the *private key* `id_rsa` with anyone unless you understand what you're doing. You should only ever need to share and copy the *public key* `id_rsa.pub`.
 
@@ -93,7 +98,7 @@ Creating keys for Windows can be interesting as ```ssh-keygen``` was not a nativ
 
     >**Note:** Don't use MS Word or any other rich text editors as they might add extra formatting characters which will render the key unusable.
 
-    ![SSH key notepad](images/sshkey-notepad.png " ")
+    ![Or open file with plain text editor.](images/notepad.png " ")
 
     * [Click here for more details on PowerShell for Windows](https://docs.microsoft.com/en-us/powershell/)
     * [Click here for more details on OpenSSH Key Management for Windows](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_keymanagement)
@@ -121,7 +126,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
     <copy>ssh-keygen</copy>
     ```
 
-    ![SSH key gen Git Bash](images/sshkey-gen-git-bash.png " ")
+    ![Accept default location.](images/ssh-keygen-git-bash.png " ")
 
     >**Note:** The tricky part here is that **Git Bash** uses a simulated Unix home directory. In order to view, retrieve, or copy your keys, you will need to navigate into the Windows directory structure.
 
@@ -141,13 +146,13 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
     <copy>ls</copy>
     ```
 
-    ![Examine files](images/examine-files.png " ")
+    ![Navigate up into root C: directory.](images/ls-git-bash.png " ")
 
     Note in the output that there are two files, a *private key:* ```id_rsa``` and a *public key:* ```id_rsa.pub```. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud.
 
 6.  Make a note of where your SSH public and private key files are located. You may be asked to upload the file or to copy/paste the content in other labs for Oracle Cloud Services. Copy the key content exactly, capturing space after the key characters may render your key invalid. In the example below, you can use the gitbash ```cat``` command to display the public key file content. You can select the key file content and right-click to **Copy** the key.  Or you can upload the file directly.
 
-    ![Copy SSH key Git Bash](images/copy-ssh-key-git-bash.png " ")
+    ![Copy the key content exactly.](images/copy-git-bash.png " ")
 
     >**Note:** If you've already installed Git for Windows, don't bother with PuTTY. It's your choice which utility to use for key generation and terminal access.
 
@@ -181,25 +186,25 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     >**Note:** PuTTY does not save keys in an OpenSSH compatible format. Thus, if you upload a public key file created with PuTTY to a Linux/Unix system using OpenSSH, the key will not be read correctly. However, the key information itself, when copied directly from the PuTTYgen application, does work correctly when **pasted** into fields that then use that information to create a proper OpenSSH compatible key. For example, when creating an instance on OCI, you can **paste** the SSH key from PuTTY and it will work correctly.
 
-    ![Save public key](images/save-public-key.png " ")
+    ![Save public key.](images/save-public-key.png " ")
 
 7.  In the *Save public key as:* dialog, name your key and add the ```.pub``` extension to the filename. It will also be helpful if save the file in the common ```.ssh``` folder under your Windows username / folder structure. In this example the key-files will be accessible ```C:\Users\<username>\.ssh``` directory. Store the keys here for easy future reference.
 
-    ![Save public key as](images/save-public-key-as.png " ")
+    ![Save public key.](images/save-public-key.png " ")
 
 8.  Next you will need to save the private key. Click the **Save private key** button, answer **Yes** to the warning about saving without a passphrase.
 
-    ![Save private key](images/save-private-key.png " ")
+    ![Save private key.](images/save-private-key.png " ")
 
 9.  Name the key and verify that it's saved with a ```.ppk``` extension to identify the file as the private key file. Do not share your private key with anyone.
 
-    ![Save private key as](images/save-private-key-as.png " ")
+    ![Identify the file as private key.](images/ppk.png " ")
 
 10. Now you've saved the keys for future reference, all you have to do is copy the key information from the PuTTY dialog.
 
 11. Select the key text in the dialog box from start to finish, then right click and choose **Copy**. You can then paste the key into a Notepad or directly into the instance creation dialog in the OCI console.
 
-    ![Copy SSH key](images/copy-putty.png " ")
+    ![Select the key text.](images/copy-putty.png " ")
 
 12.  Below is an example of the **Add SSH key - Paste SSH keys** dialog in the OCI instance creation form.
 
@@ -213,17 +218,17 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 1.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
 
-    ![IP address](images/ip-address.png " ")
+    ![Enter IP address of OCI compute instance.](images/ip.png " ")
 
     ![Compute Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2.  Under **Category** select **Connection** and then choose the **Data** field. Enter the assigned instance's username. OCI instances will default to the username ```opc```. Enter ```opc```.
 
-    ![Username](images/username.png " ")
+    ![Enter assigned instance username.](images/data.png " ")
 
 3.  Under **Category**, navigate to **Connection** - **SSH** and choose the **Auth** category. Click on the **Browse** button and locate the ```private key file``` you created in the earlier step. Click the **Open** button to initiate the SSH connection to your cloud instance.
 
-    ![Private key](images/private-key.png " ")
+    ![Initiate SSH connection to cloud instance.](images/auth.png " ")
 
 4.  Click **Yes** to bypass the Security Alert about the uncached key.
 
