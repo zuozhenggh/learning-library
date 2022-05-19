@@ -32,7 +32,7 @@ In this Task, we creats the configuration file *.oci/config* and *.kube/config* 
     ![Local Access](images/local-access.png)
 
 4. Click on *Activities* and select the *Terminal*.
-    ![Terminal](images/terminal.png)
+    ![Terminal](images/click-terminal.png)
 
 5. Paste the copied command in the terminal. For *Do you want to create a new config file?*, Type *y* then press *Enter*. For *Do you want to create your config file by logging in through a browser?*, Type *y* then press *Enter*.
     ![OCI Config](images/oci-config.png)

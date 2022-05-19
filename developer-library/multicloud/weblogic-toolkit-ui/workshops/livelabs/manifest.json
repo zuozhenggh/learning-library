@@ -1,10 +1,10 @@
 {
-  "workshoptitle": "The Title of the Workshop is defined in the manifest",
-  "help": "livelabs-help-**enterarea**_us@oracle.com",
+  "workshoptitle": "Oracle WebLogic Kubernetes ToolKit UI",
+  "help": "livelabs-help-weblogic_us@oracle.com",
   "tutorials": [
     {
       "title": "Introduction",
-      "description": "The Introduction is always second for LiveLabs. The title and contents menu title match for the Introduction.",
+      "description": "Migrate An Application to OCI with WebLogic Kubernetes Toolkit",
       "filename": "../../introduction/introduction.md"
     },
     {
@@ -13,24 +13,40 @@
       "filename": "https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/verify-compute/verify-compute-ssh-and-novnc.md"
     },
     {
-      "title": "Lab 2: Initialize Environment",
-      "description": "Initialize Environment",
-      "filename": "../../initialize-environment/initialize-environment.md"
+      "title": "Lab 2: Set up the resources",
+      "filename": "../../create-environment/create-environment.md"
     },
     {
-      "title": "Lab 3: Provision an Instance",
-      "description": "Provisioning the Lab Environment",
-      "filename": "../../provision/provision.md"
+      "title": "Lab 3: Modifying a WKT UI Project and Creation of Model file",
+      "filename": "../../create-model/create-model.md"
     },
     {
-      "title": "Lab 4: Load Data into an Instance",
-      "description": "Loading the data",
-      "filename": "../../data-load/data-load.md"
+      "title": "Lab 4: Creation of Auxiliary Image and Pushing it in Oracle Container Image Registry",
+      "filename": "../../create-image/create-image.md"
     },
     {
-      "title": "Lab 5: Query Data",
-      "description": "Queyring the data",
-      "filename": "../../query/query.md"
+      "title": "Lab 5: Deploy WebLogic Operator to Oracle Kubernetes Cluster (OKE)",
+      "filename": "../../deploy-operator/deploy-operator.md"
+    },
+    {
+      "title": "Lab 6: Deploy WebLogic Domain to Oracle Kubernetes Cluster (OKE)",
+      "filename": "../../deploy-domain/deploy-domain.md"
+    },
+    {
+      "title": "Lab 7: Deploy Ingress Controller to Oracle Kubernetes Cluster (OKE)",
+      "filename": "../../deploy-ingress/deploy-ingress.md"
+    },
+    {
+      "title": "Lab 8: Testing Application Deployment",
+      "filename": "../../access-application/access-application.md"
+    },
+    {
+      "title": "(Optional) Lab 9: Scaling a WebLogic Cluster",
+      "filename": "../../scale-cluster/scale-cluster.md"
+    },
+    {
+      "title": "(Optional) Lab 10: Making a upgrade in WebLogic Server Version ",
+      "filename": "../../upgrade-version/upgrade-version.md"
     },
     {
       "title": "Need Help?",

@@ -69,7 +69,7 @@ For simplicity of lab, we created *`base_project.wktproj`*, which preset the loc
 In this task, we perform introspection of an on-premise domain, which creates a model file consisting of the domain configuration.
 
 1. In WebLogic Kubernetes Toolkit UI, Click *Model*.
-    ![Model](images/model.png)
+    ![Model](images/click-model.png)
 
 2. Click *File* -> *Add Model* -> *Discover Model(offline)*.
     ![Discover Model](images/discover-model.png)
