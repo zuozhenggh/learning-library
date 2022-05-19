@@ -11,7 +11,7 @@ You will get familiar with the components of the project detail page in Query Se
 
 ## Exploring the Project Detail Page in Query Service
 
-1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, click the following link to navigate to the [Query Service Console](https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1) (https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1).
+1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, navigate to your assigned **Query Service Console** provided to you by your Oracle Product Manager.
 
 2. On the **Query Service Projects** page, click the desired project name link to display the project's detail page.
 

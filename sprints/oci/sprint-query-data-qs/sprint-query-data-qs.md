@@ -61,7 +61,7 @@ As part of the synchronization process, Query Service also creates schemas that 
 
 ### **Use Query Editor to Query Data in Oracle Object Storage Buckets**
 
-1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, click the following link to navigate to the [Query Service Console](https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1) (https://cloud.oracle.com/sql-queryservice?region=us-ashburn-1).
+1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, navigate to your assigned **Query Service Console** provided to you by your Oracle Product Manager.
 
 2. On the **Query Service Projects** page, in the row for your Query Service project, click **Query Editor**. This is the quickest way to access the Query Editor and start querying tables in the available schemas. Alternatively, you can click the project's name link to display the project's detail page and then click **Query Editor**.
 
@@ -87,7 +87,7 @@ As part of the synchronization process, Query Service also creates schemas that 
 
 6. **Tools buttons:** You can use the buttons in this section to run the current SQL query (at the current cursor location), run all SQL queries in the text editor, save the worksheet, set the query settings, and delete the worksheet.
 
-7. Enter your SQL queries in the text editor area.
+7. Enter your SQL queries in the Editor area.
 
 8. The **Last Query Result** tab shows the status and output of your query.
 
@@ -107,7 +107,7 @@ Let's query the **CUSTOMER\_CONTACT** external table from the **MOVIESTREAM_DEMO
 
   ![Click table link to display its definition.](./images/click-table.png " ")
 
-6. To query a table, click the **Actions** button next to a table such as **CUSTSALES**, and then select **Query** from the Context menu. The SQL query is displayed in the text editor area. Click **Run Query** to run the query. An information box is displayed briefly. In the **Last Query Result** tab, the status of running the query is displayed, initially **In Progress**. When the query is completed successfully, the results are displayed in the **Last Query Result** tab and the status changes to **Succeeded**.  
+6. To query a table, click the **Actions** icon next to a table such as **CUSTSALES**, and then select **Query** from the Context menu. The SQL query is displayed in the Editor area. Click **Run Query** to run the query. An information box is displayed briefly. In the **Last Query Result** tab, the status of running the query is displayed, initially **In Progress**. When the query is completed successfully, the results are displayed in the **Last Query Result** tab and the status changes to **Succeeded**.  
 
   ![Select Query from the Actions context menu associated with CUSTSALES.](./images/query-custsales.png " ")
 
@@ -120,7 +120,7 @@ Let's query the **CUSTOMER\_CONTACT** external table from the **MOVIESTREAM_DEMO
 
   ![The query detail page is displayed.](./images/query-detail-page.png " ")  
 
-9. Click the **Query Executions** link in the breadcrumbs to return to the scratchpad worksheet. Scratchpad is a temporary worksheet; therefore, SQL queries written in Scratchpad will be lost. You can save your Scratchpad query to a worksheet that you can retrieve at a later time. You can also share the saved worksheet with others. Click **Save**, and then select **Save Worksheet as** from the drop-down list.
+9. Click the **Query Executions** link in the breadcrumbs to return to the Scratchpad worksheet. Scratchpad is a temporary worksheet; therefore, SQL queries written in Scratchpad will be lost. You can save your Scratchpad query to a worksheet that you can retrieve at a later time. You can also share the saved worksheet with others. Click **Save**, and then select **Save Worksheet as** from the drop-down list.
 
   ![The query detail page is displayed.](./images/save-worksheet.png " ")
 
