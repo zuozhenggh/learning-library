@@ -112,13 +112,13 @@ You will first create an Object Storage bucket (unless you already have one) in 
 
     + **Table Name:** Enter **training\_object\_storage\_table_2**.
 
-      >**Note:** Special characters such as **`&`**, **`-`** (hyphen), and **`/`** are not allowed in table names.
+          >**Note:** Special characters such as **`&`**, **`-`** (hyphen), and **`/`** are not allowed in table names.
 
       + **Target Object File Glob:** Click **Select Object** to select **`custsales-2019-01.parquet`** file from your Object Storage bucket. The **Select Object** panel is displayed. Click the filename link in the **Name** column.
 
       ![The Select Object panel is displayed.](./images/select-object-panel.png " ")    
 
-      The **Object Details** panel is displayed. Click **Close**.
+      The **Object Details** panel is displayed. Click **Pick Object**.
 
       ![The Object Details panel is displayed.](./images/object-details-panel.png " ")      
 

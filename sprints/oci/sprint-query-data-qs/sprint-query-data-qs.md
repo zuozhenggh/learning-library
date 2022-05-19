@@ -65,7 +65,7 @@ As part of the synchronization process, Query Service also creates schemas that 
 
 2. On the **Query Service Projects** page, in the row for your Query Service project, click **Query Editor**. This is the quickest way to access the Query Editor and start querying tables in the available schemas. Alternatively, you can click the project's name link to display the project's detail page and then click **Query Editor**.
 
-![The Query Editor button on the Query Service projects page is highlighted.](./images/query-editor-button.png " ")  
+  ![The Query Editor button on the Query Service projects page is highlighted.](./images/query-editor-button.png " ")  
 
   The **Query Editor** page is displayed with an empty **Scratchpad**. This is where you enter your SQL queries.
 
@@ -127,35 +127,6 @@ Let's query the **CUSTOMER\_CONTACT** external table from the **MOVIESTREAM_DEMO
 10. In the **Save Worksheet as** dialog box, enter a meaningful name for the worksheet and then click **Save as**. The saved worksheet is displayed.
 
     ![The saved worksheet is displayed.](./images/my-custsales-query.png " ")
-
-
-### **Exploring the Project Detail Page**
-
-1. Click **Projects** in the breadcrumbs to return to the **Query Service Projects** page.
-
-2. Click the project name link to display the project's detail page.
-
-    ![The project name link is highlighted.](./images/project-name-link.png " ")  
-
-3. On the detail page, you can click the **Query Editor** buttons to access the Query Editor. In addition, in the **Worksheets** section, you can click on a worksheet name link to display the queries in the worksheet in Query Editor.
-
-    ![The worksheet detail page is displayed.](./images/project-detail-page.png " ")  
-
-4. The worksheet example contains three queries. To run all three queries, click **Run Worksheet**.
-
-    ![Three queries on the worksheet and run worksheet is highlighted.](./images/run-worksheet.png " ")
-
-5. Three informational messages are displayed briefly about each query about to be executed. When the queries execution is completed successfully, the status of running the worksheet in the **Last Query Result** tab changes from **In Progress** to  **Succeeded**. The **Last Query Result** tab shows the output of the last query executed.
-
-    ![Three queries on the worksheet and run worksheet is highlighted.](./images/last-query-output.png " ")
-
-6. To view the output of all three queries in the worksheet, click the **Query Executions** tab. Next, click the **View Result** link that is associated with a query to view its output. Click the **View Result** link that is associated with the **query-CUSTSALES** to view its output.
-
-    ![The queries' names and view result links are highlighted.](./images/view-results.png " ")
-
-7. Click the **View Result** link that is associated with the **query-CUSTSALES** to view its output.
-
-    ![The query-CUSTSALES and the view result link are highlighted.](./images/query-custsales.png " ")
 
 
 ## Learn More
