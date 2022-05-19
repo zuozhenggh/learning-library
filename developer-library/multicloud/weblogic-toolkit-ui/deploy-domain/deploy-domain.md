@@ -15,7 +15,7 @@ In this lab, you will:
 In this task, we deploy the Kubernetes custom resource for the WebLogic domain to Kubernetes Cluster.
 
 1. Scroll down, enter the following in Primary Image section, Enter *domain-secret* as *Image Pull Secret Name*, and Use Oracle account username and password in *Image Registry Pull Username* and *Image Registry Pull Password*. Enter your Oracle email id in *Image Registry Pull Email Address*. These are the same credential which you used to accept license for *weblogic* images in Oracle Container Registry.
-    ![Primary Image Details](images/primaryimagedetails.png)
+    ![Primary Image Details](images/primary-image-details.png)
     > **For your information only:**<br>
     > We are pulling the image from the Oracle Container Registry, so we are specifying the credential, which we used to accept the license agreement for WebLogic Server Images.
 
@@ -23,17 +23,17 @@ In this task, we deploy the Kubernetes custom resource for the WebLogic domain t
 2. Scroll down, in Auxiliary Image section, uncheck the box for **Specify Auxiliary Image Pull Credentials**.
 
 3.  In *Clusters* section, click on *Edit* icon as shown.
-    ![Cluster Resize](images/clusterresize.png)
+    ![Cluster Resize](images/cluster-resize.png)
 
 4. Enter *2* as *Replicas* and then Click *OK*. The size of replica decides the number of managed server in the *Running* state after successfull deployment of WebLogic Domain to Kubernetes cluster.
-    ![Cluster Replicas](images/clusterreplicas.png)
+    ![Cluster Replicas](images/cluster-replicas.png)
 
 5. In Datasources section, double click to edit *passwords* for two datasource. You can give *tiger* as password in both the datasources. Once done, click *Deploy Domain*.
-    ![Datasoure Password](images/datasourcepassword.png)
+    ![Datasoure Password](images/datasource-password.png)
     > This deploy WebLogic Domain test-domain to Kubernetes namespace *test-domain-ns*.
 
 6. Once you see *WebLogic Domain Deployment to Kubernetes Complete* window, Click *OK*.
-    ![Deployment Complete](images/deploymentcomplete.png)
+    ![Deployment Complete](images/deployment-complete.png)
 
 7. Go back to terminal, Click *Activities* and select the *Terminal* window. Copy the following command and paste it terminal. You should see the similar output, where pod for introspector run first then for the Admin Server and later pods for managed server goes in the *Running* state.
 
@@ -41,13 +41,13 @@ In this task, we deploy the Kubernetes custom resource for the WebLogic domain t
     <copy>kubectl get pods -n test-domain-ns -w</copy>
     ````
 
-    ![Pod Status](images/podstatus.png)
+    ![Pod Status](images/pod-status.png)
 
 8. You can also get the domain status through *WebLogic Kubernetes Toolkit UI*. Go back to *WebLogic Kubernetes Toolkit UI* and click *Get Domain Status*.
-    ![Domain Status](images/domainstatus.png)
+    ![Domain Status](images/domain-status.png)
 
 9. In Domain Status window, Scroll down to see status of all server pods then click *OK*.
-    ![Server Status](images/serverstatus.png)
+    ![Server Status](images/server-status.png)
 
 
 ## Acknowledgements

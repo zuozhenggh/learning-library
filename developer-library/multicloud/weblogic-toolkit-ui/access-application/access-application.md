@@ -38,11 +38,11 @@ In this task, we access the *opdemo* application. We click on refresh icon to ma
     ```bash
     <copy>http://XX.XX.XX.XX/opdemo/?dsname=testDatasource</copy>
     ```
-    ![Open Application](images/openapplication.png)
+    ![Open Application](images/open-application.png)
 
 
 2. If you click on Refresh icon, You can see load balancing between two managed server pods.
-    ![Show Loadbalancing](images/showloadbalancing.png)
+    ![Show Loadbalancing](images/show-load-balancing.png)
 
 
 ## Task 2: Explore WebLogic Domain on Kubernetes Cluster using WebLogic Remote Console
@@ -52,23 +52,23 @@ In this task, we explore the WebLogic Remote Console. We create connection to *A
 1. To open WebLogic Remote Console, Click on *Activities*, type *WebLogic* in search box and click on the *WebLogic Remote Console* Icon.
 
 2. Click on `Three dots` under *Kiosk* and Select *Add Admin Server Connection Provider* and click *Choose*.
-    ![Admin Server Connection](images/adminserverconnection.png)
+    ![Admin Server Connection](images/adminserver-connection.png)
 
 3. Enter the following data and click *OK*.<br>
     Connection Provider Name: AdminServer<br>
     Username: weblogic<br>
     Password: welcome1<br>
     URL:  `Copy_IP_From_TextFile`</br>
-    ![Connection Details](images/connectiondetails.png)
+    ![Connection Details](images/connection-details.png)
 
 4. Click on *Edit Tree* icon, then Select *Services* -> *JDBC System Resources*. You can observe the same Datasouce, which we had seen in on-premise domain.
-    ![Verify Datasources](images/verifydatasources.png)
+    ![Verify Datasources](images/verify-datasources.png)
 
 5. Click on **Monitoring Tree** Icon as shown then select **Running Servers**. You can see we have **Admin Server** and 2 Managed Server pods are running. Click on **admin-server**, you can see WebLogic Version is **12.2.1.3.0**.
-    ![Running Servers](images/wlsversion.png)
+    ![Running Servers](images/wls-version.png)
 
 6. To display what servers are running in your domain. Click the **Configuration view Tree** icon, click **Environment** and **Servers**. In the servers drop down box, select **Status- Monitoring Tree**.
-    ![Server Status](images/runningserverstatus.png)
+    ![Server Status](images/running-server-status.png)
     ![Running](images/running.png)
 
 
