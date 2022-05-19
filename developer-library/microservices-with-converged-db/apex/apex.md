@@ -280,7 +280,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
         ```
 
     * Fourth Region **New**
-        * **Title: **Top Delay**
+        * **Title**: **Top Delay**
         * **Accent: Accent15**
         * **PL/SQL Code**: 
         ```
