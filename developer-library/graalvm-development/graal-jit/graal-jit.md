@@ -35,6 +35,10 @@
     ``` 
     -->
     
+    ```
+    <copy>cd ~</copy>
+    ```
+
     GitHubに公開されているGraalVMサンプルのリポジトリを複製します。
 
     ```
@@ -58,8 +62,7 @@
     ```
     <copy>nano src/main/java/org/graalvm/demos/JavaSimpleStreamBenchmark.java</copy>
     ```
-    > **Note:** nanoエディタを終了する場合、nanoエディタの下部に表示されたショートカットキーを押します。CTRL+Xを押すことで、ファイルの編集内容を保存するかどうかをYesまたはNo、Cancelの形で尋ねられます。それぞれY、N、CTRL+Cで対応します。
-
+    
     サンプルソースの中で、int型の配列の各要素に対し、Java Stream APIを利用して様々な計算処理を行います。  
     またJMHの仕様に従ってウォームアップの回数、反復回数、計測対象モード（平均時間）などのベンチマーク仕様をアノテーション形式で規定しています。
 
@@ -90,12 +93,32 @@
       }
     }
     ```
+    CTRL+Xを押下し、nanoエディタからExitします。
+
+    > **Note:** ファイルを編集後nanoエディタを終了する場合、nanoエディタの下部に表示されたショートカットキーを押します。CTRL+Xを押すことで、ファイルの編集内容を保存するかどうかをYesまたはNo、Cancelの形で尋ねられます。それぞれY、N、CTRL+Cで対応します。
 
 ## Task 2: ベンチマークを含むプロジェクトのビルドおよび実行
 
 1. 演習１で導入したMavenを使用してプロジェクトをビルドします。
 
-    ```java-simple-stream-benchmark```配下で以下のコマンドを実行します。
+    以下のコマンドでmavenビルドに必要なライブラリをダウンロードします。
+    ```
+    <copy>cd ~</copy>
+    ```
+    ```
+    <copy>
+    wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/m2.tar.gz
+    </copy>
+    ```
+    ```
+    <copy>tar zxvf  m2.tar.gz</copy>
+    ```
+    
+    ```java-simple-stream-benchmark```配下に移動し、アプリケーションをビルドします。
+
+    ```
+    <copy>cd graalvm-demos/java-simple-stream-benchmark</copy>
+    ```
 
     ```
     <copy>mvn clean package</copy>

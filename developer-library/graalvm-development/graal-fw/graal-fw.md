@@ -37,8 +37,14 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
     以下のコマンドを実行を実行し、Micronautのサンプルプログラムをダウンロードします。
 
+    <!--
     ```
     <copy>curl --location --request GET 'https://launch.micronaut.io/create/default/com.example.mndemo?lang=JAVA&build=MAVEN&test=JUNIT&javaVersion=JDK_11&features=graalvm' --output mndemo.zip</copy>
+    ```
+    -->
+
+    ```
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/mndemo.zip</copy>
     ```
 
     ```
@@ -169,9 +175,15 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     <copy>cd ~/</copy>
         
     ```
-        
+
+    <!--    
     ```
     <copy>curl https://start.spring.io/starter.zip -d dependencies=web,native -d javaVersion=11 -o spdemo.zip</copy>
+    ```
+    -->
+
+    ```
+    <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/spdemo.zip</copy>
     ```
 
     ```
@@ -268,7 +280,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
         
     ```
     <copy>    
-    $ curl http://localhost:8080/greeting
+    curl http://localhost:8080/greeting
     </copy>
     ```  
                
@@ -278,7 +290,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 
     RESTfulサービスが起動しているターミナル画面にて、Ctrl+CでSpring Bootアプリケーションを停止します。
        
-5. Spring Bootアプリケーションのテンプレートを作成時、dependencyをSpring Nativeを指定したため、pom.xmlの中にnative imageをビルドするためのプラグイン定義が自動追加されます。spdemo配下で以下のコマンドを実行し、pom.xmlの中身を確認します。
+5. Spring Bootアプリケーションのテンプレートを作成時、dependencyをSpring Nativeを指定したため、pom.xmlの中にnative imageをビルドするためのプラグイン定義が自動的に追加されます。spdemo配下で以下のコマンドを実行し、pom.xmlの中身を確認します。
     ```
     <copy>
     cat pom.xml
@@ -316,7 +328,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
     </dependencies>
     ```
       
-   (2) SpringアプリケーションをAOTコンパイラでビルドするため、Spring Frameworkより提供の```spring-aot-maven-plugin```がbuildタグの中のpluginとして追加されているのを確認します。
+   (2) SpringアプリケーションをAOTコンパイラでビルドするため、Spring Frameworkより提供の```spring-aot-maven-plugin```が```build```タグの中の```plugin```として追加されているのを確認します。
 
     ```      
     <plugin>
@@ -429,7 +441,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
         
     ```
     <copy>    
-    $ curl http://localhost:8080/greeting
+    curl http://localhost:8080/greeting
     </copy>
     ```  
                
