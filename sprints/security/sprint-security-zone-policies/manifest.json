@@ -11,12 +11,7 @@
          "title": "How do I create a security zone?",
          "description": "",
          "filename": "../sprint-create-security-zone/sprint-create-security-zone.md"
-      },
-      {
-         "title": "Other related Sprints n - How to Mauris sit amet dolor?",
-         "description": "",
-         "filename": "sprint-title.md"
-      }
+      } 
    ],
    "task_type": "Sections"
 }

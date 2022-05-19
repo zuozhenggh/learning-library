@@ -8,15 +8,14 @@
          "filename": "sprint-cloud-guard-policies.md"
       },
       {
-         "title": "Other related Sprints 1 - How to loreum ipsum larum?",
+         "title": "How do I enable Oracle Cloud Guard?",
          "description": "",
-         "filename": "sprint-title.md"
+         "filename": "../sprint-enable-cloud-guard/sprint-enable-cloud-guard.md"
       },
-      {
-         "title": "Other related Sprints n - How to Mauris sit amet dolor?",
+      { "title": "How do I create conditional operators in Cloud Guard?",
          "description": "",
-         "filename": "sprint-title.md"
-      }
+         "filename": "../sprint-conditional-operators-cloud-guard/sprint-conditional-operators-cloud-guard.md"
+      } 
    ],
    "task_type": "Sections"
 }
