@@ -13,7 +13,7 @@ push the relevant event information to downstream systems. As part of the lab yo
     into the File Server.
 
     The following diagram shows the runtime interaction between the systems involved in this use case:
-      ![POEvent](images/PO-Real-Time-Sync.png)
+      ![POEvent](images/po-real-time-sync-1.png)
 
 Estimated Time: 30 minutes
 
