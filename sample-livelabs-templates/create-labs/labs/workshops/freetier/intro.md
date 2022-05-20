@@ -2,8 +2,6 @@
 
 The labs in this workshop walk you through all the steps to **develop workshops** for LiveLabs. 
 
-[](youtube:Jc48r1A7g70)
-
   > **Note:** You can find information about creating images for compute instances and storing them in Marketplace in the [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/) LiveLabs workshop.
 
 ## What are Labs and Workshops?
