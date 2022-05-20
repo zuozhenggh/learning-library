@@ -77,11 +77,11 @@ In this task, you will create a new APEX app based on the inventory table.
 
     ![Add Page](images/create-an-application-inv.png)
 
-5. Click the **Interactive Page** button.
+5. Click the **Interactive Grid** button.
 
     ![Interactive Page](images/select-interactive-grid-inv.png)
 
-6. Enter **INVENTORY** for the page name and select the **INVENTORY** table.
+6. Enter **INVENTORY** for the page name and select the **INVENTORY** table. Click **Add Page**.
 
     ![Enter Page Name](images/grid-page-details.png)
 
@@ -111,7 +111,9 @@ You may now proceed to the next lab.
 
 ## Learn More
 
-* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack)  
+Search for and join the `oracle-db-microservices` channel.
+
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Developer Evangelist
@@ -119,4 +121,4 @@ You may now proceed to the next lab.
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Irina Granat, March 2022
+* **Last Updated By/Date** - Kamryn Vinson, May 2022

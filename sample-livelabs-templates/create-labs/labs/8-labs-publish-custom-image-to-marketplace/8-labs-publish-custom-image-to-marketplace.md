@@ -13,7 +13,7 @@ This lab assumes:
 - You have access to the approved LiveLabs tenant (*C4U02*) configured for OCI Marketplace
 - The custom image to be used was created as prescribed in [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute)
 
-## Task 1: Create and (or) Test Custom Image (Optional)  
+## Task 1: Create and (or) Test Custom Image 
 For custom images received from authors via imports from Object Storage pre-authenticated URLs, proceed as indicated below. If you created the image and have already validated  using a test instance, then skip to next task.
 
 1. Login to the dedicated tenancy for marketplace images (*C4U02*) and navigate to */Compute/Custom Images*
@@ -43,7 +43,7 @@ For custom images received from authors via imports from Object Storage pre-auth
 
 6. Download the sample ORM stack zip archive
 
-    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/59BZ9_9iIy7rAjk1GCea-ZsSWjJxf0zDK7xFctJmMnsoVXzHtnTuOQsGkNAaYx6Q/n/natdsecurity/b/misc/o/ll-orm-mkplc-freetier.zip)
+    - [ll-orm-mkplc-freetier.zip](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Ma3anAntwyF54E289zRxemySTIA2RZcOcq1jPZ_ZRiV3lhedYJSw3qCRnnU9K__M/n/natdsecurity/b/stack/o/ll-orm-mkplc-freetier.zip)
 
 7. Unzip it locally on your computer to *ll-orm-mkplc-freetier*.
 8. Delete the downloaded file *ll-orm-mkplc-freetier.zip*.
