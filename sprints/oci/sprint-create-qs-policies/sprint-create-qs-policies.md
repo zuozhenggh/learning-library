@@ -13,7 +13,7 @@ Before you can create and use a Query Service project, your tenancy must have a 
 
 ### **Requirement 1: Create a Dynamic Group**
 
-1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, navigate to your assigned **Query Service Console** provided to you by your Oracle Product Manager. 
+1. Sign in to the Oracle Cloud Infrastructure Console using your tenancy, username, and password. For the **Query Service Limited Availability (LA) release**, navigate to your assigned **Query Service Console** provided to you by your Oracle Product Manager.
 
 2. Open the **Navigation** menu and click **Identity & Security**. Under **Identity**, click **Dynamic Groups**.
 
@@ -91,6 +91,22 @@ After you create a dynamic group, you need to create a policy to grant the dynam
 
     ![The new policy is displayed on the Policies page.](./images/dg-access-policy-created.png " ")
 
+### **Optional Requirement**
+
+As mentioned earlier, if you want to store your query results in Object Storage buckets, the dynamic group that contains the project must have read and write access to those buckets.
+
+The following is an example of a policy granting read and write access to all buckets in the tenancy:
+
+```
+allow dynamic-group training-qs-dynamic-group to manage object-family in tenancy
+```
+
+The following is an example of a policy granting read and write access to a specific bucket in the tenancy named
+`training-bucket`:
+
+```
+allow dynamic-group training-qs-dynamic-group to manage object-family in tenancy where target.bucket.name='training-bucket'
+```
 
 ## Learn More
 

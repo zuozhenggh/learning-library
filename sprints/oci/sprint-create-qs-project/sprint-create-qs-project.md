@@ -6,7 +6,7 @@ Duration: 5 minutes
 ### Prerequisites
 * An Oracle Cloud Account.
 * An optional compartment for your Query Service project and resources.
-* An OCI Data Catalog instance that contains at least one Oracle Object Storage data asset that have been harvested to generate the logical data entities that will be used by Query Service. For detailed instructions on creating a Data Catalog data asset and harvesting it, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop. Alternatively, you can create a new Data Catalog instance when you create your Query Service project.
+* An OCI Data Catalog instance that contains at least one Oracle Object Storage data asset that has been harvested to generate the logical data entities that will be used by Query Service. For detailed instructions on creating a Data Catalog data asset and harvesting it, see **Lab 2: Harvest Technical Metadata from Oracle Object Storage** in the [Access the Data Lake using Autonomous Database and Data Catalog](https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=877&clear=180&session=103071880685237) Livelabs workshop. Alternatively, you can create a new Data Catalog instance when you create your Query Service project.
 
 * The required policies to allow access to the Data Catalog instance, Oracle Object Storage, and Query Service projects.
 
@@ -25,7 +25,7 @@ A Query Service project is a collection of tables, worksheets, and queries relat
       ![train is entered in the Search box and the training-query-service compartment is displayed and selected.](./images/create-in-compartment.png " ")
 
     * **Project Description:** Enter an optional description.
-    * **Connect Data Catalog:** Select the compartment that contains the Data Catalog instance to which you want to connect from the drop-down list. Click the **Change Compartment** link to search for Data Catalog instance if it's in a different compartment. In this example, we selected the **`query-service-sandbox`** compartment which contains a data catalog named **DataLake**. This instance contains a data asset that was harvested from three Oracle Object Storage buckets. Logical data entities were harvested from each of the three buckets.
+    * **Connect Data Catalog:** Select the compartment that contains the Data Catalog instance to which you want to connect from the drop-down list. Click the **Change Compartment** link to search for the Data Catalog instance if it's in a different compartment. In this example, we selected the **`query-service-sandbox`** compartment which contains a data catalog named **DataLake**. This instance contains a data asset that was harvested from three Oracle Object Storage buckets. Logical data entities were harvested from each of the three buckets.
 
         + **moviestream\_sandbox**
         + **moviestream\_landing**
@@ -37,7 +37,7 @@ A Query Service project is a collection of tables, worksheets, and queries relat
 
       ![The Create Data Catalog in the Create Query Service project panel is selected which displays the Create Data Catalog panel.](./images/create-dcat-qs.png " ")
 
-    * **Create Policy:** The **Query Service LA** release doesn't support creating the required policies using this section. You must create the policies manually; however, you can click **Create Policy** to view the required policies that you need to create. This is covered in the **How do I create the required policies for Query Service projects?** workshop sprint that you can select from the **Contents** menu on the left.  
+    * **Create Policy:** The **Query Service LA** release doesn't support creating the required policies using this section. You must create the policies manually; however, you can click **Create Policy** to view the required policies that you need to create. This is covered in the **How do I create the required policies for Query Service projects?** workshop sprint which you can select from the **Contents** menu on the left.  
 
       ![The completed Create Query Service project panel is displayed.](./images/create-qs-project.png " ")
 
