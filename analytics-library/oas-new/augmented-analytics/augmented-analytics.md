@@ -1,4 +1,4 @@
-# Augmented Analytics for HR
+# Augmented Analytics for HR_analysis
 
 ## Introduction
 One of the more sophisticated features of Oracle’s self-service offering is the ability to leverage advanced analytics and machine learning at the click of a button directly from your self-service projects and data flows. The machine learning features include a set of pre-built algorithms which can be used to extract insights from your data sets such as sentiment analysis, time-series analysis, prediction outcomes and confidence scores.
@@ -197,13 +197,13 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     !["targetcolumnsisattrition"](./images/targetcolumnsisattrition.png )
 
-7. Click *Save Model* and give the model a name like "AttritionPredict _ BC _ NB".
+7. Click *Save Model* and give the model a name like "AttritionPredict-BC-NB".
 
-    !["savemodelasattritionpredict_bc_nb"](./images/savemodelasattritionpredict_bc_nb.png )
+    !["savemodelasattritionpredict-bc-nb"](./images/savemodelasattritionpredict-bc-nb.png )
 
-8. Save the flow as *AttritionPredict _ BC _ NB* or something similar
+8. Save the flow as *AttritionPredict-BC-NB* or something similar
 
-    !["savedataflowasattritionpredict_bc_nb"](./images/savedataflowasattritionpredict_bc_nb.png )
+    !["savedataflowasattritionpredict-bc-nb"](./images/savedataflowasattritionpredict-bc-nb.png )
 
 9.  Run the data flow once it has saved. Wait for the training process to complete.
 
@@ -215,7 +215,7 @@ Binary classification is a technique of classifying elements of a given dataset 
 
 11. We can inspect the validity of our Machine Learning model. Click on the dots along the right hand side and select "Inspect".
 
-    !["attritionpredict_bc_nbmodelinspectoption"](./images/attritionpredict_bc_nbmodelinspectoption.png )
+    !["attritionpredict-bc-nbmodelinspectoption"](./images/attritionpredict-bc-nbmodelinspectoption.png )
 
 12. We can inspect the model to view more details like model quality (confusion matrix, precision, recall) and the generated datasets. The quality tab identifies the overall quality of the model with a series of related metrics: The overall model accuracy is 87% and the precision is 65%.
 
@@ -225,9 +225,9 @@ Binary classification is a technique of classifying elements of a given dataset 
 
     !["importworkbookflow"](./images/importworkbookflow.png )
 
-14. From Documents / Live Lab Content directory,  select the *Employee_Analysis.dva* file. 
+14. From Documents / Live Lab Content directory,  select the *Employee-Analysis.dva* file. 
 
-    !["employee_analysisdvafile"](./images/employee_analysisdvafile.png )
+    !["employee-analysisdvafile"](./images/employee-analysisdvafile.png )
 
 15. Enter the password *“Admin123”*.
 
@@ -255,7 +255,7 @@ Binary classification is a technique of classifying elements of a given dataset 
 
 21. Select our Machine Learning Model from before and click OK.
 
-    !["attritionpredict_bc_nbmodel"](./images/attritionpredict_bc_nbmodel.png )
+    !["attritionpredict-bc-nbmodel"](./images/attritionpredict-bc-nbmodel.png )
 
 22. Our apply model node will have 3 sections.  
 
@@ -334,11 +334,11 @@ Some of the pre-work required to achieve this task are done for us already, just
 
     !["omlconnection"](./images/omlconnection.png )
 
-3. Now select the "*ATTRITION_MODEL_SVM*" from the list of available machine learning models and click Register at the bottom
+3. Now select the "*ATTRITION-MODEL-SVM*" from the list of available machine learning models and click Register at the bottom
 
     !["attritionmodelsvm"](./images/attritionmodelsvm.png )
 
-4. From the landing page click the hamburger button on the upper left hand side, select Machine Learning and for the ATTRITION_MODEL_SVM that we just registered select the Inspect option using the three vertical dots which appear along on the right hand side of the model.
+4. From the landing page click the hamburger button on the upper left hand side, select Machine Learning and for the ATTRITION-MODEL-SVM that we just registered select the Inspect option using the three vertical dots which appear along on the right hand side of the model.
 
     !["paneltoinspectattritionmodelsvm"](./images/paneltoinspectattritionmodelsvm.png )
 
@@ -350,15 +350,15 @@ Some of the pre-work required to achieve this task are done for us already, just
     
     !["dataflowcreateicon"](./images/dataflowcreateicon.png )
 
-7. The create dataflow will prompt you for what dataset(s) you wish to work with.  Type "EMP" into the Search window then select EMPLOYEE_DATA then Add to bring in a dataset containing key information about the remaining employees who still work for our organization. 
+7. The create dataflow will prompt you for what dataset(s) you wish to work with.  Type "EMP" into the Search window then select EMPLOYEE-DATA then Add to bring in a dataset containing key information about the remaining employees who still work for our organization. 
     
     !["eedatatablefromoracledb"](./images/eedatatablefromoracledb.png )
 
-8. Click the + sign to the right of the EMPLOYEE_DATA node we just added to the dataflow and choose  Apply Model near the bottom of the items presented. 
+8. Click the + sign to the right of the EMPLOYEE-DATA node we just added to the dataflow and choose  Apply Model near the bottom of the items presented. 
     
     !["plusiconandapplymodelicon"](./images/plusiconandapplymodelicon.png )
 
-9. Select ATTRITION_MODEL_SVM which we registerd in step 3 above then click OK. 
+9. Select ATTRITION-MODEL-SVM which we registerd in step 3 above then click OK. 
     
     !["attritionmodelsvm"](./images/attritionmodelsvm.png )
 
@@ -370,15 +370,15 @@ Some of the pre-work required to achieve this task are done for us already, just
         
     !["plusiconandsavedataicon"](./images/plusiconandsavedataicon.png )
 
-12. Save Data will automatically attempt to name the dataset New Dataset1. Because this is an invalid table name in an Oracle Database you may see an error stating "Table name is invalid".  You need to change the name to something like PRED_EMP_ATTRIT.  There seems to be a bug as even after changing the Table name to a valid value the error will not go away.  Ignore this error and click the Save As option along the top right hand side of the page.
+12. Save Data will automatically attempt to name the dataset New Dataset1. Because this is an invalid table name in an Oracle Database you may see an error stating "Table name is invalid".  You need to change the name to something like PRED-EMP-ATTRIT.  There seems to be a bug as even after changing the Table name to a valid value the error will not go away.  Ignore this error and click the Save As option along the top right hand side of the page.
         
     !["savedataconfigpanel"](./images/savedataconfigpanel.png )
 
-13. Save your dataflow naming it PRED_EMP_ATTRIT_OML then using the arrow at the top right hand side of the page run the dataset to create the predictions.  After running the dataflow the "Table name is invalid" should go away.  Close the dataflow. 
+13. Save your dataflow naming it PRED-EMP-ATTRIT-OML then using the arrow at the top right hand side of the page run the dataset to create the predictions.  After running the dataflow the "Table name is invalid" should go away.  Close the dataflow. 
         
     !["savedataflowpanel"](./images/savedataflowpanel.png ) 
 
-14. Using the hamburger icon on the top left hand side of the page open the DATA panel and input EMP to see all datasets containing "EMP" in their name.  Click on the PRED_EMP_ATTRIT dataset to create a new workbook.
+14. Using the hamburger icon on the top left hand side of the page open the DATA panel and input EMP to see all datasets containing "EMP" in their name.  Click on the PRED-EMP-ATTRIT dataset to create a new workbook.
         
     !["predempatrittable"](./images/predempatrittable.png )
 
