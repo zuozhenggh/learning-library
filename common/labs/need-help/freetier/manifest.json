@@ -1,0 +1,16 @@
+{
+  "workshoptitle": "Need help",
+  "help": "livelabs-help-analytics_us@oracle.com",
+	"tutorials": [
+    {
+      "title": "Need Help - freetier?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"../need-help-freetier.md"
+    },
+    {
+      "title": "Need Help - livelabs?",
+      "description": "Solutions to Common Problems and Directions for Receiving Live Help",
+      "filename":"../need-help-livelabs.md"
+    }
+  ]
+}
