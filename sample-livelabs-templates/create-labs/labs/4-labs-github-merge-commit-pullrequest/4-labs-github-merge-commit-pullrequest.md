@@ -17,7 +17,7 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 
 This lab assumes that you have successfully completed **Lab 3: Use a Text Editor to Develop Markdown Content** in the **Contents** menu on the right.
 
-Watch this the video below on how to self QA your workshop.
+Watch this video below on how to self QA your workshop.
 [](youtube:8tirP-hibsk)
 
 ## Task 1: Get Latest Updates from Production
@@ -173,7 +173,7 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 4.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
 
-  Watch this the video below on how to self QA your workshop.
+  Workshop teams and stakeholders can watch this video below on how to self QA or verify the QA of a workshop.
   [](youtube:8tirP-hibsk)
 
 5. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
@@ -190,6 +190,9 @@ You have finish developing your workshop. In order to publish your workshop, you
   ![Stakeholder](images/stakeholder.png " ")
 
 ## Task 9: Request Publishing
+
+Workshops authors can watch this [video 0:00 - 8:20](https://otube.oracle.com/playlist/dedicated/201649953/1_23j991jo/1_97hh00t6) on how to request publishing.
+
 1.  Click **Publishing** tab, then **+ Publish to LiveLabs**.
 
 	![Request Publishing](images/publishing-tab.png)
