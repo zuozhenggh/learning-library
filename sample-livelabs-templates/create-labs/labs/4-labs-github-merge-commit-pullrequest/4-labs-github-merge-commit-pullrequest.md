@@ -173,7 +173,7 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 4.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
 
-  Watch this the video below on how to self QA your workshop.
+  Workshop teams and stakeholders can watch this video below on how to self QA or verify the QA of a workshop.
   [](youtube:8tirP-hibsk)
 
 5. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
