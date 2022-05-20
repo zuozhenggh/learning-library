@@ -100,7 +100,7 @@ Task 3: Connect to MySQL HeatWave
 
     * default.url: jdbc:mysql://private-ip-address:3306
     * default.user: admin
-    * default.password: your_mds_password
+    * default.password: &lt;your mysql password&gt;
     * default.driver: com.mysql.cj.jdbc.Driver
 
    ![MySQL JDBC](images/mysql-jdbc.png)
