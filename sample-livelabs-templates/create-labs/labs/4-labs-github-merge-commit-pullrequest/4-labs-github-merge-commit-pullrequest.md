@@ -17,7 +17,7 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 
 This lab assumes that you have successfully completed **Lab 3: Use a Text Editor to Develop Markdown Content** in the **Contents** menu on the right.
 
-Watch this the video below on how to self QA your workshop.
+Watch this video below on how to self QA your workshop.
 [](youtube:8tirP-hibsk)
 
 ## Task 1: Get Latest Updates from Production
@@ -190,6 +190,9 @@ You have finish developing your workshop. In order to publish your workshop, you
   ![Stakeholder](images/stakeholder.png " ")
 
 ## Task 9: Request Publishing
+
+Workshops authors can watch this [video 0:00 - 8:20](https://otube.oracle.com/playlist/dedicated/201649953/1_23j991jo/1_97hh00t6) on how to request publishing.
+
 1.  Click **Publishing** tab, then **+ Publish to LiveLabs**.
 
 	![Request Publishing](images/publishing-tab.png)
