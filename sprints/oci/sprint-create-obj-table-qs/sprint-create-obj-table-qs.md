@@ -37,7 +37,7 @@ The **PROJECT$** schema contains the tables that you create and manage using the
         <copy>https://objectstorage.us-ashburn-1.oraclecloud.com/n/c4u04/b/moviestream_gold/o/custsales/month=2019-01/custsales-2019-01.parquet</copy>
         ```
 
-        The Source to Target columns' mapping is displayed. Click the unchecked checkbox to the left of the **Source Column** label to select all the columns.
+        The Column Selection section is displayed. Click the unchecked checkbox to the left of the **Source Column** label to select all the columns.
 
         ![The Create a Table page is displayed.](./images/create-table-obj.png " ")    
 
@@ -73,7 +73,7 @@ The **PROJECT$** schema contains the tables that you create and manage using the
 
   ![Save worksheet as.](./images/save-obj-query.png " ")  
 
-11. Enter a meaningful name for the worksheet in the **Save Worksheet as** dialog box, and then click **Save as**.
+11. Enter a meaningful name for the worksheet in the **Save Worksheet as** dialog box, and then click **Save As**.
 
     ![Save worksheet as dialog box. The Save as button highlighted.](./images/save-worksheet-as-dialog.png " ")
 
