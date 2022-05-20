@@ -112,7 +112,7 @@ kubectl --namespace redash port-forward <POD_NAME> 8082:5000 --address 0.0.0.0 &
 
 9. Access the deployed Redash dashboard using your browser, http:://&lt;oke-operator&#95;PUBLIC&#95;IP&gt;:8082/.
 
-	Upon your first login, you need to create an admin user with password. (For example, **admin/admin** to create the admin and password)
+	Upon your first login, you need to create an admin user with password (at least 6 characters). For example, you can use **admin** as user, and password of your choice.
 
 	![Redash Login](images/redash-initial-setup.png)
 

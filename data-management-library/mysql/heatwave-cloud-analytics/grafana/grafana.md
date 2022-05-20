@@ -296,7 +296,7 @@ LIMIT 10;
 </copy>
 ```
 
-    >Note: the **SET_VAR(use_secondary_engine=on)** will instruct the optimizer to route the SQL statement to HeatWave.  
+    >Note: the **SET_VAR(use_secondary_engine=on)** will instruct the optimizer to route the SQL statement to HeatWave.
     The function **now()** is added to the SQL Statement so that we can create time chart in Grafana
 
     ![Dashboard](images/grafana-edit-panel-paste-sql.png)
