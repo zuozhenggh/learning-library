@@ -28,9 +28,11 @@ This lab assumes you have:
 If you already have a VCN created, skip this step and proceed to *STEP 3*.
 
 1.  Login to your Oracle Cloud account
+
 2.  Click the **Create a Stack** tile on the homepage.  Or, click the **Navigation Menu** in the upper left, navigate to **Developer Services**, select **Stacks** and click **Create Stack**.
 
 	![Stacks](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/developer-resmgr-stacks.png " ")
+
 3.  Choose **Template** and click on **Select Template**.
 
     ![Select Template](images/select-template.png " ")
