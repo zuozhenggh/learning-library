@@ -1,0 +1,27 @@
+{
+  "workshoptitle": "Test",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "1",
+      "description": "Instructions for opening the correct workshop guide for compute images supporting multiple workshops",
+      "type": "freetier",
+      "filename": "./setup-19c-freetier.md"
+    },
+    {
+      "title": "2",
+      "description": "Instructions for opening the correct workshop guide for compute images supporting multiple workshops",
+      "filename": "./setup-linux-freetier.md"
+    },
+    {
+      "title": "3",
+      "description": "Instructions for opening the correct workshop guide for compute images supporting multiple workshops",
+      "filename": "./setup-linux-ol7.8-ft-compute-instance.md"
+    },
+    {
+      "title": "4",
+      "description": "Instructions for opening the correct workshop guide for compute images supporting multiple workshops",
+      "filename": "./verify-setup-19c-livelabs.md"
+    }
+  ]
+}
