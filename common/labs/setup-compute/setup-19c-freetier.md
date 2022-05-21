@@ -100,6 +100,7 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 ### Oracle Cloud Shell
 
 1. Go to **Compute** -> **Instances** and select the instance you created (make sure you choose the correct compartment).
+	![Instances](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
 2. On the instance homepage, find the Public IP address for your instance.
 
@@ -164,9 +165,9 @@ There are multiple ways to connect to your cloud instance.  Choose the way to co
 
 6. The file path for the SSH private key file now displays in the *Private key file for authentication* field.
 
-7. Click Session in the left navigation pane, then click Save in the Load, save or delete a stored session STEP.
+7. Click **Session** in the left navigation pane, then click Save in the Load, save or delete a stored session STEP.
 
-8. Click Open to begin your session with the instance.
+8. Click **Open** to begin your session with the instance.
 
 >**Note:** If you encounter any errors with this step, please see the Troubleshooting Tips in the appendix.
 
