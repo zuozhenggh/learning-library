@@ -53,7 +53,7 @@
     <copy>cd java-simple-stream-benchmark</copy>
     ```
 
-    > **Note:** 上記サンプル以外に、GraalVMの[複数サンプル](https://github.com/graalvm/graalvm-demos)をご参照頂けます。
+    > **Note:** 上記サンプル以外に、GraalVM関連の[複数サンプル](https://github.com/graalvm/graalvm-demos)を参照できます。
 
 2. サンプルコードの中身を確認します。
 
