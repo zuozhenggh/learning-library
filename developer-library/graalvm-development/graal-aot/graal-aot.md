@@ -28,6 +28,10 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
 サンプルソースをダウンロードしたフォルダー配下の"native-list-dir"フォルダーに移動してください。
 
     ```
+    <copy>cd ~</copy>
+    ```
+    
+    ```
     <copy>cd graalvm-demos</copy>
     ```
        
@@ -39,7 +43,7 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
 
    エディターでサンプルソースコードの内容を確認します。
     ```
-    <copy>nano /graalvm-demos/native-list-dir/ListDir.java</copy>
+    <copy>nano ListDir.java</copy>
     ```  
        
     ```
@@ -70,18 +74,18 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
     }
     ```
 
+    CTRL+Xを押下し、nanoエディターからExitします。
+
 ## Task 2: サンプルアプリケーションのビルドおよび実行
 
 1. ソースコードをビルドします。
 
-    ```
-    <copy>cd native-list-dir</copy>
-    ```
-    ListDir.javaをコンパイルします。  
+    ```native-list-dir```配下で以下のコマンドを実行してください。  
 
     ```
     <copy>javac ListDir.java</copy>
     ```
+
     生成されたJavaクラス"ListDir.class"に対してnative imageの生成を実施します。
 
     ```
@@ -97,14 +101,18 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
     ```
     <copy>time ./listdir ~/.</copy>
     ```
+       
+    
+    任意のディレクトリーのパスをいろいろを変更して、二つのモードでの実行結果を比較してみてください。
 
+<!--
 4. 二つのモードで順番に実行するシェルで両者のパフォーマンスを比較します。  
 
     ```
     <copy>./run.sh ~/.</copy>
     ```
     ![Image of run.sh](images/graal-run.png)
-
+-->
 
 ## Acknowledgements
 
