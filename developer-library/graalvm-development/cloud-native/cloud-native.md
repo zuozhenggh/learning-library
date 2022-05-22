@@ -13,7 +13,7 @@
 * 3種類のベース・イメージを使用して、より軽量で高速起動するコンテナイメージを作成
 
 ### ■前提条件
-* 演習4「GraalVMとマイクロサービスフレームワークによるRESTFulサービス開発」を実施済みであること  
+* 演習4「GraalVMとJavaフレームワーク」を実施済みであること  
 
 ## Task 1: fat jarのDockerイメージ作成
 1. Oracle JavaのベースDockerイメージをダウンロードし、演習4のTask2で作成したSpring BootのjarファイルをDockerコンテナとして作成、実行します。spdemo配下に、Dockerfile.jdkという名前のDockerファイルを作成します。
@@ -38,6 +38,7 @@
 
     事前に[container-registry.oracle.com](https://container-registry.oracle.com)よりpullしたベース・イメージをVM上にダウンロードします。
     > **Note:** 通常はOracle公式のJavaのDockerイメージをOracleコンテナレジストリからpullできますが、今回ハンズオン用VMのネットワークの制限により事前pullしたイメージを配布する形を取ります。 
+
     ```
     <copy>
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/jdkimage.tar.gz
@@ -259,7 +260,7 @@
 
     | アプリ形式 | fat jar | native image | ほぼ静的なnaitve image |
     | --- | --- | --- | --- |
-    | 起動時間(秒) | 1.441 | 0.022  | 0.027 |
+    | 起動時間(秒) | 1.441 | 0.022  | 0.026 |
     | コンテナイメージサイズ(MB) | 594 | 184  | 94.2  |
   
 ## Acknowledgements

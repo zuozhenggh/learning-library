@@ -12,7 +12,7 @@ native imageの高速起動と小さいフットプリントはJavaベースの�
 * Spring Bootのサンプルアプリケーションを使用して、従来のFat jar形式とnative imageのパフォーマンスを比較します。
 
 ### ■前提条件
-* 演習１「GraalVM Enterprise Editionのインストール」を実施済みであること
+* 演習１「GraalVMのインストール」を実施済みであること
 
 ## Task 1: Micronautアプリケーションを開発  
  Micronautはマイクロサービスとサーバレスアプリケーションを構築するためのモダンなJavaフレームワークです。フルスタックのSpring Bootに比べて、軽量で且つ高速に起動し、ランタイム時のリフレクションを回避することが特徴となっています。[micronaut.io/launch](https://micronaut.io/launch)よりJavaのバージョンやgraalvmのフィーチャなど指定してMicronautアプリケーションのテンプレートを簡単に作成することが可能です。
