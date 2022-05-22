@@ -89,7 +89,7 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
     生成されたJavaクラス"ListDir.class"に対してnative imageの生成を実施します。
 
     ```
-    <copy>native-image ListDir</copy>
+    <copy>native-image --no-fallback ListDir</copy>
     ```
 
 2. JITモードでJavaクラスを実行し、その実行時間を計測します。javaコマンドの引数に任意のディレクトリーのパスを渡します。例えば、ログインユーザーのホームディレクトリー配下のファイルを集計する場合、以下のコマンドを実行します。
@@ -116,12 +116,12 @@ Graalコンパイラには、進化したJITコンパイラ機能に並び、ネ
 
 ## Task 3（オプショナル）: native imageにおけるJavaリフレクションの使用
 
-native imageは実行時の前にビルドされ、そのビルドはアクセス可能なコードの静的分析に依存します。従ってnative imageで以下のJava機能を利用する際、GraalVMのトレース・エージェントを使用した構成支援ツールを利用する必要があります：
+native imageは実行する前にビルドされ、そのビルドはアクセス可能なコードの静的分析に依存します。従って動的にロードされるクラスやオブジェクトを含むアプリケーションをnative imageとして実行する場合エラーが発生する場合があります。以下のJava機能をnative imageで利用場合、GraalVMのトレース・エージェントを使用した構成支援ツールを利用する必要があります：
 * Javaリフレクション
 * JNI(Java Native Interface )
 * 動的プロキシ・オブジェクト(java.lang.reflect.Proxy)
 * クラスパス・リソース(Class.getResource)
-以下のnative imageにおけるJavaリフレクションサンプルを使用して、GraalVMのトレース・エージェント機能を体験します。
+以下のJavaリフレクションサンプルをnative imageとして実行するため、GraalVMのトレース・エージェント機能を利用します。
 
 1. Javaリフレクションを使用したプログラム「ReflectionExmpple.java」を作成します。
     このサンプルの中でJavaリフレクションAPIを使用します。実行時にクラス名とメソッド名を引数として渡し、実行したいクラスとメソッドを動的に指定します。指定に応じて文字列の反転、あるいは大文字へ変換などの操作を行います。
@@ -197,13 +197,13 @@ native imageは実行時の前にビルドされ、そのビルドはアクセ�
     「StringReverser」クラスは実行時動的に指定されたため、native imageをビルド時の静的に分析では該当クラスを含むことはできませんした。
     この問題を解決するため、GraalVMが提供する、通常のJava VMでの実行のすべての動的使用状況を追跡するエージェント機能を利用します。
 
-4. 以下のコマンドでトレース構成ファイルの格納場所を指定し、アプリケーション実行時にエージェント機能を有効にします。
+4. 以下のコマンドでトレース構成ファイルの格納場所を用意します。
 
     ```
     <copy>mkdir -p META-INF/native-image</copy>
     ```
     
-    javaコマンドに「config-output-dir」オプションを指定してJavaクラスを通常モード(JITモード)で実行します。
+    アプリケーション実行時にnative imageエージェント機能を有効にし、構成ファイルの出力場所を指定してアプリケーションを実行します。
     ```
     <copy>
     java -agentlib:native-image-agent=config-output-dir=META-INF/native-image ReflectionExample StringReverser reverse "hello world"
@@ -226,7 +226,7 @@ native imageは実行時の前にビルドされ、そのビルドはアクセ�
     ]
     ```
 
-    エージェントを複数回を呼び出し、すべての実行時クラスと呼び出しメソッドを構成します。複数の構成を１つのファイルをまとめるため、javaコマンド実行時「config-merge-dir」オプションを指定します。
+    エージェントを複数回を呼び出し、すべての実行時クラスと呼び出しメソッドを構成します。複数の構成を１つのファイルにまとめるため、javaコマンド実行時「config-merge-dir」オプションを指定します。
     ```
     <copy>
     java -agentlib:native-image-agent=config-merge-dir=META-INF/native-image ReflectionExample StringCapitalizer capitalize "hello world"
@@ -270,7 +270,10 @@ native imageは実行時の前にビルドされ、そのビルドはアクセ�
     HELLO WORLD
     ```
 
+## Learn More
 
+*参考リンク*
+* [トレース・エージェントを使用した構成支援](https://docs.oracle.com/cd/F44923_01/enterprise/21/docs/reference-manual/native-image/Agent/)
 ## Acknowledgements
 
 - **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022

@@ -263,6 +263,7 @@
     | 起動時間(秒) | 1.441 | 0.022  | 0.026 |
     | コンテナイメージサイズ(MB) | 594 | 184  | 94.2  |
   
+
 ## Acknowledgements
 
 - **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022
