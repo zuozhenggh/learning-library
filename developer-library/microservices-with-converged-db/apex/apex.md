@@ -157,7 +157,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
 12. CSV should successfully be uploaded and on following dialog window click on **Create Application** button:
     ![Create App Order History Dashboard](images/create-app-order-1.png)
 
-13. It will be proposed a standard application template that you could be customized as you like. We'll lerverage Dashboard page. **For Features**, please click on **Check All** and leave the rest as proposed.
+13. It will be proposed a standard application template that you could be customized as you like. We'll lerverage Dashboard page. **For Features**, please click on **Check All** and leave the rest as proposed. Then click on **Create Application** button.
 
     ![Customize Dashboard](images/create-dashboard-app-1.png)
 
