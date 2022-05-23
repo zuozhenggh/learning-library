@@ -268,12 +268,12 @@ In this task you will create a new APEX app for analytics purpouse based on an e
                 group by order_hour
                 order by avg_order desc;
         BEGIN  
-            OPEN c_Order;
+            
             Htp.p('<div class="busiest-container">');
             For Rec_d In c_Order Loop
                 Htp.p('<h1>' || Rec_d.order_hour || ':00 </h1>');
             End Loop;
-            CLOSE c_Order;
+           
             Htp.p('</div>');
         END;        
 
