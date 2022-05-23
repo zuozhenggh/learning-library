@@ -28,7 +28,7 @@ In this Workshop, you will:
     * Prior knowledge of using Linux command-line options and Oracle WebLogic Server
     * Prior knowledge of Database basic concepts
 
-You may now [proceed to the next lab](#next).
+You may now **proceed to the next lab**.
 
 ## Learn More
 
@@ -41,5 +41,5 @@ Use these links to get more information about Oracle GoldenGate Veridata:
 
 ## Acknowledgements
 * **Author** - Anuradha Chepuri, Principal UA Developer, Oracle GoldenGate User Assistance
-* **Contributors** -  Sukin Varghese, Jonathan Fu
+* **Contributors** -  Sukin Varghese, Jonathan Fu, Madhusudhan Rao
 * **Last Updated By/Date** - Anuradha Chepuri, May 2022
