@@ -7,7 +7,7 @@ The labs in this workshop walk you through use cases to add and remove column ma
 *Estimated Lab Time*: 4 hours
 
 ### About Oracle GoldenGate Veridata
-Oracle GoldenGate Veridata compares a source (original, or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication, while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different types of databases; the workflow is essentially the same for all supported databases, with only very minor differences.
+Oracle GoldenGate Veridata compares a source (original or trusted) set of data with a target (secondary) set of data to identify discrepancies. By accounting for data that is being replicated while a comparison takes place, Oracle GoldenGate Veridata can run concurrently with data transactions and replication while still producing an accurate comparison report. You can use Oracle GoldenGate Veridata to compare data sets that reside in identical or different databases; the workflow is essentially the same for all supported databases, with only very minor differences.
 
 ### Video Preview
 Watch this short video about the Oracle GoldenGate product family:
