@@ -442,7 +442,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
         * **Accent**: **Accent 15**
         * **Body Overflow**: **Scroll - Default**
 
-            ![Appearence  ](images/appearance4-1.png)
+            ![Appearence  ](images/appearance4-1-1.png)
     
 12. Run the application and you should see the Dashboard complete:
 
