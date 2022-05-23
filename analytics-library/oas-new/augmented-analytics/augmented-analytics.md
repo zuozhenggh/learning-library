@@ -376,7 +376,7 @@ Some of the pre-work required to achieve this task are done for us already, just
 
 13. Save your dataflow naming it PRED-EMP-ATTRIT-OML then using the arrow at the top right hand side of the page run the dataset to create the predictions.  After running the dataflow the "Table name is invalid" should go away.  Close the dataflow. 
         
-    !["savedataflowpanel"](./images/savedataflowpanel.png ) 
+    !["savedataflowpanela"](./images/savedataflowpanela.png ) 
 
 14. Using the hamburger icon on the top left hand side of the page open the DATA panel and input EMP to see all datasets containing "EMP" in their name.  Click on the PRED-EMP-ATTRIT dataset to create a new workbook.
         
