@@ -30,32 +30,32 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
 1.    From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), **Click** on *"Create"* at the upper right-hand corner.
 
-      !["OAS Home Screen"](./images/asdvff1.png )
+      !["oashomescreen"](./images/oashomescreen.png )
 
 2.    **Click** on Workbook to start a new self-service workbook.
 
-      !["Create Workbook"](./images/asdvff2.png )
+      !["createworkbook"](./images/createworkbook.png )
 
 3.    **Select** the "Sample App" subject area and **Click** "Add to Workbook".
 
       Sample App provides access to the data we will use to complete our analysis.  
 
-      !["Select SampleApp"](./images/asdvff3.png )
+      !["selectsampleapp"](./images/selectsampleapp.png )
 
 4.    You will be presented with an empty canvas. Let’s start visualizing! First, let’s see how the product ratios are split across product types.
 
       - **Control select** "Products – Product Type" and "Profit Metrics – Profit Ratio %".
       - **Right click**, select "Pick Visualization".
 
-      !["Select Data Elements"](./images/asdvff4.png )
+      !["selectdataelements"](./images/selectdataelements.png )
 
 5.    **Select** "Donut" Chart.
 
-      !["Select Donut Chart"](./images/asdvff5.png )
+      !["selectdonutchart"](./images/selectdonutchart.png )
 
 6.    Observe the donut chart on the canvas. You can see that of all the product ratios "Audio" has the lowest profit ratio percentage.
 
-      !["Profit Ratio by Product Type Donut Visual"](./images/asdvff6.png )
+      !["profitratiobyproducttypedonutvisual"](./images/profitratiobyproducttypedonutvisual.png )
 
 7.    Now, let’s try to dig deeper and find out why audio’s profit ratio is lower compared to our other product types. Let’s see how the products under "Audio" have been performing over time.
 
@@ -63,7 +63,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       A green line appears.  It identifies the location of your visualization. You may drop the visualization to the left, right, top or bottom of the donut visualization.
 
-      !["Drag and Drop Elements"](./images/asdvff7.png )
+      !["draganddropelements"](./images/draganddropelements.png )
 
 8.    Oracle Analytics Server provides adaptive charting capabilities. Because we wish to review our measure over a specific period of time, Oracle Analytics chose to deliver the results with a
       line chart illustrating profit ratio, month over month.
@@ -72,11 +72,11 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       **Drag** "Product" up to **Trellis Rows**. You should see an individual line chart for each product as shown in the image.
 
-      !["Trellis Chart Product by Row"](./images/asdvff8.png )
+      !["trellischartproductbyrow"](./images/trellischartproductbyrow.png )
 
       Since we are concerned about the profit ratio of the Audio product type, we will filter down to the product level. To do this, **drag** "Products - Product Type" to the filters section and select "Audio".
 
-      !["Filter by Product Type Audio"](./images/asdvff9.png )
+      !["filterbyproducttypeaudio"](./images/filterbyproducttypeaudio.png )
 
       Observe that "MicroPod" has declining profit ratios and "SoundX Nano" could also be improved. There could be any number of reasons why this is the case.
 
@@ -85,31 +85,31 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       From the data elements panel, click on "+" and "Add Data Set" to import the inventory dataset into your current workbook.
 
-      !["Add Inventory Data Set"](./images/asdvff10.png )
+      !["addinventorydataset"](./images/addinventorydataset.png )
 
 10.   **Click** on "Create Data Set" >> "Drop data file here or click to browse".
 
-      !["locate inventory"](./images/asdvff11.png )
+      !["locateinventory"](./images/locateinventory.png )
 
       Navigate to the documents directory on the left side of the dialogue box.  **Click** Live Labs Content, then select the file *“Inventory.xlsx”*.  Open the file.
 
-      !["navigate live labs content"](./images/asdvff12.png )
+      !["navigatelivelabscontent"](./images/navigatelivelabscontent.png )
 
-      !["open inventory"](./images/asdvff12-d.png )
+      !["openinventory"](./images/openinventory.png )
 
       Once the spreadsheet has been uploaded,  **Click**  "Add" in the upper right hand corner.
 
-      !["review inventory data and add"](./images/asdvff12-a.png )
+      !["reviewinventorydataandadd"](./images/reviewinventorydataandadd.png )
 
 11.   Navigate back to the "New Workbook" tab located up above the workbook area.
 
-      !["navigate back to new workbook page"](./images/asdvff12-c.png )
+      !["navigatebacktonewworkbookpage"](./images/navigatebacktonewworkbookpage.png )
 
       Notice the inventory dataset is available to add to the workbook.  
 
       - **Click**  "inventory"  "Add to workbook"
 
-      !["select inventory data set"](./images/asdvff12-f.png )</if>
+      !["selectinventorydataset"](./images/selectinventorydataset.png )</if>
 
 12.    Let's define a relationship between the subject area – SampleApp and the inventory spreadsheet in order to join the data sources for further analysis.
 
@@ -117,7 +117,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
        - **Click**  "Data"
 
-       !["navigate back to data"](./images/asdvff12-g.png " ")</if>
+       !["navigatebacktodata"](./images/navigatebacktodata.png " ")</if>
 
        Within Data, you have the ability to identify the key data elements and join your data sources.  Oracle Analytics will attempt to locate data elements that are labeled the same, and automatically make the join if identical data element labels are found.  
 
@@ -129,49 +129,49 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
        - **Click** "Add Another Match"  
 
-       !["joining data sources"](./images/asdvff12-h.png )</if>
+       !["joiningdatasources"](./images/joiningdatasources.png )</if>
 
        From inventory
 
        - **Click** on "Select Data" and select the "Product Name” column.  
 
-        !["select data product name"](./images/asdvff12-j.png )</if>
+        !["selectdataproductname"](./images/selectdataproductname.png )</if>
 
         Perform the same steps on "SampleApp" and select "Products - Product" to join the data sources.
 
         Notice the data sources are joined.  
 
-        !["sample app and inventory diagram join"](./images/asdvff12-k.png )</if>
+        !["sampleappandinventorydiagramjoin"](./images/sampleappandinventorydiagramjoin.png )</if>
 
        - **Navigate** to "Visualize".
 
-       !["navigate back to visualize"](./images/asdvff13.png )
+       !["navigatebacktovisualize"](./images/navigatebacktovisualize.png )
 
        -  Explore the data elements panel on the left. Note the Inventory spread sheet is listed under SampleApp.
 
-        !["data elements panel includes inventory"](./images/asdvff13-a.png )
+        !["dataelementspanelincludesinventory"](./images/dataelementspanelincludesinventory.png )
 
 13.    Now that we've successfully mashed up our data, let's continue with our analysis.  **Hold control** and **select** "Product -> Product"     from SampleApp and "Stock" and "Demand" from Inventory.
 
        - **Right Click** and **Select** "Pick Visualization".  
 
-        !["create visualization with blended data set"](./images/asdvff16.png )
+        !["createvisualizationwithblendeddataset"](./images/createvisualizationwithblendeddataset.png )
 
        - **Select** "Bar"
 
-        !["select bar chart visualization"](./images/asdvff17.png )
+        !["selectbarchartvisualization"](./images/selectbarchartvisualization.png )
 
 14.  Notice the grammar panel for the bar visualization. Arranging both the metrics "Stock" and "Demand" in the Y axis respectively, the graph should render as shown in the image.
 
-     !["grammar panel bar chart"](./images/asdvff18.png )
+     !["grammarpanelbarchart"](./images/grammarpanelbarchart.png )
 
       **Right click** on any bar representing "Demand" and **Sort** -> "Demand" -> "Low to High."
 
-      !["properties demand sort by"](./images/asdvff23.png )
+      !["propertiesdemandsortby"](./images/propertiesdemandsortby.png )
 
       See that the graph sorts itself with Demand in order from lowest to highest demand.
 
-      !["demand sorted lowest to highest"](./images/asdvff22.png )
+      !["demandsortedlowesttohighest"](./images/demandsortedlowesttohighest.png )
 
       Looking at the bar chart, it can be easily seen that for *"MicroPod"* and *"SoundNano"*, the demand is greater than the current stock level.
 
@@ -181,17 +181,17 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       **Import** the *Vendor Payments.xlsx* spreadsheet and repeat the steps from 9 through 12. You should now see the data set for Vendor Payments appear in the data elements panel of the workbook.
 
-      !["data elements panel including vendor payments source"](./images/asdvff19.png )
+      !["dataelementspanelincludingvendorpaymentssource"](./images/dataelementspanelincludingvendorpaymentssource.png )
 
 16.   Let’s create a visualization to analyze products and vendor payments.
 
       Expand Products and Vendor Payments, **CTRL-Click** *Product* and *OutstandingPayment*. Then, **Right-Click** and **select** "Pick Visualization."
 
-      !["visualization blended datasets product outstanding vendor payments"](./images/asdvff20.png )
+      !["visualizationblendeddatasetsproductoutstandingvendorpayments"](./images/visualizationblendeddatasetsproductoutstandingvendorpayments.png )
 
 17.   Select "Tag Cloud".
 
-      !["select tag cloud visualization"](./images/asdvff21.png )
+      !["selecttagcloudvisualization"](./images/selecttagcloudvisualization.png )
 
 18.   You should see a new visualization on the canvas. The visual shows that **MicroPod** and **SoundX Nano** are the products with the greatest amount of outstanding vendor payments.
 
@@ -204,36 +204,38 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
       Let's forecast profit ratio and revenue performance for the upcoming months.  Oracle Analytics Server provides easy to use, advanced analytic functions such as trendline, forecast,
       clustering and outlier detection.  
 
-20.   Let’s start by adding a new canvas. **Click** on the "+" icon at the bottom to create a new canvas. On the new canvas **Click** the upside
+20.   Let’s start by adding a new canvas. Think of a canvas as an additional page within the workbook or an additional slide within a Power     Point deck. 
+
+      **Click** on the "+" icon at the bottom to create a new canvas. On the new canvas **Click** the upside
       down triangle to the right of its name. Select "Canvas Properties".
 
-      !["add new canvas"](./images/asdvff14.png )
+      !["addnewcanvas"](./images/addnewcanvas.png )
 
 21.   **Click** "Auto Fit" and change it to "Freeform." **Click** "Ok".
 
 22.   **Select** "Profit Ratio %", "Revenue" and "Month". RMB Pick Visualization. **Select** "Combo."
 
-      !["create combo chart revenue profit ratio month"](./images/asdvff52.png )
+      !["createcombochartrevenueprofitratiomonth"](./images/createcombochartrevenueprofitratiomonth.png )
 
       Notice in freeform mode the entire canvas is not utilized automatically.
 
 23.   From the grammar panel **Right click** "Profit Ratio %" and select "Y2 Axis." Enlarge the visualization for a better view.
 
-      !["profit ratio y2 axis"](./images/asdvff53.png )
+      !["profitratioy2axis"](./images/profitratioy2axis.png )
 
 24.   **Select** the "Analytics" option from the navigation panel on the left. Drag and drop "Trend Line" onto the visualization.
 
-      !["adv analytics select trend line"](./images/asdvff54.png )
+      !["advanalyticsselecttrendline"](./images/advanalyticsselecttrendline.png )
 
 25.   You have now created a management report that shows both Revenue and Profit Ratio % with their corresponding trendlines all with no coding.
 
       **Drag** and **drop** "Forecast" on the visualization and you will see forecasted results for both measures. This may take a few moments, please wait.
 
-      !["adv analytics select forecast"](./images/asdvff55.png )
+      !["advanalyticsselectforecast"](./images/advanalyticsselectforecast.png )
 
       Review the properties box. Notice the forecast has predicted revenue and profit ratio % for the next 3 months. These variables may be modified as needed by the user.
 
-      !["adv analytics properties"](./images/asdvff56.png )
+      !["advanalyticsproperties"](./images/advanalyticsproperties.png )
 
 26.   Looks like we are trending in the appropriate direction and our forecast looks promising.  Next, I'm going to provide a historical look at revenue performance utilizing a calendar heatmap
       custom visualization I found in the Oracle Analytics Extensions Library.  
@@ -243,12 +245,12 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       Let’s start by adding a new canvas. **Click** on the "+" icon at the bottom to create a new canvas.
 
-      !["create a third canvas"](./images/asdvff27.png )
+      !["createathirdcanvas"](./images/createathirdcanvas.png )
 
 27.   Expand Time and Revenue Metrics Metrics, **CTRL-Click** *Date* and *Revenue*. Then, **right click** and **select**
       the "Calendar Heatmap" visual.  
 
-      !["select calendar heatmap visual"](./images/asdvff31.png )
+      !["selectcalendarheatmapvisual"](./images/selectcalendarheatmapvisual.png )
 
 ## Task 2:  Custom Calculations and Maps
    Oracle Analytics Server provides advanced mapping capabilities and the ability to create custom calculations.
@@ -259,11 +261,11 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       **Click** on the "+" icon at the bottom to create a new canvas.
 
-      !["add a fourth canvas"](./images/asdvff35.png )
+      !["addafourthcanvas"](./images/addafourthcanvas.png )
 
 2.    **Right Click** on the "My Calculations" folder.  **Select** "Add Calculation".
 
-      !["add a custom calculation"](./images/asdvff36.png )
+      !["addacustomcalculation"](./images/addacustomcalculation.png )
 
 3.    We are going to utilize the expression builder to create a new metric called "Profit by Customer Count".  Notice there are a wide range of functions available for creating custom calculations.
 
@@ -272,36 +274,36 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       You have successfully created your own custom calculation that can be used like any other metric.
 
-      !["profit by customer count calculation"](./images/asdvff38.png )
+      !["profitbycustomercountcalculation"](./images/profitbycustomercountcalculation.png )
 
 5.    Let’s utilize our custom calculation in a couple of visualizations.
 
       **Select** "Country Name" from "Geography".  Drag and drop it to the top left of the canvas, right above the canvas, where it is labeled "Click here or drag data to add filter." **Filter** to
       "United States" by typing "uni" and select "United States".
 
-      !["country name filter"](./images/asdvff40.png )
+      !["countrynamefilter"](./images/countrynamefilter.png )
 
-      !["designate filter united states"](./images/asdvff39.png )
+      !["designatefilterunitedstates"](./images/designatefilterunitedstates.png )
 
 6.    **Select** "State Province" from "Geography" and your new custom calculation under "My Calculations." Drag and drop them onto the canvas."  Notice that not all states are making a profit.
 
-      !["profit by customer count bar chart"](./images/asdvff62.8.png )
+      !["profitbycustomercountbarchart"](./images/profitbycustomercountbarchart.png )
 
       Let’s see what this looks like on a map.
 
 7.    On the upper right corner of the visual, **Click** the three vertical dots and select "Edit" and then "Duplicate Visualization".
 
-      !["duplicate bar chart"](./images/asdvff62.9.png )
+      !["duplicatebarchart"](./images/duplicatebarchart.png )
 
 8.    Change the visualization type for the visualizations by selecting the "change visualization" menu in the upper left-hand corner of the grammar panel.
 
       **Select** map.
 
-      !["modify chart type to map"](./images/asdvff62.10.png )
+      !["modifycharttypetomap"](./images/modifycharttypetomap.png )
 
-9.    Let’s change the default color scheme to a red to green gradient. From Color, click on the down arrow > Manage Assignments.
+9.    Let’s change the default color scheme of our map visualization to a red to green gradient. From Color, click on the down arrow > Manage Assignments.
 
-      !["modify map color scheme"](./images/asdvff62.11.png )
+      !["modifymapcolorscheme"](./images/modifymapcolorscheme.png )
 
 10.   Under Series, locate the metric you created : Profit by Customer Count
 
@@ -309,7 +311,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
       - **Select** the red to green gradient second from the bottom right.
       - **Click** "Done".
 
-      !["red white green gradient"](./images/asdvff47.png )
+      !["redwhitegreengradient"](./images/redwhitegreengradient.png )
 
 11.   There are a number of ways to filter information in order to obtain insights regarding different attribute groups, and aggregation levels. The canvas is an extremely dynamic and interactive
       palette.
@@ -325,23 +327,23 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
       **Right Click** on the "Audio" pie slice and  "Keep Selected".
 
-      !["donut chart properties"](./images/asdvff24.png )
+      !["donutchartproperties"](./images/donutchartproperties.png )
 
       Notice that each object interactively changes based upon the selection of "Audio" pie slice.
 
-      !["filter to Audio results"](./images/asdvff25.png )
+      !["filtertoAudioresults"](./images/filtertoAudioresults.png )
 
       Clear your filter section by Right **Clicking** on the "Audio" pie slice and **selecting** "Remove Selected".
 
-      !["clear filter"](./images/asdvff26.png )
+      !["clearfilter"](./images/clearfilter.png )
 
 12.   **Click** on the "Save" icon at the top right of the screen to save your workbook.
 
-      !["save your workbook"](./images/asdvff33.png )
+      !["saveyourworkbook"](./images/saveyourworkbook.png )
 
       **Save** your workbook under  /My Folders as `"<your_name>_Workbook`".
 
-      !["my folders profit ratio analysis"](./images/asdvff34.png )
+      !["myfoldersprofitratioanalysis"](./images/myfoldersprofitratioanalysis.png )
 
       You have successfully created a workbook.
 
@@ -362,24 +364,24 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
 1.  Let’s begin by creating a dataset with a spreadsheet titled - ‘sample order lines.xlsx’ located in  the Documents / Live Labs Content directory you accessed earlier.
 
-     !["create a dataset auto insight"](./images/asdvff35a.png)
+     !["createadatasetautoinsight"](./images/createadatasetautoinsight.png)
 
-     !["locate data set"](./images/asdvff11.png )
+     !["locatedataset"](./images/locatedataset.png )
 
-     !["navigation documents livelabs"](./images/asdvff11a.png )
+     !["navigationdocumentslivelabs"](./images/navigationdocumentslivelabs.png )
 
 2.  For this exercise, we will leave it exactly as it is, and add it to Oracle Analytics Server and create a workbook.
 
-     !["sample order lines data"](./images/asdvff35b.png )
+     !["sampleorderlinesdata"](./images/sampleorderlinesdata.png )
 
-     !["create workbook"](./images/asdvff35c.png )
+     !["createworkbooka"](./images/createworkbooka.png )
 
     Notice a white light bulb icon in the top right hand corner.  Once Auto Insights has assessed the dataset, the icon will turn yellow which indicates that Oracle Analytics Server has
     identified a series of suggested insights.
 
 3.  **Click** the Auto Insights icon to review the suggested insights in the panel on the far right.
 
-     !["auto insights icon"](./images/asdvff35e.png )
+     !["autoinsightsicon"](./images/autoinsightsicon.png )
 
      Each visual insight includes a natural language summary to describe the function insight each visualization delivers.
      Hover over the text to see the full description.  
@@ -395,7 +397,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
     When finished, collapse the auto insights panel.
 
-     !["select auto generated insights"](./images/asdvff35f.png )
+     !["selectautogeneratedinsights"](./images/selectautogeneratedinsights.png )
 
     Notice each insight exists in the canvas as if you created each visualization object manually.
 
@@ -403,21 +405,21 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
     Select the visualization menu on the far left, select Text Box.  Drag the text box above Trending Dimensions.
 
-    !["add a text box"](./images/asdvff35g.png )
+    !["addatextbox"](./images/addatextbox.png )
 
     Copy (Ctrl-C) the text in the Title Tooltip field in the left-hand data panel (properties) of the workbook designer and paste (Ctrl-P) it in the 'Edit Text' box within the visualization.
 
-    !["use title tooltip for text"](./images/asdvff35h.png )
+    !["usetitletooltipfortext"](./images/usetitletooltipfortext.png )
 
     You may edit the text box as desired.
 
-    !["ability to edit tooltip"](./images/asdvff35j.png )
+    !["abilitytoedittooltip"](./images/abilitytoedittooltip.png )
 
     Navigate to the far left and explore the data elements panel and scroll to the bottom.  
 
 5.  Review ‘MyCalculations’.
 
-    !["auto insights generates calculations"](./images/asdvff35k.png )
+    !["autoinsightsgeneratescalculations"](./images/autoinsightsgeneratescalculations.png )
 
     Notice the accompanying custom calculations have been carried over to the data elements panel as a result of your visualization selections.
 
@@ -428,28 +430,28 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
     Select 'Edit the Calculation.  You can see the syntax and functions utilized for each calculation.
 
-    !["can edit auto insight calculations"](./images/asdvff35l.png )
+    !["caneditautoinsightcalculations"](./images/caneditautoinsightcalculations.png )
 
 
-    !["review calc syntax"](./images/asdvff35m.png )
+    !["reviewcalcsyntax"](./images/reviewcalcsyntax.png )
 
     Let's edit the calculation and review the top 5 cities by profit value.  Save the calculation.  
 
-    !["modify syntax"](./images/asdvff35n.png )
+    !["modifysyntax"](./images/modifysyntax.png )
 
     Don't forget to modify the visualization name.
 
-    !["review modified visualization"](./images/asdvff35p.png )
+    !["reviewmodifiedvisualization"](reviewmodifiedvisualization.png )
 
 6.  Navigate to Data Prep and modify the metadata.
 
     From top middle,  **Click** data.  **Click** on the pencil icon to navigate to view the data.
 
-    !["metadata modification"](./images/asdvff35q.png )
+    !["metadatamodification"](./images/metadatamodification.png )
 
     Navigate to the metadata view,  hint - upper right.
 
-    !["navigate to metadata view"](./images/asdvff35r.png )
+    !["navigatetometadataview"](./images/navigatetometadataview.png )
 
     Make the following modifications:
     - Discount , modify the aggregation from 'Sum' to 'Average'
@@ -460,7 +462,7 @@ In order to complete our analysis we will create a workbook.  Think of a workboo
 
 7.  Once you have applied the script, navigate back to your workbook via your open workbook window.  
 
-     !["navigate back to workbook page"](./images/asdvff35s.png )
+     !["navigatebacktoworkbookpage"](./images/navigatebacktoworkbookpage.png )
 
      Next, navigate to 'Visualize'
 
@@ -477,11 +479,11 @@ Oracle Analytics provides users choice and flexibility with deployment.  Users c
 
     [https://www.oracle.com/business-analytics/data-visualization/extensions.html](https://www.oracle.com/business-analytics/data-visualization/extensions.html)
 
-    !["Oracle Analytics Exetensions Library home page"](./images/uscve1.png )
+    !["oracleanalyticsexetensionslibraryhomepage"](./images/oracleanalyticsexetensionslibraryhomepage.png )
 
 2. Download the “Circle Pack” and “Calendar Heatmap” extensions.
 
-    !["circle pack extension"](./images/uscve2.png )
+    !["circlepackextension"](./images/circlepackextension.png )
 
 
 ## Learn More
