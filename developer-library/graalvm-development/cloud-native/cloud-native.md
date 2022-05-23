@@ -13,10 +13,10 @@
 * 3種類のベース・イメージを使用して、より軽量で高速起動するコンテナイメージを作成
 
 ### ■前提条件
-* 演習4「GraalVMとマイクロサービスフレームワークによるRESTFulサービス開発」を実施済みであること  
+* 演習4「GraalVMとJavaフレームワーク」を実施済みであること  
 
 ## Task 1: fat jarのDockerイメージ作成
-1. Oracle JavaのベースDockerイメージをダウンロードし、演習4のTask2で作成したSpring BootのjarファイルをDockerコンテナとして作成、実行します。spdemo配下に、Dockerfile.jdkという名前のDockerファイルを作成します。
+1. GraalVM JDK 11のコンテナイメージをGitHubよりダウンロードし、演習4のTask2で作成したSpring BootのjarファイルをDockerコンテナにパッケージングします。spdemo配下に、Dockerfile.jdkという名前のDockerファイルを作成します。
 
     ```
     <copy>nano Dockerfile.jdk</copy>
@@ -25,7 +25,8 @@
     以下の内容をDokcerfile.jdkに貼り付け、ファイルを保存します。
     ```
     <copy>
-    FROM container-registry.oracle.com/java/jdk:11-oraclelinux7
+    # FROM container-registry.oracle.com/java/jdk:11-oraclelinux7
+    FROM ghcr.io/graalvm/jdk:java11-21.3
 
     EXPOSE 8080
 
@@ -36,8 +37,10 @@
        
 2. Dockerイメージを作成します。以下のコマンドをspdemo配下で実行します。
 
+    <!--
     事前に[container-registry.oracle.com](https://container-registry.oracle.com)よりpullしたベース・イメージをVM上にダウンロードします。
     > **Note:** 通常はOracle公式のJavaのDockerイメージをOracleコンテナレジストリからpullできますが、今回ハンズオン用VMのネットワークの制限により事前pullしたイメージを配布する形を取ります。 
+    
     ```
     <copy>
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/jdkimage.tar.gz
@@ -48,31 +51,25 @@
     sudo docker load < jdkimage.tar.gz
     </copy>
     ```
+    -->
     
-    JDKベース・イメージがロードされているのを確認します。  
-    ```
-    <copy>
-    sudo docker images
-    </copy>
-    ```
-    
-    コンテナイメージをビルドします。  
-
     ```
     <copy>
     sudo docker build -f Dockerfile.jdk -t spring-jdk .
     </copy>
     ```
-    ![docker in spring](images/docker-spring.png)
-       
-3. コンテナイメージが生成されたことを確認し、コンテナを起動します。
+
+    生成されたコンテナイメージを確認します。  
     ```
     <copy>
     sudo docker images
     </copy>
     ```
-    ![docker in spring1](images/docker-spring1.png)
+        
+    ![docker in spring](images/docker-spring.png)
        
+3. 以下のコマンドでコンテナを起動します。
+         
     ```
     <copy>
     sudo docker run --rm -p 8080:8080 spring-jdk:latest
@@ -95,7 +92,7 @@
 
 ## Task 2: native imageのDockerイメージ作成
 
-1. JDKを含まないベース・イメージとnative imageでコンテナを作成します。spdemo配下に、Dockerfile.nativeという名前のDockerファイルを作成します。
+1. JDKを含まないOracle Linux7のコンテナイメージをダウンロードし、演習4のTask2で作成したSpring Bootのnative imageをコンテナにパッケージングします。spdemo配下に、Dockerfile.nativeという名前のDockerファイルを作成します。
 
     ```
     <copy>nano Dockerfile.native</copy>
@@ -104,7 +101,8 @@
     以下の内容をDokcerfile.nativeに貼り付け、ファイルを保存します。
     ```
     <copy>
-    FROM container-registry.oracle.com/os/oraclelinux:7-slim
+    # FROM container-registry.oracle.com/os/oraclelinux:7-slim
+    FROM ghcr.io/oracle/oraclelinux:7-slim
     COPY target/demo app
     ENTRYPOINT ["/app"]
     </copy>
@@ -112,6 +110,7 @@
        
 2. Dockerメージをビルドします。以下のコマンドをspdemo配下で実行します。
 
+    <!--
     ```
     <copy>
     wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/LNAcA6wNFvhkvHGPcWIbKlyGkicSOVCIgWLIu6t7W2BQfwq2NSLCsXpTL9wVzjuP/n/c4u04/b/livelabsfiles/o/developer-library/ol7image.tar.gz
@@ -122,31 +121,24 @@
     sudo docker load < ol7image.tar.gz
     </copy>
     ```
-
-    JDKを含まないOSのみのベース・イメージがロードされているのを確認します。  
-    ```
-    <copy>
-    sudo docker images
-    </copy>
-    ```
-    コンテナイメージをビルドします。
+    -->
 
     ```
     <copy>
     sudo docker build -f Dockerfile.native -t spring-native .
     </copy>
     ```
-    ![docker in spring4](images/docker-spring4.png)
 
-       
-3. コンテナイメージが生成されたことを確認し、コンテナを起動します。
-
+    生成されたコンテナイメージを確認します。  
     ```
     <copy>
     sudo docker images
     </copy>
     ```
-    ![docker in spring5](images/docker-spring5.png)
+    ![docker in spring4](images/docker-spring4.png)
+
+       
+3. 以下のコマンドを実行し、コンテナを起動します。
 
     ```
     <copy>
@@ -154,6 +146,7 @@
     </copy>
     ```
     ![docker in spring6](images/docker-spring6.png)
+
 
 4. 別ターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
     ```      
@@ -230,14 +223,15 @@
     sudo docker build -f Dockerfile.native-light -t spring-native-light .
     </copy>
     ```
-       
-5. コンテナイメージが生成されたことを確認し、コンテナを起動します。
+    生成されたコンテナイメージを確認します。  
     ```
     <copy>
     sudo docker images
     </copy>
     ```
     ![docker in spring7](images/docker-spring7.png)
+       
+5. 以下のコマンドを実行し、コンテナを起動します。
        
     ```
     <copy>
@@ -259,9 +253,10 @@
 
     | アプリ形式 | fat jar | native image | ほぼ静的なnaitve image |
     | --- | --- | --- | --- |
-    | 起動時間(秒) | 1.441 | 0.022  | 0.027 |
-    | コンテナイメージサイズ(MB) | 594 | 184  | 94.2  |
+    | 起動時間(秒) | 1.441 | 0.022  | 0.026 |
+    | コンテナイメージサイズ(MB) | 580 | 207  | 94.1  |
   
+
 ## Acknowledgements
 
 - **Created By/Date** - Jun Suzuki, Java Global Business Unit, April 2022
