@@ -7,7 +7,7 @@ Groups are logical containers for one or more compare pairs. They help you to or
 
 A group is associated with a set of connections to the source and target data.
 
-A compare pair is a logical relationship between a source table or file and a target table or file for the purpose to compare their data. Compare pairs are linked to groups. Therefore, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
+A compare pair is a logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Therefore, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
 
 *Estimated Lab Time*: 45 minutes
 
@@ -58,7 +58,7 @@ Your new Group has been created.
 Use the **Manual Mapping** tab to map source objects to target objects one at a time. This method is useful when:
   * source and target names differ vastly
   * source and target objects cannot be mapped using wildcards
-  
+
 To create compare pairs on the **Manual Mapping** tab:
 1. After you have created the Group, click **Go to Compare Pair Configuration...** check box in the **New Group Assistant** page to display the **Compare Pair Configuration** page.
 
