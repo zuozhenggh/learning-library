@@ -341,7 +341,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
 
         ![Select Series 1 SQL ](images/series1-sql-zip-1.png)
 
-    * Finally, under **Appearence**/**Template Options**, set these values for parameters:
+    * Finally, select from right pane **Orders number by Zip Code** component and **Region** under **Appearence**/**Template Options**, set these values for parameters:
         * **General**: **Show Maximize Button**
         * **Body Height**: **Auto - Default**
         * **Accent**: **Accent 1**
@@ -375,7 +375,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
 
         ![Select Series1 SQL ](images/dish-num-1.png)
 
-    * Finally, under **Appearance**/**Template Options**, set these values for parameters:
+    * Finally, select from right pane **Top Dishes** component and under **Appearance**/**Template Options**, set these values for parameters:
         * **Body Height**: **Auto - Default**
         * **Accent**: **Accent 4**
         * **Body Overflow**: **Scroll - Default**
@@ -407,7 +407,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
 
         ![Select Series1 SQL ](images/ord-hours-1.png)
 
-    * Finally, under **Appearence**/**Template Options**, set these values for parameters:
+    * Finally,select from right pane **Busiest Hours** component under **Appearence**/**Template Options**, set these values for parameters:
         * **Body Height**: **Auto - Default**
         * **Accent**: **Accent 8**
         * **Body Overflow**: **Scroll - Default**
@@ -437,7 +437,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
 
       ![Select Series 4 SQL ](images/appearance4-1.png)
 
-    * Finally, under **Appearence**/**Template Options**, set these values for parameters:
+    * Finally, select from right pane **Late Deliveries** component under **Appearence**/**Template Options**, set these values for parameters:
         * **Body Height**: **Auto - Default**
         * **Accent**: **Accent 15**
         * **Body Overflow**: **Scroll - Default**
