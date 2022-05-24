@@ -3,7 +3,11 @@
 ## Introduction
 This lab describes how to add and remove mappings.
 
-In Oracle GoldenGate Veridata, you can add mappings to the selected source and target tables. Compare Pairs can then be configured for the columns in these tables. You can also remove the mappings from the columns.
+In Oracle GoldenGate Veridata, you can do the following:
+
+* Add mappings to the selected source and target tables.
+* Configure compare pairs for the columns in these tables. 
+* Remove the mappings from the columns.
 
 *Estimated Lab Time*: 20 minutes
 

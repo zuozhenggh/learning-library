@@ -1,13 +1,13 @@
 # Create Groups and Compare Pairs
 
 ## Introduction
-This lab describes how to groups and compare pairs.
+This lab describes how to create groups and compare pairs.
 
 Groups are logical containers for one or more compare pairs. They help you to organize and partition large or diverse sets of data into more manageable units. Groups are linked to jobs when jobs are created. Any group can be linked to one or more jobs, allowing you complete control over how and when data is compared.
 
 A group is associated with a set of connections to the source and target data.
 
-A compare pair is the logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Therefore, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
+A compare pair is a logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Therefore, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
 
 *Estimated Lab Time*: 45 minutes
 
@@ -55,7 +55,10 @@ To create a group:
 Your new Group has been created.
 
 ## Task 2: Create Compare Pairs (on Manual Mapping Tab)
-Use the **Manual Mapping** tab to map source objects to target objects one at a time. This method is useful when source and target names differ vastly and cannot be mapped by using wildcards.
+Use the **Manual Mapping** tab to map source objects to target objects one at a time. This method is useful when:
+  * source and target names differ vastly
+  * source and target objects cannot be mapped using wildcards
+
 To create compare pairs on the **Manual Mapping** tab:
 1. After you have created the Group, click **Go to Compare Pair Configuration...** check box in the **New Group Assistant** page to display the **Compare Pair Configuration** page.
 
