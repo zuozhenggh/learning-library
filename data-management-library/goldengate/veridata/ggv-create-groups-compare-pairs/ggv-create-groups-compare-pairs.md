@@ -9,7 +9,7 @@ A group is associated with a set of connections to the source and target data.
 
 A compare pair is a logical relationship between a source table or file and a target table or file for the purpose of comparing their data. Compare pairs are linked to groups. Therefore, all of the source and target objects that you configure into compare pairs for any given group must be accessible from the datasource connections that are associated with that group.
 
-*Estimated Lab Time*: 45 minutes
+*Estimated Time*: 45 minutes
 
 ### Objectives
 In this lab, you will:

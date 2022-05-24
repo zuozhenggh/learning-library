@@ -33,25 +33,25 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
 1. From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), Click on *"Create"* at the upper right-hand corner.
 
-    !["OAS Home Screen"](./images/asdvff1.png)
+    !["oashomescreen"](./images/oashomescreen.png)
 
 2. **Click** on Dataset from the menu.
 
-    !["Create Dataset "](./images/asdvff2.png )
+    !["createdataset"](./images/createdataset.png )
 
 3. **Upload** the "employee termination.xlsx from the Documents / Live Labs Content directory as previously directed.  
 
-    !["upload termination file"](./images/asdvff3.png )
+    !["uploadterminationfile"](./images/uploadterminationfile.png )
 
 	Once uploaded, click the add button in the top right-hand corner.
 
-    !["termination file image"](./images/asdvff4.png )
+    !["terminationfileimage"](./images/terminationfileimage.png )
 
     After creating a dataset, the dataset undergoes column-level profiling to produce a set of semantic recommendations to repair or enrich
     your data. These recommendations are based on the system automatically detecting a specific semantic type during the profile step.
     After profiling the data, you can make modifications to the data and implement enrichment recommendations provided on the far-right hand    side of the palette. Keep in mind, the date elements and their semantic types will dictate the variety and number of recommendations you receive to include within your dataset.
 
-    !["dataset profile results"](./images/asdvff5.png )
+    !["datasetprofileresults"](./images/datasetprofileresults.png )
 
 4.  Use the scroll bar located at the bottom of the screen and review the data elements.  
     Each element has been labeled with an identifier.  
@@ -68,11 +68,11 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     **Click** on the ID column.  Notice the ID properties box in the lower left corner.  Let’s modify the identifier.  Under the property 'Treat As' **Click**  on 'measure' and select attribute.
 
-    !["modify treat as"](./images/asdvff6.png )
+    !["modifytreatas"](./images/modifytreatas.png )
 
     Continue on and locate Employee Number, make the same modification.
 
-    !["modify employee number"](./images/asdvff7.png )
+    !["modifyemployeenumber"](./images/modifyemployeenumber.png )
 
     As you review the remaining columns, you may find additional data elements to modify.  
 
@@ -81,7 +81,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     **Select** 'Obfuscate First 5 digits of SSN'
 
-    !["obfuscate ssn"](./images/asdvff8.png )
+    !["obfuscatessn"](./images/obfuscatessn.png )
 
 
 6.  Even further right, beyond social security number, locate the 'zip code' column.  
@@ -98,11 +98,11 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      Let’s repair the zip code values selecting the "Repair Zip Code' recommendation.
 
-    !["repair zip code"](./images/asdvff9.png )
+    !["repairzipcode"](./images/repairzipcode.png )
 
     Oracle Analytics Server has corrected each zip code record within the column. Note the horizontal bar has changed from red to grey.
 
-    !["repaired zip code"](./images/asdvff10.png )
+    !["repairedzipcode"](./images/repairedzipcode.png )
 
 
 7.  Additionally I see that Oracle Analytics Server recommended enriching my dataset providing many geoname options, including City and State.
@@ -111,7 +111,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     From the recommendations panel, **Click** 'Enrich Zip Code with State, then 'Enrich Zip Code with City'.
 
-    !["zip code recommendations"](./images/asdvff11.png)
+    !["zipcoderecommendations"](./images/zipcoderecommendations.png)
 
     We've added two additional columns to our dataset.
 
@@ -125,11 +125,11 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     **Right Click** over the State Column label, Notice there are a wide variety of transformation options!
 
-    !["transformation options"](./images/asdvff12.png )
+    !["transformationoptions"](./images/transformationoptions.png )
 
 8.  Scroll back to the left of the dataset.  Locate the 'EducationField' column.
 
-     !["review education field column"](./images/asdvff12-a.png )
+     !["revieweducationfieldcolumn"](./images/revieweducationfieldcolumn.png )
 
      Review the information provided in the data quality insights card.
 
@@ -141,7 +141,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      Double **Click** 'Missing or Null' and type 'Other'
 
-     !["edit education field column"](./images/asdvff12-c.png )
+     !["editeducationfieldcolumn"](./images/editeducationfieldcolumn.png )
 
 9.  Let's make one last modification to our dataset.  Scroll back to the beginning of the dataset, all the way to the left.  
 
@@ -151,7 +151,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     Right **Click** on 'First Name' and select 'concatenate'
 
-    !["concatenate first & last name"](./images/asdvff12-d.png )
+    !["concatenatefirstlastname"](./images/concatenatefirstlastname.png )
 
     In the concatenate column dialogue box, enter the following:
 
@@ -161,7 +161,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
     - Leave Delimiter as Space ( )
     - Once complete, click “Add Step” in the upper right hand corner
 
-    !["first & last name concatenate attributes"](./images/asdvff12-f.png )
+    !["firstlastnameconcatenateattributes"](./images/firstlastnameconcatenateattributes.png )
 
     Right **Click** on First Name and Last Name Columns and select ‘Hide’
 
@@ -175,7 +175,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     Review the items listed in the Script Navigation Panel.  The Script Navigation Panel has recorded and made note of each modification we have made to the dataset.  The modifications reside with the dataset and will be applied when the data source has been refreshed or appended.
 
-    !["script navigation panel"](./images/asdvff12-g.png )
+    !["scriptnavigationpanel"](./images/scriptnavigationpanel.png )
 
     **Click** on the + icon.  The Create Column dialog box appears.  
 
@@ -190,7 +190,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      Notice that (dimension) appears beside Year. Let's utilize the current date function to specify year.  
 
-     !["calculation dialogue box"](./images/asdvff12-k.png)
+     !["calculationdialoguebox"](./images/calculationdialoguebox.png)
 
      Begin typing current. As you type, you should see options matching the entry  of current.  **Select** 'current_date' when it is provided as an option.  
 
@@ -204,7 +204,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      Your entry should look like this.
 
-     !["age calculation image"](./images/asdvff12-j.png )
+     !["agecalculationimage"](./images/agecalculationimage.png )
 
      Once complete, **Click** Validate.  If the calculation has been entered successfully, then **Click** ‘Add Step’.
 
@@ -215,7 +215,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     Now we are ready to analyze our data.  **Click** Create - Workbook.
 
-    !["create workbook image"](./images/asdvff13.png)
+    !["createworkbookimage"](./images/createworkbookimage.png)
 
     You may begin your analysis by selecting the appropriate data elements.
 
@@ -225,7 +225,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     You may slice your data by a variety of time dimensions without having to write code, or transform your date elements.
 
-     !["time dimension hierarchy"](./images/asdvff14.png )
+     !["timedimensionhierarchy"](./images/timedimensionhierarchy.png )
 
 
 ## Task 2: Self Service Data Modeling
@@ -237,7 +237,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
 1.   Create - Dataset
 
-     !["Create Dataset"](./images/asdvff2.png )
+     !["createdataset"](./images/createdataset.png )
 
      We are prompted to 'Select A Data Source'.  
 
@@ -245,7 +245,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      **Click** the database 'PDB1'.  The database has a variety of schemas available.  We are going to use BICS_SAMPLEAPP.  
 
-     !["BICS SampleApp Schema"](./images/asdvff15.png )
+     !["bicssampleappschema"](./images/bicssampleappschema.png )
 
 2.   We would like to analyze customer orders, products, revenue, and billing information.  I'm going to bring together the tables I need
      in order to complete my analysis.
@@ -254,7 +254,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      Once selected, you will see the table represented in a diagram on the upper portion of the palette.  Below, you will see the data elements that reside in the table.
 
-     !["review cloudDcustomer table"](./images/asdvff16.png )
+     !["reviewclouddcustomertable"](./images/reviewclouddcustomertable.png )
 
      Next we are going to select the remaining tables we need.  **CTRL Click** the following tables:
 
@@ -265,17 +265,17 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      Once selected, **Right Click** - select 'Add to dataset'
 
-     !["select additional tables"](./images/asdvff17.png )
+     !["selectadditionaltables"](./images/selectadditionaltables.png )
 
      Notice that a couple of joins have been defined within the data source, as a result, the joins have happened automatically.
 
-     !["data model diagram"](./images/asdvff17-a.png )
+     !["datamodeldiagram"](./images/datamodeldiagram.png )
 
      **Click** or **Hover** over the connection point.
 
      *CLOUD_F_BILL_REV* and *CLOUD_D_ORDERS* are joined on *Order_Status*
 
-     !["join tables"](./images/asdvff18.png )
+     !["jointables"](./images/jointables.png )
 
      *CLOUD_F_BILL_REV* and *CLOUD_D_PRODUCTS* are joined on *PROD_ITEM_KEY*
 
@@ -286,20 +286,20 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      **Click** on the *# CUST_NUMBER* column name and modify the identifier
 
-     !["modify identifier for join"](./images/asdvff20.png )
+     !["modifyidentifierforjoin"](./images/modifyidentifierforjoin.png )
 
      **Right Mouse Click** on *CLOUD_D_CUSTOMERS* and select Join To *CLOUD_F_BILL_REV*
 
-     !["customer to bill rev join"](./images/asdvff21.png )
+     !["customertobillrevjoin"](./images/customertobillrevjoin.png )
 
      Notice the join has been suggested for you.
 
-     !["suggested join data elements"](./images/asdvff22.png )
+     !["suggestedjoindataelements"](./images/suggestedjoindataelements.png )
 
      **Right Mouse Click** on *CLOUD_TIME_SMALL*.  Select Join To *CLOUD_F_BILL_REV*. A clear date element match has not been identified.
      Select *CLOUD_F_BILL_REV* - *TIME_BILL_DT* and *CLOUD_TIME_SMALL* - *DAY_TS*
 
-     !["bill rev to time small join"](./images/asdvff23.png )
+     !["billrevtotimesmalljoin"](./images/billrevtotimesmalljoin.png )
 
      Let's save our dataset so we can complete our analysis.  **Click** on the disk icon in the upper right hand corner.  
      Name your dataset - my new dataset
@@ -309,13 +309,13 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      **Click**  on the tab labeled *CLOUD_D_CUSTOMERS*.
 
-     !["navigate to customers table"](./images/asdvff24.png )
+     !["navigatetocustomerstable"](./images/navigatetocustomerstable.png )
 
      Notice the recommendations panel on the right.  You may apply any of the recommendations the knowledge engine has provided.  
 
      Additionally, you may ' Edit Definition '
 
-     !["review recommendations customers"](./images/asdvff25.png )
+     !["reviewrecommendationscustomers"](./images/reviewrecommendationscustomers.png )
 
      Notice the following:
 
@@ -323,7 +323,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
      - You may modify the data indicator as needed.
      - You may modify the data access setting.
 
-     !["data access options"](./images/asdvff26.png )
+     !["dataaccessoptions"](./images/dataaccessoptions.png )
 
      **Click**  Ok and then Create Workbook.  If prompted, save the changes you've made to the dataset.
 
@@ -333,14 +333,14 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      Note you have the ability to add other datasources to your analysis.  **Click** on the + to the right of the Search box.
 
-     !["add dataset in workbook"](./images/asdvff27.png )
+     !["adddatasetinworkbook"](./images/adddatasetinworkbook.png )
 
      At this point you can:
      -  add a dataset
      -  leverage a subject area
      -  create a new dataset, selecting data from your local desktop or another data source.
 
-     !["workbook datasource options"](./images/asdvff28.png )
+     !["workbookdatasourceoptions"](./images/workbookdatasourceoptions.png )
 
      Oracle Analytics Server provides flexible and agile data management capabilities enabling users to access and bring together a wide variety of data sources.
 

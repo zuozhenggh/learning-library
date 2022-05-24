@@ -3,7 +3,7 @@
 ## Introduction
 This lab will show you how to download the Oracle Resource Manager (ORM) stack zip file needed to setup the resource needed to run this workshop. This workshop requires a compute instance running the Oracle GoldenGate Veridata Marketplace image and a Virtual Cloud Network (VCN).
 
-*Estimated Lab Time:* 15 minutes
+*Estimated Time:* 15 minutes
 
 ### Objectives
 -   Download ORM stack
