@@ -43,30 +43,30 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
 
 1. **Click** on main menu ≡, then Oracle Database > **Autonomous JSON Database**. 
 
-    ![AJD Dashboard](./images/task1/ajson_dashboard.png)
+    ![AJD Dashboard](./images/task1/ajson-dashboard.png)
 
 
 2. In the **Network** section you can see the configuration that we provisoned: `Allow secure access from everywhere`
 
-    ![Network Configuration](./images/task1/network_configuration.png)
+    ![Network Configuration](./images/task1/network-configuration.png)
 
 3. Click **Edit** in the **Access Control List** Edit button. At the moment it is `Disabled`.
 
-    ![Network Configuration Edit](./images/task1/network_configuration_edit.png)
+    ![Network Configuration Edit](./images/task1/network-configuration-edit.png)
 
 4. **Type** your **Public IP Address** in the **Values** field. In **IP notation type** field, you should have selected **IP Address**. **Add My IP Addreess** button too. Click **Save Changes**.
 
-    ![IP Address Added](./images/task1/ip_addresses.png)
+    ![IP Address Added](./images/task1/ip-addresses.png)
 
 
 5. The **Network** configuration from your ADJ Database is **updating**.
 
-    ![Network Configuration Updating](./images/task1/network_configuration_updating.png)
+    ![Network Configuration Updating](./images/task1/network-configuration-updating.png)
 
 
     As soon as your database is **available** again, check the **Network** information again. Now, your **Access Type** has changed to `Allow secure access from specified IPs and VCNs`.  
 
-    ![Network Configuration Updated](./images/task1/network_configuration_updated.png)
+    ![Network Configuration Updated](./images/task1/network-configuration-updated.png)
 
     Now your Autonomous JSON Database is ready to start using MongoAPI capability.
 
@@ -91,7 +91,7 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
     </copy>
     ````
 
-    ![cat mongoapi-app](./images/task2/cat_mongoapi-app.png)
+    ![cat mongoapi-app](./images/task2/cat-mongoapi-app.png)
 
 3. **Verify** all connection **variables are correct**. This time we are using Oracle variables that we have used in previous labs and those will be use for connection variables that we will use. Following this method, you don't need to edit them.
 
@@ -113,12 +113,12 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
 
 4. We will **copy** the **Oracle Database API for MongoDB connection string**. **Click** on main menu ≡, then Oracle Database > **Autonomous JSON Database**. **Click** on **Service Console**.
 
-    ![AJD Dashboard Service Console](./images/task2/ajson_dashboard_service_console.png)
+    ![AJD Dashboard Service Console](./images/task2/ajson-dashboard-service-console.png)
 
 5. Under the **Development section**, find the **Oracle Database API for MongoDB** section. **Copy** the string string: `For newer MongoDB clients and drivers use port 27017 with this connection string`. We will use it shortly.
 
     ![AJD Dashboard Service Console Development](./images/task2/development.png)
-    ![AJD Dashboard Service MongoAPI String connection](./images/task2/mongo_api_string_connection.png)
+    ![AJD Dashboard Service MongoAPI String connection](./images/task2/mongo-api-string-connection.png)
 
     It should be something like this:
 
@@ -137,7 +137,7 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
     </copy>
     ````
 
-    ![ATP URL String connection](./images/task2/atp_url.png) 
+    ![ATP URL String connection](./images/task2/atp-url.png) 
 
 7. **After checking if all variables are correct**. **Run** mongoapi-app application using the following command:
 
@@ -147,14 +147,14 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
     </copy>
     ````
 
-    ![mongoapi-app Execution](./images/task2/mongoapi-app_execution.png)
+    ![mongoapi-app Execution](./images/task2/mongoapi-app-execution.png)
 
 
 8. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database using MongoAPI capability.
 
     http://[DEVM public-ip address]:5000/oracle/mongo/
 
-     ![Microservice Company MongoAPI capability](./images/task2/microservice_mongoapi.png)
+     ![Microservice Company MongoAPI capability](./images/task2/microservice-mongoapi.png)
     
     > This micro-service has 1 URL. We already had used previosly the Oracle one and the Mongo one. In this case we are using a new one / oracle/mongo. Here you have the others URLS too:
     >
@@ -164,7 +164,7 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
 
 9. Go to **cloud shell terminal.** We will **stop mongoapi-app.py**. for doing this, **press Control + C**.
 
-    ![stop  mongoapi-app](./images/task2/mongoapi_stopping.png)
+    ![stop  mongoapi-app](./images/task2/mongoapi-stopping.png)
 
 
 *Congratulations! Well done!*

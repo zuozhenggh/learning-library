@@ -45,7 +45,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![wget Command](./images/task1/wget_command.png)
+    ![wget Command](./images/task1/wget-command.png)
 
 3. **Unzip** the **python-simple-project.zip** using the following command:
 
@@ -55,7 +55,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![unzip Apps](./images/task1/unzip_apps.png)
+    ![unzip Apps](./images/task1/unzip-apps.png)
 
 4. **Access** to python-simple-project folder. **Create** a Python virtual environment for development, and **activate** it. Run the following commands:
 
@@ -68,7 +68,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![Virtual Env Commands](./images/task1/virtualenv_command.png)
+    ![Virtual Env Commands](./images/task1/virtualenv-command.png)
 
 5. Lets have a look at **requirements.pip**. In this file, we have the libraries that we need for the micro-service application. Run the following command to see the code:
 
@@ -78,7 +78,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![cat Requirements](./images/task1/cat_requirements.png)
+    ![cat Requirements](./images/task1/cat-requirements.png)
 
 6. Use **pip package installer** for Python 3 to **install** the required libraries specified in the requirements.pip file.
 
@@ -98,7 +98,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![cat simple-app](./images/task1/cat_simple-app.png)
+    ![cat simple-app](./images/task1/cat-simple-app.png)
 
 6. Use **pip package installer** for Python 3 to **install** the required libraries specified in the requirements.pip file.
 
@@ -134,7 +134,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     
     Additionally we are **creating a file, simple.pid,** to be capable of killing the python app to keep creating the second application for today’s content.
 
-    ![simple-app Execution](./images/task1/simple-app_execution.png)
+    ![simple-app Execution](./images/task1/simple-app-launch.png)
 
 9. Lets see what **simple-app.py is doing**, use the following command:
 
@@ -144,7 +144,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![simple-app log](./images/task1/simple-app_log.png)
+    ![simple-app log](./images/task1/simple-app-log.png)
 
     If you followed the steps correctly, you should see this output in the cloud shell terminal. 
 
@@ -170,7 +170,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![POST company One curl](./images/task1/curl_company_one.png)
+    ![POST company One curl](./images/task1/curl-company-one.png)
 
 11. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Second POST:
 
@@ -192,7 +192,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![POST company Two curl](./images/task1/curl_company_two.png)
+    ![POST company Two curl](./images/task1/curl-company-two.png)
 
 12. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Third and Fourth POST:
 
@@ -227,14 +227,14 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![POST company Third and Fourth curl](./images/task1/curl_company_three_four.png)
+    ![POST company Third and Fourth curl](./images/task1/curl-company-three-four.png)
 
 
 13. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
 
     http://[DEVM public-ip address]:5000/oracle/
 
-    ![Microservice Company One, Two, Three & Four](./images/task1/microservice_company_one_two_three_four.png)
+    ![Microservice Company One, Two, Three & Four](./images/task1/microservice-company-one-two-three-four.png)
 
 14. Go to **cloud shell terminal.** We will **stop simple-app.py** running the following command. 
 
@@ -244,7 +244,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![kill simple-app](./images/task1/simple-app_kill.png)
+    ![kill simple-app](./images/task1/simple-app-kill.png)
 
     
 ## Task 2: The Advantage of Apex and SQL Knowledge
@@ -257,8 +257,8 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     Click **SQL Workshop** > **SQL Commands**. 
 
-    ![Apex SQL Workshop](./images/task2/apex_sql_workshop.png)
-    ![Apex SQL Commands](./images/task2/apex_sql_commands.png)
+    ![Apex SQL Workshop](./images/task2/apex-sql-workshop.png)
+    ![Apex SQL Commands](./images/task2/apex-sql-commands.png)
 
 2. **Run** this SQL query:
 
@@ -293,26 +293,26 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     </copy>
     ````
 
-    ![Select JSON](./images/task2/select_json.png)
+    ![Select JSON](./images/task2/select-json.png)
 
 4. JSON data can be accessed via SQL from your applications. Click **App Builder** > **Create**. 
     
-    ![New App](./images/task2/new_app.png)
+    ![New App](./images/task2/new-app.png)
 
 5. Click **New Application**.
 
-    ![New App Dashboard](./images/task2/new_app_dashboard.png)
+    ![New App Dashboard](./images/task2/new-app-dashboard.png)
 
 6. Provide the following information:
 
     - Name: Companies
     - Click **Add Page**
     
-    ![Companies App](./images/task2/companies_app.png)
+    ![Companies App](./images/task2/companies-app.png)
 
     -  **Interactive Report**
 
-    ![Interactive Report](./images/task2/interactive_report.png)
+    ![Interactive Report](./images/task2/interactive-report.png)
 
     - Page Name: Report
     - SQL Query:
@@ -329,34 +329,34 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     ````
     - Click **Add Page**
 
-    ![Interactive Report Query](./images/task2/interactive_report_query.png)
+    ![Interactive Report Query](./images/task2/interactive-report-query.png)
     
     - Click **Create Application**
     
-    ![Create App](./images/task2/create_app.png)
+    ![Create App](./images/task2/create-app.png)
 
     The application will be create immediatly.
 
-    ![Creating App](./images/task2/creating_app.png)
+    ![Creating App](./images/task2/creating-app.png)
         
 7. Click **Run Application**. 
 
-    ![Run App](./images/task2/run_app.png)
+    ![Run App](./images/task2/run-app.png)
 
 8. **Log In** to Companies using the following credentials:
 
     - Username: demo
     - Password: DBlearnPTS#22_
 
-    ![Log In Companies](./images/task2/log_in_companies.png)
+    ![Log In Companies](./images/task2/log-in-companies.png)
 
 9. Click **Report**. 
 
-    ![Report App](./images/task2/report_app.png)
+    ![Report App](./images/task2/report-app.png)
     
     You can see the Four Companies that we have inserted on the previous Task.
     
-    ![Report App Result](./images/task2/report_app_result.png)
+    ![Report App Result](./images/task2/report-app-result.png)
     
     With Oracle Autonomous Database as a document store, JSON data is valued in the same way as relational data.
 

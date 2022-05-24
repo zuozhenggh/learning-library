@@ -4,7 +4,7 @@
                 {
             "title": "Introduction",
             "description": "Introduction of the workshop.",
-            "filename": "./../../intro_mongoapi/intro_mongoapi.md"
+            "filename": "./../../intro-mongoapi/intro-mongoapi.md"
         },
           {
             "title": "Getting Started",
@@ -13,17 +13,17 @@
           {
             "title": "Lab 1: Infrastructure Configuration",
             "description": "In this Lab you will create the infrastructure that we will need for this content. VCN, Compute, AJD and Prepare the document store.",
-            "filename": "./../../infra_mongoapi/infra_mongoapi.md"
+            "filename": "./../../infra-mongoapi/infra-mongoapi.md"
         },
             {
             "title": "Lab 2: Python SODA Micro-service with Autonomous Database for JSON",
             "description": "SODA is a set of NoSQL-style APIs that let you create and store collections of documents (in particular JSON) in Oracle Database, retrieve them, and query them, without needing to know Structured Query Language (SQL) or how the documents are stored in the database.",
-            "filename": "./../../simple-app_mongoapi/simple-app_mongoapi.md"
+            "filename": "./../../simple-app-mongoapi/simple-app-mongoapi.md"
         },
         {
             "title": "Lab 3: Python Micro-service with Oracle Autonomous and MongoDB",
             "description": "Learn why customers choose Oracle Autonomous JSON Database over MongoDB Atlas. Autonomous JSON Database provides all the core capabilities of MongoDB along with high performance, simple elasticity, full ACID support and complete SQL functionality.",
-            "filename": "./../../multi-cloud_mongoapi/multi-cloud_mongoapi.md"
+            "filename": "./../../multi-cloud-mongoapi/multi-cloud-mongoapi.md"
         },
         {
             "title": "Lab 4: Python micro-service with the new MongoAPI capability",

@@ -31,27 +31,27 @@ In this lab, you will:
     - Cloud Account Name: oci-tenant
     - **Next**
     
-    ![cloud Account Name](./images/task1/cloud_account_name.png)
+    ![cloud Account Name](./images/task1/cloud-account-name.png)
 
     - User Name: oci-username - email address provided
     - Password: oci-password
     - **Sign In**
 
-    ![User Name & Password](./images/task1/username_password.png)    
+    ![User Name & Password](./images/task1/username-password.png)    
 
 2. Click on main menu ≡, then Networking > **Virtual Cloud Networks**. Select your Region and Compartment assigned by the instructor. 
 
     >**Note**: Use **Root** Compartment, oci-tenant(root), to create all resources for this workshop.
 
-    ![Oracle Console Networking](./images/task1/oracle_console_networking.png)
+    ![Oracle Console Networking](./images/task1/oracle-console-networking.png)
 
 3. Select your Region and Compartment assigned by the instructor. Click **Start VCN Wizard**.
     
-    ![Oracle Console Networking Start Wizard](./images/task1/oracle_console_networking_start_wizard.png)
+    ![Oracle Console Networking Start Wizard](./images/task1/oracle-console-networking-start-wizard.png)
 
 4. Select **Create VCN with Internet Connectivity**. Start **VCN Wizard**.
 
-   ![Create VCN with Internet Connectivity](./images/task1/create_vcn_with_internet_connectivity.png)
+   ![Create VCN with Internet Connectivity](./images/task1/create-vcn-with-internet-connectivity.png)
 
 5. Provide the following information:
 
@@ -59,28 +59,28 @@ In this lab, you will:
     - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
     - Click **Next**
 
-    ![vcnName & Compartment](./images/task1/vcn_name_compartment.png)
+    ![vcnName & Compartment](./images/task1/vcn-name-compartment.png)
 
 6. Review the information in the 'Review and Create Page' and Click **Create**.
 
-    ![vcn Creation](./images/task1/vcn_creation.png)
+    ![vcn Creation](./images/task1/vcn-creation.png)
 
 7. The Resources have being created on the next page. Click **View Virtual Cloud Network** to access to the vcn.
 
-    ![View vcn Page](./images/task1/view_vcn_page.png)
-    ![DEVCN Detail](./images/task1/devcn_detail.png)
+    ![View vcn Page](./images/task1/view-vcn-page.png)
+    ![DEVCN Detail](./images/task1/devcn-detail.png)
 
 8. Click **Public Subnet-DEVCN**. 
 
-    ![Public Subnet](./images/task1/public_subnet.png)
+    ![Public Subnet](./images/task1/public-subnet.png)
 
 9. Click **Default Security List for DEVCN**.
     
-    ![Default Security List for DEVCN](./images/task1/default_security_list_for_devcn.png)
+    ![Default Security List for DEVCN](./images/task1/default-security-list-for-devcn.png)
 
 10. Click **Add Ingress Rules**.
 
-    ![Add Ingress Rules](./images/task1/add_ingress_rules.png)
+    ![Add Ingress Rules](./images/task1/add-ingress-rules.png)
 
 11. Provide the following information:
 
@@ -89,7 +89,7 @@ In this lab, you will:
     - Description: Python Flask
     - Click **+ Another Ingress Rule**
 
-    ![Python Flask Rule](./images/task1/python_flask_rule.png)
+    ![Python Flask Rule](./images/task1/python-flask-rule.png)
 
 12. Provide the following information:
 
@@ -98,25 +98,25 @@ In this lab, you will:
     - Description: HTTP
     - Click **Add Ingress Rules**
     
-    ![Port 80 Rule](./images/task1/port80_rule_new.png)
+    ![Port 80 Rule](./images/task1/port80-rule-new.png)
 
 13. You can check on the **Detail Page** that the 2 Ingress Rules have beed added.
     
-    ![All Ingress Rules Added](./images/task1/all_ingress_rules_added_new.png)
+    ![All Ingress Rules Added](./images/task1/all-ingress-rules-added-new.png)
 
 ## Task 2: Provision Compute Node for development
 
 1. Click on the following link to access to a marketplace image from [Oracle marketplace](https://bit.ly/3CxvsxA).
 
-    ![Marketplace Image](./images/task2/marketplace_image.png)
+    ![Marketplace Image](./images/task2/marketplace-image.png)
 
 2. Click **Get App**.
 
-    ![Marketplace Get App](./images/task2/marketplace_get_app.png)
+    ![Marketplace Get App](./images/task2/marketplace-get-app.png)
 
 3. Select **Commercial Market** and click **Sign in**.
 
-    ![Marketplace Commercial Market](./images/task2/marketplace_commercial_market.png)
+    ![Marketplace Commercial Market](./images/task2/marketplace-commercial-market.png)
 
 4. In the next screen be sure that you have the correct information:
 
@@ -125,7 +125,7 @@ In this lab, you will:
     - **Accept** the Oracle standard Terms and Restrictions
     - **Launch Instance**
 
-    ![Marketplace Launch App](./images/task2/marketplace_launch_app.png)
+    ![Marketplace Launch App](./images/task2/marketplace-launch-app.png)
 
 5. Provide the following information:
 
@@ -135,7 +135,7 @@ In this lab, you will:
         - Image: **MongoDB and Autonomous JSON workshop**
         - Shape: **VM.Standard.E2.1.Micro - Always Free eligible**
     
-    ![Marketplace Compute Instance Creation](./images/task2/marketplace_compute_instance_creation.png)
+    ![Marketplace Compute Instance Creation](./images/task2/marketplace-compute-instance-creation.png)
 
     If you are using your own cloud account, not just a trial, you can see this section different. Just be sure you have all the information as following selected:
 
@@ -145,28 +145,28 @@ In this lab, you will:
         - Image: **MongoDB and Autonomous JSON workshop**
         - Shape: **VM.Standard.E2.1.Micro - Always Free eligible**
     
-    ![Marketplace Compute Instance Creation No Trial](./images/task2/marketplace_compute_instance_creation_no_trial.png)
+    ![Marketplace Compute Instance Creation No Trial](./images/task2/marketplace-compute-instance-creation-no-trial.png)
 
     - Networking: Be sure you have the following information. If not, click **Edit/Collapse** to edit the information:
 
         - Virtual cloud network: **DEVCN**
         - Subnet: **Public Subnet-DEVCN (regional)**
     
-    ![Networking Compute](./images/task2/networking_compute.png)
+    ![Networking Compute](./images/task2/networking-compute.png)
 
     - Download the private and public keys: **Save Private Key**, **Save Public Key**
 
-    ![Private & Public Keys](./images/task2/private_public_keys.png)
+    ![Private & Public Keys](./images/task2/private-public-keys.png)
 
     - Click **Create**
 
-    ![Create Compute](./images/task2/create_compute.png)
+    ![Create Compute](./images/task2/create-compute.png)
        
 6. Wait for Compute Instance to finish provisioning, and have status Available (click browser Refresh button). 
 On the Instance Details page, copy Public IP Address in your notes.
 
-    ![Compute Provisioning](./images/task2/compute_provisioning.png)
-    ![Compute Running](./images/task2/compute_running.png)
+    ![Compute Provisioning](./images/task2/compute-provisioning.png)
+    ![Compute Running](./images/task2/compute-running.png)
 
 > Note: On the Instance Details page, copy **Public IP Address** in your notes.
 
@@ -175,11 +175,11 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 1. **Click** on main menu ≡, then Oracle Database > **Autonomous JSON Database**. **Create Autonomous Database**.
 
-    ![Oracle Console AJD](./images/task3/oracle_console_ajson.png)
+    ![Oracle Console AJD](./images/task3/oracle-console-ajson.png)
 
 2. Click **Create Autonomous Database**.
 
-    ![Create AJD](./images/task3/create_ajson.png)
+    ![Create AJD](./images/task3/create-ajson.png)
 
 3. Provide the following information:
 
@@ -193,7 +193,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     - OCPU count: 1
     - Storage (TB): 1 or 0.02 if you are using a Trial account
 
-    ![Creation AJD Dashboard](./images/task3/creation_ajson_dashboard.png)
+    ![Creation AJD Dashboard](./images/task3/creation-ajson-dashboard.png)
 
 4. Under **Create administrator** credentials:
 
@@ -201,36 +201,36 @@ On the Instance Details page, copy Public IP Address in your notes.
 
     > We recomend you to use the password as later on, it will be use for running Python scripts. If you consider changing it, remember that later on, you will need to modify the Python scripts manually.
     
-    ![Creation AJD Password](./images/task3/creation_ajson_password.png)
+    ![Creation AJD Password](./images/task3/creation-ajson-password.png)
     
 5. Under **Choose network access**:
 
     - Access Type: Secure access from everywhere
 
-    ![Creation AJD Network](./images/task3/creation_ajson_network.png)
+    ![Creation AJD Network](./images/task3/creation-ajson-network.png)
 
 6. Under **Choose a license type**:
     
     - License included
     
-    ![Creation AJD License](./images/task3/creation_ajson_license.png)
+    ![Creation AJD License](./images/task3/creation-ajson-license.png)
 
 7. Click **Create Autonomous Database**.
 
-    ![Creation AJD Create](./images/task3/creation_ajson_create.png)
+    ![Creation AJD Create](./images/task3/creation-ajson-create.png)
 
 8. Wait for Lifecycle State to become **Available** from Provisioning (click browser Refresh button).
 
-    ![AJD Provisioning](./images/task3/ajson_provisioning.png)
-    ![AJD Available](./images/task3/ajson_available.png)
+    ![AJD Provisioning](./images/task3/ajson-provisioning.png)
+    ![AJD Available](./images/task3/ajson-available.png)
 
 9. Next to the big green box, click **DB Connection**.
     
-    ![AJD DB Connection](./images/task3/ajson_db_connection.png)
+    ![AJD DB Connection](./images/task3/ajson-db-connection.png)
 
 10. Click **Download wallet**.
 
-    ![Download Wallet](./images/task3/download_wallet.png)
+    ![Download Wallet](./images/task3/download-wallet.png)
 
 11. Type the following information:
 
@@ -238,19 +238,19 @@ On the Instance Details page, copy Public IP Address in your notes.
     - Confirm Password: DBlearnPTS#22_
     - Click **Download**
 
-    ![Download Wallet Password](./images/task3/download_wallet_password.png)
+    ![Download Wallet Password](./images/task3/download-wallet-password.png)
 
 12. Click **Save file** and **OK**.
     
-    ![Save Wallet](./images/task3/save_wallet.png)
+    ![Save Wallet](./images/task3/save-wallet.png)
 
 13. To access to our compute instance, we will use the **cloud shell**, a small linux terminal embedded in the OCI interface. **Click** on the **shell** icon next to the name of the OCI region, on the top right corner of the page.
 
-    ![Cloud Shell](./images/task3/cloud_shell.png)
+    ![Cloud Shell](./images/task3/cloud-shell.png)
 
 14. **Drag and drop** the previously saved **private key file** (ssh-key-xxx.key) and **wallet file** (Wallet_AJDEV.zip) into the **cloud shell**. Be sure both files have been completed checking the **green flag**.
 
-    ![Cloud Shell Files](./images/task3/cloud_shell_files.png)
+    ![Cloud Shell Files](./images/task3/cloud-shell-files.png)
 
 15. You can **verify** if the files have been transfered correctly using the following command:
 
@@ -271,7 +271,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     </copy>
     ````
 
-    ![scp Command](./images/task3/scp_command.png)
+    ![scp Command](./images/task3/scp-command.png)
 
     > NOTE: If you are asked: `Are you sure you want to continue connecting (yes/no)?`, please type **yes** to continue.
 
@@ -293,7 +293,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     </copy>
     ````
 
-    ![ssh Connection](./images/task3/unzip_wallet.png)
+    ![ssh Connection](./images/task3/unzip-wallet.png)
 
 19. We will **export** the **paths** and give access to the **firewall** using the following commands:
 
@@ -308,14 +308,14 @@ On the Instance Details page, copy Public IP Address in your notes.
     </copy>
     ````
 
-    ![Export Paths Firewall](./images/task3/export_paths_firewall.png)
+    ![Export Paths Firewall](./images/task3/export-paths-firewall.png)
 
 ## Task 4: Prepare Document Store
 
 
 1. **Click** on main menu ≡, then Oracle Database > **Autonomous JSON Database**. 
 
-    ![AJD Dashboard](./images/task4/ajson_dashboard.png)
+    ![AJD Dashboard](./images/task4/ajson-dashboard.png)
 
 2. On **Tools tab**, under **Oracle Application Express**, click **Open APEX**. 
 
@@ -325,11 +325,11 @@ On the Instance Details page, copy Public IP Address in your notes.
 
     - Password: DBlearnPTS#22_
 
-    ![Apex ADMIN](./images/task4/apex_admin.png)
+    ![Apex ADMIN](./images/task4/apex-admin.png)
 
 4. Click **Create Workspace**.
 
-    ![Apex Workspace](./images/task4/apex_workspace.png)
+    ![Apex Workspace](./images/task4/apex-workspace.png)
 
 5. Type the following information:
 
@@ -337,11 +337,11 @@ On the Instance Details page, copy Public IP Address in your notes.
     - Password: DBlearnPTS#22_
     - Workspace Name: DEMO
 
-    ![Apex Workspace DEMO](./images/task4/apex_workspace_demo.png)
+    ![Apex Workspace DEMO](./images/task4/apex-workspace-demo.png)
     
 6. Click **DEMO** in the middle of the page to **Sign in** as **DEMO** user.
  
-    ![Apex Login DEMO](./images/task4/apex_log_in_demo.png)
+    ![Apex Login DEMO](./images/task4/apex-log-in-demo.png)
  
 7. Click **Sign In** Page using the following information:
 
@@ -349,7 +349,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     - Username: demo
     - Password: DBlearnPTS#22_
 
-    ![Login DEMO](./images/task4/log_in_demo.png)
+    ![Login DEMO](./images/task4/log-in-demo.png)
 
     **Oracle APEX** uses low-code development to let you build data-driven apps quickly without having to learn complex web technologies. This also gives you access to Oracle REST Data Services, that allows developers to readily expose and/or consume RESTful Web Services by defining REST end points.
 
@@ -357,11 +357,11 @@ On the Instance Details page, copy Public IP Address in your notes.
     - User: admin
     - Password: DBlearnPTS#22_
 
-    ![DB Actions](./images/task4/db_actions.png)
+    ![DB Actions](./images/task4/db-actions.png)
 
 9. Click **Development** > **SQL** (first button).
 
-    ![DB Actions SQL](./images/task4/db_actions_sql.png)
+    ![DB Actions SQL](./images/task4/db-actions-sql.png)
 
 10. Run the following code using **Run Script** button:
 
@@ -381,7 +381,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     </copy>
     ````
 
-    ![Enable Schema Script](./images/task4/enable_schema_script.png)
+    ![Enable Schema Script](./images/task4/enable-schema-script.png)
     
     >**Note** : For all code you run in SQL Developer Web, make sure you receive a success message:
 
@@ -389,7 +389,7 @@ On the Instance Details page, copy Public IP Address in your notes.
     PL/SQL procedure successfully completed.
     ````
     
-    ![PLSQL Successfully completed](./images/task4/plsql_success.png)    
+    ![PLSQL Successfully completed](./images/task4/plsql-success.png)    
 
 11. Grant **SODA_APP** to DEMO user. This role provides privileges to use the SODA APIs, in particular, to create, drop, and list document collections. Use **Run Statement** button to execute this command.
 
@@ -399,22 +399,22 @@ On the Instance Details page, copy Public IP Address in your notes.
     </copy>
     ````
 
-    ![GRANT SODA](./images/task4/grant_soda.png)
+    ![GRANT SODA](./images/task4/grant-soda.png)
 
 12. Click **ADMIN** upper right corner, and **Sign Out**. 
 
-    ![Sign Out](./images/task4/sign_out.png)
+    ![Sign Out](./images/task4/sign-out.png)
 
 13. Click **Sign In**. Login using DEMO user credentials.
 
     - Username: demo
     - Password: DBlearnPTS#22_
     
-    ![Sign In DEMO](./images/task4/sign_in_demo.png)
+    ![Sign In DEMO](./images/task4/sign-in-demo.png)
     
 14. Click **Development** > **JSON**, and follow the tips. This is the interface you will use to manage your JSON collections in this document store.
 
-    ![DB Actions JSON](./images/task4/db_actions_json.png)
+    ![DB Actions JSON](./images/task4/db-actions-json.png)
 
 
 
