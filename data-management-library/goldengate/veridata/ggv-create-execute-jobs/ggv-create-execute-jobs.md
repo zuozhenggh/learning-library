@@ -5,7 +5,7 @@ This lab describes how to create and execute Jobs.
 
 You must create and execute a job to run the comparisons. The job configuration determines which compare pair groups are processed.
 
-*Estimated Lab Time*: 30 minutes
+*Estimated Time*: 30 minutes
 
 ### Objectives
 In this lab, you will:

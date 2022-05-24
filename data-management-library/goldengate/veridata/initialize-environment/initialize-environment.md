@@ -4,7 +4,7 @@
 
 We will review and startup all components required to run this workshop in this lab successfully.
 
-*Estimated Lab Time:* 10 Minutes.
+*Estimated Time:* 10 Minutes.
 
 ### Objectives
 - Initialize the workshop environment.
