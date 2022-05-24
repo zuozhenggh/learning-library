@@ -11,7 +11,7 @@ A connection is defined by a host, the port number of an Oracle GoldenGate Verid
 [](youtube:DiAapnWt0No)
 
 
-*Estimated Lab Time*: 45 minutes
+*Estimated Time*: 45 minutes
 
 ### Objectives
 In this lab, you will:
