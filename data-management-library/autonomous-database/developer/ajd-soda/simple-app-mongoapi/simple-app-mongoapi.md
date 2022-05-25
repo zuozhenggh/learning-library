@@ -26,7 +26,6 @@ In this lab, you will:
 
 Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-service application that will allow you to insert and retrieve JSON documents using REST calls.
 
-
 1. Access to **cloud shell** again. If you are not connected to **opc@devm**, **run** again the **ssh connections** using the **Public IP.** Replace <Public_IP> with your own one, removing < and > too. We copied the Public IP when we provisioned the compute instance few tasks back. Execute the following commands:
 
     ````
@@ -37,7 +36,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![ssh Connection](./images/task1/ssh.png)
 
-2. Download the files that we wull use for next steps in this bit.ly running this command:
+2. Download the files that we will use for next steps in this bit.ly running this command:
 
     ````
     <copy>
@@ -90,7 +89,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Requirements](./images/task1/requirements.png)
 
-5. Lets have a look at **simple-app.py**. In this file, we have the Python application code. Run the following command to see the code:
+7. Lets have a look at **simple-app.py**. In this file, we have the Python application code. Run the following command to see the code:
 
     ````
     <copy>
@@ -100,17 +99,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![cat simple-app](./images/task1/cat-simple-app.png)
 
-6. Use **pip package installer** for Python 3 to **install** the required libraries specified in the requirements.pip file.
-
-    ````
-    <copy>
-    pip3 install -r requirements.pip
-    </copy>
-    ````
-
-    ![Requirements](./images/task1/requirements.png)
-
-7. **Verify** all connection **variables are correct**. We are using **demo** **user** for Autonomous JSON database and the **password** that we have recommended during the workshop **DBlearnPTS#22_**.
+8. **Verify** all connection **variables are correct**. We are using **demo** **user** for Autonomous JSON database and the **password** that we have recommended during the workshop **DBlearnPTS#22_**.
 
     > Note: If you have change the user name and password to a different value, please run this commands providing the user and password.
     >
@@ -120,7 +109,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     export AJSON_SERVICE="ajdev_tp"
     ````
 
-8. **After checking if all variables are correct**. **Run** simple-app application using the following command:
+9. **After checking if all variables are correct**. **Run** simple-app application using the following command:
 
     ````
     <copy>
@@ -136,7 +125,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![simple-app Execution](./images/task1/simple-app-launch.png)
 
-9. Lets see what **simple-app.py is doing**, use the following command:
+10. Lets see what **simple-app.py is doing**, use the following command:
 
     ````
     <copy>
@@ -150,7 +139,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     **Your micro-service simple-app.py is being executed** so we can start inserting the documents.
 
-10. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. First POST:
+11. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. First POST:
 
     ````
     <copy>
@@ -172,7 +161,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![POST company One curl](./images/task1/curl-company-one.png)
 
-11. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Second POST:
+12. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Second POST:
 
     ````
     <copy>
@@ -194,7 +183,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![POST company Two curl](./images/task1/curl-company-two.png)
 
-12. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Third and Fourth POST:
+13. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. Third and Fourth POST:
 
     ````
     <copy>
@@ -230,13 +219,13 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
     ![POST company Third and Fourth curl](./images/task1/curl-company-three-four.png)
 
 
-13. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
+14. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database.
 
     http://[DEVM public-ip address]:5000/oracle/
 
     ![Microservice Company One, Two, Three & Four](./images/task1/microservice-company-one-two-three-four.png)
 
-14. Go to **cloud shell terminal.** We will **stop simple-app.py** running the following command. 
+15. Go to **cloud shell terminal.** We will **stop simple-app.py** running the following command. 
 
     ````
     <copy>
@@ -270,7 +259,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Select](./images/task2/select.png)
 
-2. **Describe** the table that holds JSON documents data in the collection. The name of the column that stores JSON documents is JSON_DOCUMENT.
+3. **Describe** the table that holds JSON documents data in the collection. The name of the column that stores JSON documents is JSON_DOCUMENT.
 
     ````
     <copy>
@@ -280,7 +269,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Desc](./images/task2/desc.png)
 
-3. SQL dot-notation syntax is designed for easy queries to return JSON values from tables. **Run** a JSON dot-notation query.
+4. SQL dot-notation syntax is designed for easy queries to return JSON values from tables. **Run** a JSON dot-notation query.
 
     ````
     <copy>
@@ -295,15 +284,15 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Select JSON](./images/task2/select-json.png)
 
-4. JSON data can be accessed via SQL from your applications. Click **App Builder** > **Create**. 
+5. JSON data can be accessed via SQL from your applications. Click **App Builder** > **Create**. 
     
     ![New App](./images/task2/new-app.png)
 
-5. Click **New Application**.
+6. Click **New Application**.
 
     ![New App Dashboard](./images/task2/new-app-dashboard.png)
 
-6. Provide the following information:
+7. Provide the following information:
 
     - Name: Companies
     - Click **Add Page**
@@ -339,18 +328,18 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Creating App](./images/task2/creating-app.png)
         
-7. Click **Run Application**. 
+8. Click **Run Application**. 
 
     ![Run App](./images/task2/run-app.png)
 
-8. **Log In** to Companies using the following credentials:
+9. **Log In** to Companies using the following credentials:
 
     - Username: demo
     - Password: DBlearnPTS#22_
 
     ![Log In Companies](./images/task2/log-in-companies.png)
 
-9. Click **Report**. 
+10. Click **Report**. 
 
     ![Report App](./images/task2/report-app.png)
     
@@ -363,8 +352,8 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 *You can proceed to the next lab…*
 
 ## Acknowledgements
-* **Author** - Valentin Leonard Tabacaru, Database Product Management
-* **Contributors** - Priscila Iruela, Technology Product Strategy Director and Victor Martin Alvarez, Technology Product Strategy Director
+* **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
+* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
 * **Last Updated By/Date** - Priscila Iruela, May 2022
 
 ## Need Help?

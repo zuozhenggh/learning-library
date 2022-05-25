@@ -43,8 +43,8 @@ Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.or
 *At this point, you are ready to start learning! Please proceed.*
 
 ## Acknowledgements
-* **Author** - Valentin Leonard Tabacaru, Database Product Management
-* **Contributors** - Priscila Iruela, Technology Product Strategy Director and Victor Martin Alvarez, Technology Product Strategy Director
+* **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
+* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
 * **Last Updated By/Date** - Priscila Iruela, May 2022
 
 ## Need Help?
