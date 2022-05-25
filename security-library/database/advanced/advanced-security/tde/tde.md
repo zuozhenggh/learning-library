@@ -334,7 +334,7 @@ This lab assumes you have:
 
 7. Now, your database is restored to the point in time prior to enabling TDE!
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

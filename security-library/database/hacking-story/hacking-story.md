@@ -117,7 +117,7 @@ If you didn't execute them yet, do it right now by following the instructions be
 
 -->
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Ransomware attack protocol
 ### **Overview**

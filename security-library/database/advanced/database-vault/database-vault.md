@@ -396,7 +396,7 @@ This lab assumes you have:
 
 3. Now, Database Vault is disabled in the container database as well as pdb1!
 
-You may now **proceed to the next lab**.
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

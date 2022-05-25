@@ -1162,7 +1162,7 @@ In this exercise, you will be exposed to the DBSAT utilities ("`dbsat_diff`" & "
 
     ![](./images/dbsat-061.png " ")
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

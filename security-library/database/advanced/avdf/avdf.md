@@ -2006,7 +2006,7 @@ Important: before performing this lab, you must have:
 
 7. **Now, the AVDF configuration is correctly reset!**
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

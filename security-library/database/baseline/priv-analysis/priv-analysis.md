@@ -116,7 +116,7 @@ This lab assumes you have:
 
     ![](./images/pa-007.png " ")
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

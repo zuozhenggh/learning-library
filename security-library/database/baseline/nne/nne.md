@@ -196,7 +196,7 @@ You will enable SQL*Net encryption with the `REQUESTED` value for `SQLNET.ENCRYP
 
     ![](./images/nne-013.png " ")
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

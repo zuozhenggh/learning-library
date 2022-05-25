@@ -1346,7 +1346,7 @@ Once you've defined all the data subsetting definitions in Step 13, it's time to
 
         ![](./images/dms-170.png " ")
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

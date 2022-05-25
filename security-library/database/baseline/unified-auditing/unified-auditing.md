@@ -401,7 +401,7 @@ In this lab you will configure the Unified Audit Trail and review an audit of Or
 
     ![](./images/ua-031.png " ")
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**

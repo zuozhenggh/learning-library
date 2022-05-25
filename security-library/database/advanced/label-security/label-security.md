@@ -329,7 +329,7 @@ Different applications have different purposes:
     ![](./images/ols-023a.png " ")
     ![](./images/ols-023b.png " ")
 
-You may now [proceed to the next lab](#next).
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**
