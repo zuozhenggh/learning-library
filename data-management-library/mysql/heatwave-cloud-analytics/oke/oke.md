@@ -17,7 +17,7 @@ In this lab, you will provision the following OCI resources using Resource Manag
 * MySQL Database System
 * An Operator Virtual Machine with kubectl and MySQL client tools installed
 
-### Prerequisites (Optional)
+### Prerequisites
 
 * You have an Oracle account
 * You have enough privileges to use OCI

@@ -34,7 +34,7 @@ The following diagram illustrates all the components deployed on OCI when you co
 
 ![OCI architecture](images/heatwave-cloud-analytics.png)
 
-### Prerequisites (Optional)
+### Prerequisites
 
 * You have an Oracle account
 * You have enough privileges to use OCI

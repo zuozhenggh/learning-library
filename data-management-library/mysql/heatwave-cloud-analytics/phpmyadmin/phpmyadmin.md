@@ -18,7 +18,7 @@ In this lab, you will:
 * Deploy phpMyAdmin to OKE
 * Manage MySQL using phpMyAdmin
 
-### Prerequisites (Optional)
+### Prerequisites
 
 * You have an Oracle account
 * You have enough privileges to use OCI

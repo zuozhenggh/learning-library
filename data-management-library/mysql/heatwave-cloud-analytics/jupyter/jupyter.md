@@ -18,7 +18,7 @@ In this lab, you will:
 * Deploy Jupyter notebook to OKE
 * Analyze data in MySQL HeatWave
 
-### Prerequisites (Optional)
+### Prerequisites
 
 * You have an Oracle account
 * You have enough privileges to use OCI
