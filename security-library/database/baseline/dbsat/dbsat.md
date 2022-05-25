@@ -8,7 +8,7 @@ This workshop introduces the functionality of Oracle Database Security Assessmen
 *Version tested in this lab:* Oracle DBSAT 2.2.2
 
 ### Video Preview
-Watch a preview of "*Understanding DBSAT (April 2018)*" [](youtube:XsPuiCPcyA0)
+Watch a preview of "*LiveLabs - Oracle Database Security Assessment Tool (DBSAT) (May 2022)*" [](youtube:3XxA1qhNDpQ)
 
 ### Objectives
 In this lab, you will be able to play with the DBSAT and understand how it works and the immediate value it provides. Many customers already benefited from running DBSAT and were able to improve their security posture. DBSAT helps you to identify the overall security posture, who are the users and their entitlements, and to know how much and where is sensitive data located.
@@ -1217,7 +1217,10 @@ After having executed 1000s of Database Security Assessments in our customers ba
 Technical Documentation:
 - [Oracle DBSAT 2.2.2](https://docs.oracle.com/en/database/oracle/security-assessment-tool/2.2.2/index.html)
 
+Video:
+- *Understanding DBSAT (April 2018)*[](youtube:XsPuiCPcyA0)
+
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Pedro Lopes, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2022
