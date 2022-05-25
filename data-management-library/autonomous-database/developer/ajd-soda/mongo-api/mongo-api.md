@@ -54,7 +54,7 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
 
     ![Network Configuration Edit](./images/task1/network-configuration-edit.png)
 
-4. **Type** your **Public IP Address** in the **Values** field. In **IP notation type** field, you should have selected **IP Address**. **Add My IP Addreess** button too. Click **Save Changes**.
+4. **Type** your **DEVM Public IP Address** in the **Values** field. In **IP notation type** field, you should have selected **IP Address**. **Add My IP Addreess** button too. Click **Save Changes**.
 
     ![IP Address Added](./images/task1/ip-addresses.png)
 
@@ -170,8 +170,8 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
 *Congratulations! Well done!*
 
 ## Acknowledgements
-* **Author** - Valentin Leonard Tabacaru, Database Product Management
-* **Contributors** - Priscila Iruela, Technology Product Strategy Director and Victor Martin Alvarez, Technology Product Strategy Director
+* **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
+* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
 * **Last Updated By/Date** - Priscila Iruela, May 2022
 
 ## Need Help?

@@ -421,8 +421,8 @@ On the Instance Details page, copy Public IP Address in your notes.
 *You can proceed to the next lab…*
 
 ## Acknowledgements
-* **Author** - Valentin Leonard Tabacaru, Database Product Management
-* **Contributors** - Priscila Iruela, Technology Product Strategy Director and Victor Martin Alvarez, Technology Product Strategy Director
+* **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
+* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
 * **Last Updated By/Date** - Priscila Iruela, May 2022
 
 ## Need Help?

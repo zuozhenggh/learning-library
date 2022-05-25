@@ -24,7 +24,7 @@ In this lab, you will:
 * Use APEX to visualize document store in a very fast way
 * Use multi-cloud support to your Python web service to support MongoDB
 * Compare and understand the differences between Oracle SODA with MongoDB API and Oracle MongoAPI capability
-* Use MongoAPI capability for micro-service Python applicacion
+* Use MongoAPI capability for micro-service Python application
 
 
 ## Prerequisites
@@ -43,8 +43,8 @@ Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.or
 *At this point, you are ready to start learning! Please proceed.*
 
 ## Acknowledgements
-* **Author** - Valentin Leonard Tabacaru, Database Product Management
-* **Contributors** - Priscila Iruela, Technology Product Strategy Director and Victor Martin Alvarez, Technology Product Strategy Director
+* **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
+* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
 * **Last Updated By/Date** - Priscila Iruela, May 2022
 
 ## Need Help?
