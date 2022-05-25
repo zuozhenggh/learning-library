@@ -677,7 +677,6 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
     </copy>
     ```
 
-
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
 * **Contributors** - Robert Pastijn
