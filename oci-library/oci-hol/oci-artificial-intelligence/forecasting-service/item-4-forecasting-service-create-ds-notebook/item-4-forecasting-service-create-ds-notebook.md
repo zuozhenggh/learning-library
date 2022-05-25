@@ -20,7 +20,7 @@ In this lab, we will learn how to Forecast using Data Science Notebook. We will 
 ### Prerequisites:
 *	A free tier or paid tenancy account in OCI
 * Completed all the tasks in Getting Started
-* Download the sample python [notebook](files/ForecastingAPI_LiveLabs_SampleNotebook.ipynb). It will be used to explain how to use the OCI Forecasting Service APIs
+* Download the sample python [notebook](files/forecasting-api-sample-notebook.ipynb). It will be used to explain how to use the OCI Forecasting Service APIs
 
 
 ## Task 1: API key generation  
@@ -215,8 +215,8 @@ Currently, OCI Forecasting Service APIs support datasets that can be in one of t
 
 1. Below is the sample dataset to help us to easily understand how the input data looks like, Download the files to the local machine.
 
-* [Primary data](files/favorita_13_beverages_primary_v1.csv)
-* [Additional data](files/favorita_13_beverages_add_v1.csv)
+* [Primary data](files/primary-15-automotive.csv)
+* [Additional data](files/add-15-automotive.csv)
   
 
 2.  Next, we need to upload the sample training data into data science notebook, to be used for *inline data* preparation for model training in next steps.
@@ -243,8 +243,8 @@ Click on upload and then browse to file to be uploaded:
 path for the csv file that has the time series data
 
     ```Python
-    df_primary = pd.read_csv('primary_15_AUTOMOTIVE.csv')
-    df_add = pd.read_csv('add_15_AUTOMOTIVE.csv')
+    df_primary = pd.read_csv('primary-15-automotive.csv')
+    df_add = pd.read_csv('add-15-automotive.csv')
     ```
 
 3.  (Optional)Convert the date field to "yyyy-mm-dd hh:mm:ss" format with below commands if not in the right format

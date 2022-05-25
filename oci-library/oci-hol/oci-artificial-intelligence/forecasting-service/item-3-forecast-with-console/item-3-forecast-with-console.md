@@ -191,8 +191,8 @@ Currently, our APIs support datasets that can be in one of the following formats
 
 Here is a sample dataset to help us easily understand what the input data looks like, Download the files to our local machine.
 
-* [Primary data](files/primary_15_AUTOMOTIVE.csv)
-* [Additional data](files/add_15_AUTOMOTIVE.csv)
+* [Primary data](files/primary-15-automotive.csv)
+* [Additional data](files/add-15-automotive.csv)
   
 
 ## Task 4: Upload Data to Object Storage
