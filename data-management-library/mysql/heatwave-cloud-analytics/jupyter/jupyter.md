@@ -2,11 +2,11 @@
 
 ## Introduction
 
-<a href="https://www.jubyterlab.org/", target="\_blank">JupyterLab</a> notebook is the latest web-based interactive development environment for notebooks, code, and data. Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning.
+<a href="https://www.jubyterlab.org/", target="\_blank">JupyterLab</a> notebook is the latest web-based interactive development environment for notebooks, code, and data. Its flexible interface allows users to configure and arrange workflows for machine learning analysis, data profiling and other data science analytics tasks easily.
 
-In this lab, we will deploy **JupyterLab** to Oracle Container for Kubernetes Engine and to create a simple notebook to analyze data in **MySQL HeatWave**.
+In this lab, we will deploy **JupyterLab** to Oracle Container for Kubernetes Engine and create a simple notebook to analyze data in **MySQL HeatWave**.
 
-**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud-native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 Estimated Time: 10 minutes
 
@@ -79,7 +79,7 @@ helm upgrade --install jhub jupyterhub/jupyterhub --namespace jhub
 </copy>
 ```
 
-	> **Note** JupyterHub is multi-user environment to host Jupyter notebook. By default, helm will the latest stable version of JupyterHub with the classic Jupyter notebook UI. If you want to try out the latest JupyterLab notebook, specify the development release of JupyterHub using the specifiy <a href="https://jupyterhub.github.io/helm-chart/", target="\_black">helm version</a> as shown in the following example:
+	> **Note** JupyterHub is a multi-user environment to host the Jupyter notebook. By default, the helm will install the latest stable version of JupyterHub with the classic Jupyter notebook UI. If you want to try out the latest JupyterLab notebook, specify the development release of JupyterHub using the specific version <a href="https://jupyterhub.github.io/helm-chart/", target="\_black">helm version</a> as shown in the following example:
 	```
 	<copy>
 	helm upgrade --install jhub jupyterhub/jupyterhub --namespace jhub --version=1.1.3-n410.hd8ae7348
@@ -108,7 +108,7 @@ kubectl -n jhub get svc proxy-public -o jsonpath='{.status.loadBalancer.ingress[
 
 	![jupyter terminal](images/jupyter-terminal.png)
 
-2. Install mysql connector using pip
+2. Install the MySQL connector for Python using pip
 
 	```
 <copy>
@@ -117,7 +117,7 @@ pip3 install mysql-connector-python
 ```
 	![install mysql connector](images/import-mysql-connector.png)
 
-3. Install sql modules
+3. Install the iPython-sql modules
 
 	```
 <copy>
@@ -126,7 +126,7 @@ pip3 install ipython-sql
 ```
 	![install ipython-sql](images/install-ipython-sql.png)
 
-4. Install mysql modules
+4. Install the pymysql modules
 
 	```
 <copy>
@@ -157,7 +157,7 @@ pip3 install pymysql
 	
 	```sql
 <copy>
-%sql mysql+pysql://admin:Oracle#123@<mysql_private_ip>/airportdb
+%sql mysql+pysql://admin:<password>@<mysql_private_ip>/airportdb
 </copy>
 ```
 
@@ -190,7 +190,7 @@ limit 10;
 db = mysql.connector.connect(
    host="10.0.30.97",
    user="admin",
-   passwd="Oracle#123"
+   passwd="<password>"
 )
 print(db)
 </copy>

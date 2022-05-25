@@ -2,9 +2,9 @@
 
 ## Introduction
 
-In this lab, you will deploy an ingress-controller on **Oracle Container Enginer for Kubernetes (OKE)** to allow public IP access to Kubernetes services (similar to load balancer). We will be using this ingress-controller to route access to Zeppelin deployed on OKE.
+In this lab, you will deploy an ingress-controller on **Oracle Container Engine for Kubernetes (OKE)** to allow public IP access to Kubernetes services (similar to load balancer). We will be using this ingress-controller to route access to Zeppelin deployed on OKE.
 
-**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud-native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 Estimated Time: 5 minutes
 
@@ -52,7 +52,7 @@ This lab assumes you have:
 
     ![kubectl script](images/copy-kubectl-script.png)
 
-5. On OCI Console, click on the cloud shell to launch cloud shell
+5. On OCI Console, click on the cloud shell to launch the OCI cloud shell
 
     ![Cloud Shell](images/cloud-shell.png)
 
@@ -65,7 +65,7 @@ This lab assumes you have:
 
 ## Task 3: Deploy ingress-controller to OKE
 
-1. Apply the ingress controller deployment yaml to **OKE**
+1. Apply the ingress controller deployment YAML to **OKE**
 
     ```
 	<copy>

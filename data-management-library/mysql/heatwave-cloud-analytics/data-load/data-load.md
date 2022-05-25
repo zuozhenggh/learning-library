@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this lab, we will walk you through the steps to upload the data into **MySQL** using mysql shell utility
+In this lab, we will walk you through the steps to upload the data into **MySQL** using MySQL shell utility
 
 Estimated Time: 10 minutes
 
@@ -22,15 +22,15 @@ This lab assumes you have:
 
 ## Task 1: Connect to oke-operator compute instance
 
-1. Log in to **OCI** and click on the **Hamburger Menu** ![](images/hamburger.png) at the top left corner of the OCI console, and select **Compute**, anc click on **Instances**
+1. Log in to **OCI** and click on the **Hamburger Menu** ![](images/hamburger.png) at the top left corner of the OCI console, select **Compute**, and click on **Instances**
 
 	![Compute Menu](images/compute-menu.png)
 
-2. In the Compute>Instance page, select the right compartment under “Compartment” > “HOL-compartment” at the right hand side. The list of instances will be showed. Then, find out the **Public IP** of the compute instance **oke-operator**, we will need this to connect to the compute instance to load the data into **MySQL Database Service**
+2. In the Compute>Instance page, select the right compartment under “Compartment” > “HOL-compartment” on the right side. The list of instances will be shown. Then, find out the **Public IP** of the compute instance **oke-operator**, we will need this to connect to the compute instance to load the data into **MySQL Database Service**
 
 	![Compute ip](images/compute-ip.png)
 
-3. Launch OCI Cloud Shell to connect to **oke-operator** compute instance
+3. Launch OCI Cloud Shell to connect to the **oke-operator** compute instance
   Click on the icon on the top right corner of OCI Console to launch the Cloud Shell.
 	![Cloud Shell](images/cloud-shell.png)
 
@@ -38,7 +38,7 @@ This lab assumes you have:
 
 	![Launch Cloud Shell](images/cloud-shell-launch.png)
 
-4. Follow the steps below to download the private key for connecting to oke-operator compute instance. Please use the public IP address of oke-operator in Step 2
+4. Follow the steps below to download the private key for connecting to oke-operator compute instance. Please use the public IP address of the oke-operator in Step 2
 
 	```
 	<copy>
@@ -90,7 +90,7 @@ This lab assumes you have:
 5. If you did not note down the private ip of **MDSInstance**
 	![MySQL Private IP](images/mds-ip.png)
 
-6. Connect to MySQL instance. Update password (default: Oracle#123) and host (same as MySQL host private IP address). 
+6. Connect to MySQL instance. Update password (default: Oracle#123) and host (same as MySQL host private IP address).
 
 	```
 	<copy>
@@ -100,7 +100,7 @@ This lab assumes you have:
 
 7. Load data
 
-  We will first simulate the data loading to make sure that we are able to load the data without any errors. Note the flag **dryRun** to simulate the data loading without executing the actual data loading
+  We will first simulate the data loading to make sure that we can load the data without any errors. Note the flag **dryRun** to simulate the data loading without executing the actual data loading
 
 	```
 	<copy>
@@ -151,7 +151,7 @@ This lab assumes you have:
 
 	![Check Database](images/check-db.png)
 
-  Execute the following query to find per-company average age of passengers from Germany, Spain and Greece. This query will take about 12-13s to complete
+  Execute the following query to find the per-company average age of passengers from Germany, Spain, and Greece. This query will take about 12-13s to complete
 
 	```
 	<copy>

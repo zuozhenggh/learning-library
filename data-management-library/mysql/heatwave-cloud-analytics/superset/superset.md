@@ -2,11 +2,11 @@
 
 ## Introduction
 
-<a href="https://superset.apache.org/", target="\_blank">Superset</a> is one of the top Apache projects that offers a set of tools to build dashboards to visual data stored in your database.
+<a href="https://superset.apache.org/", target="\_blank">Superset</a> is one of the top Apache projects that offers a set of tools to build dashboards to visualize data stored in your database.
 
 In this lab, you will deploy **Superset** using Helm to Oracle Container Engine for Kubernetes infrastructure, and create a simple dashboard for **MySQL HeatWave**.
 
-**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud-native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 Estimated Time: 15 minutes
 
@@ -14,8 +14,8 @@ Estimated Time: 15 minutes
 
 In this lab, you will:
 
-* Install helm cli client and Superset repo for k8s package installation
-* Deploy Superset package to the OKE cluster using helm cli client
+* Install helm CLI client and Superset repo for k8s package installation
+* Deploy Superset package to the OKE cluster using helm CLI client
 * Use port-forward in oke-operator VM to route 8088 port traffic to superset service
 * Change VCN security list to open 8088
 * Define MySQL Database in Superset
@@ -46,7 +46,7 @@ This lab assumes you have:
 
 	![Connect to VM](images/connect-to-vm.png)
 
-2. Install **helm** cli client to **oke-operator** compute instance 
+2. Install **helm** CLI client to **oke-operator** compute instance
 
     >**Note** Skip this step if you have helm client installed already
 
@@ -58,7 +58,7 @@ This lab assumes you have:
 
     ![Install helm cli](images/helm-cli-install.png)
 
-3. Add superset to helm repository
+3. Add **Superset** to helm repository
 
     ```
     <copy>
@@ -185,9 +185,3 @@ This lab assumes you have:
 	* Rayes Huang, OCI Solution Specialist, OCI Asia Pacific
 
 * **Last Updated By/Date** - Ryan Kuan, May 2022
-
-
-
-
-
-

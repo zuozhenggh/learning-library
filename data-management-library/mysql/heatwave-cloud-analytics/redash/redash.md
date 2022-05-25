@@ -2,7 +2,7 @@
 
 ## Introduction
 
-<a href="https://redash.io/", target="\_blank">Redash</a> provides a dashboard builder to visualize your data as well as a SQL editor to develop your SQL and reports.
+<a href="https://redash.io/", target="\_blank">Redash</a> provides a dashboard builder to visualize your data and a SQL editor to develop your SQL and reports.
 
 In this lab, we will deploy **Redash** to Oracle Container Engine for Kubernetes infrastructure to analyze data in **MySQL HeatWave**.
 
@@ -50,7 +50,7 @@ curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 |
 </copy>
 ```
 
-3. Add Redash repository using helm
+3. Add **Redash** repository using helm
 
 	```
 <copy>
@@ -74,7 +74,7 @@ EOM
 </copy>
 ```
 
-5. Install Redash using helm
+5. Install **Redash** using helm
 
 	```
 <copy>

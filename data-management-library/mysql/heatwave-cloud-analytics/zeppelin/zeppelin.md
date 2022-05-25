@@ -2,11 +2,11 @@
 
 ## Introduction
 
-<a href="https://zeppelin.apache.org/" target="\_blank">Zeppelin</a> is web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala, Python, R and more.
+<a href="https://zeppelin.apache.org/" target="\_blank">Zeppelin</a> is a web-based notebook that enables data-driven, interactive data analytics and collaborative documents with SQL, Scala, Python, and R.
 
-In this lab, you will deploy **Zeppelin** notebook to Oracle Kubernetes infrastructure and create a simple notebook to **MySQL HeatWave**.
+In this lab, you will deploy the **Zeppelin** notebook to Oracle Kubernetes infrastructure and create a simple notebook to **MySQL HeatWave**.
 
-**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud-native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 Estimated Time: 10 minutes
 
@@ -40,7 +40,7 @@ In this lab, you will:
 
     ![Connect to VM](images/connect-to-vm.png)
 
-2. Download the [Zeppelin-Server](files/zeppelin-server.yaml?download=1)
+2. Download the [Zeppelin-Server YAML](files/zeppelin-server.yaml?download=1)
 
     ```
     <copy>
@@ -48,7 +48,7 @@ In this lab, you will:
     </copy>
     ```
 
-3. Download the [Zeppelin ingress](files/zeppelin-ing.yaml)
+3. Download the [Zeppelin ingress YAML](files/zeppelin-ing.yaml) 
     ```
     <copy>
     wget https://raw.githubusercontent.com/kuanrcl/learning-library/master/data-management-library/mysql/heatwave-cloud-analytics/zeppelin/files/zeppelin-ing.yaml
@@ -85,7 +85,9 @@ In this lab, you will:
     ```
 	![Ingress IP](images/ingress.png)
 
-6. Access the deployed Zeppelin application. Point your browser to **http://&lt;INGRESS&#95;PUBLIC&#95;IP&#95;ADDRESS&gt;/zeppelin**
+6. Access the deployed Zeppelin application. Point your browser to **http://&lt;INGRESS&#95;PUBLIC&#95;IP&#95;ADDRESS&gt;/zeppelin/**
+
+    >Note: Please ensure you have the closing **/** in the url, that is, **zeppelin/**
 
 	![Zeppelin](images/zeppelin.png)
 

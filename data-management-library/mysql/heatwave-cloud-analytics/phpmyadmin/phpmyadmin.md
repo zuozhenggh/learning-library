@@ -2,7 +2,7 @@
 
 ## Introduction
 
-<a href="https://www.phpmyadmin.net/", target="\_blank">PhpMyAdmin</a> is a web-based MySQL management tool to help you manage MySQL database.
+<a href="https://www.phpmyadmin.net/", target="\_blank">PhpMyAdmin</a> is a web-based MySQL management tool to help you manage MySQL databases.
 
 In this lab, we will deploy **phpMyAdmin** to Oracle Container Engine for Kubernetes to manage MySQL HeatWave.
 
@@ -40,7 +40,7 @@ In this lab, you will:
 
 	  ![Connect to VM](images/connect-to-vm.png)
 
-2. Create the phpMyAdmin yaml deployment script
+2. Create the phpMyAdmin YAML deployment script
 
     ```
 <copy>
@@ -81,7 +81,7 @@ EOF
 </copy>
 ```
 
-3. Specify your MySQL private IP address in the yaml file, replace **MYSQL&#95;PRIVATE&#95;IP&#95;ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
+3. Specify your MySQL private IP address in the YAML file, replace **MYSQL&#95;PRIVATE&#95;IP&#95;ADDRESS** with your MySQL Private IP Address. For example, if your MySQL Private IP address is 10.0.30.11, then the sed command will be "sed -i -e 's/MYSQL_HOST/10.0.30.11/g' phpmyadmin.yaml"
 
     ```
  <copy>
@@ -89,7 +89,7 @@ EOF
  </copy>
  ```
 
-4. Create a phpmyadmin namespace in OKE
+4. Create the **phpmyadmin** namespace in OKE
 
     ```
  <copy>
@@ -105,7 +105,7 @@ EOF
  </copy>
 ```
 
-6. Login to the operator VM and using port-forward
+6. Login to the operator VM and start the port-forward service
 
     ```
 <copy>
@@ -113,7 +113,7 @@ kubectl port-forward service/phpmyadmin-svc -n phpmyadmin --address 0.0.0.0 8080
 </copy>
 ```
 
-7. Access the deployed phpMyAdmin application using your browser, http:://&lt;PUBLIC&#95;IP of Operator VM&gt;:8080/. Enter MySQL admin user, **admin**, and password **Oracle#123**
+7. Access the deployed phpMyAdmin application using your browser, **http:://&lt;PUBLIC&#95;IP of Operator VM&gt;:8080/**. Enter MySQL admin user, **admin**, and default password **Oracle#123**
 
 	  ![PhpMyAdmin](images/phpmyadmin.png)
 

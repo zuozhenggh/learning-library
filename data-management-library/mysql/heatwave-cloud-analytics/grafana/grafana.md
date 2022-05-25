@@ -2,11 +2,11 @@
 
 ## Introduction
 
-<a href="https://www.grafana.com/", target="\_blank">Grafana</a> is dashboard platform to query, visualize to  understand your data stored in the database
+<a href="https://www.grafana.com/", target="\_blank">Grafana</a> is a dashboard platform to query, visualize to  understand your data stored in the database
 
 In this lab, you will deploy **Grafana** to Oracle Container Engine for Kubernetes infrastructure, and connect and build a few simple panels on **MySQL HeatWave**.
 
-**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
+**Oracle Container Engine for Kubernetes (OKE)** is an Oracle-managed container orchestration service that can reduce the time and cost to build modern cloud-native applications. Unlike most other vendors, Oracle Cloud Infrastructure provides Container Engine for Kubernetes as a free service that runs on higher-performance, lower-cost compute shapes.
 
 Estimated Time: 15 minutes
 
@@ -259,7 +259,7 @@ mysqlsh --sql -uadmin -p<password> -h<MDS IP> < my2_80.sql
 
 	![Dashboard](images/grafana-save-dashboard.png)
 
-## Task 8: Create 2 panels for comparisons
+## Task 8: Create panels for comparisons
 
 1. Click on the **Add panel** icon in the dashboard
 
@@ -317,7 +317,7 @@ LIMIT 10;
 
   ![Dashboard](images/grafana-edit-panel-off-secondary.png)
 
-    >Note: the ""SET_VAR(use_secondary_engine=off)"" will instruct the optimizer to route the SQL statement to MySQL instance instead of HeatWave
+    >Note: the  **SET_VAR(use_secondary_engine=off)** will instruct the optimizer to route the SQL statement to MySQL instance instead of HeatWave
     The function ""now()"" is added to the SQL Statement so that we can create time chart in Grafana
 
 9. Apply and switching back to the dashboard; Click Save icon to save the dashboard.
