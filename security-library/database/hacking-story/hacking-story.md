@@ -88,35 +88,6 @@ Once you understand how they do it, it will be easier for you to understand how 
 ## Task 8: Secure your backup/restore steps
 
 
-<!--
-**Before beginning this lab**, make sure you have performed steps 1 to 4 of the Transparent Data Encryption (TDE) Livelabs!
-
-If you didn't execute them yet, do it right now by following the instructions below:
-
-1. Open a Terminal session on your **DBSec-Lab** VM as OS user *oracle*
-
-    ````
-    <copy>sudo su - oracle</copy>
-    ````
-
-    **Note**: If you are using a remote desktop session, double-click on the *Terminal* icon on the desktop to launch a session
-
-2. Go to the TDE scripts directory
-
-    ````
-    <copy>cd $DBSEC_LABS/tde</copy>
-    ````
-
-3. Make sure you have a cold-backup of your database (**the DB will reboot!**)
-
-    ````
-    <copy>./tde_backup_db.sh</copy>
-    ````
-
-    ![](../advanced-security/tde/images/tde-001.png " ")
-
--->
-
 You may now proceed to the next lab!
 
 ## **Appendix**: About the Ransomware attack protocol
