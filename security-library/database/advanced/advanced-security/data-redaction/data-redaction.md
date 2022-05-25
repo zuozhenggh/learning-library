@@ -8,7 +8,7 @@ This workshop introduces the various features and functionality of Oracle Data R
 *Version tested in this lab:* Oracle DB 19.13
 
 ### Video Preview
-Watch a preview of "*Livelabs - Oracle ASO (Transparent Data Encryption & Data Redaction) (May 2022)*" [](youtube:)
+Watch a preview of "*Livelabs - Oracle ASO (Transparent Data Encryption & Data Redaction) (May 2022)*" [](youtube:JflshZKgxYs)
 
 ### Objectives
 Dynamically redact sensitive data preventing it from being displayed outside the application

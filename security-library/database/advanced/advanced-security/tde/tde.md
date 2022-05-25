@@ -8,7 +8,7 @@ This workshop introduces the various features and functionality of Oracle Transp
 *Version tested in this lab:* Oracle DB 19.13
 
 ### Video Preview
-Watch a preview of "*Livelabs - Oracle ASO (Transparent Data Encryption & Data Redaction) (May 2022)*" [](youtube:)
+Watch a preview of "*Livelabs - Oracle ASO (Transparent Data Encryption & Data Redaction) (May 2022)*" [](youtube:JflshZKgxYs)
 
 ### Objectives
 - Take a cold backup of the database to enable db restore if needed
