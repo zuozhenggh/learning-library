@@ -22,8 +22,8 @@
 
 ## Task 1: サンプルアプリケーションの導入  
 
-このサンプルはオープンソースのJavaベンチマークツールであるJava Microbenmark Harness(JMH)
-を利用して、配列の各要素に対する単純な計算を行うJavaプログラムです。  
+このサンプルはオープンソースのJavaベンチマークツールである[Java Microbenmark Harness(JMH)](https://github.com/openjdk/jmh)
+を利用して、配列の各要素に対する単純な計算、集計を行うJavaプログラムです。  
 プログラムを3回の反復実行による平均時間（ナノ秒）を計測します。GraalコンパイラとC2コンパイラでそれぞれ実行し、平均時間を比較します。
 
 1. サンプルアプリケーションをダウンロードします。  
@@ -64,7 +64,7 @@
     ```
     
     サンプルソースの中で、int型の配列の各要素に対し、Java Stream APIを利用して様々な計算処理を行います。  
-    またJMHの仕様に従ってウォームアップの回数、反復回数、計測対象モード（平均時間）などのベンチマーク仕様をアノテーション形式で規定しています。
+    また[JMH](https://github.com/openjdk/jmh)の仕様に従ってウォームアップの回数(@Warmup)、反復回数(@Measurement)、計測対象モード（@BenchmarkMode）などのベンチマーク仕様をアノテーション形式で規定しています。
 
     ```
     package org.graalvm.demos;
@@ -145,6 +145,7 @@
 	```
   <copy>java -XX:-UseJVMCICompiler -jar target/benchmarks.jar</copy>
   ```
+  Graalコンパイラと従来のC2コンパイラの実行結果Score（＝平均実行時間)を比較してみてください。
 
 5. Graal JIT Compiler
 
@@ -159,7 +160,15 @@
   Benchmark                             Mode  Cnt    Score    Error  Units
 JavaSimpleStreamBenchmark.testMethod  avgt    3  250.740 ± 37.220  ns/op
     ```
+  このベンチマークでは、Graal コンパイラのScore(＝平均実行時間)がC2コンパイラより5分の1に短縮された結果となっています。
 
+  サンプルソースの中のアノテーション(@Measurementなど）を調整して、反復回数や表示モードを変更してベンチマークを実施してみてください。
+
+## Learn More
+
+*参考リンク*
+* [graalvm-demos](https://github.com/graalvm/graalvm-demos)
+* [Java Microbenmark Harness(JMH)](https://github.com/openjdk/jmh)
 
 ## Acknowledgements
 
