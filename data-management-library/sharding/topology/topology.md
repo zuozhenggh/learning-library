@@ -1,4 +1,4 @@
-# Exploring Sharding Topology
+# Explore Sharding Topology
 
 ## Introduction   
 Docker is a set of platform-as-a-service products that use OS-level virtualization to deliver software in packages called containers. Docker containers are used to deploy the Oracle Sharding topology and the eShop application.

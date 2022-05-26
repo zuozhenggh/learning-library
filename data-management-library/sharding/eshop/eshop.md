@@ -1,4 +1,4 @@
-# Building Applications with Oracle Sharding
+# Build Applications with Oracle Sharding
 
 ## Introduction   
 eShop is an example web-based, e-commerce retail application, built for an online electronics retailer.
