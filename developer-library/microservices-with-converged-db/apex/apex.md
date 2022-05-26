@@ -110,7 +110,7 @@ In this task, you will create a new APEX app based on the inventory table.
 
 
 ## Task 3: Create a New APEX App based on Order history data 
-In this task you will create a new APEX app for analytics purpouse based on an extended database schema based on order lists, order time, time to delivery and so on that will not be implemented through a microservice because is out of scope. In order to facilitate an easier approach to build this analytics dashboard, we provide instead a CSV file from [here](AnalyticsDataForLab6.csv) to go straight to the APEX A app development.
+In this task you will create a new APEX app for analytics purpouse based on an extended database schema based on order lists, order time, time to delivery and so on that will not be implemented through a microservice because is out of scope. In order to facilitate an easier approach to build this analytics dashboard, we provide instead a CSV file from [here](AnalyticsDataForLab6.csv?raw=1) to go straight to the APEX A app development.
 
 1.  Repeat same steps in Task 1, choosing **DB1** as Autonomous DB, and **ORDERUSER** as user and Workspace name. After that, proceed in building the new app. 
 
@@ -125,7 +125,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
 
     ![Create from CSV](images/create-from-csv-1.png)
 
-5. Click on **Choose File** button and upload CSV to download [here](AnalyticsDataForLab6.csv).
+5. Click on **Choose File** button and upload CSV to download [here](AnalyticsDataForLab6.csv?raw=1).
 
     ![Drag & Drop file](images/drag-and-drop-1.png)
 
