@@ -165,8 +165,10 @@ native imageは実行する前にビルドされ、そのビルドはアクセ�
     }
     </copy>
     ```
+    
+    Ctrl＋Xを押し、内容保存の確認メッセージに対し、"Y"を入力し、Enterを押下してソースファイルを保存します。 
 
-2. 「ReflectionExmpple.java」をコンパイルし、実行します。
+2. 「ReflectionExmpple.java」をコンパイルし、実行します。結果が正常に表示されていることを確認します。
 
     ```
     <copy>javac ReflectionExample.java</copy>
@@ -178,7 +180,7 @@ native imageは実行する前にビルドされ、そのビルドはアクセ�
     <copy>java ReflectionExample StringCapitalizer capitalize "hello world"</copy>
     ```
 
-3. 「ReflectionExample.class」をnative imageに変換後実行します。
+3. 「ReflectionExample.class」をnative imageに変換後再度実行します。
 
     ```
     <copy>native-image --no-fallback ReflectionExample</copy>
@@ -249,7 +251,7 @@ native imageは実行する前にビルドされ、そのビルドはアクセ�
     ]
     ```
 
-5. エージェントによる構成ファイルを作成後、再度native imageをビルドし、実行します。今後native imageをビルドする際、JSON形式の構成ファイルが参照され、リフレクションの実行時クラスとメソッドが解決されます。
+5. エージェントによる構成ファイルを作成後、再度native imageをビルドし、実行します。今度はnative imageをビルドする際、JSON形式の構成ファイルが参照され、リフレクションの実行時クラスとメソッドが解決されます。
 
     ```
     <copy>native-image --no-fallback ReflectionExample</copy>
@@ -259,14 +261,14 @@ native imageは実行する前にビルドされ、そのビルドはアクセ�
     <copy>./reflectionexample StringReverser reverse "hello world"</copy>
     ```
     ```
-    <copy>java ReflectionExample StringCapitalizer capitalize "hello world"</copy>
+    <copy>./reflectionexample StringCapitalizer capitalize "hello world"</copy>
     ```
 
     今度はnative imageが正常に実行されることを確認できます。
     ```
     $ [opc@instance-20220522-1556 ~]$ ./reflectionexample StringReverser reverse "hello world"
     dlrow olleh
-    [opc@instance-20220522-1556 ~]$ java ReflectionExample StringCapitalizer capitalize "hello world"
+    [opc@instance-20220522-1556 ~]$ ./reflectionexample StringCapitalizer capitalize "hello world"
     HELLO WORLD
     ```
 
