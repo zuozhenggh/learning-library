@@ -12,9 +12,9 @@ We developed this application to demonstrate Oracle Sharding (a hyperscale globa
 -  Multiple capabilities, like the Simple Oracle Document Access (SODA) API + Text Search for JSON, joins, transactions, and ACID properties for relational queries, fuzzy match, type ahead, free-form text search, and sentiment analysis for text.
 
 
-*Estimated Lab Time*: 10 Minutes
+*Estimated Time*: 10 Minutes
 
-![<application front page>](./images/app_front.jpg " ")
+![<application front page>](./images/app-front.jpg " ")
 
 Typically, multiple technologies and products are required to develop such an application. For example, you would need a JSON database, a Text Index application, a relational database, and an Analytics engine, which makes it difficult to query data across multiple data stores. Further, using the traditional methods, you could spend several years and millions of dollars in licensing and development.
 
@@ -45,7 +45,7 @@ This lab assumes you have:
 
 1. **eShop URL Access:** When you access the application using the URL  (**`http://localhost:3000/`**), the application's home page opens. 
 
-  ![<application front page>](./images/app_front.jpg " ")
+  ![<application front page>](./images/app-front.jpg " ")
 
   **Note:** Demo application can also be accessed directly from your browser using public IP with the URL (**`http://public-ip:3000/`**), you can get it as below highlighted in red.
 

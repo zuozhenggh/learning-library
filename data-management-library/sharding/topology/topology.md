@@ -8,7 +8,7 @@ In this workshop, we attempt to use minimal resources to show the demonstration,
 You can find more details at [Oracle Sharding on Docker](https://github.com/oracle/db-sharding/tree/master/docker-based-sharding-deployment)
 
 
-*Estimated Lab Time*: 15 Minutes
+*Estimated Time*: 15 Minutes
 
  ![<workshop architecture>](./images/topology.jpg " ")  
 
