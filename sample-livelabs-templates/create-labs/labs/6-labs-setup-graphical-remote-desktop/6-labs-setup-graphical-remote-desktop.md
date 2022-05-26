@@ -296,9 +296,9 @@ Skip *Task 3B* and proceed to *Task 4*
     ```
 ## Task 5: Create Auto-Start SYSTEMD Services for Oracle Databases or WebLogic Domain (Optional)
 
-If your workshop includes one or more Oracle Databases or WebLogic, proceed as indicated below to setup SYSTEMD services. This will allow the UP/DOWN state of processes to automatically managed. As a result workshop attendees will get started faster as these processes will be up and running post provisioning and before they even connect to the instance.
+If your workshop includes one or more Oracle Databases or WebLogic Server, proceed as indicated below to setup SYSTEMD services. This will allow for automatic management of the UP/DOWN state of these processes. As a result workshop attendees will get started faster as these processes will be up and running post provisioning and before they even connect to the instance.
 
-### Oracle Database
+### **Oracle Database**
 1. Review "*/etc/oratab*" and ensure that the switch is set to "*Y*" for any entry that will be managed by the service
 
     ![](./images/add-db-service.png " ")
@@ -320,7 +320,7 @@ If your workshop includes one or more Oracle Databases or WebLogic, proceed as i
     </copy>
     ```
 
-3. For any additional DB listener beside *1521*, add to *$HOME/scripts/livelabs/listener-tab* and set the flag to "*Y*"
+3. For any additional DB listener other than *LISTENER* or having any other name but using port *1521*, add to *$HOME/scripts/livelabs/listener-tab* and set the flag to "*Y*"
 
     ```
     <copy>
@@ -341,8 +341,8 @@ If your workshop includes one or more Oracle Databases or WebLogic, proceed as i
 
     ![](./images/check-db-listener-service.png " ")
 
-### WebLogic Domain
-1. Set the *$DOMAIN_HOME* environment variable or run the *setDomainEnv.sh* script.
+### **WebLogic Domain**
+1. Set the *`$DOMAIN_HOME`* environment variable or run the script *`$DOMAIN_HOME/bin/setDomainEnv.sh`* .
 
     ```
     e.g.
@@ -676,7 +676,6 @@ Prior to noVNC some images were configured with *Apache Guacamole*. If this appl
     cd
     </copy>
     ```
-
 
 ## Acknowledgements
 * **Author** - Rene Fontcha, LiveLabs Platform Lead, NA Technology, September 2020
