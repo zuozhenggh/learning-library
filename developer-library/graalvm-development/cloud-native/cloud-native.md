@@ -79,14 +79,14 @@
 
     RESTfulサービスの起動時間を確認します。この例では1.441秒です。  
 
-4. 別ターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
+4. SSH接続で別のターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
         
     ```      
     <copy>curl http://localhost:8080/greeting</copy>
     ```
     ![docker in spring3](images/docker-spring3.png)
 
-5. Ctrl+CでDockerコンテナからexitします。
+5. *※重要！※* この前にコンテナを起動したターミナルにて、Ctrl+CでDockerコンテナからexitします。
 
     > **Note:** コンテナが起動しているターミナルでSSH接続が既に切断されている場合、SSH接続を再度実行し、sudo docker ps -a　を実行し、コンテナが実行中かどうかを確認してください。
 
@@ -147,16 +147,16 @@
     ```
     ![docker in spring6](images/docker-spring6.png)
 
+    RESTfulサービスの起動時間を確認します。この例では0.022秒です。fat jarのコンテナより60倍以上速く起動できました。
 
-4. 別ターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
+4. SSH接続で別のターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
     ```      
     <copy>curl http://localhost:8080/greeting</copy>
     ```
     ![docker in spring3](images/docker-spring3.png)
-       
-    RESTfulサービスの起動時間を確認します。この例では0.022秒です。JITモードより100倍速く起動できました。
 
-5. Ctrl+CでDockerコンテナからexitします。
+
+5. *※重要！※* この前にコンテナを起動したターミナルにて、Ctrl+CでDockerコンテナからexitします。
 
 ## Task 3: ほぼ静的なnative imageのDockerイメージ作成
 
@@ -166,7 +166,7 @@
     ```
     <copy>nano pom.xml</copy>
     ```
-    以下の```<configuration>```部分を、```<profile>```タグ-->```<build>```タグ-->```<plugin>```タグの中に追加します。  
+    以下の```<configuration>```部分を、```<profile>```タグ-->```<build>```タグ-->```<plugin>```タグの中に追加します。追加する箇所は下記の図を参照してください。
 
     ```<buildArgs>```タグの中に```StaticExecutableWithDynamicLibC```というパラメータを指定します。このパラメータによりnative imageビルド時標準Cライブラリ```libC```以外の依存ライブラリを全て事前に静的にリンクします。
 
@@ -181,6 +181,22 @@
     </copy>
     ```
     ![docker in spring3](images/docker-spring9.png)
+
+    <!--
+    nanoエディタの編集でソースの整形がうまくいかない場合、pom.xmlを一旦バックアップし、新規pom.xmlを作成して、下記pom.xmlの内容をそのままコピーし、保存してください。
+
+    ```
+    <copy>mv pom.xml pom.xml_backup</copy>
+    ```
+    ```
+    <copy>nano pom.xml</copy>
+    ```
+    ```
+    <copy>
+    
+    </copy>
+    ```
+    -->
 
     Ctrl＋Xを押し、内容保存の確認メッセージに対し、"Y"を入力し、Enterを押下してソースファイルを保存します。
 
@@ -240,9 +256,9 @@
     ```
 
     ![docker in spring8](images/docker-spring8.png)
-    RESTfulサービスの起動時間を確認します。この例では0.026秒です。JITモードより100倍速く起動できました。
+    RESTfulサービスの起動時間を確認します。この例では0.026秒です。
 
-6. 別ターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
+6. SSH接続で別のターミナルを立ち上げ、以下のコマンドを実行し、HTTPリクエストからレスポンスが正常にリターンされることを確認します。
     ```      
     <copy>curl http://localhost:8080/greeting</copy>
     ```
