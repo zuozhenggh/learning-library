@@ -266,6 +266,54 @@ GitHub merge conflicts happen when you and some other contributors are changing 
 
 This concludes this lab. You may now **proceed to the next lab**.
 
+### Issues: Cannot Use GitHub Desktop to Pull Changes from Production
+If you have not updated your local GitHub repo with the oracle/learning-library GitHub repo for a long time, and you are too many commits behind the oracle:master, you may not get the latest changes from production using GitHub Desktop. It is simply because there are too commits to merge. In that case, you can use git commands to perform the same actions.
+
+*Git commands are not as straightforward as GitHub Desktop, so feel free to reach out for help in Slack channel #workshop-authors-help, and our team is there to help you.*
+
+1. Run the command to see if the origin is pointing to your repo and upstream to Oracle Learning Library
+
+    ```
+    <copy>
+    git remote -v
+    </copy>
+    ```
+
+2. If yes, only then run these below commands to sync your repo:
+  Fetch latest changes from Oracle Learning Library
+
+    ```
+    <copy>
+    git fetch upstream
+    </copy>
+    ```
+
+  Merge the changes from Oracle Learning Library to your local learning library (on your system)
+    ```
+    <copy>
+    git merge upstream/master -m "Sync with master"
+    </copy>
+    ```
+
+    Push the local updated version (merged changes in your local learning library from Oracle Learning Library) to your staging library (on the browser)
+
+    ```
+    <copy>
+    git push origin master
+    </copy>
+    ```
+
+3. If there are any conflicts run the command to view the conflicting flies. You can also use GitHub Desktop to see the conflicting files.
+
+    ```
+    <copy>
+    git diff --name-only --diff-filter=U
+    </copy>
+    ```
+
+  Navigate to the conflicting files and resolve the conflicts by choosing the incoming changes or current changes.
+  Once resolved commit the changes in your github desktop and push them.
+
 ## Want to Learn More?
 
 * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
@@ -278,7 +326,8 @@ This concludes this lab. You may now **proceed to the next lab**.
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Kamryn Vinson, Product Manager, Database
+    * Anoosha Pilli, Product Manager, Database
     * Arabella Yao, Product Manager, Database
     * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, May 2022
