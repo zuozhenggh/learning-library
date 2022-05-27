@@ -326,7 +326,8 @@ If you have not updated your local GitHub repo with the oracle/learning-library 
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Kamryn Vinson, Product Manager, Database
+    * Anoosha Pilli, Product Manager, Database
     * Arabella Yao, Product Manager, Database
     * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, May 2022
