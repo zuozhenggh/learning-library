@@ -130,10 +130,12 @@
     <copy>sudo systemctl start docker</copy>
     ```
 
+    <!--
     以下のコマンドで導入されたDockerのバージョンを確認します。
     ```
     <copy>sudo docker version</copy>
     ```
+    -->
 
 以上で本演習のタスクがすべて完了しました。次の演習に進めてください。
 ## Learn More

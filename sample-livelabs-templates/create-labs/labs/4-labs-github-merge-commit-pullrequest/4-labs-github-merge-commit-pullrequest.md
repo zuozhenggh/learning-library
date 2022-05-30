@@ -17,7 +17,7 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 
 This lab assumes that you have successfully completed **Lab 3: Use a Text Editor to Develop Markdown Content** in the **Contents** menu on the right.
 
-Watch this the video below on how to self QA your workshop.
+Watch this video below on how to self QA your workshop.
 [](youtube:8tirP-hibsk)
 
 ## Task 1: Get Latest Updates from Production
@@ -173,7 +173,7 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 4.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
 
-  Watch this the video below on how to self QA your workshop.
+  Workshop teams and stakeholders can watch this video below on how to self QA or verify the QA of a workshop.
   [](youtube:8tirP-hibsk)
 
 5. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
@@ -190,6 +190,9 @@ You have finish developing your workshop. In order to publish your workshop, you
   ![Stakeholder](images/stakeholder.png " ")
 
 ## Task 9: Request Publishing
+
+Workshops authors can watch this [video 0:00 - 8:20](https://otube.oracle.com/playlist/dedicated/201649953/1_23j991jo/1_97hh00t6) on how to request publishing.
+
 1.  Click **Publishing** tab, then **+ Publish to LiveLabs**.
 
 	![Request Publishing](images/publishing-tab.png)
@@ -263,6 +266,54 @@ GitHub merge conflicts happen when you and some other contributors are changing 
 
 This concludes this lab. You may now **proceed to the next lab**.
 
+### Issues: Cannot Use GitHub Desktop to Pull Changes from Production
+If you have not updated your local GitHub repo with the oracle/learning-library GitHub repo for a long time, and you are too many commits behind the oracle:master, you may not get the latest changes from production using GitHub Desktop. It is simply because there are too commits to merge. In that case, you can use git commands to perform the same actions.
+
+*Git commands are not as straightforward as GitHub Desktop, so feel free to reach out for help in Slack channel #workshop-authors-help, and our team is there to help you.*
+
+1. Run the command to see if the origin is pointing to your repo and upstream to Oracle Learning Library
+
+    ```
+    <copy>
+    git remote -v
+    </copy>
+    ```
+
+2. If yes, only then run these below commands to sync your repo:
+  Fetch latest changes from Oracle Learning Library
+
+    ```
+    <copy>
+    git fetch upstream
+    </copy>
+    ```
+
+  Merge the changes from Oracle Learning Library to your local learning library (on your system)
+    ```
+    <copy>
+    git merge upstream/master -m "Sync with master"
+    </copy>
+    ```
+
+    Push the local updated version (merged changes in your local learning library from Oracle Learning Library) to your staging library (on the browser)
+
+    ```
+    <copy>
+    git push origin master
+    </copy>
+    ```
+
+3. If there are any conflicts run the command to view the conflicting flies. You can also use GitHub Desktop to see the conflicting files.
+
+    ```
+    <copy>
+    git diff --name-only --diff-filter=U
+    </copy>
+    ```
+
+  Navigate to the conflicting files and resolve the conflicts by choosing the incoming changes or current changes.
+  Once resolved commit the changes in your github desktop and push them.
+
 ## Want to Learn More?
 
 * [Using GitHub Desktop to merge, commit and make pull requests](https://otube.oracle.com/media/t/1_bxj0cfqf)
@@ -275,7 +326,8 @@ This concludes this lab. You may now **proceed to the next lab**.
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
     * Kamryn Vinson, Product Manager, Database
+    * Anoosha Pilli, Product Manager, Database
     * Arabella Yao, Product Manager, Database
     * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, May 2022

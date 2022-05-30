@@ -287,25 +287,25 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
 ### Connect to an instance using PuTTY
 
-1.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
+13.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
 
     ![Enter IP address of OCI compute instance.](images/ip.png " ")
 
     ![Compute Instance Console.](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/compute-instances.png " ")
 
-2.  Under **Category** select **Connection** and then choose the **Data** field. Enter the assigned instance's username. OCI instances will default to the username ```opc```. Enter ```opc```.
+14.  Under **Category** select **Connection** and then choose the **Data** field. Enter the assigned instance's username. OCI instances will default to the username ```opc```. Enter ```opc```.
 
     ![Enter assigned instance username.](images/data.png " ")
 
-3.  Under **Category**, navigate to **Connection** - **SSH** and choose the **Auth** category. Click on the **Browse** button and locate the ```private key file``` you created in the earlier step. Click the **Open** button to initiate the SSH connection to your cloud instance.
+15.  Under **Category**, navigate to **Connection** - **SSH** and choose the **Auth** category. Click on the **Browse** button and locate the ```private key file``` you created in the earlier step. Click the **Open** button to initiate the SSH connection to your cloud instance.
 
     ![Initiate SSH connection to cloud instance.](images/auth.png " ")
 
-4.  Click **Yes** to bypass the Security Alert about the uncached key.
+16.  Click **Yes** to bypass the Security Alert about the uncached key.
 
     ![Click yes to bypass security alert.](images/security-alert.png " ")
 
-5.  Connection successful. You are now securely connected to an OCI Cloud instance.
+17.  Connection successful. You are now securely connected to an OCI Cloud instance.
 
     ![Connection Successful.](images/connected.png " ")
 
