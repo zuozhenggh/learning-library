@@ -23,6 +23,7 @@ Log to your Forms machine. And download the sample files.
 
 ```
 <copy>cd $HOME
+sudo yum install git -y
 git clone https://github.com/mgueury/forms-to-oci-samples.git
 cd forms-to-oci-samples
 # Copy the Forms files in the FORMS_PATH
