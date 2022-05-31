@@ -112,6 +112,8 @@ You can change the address shown in Saved Address if you want to ship products t
   Your order workflow goes from Placed to Shipped, then OFD (out for delivery), and finally Delivered.
  ![<workflow>](./images/workflow.png " ")
 
+ **Note: Repeat above steps for 5 times and order 5 different items. This is required for the next set of labs.**
+
 
 ## Task 2: View Reports
 
