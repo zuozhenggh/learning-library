@@ -2,7 +2,7 @@
 
 ## Introduction
 
-WebUtil is a Oracle Forms Library. 
+WebUtil is an Oracle Forms Library. 
 
 It provides a simple way to achieve client side integration while running Oracle Forms from a web application server like WebLogic Server. It simplifies the upgrading of older client/server applications to web deployment, and enhances the capabilities of web based Oracle Forms applications.
 
