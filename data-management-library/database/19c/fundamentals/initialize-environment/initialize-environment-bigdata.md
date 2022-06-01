@@ -2,9 +2,8 @@
 
 ## Introduction
 
-During the workshop, you use two Linux compute instances named `workshop-staged` and `workshop-installed`. Both compute instances have a noVNC desktop, which provides an easy-to-use interface. You are automatically signed in to these compute instances as the `oracle` user.
+During the workshop, you will use the `workshop-installed` image. This image contains a noVNC desktop, which provides an easy-to-use interface. You are automatically signed in to these compute instances as the `oracle` user.
 
-- The `workshop-staged` compute instance has the Oracle Database 19c installer files (release 19.12) staged on it. Only the **Install Oracle Database 19c with Automatic Root Script Execution** lab uses this compute instance. The rest of the labs use the `workshop-installed` compute instance.
 - The `workshop-installed` compute instance has Oracle Database 19c (release 19.12) already installed on it with two CDBs (CDB1 and CDB2). CDB1 has one pluggable database named PDB1 with sample data. CDB2 has no PDBs. CDB1, PDB1, and CDB2 use the default listener, LISTENER. The listener and the database instances automatically start up on boot.
 
 In this lab, you verify that the listener on the `workshop-installed` compute instance is started and download the lab files.
@@ -163,7 +162,8 @@ This lab assumes that you have:
     ```
     $ <copy>mkdir -p ~/labs/19cnf</copy>
     $ <copy>cd ~/labs/19cnf</copy>
-    $ <copy>wget https://objectstorage.us-ashburn-1.oraclecloud.com/p/VEKec7t0mGwBkJX92Jn0nMptuXIlEpJ5XJA-A6C9PymRgY2LhKbjWqHeB5rVBbaV/n/c4u04/b/livelabsfiles/o/data-management-library-files/19cnf-lab-files.zip</copy>
+    $ <copy>wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/_gAaAI9BpV_FNLMe9WvmGNdSvb9Y0xHiZYh1Ar6pLuqkCLI8KWmxQHlPt9sfs0wk/n/frmwj0cqbupb/b/19cNewFeatures/o/bigdata-19cnf-new-features-lab-files.zip</copy>
+    $ <copy>mv 19c-new-features.zip ./19cnf-lab-files.zip</copy>
     $ <copy>unzip -q 19cnf-lab-files.zip</copy>
     $ <copy>chmod -R +x ~/labs/19cnf</copy>
     $ <copy>ls -an</copy>
@@ -193,5 +193,5 @@ To restore one or more of your lab files on your `workshop-installed` compute in
 
 ## Acknowledgements
 
-- **Author**- Jody Glover, Consulting User Assistance Developer, Database Development
-- **Last Updated By/Date** - Jody Glover, Consulting User Assistance Developer, Database Development, September 21 2021
+- **Author**- Matthew McDaniel, Austin Specialist Hub
+- **Last Updated By/Date** - Matthew McDaniel, Austin Specialist Hub, December 13 2021
