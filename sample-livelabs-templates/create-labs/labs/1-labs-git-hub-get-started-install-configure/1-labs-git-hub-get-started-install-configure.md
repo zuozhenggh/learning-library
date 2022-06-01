@@ -20,6 +20,8 @@ In this lab, you will learn how to create a GitHub Account and associate it with
 
 Before getting started, you should submit your LiveLabs workshop request to the WMS. Submitting a workshop informs the Oracle ecosystem that you are working on a workshop and submits your idea to the Workshop Council. We urge you not to delay this step. There are hundreds of workshops already, this step is important to helps us preserve the quality and integrity of the workshop catalog.
 
+Workshop authors can watch the [video 2:22 – 22:40](https://otube.oracle.com/media/How%20to%20submit%20a%20LiveLabs%20workshop%20in%20WMS%20-%20LiveLabs%20Office%20Hours%20-%2002-04-2022/1_6v8qdkzp) on how to submit a new workshop request.
+
 1.  Login to Corporate VPN.
 
 2.  Access the **Oracle Workshop Management System (WMS)** page.
@@ -42,7 +44,11 @@ Before getting started, you should submit your LiveLabs workshop request to the 
 
 7.  We recommend you don't start working on your workshop until your workshop has been approved by a council member.
 
-Once your workshop is submitted, it will be sent to the workshop council.  The workshop council will approve your workshop or ask for more details within 2 business days. If you have not heard back from your council group after 2 business days, please message them via WMS. Once approved, you will be entered into the workflow and given additional steps to progress through to production.
+Once your workshop is submitted, it will be sent to the workshop council.  The workshop council will approve your workshop or ask for more details within 3 business days. If you have not heard back from your council group after 3 business days, please message them via WMS. Once approved, you will be entered into the workflow and given additional steps to progress through to production.
+
+To find your council members, go to WMS, under **People & Role Reports**, select **Workshop Council Members**, and you can find your council members.
+
+Council can watch this [video 5:10 - 7:05](https://otube.oracle.com/media/Know%20about%20Roles%20and%20Responsibilities%20in%20LiveLabs%20Workshop%20Management%20System%202.0%20-%20LiveLabs%20Office%20Hours%20-%2001-28-2022/1_hrkwddhr) to understand your responsibilities and this [video 9:45 - 10:45](https://otube.oracle.com/media/Introducing%20LiveLabs%20Dashboard%20-%20LiveLabs%20Office%20Hours%20-%2002-08-2022/1_ebeuqq95) to learn how to change workshop statuses (approve the workshop).
 
 > **Note:** If you are a developer, QA, or PM, you can create and publish a Custom image of the on-premises product to OCI Market place. See the [Creating Compute Images for Marketplace](https://oracle.github.io/learning-library/sample-livelabs-templates/create-labs/labs/workshops/compute/?lab=6-labs-setup-graphical-remote-desktop) LiveLabs workshop.
 
@@ -65,7 +71,7 @@ In this Step, you will create and set up your GitHub account.
 
 5. Set up a 2 Factor Authentication here: [GitHub Security](https://github.com/settings/security).
 
-    ![](./images/git-2-factor-authentication.png " ")
+    ![Set up 2 factor authentication.](./images/git-2-factor-authentication.png " ")
 
 If you are an Oracle employee working on GitHub projects, you must be a member of the **Oracle GitHub organization (OGHO)** at [github.com/oracle](github.com/oracle), and be successfully listed under the **People** tab. To request access as a contributor to existing repository such as the **Oracle** project and its **learning-library** repo where your LiveLabs workshop will be stored, your GitHub account must be in accordance to the OGHO requirements. Once you complete the above steps, request membership to the **OGHO** as follows:
 
@@ -113,7 +119,7 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
 2. When the software is successfully installed, open the **GitHub Desktop**.
 
-  ![](./images/git-hub-desktop-login-screen.png " ")
+  ![GitHub desktop login screen.](./images/git-hub-desktop-login-screen.png " ")
 
 3. Click **File > Options > Sign in**, enter your GitHub **Username** or **email address**, **Password**, and then click **Sign in**. You will receive an authentication code to your cell phone. Enter this code in the **Authentication code** field in the **Sign in** dialog box.
 
@@ -121,7 +127,7 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
   You are now logged in to **GitHub Desktop**.
 
-  ![](./images/get-started-git-hub-desktop.png " ")
+  ![GitHub desktop main screen.](./images/get-started-git-hub-desktop.png " ")
 
 ## Task 5: Fork the learning-library Repository on Your GitHub Account
 
@@ -137,12 +143,12 @@ To setup the GitHub Development Environment and install **GitHub Desktop**:
 
 3. Click **Fork** to display the following message: **How are you planning to use this fork?**.
 
-  ![](./images/get-started-git-hub-webUI-fork.png " ")
+  ![Fork instruction dialog box.](./images/get-started-git-hub-webUI-fork.png " ")
 
 4. Select the option that indicates your local repository.
 In the following example, user achepuri has forked the **learning-library** repository.
 
-  ![](./images/get-started-git-hub-webui-forked-library.png " ")
+  ![Local repository to fork.](./images/get-started-git-hub-webui-forked-library.png " ")
 
 In the next Step, you will clone this forked repository.
 
@@ -153,17 +159,17 @@ To clone the forked repository:
 1. Open your **GitHub Desktop** application and log in using your GitHub account.
 2. Click **File > Clone repository** to display the **Clone a repository** dialog box.
 
-    ![](./images/git-hub-desktop-clone-repository.png " ")
+    ![Clone repository.](./images/git-hub-desktop-clone-repository.png " ")
 
 3. Select your own repository such as **your account/learning-library** from **Your repositories**. In this example, there is only one repository displayed named **achepuri/learning-library**. Under **Local path**, select the local path on your machine where the repository is going to be cloned (copied). This is where the project files get copied to your local file system. In this example, the local path is **C:\Users\achepuri.ORADEV\Documents\GitHub**.  
 
-    ![](./images/git-hub-desktop-clone-repository_dialog.png " ")
+    ![Available repositories dialog box.](./images/git-hub-desktop-clone-repository_dialog.png " ")
 
 4. Click **Clone**.
 
   The **learning-library** repository files appear in the local path you just specified. You can now start working on your labs and workshops!
 
-  ![](./images/git-hub-my-cloned-repository.png " ")
+  ![Successfully cloned repository.](./images/git-hub-my-cloned-repository.png " ")
 
   > **Note:** The local cloned repository is connected to the remote fork version. You can push your local clone changes to the remote fork version when you are online to keep them in sync.
 
@@ -173,11 +179,11 @@ To clone the forked repository:
 
 5. You can also use Github Desktop to Synchronize the changes that you have made in your local file system to the forked content on your github repo, more details on using Github Desktop in Lab 4 of this workshop and also on Otube [Working with GitHub Desktop](https://otube.oracle.com/media/t/1_bxj0cfqf).
 
-  ![](./images/github-desktop-sync.png " ")
+  ![Synchronize with GitHub.](./images/github-desktop-sync.png " ")
 
 6. When asked how you plan to use the fork select **To contribute to the parent project**.
 
-  ![](./images/contribute-to-parent.png " ")
+  ![Contribute to parent project.](./images/contribute-to-parent.png " ")
 
 This concludes this lab. You may now proceed to the next lab.
 
@@ -194,7 +200,7 @@ This concludes this lab. You may now proceed to the next lab.
     * Anuradha Chepuri, Principal User Assistance Developer, Oracle GoldenGate
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data
 * **Contributors:**
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
+    * Kay Malcolm, Database Product Management
     * Madhusudhan Rao, Principal Product Manager, Database
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
 

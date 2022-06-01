@@ -1,4 +1,4 @@
-# Analyze channel sales
+# Analyze Channel Sales
 
 ## Introduction
 
@@ -23,11 +23,11 @@ This lab assumes you have:
 * An Oracle account
 * All previous labs successfully completed
 
-## **Task 1:** Create Stacked Bar Chart
+## Task 1: Create Stacked Bar Chart
 
 1. **Select** the plus symbol to open an empty canvas so we can build out our visualizations.
 
-    ![empty canvas](images/empty-dashboard-red-box.png)
+    ![empty canvas](images/main-cards.png)
 
 2. **Rename** the canvas by tapping the arrow, and hitting 'rename'. Rename the canvas to **'Analyze Channel Sales'**
 
@@ -54,7 +54,7 @@ This lab assumes you have:
 
     Now, we have the correct stacked bar chart of sales by channel!
 
-## **Task 2:** Create a Treemap
+## Task 2: Create a Treemap
 
 1. On the same dashboard, let's continue visualizing the dataset by inspecting survey data that was collected.
 
@@ -68,7 +68,7 @@ This lab assumes you have:
 
     We now have a visual that breaks down the different surveys we collect by menu items. We can see that our top 5 menu categories, where fries and hamburger meals top the list - not surprising as this QSR is known for their fries.
 
-## **Task 3:** Create a Bar Chart
+## Task 3: Create a Bar Chart
 
 1. From these survey responses, let's continue by analyzing the different kinds of sentiment that was derived.
 
@@ -79,11 +79,11 @@ This lab assumes you have:
 
     ![Analyze Sentiment](images/sentiment.png")
 
-    Now, we have a visual that breaks down the different instances of each sentiment.
-
     ![Bar Chart](images/bar-chart.png")
 
-## **Task 4:** Create a Tag Cloud
+    Now, we have a visual that breaks down the different instances of each sentiment.
+
+## Task 4: Create a Tag Cloud
 
 1.  Let's finish up by creating a tag cloud to summarize the leading responses to each customer sentiment.
 
@@ -96,19 +96,11 @@ This lab assumes you have:
 
     ![Sentiment](images/top-responses.png")
 
-    In order to also have accurate representations of color sentiment, we can **select** "Manage Assignments."
-
-    ![Manage Color Assignments](images/manage-assignments.png")
-
-    Then we can change the colors to **red** for "Negative," **yellow** for "Neutral," and **blue** for "Positive."
-
-    ![Colors](images/colors.png")
-
-    Now, we have a visual that breaks down the top responses of customer surveys such as 'Always Out of Fries', 'Long Wait Time', and 'Beats My Cooking' by sentiment.
+    With this change, we see the representations of sentiment by color: **red** for "Negative," **yellow** for "Neutral," and **green** for "Positive." Now, we have a visual that breaks down the top responses of customer surveys such as 'Always Out of Fries', 'Long Wait Time', and 'Beats My Cooking' by sentiment.
 
     ![Tag Cloud](images/tag-cloud.png")
 
-## **Task 5:** Analyze Sentiment
+## Task 5: Analyze Sentiment
 
 1. Let's wrap up this dashboard with a quick encompassing filter that can help us interact with the different sentiments.
 
@@ -125,7 +117,7 @@ This lab assumes you have:
 
     ![Channel Sales Dashboard](images/dashboard.png")
 
-4. Now that we have completed our Channel Sales Dashboard, we can name it 'Analyze Channel Sales.' You may now **proceed to the next lab**.
+4. Now that we have completed our Channel Sales Dashboard, you may now **proceed to the next lab**.
 
 ## Learn More
 * [Oracle Analytics Server Documentation](https://docs.oracle.com/en/middleware/bi/analytics-server/index.html)
@@ -136,4 +128,4 @@ This lab assumes you have:
 
 * **Authors** - Killian Lynch, Nagwang Gyamtso, Luke Wheless, Akash Dharamshi, Solution Engineer Specialist Hub Team, NA Technology
 * **Contributors** - Luke Wheless, Solution Engineer Specialist Hub Team, NA Technology
-* **Last Updated By/Date** - Luke Wheless, Solution Engineer Specialist Hub Team, NA Technology, March 2022
+* **Last Updated By/Date** - Luke Wheless, April 2022

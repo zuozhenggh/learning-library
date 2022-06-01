@@ -75,7 +75,7 @@ Estimated Time:  10 minutes
 1.  Execute a load test using the load testing tool you have installed.  
 
     ```
-    <copy>cd $GRABDISH_HOME/k6; test40usersFor5Minutes.sh</copy>
+    <copy>cd $GRABDISH_HOME/k6; ./test40usersFor5Minutes.sh</copy>
     ```
     
     *Note that you can adjust the alert rule condition(s) (as defined in task 1) as well as the number of users and duration of the load test conducted here as desired.
@@ -104,6 +104,10 @@ Estimated Time:  10 minutes
    ![Slack OK](images/slackmessagehealthbacktonormal.png " ")
 
 You may now **proceed to the next lab.**.
+
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-db-microservices-help-slack)   
 
 ## Acknowledgements
 * **Author** - Paul Parkinson, Architect and Developer Advocate
