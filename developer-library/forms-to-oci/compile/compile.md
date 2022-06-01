@@ -122,7 +122,7 @@ sqlplus $DB_ADMIN/$DB_PASSWORD@$DB_TNS @dept.sql $DB_PASSWORD $DB_TNS</copy>
 
 Output:
 ```
-SQL> @dept.sql LiveLab1 orcl
+SQL> @dept.sql LiveLab__123 orcl
 old   1: create user scott identified by &1
 new   1: create user scott identified by LiveLab__123
 
