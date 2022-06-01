@@ -100,6 +100,7 @@ This lab assumes that you have already completed the earlier labs.
 3. Execute the load test again.
 
    For example:
+
     ```
     <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
@@ -120,28 +121,28 @@ This lab assumes that you have already completed the earlier labs.
     <copy>kubectl scale deployment.apps/order-helidon --replicas=3 -n msdataworkshop</copy>
     ```
 
-   List the running pods.
+    List the running pods.
 
     ```
     <copy>pods</copy>
     ```
 
-   Note there are now three order-helidon replicas. Keep polling until all replicas are ready.
+    Note there are now three order-helidon replicas. Keep polling until all replicas are ready.
 
     ![Three Replicas](images/3replicas.png " ")
 
 5. Execute the load test again.
 
-   For example:
+    For example:
     ```
     <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
-  Note the median response time for the requests and the request rate. Note how the response time is still degraded and the request rate has not improved significantly.
+    Note the median response time for the requests and the request rate. Note how the response time is still degraded and the request rate has not improved significantly.
 
-   ![Performance of Three Replicas](images/perf3replica.png " ")
+    ![Performance of Three Replicas](images/perf3replica.png " ")
 
-   (Or) Using artillery:
+    (Or) Using artillery:
 
     ```
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
@@ -153,29 +154,29 @@ This lab assumes that you have already completed the earlier labs.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
-2. Select DB1, the database that contains the order schema, click **More Actions**, and enter 2 in the OCPU field. Click **Update**.
+2. Select DB1, the database that contains the order schema, click **More Actions**, then **Manage Scaling**. Enter 2 in the OCPU field. Click **Apply**.
 
-   ![More Actiona](images/ScaleTo2dbocpuScreen1.png " ")
+    ![More Actiona](images/ScaleTo2dbocpuScreen1.png " ")
 
-   ![Update OCPU Field](images/ScaleTo2dbocpuScreen2.png " ")
+    ![Update OCPU Field](images/manage-scaling.png " ")
 
 3. Wait until the scaling has completed (Lifecycle State: Available).
 
-   ![Scale To 2 DB OCPU Screen3](images/ScaleTo2dbocpuScreen3.png " ")
+    ![Scale To 2 DB OCPU Screen3](images/ScaleTo2dbocpuScreen3.png " ")
 
 4. Execute the load test again.
 
-   For example:
+    For example:
 
     ```
     <copy>cd $GRABDISH_HOME/k6; ./test.sh</copy>
     ```
 
-   Note the request rate.  Throughput has increased.
+    Note the request rate.  Throughput has increased.
 
-   ![Performance of Three Replicas with 2 DB OCPU](images/perf3replica2dbocpu.png " ")
+    ![Performance of Three Replicas with 2 DB OCPU](images/perf3replica2dbocpu.png " ")
 
-   (Or) Using artillery:
+    (Or) Using artillery:
 
     ```
     <copy>cd $GRABDISH_HOME/artillery; ./test.sh</copy>
@@ -187,11 +188,11 @@ This lab assumes that you have already completed the earlier labs.
 
 	![](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-atp.png " ")
 
-2. Click **Scale Up/Down** and enter 1 in the OCPU field. Click **Update**.
+2. Click **Manage Scaling** and enter 1 in the OCPU field. Click **Apply**.
 
-   ![Navigate to Scale Up/Down](images/ScaleTo2dbocpuScreen1.png " ")
+    ![Navigate to Scale Up/Down](images/ScaleTo2dbocpuScreen1.png " ")
 
-   ![Update OCPU Field](images/ScaleTo1dbocpuScreen2.png " ")
+    ![Update OCPU Field](images/manage-scaling2.png " ")
 
 3. Scale the order-helidon service back to **1 replica**.
 
@@ -201,10 +202,14 @@ This lab assumes that you have already completed the earlier labs.
 
 You may now proceed to the next lab.
 
+## Learn More
+
+* Ask for help and connect with developers on the [Oracle DB Microservices Slack Channel](https://bit.ly/oracle-database-microservices-slack)  
+Search for and join the `oracle-db-microservices` channel. 
 
 ## Acknowledgements
 * **Authors** - Richard Exley, Maximum Availability Architecture; Curtis Dinkel, Maximum Availability Architecture; Rena Granat, Maximum Availability Architecture;
 * **Adapted for Cloud by** -  Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
 * **Contributors** - Jaden McElvey, Technical Lead - Oracle LiveLabs Intern
-* **Last Updated By/Date** - Richard Exley, April 2021
+* **Last Updated By/Date** - Irina Granat, March 2022

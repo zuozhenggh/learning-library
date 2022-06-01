@@ -15,8 +15,10 @@ As a best practice, merge your library everyday or whenever you start your GitHu
 * Git Environment Setup
 * GitHub Desktop client
 
-
 This lab assumes that you have successfully completed **Lab 3: Use a Text Editor to Develop Markdown Content** in the **Contents** menu on the right.
+
+Watch this video below on how to self QA your workshop.
+[](youtube:8tirP-hibsk)
 
 ## Task 1: Get Latest Updates from Production
 
@@ -24,22 +26,22 @@ Before you develop you should ensure you have the latest content from production
 
 1. Go to your personal github repo on the web and determine if your personal repo is behind the master.  If it is, perform the following steps to sync.  This should be done before you commit.
 
-  ![](./images/git-hub-sync-behind.png " ")
+  ![Sync GitHub with master repository.](./images/git-hub-sync-behind.png " ")
 
 2. Start your **GitHub Desktop** client.  Go to **Branch** -> **Merge into Current Branch**.
 
-  ![](./images/git-hub-merge-branch.png " ")
+  ![Merge into current branch.](./images/git-hub-merge-branch.png " ")
 
 3. Select the branch upstream/master (there may be a number of branches, search until you see *upstream/master*). Press the **merge upstream/master into master** button.
 
-  ![](./images/git-hub-merge-branch-2.png " ")
+  ![Merge upstream/master into master.](./images/git-hub-merge-branch-2.png " ")
 
 4. Finally, select **Push Origin**
-  ![](./images/push-origin.png " ")
+  ![Push origin.](./images/push-origin.png " ")
 
-4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+5. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
-  ![](./images/git-hub-sync-ahead.png " ")
+  ![Confirm on GitHub.](./images/git-hub-sync-ahead.png " ")
 
 
 ## Task 2: Commit your Changes in your Clone
@@ -49,13 +51,13 @@ To commit your changes:
 1. Start your **GitHub Desktop** client.
 2. In the **Summary (required)** text box on the left (next to your picture), enter a summary of your changes. You can optionally add a more detailed description of your changes in the **Description** text box.
 
-  ![](./images/git-hub-commit-to-master.png " ")
+  ![Enter a summary of your changes.](./images/git-hub-commit-to-master.png " ")
 
 3. Click **Commit to master**. This saves your changes in your local clone. **Fetch Origin** changes to **Push Origin**.
 
 4. Click **Push origin** (it should have an upward arrow with a number). This pushes the updated content from your clone into the origin of this clone, that is, your fork.
 
-  ![](./images/git-hub-commit-push-origin.png " ")
+  ![Push updated content to the origin.](./images/git-hub-commit-push-origin.png " ")
 
 
 ## Task 3: Set Up GitHub Pages for your Fork to Test your Content
@@ -67,21 +69,21 @@ The GitHub Web UI has a feature called as **Set Up GitHub Pages for Your Fork** 
 To publish your GitHub Pages site:
 1. Login to [GitHub Web UI](http://github.com) using your GitHub account credentials, and then click your fork's link in the **Repositories** section to display your fork.
 
-  ![](./images/git-hub-stage-git-hub-pages-repositories.png " ")
+  ![Display your fork on GitHub.](./images/git-hub-stage-git-hub-pages-repositories.png " ")
 
 2. Click **Settings**.
 
-   ![](./images/git-hub-stage-git-hub-pages-settings.png " ")
+   ![GitHub settings.](./images/git-hub-stage-git-hub-pages-settings.png " ")
 
 3. Click **Options** and scroll down to the **GitHub Pages** section.
 
-  ![](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
+  ![Select options.](./images/git-hub-stage-git-hub-pages-settings-theme.png " ")
 
 4. Under **Source**, select **master** (if it's not already selected) from the drop-down list.
 5. Under **Theme Chooser**, click **Change Theme** and select a theme of your choice.
 
   This may take a few minutes to complete. After the GitHub Pages are enabled, the message under **GitHub Pages** changes to **Your site  is published at https://achepuri.github.io/learning-library**
-  ![](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
+  ![Changes are published.](./images/git-hub-stage-git-hub-pages-settings-page-published.png " ")
 
 ## Task 4: Sharing your Workshop for Review
 After you have successfully set up your GitHub pages, you can share your workshop for review.
@@ -101,15 +103,15 @@ Note:  *Before executing a PR, make sure you have run Task 1 above and that your
 To create a Pull Request:
 1. In the **GitHub Desktop** client, select **Branch > Create pull request** to display a browser interface.
 
-  ![](./images/git-hub-branch-pull-request.png " ")
+  ![Create a pull request.](./images/git-hub-branch-pull-request.png " ")
 
 2. Click **Create pull request** to display an **Open a pull request** page.
 
-  ![](./images/git-hub-branch-browser-create-pull-request.png " ")
+  ![Open a pull request.](./images/git-hub-branch-browser-create-pull-request.png " ")
 
 3. Enter the title for the pull request, **include your WMS ID** (you can find that by visiting the [WMS](http://bit.ly/oraclewms)) in the title.  PRs will not be approved without this ID.
 4. Click **Create pull request**.
-    ![](./images/git-hub-pull-request-title-comment.png " ")
+    ![Include WMS id in pull request title.](./images/git-hub-pull-request-title-comment.png " ")
   A status page is displayed indicating that you have created a pull request along with the request number (for example, #1770), that it is pending review, and that merging is blocked.
 
   When your pull request is approved, the page gets updated with information about your commits being approved and merged into the **upstream/master** repository (production).
@@ -171,6 +173,9 @@ You have finish developing your workshop. In order to publish your workshop, you
 
 4.  If you have changed your Status to **Self QA**, you will receive a **Self QA form** from your *stakeholder* (livelabs-help-xx_us@oracle.com) of your workshop. You can also download the [document](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx) here. Check your workshop against the form and fill it out. Update your workshop and create a new pull request if necessary for the workshop to follow LiveLabs standards.
 
+  Workshop teams and stakeholders can watch this video below on how to self QA or verify the QA of a workshop.
+  [](youtube:8tirP-hibsk)
+
 5. After you finish Self QA, and your changes are reflected in oracle.github.io page, set your **Workshop Status** to **Self QA Complete** in WMS.
   ![Self QA Complete](images/self-qa-complete.png " ")
 
@@ -185,15 +190,18 @@ You have finish developing your workshop. In order to publish your workshop, you
   ![Stakeholder](images/stakeholder.png " ")
 
 ## Task 9: Request Publishing
+
+Workshops authors can watch this [video 0:00 - 8:20](https://otube.oracle.com/playlist/dedicated/201649953/1_23j991jo/1_97hh00t6) on how to request publishing.
+
 1.  Click **Publishing** tab, then **+ Publish to LiveLabs**.
 
 	![Request Publishing](images/publishing-tab.png)
 
-2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Always Free Enabled?**, **Free Tier Enbaled?**, **Paid Tier Enabled?**, **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
+2. Fill out publishing information, including **Publish Type** and **Workshop Time**. Click **?** beside the Publishing Type to see different types of publishing. Turn on approriate tenancies for your workshop: **Paid Tier Enabled?**, and/or **Green Button Enabled?**, and fill out appropriate **URL**s. Click **Create** to submit your publishing request. Our LiveLabs team will either approve your publishing request, or ask you for more information within 2 business days.
 
-    - Always Free On? - Can this workshop be done in an Always Free account using only Always Free services? (i.e. Compute Micro, ADB-Shared, etc). [Here](https://www.oracle.com/cloud/free/#always-free) is a list of Always Free eligible services.
+    - Always Free On? - Turn off this button. This button will be deleted soon.
 
-    - Free Tier On? - Can this workshop be done in a Free Tier account using the $300 (or $500) credit and Always Free services? [Here](https://www.oracle.com/cloud/free/#free-cloud-trial) is a list of Free Tier eligible services.
+    - Free Tier On? - Turn off this button. This button will be deleted soon.
 
     - Paid Tier On? - Can this workshop be done in a customer tenancy?
 
@@ -208,27 +216,27 @@ You have finish developing your workshop. In order to publish your workshop, you
 You may now **proceed to the next lab**.
 
 ## **Appendix**: Troubleshooting Tips
-### Issue: Conflicts
-![](./images/behind.png " ")
+### Issue: Commits Behind oracle:master
+![Commits behind oracle master.](./images/behind.png " ")
 
 1. To fix this, in Github Desktop select **Fetch Origin**
-  ![](./images/fetch-origin.png " ")
+  ![Fetch origin.](./images/fetch-origin.png " ")
 
 2. Next, select **Branch -> Merge into Current Branch**
-  ![](./images/branch.png " ")
+  ![Select merge into current branch.](./images/branch.png " ")
 
 3. Then, click **Upstream/Master -> Merge Upstream/Master into Master**
-  ![](./images/merge.png " ")
+  ![Click upstream master.](./images/merge.png " ")
 
 4. Finally, select **Push Origin**
-  ![](./images/push-origin.png " ")
+  ![Select push origin.](./images/push-origin.png " ")
 
 4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
 
-  ![](./images/git-hub-sync-ahead.png " ")
+  ![Refresh your personal github repository.](./images/git-hub-sync-ahead.png " ")
 
 ### Issue: Clone failed
-  ![](./images/clone-failed.png " ")
+  ![Clone failed.](./images/clone-failed.png " ")
 
   1. Execute the following commands to make sure .gitconfig is updated:
 
@@ -240,7 +248,71 @@ You may now **proceed to the next lab**.
     <copy> git config --global core.ignorecase false </copy>
     ```
 
-This concludes this lab. You may now proceed to the next lab.
+### Issue: GitHub Merge Conflicts
+GitHub merge conflicts happen when you and some other contributors are changing the same content in the learning-library. Merge conflicts prevent you from pushing your changes to your learning-library GitHub repository.
+  ![Merge Conflicts](./images/merge-conflicts.png)
+
+1. When you fetch origin and merge changes into your current branch (as in Task 1), you may encounter merge conflicts, as shown in the screenshot above. In the screenshot, you have 3 files that have merge conflicts.
+
+2. Since you are changing the same content as other people, you need to manually decide which version of changes you want to keep. Open your text editor. Go to the files that have conflicts. Conflicts are highlighted by your text editor, and you will choose to use either your changes or other people's changes.
+  ![Resolve Conflicts](./images/resolve-conflicts.png)
+
+3. After you resolve all the conflicts and save your changes, you GitHub Desktop should look like the screenshot below. There will be a green checkmark beside each file, indicating there are no conflicts. Enter the **Summary** and click **Commit to master**. After commit finishes, you can click **Push origin**, and your changes are pushed to your GitHub repository.
+  ![Conflicts Resolved](./images/conflicts-resolved.png)
+
+4. To confirm, press refresh on your personal github repo on the web, you should have no commits *behind* now, only *ahead*.
+
+  ![Refresh your personal GitHub repository.](./images/git-hub-sync-ahead.png " ")
+
+This concludes this lab. You may now **proceed to the next lab**.
+
+### Issues: Cannot Use GitHub Desktop to Pull Changes from Production
+If you have not updated your local GitHub repo with the oracle/learning-library GitHub repo for a long time, and you are too many commits behind the oracle:master, you may not get the latest changes from production using GitHub Desktop. It is simply because there are too commits to merge. In that case, you can use git commands to perform the same actions.
+
+*Git commands are not as straightforward as GitHub Desktop, so feel free to reach out for help in Slack channel #workshop-authors-help, and our team is there to help you.*
+
+1. Run the command to see if the origin is pointing to your repo and upstream to Oracle Learning Library
+
+    ```
+    <copy>
+    git remote -v
+    </copy>
+    ```
+
+2. If yes, only then run these below commands to sync your repo:
+  Fetch latest changes from Oracle Learning Library
+
+    ```
+    <copy>
+    git fetch upstream
+    </copy>
+    ```
+
+  Merge the changes from Oracle Learning Library to your local learning library (on your system)
+    ```
+    <copy>
+    git merge upstream/master -m "Sync with master"
+    </copy>
+    ```
+
+    Push the local updated version (merged changes in your local learning library from Oracle Learning Library) to your staging library (on the browser)
+
+    ```
+    <copy>
+    git push origin master
+    </copy>
+    ```
+
+3. If there are any conflicts run the command to view the conflicting flies. You can also use GitHub Desktop to see the conflicting files.
+
+    ```
+    <copy>
+    git diff --name-only --diff-filter=U
+    </copy>
+    ```
+
+  Navigate to the conflicting files and resolve the conflicts by choosing the incoming changes or current changes.
+  Once resolved commit the changes in your github desktop and push them.
 
 ## Want to Learn More?
 
@@ -253,8 +325,9 @@ This concludes this lab. You may now proceed to the next lab.
 * **Contributors:**
     * Lauran Serhal, Principal User Assistance Developer, Oracle Database and Big Data User Assistance
     * Aslam Khan, Senior User Assistance Manager, ODI, OGG, EDQ
-    * Tom McGinn, Database and Database Cloud Service Senior Principal Product Manager, DB Development - Documentation
     * Kamryn Vinson, Product Manager, Database
+    * Anoosha Pilli, Product Manager, Database
     * Arabella Yao, Product Manager, Database
+    * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, March 2022
+* **Last Updated By/Date:** Arabella Yao, May 2022

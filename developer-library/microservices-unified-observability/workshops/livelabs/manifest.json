@@ -13,7 +13,7 @@
       },
       {
         "title": "Lab 1: Setup",
-        "filename": "../../setup/setup-gb.md"
+        "filename": "../../../microservices-with-converged-db/setup/setup-gb.md"
       },
       {
         "title": "Lab 2: Deploy and Test Data-centric Microservices Application",
