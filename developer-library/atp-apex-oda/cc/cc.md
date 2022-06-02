@@ -245,4 +245,4 @@ We cannot cover the use of vi but we will share the commands needed to change th
 
 - **Author** - Victor Martin - Technology Product Strategy Manager, Priscila Iruela - Technology Product Strategy Director
 - **Contributors** - Melanie Ashworth-March
-- **Last Updated By/Date** - Kamryn Vinson, October 2020
+- **Last Updated By/Date** - Priscila Iruela, June 2022
