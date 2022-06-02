@@ -1,0 +1,11 @@
+{
+  "workshoptitle": "Use noVNC remote desktop",
+  "help": "livelabs-help-db_us@oracle.com",
+  "tutorials": [
+    {
+      "title": "Use noVNC remote desktop",
+      "description": "Instructions for opening the correct workshop guide for compute images supporting multiple workshops",
+      "filename": "./verify-setup-19c-livelabs.md"
+    }
+  ]
+}
