@@ -63,4 +63,6 @@ or
 
 - But what if am using 'Always free'? Then you need **[](var:number_of_ocpu_always_free)**
 
-- What is the best name for my datbase? It is **[](var:name_of_database)**
+- What is the best name for my database? It is **[](var:name_of_database)**
+
+- Here you can find more info: **[](var:doc_link)**
