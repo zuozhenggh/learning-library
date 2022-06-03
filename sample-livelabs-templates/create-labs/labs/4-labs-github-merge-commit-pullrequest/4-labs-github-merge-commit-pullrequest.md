@@ -266,12 +266,18 @@ GitHub merge conflicts happen when you and some other contributors are changing 
 
 This concludes this lab. You may now **proceed to the next lab**.
 
-### Issues: Cannot Use GitHub Desktop to Pull Changes from Production
+### Issue: Cannot Use GitHub Desktop to Pull Changes from Production
 If you have not updated your local GitHub repo with the oracle/learning-library GitHub repo for a long time, and you are too many commits behind the oracle:master, you may not get the latest changes from production using GitHub Desktop. It is simply because there are too commits to merge. In that case, you can use git commands to perform the same actions.
 
-*Git commands are not as straightforward as GitHub Desktop, so feel free to reach out for help in Slack channel #workshop-authors-help, and our team is there to help you.*
+*Git commands are not as straightforward as GitHub Desktop, so feel free to reach out to our team for help in Slack channel, and our team is there to help you.*
 
-1. Run the command to see if the origin is pointing to your repo and upstream to Oracle Learning Library
+>**Note:** Make sure you are performing the following actions **off VPN**.
+
+1. Navigate to your local GitHub repository or your workshop folder in your terminal or VScode.
+
+2. Make sure you have Git installed.
+
+3. Run the command to see if the *origin* is pointing to your repo, and *upstream* to Oracle Learning Library.
 
     ```
     <copy>
@@ -279,7 +285,7 @@ If you have not updated your local GitHub repo with the oracle/learning-library 
     </copy>
     ```
 
-2. If yes, only then run these below commands to sync your repo:
+4. If yes, only then run these below commands to sync your repo:
   Fetch latest changes from Oracle Learning Library
 
     ```
@@ -303,7 +309,7 @@ If you have not updated your local GitHub repo with the oracle/learning-library 
     </copy>
     ```
 
-3. If there are any conflicts run the command to view the conflicting flies. You can also use GitHub Desktop to see the conflicting files.
+5. If there are any conflicts run the command to view the conflicting flies. You can also use GitHub Desktop to see the conflicting files.
 
     ```
     <copy>
@@ -313,6 +319,26 @@ If you have not updated your local GitHub repo with the oracle/learning-library 
 
   Navigate to the conflicting files and resolve the conflicts by choosing the incoming changes or current changes.
   Once resolved commit the changes in your github desktop and push them.
+
+### Issue: Mess up GitHub Repo and Want to Delete the Repo
+
+>**Note:** Do this only if necessary.
+
+In worst case, if you cannot resolve issues in your local or staging repo, and want to delete your entire repository, follow the below steps:
+
+1. Open up a browser. Go to your repository (your fork). Click **Settings**.
+
+  ![Settings](./images/setting.png " ")
+
+2. Scroll down and click **Delete this repository**.
+
+  ![Delete](./images/delete.png " ")
+
+3. Enter &lt;your\_github\_user\_name&gt;/&lt;repo\_name&gt;.
+
+4. Click **I understand the consequences, delete this repository** button.
+
+  This deletes the entire learning-library repo in your local/laptop. Follow the steps in this guide to set up your repo again.
 
 ## Want to Learn More?
 
@@ -330,4 +356,4 @@ If you have not updated your local GitHub repo with the oracle/learning-library 
     * Arabella Yao, Product Manager, Database
     * Madhusudhan Rao, Product Manager, Database
 
-* **Last Updated By/Date:** Arabella Yao, May 2022
+* **Last Updated By/Date:** Arabella Yao, June 2022
