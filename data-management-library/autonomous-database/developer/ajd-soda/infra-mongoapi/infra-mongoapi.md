@@ -55,7 +55,10 @@ In this lab, you will:
 
 5. Provide the following information:
 
-    - VCN Name: **DEVCN**
+    - VCN Name: 
+    ```
+    <copy>DEVCN</copy>
+    ```
     - Compartment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
     - Click **Next**
 
@@ -84,18 +87,36 @@ In this lab, you will:
 
 11. Provide the following information:
 
-    - CIDR Block: 0.0.0.0/0
-    - Destination Port Range: 5000
-    - Description: Python Flask
+    - CIDR Block: 
+    ```
+    <copy>0.0.0.0/0</copy>
+    ```
+    - Destination Port Range: 
+    ```
+    <copy>5000</copy>
+    ```
+    - Description: 
+    ```
+    <copy>Python Flask</copy>
+    ```
     - Click **+ Another Ingress Rule**
 
     ![Python Flask Rule](./images/task1/python-flask-rule.png)
 
 12. Provide the following information:
 
-    - CIDR Block: 0.0.0.0/0
-    - Destination Port Range: 80
-    - Description: HTTP
+    - CIDR Block:
+    ```
+    <copy>0.0.0.0/0</copy>
+    ```
+    - Destination Port Range:
+    ```
+    <copy>80</copy>
+    ```
+    - Description: 
+    ```
+    <copy>HTTP</copy>
+    ```
     - Click **Add Ingress Rules**
     
     ![Port 80 Rule](./images/task1/port80-rule-new.png)
@@ -129,7 +150,10 @@ In this lab, you will:
 
 5. Provide the following information:
 
-    - Name: **DEVM**
+    - Name: 
+    ```
+    <copy>DEVM</copy>
+    ```
     - Comparment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
     - Image and shape: click **Edit/Collapse** and after **Change shape** if you don't have the following information:
         - Image: **MongoDB and Autonomous JSON workshop**
@@ -139,7 +163,10 @@ In this lab, you will:
 
     If you are using your own cloud account, not just a trial, you can see this section different. Just be sure you have all the information as following selected:
 
-    - Name: **DEVM**
+    - Name: 
+    ```
+    <copy>DEVM</copy>
+    ```
     - Comparment: Be sure you have selected the correct one for this workshop purpose. **Root** is the recommended one
     - Image and shape: click **Edit/Collapse** and after **Change shape** if you don't have the following information:
         - Image: **MongoDB and Autonomous JSON workshop**
@@ -184,8 +211,14 @@ On the Instance Details page, copy Public IP Address in your notes.
 3. Provide the following information:
 
     - Comparment: Be sure you have selected the correct one for this workshop purpose. *Root* is the recommended one
-    - Display name: AJDEV
-    - Database name: AJDEV
+    - Display name: 
+    ```
+    <copy>AJDEV</copy>
+    ```
+    - Database name:
+    ```
+    <copy>AJDEV</copy>
+    ```
     - Choose a workload type: JSON
     - Choose a deployment type: Shared Infrastructure
     - Always Free: Show only Always Free configuration options
@@ -197,7 +230,10 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 4. Under **Create administrator** credentials:
 
-    - Password: DBlearnPTS#22_
+    - Password: 
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
 
     > We recomend you to use the password as later on, it will be use for running Python scripts. If you consider changing it, remember that later on, you will need to modify the Python scripts manually.
     
@@ -234,8 +270,14 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 11. Type the following information:
 
-    - Password: DBlearnPTS#22_
-    - Confirm Password: DBlearnPTS#22_
+    - Password:
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+    - Confirm Password:
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
     - Click **Download**
 
     ![Download Wallet Password](./images/task3/download-wallet-password.png)
@@ -323,7 +365,10 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 3. On **Administration Services** login page, use password for **ADMIN**.
 
-    - Password: DBlearnPTS#22_
+    - Password: 
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
 
     ![Apex ADMIN](./images/task4/apex-admin.png)
 
@@ -333,9 +378,18 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 5. Type the following information:
 
-    - Database User: DEMO
-    - Password: DBlearnPTS#22_
-    - Workspace Name: DEMO
+    - Database User:
+    ```
+    <copy>DEMO</copy>
+    ```
+    - Password: 
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+    - Workspace Name:
+    ```
+    <copy>DEMO</copy>
+    ```
 
     ![Apex Workspace DEMO](./images/task4/apex-workspace-demo.png)
     
@@ -345,17 +399,32 @@ On the Instance Details page, copy Public IP Address in your notes.
  
 7. Click **Sign In** Page using the following information:
 
-    - Workspace: demo
-    - Username: demo
-    - Password: DBlearnPTS#22_
+    - Workspace: 
+    ```
+    <copy>demo</copy>
+    ```
+    - Username:
+    ```
+    <copy>demo</copy>
+    ```
+    - Password: 
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
 
     ![Login DEMO](./images/task4/log-in-demo.png)
 
     **Oracle APEX** uses low-code development to let you build data-driven apps quickly without having to learn complex web technologies. This also gives you access to Oracle REST Data Services, that allows developers to readily expose and/or consume RESTful Web Services by defining REST end points.
 
 8. On Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box. Allow pop-ups from cloud.oracle.com. If you need to **Sign in** again remember doing it as admin:
-    - User: admin
-    - Password: DBlearnPTS#22_
+    - User:
+    ```
+    <copy>admin</copy>
+    ```
+    - Password:
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
 
     ![DB Actions](./images/task4/db-actions.png)
 
@@ -407,8 +476,14 @@ On the Instance Details page, copy Public IP Address in your notes.
 
 13. Click **Sign In**. Login using DEMO user credentials.
 
-    - Username: demo
-    - Password: DBlearnPTS#22_
+    - Username:
+     ```
+    <copy>demo</copy>
+    ```
+    - Password:
+     ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
     
     ![Sign In DEMO](./images/task4/sign-in-demo.png)
     
@@ -417,13 +492,12 @@ On the Instance Details page, copy Public IP Address in your notes.
     ![DB Actions JSON](./images/task4/db-actions-json.png)
 
 
-
 *You can proceed to the next lab…*
 
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
 * **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, May 2022
+* **Last Updated By/Date** - Priscila Iruela, June 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
