@@ -4,7 +4,7 @@
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
     "variables": ["../../variables/variables.json",
-                 "../../variables/variables_in_another_file.json"],
+                 "../../variables/variables-in-another-file.json"],
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
