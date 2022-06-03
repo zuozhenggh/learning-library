@@ -11,7 +11,7 @@ Add the following to your manifest.json in the top section:
 
 ```
    "variables": ["../../variables/variables.json",
-                 "../../variables/variables_in_another_file.json"],
+                 "../../variables/variables-in-another-file.json"],
 ```
 
 ## Task 2
