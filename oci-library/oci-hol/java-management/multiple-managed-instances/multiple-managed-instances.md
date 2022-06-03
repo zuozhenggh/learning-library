@@ -71,8 +71,8 @@ In this lab, you will:
     </copy>
     ```   
   Customize following parameters:
-    * AgentDisplayName : Add a display name for management agent 
-    * ProxyPort : 4479
+    * AgentDisplayName: Add a display name for management agent 
+    * GatewayPort: 4479
     * Remove the parameters starting with Service.plugin.* parameter. These parameters are agent-specific and are only used for agent installations. 
 
   Final response file may look like this.
