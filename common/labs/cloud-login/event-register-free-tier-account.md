@@ -1,4 +1,4 @@
-# Get started
+# Get started - register Free Tier account
 
 ## Introduction
 
@@ -7,15 +7,18 @@ Before you get started, you will need an Oracle Cloud account. This 5-minute lab
 Watch this video to create your free trial account on Oracle cloud.
 [Create Free Trial account on Oracle Cloud](youtube:nClCXAfqvzs)
 
+Estimated Time: 5 minutes
+
 ### Existing Cloud Accounts
 
 If you already have access to an Oracle Cloud account, including an Oracle Cloud account using [Oracle Universal Credits](https://docs.oracle.com/en/cloud/get-started/subscriptions-cloud/csgsg/universal-credits.html), skip to **STEP 2** to sign in to your cloud tenancy.
 
-### Two Cloud Offers in One
+### Objectives
 
-Oracle Cloud Free Tier allows you to sign up for an Oracle Cloud account which provides a number of Always Free services and a Free Trial with US$500 of free credit to use on all eligible Oracle Cloud Infrastructure services for up to 30 days. The Always Free services are available for an unlimited period of time. The Free Trial services may be used until your US$500 of free credits are consumed or the 30 days has expired, whichever comes first.
+- Create an Oracle Cloud Free Tier account
+- Sign in to your account
 
-### What you will need
+### Prerequisites
 
 * A valid email address
 * Ability to receive SMS text verification (only if your email isn't recognized)
@@ -70,7 +73,7 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
     ![Cloud Account Name](images/cloud-oracle.png " ")
 
-2. Expand the arrow after *"Oracle Cloud Infrastructure Direct Sign-In"* to reveal the login input fields.
+2. Expand the arrow after *Oracle Cloud Infrastructure Direct Sign-In* to reveal the login input fields.
 
     ![Expand Oracle Cloud Infrastructure Direct Sign-In](images/cloud-login-tenant.png " ")
 
@@ -80,10 +83,9 @@ If you've signed out of the Oracle Cloud, use these steps to sign back in.
 
 4. You are now signed in to Oracle Cloud!
 
-    ![OCI Console Home Page](images/oci-console-home-page.png " ")
+    ![OCI Console Home Page](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/home-page.png " ")
 
 You may now **proceed to the next lab**.
-
 
 ## **Acknowledgements**
 
