@@ -46,10 +46,10 @@ In this lab, you will:
 3. The Software Download pane lists all the software available to download for the Management Agent and Management Gateway. Select the operating system that the Management Gateway will be installed on from the Download column. In this case, click on **Gateway for LINUX (X84_64)** link to download the Management Gateway software file.
   ![image of downloading management gateway software](/../images/download-gateway-software.png)
 
-4. Alternatively, you can run the following command to download **Management Gateway software for Linux**. This is useful if you want to avoid user interface.
+4. Alternatively, you can run the following command to download **Management Gateway software for Linux**. 
     ```
     <copy>
-    curl -o oracle.mgmt-gateway.rpm https://objectstorage.us-ashburn-1.oraclecloud.com/n/idtskf8cjzhp/b/installer/o/Linux-x86_64/latest/oracle.mgmt_gateway.rpm
+    wget oracle.mgmt-gateway.rpm https://objectstorage.us-ashburn-1.oraclecloud.com/n/idtskf8cjzhp/b/installer/o/Linux-x86_64/latest/oracle.mgmt_gateway.rpm
     </copy>
     ```    
 
@@ -63,27 +63,34 @@ In this lab, you will:
 7. On the Install Keys pane select the newly created Install Key. Then on the right side of the selected key, click the action menu and select **Download Key to File** option. 
   ![image of download key to file option](/../images/download-key-to-file-option.png)
 
-8. Create a response file using downloaded Install key. To do that open the downloaded Install key file in a text editor.
+8. Create a gateway.rsp response file on your host. This will be used by the Management Gateway installation script to read the parameters specific to your environment.
 
     ```
     <copy>
-    sudo nano <install key name>
+    nano /tmp/gateway.rsp
     </copy>
     ```   
+
+  Copy and paste the contents of the install key file downloaded in last step into the editor.
+
   Customize following parameters:
-    * AgentDisplayName: Add a display name for management agent 
-    * GatewayPort: 4479
+    * **AgentDisplayName**: Add a display name for Management Gateway 
+    * **GatewayPort**: 4479
     * Remove the parameters starting with Service.plugin.* parameter. These parameters are agent-specific and are only used for agent installations. 
 
-  Final response file may look like this.
+     > **Note:** This lab will be using **GatewayPort** 4479, but you can choose any port recommended by your organization.
+
+  A sample response file is included for reference, modify AgentDisplayName and GatewayPort parameters accordingly.
   ![image of final response file](/../images/terminal-edit-install-key.png)
 
-9. Save the response file with .rsp extension and move it to /tmp directory. Moving the response file to /tmp directory helps to associate correct permissions to response file.
+  To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y to save and exit, type n to abandon your changes and exit.
+
+<!-- 9. Save the response file with .rsp extension and move it to /tmp directory. Moving the response file to /tmp directory helps to associate correct permissions to response file.
     ```
     <copy>
     sudo mv <install-key-file-name> /tmp/gateway.rsp
     </copy>
-    ```   
+    ```    -->
 
 
 ## Task 2: Install Management Gateway
@@ -129,11 +136,11 @@ In this lab, you will:
           Gateway install successful
       ```   
 
-3. Configure the management gateway by running the setupGateway.sh script using a response file. In this case, full path to response file should be `/tmp/gateway.rsp`.
+3. Configure the management gateway by running the setupGateway.sh script using a response file. 
 
     ```
     <copy>
-    sudo /opt/oracle/mgmt_agent/agent_inst/bin/setupGateway.sh opts=<full_path_of_response_file>
+    sudo /opt/oracle/mgmt_agent/agent_inst/bin/setupGateway.sh opts=/tmp/gateway.rsp
     </copy>
     ```  
 
@@ -142,8 +149,6 @@ In this lab, you will:
 
     ```
     <copy>
-sudo /opt/oracle/mgmt_agent/agent_inst/bin/setupGateway.sh opts=<user_home_directory>/gateway.rsp
-
 Executing configure
        Parsing input response file
        Validating install key
@@ -179,7 +184,7 @@ Gateway Proxy started successfully
     </copy>
     ```  
 
-5. As we set the Proxy port to 4479. Open this port on the host firewall by configuring the firewall. 
+5. As we set the Gateway port to 4479. Open this port on the host firewall by configuring the firewall. 
 
     ```
     <copy>
@@ -189,12 +194,17 @@ Gateway Proxy started successfully
     </copy>
     ```  
 
-6. Take note of IP address of the machine by running following command.
+    > **Note:** This set of commands is specifically for Oracle Linux. Please adjust the commands based on your Operating System and Setup.
+
+6. Take note of IP address of the host by running following command.
     ```
     <copy>
     ifconfig
     </copy>
     ```  
+    The output may look like this.
+
+  ![image of result of ifconfig command](/../images/terminal-ip-address.png)
 
     This IP address will be used as value for `ProxyHost` in Management Agent response file in Task 4.
   
@@ -232,6 +242,15 @@ Gateway Proxy started successfully
     </copy>
     ```
     
+     For Oracle Linux 8: 
+     ```
+    <copy>
+   sudo systemctl status mgmt_gateway
+    </copy>
+    ```
+    If the Management Gateway is running, the output of the command should look like this.
+
+    ![image of Management Gateway logs](/../images/management-gateway-status.png)
 
     For more details, check log file: 
     
@@ -240,14 +259,29 @@ Gateway Proxy started successfully
      cat /opt/oracle/mgmt_agent/plugins/GatewayProxy/stateDir/log/mgmt_gateway.log
     </copy>
     ```
+    The logs may look like this.
+
+    ![image of Management Gateway logs](/../images/management-gateway-status-logs.png)
 
 
 
-## Task 4:  Prepare agent software and response file for Management Agent installation
+## Task 4:  Configure Management Agents After Management Gateway Installation
 
-1. A fleet, `fleet_1`, has been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the downloaded install key file.
+After installing the Management Gateway, you need to configure each Management Agent to use the Management Gateway. From the Management Agents' side, the Management Gateway is configured like a normal proxy.
 
-2. Start another on-premises host and connect it to the same on-premises network as the Management Gateway.
+* A fleet, `fleet_1`, has already been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the downloaded install key file.
+
+* You should follow [Lab 5](?lab=set-up-of-management-agent-linux) to Install and configure Management Agent on Linux OS and [Lab 6](?lab=set-up-of-management-agent-windows) to Install and configure Management Agent on Windows OS, depending on you on-premises hosts.
+
+* While preparing the response you must add value for these additional parameters to configure the proxy:
+    * **ProxyHost**: The IP address of host that is running Management Gateway
+    * **ProxyPort**: 4479 
+ 
+  A sample response file is included for reference, after modifying AgentDisplayName and Proxy parameters accordingly.
+  ![image of final response file](/../images/response-file-parameters.png)
+
+
+<!-- 2. Start another on-premises host and connect it to the same on-premises network as the Management Gateway.
 
 3. Create an `input.rsp` response file on your host. This will be used by the Management Agent installation script to read the agent parameters specific to your environment.
 
@@ -270,27 +304,25 @@ Gateway Proxy started successfully
     * Check that Management agent is tagged with fleet OCID
     * Run Java application.
 
-5. Once you have finished installing Management Agent according to above mentioned labs and ran the `HelloWorld` java application. You should be able to see Managed Instance, Java Runtime and Application on Fleet page in 5-10 minutes.
+5. Once you have finished installing Management Agent according to above mentioned labs and ran the `HelloWorld` java application. You should be able to see Managed Instance, Java Runtime and Application on Fleet page in 5-10 minutes. -->
 
 
-## Task 5: Verify detection of Java applications and runtimes
+## Task 5: Verify detection of Managed Instance
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click on **Fleets** under **Java Management**.
 
   ![image of console navigation to java management](/../images/console-navigation-jms.png)
 
 2. Select the compartment that the fleet is in and click the fleet.
 
-3. Click **Java Runtimes** under **Resources**. If tagging, installation of management agents and coomunication between Management Gateway and Management Agent is successful, Java Runtimes will be indicated on the Fleet Main Page after 5 minutes.
+3. Click **Managed Instance** under **Resources**. If tagging, installation of management agents and communication between Management Gateway and Management Agent is successful, Managed Instance will be indicated on the Fleet Main Page.
 
-  You should see only one Java Runtime. This corresponds to the Java 8 installation from [Lab 3](?lab=deploy-a-java-application).
+  You should be able to see new Managed Instance with latest time stamp.
 
-  ![image of runtimes after successful installation](/../images/successful-installation.png)
+  ![image of managed instance after successful installation](/../images/successful-installation.png)
 
-4. Click **Applications** under **Resources**. You should now see two applications. The first is from the javac compiler command and the second is from the HelloWorld application.
+<!-- 4. Click **Applications** under **Resources**. You should now see two applications. The first is from the javac compiler command and the second is from the HelloWorld application.
 
-  ![image of applications after successful installation](/../images/successful-installation-applications.png)
-
-
+  ![image of applications after successful installation](/../images/successful-installation-applications.png) -->
 
 
 You may now **proceed to the next lab.**
