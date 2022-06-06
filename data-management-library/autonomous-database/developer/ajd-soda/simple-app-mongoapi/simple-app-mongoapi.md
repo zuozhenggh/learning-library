@@ -240,9 +240,18 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
 1. Use the **web browser** tab where Oracle Application Express (Apex) is opened, or open Apex from AJDEV using the browser on your laptop. If you need to **Sign In** again use the following credentials:
 
-    - Database User: DEMO
-    - Password: DBlearnPTS#22_
-    - Workspace Name: DEMO
+    - Database User: 
+    ```
+    <copy>DEMO</copy>
+    ```
+    - Password:
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+    - Workspace Name:
+    ```
+    <copy>DEMO</copy>
+    ```
 
     Click **SQL Workshop** > **SQL Commands**. 
 
@@ -294,7 +303,10 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
 7. Provide the following information:
 
-    - Name: Companies
+    - Name: 
+    ```
+    <copy>Companies</copy>
+    ```
     - Click **Add Page**
     
     ![Companies App](./images/task2/companies-app.png)
@@ -303,7 +315,10 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
     ![Interactive Report](./images/task2/interactive-report.png)
 
-    - Page Name: Report
+    - Page Name: 
+    ```
+    <copy>Report</copy>
+    ```
     - SQL Query:
     
     ````
@@ -334,8 +349,14 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 
 9. **Log In** to Companies using the following credentials:
 
-    - Username: demo
-    - Password: DBlearnPTS#22_
+    - Username:
+    ```
+    <copy>demo</copy>
+    ```
+    - Password:
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
 
     ![Log In Companies](./images/task2/log-in-companies.png)
 
@@ -354,7 +375,7 @@ Use SODA for Python on Oracle Autonomous JSON Database to develop a micro-servic
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
 * **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, May 2022
+* **Last Updated By/Date** - Priscila Iruela, June 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

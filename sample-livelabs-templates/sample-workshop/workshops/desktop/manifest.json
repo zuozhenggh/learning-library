@@ -2,7 +2,7 @@
   "workshoptitle": "The Title of the Workshop is defined in the manifest",
   "help": "livelabs-help-**enterarea**_us@oracle.com",
   "variables": ["../../variables/variables.json",
-    "../../variables/variables_in_another_file.json"],
+    "../../variables/variables-in-another-file.json"],
   "tutorials": [
     {
       "title": "Introduction",
