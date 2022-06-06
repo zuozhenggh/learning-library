@@ -1,7 +1,9 @@
-# How do I show tables owned by the current user in the Oracle Database?
+# How do I show all tables owned by the current user in the Oracle Database?
+
 Duration: 1 minute
 
 ## Show tables owned by the current user
+
 * Data dictionary tables are not directly accessible, but you can access information in them through data dictionary views.
 * A USER_ view displays all the information from the schema of the current user. No special privileges are required to query these views.
 * To show the tables owned by the current user, query from the user_tables view:

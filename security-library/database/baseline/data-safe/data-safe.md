@@ -3,7 +3,7 @@
 ## Introduction
 This workshop introduces the various features and functionality of Oracle Data Safe. It gives the user an opportunity to learn how to register an on-premise Oracle Database with Oracle Data Safe, provision audit and alert policies on your database, analyze alerts and audit reports, assess the security of your database configurations and users, and discover and mask sensitive data.
 
-*Estimated Lab Time:* 120 minutes
+*Estimated Lab Time:* 120 minutes 
 
 *Version tested in this lab:* Oracle Data Safe on OCI and Oracle DB 19.13
 
@@ -94,7 +94,7 @@ To use a database with Oracle Data Safe, you first need to register it with Orac
 
         **Note**: The file name proposed a default value (here "*`DBSec-Livelab_DBs.zip`*"), please keep going with it
 
-    - Now, upload the zip file downloaded into your DBSecLab VM to *`home/opc`*
+    - Now, upload the zip file downloaded into your DBSecLab VM to *`home/opc`* with a transfer file sottware like scp, filezilla or others
 
     - Setup the Data Safe On-Premises connector
 
@@ -224,395 +224,614 @@ To use a database with Oracle Data Safe, you first need to register it with Orac
 
         **Note**:
         - Make sure your compartment is still selected under **List Scope**
-        - In Security Center, you can access the five main features of Oracle Data Safe, including Security Assessment, User Assessment, Data Discovery, Data Masking, and Activity Auditing
-        - The Security Assessment and User Assessment features are now native in Oracle Cloud Infrastructure
-        - The Data Discovery, Data Masking, and Activity Auditing features as well as the dashboard are available through the Oracle Data Safe Console
+        - In Security Center, you can access all the Oracle Data Safe features, including the dashboard, Security Assessment, User Assessment, Data Discovery, Data Masking, Activity Auditing, Alerts, and Settings
 
-    - By default, the Security Assessment page is displayed and show you an overview of all risks for ALL your targets
-        
+    - By default, the dashboard is displayed and the **Security Assessment** and **User Assessment** charts are automatically populated
+    
         ![](./images/ds-023.png " ")
 
-    - By selecting the **Target Summary** tab, you'll see the risks by target
+        **Note**:
+        - When you register a target database, Oracle Data Safe automatically creates a security assessment and user assessment for you
+        - Therefore, the Security Assessment, User Assessment, Feature Usage, and Operations Summary charts in the dashboard already have data
+        - During registration, Oracle Data Safe also discovers audit trails on your target database
+        - That is why the Audit Trails chart in the dashboard shows one audit trail with the status In Transition for your Autonomous Database
+        - Later you start this audit trail to collect audit data into Oracle Data Safe
 
-        ![](./images/ds-024.png " ")
+            ![](./images/ds-024.png " ")
 
-    - Click **Activity Auditing** sub-menuu
+
+## Task 2: Audit Database Activity
+
+1. Review the global settings for Oracle Data Safe
+
+    - In Security Center, click **Settings**
 
         ![](./images/ds-025.png " ")
 
-        **Note**: A new tab is opened because Activity Auditing is still part of the former Oracle Data Safe Console and will be migrated in the next year
+    - Review the global settings
 
         ![](./images/ds-026.png " ")
 
-    - To view the dashboard, click the **Home** tab
+        **Note**:
+        - Each regional Oracle Data Safe service has global settings for paid usage, online retention period, and archive retention period.
+        - Global settings are applied to all target databases unless their audit profiles override them.
+        - By default, paid usage is enabled for all target databases, the online retention period is set to the maximum value of 12 months, and the archive retention period is set to the minimum value of 0 months.
+
+2. Review the audit profile for your target database
+
+    - On the left, click **Activity Auditing**
 
         ![](./images/ds-027.png " ")
 
-    - At the top of the page, new features with links to documentation and product announcements are listed
+    - Under **Related Resources**, click **Audit Profiles**
 
         ![](./images/ds-028.png " ")
 
-    - At the bottom of the page, the dashboard is a global overview of all your targets
+        **Note**: From the **Compartment** drop-down list under **List Scope**, make sure that your compartment is selected
+
+    - On the right, review the audit profile information about your target database, and then click your target database name to view more detail
 
         ![](./images/ds-029.png " ")
 
-    - Review the five tabs on the left side
+    - Review the details in the audit profile
 
-        - These tabs let you navigate to each feature in Oracle Data Safe
-        - The Security Assessment and User Assessment features are now available in the Oracle Cloud Infrastructure Console, therefore, if you click either tab, you are returned to Oracle Cloud Infrastructure
-        - The Data Discovery, Data Masking, and Activity Auditing features are part of the Oracle Data Safe Console
-
-            ![](./images/ds-030.png " ")
-
-    - Be familiar with each top tab and review the content on the page
-
-        - The **Home** tab shows a dashboard
-        - The **Targets** tab shows you a read-only list of registered target databases to which you have access
-        - The **Library** tab lets you access repository resources, which are used for discovering and masking sensitive data. Resources include sensitive types, sensitive data models, masking formats, and masking policies
-        - The **Reports** tab lets you access prebuilt and custom built reports for all Oracle Data Safe features
-        - The **Alerts** tab shows you all open alerts for the past week, by default. If you need to view more alerts, you can remove the filters
-        - The **Jobs** tab shows you all current, past, and scheduled jobs. Notice that you have two jobs started already - one for User Assessment and one for Security Assessment
-
-            ![](./images/ds-031.png " ")
-
-## Task 2: Provision audit and alert policies
-
-With Oracle Data Safe, you can provision audit and alert policies on your target databases by using the Activity Auditing feature:
-- An audit policy defines specific events to track in a target database. You can provision basic, administrator, user, and custom audit policies, as well as audit policies designed to help you meet compliance standards
-- An alert is a message that notifies you when a particular audit event happens on a target database. The alerts generated depend on which alert policies you enabled for your database in Activity Auditing
-- An audit trail is a database table that stores audit data. In Oracle Data Safe, audit data collection copies audit data from the database's audit trail into the Oracle Data Safe audit table
-
-1. In Oracle Data Safe Console, click the **Home** tab
-
-2. Then, click the **Activity Auditing** tab
-
-3. Enter your database name (here *`DBSec_Livelabs_pdb1`*) into the filter box and click on the "**Search**" icon
-
-    ![](./images/ds-032.png " ")
-
-4. On the **Select Targets for Auditing** page, select the check box for your target database, and then click [**Continue**]
-
-    ![](./images/ds-033.png " ")
-
-5. On the **Retrieve Audit Policies** page, select the check box for your target database, and then click [**Retrieve**] to retrieve the currently deployed audit policies from your database
-
-    ![](./images/ds-034.png " ")
-
-6. Wait until a green check mark is displayed in the **Retrieval Status** column
-
-    ![](./images/ds-035.png " ")
-
-    **Note**: The check mark means that all of the audit policies are successfully retrieved
-
-7. Then click [**Continue**]
-
-    ![](./images/ds-036.png " ")
-
-8. On the **Review and Provision Audit and Alert Policies** page, review the types of audit policies already enabled on your target database
-
-    ![](./images/ds-037.png " ")
-
-    **Note**:
-    - The check mark under **Additional Policies** means that your target database has one or more predefined audit policies enabled on it
-    - The check mark under **Compliance Standards** means that your target database has one or more compliance policies enabled on it; for example, the **Center for Internet Security (CIS) Configuration** audit policy
-    - Currently, there are no basic, admin activity, or user activity audit policies provisioned on your target database, nor are there any alert policies
-
-9. Click your target database name to provision more policies
-
-    ![](./images/ds-038.png " ")
-
-10. Configure the policies
-
-    - On the **Audit Policies** tab
-    
-        - Notice that the **Basic Auditing** and **Admin Activity Auditing** policies are selected to be provisioned
-    
-            ![](./images/ds-039.png " ")
-    
-            **Note**: Oracle recommends that they be provisioned, so you can leave them selected!
-
-        - Expand **Custom Policies** to view the list of custom policies on your target database
-
-            ![](./images/ds-040.png " ")
-
-            **Note**: If a custom policy is selected, it means that it is already created and enabled on your target database
-
-        - Expand **Oracle Pre-defined Policies** to view the list of Oracle predefined audit policies on your target database
-
-            ![](./images/ds-041.png " ")
-
-            **Note**:  By default, the following policies are provisioned on your database:
-            - `ORA_ACCOUNT_MGMT`
-            - `ORA_DATABASE_PARAMETER`
-            - `ORA_SECURECONFIG`
-            - `ORA_DV_AUDPOL`
-            - `ORA_DV_AUDPOL2`
-            - `ORA_RAS_POLICY_MGMT`
-            - `ORA_RAS_SESSION_MGMT`
-            - `ORA_LOGON_FAILURES`
-
-        - Next to **Audit Compliance Standards**, notice that the **Center for Internet Security (CIS) Configuration** policy is created and enabled by default
-
-            ![](./images/ds-042.png " ")
-
-    - Click the **Alert Policies** tab and review the alert policies selected to be provisioned
-
-        ![](./images/ds-043.png " ")
+        ![](./images/ds-030.png " ")
 
         **Note**:
-        - Oracle recommends that you provision all of these alert policies
-        - They are as follows:
-            - `Profile Changes`
-            - `Failed Logins by Admin User`
-            - `Audit Policy Changes`
-            - `Database Parameter Changes`
-            - `Database Schema Changes`
-            - `User Entitlement Changes`
-            - `User Creation/Modification`
+        - There are default settings for paid usage, online retention period, and offline retention period
+        - All initial audit profile settings are inherited from the global settings for Oracle Data Safe, but you can modify them here as needed
 
-    - Click [**Provision**] to start provisioning the audit and alert policies on your target database
+3. Review the audit trail(s) for your target database
 
-11. On the **Review and Provision Audit and Alert Policies** page, wait for check marks to appear under all audit policy types, except for **All User Activity**
+    - In the breadcrumb at the top of the page, click **Activity Auditing**
 
-    ![](./images/ds-044.png " ")
+        ![](./images/ds-031.png " ")
 
-12. Then click [**Continue**]
+    - On the left under **Related Resources**, click **Audit Trails**
 
-13. On the **Start Audit Collection** page, observe the default values
+        ![](./images/ds-032.png " ")
 
-    ![](./images/ds-045.png " ")
+        **Note**: From the **Compartment** drop-down list, select your compartment
 
-    **Note**:
-    - The audit trail location is automatically set to `UNIFIED_AUDIT_TRAIL`
-    - Audit collection is not yet started
-    - The auto purge feature is not enabled by default (if you are signed in to Oracle Data Safe during a Free Trial, the auto purge option is not displayed)
+    - From the **Target Databases** drop-down list, notice that there is one audit trail discovered for your Autonomous Database (UNIFIED\_AUDIT\_TRAIL)
 
-14. You need to configure an "Audit Collection Start Date" in the **Collect Audit Data From** column
+        ![](./images/ds-033.png " ")
 
-    - Click the calendar widget
-    - Configure a start date of 12 months ago
-    - Then click [**Done**]
+    - Review the information in the table, and then click your target database name to view more detail
+
+        ![](./images/ds-034.png " ")
+
+    - Review the information on the **Audit Trail Details** page
+
+        ![](./images/ds-035.png " ")
+
+        **Note**: This is where you can manage audit data collection for the audit trail
+
+4. Review the audit policy for your target database
+
+    - In the breadcrumb at the top of the page, click **Activity Auditing**
+
+        ![](./images/ds-036.png " ")
+
+    - Under **Related Resources**, click **Audit Policies**
+
+        ![](./images/ds-037.png " ")
+
+        **Note**: From the **Compartment** drop-down list, select your compartment if needed
+
+    - From the **Target Databases** drop-down list, review the information provided for your target database's audit policy
+
+        ![](./images/ds-038.png " ")
+
+    - Then click your target database name to view more detail
+
+        ![](./images/ds-039.png " ")
+
+    - On the **Audit Policy Details** page, scroll down and review the list of audit policies available for your target database
+
+        ![](./images/ds-040.png " ")
+
+        **Note**:
+        - A grey circle indicates the audit policy is not yet provisioned on the target database
+        - A green circle indicates that the audit policy is provisioned
+        - You can choose to provision any number of audit policies on your target database and set filters on users and roles
+
+5. View the quantity of audit records available on your target database for the discovered audit trail(s)
+
+    - In the breadcrumb at the top of the page, click **Activity Auditing**
+
+        ![](./images/ds-041.png " ")
+
+    - On the left under **Related Resources**, click **Audit Profiles**
+
+        ![](./images/ds-028.png " ")
+
+        **Note**: From the **Compartment** drop-down list, select your compartment.
+
+    - From the **Target Databases** drop-down list, click the name of your target database
+
+        ![](./images/ds-029.png " ")
+
+    - Scroll down to the **Compute Audit Volume** section, and click [**Available on Target Database**]
+
+        ![](./images/ds-042.png " ")
+
+    - The **Compute Available Volume** dialog box is displayed
+
+        - In the **Select Start Date** box, enter the current date (you can use the calendar widget to help you)
+        - From the **Trail Locations** drop-down list, select ` `
+
+            ![](./images/ds-043.png " ")
+
+        - Click [**Compute**] and wait for Oracle Data Safe to calculate the available audit volume
+
+            ![](./images/ds-044.png " ")
+
+    - In the **Available in Target Database** column, view the number of audit records for the `UNIFIED_AUDIT_TRAIL`
+
+        ![](./images/ds-045.png " ")
+
+        **Note**:
+        - There is a small number of audit records in the `UNIFIED_AUDIT_TRAIL` because your target database has just been provisioned
+        - For an older target database, there are probably many more audit records
+        - Oracle Data Safe splits up the numbers by month
+        - These values help you to decide on a start date for the Oracle Data Safe audit trail
+
+6. Start audit data collection
+
+    - In the breadcrumb at the top of the page, click **Activity Auditing**
 
         ![](./images/ds-046.png " ")
 
-15. Wait for the **To Be Collected**, **Collected**, and **Total** columns to populate
+    - On the left under **Related Resources**, click **Audit Trails**
 
-    ![](./images/ds-047.png " ")
+        ![](./images/ds-032.png " ")
 
-    **Note**:
-    - Don't worry if your numbers are different than those shown in the screenshot below
-    - The **To Be Collected** column shows you the number of records to be retrieved for the selected audit trail since the specified start date
-    - The **Collected** column shows the number of audit records already collected for the current month for the target database (includes audit data collected from all the audit trails for the target database). This value helps you to determine whether you are going to exceed your monthly quota of one million records
-    - The **Total** column totals the **To Be Collected** and **Collected** values for a target database. This value tells you the overall number of audit records you are going to collect for a target database for the current month
+        **Note**: From the **Compartment** drop-down list, select your compartment
 
-16. Click **Start** to start collecting audit data
+    - From the **Target Databases** drop-down list, click the name of your target database
 
-    ![](./images/ds-048.png " ")
+        ![](./images/ds-034.png " ")
 
-17. In the **Start Audit Collection** dialog box, click [**Start**] to confirm that you want to start the `UNIFIED_AUDIT_TRAIL`
+        **Note**: The **Audit Trail Details** page is displayed!
 
-    ![](./images/ds-049.png " ")
+    - Click [**Start**]
 
-18. Wait for the message at the top of the page to state that `UNIFIED_AUDIT_TRAIL` is successfully created
+        ![](./images/ds-047.png " ")
 
-    ![](./images/ds-050.png " ")
+    - A **Start Audit Trail: UNIFIED\_AUDIT\_TRAIL** dialog box is displayed
 
-19. Click [**Done**]
+        - Configure a start date based on the data in the **Compute Audit Volume** region of the audit profile that you viewed in task 5 (step 10), and then click [**Start**]
 
-    ![](./images/ds-051.png " ")
+            ![](./images/ds-048.png " ")
 
-20. Notice that you are directed to the **Audit Trails** page, from where you can manage all of the audit trails for your target databases
+            **Note**: For example, if you have several months listed, you can set the start date to the beginning of the year
 
-    ![](./images/ds-052.png " ")
+        - Notice when the **Collection State** changes to **COLLECTING** and then to **IDLE**
+        
+            ![](./images/ds-049.png " ")
 
-    **Note**: Observe that the **Collection State** column value changes from  `RUNNING` to `COLLECTING`, and then to `IDLE` (collection takes approximately 2 minutes)
+7. Provision audit policies
 
-21. View details for an audit trail
+    - In the breadcrumb at the top of the page, click **Activity Auditing**
 
-    - In the **Collection State** column on the **Audit Trails** page, click **COLLECTING** or **IDLE** (if the audit data is collected)
+        ![](./images/ds-050.png " ")
+
+    - Under **Related Resources**, click **Audit Policies**
+
+        ![](./images/ds-037.png " ")
+
+        **Note**: From the **Compartment** drop-down list, select your compartment
+
+    - From the **Target Databases** drop-down list, click the name of your target database
+
+        ![](./images/ds-039.png " ")
+
+    - Click [**Update and Provision**]
+    
+        ![](./images/ds-051.png " ")
+
+    - The **Provision Audit Policies** panel is displayed
+
+        - Select *Exclude Data Safe user activity*
+        - Under **Basic Auditing**, select *Database Schema Changes* and *Critical Database Activity*
+        - Under **Admin Activity Auditing**, select *Admin User Activity*
+        - Under **Custom Policies**, select *APP\_USER\_NOT\_APP\_SERVER*
+
+            ![](./images/ds-052.png " ")
+
+        - Click [**Update and Provision**] to provision the selected policies on your target database
+
+    - Wait for the provisioning to finish, and then view the updated policy information on the page
 
         ![](./images/ds-053.png " ")
 
-    - In the **Trail Log** dialog box, review the logs, and then click **X** to close the dialog box
-
         ![](./images/ds-054.png " ")
 
-22. Click the **Home** tab and review the dashboard
+8. View the All Activity report
 
-    **Note**: Notice that the **All Activity**, **Admin Activity**, **Open Alerts**, **Feature Usage**, and **Audit Trails** charts now have data!
-
-
-## Task 3: Collect audit data and generate alerts
-
-After enabling audit data collection on a target database in Oracle Data Safe, you can analyze the audit data through alerts and audit reports
-
-1. View alerts
-
-    - In the Oracle Data Safe Console, click the **Alerts** tab
+    - In the breadcrumb at the top of the page, click **Activity Auditing**
 
         ![](./images/ds-055.png " ")
 
-    - View the total number of target databases, critical risk alerts, high risk alerts, medium risk alerts, open alerts, and closed alerts
-
+    - Under **Related Resources**, click **Audit Reports**
+    
         ![](./images/ds-056.png " ")
 
-        **Note**: At a glance, you can better understand whether the security of your target database is in jeopardy and how you should prioritize your work
+    - Oracle Data Safe has the following predefined audit reports:
 
-    - Scroll down to review the alerts in the table
+        ![](./images/ds-057.png " ")
 
-        - The **DB User** column identifies who is doing the action
-        - The **Operation** column identifies the action
-        - The **Alert Severity** column indicates the seriousness of the action
+    - Click the **All Activity** report to view it
 
-            ![](./images/ds-057.png " ")
+    - View the filters set in the report
 
-    - At the bottom of the page, click the page numbers to view other pages of alerts
-
-2. Filter the report to show only open high alerts
-    
-    - At the top of the report, click [**+ Filter**] and then set the filter to be: **Alert Severity = High**
-    
         ![](./images/ds-058.png " ")
-   
-    - Click [**Apply**]
-        
-    - The table shows you the open high alerts
 
+        **Note**: By default, the report is filtered to shows audit events for the past one week for all target databases in the selected compartment
+
+    - To view more detail for a particular audit event, click the down arrow to expand the row and show details for the particular event
+    
         ![](./images/ds-059.png " ")
 
-        **Note**: If the filters are not displayed, click on the **Active Filters** link beside the totals at the top of the page
+        **Note**: For some details, you can copy their values to the clipboard
+
+9. Create a custom audit report
+
+    - To add a filter, click [**+ Another Filter**] and add the following two filters:
+
+        - *`Target = DBSec_Livelabs_pdb1`*
+        - *`Event = SELECT`*
 
         ![](./images/ds-060.png " ")
+
+    - Click [**Apply**]
+    
+    - Click **Manage Columns**
+
+        ![](./images/ds-061.png " ")
+
+    - In the **Manage Columns** panel, select **Target**, **DB User**, **Object**, **Operation Time**, **Event**, and **Unified Audit Policies** columns
+    
+        ![](./images/ds-062.png " ")
+    
+    - Click [**Apply Changes**]
+    
+    - The table displays the selected columns
+
+        ![](./images/ds-063.png " ")
         
-3. To sort the **Operation** column, position the cursor over the **Operation** column heading, and then click the arrow button
+        **Note**: Notice that the totals are adjusted too
 
-    ![](./images/ds-061.png " ")
+    - Click [**Create Custom Report**]
 
-4. To view more detail for an alert, click the **Alert ID number**
+    - The **Custom Report** dialog box is displayed!
 
-    ![](./images/ds-062.png " ")
-
-5. Review the information in the **Alert Details** dialog box, and then click **X** to close it
-    
-    ![](./images/ds-063.png " ")
-
-    **Note**: You can view the **DB User**, **Operation Status**, **SQL Text**, and much more
-
-6. Close alerts
-
-    - Create a filter to view the list of alerts for Audit Policy Changes
-
-        - To do so, click **+ Filter**
-        - Set the filter to be: **Alert = Audit Policy Changes**
-        - Click [**Apply**]
-
-        ![](./images/ds-064.png " ")
-
-        - Review the alerts
-
-        ![](./images/ds-065.png " ")
-
-    - Suppose you are fine with these changes, now you can close the alerts
-    
-        - Select the check box in the top left corner of the table to select all of the alerts displayed
-
-            ![](./images/ds-066.png " ")
-    
-        - From the **Mark As** menu, select **Closed**
-
-            ![](./images/ds-067.png " ")
-
-            **Note**:
-            - The alerts selected on this page are now **closed** and the next page is displayed
-            - Because there is another page of alerts that meet the filter criteria, repeat the previous step to mark all alerts as closed
-            - Once it's done, you will have an empty page!
-
-                ![](./images/ds-068.png " ")
-
-7. Remove the filters **Alert = Audit Policy Changes** and **Severity = High** by clicking the **X** next to each filter, and then click [**Apply**]
-
-    ![](./images/ds-069.png " ")
+        - Enter the report name *`All SELECT Activity Report in the target DBSec_Livelabs_pdb1`*
+        - Enter an optional description *`Custom audit report for DBSec_Livelabs_pdb1 target db`*
+        - Select your compartment
         
-8. To show closed alerts on the pages, move the **Open Alerts only** slider to the left
+            ![](./images/ds-064.png " ")
 
-    ![](./images/ds-070.png " ")
+        - Click **Create Custom Report** and wait for the report to generate
+
+        - In the **Create Custom Report** dialog box, click the **click here** link to navigate to your custom report
+
+            ![](./images/ds-065.png " ")
+
+            **Note**: If you need to modify your custom report, you can click [**Save Report**] to save the changes
+
+    - To view your custom report in the future, under **Related Resources**, click **Audit Reports**
     
-    **Note**: Now you can see the alerts that you've closed earlier
+        ![](./images/ds-066.png " ")
     
-    ![](./images/ds-071.png " ")
+    - Click the **Custom Reports** tab, and then have a look on your custom audit reports
 
-8. To hide closed alerts on the pages, move the **Open Alerts only** slider to the right
+        ![](./images/ds-067.png " ")
 
-    ![](./images/ds-072.png " ")
+10. Generate and download a custom audit report as a PDF
 
-9. Create a logins report
+    - Click on your "**All SELECT Activity Report in the target `DBSec_Livelabs_pdb1`**" custom report
+    
+        ![](./images/ds-068.png " ")
 
-    - Click the **Reports** tab
+    - On the custom audit report page, click [**Generate PDF/XLS Report**]
+
+        ![](./images/ds-069.png " ")
+
+    - The **Generate Report** dialog box is displayed, and fill it out as following:
+
+        - Report Format: Select *`PDF`*
+        - Display Name: *`All SELECT Activity Report in the target DBSec_Livelabs_pdb1`*
+        - Description: *`Custom audit report for DBSec_Livelabs_pdb1 target db`*
+        - Compartment: Select your compartment
+
+        ![](./images/ds-070.png " ")
+
+    - Click [**Generate Report**] and wait until the PDF report is generated
+
+        **Note**: A message is displayed stating that report generation is complete
+
+    - Click the **click here** link to download the report
+
+        ![](./images/ds-071.png " ")
+
+        **Note**: A dialog box is displayed providing you options to open or save the document
+
+    - Save the report to your local computer
+
+    - Click **Close** on the dialog box and open the PDF report to view it
+
+        ![](./images/ds-072.png " ")
+
+
+## Task 3: Generate Alerts
+
+An alert is a message that notifies you when a particular audit event happens on a target database. In Oracle Data Safe, you can provision alert policies on your target databases, view and manage alerts, view predefined alert reports, and create custom alert reports.
+
+Start by reviewing the predefined alert policies in Oracle Data Safe, and then provision two of them. Using the web tool in Oracle Cloud Infrastructure called Database Actions, perform activity on your target database to cause alerts in Oracle Data Safe. Review the generated alerts and create a custom alerts report. Download the report as a PDF.
+
+1. Review the Oracle Data Safe alert policies
+
+    - In Security Center, click **Alerts**
 
         ![](./images/ds-073.png " ")
 
-    - To view the **Login Activity** report, in the list under **Activity Auditing**, click **Login Activity**
+        **Note**:
+        - The **Alerts** page is displayed
+        - The alerts dashboard does not have any data because you have not yet enabled any alert policies
 
-        ![](./images/ds-074.png " ")
+            ![](./images/ds-074.png " ")
 
-    - Add 2 filters by clicking on **+ Filter**:
-        - **"Operation Time" "After" "Select 1 year before today"**
-        - **"Target" "=" "`DBSec_Livelabs_pdb1`"**
-        
-            ![](./images/ds-075.png " ")
+    - Under **Related Resources**, click **Alert Policies**
 
-        - Then click [**Apply**]
+        ![](./images/ds-075.png " ")
 
-            ![](./images/ds-076.png " ")
+    - Review the list of available alert policies in Oracle Data Safe
 
-    - From the **Report Definition** menu, select **Save As New**
+        ![](./images/ds-076.png " ")
+
+    - Click the **User Creation/Modification** alert policy and review its details
 
         ![](./images/ds-077.png " ")
 
-    - Fill out the **Save As** dialog box as following:
-    
-        - Report Name: *`Logins Reports`*
-        - Description: *`Report all the logins to the database`*
-        - Compartment: Select your compartment
-        
-            ![](./images/ds-078.png " ")
+        **Note**: The **Alert Policy Details** page is displayed for the **User Creation/Modification** alert policy
 
-        - Click [**Save As**]
-        
-        **Note**: A confirmation message states that the report is successfully created!
+    - Next to **Policy Applied On Target Databases**, click **View List** to view the target databases associated with the alert policy
+
+        ![](./images/ds-078.png " ")
+
+    - The **Target-Policy Associations** page is displayed with the **Policy Name** filter set to **User Creation/Modification**
 
         ![](./images/ds-079.png " ")
 
-    - Click the **Reports** tab
+        **Note**: Because you have not yet associated the alert policy with any target database, the table shows **No Target Policy Associations Available**
 
-    - At the top of the list under **Custom Reports**, click your **Logins Reports**
+2. Provision alert policies on your target database
 
-        ![](./images/ds-080.png " ")
+    - On the **Filters** section at the left:
+    
+        - Target Databases: select *`DBSec_Livelabs_pdb1`*
+        - Policy Name: select *`All`*
 
-    - Click [**Generate Report**]
+            ![](./images/ds-080.png " ")
+
+    - On the **Target-Policy Associations** page, click [**Apply Policy**]
 
         ![](./images/ds-081.png " ")
 
-        - In the **Generate Report** dialog box
-            - Leave **PDF** selected
-            - Select your compartment
+    - The **Apply And Enable Alert Policy To Target Databases** panel is displayed
 
-                ![](./images/ds-082.png " ")
+        - Select **Selected Targets Only**
+        - If needed, click **Change Compartment** and select your compartment
+        - From the drop-down list, select your target database (here *`DBSec_Livelabs_pdb1`*)
+        - Select **Selected Policies Only**
+        - From the drop-down list, one at a time, select the *`User Creation/Modification`* and *`Failed Logins by Admin User`* alert policies
 
-            - Then click [**Generate Report**]
+            ![](./images/ds-082.png " ")
 
-        - Wait for a confirmation message that states that the **Report was generated successfully**
+        - Click [**Apply Policy**]
 
-        - Click the **Download Report** link
+            **Note**:
+            - The alert policies are applied while the panel is open
+            - Wait until both policies are applied and the status **Done** is displayed
+
+                ![](./images/ds-083.png " ")
+
+        - Click **Close**
+
+            **Note**: The two target-policy associations for your target database are listed on the page and show as enabled
+
+            ![](./images/ds-084.png " ")
+
+3. Perform activity on your target database to cause alerts in Oracle Data Safe
+
+    - Open a Terminal session on your **DBSec-Lab** VM as OS user *oracle*
+
+        ````
+        <copy>sudo su - oracle</copy>
+        ````
+
+        **Note**: If you are using a remote desktop session, double-click on the *Terminal* icon on the desktop to launch a session
+
+    - Execute the following SQL script
+
+        <!--
+        ````
+        <copy>
+        cd $DBSEC_LABS/data-safe
+        ./ds_generate_bad_activity.sh
+        </copy>
+        ````
+        -->
+
+        ````
+        <copy>
+        sqlplus -s ${DBUSR_SYS}/${DBUSR_PWD}@pdb1 as sysdba<<EOF
+        
+        DROP USER malfoy CASCADE;
+        CREATE USER malfoy IDENTIFIED BY ${DBUSR_PWD};
+        GRANT pdb_dba TO malfoy;
+        
+        exit;
+        EOF
+        </copy>
+        ````
+
+           ![](./images/ds-085.png " ")
+
+4. Review the generated alerts in Oracle Data Safe
+
+    - Go back to the Data Safe **Security Center** web page
+
+    - Click **Alerts**
+
+    - Notice that the alerts dashboard now has data
+
+           ![](./images/ds-086.png " ")
+
+           ![](./images/ds-087.png " ")
+
+        **Note**:
+        - The **Alerts summary** chart shows that there are four alerts: two are critical risk and two are medium risk
+        - The **Open Alerts** chart shows that there are four alerts on the current day
+        - The **Alerts Summary** tab shows the number of critical, high, and medium alerts along with target database counts, and it also shows you the total number of alerts and target databases
+        - The **Targets Summary** tab shows you the number of open, critical, high, and medium alerts
+
+    - Under **Related Resources**, click **Reports**
+
+        ![](./images/ds-088.png " ")
+
+    - In the **Report Name** column on the right, click the **All Alerts** report to view it
+
+        ![](./images/ds-089.png " ")
+
+    - Review the report
+
+        ![](./images/ds-090.png " ")
+
+        **Note**:
+        - The report currently does not have any filters set. It shows you all alerts for all target databases in the selected compartment
+        - You can view the total number of target databases; total number of open and closed alerts, and the total number of critical, high, medium, and low alerts
+        - You can click the **Targets** total to view the list of target databases. You can click the other totals to toggle a filter on the list of alerts
+        - At the bottom of the report, you can view the list of alerts. By default, the table shows you the alert name, alert status, alert severity, target databases on which the audited event occurred, and when the alert was created
+        - You have options to create a PDF or XLS report, create a custom report, open and close alerts, and specify which table columns you want displayed on the page
+
+    - At the top of the report, add the two following filters by clicking [**+ Add Filter**]:
+        - *Target Database Name = `DBSec_Livelabs_pdb1`*
+        - *Alert Name = User Creation/Modification*
+
+            ![](./images/ds-091.png " ")
+            
+        - Click [**Apply**]
+
+    - Review the alerts generated for **User Creation/Modification**
+
+        ![](./images/ds-092.png " ")
+
+5. View details for an alert and close it
+
+    - Click one of the alerts to view more detail about it
+
+        ![](./images/ds-093.png " ")
+
+    - Review the information about the alert:
+
+        ![](./images/ds-094.png " ")
+
+        **Note**:
+        - Alert name (instance of the alert)
+        - Target database to which the alert applies
+        - Alert severity
+        - Alert status - Whether the alert is open or closed
+        - Alert type - Currently all alert types are AUDITING
+        - Policy that generated the alert
+        - User operation that generated the alert
+        - Operation time
+        - Operation status
+        - When the alert was created and updated
+        - Oracle Cloud Identifier (OCID) for the alert
+        - Compartment in which the alert resides
+        - Operation details
+
+    - To close the alert, click [**Close**]
+
+        ![](./images/ds-095.png " ")
+
+    - The alert status is immediately set to **CLOSED**
+
+        ![](./images/ds-096.png " ")
+
+6. Create a custom alerts report
+
+    - In the breadcrumb, click **All Alerts**
+
+        ![](./images/ds-097.png " ")
+
+    - Apply two filters:
+
+        - *Target Database Name = `DBSec_Livelabs_pdb1`*
+        - *Alert Name = Failed Logins by Admin User*
+
+            ![](./images/ds-098.png " ")
+
+        - Click [**Apply**]
     
-        - The **Opening Logins.pdf** dialog box is displayed
+    - Click [**Create Custom Report**]
 
-        - Select the application with which you want to open the PDF, and click **OK**
+        ![](./images/ds-099.png " ")
 
-        - Review the report, and then close it
+    - The **Create Custom Report** dialog box is displayed and fill it out as following:
 
+        - Display Name: *Failed Logins by Admin User for - Target Database Name = `DBSec_Livelabs_pdb1`*
+        - Compartment: select your compartment
+        
+            ![](./images/ds-100.png " ")
+        
+        - Click [**Create Custom Report**] and wait for the report to generate
+
+        - Click the **click here** link to view the report
+
+            ![](./images/ds-101.png " ")
+
+        - Save the report to your local computer
+
+            ![](./images/ds-102.png " ")
+
+7. Generate and download a custom alerts report as a PDF
+
+    - On the custom alert report page, click [**Generate PDF/XLS Report**]
+
+        ![](./images/ds-103.png " ")
+
+    - The **Generate Report** dialog box is displayed, and fill it out as following:
+
+        - Report Format: Select *`PDF`*
+        - Display Name: *`Failed Admin Logins for DBSec_Livelabs_pdb1`*
+        - Description: *`Custom alert report for DBSec_Livelabs_pdb1 target db`*
+        - Compartment: Select your compartment
+
+        ![](./images/ds-104.png " ")
+
+    - Click [**Generate Report**] and wait until the PDF report is generated
+
+        **Note**: A message is displayed stating that report generation is complete
+
+    - Click the **click here** link to download the report
+
+        ![](./images/ds-105.png " ")
+
+        **Note**: A dialog box is displayed providing you options to open or save the document
+
+    - Save the report to your local computer
+
+    - Click **Close** on the dialog box and open the PDF report to view it
+
+        ![](./images/ds-106.png " ")
 
 ## Task 4: Assess the security of your database configurations and users
+
+Security Assessment helps you assess the security of your database configurations. It analyzes database configurations, user accounts, and security controls, and then reports the findings with recommendations for remediation activities that follow best practices to reduce or mitigate risk. User Assessment helps you assess the security of your database users and identify high risk users. By default, Oracle Data Safe automatically generates security and user assessments for your target databases and stores them in the Assessment History. You can analyze assessment data across all your target databases and for each target database. You can monitor security drift on your target databases by comparing the latest assessment to a baseline or to another assessment.
 
 In this lab, you explore Security Assessment and User Assessment. Because these features are similar, you perform some tasks in Security Assessment and others in User Assessment.
 
@@ -620,19 +839,17 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - In Security Center, click **Security Assessment**
 
-        ![](./images/ds-083.png " ")
+        ![](./images/ds-107.png " ")
 
-    **Note**: If you are in the Oracle Data Safe Console, click the **Home** tab, and then click the **Security Assessment** tab (you are navigated to Security Assessment in Security Center)
+    - Under **List Scope**, select your compartment and deselect **Include child compartments**
 
-    - Under **List Scope**, select your compartment
+        ![](./images/ds-108.png " ")
 
-        ![](./images/ds-084.png " ")
-
-    **Note**: You can include target databases in child compartments by selecting the **Include child compartments** check box. The dashboard shows statistics across all the target databases listed.
+        **Note**: The dashboard shows statistics across all the target databases in the selected compartment
 
     - At the top of the page, review the **Risk Level** and **Risks by Category** charts
 
-        ![](./images/ds-085.png " ")
+        ![](./images/ds-109.png " ")
 
         **Note**:
         - The **Risk Level** chart shows you a percentage breakdown of the different risk levels (High, Medium, Low, Advisory, and Evaluate) across all of your target databases
@@ -640,7 +857,7 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - View the **Risk Summary** tab
 
-        ![](./images/ds-086.png " ")
+        ![](./images/ds-110.png " ")
 
         **Note**:
         - The **Risk Summary** shows you how much risk you have across all target databases in the specified compartment(s)
@@ -650,7 +867,7 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Click the **Target Summary** tab and view the information
 
-        ![](./images/ds-087.png " ")
+        ![](./images/ds-111.png " ")
 
         **Note**:
         - The **Target Summary** shows you a view of the security posture of each of your target databases
@@ -660,17 +877,19 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
 2. View the latest security assessment for your target database
 
+    When you registered your target database, Oracle Data Safe automatically created a security assessment for you, then this is what you are viewing now
+
     - On the **Target Summary** tab, locate the line that has your target database, and click **View Report**
     
-        ![](./images/ds-088.png " ")
+        ![](./images/ds-112.png " ")
 
-        **Note**: The latest assessment for your target database is displayed
-
-        ![](./images/ds-089.png " ")
+        **Note**:
+        - The latest security assessment for your target database is displayed
+        - Notice that **Latest assessment for target database** is displayed at the top of the page
 
     - Review the table on the **Assessment Summary** tab
 
-        ![](./images/ds-090.png " ")
+        ![](./images/ds-113.png " ")
         
         **Note**:
         - This table compares the number of findings for each category in the report and counts the number of findings per risk level (**High Risk**, **Medium Risk**, **Low Risk**, **Advisory**, **Evaluate**, and **Pass**)
@@ -678,13 +897,13 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - To view details about the assessment itself, click the **Assessment Information** tab
 
-        ![](./images/ds-091.png " ")
+        ![](./images/ds-114.png " ")
 
         **Note**: Details include assessment name, OCID, compartment to which the assessment was saved, target database name, target database version, assessment date, schedule (if applicable), name of the baseline assessment (if one is set), and complies with baseline flag (Yes, No, or No Baseline Set)
 
     - Scroll down and view the **Assessment Details** section
 
-        ![](./images/ds-092.png " ")
+        ![](./images/ds-115.png " ")
 
         **Note**:
         - This section shows you all the findings for each risk category
@@ -692,25 +911,25 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Under **Filters** on the left, notice that you can select the risk levels that you want displayed
     
-        - Deselect **Evaluate**
+        - Deselect **Advisory** and **Evaluate**
 
-            ![](./images/ds-093.png " ")
+            ![](./images/ds-116.png " ")
 
         - Then click [**Apply**]
 
         - Now, you see less Assessment details
         
-            ![](./images/ds-094.png " ")
+            ![](./images/ds-117.png " ")
 
     - Under **User Accounts**, expand **User Details**
 
-        ![](./images/ds-095.png " ")
+        ![](./images/ds-118.png " ")
 
         **Note**: For each user in your target database, the table shows you the user status, profile used, the user's default tablespace, whether the user is Oracle Defined (Yes or No), and how the user is authenticated (Auth Type)
 
-    - Expand another category, such as **Transparent Data Encryption**, and review the findings
+    - Expand another category, such as **Patch check**, and review the findings
 
-        ![](./images/ds-096.png " ")
+        ![](./images/ds-119.png " ")
 
         **Note**:
         - Each finding shows you the status (risk level), a summary of the finding, details about the finding, remarks to help you to mitigate the risk, and references (whether a finding is recommended by the Center for Internet Security (**CIS**), European Union's General Data Protection Regulation (**GDPR**), and/or Security Technical Implementation Guide (**STIG**))
@@ -719,21 +938,35 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - On the left under **Filters**, select all the filters, and click [**Apply**]
 
-        ![](./images/ds-097.png " ")
+        ![](./images/ds-120.png " ")
 
     - Collapse **User Accounts**, expand a few categories under **Privileges and Roles**, and review the findings
 
-        ![](./images/ds-098.png " ")
+        ![](./images/ds-121.png " ")
 
     - Scroll down further and expand other categories
     
         **Note**: Each category lists related findings about your target database and how you can make changes to improve its security
+    
+    - At the top of the page, click **View History**
+    
+        ![](./images/ds-122.png " ")
+
+    - Notice that you have one security assessment listed for your target database
+
+        ![](./images/ds-123.png " ")
+
+        **Note**: This is a static copy of the latest security assessment
+    
+    - Click [**Close**]
 
 3. Refresh the latest security assessment and analyze the results
 
+    After you registered your target database at the beginning of this workshop, you loaded sample data into it. This sample data is not yet showing up in the latest security assessment. Refresh the latest assessment and view the new data.
+    
     - While you are still viewing the latest security assessment, at the top of the assessment, click [**Refresh Now**]
     
-        ![](./images/ds-099.png " ")
+        ![](./images/ds-124.png " ")
 
         **Note**: The **Refresh Now** page is displayed
 
@@ -741,7 +974,7 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
     
         - Enter *`My Security Assessment`*
 
-            ![](./images/ds-100.png " ")
+            ![](./images/ds-125.png " ")
 
         - Then click [**Refresh Now**]
  
@@ -751,31 +984,31 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Click the **Assessment Information** tab and observe that the assessment date and time is right now
 
-        ![](./images/ds-101.png " ")
+        ![](./images/ds-126.png " ")
 
     - In the breadcrumb at the top of the page, click **Security Assessment** to return to the dashboard
 
-        ![](./images/ds-102.png " ")
+        ![](./images/ds-127.png " ")
 
     -  Review the total findings for high, medium, and low risk levels
     
-        ![](./images/ds-103.png " ")
+        ![](./images/ds-128.png " ")
 
         **Note**: These values could be different than the values you viewed in the original assessment (in Step 1)
 
     - In the **Risk Level** column, click **High** to view all the high risk findings
 
-        ![](./images/ds-104.png " ")
+        ![](./images/ds-129.png " ")
 
     - On the **Overview** tab, review the **Risks by Category** chart
 
-        ![](./images/ds-105.png " ")
+        ![](./images/ds-130.png " ")
 
         **Note**: You can position your cursor over the percentage values to view the category name and count
 
     - In the **Risk Details** section, expand one of the high level risks, for example, **Database Backup**
 
-        ![](./images/ds-106.png " ")
+        ![](./images/ds-131.png " ")
 
         **Note**:
         - The **Remarks** section explains the risk and how you can mitigate it
@@ -783,13 +1016,13 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Click your target database name to view all the details about the finding for your target database
 
-        ![](./images/ds-107.png " ")
+        ![](./images/ds-132.png " ")
         
         **Note**: The finding includes your target database name, risk level, a summary about the risk, details on your target database, remarks that explain the risk and help you to mitigate it, and references
 
     - To view the latest assessment for your target database, click the **click here** link
     
-        ![](./images/ds-108.png " ")
+        ![](./images/ds-133.png " ")
         
         **Note**: You are returned to the latest security assessment
 
@@ -799,11 +1032,13 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Under **Related Resources** on the left, click **Schedules**
 
-        ![](./images/ds-109.png " ")
+        ![](./images/ds-134.png " ")
+
+        **Note**: The Schedules page is displayed!
 
     - In the table, notice that a schedule already exists
     
-        ![](./images/ds-110.png " ")
+        ![](./images/ds-135.png " ")
 
         **Note**:
         - It's type is LATEST
@@ -812,7 +1047,7 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Click [**Add Schedule**]
     
-    - The **Add Schedule To Save Assessments** page is displayed and fill it out
+    - The **Add Schedule To Save Assessments** page is displayed and fill it out as following:
 
         - Target Database: Select *`DBSec_Livelabs_pdb1`*
         - Schedule Name: *`Sunday Security Assessment`*
@@ -821,13 +1056,13 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
         - Every: Select *`Sunday`*
         - Time: Select *`11:30 PM`*
 
-            ![](./images/ds-111.png " ")
+            ![](./images/ds-136.png " ")
 
     - Click [**Add Schedule**]
     
-        ![](./images/ds-112.png " ")
+    - When the schedule is created, its status changes to **SUCCEEDED**
 
-        **Note**: When the schedule is created, its status changes to **SUCCEEDED**
+        ![](./images/ds-137.png " ")
 
 5. View the history of all security assessments for your target database
 
@@ -841,11 +1076,9 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - At the top of the page, click [**View History**]
 
-        ![](./images/ds-113.png " ")
-
     - Review all the security assessments for your target database
 
-        ![](./images/ds-114.png " ")
+        ![](./images/ds-138.png " ")
 
         **Note**:
         - So far, you should have two security assessments: The default assessment that was automatically generated for you by Oracle Data Safe, and the assessment that you saved earlier as My Security Assessment
@@ -863,25 +1096,25 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Under **Related Resources**, click **Assessment History**
 
-        ![](./images/ds-115.png " ")
+        ![](./images/ds-139.png " ")
 
-    - Click the name starts with **SA_** of the security assessment that Oracle Data Safe generated
+    - Click the first name starts with **SA_** (the first security assessment that Oracle Data Safe generated during target database registration)
 
-        ![](./images/ds-116.png " ")
+        ![](./images/ds-140.png " ")
     
         **Note**: The security assessment is displayed
 
     - Click [**Set As Baseline**]
 
-        ![](./images/ds-117.png " ")
+        ![](./images/ds-141.png " ")
 
     - In the **Set As Baseline** dialog box, click **Yes** to confirm that you want to set these findings as the baseline
 
-        ![](./images/ds-118.png " ")
+        ![](./images/ds-142.png " ")
 
         **Important**: Stay on the page until the message **Baseline has been set** is displayed!
 
-        ![](./images/ds-119.png " ")
+        ![](./images/ds-143.png " ")
 
     - Access the latest assessment for your target database
     
@@ -891,13 +1124,13 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Under **Resources** on the left, click **Compare with Baseline**
     
-        ![](./images/ds-120.png " ")
+        ![](./images/ds-144.png " ")
         
         **Note**: Oracle Data Safe automatically begins processing the comparison
 
     - When the comparison operation is completed, review the Comparison report (here we have nothing, but maybe you could have a few on your own comparison report)
 
-        ![](./images/ds-121.png " ")
+        ![](./images/ds-145.png " ")
 
         - Review the number of findings per risk category for each risk level. Categories include **User Accounts**, **Privileges and Roles**, **Authorization Control**, **Data Encryption**, **Fine-Grained Access Control**, **Auditing**, and **Database Configuration**
         - You can identify where the changes have occurred on your target database by viewing cells that contain the word **Modified**
@@ -909,23 +1142,19 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Navigate to User Assessment
     
-        - In the breadcrumb at the top of the page, click **Data Safe**
+        - In the breadcrumb at the top of the page, click **Security Center**
 
-            ![](./images/ds-122.png " ")
+            ![](./images/ds-146.png " ")
 
-        - Click **Security Center**
+        - On the left, click **User Assessment**
 
-            ![](./images/ds-123.png " ")
+            ![](./images/ds-147.png " ")
 
-        - Then **User Assessment**
-
-            ![](./images/ds-124.png " ")
-
-    - Under **List Scope**, select your compartment, if needed
+    - Under **List Scope**, make sure your compartment is selected
 
     - At the top of the dashboard, review the four charts
 
-        ![](./images/ds-125.png " ")
+        ![](./images/ds-148.png " ")
 
         **Note**:
         - The **User Risk** chart shows you the number and percentage of users who are **Critical Risk**, **High Risk**, **Medium Risk**, and **Low Risk**
@@ -935,7 +1164,7 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Review the **Risk Summary** tab
 
-        ![](./images/ds-126.png " ")
+        ![](./images/ds-149.png " ")
 
         **Note**:
         - The **Risk Summary** focuses on risks across all your target databases
@@ -943,7 +1172,7 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Click the **Target Summary** tab. This tab provides the following information:
 
-        ![](./images/ds-127.png " ")
+        ![](./images/ds-150.png " ")
 
         **Note**:
         - Number of critical and high risk users, DBAs, DV Admins, and Audit Admins
@@ -952,15 +1181,17 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
 8. Analyze users in the latest user assessment
 
+    Currently, the latest user assessment is the one that was automatically generated by Oracle Data Safe when you registered your target database
+    
     - On the **Target Summary** tab, click **View Report** to view the latest user assessment for your target database
 
     - At the top of the report, review the **User Risk**, **User Roles**, **Last Password Change**, and **Last Login** charts
 
-        ![](./images/ds-128.png " ")
+        ![](./images/ds-151.png " ")
 
     - Scroll down and review the **Assessment Details** section
     
-        ![](./images/ds-129.png " ")
+        ![](./images/ds-152.png " ")
     
         **Note**:
         This table provides the following information about each user:
@@ -974,7 +1205,7 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - In the **User Name** column, click one of the users
     
-        ![](./images/ds-130.png " ")
+        ![](./images/ds-153.png " ")
 
         **Note**:
         The **User Details** page shows the following information about the user:
@@ -993,75 +1224,70 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Notice at the top of the table that you can set filters
 
-        ![](./images/ds-131.png " ")
-
         - Click [**+ Add Filter**]
         - From the first drop-down list, select **Risk**
         - From the second drop-down list, select **=**
         - In the box, enter **CRITICAL**
         
-        ![](./images/ds-132.png " ")
+        ![](./images/ds-154.png " ")
         
         - Click [**Apply**]
         
             **Note**: The table now shows you only critical risk users
 
-            ![](./images/ds-133.png " ")
+            ![](./images/ds-155.png " ")
 
 9. Review the `DS_ADMIN` user's audit records
 
-    - Identify the row in the table for the `DS_ADMIN` user
-
-        ![](./images/ds-134.png " ")
-
-    - In the **Audit Records** column for the `DS_ADMIN` user, click **View Activity**
+    - Identify the row in the table for the `DS_ADMIN` user and in the **Audit Records** column, click **View Activity**
     
-    - A new browser tab is opened and the **All Activity** report is displayed in the Oracle Data Safe Console
+        ![](./images/ds-156.png " ")
 
-        ![](./images/ds-135.png " ")
+        **Note**: The **All Activity** report for the `DS_ADMIN` user is displayed!
 
-        **Note**: The report is automatically filtered to show you audit records for the past week, for the `DS_ADMIN` user, and for your target database
+    - Examine the report
 
-    - Examine the **All Activity** report for the `DS_ADMIN` user
-
-        ![](./images/ds-136.png " ")
+        ![](./images/ds-157.png " ")
 
         **Note**:
+        - The report is automatically filtered to show you audit records for the past week, for the `DS_ADMIN` user, and for your target database
         - At the top of the report, you can view totals for **Targets**, **DB Users**, **Client Hosts**, **Login Success**, **Login Failures**, **User Changes**, **Privilege Changes**, **User Changes**, **DDLs**, **DMLs**, and **Total Events**
         - The **Event** column in the table shows you the types of activities performed by the `DS_ADMIN` user, for example, `EXECUTE`, `LOGON`, `LOGOFF`, and so on
         - At the bottom of the page, click the page numbers to view more audit records
 
-    - Close the browser tab to return to the browser tab for Security Center
-
 10. View the user **assessment history** for all target databases
 
-    - In the breadcrumb at the top of the page, click **User Assessment**
+    - Under **Security Center**, click **User Assessment**
 
-        ![](./images/ds-137.png " ")
+        ![](./images/ds-158.png " ")
 
     - Under **Related Resources**, click **Assessment History**
 
-        ![](./images/ds-138.png " ")
+        ![](./images/ds-159.png " ")
+
+        **Note**: Under **List Scope**, make sure your compartment is selected
 
     - Review the assessment history for all target databases
 
-        ![](./images/ds-139.png " ")
+        ![](./images/ds-160.png " ")
 
         **Note**:
         - You can compare the number of critical risks, high risks, DBAs, DV Admins, and Audit Admins across all target databases
         - You can also quickly identify user assessments that are set as baselines
 
-    - Click the name starts with **UA_** of the user assessment for your target database
+    - To sort the list by target database, click the **Target Database** column heading
+    
+    - Click the name of the user assessment for your target database (here `UA_1646933317788`)
 
-        ![](./images/ds-140.png " ")
+        ![](./images/ds-161.png " ")
 
         **Note**:
         - This assessment was generated by Oracle Data Safe when you registered your target database
         - It is a saved copy of the latest assessment
         - Notice that you cannot refresh the data in a saved user assessment
-        - Make note of the assessment's name (here the assessment's name ends with "3896"
+        - Make note of the assessment's name (here the assessment's name ends with "7788"
 
-            ![](./images/ds-141.png " ")
+            ![](./images/ds-162.png " ")
 
 11. Refresh the latest user assessment and rename it
 
@@ -1071,23 +1297,23 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - Click **View Report** for your target database to open the latest assessment
 
-        ![](./images/ds-142.png " ")
+        ![](./images/ds-163.png " ")
 
         **Note**:
-        - Notice that this assessment's name ends with **7060** - not the same as the copy! It is a completely separate user assessment
+        - Notice that this assessment's name is different than the last assessment you viewed - not the same as the copy! It is a completely separate user assessment
         - Also notice that you can refresh this assessment, whereas you couldn't refresh the copy in the Assessment History
 
     - To refresh the latest user assessment
     
         - Click [**Refresh Now**]
     
-            ![](./images/ds-143.png " ")
+            ![](./images/ds-164.png " ")
 
-            **Note**: The **Refresh Now** window is displayed
+            **Note**: The **Refresh Now** panel is displayed!
         
-        - For now, let's keep the default name as is, and click **Refresh Now**
+        - For now, let's keep the default name as is, click **Refresh Now** and wait for the status to read **SUCCEEDED**
 
-            ![](./images/ds-144.png " ")
+            ![](./images/ds-165.png " ")
 
             **Note**: When you refresh the latest user assessment, Oracle Data Safe automatically saves a static copy of it to the Assessment History
 
@@ -1096,24 +1322,26 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
         - Click the **Assessment Information** tab
         - Then click the **Pencil** icon next to the assessment name
         
-            ![](./images/ds-145.png " ")
+            ![](./images/ds-166.png " ")
         
         - Change the name to *`Latest User Assessment`*
         - Then click the **Save** icon
         
-            ![](./images/ds-146.png " ")
+            ![](./images/ds-167.png " ")
 
             **Note**: The name is updated on the page!
 
-            ![](./images/ds-147.png " ")
+            ![](./images/ds-168.png " ")
 
-    - In the breadcrumb at the top of the page, click **User Assessment**. Under **Related Resources**, click **Assessment History**
+    - In the breadcrumb at the top of the page, click **User Assessment**
+    
+    - Under **Related Resources**, click **Assessment History**
 
-        ![](./images/ds-148.png " ")
+    - Notice that there are now two saved user assessments, none of which are called "Latest User Assessment"
 
-        **Note**:
-        - Notice that there are now two saved user assessments, none of which are called "Latest User Assessment"
-        - The most current user assessment in the history shows the same number of critical and high risk users as the latest assessment because it is a copy of it
+        ![](./images/ds-169.png " ")
+
+        **Note**: The most current user assessment in the history shows the same number of critical and high risk users as the latest assessment because it is a copy of it
 
 12. Download the latest user assessment as a PDF report
 
@@ -1124,49 +1352,41 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - From the **More Actions** menu, click **Generate Report**
 
-        ![](./images/ds-149.png " ")
+        ![](./images/ds-170.png " ")
 
         **Note**: The **Generate Report** dialog box is displayed
 
-        ![](./images/ds-150.png " ")
-
     - Leave **PDF** selected as the report format, and click [**Generate Report**]
+
+        ![](./images/ds-171.png " ")
 
     - Wait for a message that says the **PDF report generation is complete**, and then click **Close**
 
-        ![](./images/ds-151.png " ")
+        ![](./images/ds-172.png " ")
 
     - From the **More Actions** menu, click **Download Report**
 
-        ![](./images/ds-152.png " ")
+        ![](./images/ds-173.png " ")
 
         **Note**: The **Download Report** dialog box is displayed
     
     - Leave the **PDF** report format selected, and click [**Download Report**]
 
-        ![](./images/ds-153.png " ")
+        ![](./images/ds-174.png " ")
 
-    - In the **Save As** dialog box
+    - Save the report to your local computer
+
+    - Click **Close** on the dialog box and open the PDF report to view it
+
+        ![](./images/ds-175.png " ")
     
-        - Browse to the desktop where you want to dpwnload the file
-        - Leave **user-assessment-report.pdf** set as the name
-        - Click [**Save**]
-    
-    - On your desktop, open the PDF report and scroll through it
-
-        ![](./images/ds-154.png " ")
-    
-        ![](./images/ds-155.png " ")
-
-    - When you are done, close the PDF file
-
 13. Compare the latest user assessment with another user assessment
 
     You can select a user assessment to compare with the latest user assessment and with this option, you don't need to set a baseline
 
     - On the left under **Resources**, click **Compare Assessments**
 
-        ![](./images/ds-156.png " ")
+        ![](./images/ds-176.png " ")
 
         **Note**: This option is only available when you are viewing the latest user assessment
     
@@ -1176,22 +1396,25 @@ In this lab, you explore Security Assessment and User Assessment. Because these 
 
     - From the **Select Assessment** drop-down list, select the earliest assessment for your target database
     
-        ![](./images/ds-157.png " ")
+        ![](./images/ds-177.png " ")
     
-        **Note**: As soon as you select it, the comparison operation starts!
+        **Note**: As soon as you select it, the comparison operation is started!
 
     - Review the Comparison report
     
-        ![](./images/ds-158.png " ")
+        ![](./images/ds-178.png " ")
 
-        **Note**:
-        - If there's nothing in the **Comparison Results** column, it means that the assessments are identical and no changes have been applied
-        - If not, click one of the **Open Details** links to view more information about a user
-            - Here is an example of what you can see (for the user `MALFOY`)
-        
-                ![](./images/ds-159.png " ")
+        **Note**: The report tells you that new user MALFOY has been added to the database since the initial user assessment and it's identified as a critical risk
+    
+    - In the **Comparison Results** column, click one of the **Open Details** links to view more information
 
-            - Review the information about the user, and then click [**Close**]
+        ![](./images/ds-179.png " ")
+
+        **Note**: The Comparison Details panel is displayed!
+
+    - Review the information, and then click [**Close**]
+
+        ![](./images/ds-180.png " ")
 
 
 ## Task 5: Discover and mask sensitive data
@@ -1212,11 +1435,11 @@ Data Discovery helps you find sensitive data in your databases and Data Masking 
 
         ... results in PROD (**data NOT to be masked!**)
 
-        ![](./images/ds-160.png " ")
+        ![](./images/ds-181.png " ")
 
         ... results in DEV (**data to mask**)
 
-        ![](./images/ds-160b.png " ")
+        ![](./images/ds-182.png " ")
 
         **Note**:
         - Here we query `DEMO_HR_EMPLOYEES` table in PROD and DEV to be sure that the value are similar
@@ -1224,259 +1447,322 @@ Data Discovery helps you find sensitive data in your databases and Data Masking 
 
 2. Discover sensitive data (for DEV table) by using Data Discovery
 
-    The Data Discovery wizard generates a sensitive data model that contains sensitive columns in your target database. When working in the wizard, you select the sensitive types that you want to discover in your target database
+    In Data Discovery, you can select the sensitive types that you want to discover in your target database. Data Discovery then generates a sensitive data model that contains sensitive columns in your target database.
 
-    - Return to the browser tab for the Oracle Cloud Infrastructure Console
+    - Return to the Oracle Data Safe web console
 
-        - From the navigation menu, select **Oracle Database** and then **Data Safe**
-        - Click **Security Center**, and then click **Data Discovery**
+    - Go back to the Data Safe **Security Center** web page and then click **Data Discovery**
         
-            ![](./images/ds-161.png " ")
+        ![](./images/ds-183.png " ")
 
-            **Note**: The Data Discovery wizard is displayed in the Oracle Data Safe Console
-
-    - On the **Select Target for Sensitive Data Discovery** page, select your target database, and then click [**Continue**]
-
-        ![](./images/ds-162.png " ")
-
-    - On the **Select Sensitive Data Model** page, fill it out:
+        **Note**:  Under **List Scope**, make sure your compartment is selected
     
-        - Sensitive Data Model: select *`Create`*
-        - Sensitive Data Model Name: *`SDM_Livelabs_DEV`*
-        - Show and save sample data: *`Enable it`*
+    - A Data Discovery dashboard is displayed with statistics for the top five target databases in your compartment
+    
+        ![](./images/ds-184.png " ")
+
+        **Note**: Your dashboard is most likely empty because this is the first time you are using Data Discovery in this workshop
+    
+    - Click [**Discover Sensitive Data**]
+
+        **Note**: The Create Sensitive Data Model page is displayed!
+
+    - In the **Sensitive Data Model Information** section, do the following:
+
+        - Name: *`SDM_DBSec_Livelabs_DEV`*
         - Compartment: select your Compartment
-        
-            ![](./images/ds-163.png " ")
-                
-        - Then click [**Continue**]
-
-    - On the **Select Schemas for Sensitive Data Discovery** page
-    
-        - Navigate through the results pages to find *`EMPLOYEESEARCH_DEV`* schema
-        - Select it
-
-            ![](./images/ds-164.png " ")
-        
-        - Then click [**Continue**]
-
-    - On the **Select Sensitive Types for Sensitive Data Discovery** page
-    
-        - Expand all of the categories by moving the slider to the right
-    
-            ![](./images/ds-165.png " ")
-
-        - Then scroll down the page and review the sensitive types
-        
-            **Note**: Notice that you can select individual sensitive types, sensitive categories, and all sensitive types
-
-        - At the top of the page, select the **Select All** check box, and then click [**Continue**] to start the data discovery job
-
-            ![](./images/ds-166.png " ")
-
-            **Note**: Accordingly the data volume and the resources, the job can take several minutes!
-
-        - When the job is completed, ensure that the **Detail** column states "**Data discovery job finished successfully**"
-
-            ![](./images/ds-167.png " ")
-
-        - Then click [**Continue**]
-
-    - On the **Sensitive Data Discovery Result** page, examine the sensitive data model created by the Data Discovery wizard
-    
-        ![](./images/ds-168.png " ")
-    
-        **Note**: Oracle Data Safe automatically saves your sensitive data model to the Oracle Data Safe Library
-
-    - To view all of the sensitive columns, move the **Expand All** slider to the right
-
-        ![](./images/ds-168b.png " ")
-
-    - From the drop-down list, select "**Schema View**" instead of "Category View" to sort the sensitive columns by table name
-
-        ![](./images/ds-169.png " ")
-
-    - Scroll down the page to view the sensitive columns
-
-        ![](./images/ds-170.png " ")
-
-        - You can view sample data (if it's available for a sensitive column) and **estimated data counts**
-        - In particular, view the sensitive columns that Data Discovery found in the `DEMO_HR_EMPLOYEES` table
-        - Review the sample data provided to get an idea of what the sensitive data looks like
-
-            ![](./images/ds-170b.png " ")
-
-            **Note**:
-            - Scroll down to `DEMO_HR_SUPPLEMENTAL_DATA` table, the Columns that do not have a check mark, such as `USERID`, are called referential relationships
-            - They are included because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary
-
-                ![](./images/ds-171.png " ")
-
-    - To generate the **Data Discovery** report, scroll to the bottom of the page, and then click [**Report**]
-
-        ![](./images/ds-172.png " ")
-
-    - Review the **Data Discovery** report
-
-        ![](./images/ds-173.png " ")
-
-        **Note**:
-        - The chart compares sensitive categories
-        - You can view totals of sensitive values, sensitive types, sensitive tables, and sensitive columns
-        - The table displays individual sensitive column names, sample data for the sensitive columns, column counts based on sensitive categories, and estimated data counts
-
-    - Click the chart's **Expand** button
-
-        ![](./images/ds-174.png " ")
-
-    - Position your mouse over **Identification Info** to view statistics
-
-        ![](./images/ds-175.png " ")
-
-    - With your mouse still over **Identification Info**, click the **Expand** button ("+" icon) to drill down
-
-        ![](./images/ds-176.png " ")
-
-    - Notice that the **Identification Info** category is divided into two smaller categories (**National IDs** and **Public IDs**)
-    
-        ![](./images/ds-177.png " ")
-    
-        **Note**: To drill-up, position your mouse over an expanded sensitive category (for example, **Identification Info**), and then click the **Collapse** button ("-" icon)
-
-    - Click the **Close** button (**X**) to close the expanded chart and continue to work in the wizard
-
-3. Mask sensitive data by using Data Masking
-
-    The Data Masking wizard generates a masking policy for your target database based on a sensitive data model. In the wizard, you select the sensitive columns that you want to mask and the masking formats to use
-
-    - At the bottom of the Data Discovery report, click [**Continue to mask the data**]
-    
-        ![](./images/ds-178.png " ")
-    
-        **Note**: The Data Masking wizard is displayed!
-
-    - On the **Select Target for Data Masking** page, leave your target database selected, and click [**Continue**]
-
-        ![](./images/ds-179.png " ")
-
-    - On the **Masking Policy** page, let's be familiar with the Data Masking formats
-    
-        - Move the **Expand All** slider to the right to view all of the sensitive columns
-
-            ![](./images/ds-180.png " ")
-
-        - Scroll down the page and review the default masking format selected for each sensitive column
-
-            ![](./images/ds-180b.png " ")
-
-        - For the `EMPLOYEESEARCH_DEV.DEMO_HR_EMPLOYEES.FIRSTNAME` column, click the arrow to the right of the masking format to view other masking formats
-
-            ![](./images/ds-181.png " ")
-
-        - Next to the arrow, click the **Edit Format** button (pencil icon)
-
-            ![](./images/ds-182.png " ")
-
-        - In the **Edit Format** dialog box, review the details for the masking format, including the datatype, description, examples, and default configuration
-
-            ![](./images/ds-183.png " ")
-
-            **Note**: This is where you can modify a masking format, if needed!
-
-        - Click [**Cancel**]
-
-            ![](./images/ds-184.png " ")
-    
-    - Now, let's generate the Data Masking script for only our sensitive columns
-    
-        - Unselect the "**Select All**" checkbox
+        - Description: *`Sensitive Data Model DBSec Livelabs 1`*
+        - Target Name: select your target database (here *`DBSec_Livelabs_pdb1`*)
 
             ![](./images/ds-185.png " ")
 
-        - Scroll down and for *`EMPLOYEESEARCH_DEV.DEMO_HR_EMPLOYEES`* table only, select the columns *`FIRSTNAME`*, *`LASTNAME`*, *`SALARY`*, *`CORPORATE_CARD`*, *`EMAIL`* and *`PHONEMOBILE`*
+        - then click [**Next**]
 
+    - For **Select Schemas**
+    
+        - Leave *Select specific schemas only* selected
+        - Scroll down to select the *`EMPLOYEESEARCH_DEV`* schema
+    
             ![](./images/ds-186.png " ")
 
-            ![](./images/ds-186b.png " ")
+            **Note**: You may need to click the right arrow button at the bottom of the page to navigate to page 2
 
-        - At the bottom of the page, click [**Confirm Policy**]
+        - Then click [**Next**]
 
+    - For **Select Sensitive Types**
+    
+        - Expand all of the sensitive categories by moving the **Expand All** slider to the right
+        - Scroll down the page and review the sensitive types
+        - At the top of the page, select the **All** check box
+        
             ![](./images/ds-187.png " ")
 
-    - Wait a moment while Data Masking creates the masking policy
+            **Note**: Notice that you can select individual sensitive types, sensitive categories, and all sensitive types
 
-    - On the **Schedule the Masking Job** page, leave **Right Now** selected, and click [**Review**]
+        - Then click [**Next**]
 
-        ![](./images/ds-188.png " ")
+    - In the **Select Discovery Options** section
+    
+        - Select **Collect, display and store sample data**
 
-    - On the **Review and Submit** page, review the information, and then click [**Submit**] to start the data masking job
+            ![](./images/ds-188.png " ")
 
-        ![](./images/ds-189.png " ")
+        - Then click [**Create Sensitive Data Model**] at the bottom of the page to begin the data discovery process
 
-    - Wait for the data masking job to finish
+    - After your sensitive data model is created, review its information on the **Sensitive Data Model Details** page
 
-        ![](./images/ds-190.png " ")
+        - The **Sensitive Data Model Information** tab lists information about your sensitive data model, including its name and Oracle Cloud identifier (OCID), the compartment to which you saved it, the date and time when it was created and last updated, the target database associated with it, and totals for sensitive schemas, sensitive tables, sensitive columns, sensitive types, and sensitive values. You can click the **View Details** link to view the work request information. The pie chart compares the number of sensitive values per sensitive category and sensitive type. If the total values are not displayed, please refresh the browser tab
 
-        **Note**:
-        - It will start by creating the script and then execute it
-        - It could take a couple of minutes and you can follow the completion of all steps on the **Masking Jobs** page
+            ![](./images/ds-189.png " ")
 
-    - When the job is finished, the status must display "FINISHED"
+        - The **Sensitive Columns** table lists the sensitive columns retrieved by the data discovery job. By default, the table is displayed in **Flat View** format. For each sensitive column, you can view its schema name, table name, column name, sensitive type, parent column, data type, estimated row count, and sample data (if you retrieved sample data and if it exists). Review the sample data to get an idea of what it looks like.
+
+            ![](./images/ds-190.png " ")
+
+    - Position your mouse over the **Identification Information** category in the chart to view its value
 
         ![](./images/ds-191.png " ")
 
-    - Now, click **Report**
+        **Note**: Your percentage value may be different than the value shown in the screenshot
 
+    - With your mouse still over **Identification Information**, click the pie slice to drill down
+    
         ![](./images/ds-192.png " ")
 
-    - Examine the **Data Masking** report
+        **Note**: Notice that the **Identification Information** category is now divided into two smaller categories (**National Identifiers** and **Public Identifiers**)
 
-        - At the top of the report, you can view the number of masked values, masked sensitive types, masked tables, and masked columns
+    - To drill-up, click the **All** link in the chart's breadcrumb
 
-            ![](./images/ds-193.png " ")
+        ![](./images/ds-193.png " ")
 
-            **Note**: The table shows you column counts for the sensitive categories and types
-
-        - Expand all of the categories by moving the slider to the right
-        
-            ![](./images/ds-194.png " ")
-
-            **Note**: For each sensitive column, you can view the masking format used and the number of rows masked
-
-4. Create a PDF of the Data Masking report
-
-    - At the top of the report, click [**Generate Report**]
+    - From the drop-down list, select **Sensitive Type View** to sort the sensitive columns by sensitive type
     
+        ![](./images/ds-194.png " ")
+
+        **Note**: By default, all items are expanded in the view and you can collapse the items by moving the Expand All slider to the left
+
+    - Still from the drop-down list, select now **Schema View** to sort the sensitive columns by table name
+
         ![](./images/ds-195.png " ")
 
-    - The **Generate Report** dialog box is displayed
-
-        - Leave **PDF** selected
-
-        - Enter *Masked "Employees Dev" sensitive data report* for the description
-
-        - Select your compartment
-
-            ![](./images/ds-196.png " ")
-
-    - Click [**Generate Report**]
+    - Identify the sensitive columns that are discovered because they have a relationship to another sensitive column and that relationship is defined in the database's data dictionary
     
-    - Wait for the report to generate
+        ![](./images/ds-196.png " ")
 
-        ![](./images/ds-197.png " ")
+        **Note**: For example, `USERID` in the `DEMO_HR_SUPPLEMENATL_DATA` table has a relationship to `USERIDID` in the `DEMO_HR_EMPLOYEES` table (as shown under Parent Column)
 
-    - When a confirmation message states that the **Report was generated successfully**, click [**Download Report**]
+3. Create a PDF of the Sensitive Data Model report
 
-        ![](./images/ds-198.png " ")
+    - Let's generate the report
+    
+        - At the top of the page, click [**Generate Report**]
 
-    - Save the report and then open it in Adobe Acrobat
+            ![](./images/ds-197.png " ")
 
-        ![](./images/ds-199.png " ")
+        - A **Generate Report** dialog box is displayed, then leave PDF selected
 
-        ![](./images/ds-199b.png " ")
+            ![](./images/ds-198.png " ")
 
-    - Review the data, and then close the report
+        - Click [**Generate Report**], and wait for the report to be 100% generated
 
-5. Finally, let's validate the masked data in your database
+            ![](./images/ds-199.png " ")
+
+        - Click Close
+
+    - Now, download the report
+    
+        - At the top of the page, click [**Download Report**]
+
+            ![](./images/ds-200.png " ")
+
+        - A Download Report dialog box is displayed, then leave PDF selected and click Download Report
+
+            ![](./images/ds-201.png " ")
+        
+        - Save the report to your local computer
+
+    - Open the PDF report to view it
+
+        ![](./images/ds-202.png " ")
+
+        **Note**:
+        - The **Summary** table shows totals for columns and values scanned, sensitive types, sensitive tables, sensitive columns, and sensitive values
+        - The **Sensitive Columns** table lists the sensitive columns in the sensitive data model. For each sensitive column, the table shows you its sensitive type, schema name, table name, column name, sensitive value count, whether the column data was matched (Y or N), whether the column name was matched (Y or N), and whether the column comment was matched (Y or N)
+
+    - Close the PDF report and return to the **Sensitive Data Models Details** page
+
+4. Create a masking policy for your target database
+
+    Data Masking can generate a masking policy for your target database based on your sensitive data model. It automatically tries to select a default masking format for each sensitive column. You can edit these default selections and select different ones as needed. Occasionally you are prompted to address masking formats in your masking policies that are causing issues.
+
+    - In the breadcrumb at the top of the page, click **Data Safe**
+
+        ![](./images/ds-203.png " ")
+
+    - On the left under **Data Safe**, click **Security Center**
+
+    - Click **Data Masking**
+
+        ![](./images/ds-204.png " ")
+    
+    - Under **Related Resources**, click **Masking Policies**
+    
+        ![](./images/ds-205.png " ")
+
+    - The **Masking Policies** page is displayed and shows that there is no masking policy available for your target database
+
+        ![](./images/ds-206.png " ")
+
+    - Click [**Create Masking Policy**]
+
+        - The Create Masking Policy panel is displayed!
+        - Configure the masking policy as follows:
+    
+            - Name: *`Mask SDM1`*
+            - Compartment: Select your compartment
+            - Description: *`Masking policy for SDM1`*
+            - Choose how you want to create the masking policy: *`Using a sensitive data model`*
+            - Sensitive Data Model: *`SDM_DBSec_Livelabs_DEV`*
+
+                ![](./images/ds-207.png " ")
+
+        - Then click [**Create Masking Policy**]
+
+        **Important**:
+        - *Please do not close the panel*
+        - It closes automatically after all operations are completed
+        - If you close the panel before the operations are finished, the operation to add columns to the masking policy is not initiated!
+
+    - Review the masking policy
+
+        ![](./images/ds-208.png " ")
+    
+        **Note**:
+        - On the **Masking Policy Information** tab, you can view the masking policy name (and edit it), the Oracle Cloud Identifier (OCID) for the masking policy, a link to the work request for the masking policy, the compartment in which the masking policy is stored, the target database and sensitive data model to which the masking policy is associated, and the date/time in which the masking policy was created and last updated.
+        - The **Masking Columns** table lists all the sensitive columns and their masking formats. If needed, you can select a different masking format for any sensitive column. You can click the pencil icon next to a masking format to edit it.
+
+    - Under **Resources**, click **Masking Columns Needing Attention**
+
+        ![](./images/ds-209.png " ")
+
+        **Note**:
+        - The **Masking Columns Needing Attention** section is displayed at the bottom of the page
+        - This section informs you of sensitive columns that do not have a masking format
+        - The screenshot below shows an example where there are no sensitive columns without a masking format
+
+            ![](./images/ds-210.png " ")
+    
+    - Now, we don't want mask all the columns, but just few of them (here *`FIRSTNAME`*, *`LASTNAME`*, *`SALARY`* and *`EMAIL`* from *`EMPLOYEESEARCH_DEV.DEMO_HR_EMPLOYEES`* table only)
+
+        - Under **Resources**, click **Masking Columns**
+
+        - Click [**Remove Columns**]
+
+            ![](./images/ds-211.png " ")
+
+        - From the **Sensitive Type** drop-down list, select *`-- Select --`*, then click [**Search**]
+
+            ![](./images/ds-212.png " ")
+
+        - Select all the columns and unselect only the columns *`FIRSTNAME`*, *`LASTNAME`*, *`SALARY`* and *`EMAIL`* from *`EMPLOYEESEARCH_DEV.DEMO_HR_EMPLOYEES`* table
+
+            ![](./images/ds-213.png " ")
+        
+        - Then click [**Remove Columns**]
+        
+        - You should see now only the four columns that you want to mask
+
+            ![](./images/ds-214.png " ")
+
+    - Now, let's change a Masking Format
+
+        - Edit the Masking Format for the SALARY column by clicking on the Pencil icon
+        
+            ![](./images/ds-215.png " ")
+        
+        - In **Masking Format Entry**, enter *`Null Value`*, then click [**Save**]
+
+            ![](./images/ds-216.png " ")
+
+        - You should see the new Masking Format now
+
+            ![](./images/ds-217.png " ")
+
+5. Mask sensitive data in your target database by using Data Masking
+
+    After you create a masking policy, you can run a data masking job against your target database from the Masking Policy Details page. You can also run a data masking job from the Data Masking page.
+
+    - On the **Masking Policy Details** page, click [**Mask Target**]
+
+        ![](./images/ds-218.png " ")
+
+        **Note**: The Mask Sensitive Data panel is displayed!
+
+    - From the **Target Database** drop-down list, select your target database, and then click [**Mask Data**]
+
+        ![](./images/ds-219.png " ")
+
+        **Note**: The **Work Request** page is displayed!
+
+    - Monitor the progress of the data masking job in the **Log Messages** table
+
+        ![](./images/ds-220.png " ")
+
+    - Wait for the status to read **SUCCEEDED**
+
+        ![](./images/ds-221.png " ")
+
+6. View the Data Masking report
+
+    - While on the **Work Request** page, next to **Masking Report** on the **Work Request Information** tab, click View Details.
+
+        ![](./images/ds-222.png " ")
+
+    - Review the masking report
+
+        - The **Masking Report Information** tab shows you the target database name, masking policy name (you can click a link to view it), Oracle Cloud Identifier (OCID) for the masking policy, the date and time when the data masking job started and finished, and the number of masked sensitive types, schemas, tables, columns, and values. There is also a pie chart that shows you the masked value percentages for each sensitive type. You can click on a pie slide to drill down into the chart.
+
+            ![](./images/ds-223.png " ")
+
+        - The Masked Columns table lists each masked sensitive column and its respective schema, table, masking format, sensitive type, parent column, and total number of masked values.
+
+            ![](./images/ds-224.png " ")
+
+7. Create a PDF of the Data Masking report
+
+    - Let's generate the report
+    
+        - At the top of the **Masking Report Details** page, click [**Generate Report**]
+
+            ![](./images/ds-225.png " ")
+
+        - A **Generate Report** dialog box is displayed, then leave PDF selected
+
+            ![](./images/ds-226.png " ")
+
+        - Click [**Generate Report**], and wait for the report to be 100% generated
+
+            ![](./images/ds-227.png " ")
+
+        - Click Close
+
+    - Now, download the report
+    
+        - At the top of the page, click [**Download Report**]
+
+            ![](./images/ds-228.png " ")
+
+        - A Download Report dialog box is displayed, then leave PDF selected and click Download Report
+
+            ![](./images/ds-229.png " ")
+        
+        - Save the report to your local computer
+
+    - Open the PDF report to view it
+
+        ![](./images/ds-230.png " ")
+
+8. Validate the masked data in your target database
 
     - Go back to your Terminal session on your **DBSec-Lab** VM as OS user *oracle*
 
@@ -1488,21 +1774,23 @@ Data Discovery helps you find sensitive data in your databases and Data Masking 
 
         ... results in PROD (**original data**)
 
-        ![](./images/ds-160.png " ")
+        ![](./images/ds-181.png " ")
 
         ... results in DEV (**data masked**)
 
-        ![](./images/ds-200.png " ")
+        ![](./images/ds-231.png " ")
 
     - Take a moment to compare the original data (in PROD) to the masked data (in DEV) to check that it's different
 
-6. Now, you can restore the masked data (DEV) from the orginial values (PROD)
+        **Note**: Only the 4 columns have been masked, SALARY is now null and the 3 other columns have random values
+
+9. Now, you can restore the masked data (DEV) from the orginial values (PROD)
 
     ````
     <copy>./ds_restore_pdb1_dev.sh</copy>
     ````
 
-    ![](./images/ds-201.png " ")
+    ![](./images/ds-232.png " ")
 
 
 ## Task 6: (Optional) Reset Oracle Data Safe configuration
@@ -1555,17 +1843,6 @@ Data Discovery helps you find sensitive data in your databases and Data Masking 
 
 2. Go back to your Terminal session on your **DBSec-Lab** VM as OS user *oracle*
 
-    - Drop the Data Safe **DS_ADMIN** user on `pdb1`
-
-        ````
-        <copy>
-        cd $DBSEC_LABS/data-safe
-        ./ds_drop_user.sh pdb1
-        </copy>
-        ````
-
-        ![](./images/ds-309.png " ")
-
     - Delete the On-Premises connector from Database server
 
         ````
@@ -1575,11 +1852,22 @@ Data Discovery helps you find sensitive data in your databases and Data Masking 
         </copy>
         ````
 
+        ![](./images/ds-309.png " ")
+
+    - Drop the Data Safe **DS_ADMIN** user on `pdb1`
+
+        ````
+        <copy>
+        cd $DBSEC_LABS/data-safe
+        ./ds_drop_user.sh pdb1
+        </copy>
+        ````
+
         ![](./images/ds-310.png " ")
 
 3. **Now your Data Safe configuration is correctly reset!**
 
-You may now [proceed to the next lab](#next)
+You may now proceed to the next lab!
 
 ## **Appendix**: About the Product
 ### **Overview**
@@ -1611,4 +1899,4 @@ Video:
 ## Acknowledgements
 - **Author** - Hakim Loumi, Database Security PM
 - **Contributors** - Bettina Schaeumer, Rene Fontcha
-- **Last Updated By/Date** - Hakim Loumi, Database Security PM - December 2021
+- **Last Updated By/Date** - Hakim Loumi, Database Security PM - May 2022
