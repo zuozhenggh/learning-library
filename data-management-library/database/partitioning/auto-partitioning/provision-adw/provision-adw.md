@@ -30,7 +30,7 @@ Estimated Lab Time: 15 minutes.
 ### Objectives 
 - Create an Autonomous Database with the latest features of Oracle Databases
 
-## Task 1: Create a new Autonomous Data Warehouse Database
+## Task 1: Create a new Always Free Autonomous Data Warehouse Database
 
 1. Click on the hamburger **MENU** link at the upper left corner of the page.
 
