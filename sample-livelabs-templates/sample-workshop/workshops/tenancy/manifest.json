@@ -3,6 +3,8 @@
     "include": {"starter-file.sql":"../../data-load/files/starter-file.sql",
                 "sample.json":"../../data-load/files/sample.json",
                 "step2.md":"../../data-load/files/step2.md"},
+    "variables": ["../../variables/variables.json",
+                 "../../variables/variables-in-another-file.json"],
     "help": "livelabs-help-**enterarea**_us@oracle.com",
     "tutorials": [
         {
@@ -31,6 +33,14 @@
         {
             "title": "Lab 4: Query Data",
             "filename": "../../query/query.md"
+        },
+        {
+            "title": "Lab 5: Tables in LiveLabs",
+            "filename": "../../tables/tables.md"
+        },
+        {
+            "title": "Lab 6: Variables in LiveLabs",
+            "filename": "../../variables/variables.md"
         },
         {
             "title": "Need Help?",
