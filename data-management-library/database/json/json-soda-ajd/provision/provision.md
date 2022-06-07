@@ -167,45 +167,33 @@ In this lab, you will:
 
 ## Task 3: Find the MongoDB API Connection URL
 
-1. Open Service Console
+1. Open Database Actions
 
-    On the Autonomous Database Information page, click on the Service Console button
+    On the Autonomous Database Information page, click on the Database Actions button
 
-    ![Service Console button](./images/service-console-button.png " ")
+    ![Database Actions button](./images/db-actions.png " ")
 
-    The Service Console will open in a new browser tab.
+    The Database Actions Console will open in a new browser tab.
 
-2. Choose Development
+2. Find ORACLE DATABASE API FOR MONGODB under Related Services
 
-    Click on the Development link on the left hand side
+    Scroll down until you find the **Related Services** section. There should be a card for __ORACLE DATABASE API FOR MONGODB__. Click on that card (if the card is not present, most likely you did not correctly configure your database for secure access).
 
-    ![](./images/service-console-dev.png " ")
+    ![](./images/mongo-card.png " ")
 
 3. Save the URL for __Oracle Database API for MongoDB__
 
-    Scroll down the development page until you find the card labelled __Oracle Database API for MongoDB__. There are two URLs listed. Copy the first one (containing port number 27017) and save it with a text editor for later use in lab 3.
+    Once you've clicked on the card, a window will pop-up with two URLs listed.
+
+    Copy the first one (containing port number 27017) and save it with a text editor for later use in lab 3. Close the pop-up window when done.
 
     ![](./images/mongodb-url.png " ")
 
 ## Task 4: Connect to your Autonomous Database using "JSON Workshop" UI
 
-1. On the Autonomous Database Details page, click on the Tools tab.
+1. You should still be in the Database Actions tab from the previous step. Scroll up to the top of the page, to the **Development** section.
 
-    ![](./images/tools.png)
-
-2. The Tools page provides you access to Database Actions, Oracle Application Express, Oracle ML User Administration and SODA Drivers. In the Database Actions box, click **Open Database Actions**.
-
-    ![](./images/db-actions.png)
-
-3. On Database Actions page, sign in with the database instance's default administrator account, **Username - ADMIN** and click **Next**.
-
-    ![](./images/username.png)
-
-4. Provide the ADMIN user with the password you specified when creating the database. Click **Sign in**.
-
-    ![](./images/sign-in.png)
-
-5. It displays the Database Actions console. On the Database Actions console under **Development** choose **JSON** to manager your JSON documents.
+2. You'll see a variety of developer tools under **Development** choose **JSON** to manage your JSON documents.
 
     ![](./images/json.png)
 
