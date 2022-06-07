@@ -79,7 +79,7 @@ This workshop section requires having access to an Oracle Cloud account, having 
 
     ![Screenshot of marketplace results for the search function in Oracle Cloud Infrastructure](./images/marketplace-search.png " ")
 
-2. On the Market Place search bar enter __GoldenGate Migration__ and select the __Oracle GoldenGate for Oracle - Database Migrations__ Image.
+2. On the Market Place search bar enter __GoldenGate Migration__ and select the __Oracle GoldenGate - Database Migrations__ Image.
 
     ![Screenshot of marketplace results for GoldenGate Migration image](./images/marketplace-gg-images.png " ")
 
@@ -117,12 +117,9 @@ This workshop section requires having access to an Oracle Cloud account, having 
 
     ![Screenshot of Oracle GoldenGate Image Create Stack Menu, Instance Settings Section](./images/ogg-instance-settings.png " ") 
 
-8. Configure the following variables for section __Create OGG Deployments__:
+8. Configure the following variables for section __Create OGG Deployment__:
 
-    - Deployment 1 - Name, enter __Source__
-    - Deployment 1 - Database,  select __Oracle 19c (19.x)__
-    - Deployment 2 - Name, enter __Target__ 
-    - Deployment 2 - Database, select __Oracle 19c (19.x)__
+    - Deployment  Name, enter __Marketplace__
     - Deployment 2 - Automomous Database (__Check__)
     - Deployment 2 - Autonomous Database Compartment, select appropriate compartment as the rest of your deployment
     - Deployment 2 - Autonomous Database Instance, select the target database created earlier 
