@@ -74,7 +74,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 2. Change directory to the directory that you have created. The setup will fail if you do not complete this step. For example:
 
 	```
-	<copy> 
+	<copy>
 	cd grabdish
 	</copy>
 	```
@@ -85,7 +85,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 	```
 	<copy>
-	git clone -b 22.5.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+	git clone -b 22.6.2 --single-branch https://github.com/oracle/microservices-datadriven.git
 	</copy>
 	```
     You should now see the directory `microservices-datadriven` in the directory that you created.
@@ -148,8 +148,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 	> **Note:** Notice the format of "ocid1.user" prefix.
 
-	Locate your menu bar in the Cloud Console and click the person icon at the far upper right. 
-	
+	Locate your menu bar in the Cloud Console and click the person icon at the far upper right.
+
 	From the drop-down menu, select your user's name or My Profile. Note, sometimes the name link is missing in which case select the **User Settings** link. Do not select the **Tenancy** link.
 
 	![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid.png " ")
@@ -221,10 +221,10 @@ The setup will provision the following resources in your tenancy:
 	</copy>
 	```
 
-   	Once the setup has completed you are ready to [move on to Lab 2](#next). 
+   	Once the setup has completed you are ready to [move on to Lab 2](#next).
 
-   	> **Note:** Builds may continue to run even after the setup has completed. 
- 
+   	> **Note:** Builds may continue to run even after the setup has completed.
+
 4. The status of the builds can be monitored with this command:
 
 	```
