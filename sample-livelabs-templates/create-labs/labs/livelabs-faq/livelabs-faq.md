@@ -76,28 +76,34 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 
 ## **Development FAQ**
 
-1.	What should I do if I am making major updates to the workshop in production?
+1.  Who is responsible for Oracle learning-library GitHub repository  pull request approvals?
+    - LiveLabs Admin team is responsible for the Oracle learning-library GitHub repository pull request approvals.
+2.  What is the ETA to approve and merge the open pull request by LiveLabs admins?
+    - ETA to respond on the pull request is 1-2 business days.
+3.	Any questions related to Oracle learning-library GitHub repository?
+    -	Join the Slack channel: #workshop-authors-help to ask the questions in the channel or mail to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
+4.	What should I do if I am making major updates to the workshop in production?
     -	If the workshop is in production, and the updates are major (i.e. not fixes, spelling updates, revised screenshots, etc) place the workshop back In Development.
     -	Create a new version of the workshop folder with the updated version
     -	Create new manifest copies of the changed files (i.e. setup.md is copied and called setup-v2.md)
     -	Proceed through the status’ like normal, submit Self QA
     -	Once QA Verification is complete, we will point to the new workshop (this allows us to roll back to the earlier version if there is an issue)
-2. What should I do if I am making minor updates to the workshop in production?
+5. What should I do if I am making minor updates to the workshop in production?
     - Make changes to your workshop and create a pull request.
     - Check in WMS that your workshop URLs are correct.
     - After your pull request is approved, and your changes are reflected in the github.io page, the workshop in production will be automatically updated.
-2.	What binary files are not allowed in Github?
+6.	What binary files are not allowed in Github?
     -	The OGHO wants to avoid executable files that can contain malicious code (PDFs, PSDs, ZIPs, JARs, WARs, EARs, BINs, EXEs).
-3.	Where do I put my workshop files/objects?
+7.	Where do I put my workshop files/objects?
     -	Zip your files and mail to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
     -	LiveLabs team will upload the file in LiveLabs owned tenancy object storage and share the pre-authenticated link with an expiry date to you in 1-2 days.
-4.	How to submit videos for the workshops to one of the Oracle’s official Youtube channels?
+8.	How to submit videos for the workshops to one of the Oracle’s official Youtube channels?
     -	Workshop videos can only be sourced from one of the official Oracle Youtube channels.  We have a LiveLabs YouTube channel.  Submit the video to [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com) and we will review and upload it.
-5.	How to create a custom image from the Marketplace?
+9.	How to create a custom image from the Marketplace?
     -	Refer to [this](https://rpastijn.github.io/stuff/?lab=custom-image-mp-image) documentation on Github.
-6. Where can I locate the Self QA Checklist?
+10. Where can I locate the Self QA Checklist?
     -   When you're ready to Self-QA, change your workshop status to "Self QA". This will trigger an e-mail containing the Self QA Checklist. It can also be found [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/MKKRgodQ0WIIgL_R3QCgCRWCg30g22bXgxCdMk3YeKClB1238ZJXdau_Jsri0nzP/n/c4u04/b/qa-form/o/QA.docx).
-7. What to do if my github local and staging environment are corrupted and need to delete it and then rebuilt it?
+11. What to do if my github local and staging environment are corrupted and need to delete it and then rebuilt it?
     - Instructions to delete a forked repo on Github:
         - Go to Settings of Repo you want to unfork
         - Scroll down till danger zone section and click Delete this Repository
@@ -105,8 +111,6 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
         - Click “I understand the consequences, delete this repository” button.
     - Delete the same repo you just deleted on Github on your local machine as well.
     - After the successful deletion of repo on Github and local machine, follow the instructions from step 7 in lab 1 - Get Started with Git and Set up the GitHub Environment to rebuilt the repo.
-8.	Any questions related to Github?
-    -	Join the Slack channel: #workshop-authors-help and ask the question in the channel.
 
 ## **Workshops FAQ**
 
