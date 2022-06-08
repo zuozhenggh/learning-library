@@ -4,6 +4,38 @@
 
 For questions related to LiveLabs please review this FAQ. If you don't see an answer listed here, please visit the LiveLabs slack channel - #workshop-authors-help or email your respective admins, you can view the email in [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51) under the support link section of your workshop. For example, database - [livelabs-help-db_us@oracle.com](livelabs-help-db_us@oracle.com).
 
+## **LiveLabs Production FAQ**
+
+1.	Do I need to be on VPN to access LiveLabs URL?
+    -	No, LiveLabs passed CSSAP review and is available outside the firewall. It is accessible globally. Search for Oracle LiveLabs on the search engine of their choice, click on the apex link to go to LiveLabs homepage.
+2.	Who can run the workshop?
+    -	LiveLabs passed CSSAP review and is available outside the firewall. Anyone can run the workshops.
+3.	What do you need to run the workshop?
+    -	Brown Button / Customer's own tenancy – Customers do need anything to run the workshop.
+    -	Green Button / LiveLabs sandbox tenancy - An account of any type registered with Oracle (Eg: Gmail).
+4.	How to register for a workshop?
+    -	Navigate to [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1).
+    -	Click on View All Workshops to search for the workshop you want to run or type the keyword in Search Bar on top of the LiveLabs homepage.
+    -	Filter the workshops based on the Role, Focus Area, and Product, etc filter option on the right side of the page.
+    -	Once you finalize the workshop you want to run, Click on Launch Workshop.
+    -	Brown button / Customer's own tenancy:
+        - If customers want to run the workshop on their own tenancies, click the brown button - **Run On Your Tenancy**.
+        - Then click on **Open these workshop instructions in a new tab** to run through the instructions.. in a new tab
+    -	Green button / LiveLabs sandbox tenancy:
+        - If you want to run the workshop on LiveLabs tenancy, click the Green button – **Run On LiveLabs Sandbox**.
+        - Provide credentials of the account registered with Oracle (SSO) and sign in.
+        - On the Reserve page, choose the **Start Timezone**, turn on the Start Workshop Now button, provide your public SSH keys if requested, check the **I consent to receive the reservation emails** checkbox, and click **Submit reservation**.
+        - On My Reservations Page, once the provisioning is done, click **Launch Console** to view the Workshop details and Instructions to run the workshop.
+        - Then click **Open these workshop instructions in a new tab** available at the bottom of the page to run through the instructions.
+5.	How do I extend the LiveLabs tenancy workshop execution time?
+    -	If you have an active reservation, you can extend the reservation of a workshop:
+        - Navigate to My reservations on [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1) homepage.
+        - Click on Launch Workshop of the active reservation workshop that you want to extend.
+        - Click on Extend Workshop Reservation button available on the last row of the Workshop Details section.
+6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in WMS and want to add more content to the existing workshop?
+    -	We recommend go to [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51), find the workshop, and click **Message the Team** to contact the workshop team.
+    -   Or, you can find the workshop authors listed in the Acknowledgments section of the workshop, and slack or email them.
+
 ## **General FAQ**
 
 1.	Is this cloud only?
@@ -103,7 +135,6 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
     -	On the left menu, click on **Edit My Workshops**.
     -	Click on the **WMS ID** of the workshop you want to edit.
     -	On the top of the page, select the status you want to update and click **Save**.
-    
     >**Note:** As a workshop author, you cannot change your workshop to any statuses. Only council can change your workshop to **Approved** status. Only stakeholders can change your workshop to **Completed** status.
 6.	How to contact the author of a workshop?
     -	You can contact the workshop author if you have a question about a workshop, or have some feedback for the workshop.
@@ -198,40 +229,8 @@ For questions related to LiveLabs please review this FAQ. If you don't see an an
 21. Can I customize a workshop for events?
     -   Yes. Refer to Lab 2 -> Task 3 to create a workshop folder for your event. Then, **overwrite workshop information** when you request the event code.
 
-## **LiveLabs Production FAQ**
-
-1.	Do I need to be on VPN to access LiveLabs URL?
-    -	No, LiveLabs passed CSSAP review and is available outside the firewall. It is accessible globally. Search for Oracle LiveLabs on the search engine of their choice, click on the apex link to go to LiveLabs homepage.
-2.	Who can run the workshop?
-    -	LiveLabs passed CSSAP review and is available outside the firewall. Anyone can run the workshops.
-3.	What do you need to run the workshop?
-    -	Brown Button / Customer's own tenancy – Customers do need anything to run the workshop.
-    -	Green Button / LiveLabs sandbox tenancy - An account of any type registered with Oracle (Eg: Gmail).
-4.	How to register for a workshop?
-    -	Navigate to [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1).
-    -	Click on View All Workshops to search for the workshop you want to run or type the keyword in Search Bar on top of the LiveLabs homepage.
-    -	Filter the workshops based on the Role, Focus Area, and Product, etc filter option on the right side of the page.
-    -	Once you finalize the workshop you want to run, Click on Launch Workshop.
-    -	Brown button / Customer's own tenancy:
-        - If customers want to run the workshop on their own tenancies, click the brown button - **Run On Your Tenancy**.
-        - Then click on **Open these workshop instructions in a new tab** to run through the instructions.. in a new tab
-    -	Green button / LiveLabs sandbox tenancy:
-        - If you want to run the workshop on LiveLabs tenancy, click the Green button – **Run On LiveLabs Sandbox**.
-        - Provide credentials of the account registered with Oracle (SSO) and sign in.
-        - On the Reserve page, choose the **Start Timezone**, turn on the Start Workshop Now button, provide your public SSH keys if requested, check the **I consent to receive the reservation emails** checkbox, and click **Submit reservation**.
-        - On My Reservations Page, once the provisioning is done, click **Launch Console** to view the Workshop details and Instructions to run the workshop.
-        - Then click **Open these workshop instructions in a new tab** available at the bottom of the page to run through the instructions.
-5.	How do I extend the LiveLabs tenancy workshop execution time?
-    -	If you have an active reservation, you can extend the reservation of a workshop:
-        - Navigate to My reservations on [LiveLabs](https://apexapps.oracle.com/pls/apex/f?p=133:1) homepage.
-        - Click on Launch Workshop of the active reservation workshop that you want to extend.
-        - Click on Extend Workshop Reservation button available on the last row of the Workshop Details section.
-6.	What do I do if I have a feedback for a workshop? Whom to reach if I face errors running through the workshop? What to do if I have similar content in WMS and want to add more content to the existing workshop?
-    -	We recommend go to [WMS](https://apex.oraclecorp.com/pls/apex/f?p=24885:51), find the workshop, and click **Message the Team** to contact the workshop team.
-    -   Or, you can find the workshop authors listed in the Acknowledgments section of the workshop, and slack or email them.
-
 ## Acknowledgements
 
 * **Author:** Anoosha Pilli, Product Manager, Database Product Management
 * **Contributors:** Madhusudhan Rao, Arabella Yao, Product Manager, Database Product Management
-* **Last Updated By/Date:** Arabella Yao, Apr 2022
+* **Last Updated By/Date:** Arabella Yao, April 2022
