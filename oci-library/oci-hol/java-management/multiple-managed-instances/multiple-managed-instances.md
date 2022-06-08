@@ -3,7 +3,7 @@
 ## Introduction
 The Management Gateway provides a single point of communication between the Management Agents (or any other customer-side products) and the Oracle Cloud Infrastructure.
 
-Using the Management Gateway as the single point for traffic to and from the Oracle Cloud Infrastructure means that the enterprise firewall only needs to allow HTTPS communication from the host where the Management Gateway resides. This scenario allows installing Management Agent on the remaining hosts which do not need to have direct access to the internet. Oracle recommends to configure the Management Gateway first and then the Management Agent on the other hosts.
+Using the Management Gateway as the single point for traffic to and from the Oracle Cloud Infrastructure means that the enterprise firewall only needs to allow HTTPS communication from the host where the Management Gateway resides. This scenario allows installing Management Agent on the hosts which do not need to have direct access to the internet. Oracle recommends to configure the Management Gateway first and then the Management Agent on the other hosts.
 
 
   ![image of gateway concepts](/../images/gateway_concepts_diagram.png =400x*)
@@ -71,12 +71,12 @@ In this lab, you will:
     </copy>
     ```   
 
-  Copy and paste the contents of the install key file downloaded in last step into the editor.
+  Copy and paste the contents of the install key file downloaded from the previous step into the editor.
 
   Customize following parameters:
     * **AgentDisplayName**: Add a display name for Management Gateway 
     * **GatewayPort**: 4479
-    * Remove the parameters starting with Service.plugin.* parameter. These parameters are agent-specific and are only used for agent installations. 
+    * Remove the parameters starting with Service.plugin.* parameter.These are agent parameters which are only used for agent installations
 
      > **Note:** This lab will be using **GatewayPort** 4479, but you can choose any port recommended by your organization.
 
@@ -100,7 +100,10 @@ In this lab, you will:
 
     ```
     <copy>
-    sudo rpm -ivh <rpm_file_name.rpm>
+
+    JDK_DIR=$(find /usr/bin/java)
+    sudo JAVA_HOME="${JDK_DIR}" rpm -ivh <rpm_file_name.rpm>
+
     </copy>
     ```   
 
@@ -252,7 +255,7 @@ Gateway Proxy started successfully
 
     ![image of Management Gateway logs](/../images/management-gateway-status.png)
 
-    For more details, check log file: 
+    For more details, check the log file: 
     
      ```
     <copy>
