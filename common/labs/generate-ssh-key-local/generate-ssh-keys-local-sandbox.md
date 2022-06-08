@@ -215,7 +215,7 @@ In earlier versions of Windows, ssh-keygen was not a native utility, so third pa
 
     Follow below instructions to connect to a cloud instance via SSH using the PuTTY terminal.
 
-### Connect to an instance using PuTTY
+### Connect to an Instance Using PuTTY
 
 13.  Open the PuTTY utility from the Windows start menu. In the dialog box, enter the IP address of your OCI Compute Instance. This can be obtained from the **OCI Console > Compute > Instances > Instance Details** screen.
 

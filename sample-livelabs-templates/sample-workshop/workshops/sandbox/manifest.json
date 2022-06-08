@@ -1,6 +1,8 @@
 {
     "workshoptitle": "The Title of the Workshop is defined in the manifest",
     "help": "livelabs-help-**enterarea**_us@oracle.com",
+    "variables": ["../../variables/variables.json",
+        "../../variables/variables-in-another-file.json"],
     "tutorials": [
         {
             "title": "Getting Started",
@@ -28,6 +30,14 @@
         {
             "title": "Lab 4: Query Data",
             "filename": "../../query/query.md"
+        },
+        {
+            "title": "Lab 6: Variables in LiveLabs",
+            "filename": "../../variables/variables.md"
+        },
+        {
+            "title": "Lab 5: Tables in LiveLabs",
+            "filename": "../../tables/tables.md"
         },
         {
             "title": "Need Help?",
