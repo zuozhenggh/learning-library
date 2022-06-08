@@ -40,10 +40,15 @@ In this section, you will:
 4. Create a new policy:
 
       - Name: `dataintegration`
+      ```
+      <copy>dataintegration</copy>
+      ```
       - Description: `Allow Data Integration Service to use VCN`
+      ```
+      <copy>Allow Data Integration Service to use VCN</copy>
+      ```
       - Toggle: `Show manual editor`
       - Policy Builder:
-      
       ```
       <copy>allow service dataintegration to use virtual-network-family in tenancy</copy>
       ```
@@ -54,21 +59,21 @@ In this section, you will:
    >
    > In case you are a Non-admin user, you will need to set up some more policies to allow the group you belong to. Ask your administrator.
    >
-   > ```
-   > <copy>allow group <group-name> to manage dis-workspaces in compartment <compartment-name></copy>
-   > ```
-   >
-   > ```
-   > <copy>allow group <group-name> to manage dis-work-requests in compartment <compartment-name></copy>
-   > ```
-   >
-   > ```
-   > <copy>allow group <group-name> to use virtual-network-family in compartment <compartment-name></copy>
-   > ```
-   >
-   > ```
-   > <copy>allow group <group-name> to manage tag-namespaces in compartment <compartment-name></copy>
-   > ```
+   >```
+   <copy>allow group <group-name> to manage dis-workspaces in compartment <compartment-name></copy>
+   ```
+   
+   >```
+    <copy>allow group <group-name> to manage dis-work-requests in compartment <compartment-name></copy>
+    ```
+   
+   >```
+    <copy>allow group <group-name> to use virtual-network-family in compartment <compartment-name></copy>
+    ```
+   
+   >```
+    <copy>allow group <group-name> to manage tag-namespaces in compartment <compartment-name></copy>
+    ```
 
 5. Go to **Menu**, **Analytics & AI** and then click **Data Integration**.
 
@@ -85,6 +90,9 @@ In this section, you will:
 8. **Modify** the following fields, leave the rest as default:
 
       - Name: `Workspace Nature`
+      ```
+      <copy>Workspace Nature</copy>
+      ```
       - VCN: `nature`
       - Subnet: `Private subnet-nature`
    Be sure you have select the correct compartment, `root` in the workshop case. As soon as you select the compartment, you will be capable of selecting VCN and Subnet.
@@ -213,7 +221,13 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
 6. **Fill** the fields as follows:
 
       - Name: `bucket-study`
+      ```
+      <copy>bucket-study</copy>
+      ```
       - Description: `Object Storage Bucket with fish survey`
+      ```
+      <copy>Object Storage Bucket with fish survey</copy>
+      ```
       - Type: `Oracle Object Storage`
       - Tenancy OCID: `ocid1.tenancy.oc1..<unique_ID>`
 
@@ -222,6 +236,8 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
       ![](images/dataasset_fields1_new.png)
     
       - OCI region: `eu-frankfurt-1`. You can find this information as part of the Object Storage URL that we copied on Lab 1, Task 3, Step 12. You can copy the OCI region, from the summary table of Object Srotage regions URLs on Step 1 of this Task, if you know which region you are using.
+
+      - Default connection information: Leave the connection paratemers as they are.
 
 7. You can test the **connection**.
 
@@ -242,12 +258,27 @@ We are going to need the **Object Storage URL** and **Tenancy ID**.
    This time we are going to create the **MySQL database asset** with the following values:
 
       - Name: `mysql-database`
+      ```
+      <copy>mysql-database</copy>
+      ```
       - Description: `MySQL Database for Analytics`
+      ```
+      <copy>MySQL Database for Analytics</copy>
+      ```
       - Type: `MySQL`
-      - Host (you have to complete this field using your MySQL Private IP address): `10.0.1.xxx`
+      - Host (you have to complete this field using your MySQL Private IP address): It should be similat to `10.0.1.xxx`
       - Port: `3306`
+      ```
+      <copy>3306</copy>
+      ```
       - Database: `nature`
-      - User: `root`
+      ```
+      <copy>nature</copy>
+      ```
+      - Username: `root`
+      ```
+      <copy>root</copy>
+      ```
       - Password: `<your_password>`. Enter any password you wish to use following the specific requirements imposed by Oracle.
       
    ![](images/dataasset_mysql_fields1.png)
@@ -278,4 +309,4 @@ Congratulations, you are ready for the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, April 2022
+- **Last Updated By/Date** - Priscila Iruela, June 2022

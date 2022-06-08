@@ -52,6 +52,9 @@ In this section, you will:
 5. Change the **VCN name** and leave everything else as **default**.
 
       - VCN Name: `nature`
+      ```
+      <copy>nature</copy>
+      ```
 
 6. Click **Next**.
 
@@ -84,8 +87,17 @@ In this section, you will:
    We are adding an **ingress rule** on those ports from the internal VCN CIDR `10.0.0.0/16`.
 
       - Source CIDR: `10.0.0.0/16`
+      ```
+      <copy>10.0.0.0/16</copy>
+      ```
       - Destination Port Range: `3306,33060`
+      ```
+      <copy>3306,33060</copy>
+      ```
       - Description: `MySQL and MySQL X Protocol`
+      ```
+      <copy>MySQL and MySQL X Protocol</copy>
+      ```
       - Leave the rest of the fields with default values.
 
    And click **Add Ingress Rule** to confirm the values.
@@ -103,12 +115,15 @@ In this section, you will:
 2. Go to **Menu**, **Compute** and then click **Instances**.
 
    ![Compute Instance Menu](images/compute_instance_menu.png)
-
+f
 3. Click **Create Instance**.
 
    ![Create Intance Button](images/compute_create_instance_button.png)
 
-4. Change the **name** to: `bastion`
+4. Change the **name** to: bastion
+      ```
+      <copy>bastion</copy>
+      ```
 
    Make sure the rest of the **properties** are like the following:
 
@@ -197,10 +212,10 @@ In this section, you will:
       Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
       ```
 
-17. Security first, let's fix the **permissions** to `600` with the following command:
+17. Security first, let's fix the **permissions** to `400` with the following command:
 
       ```
-      <copy>chmod 600 .ssh/bastion</copy>
+      <copy>chmod 400 .ssh/bastion</copy>
       ```
 
 18. **Connect** with SSH again (remember to replace `PUBLIC_IP` with your bastion host IP):
@@ -251,6 +266,9 @@ In this section, you will:
 3. **Change** the bucket name, leave everything else by default.
 
       - Bucket Name: `bucket-study`
+      ```
+      <copy>bucket-study</copy>
+      ```
 
 4. Click **Create**.
 
@@ -294,4 +312,4 @@ Congratulations! You are ready to go to the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, April 2022
+- **Last Updated By/Date** - Priscila Iruela, June 2022

@@ -36,13 +36,22 @@ In this section, you will:
    ![](images/mysql_create_button.png)
 
       - Name your MySQL instance: `mysql-analytics`
+         ```
+         <copy>mysql-analytics</copy>
+         ```
       - Description (optional): `MySQL instance for Analytics`
+         ```
+         <copy>MySQL instance for Analytics</copy>
+         ```
 
 3. Between the three options, pick `HeatWave`. `Standalone` will work for the test, but it doesn't include the Analytics Engine that will improve performance for Analytics.
 
    For Username and password:
 
       - Username: `root`
+         ```
+         <copy>root</copy>
+         ```
       - Password: `<your_password>`
       - Confirm Password: `<your_password>`
 
@@ -60,6 +69,9 @@ In this section, you will:
       - Configure placement: `AD-1`
       - Configure hardware: `MySQL.HeatWave.VM.Standard.E3` or Standalone (selected above) `MySQL.VM.Standard.E3.1.8GB`
       - Data Storage Size (GB): `50`
+         ```
+         <copy>50</copy>
+         ```
       - Configure Backups: `Enable Automatic Backups`
 
 6. Click **Create**.
@@ -133,4 +145,4 @@ Congratulations! You are ready to go to the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, April 2022
+- **Last Updated By/Date** - Priscila Iruela, June 2022

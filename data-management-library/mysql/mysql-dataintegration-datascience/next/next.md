@@ -54,4 +54,4 @@ You forgot to create the policy for Data Integration to use Virtual Cloud Networ
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, April 2022
+- **Last Updated By/Date** - Priscila Iruela, June 2022

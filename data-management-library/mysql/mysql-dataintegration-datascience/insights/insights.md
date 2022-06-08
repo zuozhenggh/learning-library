@@ -29,7 +29,7 @@ In this section, you will:
 
 1. Create **Dynamic Group**, go to **Menu**, **Identity & Security** and then click **Dynamic Groups**.
 
-> Note: If you can't see **Dynamic Groups** under **Identity & Security** section, please select **Domains**, **Default (Current domain)** and then click **Dinamycs Group**.
+> Note: If you can't see **Dynamic Groups** under **Identity & Security** section, please select **Domains**, **Default (Current domain)** and then click **Dinamycs Group** in the left side menu.
  
    ![](images/ds_dynamic_group_menu.png)
 
@@ -40,7 +40,13 @@ In this section, you will:
 3. Set the following **Values**:
 
       - Name: `datascience`
+         ```
+         <copy>datascience</copy>
+         ```
       - Description: `Data Science Dynamic Group`
+         ```
+         <copy>Data Science Dynamic Group</copy>
+         ```
       - Rule 1 (Matching Rules):
          ```
          <copy>ALL { resource.type = 'datasciencenotebooksession' }</copy>
@@ -50,7 +56,7 @@ In this section, you will:
 
    ![](images/ds_dynamic_group_create.png)
 
-5. The **Dynamic Group** for Data Science has been created.
+5. The **Dynamic Group** for Data Science has been created. Don't worry if the colour can vary from the picture, **Green** and **Blue** in this case mean the same.
 
    ![](images/ds_dynamic_group_review.png)
 
@@ -71,7 +77,13 @@ In this section, you will:
 3. Use the following information:
 
       - Name: `datascience`
+         ```
+         <copy>datascience</copy>
+         ```
       - Description: `Data Science to use network resources`
+         ```
+         <copy>Data Science to use network resources</copy>
+         ```
       - Policy Builder:
       - Toggle **Show manual editor**
 
@@ -118,7 +130,13 @@ In this section, you will:
 3. Set the **Name** and **Description** as follows:
 
       - Name: `Nature`
+         ```
+         <copy>Nature</copy>
+         ```
       - Description: `Fish Survey notebook`
+         ```
+         <copy>Fish Survey notebook</copy>
+         ```
 
 4. Click **Create**.
 
@@ -131,8 +149,14 @@ In this section, you will:
 6. Set the following **Values**:
 
       - Name: `Fish Survey`
+         ```
+         <copy>Fish Survey</copy>
+         ```
       - Compute Instance Shape (but other compatible shapes would work as well): `VM.Standard.E2.2`
       - Block Storage Size: `50`
+         ```
+         <copy>50</copy>
+         ```
       - Networking resources > Custom networking
       - VCN: `nature`
       - Subnet: `Private Subnet-nature`
@@ -141,7 +165,7 @@ In this section, you will:
 
    ![](images/ds_create_notebook_create.png)
 
-8. The **Status** icon will change from Creating to Active:
+8. The **Status** icon will change from Creating to Active. Be patient, this process should take a few minutes.
 
    ![Creating](images/datascience-creating.png)
 
@@ -151,7 +175,11 @@ In this section, you will:
 
    ![](images/ds_create_notebook_open.png)
 
-10. Log-in into your Notebook. Click **Continue** and you should be in your notebook as you are using your same OCI Web Console user. Otherwise, log in with your specific user.
+10. If you see your **Oracle Cloud Account** in the next screen, clik on it, otherwise follow the next steps to `Sign in with a different user account` and follow the next step.
+
+   ![](images/oracle_cloud_account_notebook_dashboard.png)
+
+11. Log-in into your Notebook. Click **Continue** and you should be in your notebook as you are using your same OCI Web Console user. Otherwise, log in with your specific user.
 
    ![](images/ds_notebook_login.png)
 
@@ -171,7 +199,7 @@ In this section, you will:
 
    ![](images/ds_notebook_terminal_install.png)
 
-3. Wait for the installation to **complete**.
+3. Wait for the installation to **complete**. It should take less than one minute.
 
 ---
 
@@ -222,4 +250,4 @@ Continue to the Next Steps for more information!
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, April 2022
+- **Last Updated By/Date** - Priscila Iruela, June 2022

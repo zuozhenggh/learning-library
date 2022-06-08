@@ -35,8 +35,15 @@ In this section, you will:
 2. Set the **Name**, **Project** and **Description** in the New Data Flow Panel:
 
       - Name: `CSV to MySQL` 
+      ```
+      <copy>CSV to MySQL</copy>
+      ```
       - Project or Folder: click on the empty field and the projects that you have created will show up. Click on `My First Project` and **Select**.
       - Description: `Data Flow from CSV on Object Storage to MySQL Database`
+      ```
+      <copy>Data Flow from CSV on Object Storage to MySQL Database</copy>
+      ```
+      - Click **Create**
 
    ![](images/dataflow_select_project_new.png)
 
@@ -54,13 +61,18 @@ In this section, you will:
 
 5. Set the **Identifier** as `FISH_SURVEY` in the **Details** tab from the Source **Properties** panel. Then go to **Data Asset** and click **Select**.
 
+   - Identifier: `FISH_SURVEY`
+      ```
+      <copy>FISH_SURVEY</copy>
+      ```
+
    ![](images/dataflow_source_id.png)
 
 6. From the **dropdown**, select `bucket-study` and click **Select**.
 
    ![](images/dataflow_source_data_asset_bucket.png)
 
-7. **Select** `Default Connection` in the Connection section. Select the **Compartment** that you have used to create for this workshop, `root`. Then go to **Schema**, click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data Entity**.
+7. **Select** `Default Connection` in the Connection section. In the **Schema** section, select the **Compartment** that you have used to create for this workshop, `root`. Then click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data Entity**.
 
    ![](images/dataflow_source_data_entity.png)
 
@@ -97,6 +109,11 @@ In this section, you will:
    ![](images/dataflow_target_dnd.png)
 
 15. Set the **Identifier** as `MySQL_DB` in the **Target**, and leave **Integration Strategy** as `Insert`:
+
+   - Identifier: `MySQL_DB`
+      ```
+      <copy>MySQL_DB</copy>
+      ```
 
    ![](images/dataflow_target_id.png)
 
@@ -136,7 +153,7 @@ You can **expand / shrink** the Properties canvas.
 
    ![](images/dataflow_source_to_target_map_completed.png)
 
-24. The **final step** is to **validate** the Data flow. Click **Validate**, check there are no warnings or errors and click **Save and Close**.
+24. The **final step** is to **validate** the Data flow. Click **Validate**, check there are `O Total Warnings or/and  O Total Errors` and click **Save and Close**.
 
    ![](images/dataflow_validate.png)
 
@@ -151,8 +168,14 @@ You can **expand / shrink** the Properties canvas.
 2. Set the **Name** and the rest of the info as follows:
 
       - Name: `IntegrationTaskMySQL`
+         ```
+         <copy>IntegrationTaskMySQL</copy>
+         ```
       - Description: `Integration Task MySQL`
-      - Project or Folder: `My First Project`
+         ```
+         <copy>Integration Task MySQL</copy>
+         ```
+      - Project or Folder: `My First Project`. Be sure you have selected this Project or Folder, otherwise, you will have an error.
       - Data Flow: `CSV to MySQL`
 
    ![](images/integrationtask_fields.png)
@@ -201,7 +224,7 @@ You can **expand / shrink** the Properties canvas.
 
    ![](images/di_application_integration_run.png)
 
-4. Wait few seconds and the **Status** will change from `Not Started` to `Queued`, then to `Running`.
+4. Wait few seconds and the **Status** will change from `Not Started` to `Queued`, and after to `Running`. 
 
    ![](images/di_application_integration_not_started.png)
 
@@ -219,33 +242,35 @@ You can **expand / shrink** the Properties canvas.
 
 1. On the bastion host in **Cloud Shell** (reconnect from Cloud Shell to the bastion host if timed out: `ssh -i .ssh/bastion opc@PUBLIC_IP`), run the **MySQL Shell** in the `bash` **Terminal** with:
 
-   ```
-   <copy>mysqlsh --sql root@PRIVATE_IP</copy>
-   ```
+      ```
+      <copy>mysqlsh --sql root@PRIVATE_IP</copy>
+      ```
 
 2. If requested, write the MySQL **Password**.
 
 3. Set `nature` as the **Schema** in use.
 
-   ```
-   <copy>use nature;</copy>
-   ```
+      ```
+      <copy>use nature;</copy>
+      ```
 
-   The result message says `Default schema set to nature.` And `Fetching table and column names from nature for auto-completion... Press ^C to stop.` You can continue.
+      The result message says:
+      `Default schema set to nature.`
+      `Fetching table and column names from nature for auto-completion... Press ^C to stop.` You can continue.
 
 4. Count the **number** of rows in the table `fish` by running the following query.
 
-   ```sql
-   <copy>select count(1) from fish;</copy>
-   ```
+      ```sql
+      <copy>select count(1) from fish;</copy>
+      ```
 
    You should see 3493 as result.
 
 5. **Exit** with:
 
-   ```
-   <copy>\exit</copy>
-   ```
+      ```
+      <copy>\exit</copy>
+      ```
 
 Congratulations, you are ready for the next Lab!
 
@@ -255,4 +280,4 @@ Congratulations, you are ready for the next Lab!
 
 - **Author** - Victor Martin, Technology Product Strategy Director
 - **Contributors** - Priscila Iruela
-- **Last Updated By/Date** - Priscila Iruela, April 2022
+- **Last Updated By/Date** - Priscila Iruela, June 2022
