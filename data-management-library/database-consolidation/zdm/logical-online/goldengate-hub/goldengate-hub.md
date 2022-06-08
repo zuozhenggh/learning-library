@@ -1,4 +1,4 @@
-# Configure GoldenGate Hub
+# Configure GoldenGate hub
 
 ## Introduction
 

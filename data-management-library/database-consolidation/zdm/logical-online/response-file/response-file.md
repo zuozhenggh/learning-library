@@ -1,4 +1,4 @@
-# Configure the Response File
+# Configure the response file
 
 ## Introduction
 In this lab you will learn about ZDM's response file and its parameters. You will also learn howto create and pre-fill a response file for your migration. 
