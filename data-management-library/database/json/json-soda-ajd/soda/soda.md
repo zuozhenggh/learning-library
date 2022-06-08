@@ -45,7 +45,7 @@ In this lab, you will:
 
 3. Hit Enter to load this URL. You should see a JSON document which lists your collections - it shows the 'products' collection with some additional information.
 
-	![](./images/additional-info.png)
+	![additional info for products](./images/additional-info.png)
 
 4. In order to see the contents of the collection (the documents) all we have to do is append */products* (the collection name) to the URL and hit Enter.
 
@@ -58,13 +58,13 @@ In this lab, you will:
 	```
 	https://ppkhnzjhg74axsq-atp19cdb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/products
 	```
-	![](./images/documents-1.png)
+	![access URL](./images/documents-1.png)
 
 5. The browser is limited to GET requests. For further operations we need to also perform other requests. For this we switch to use the 'curl' command in the Oracle Cloud Shell. If you are familiar with other REST tools like Postman you can also use them for the following examples.
 
 	Navigate to Oracle Cloud Console and click on Cloud Shell icon.
 
-	![](./images/ocshell.png)
+	![Start cloud shell](./images/ocshell.png)
 
 6.	In the cloud shell, use the same URL to make a GET request as follows:
 
@@ -80,7 +80,7 @@ In this lab, you will:
 
 	You'll see an authorization error. Oracle's security mechanisms kicked in as this REST request came from outside the database cloud service (you didn't get this from the browser as you were already automatically logged in for Database Actions).
 
-	![](./images/error.png)
+	![authorization error message](./images/error.png)
 
 7. We can use basic authentication to access the database. 
 
@@ -97,7 +97,7 @@ In this lab, you will:
 	```
 	curl -X GET https://ppkhnzjhg74axsq-bedasatpdb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest -u admin:Password123
 	```
-	![](./images/success.png)
+	![success message with authorization](./images/success.png)
 
 9. We can also run a QBE using curl. This would be a post request. Make sure you add *?action=query* to the URL.
 
@@ -113,7 +113,7 @@ In this lab, you will:
 	curl -X POST -H "Content-Type: application/json" --data '{"price":{"$gt":5}}' https://ppkhnzjhg74axsq-atp19cdb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/products?action=query -u admin:Password123
 	```
 
-	![](./images/more5.png)
+	![CURL search one](./images/more5.png)
 
 10. We can insert a new document, also using a POST request but without the ?action=query` at the end of the URL.
 
@@ -127,11 +127,11 @@ In this lab, you will:
 	curl -X POST -H "Content-Type: application/json" --data '{"id": 1414,"type": "Toy","title": "E.T. the Extra-Terrestrial","condition": "washed","price": 50.00,"description": "50cm tall plastic figure"}' https://ppkhnzjhg74axsq-atp19cdb.adb.eu-frankfurt-1.oraclecloudapps.com/ords/admin/soda/latest/products -u admin:Password123
 	```
 
-	![](./images/created.png)
+	![CURL insert](./images/created.png)
  
 11. To verify that the new document was inserted, navigate to the tab with SQL Developer Web, click on the navigation menu on the top left and select **JSON** under Development.
 
-	![](./images/nav-json.png)
+	![JSON navigation](./images/nav-json.png)
 
 	If you use the following QBE in the JSON Workshop by copying and pasting the following query in the worksheet and running it, you should see a new document.
 
@@ -141,7 +141,7 @@ In this lab, you will:
 	</copy>
 	```
 
-	![](./images/proof.png)	
+	![new document search](./images/proof.png)	
 
 
 You may now proceed to the next lab.

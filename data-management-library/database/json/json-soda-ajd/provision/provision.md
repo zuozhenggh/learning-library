@@ -52,7 +52,7 @@ In this lab, you will:
 <if type="freetier">
     ![Check the workload type on the left.](./images/compartments.png " ")
 </if>
-    ![](./images/workload-type.png " ")
+    ![Check the workload type](./images/workload-type.png " ")
 
 <if type="freetier">
    > **Note:** Avoid the use of the ManagedCompartmentforPaaS compartment as this is an Oracle default used for Oracle Platform Services.
@@ -83,7 +83,7 @@ In this lab, you will:
 <if type="livelabs">
     - __Database Name__ - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use __JSONDB__ and append you LiveLabs user id. For example, __JSONDB7199__.
 
-    ![](./images/adb-info-livelabs.png)
+    ![Supply a database name](./images/adb-info-livelabs.png)
 </if>
 
 4. Choose a workload type: Select the workload type for your database from the choices:
@@ -146,7 +146,7 @@ In this lab, you will:
 
     Note: this is insecure, and will allow access to your database from any IP address. For a production database, you should *always* provide a list of the IP addresses for the specific (usually mid-tier) machines that need to access your database. However, using this CIDR block simplifies later parts of this lab.
 
-    ![](./images/network-access.png " ")
+    ![Apply CIDR block](./images/network-access.png " ")
 
 
 
@@ -155,7 +155,7 @@ In this lab, you will:
     - __Bring Your Own License (BYOL)__ - Select this type when your organization has existing database licenses.
     - __License Included__ - Select this type when you want to subscribe to new database software licenses and the database cloud service. For this lab, choose __License Included__.
 
-    ![](./images/license-type.png " ")
+    ![Choose license included](./images/license-type.png " ")
 
 10. Click __Create Autonomous Database__.
 
@@ -179,7 +179,7 @@ In this lab, you will:
 
     Scroll down until you find the **Related Services** section. There should be a card for __ORACLE DATABASE API FOR MONGODB__. Click on that card (if the card is not present, most likely you did not correctly configure your database for secure access).
 
-    ![](./images/mongo-card.png " ")
+    ![Card for MongoDB API](./images/mongo-card.png " ")
 
 3. Save the URL for __Oracle Database API for MongoDB__
 
@@ -187,7 +187,7 @@ In this lab, you will:
 
     Copy the first one (containing port number 27017) and save it with a text editor for later use in lab 3. Close the pop-up window when done.
 
-    ![](./images/mongodb-url.png " ")
+    ![Copy MongoDB API URL](./images/mongodb-url.png " ")
 
 ## Task 4: Connect to your Autonomous Database using "JSON Workshop" UI
 
@@ -195,21 +195,21 @@ In this lab, you will:
 
 2. You'll see a variety of developer tools under **Development** choose **JSON** to manage your JSON documents.
 
-    ![](./images/json.png)
+    ![Choose JSON](./images/json.png)
 
 6. It opens on a worksheet. The first time you open JSON, a series of pop-up informational boxes introduce the main features. Click Next to know more or click on `X` to close the pop-up.
 
-    ![](./images/tutorials.png " ")
-    ![](./images/tour2.png " ")
-    ![](./images/tour3.png " ")
-    ![](./images/tour4.png " ")
-    ![](./images/tour5.png " ")
-    ![](./images/tour6.png " ")
-    ![](./images/tour7.png " ")
-    ![](./images/tour8.png " ")
-    ![](./images/tour9.png " ")
-    ![](./images/tour10.png " ")
-    ![](./images/tour11.png " ")
+    ![Tutorial pane 1](./images/tutorials.png " ")
+    ![Tutorial pane 2](./images/tour2.png " ")
+    ![Tutorial pane 3](./images/tour3.png " ")
+    ![Tutorial pane 4](./images/tour4.png " ")
+    ![Tutorial pane 5](./images/tour5.png " ")
+    ![Tutorial pane 6](./images/tour6.png " ")
+    ![Tutorial pane 7](./images/tour7.png " ")
+    ![Tutorial pane 8](./images/tour8.png " ")
+    ![Tutorial pane 9](./images/tour9.png " ")
+    ![Tutorial pane 10](./images/tour10.png " ")
+    ![Tutorial pane 11](./images/tour11.png " ")
 
 
 
