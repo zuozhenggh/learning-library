@@ -117,7 +117,7 @@ In this lab, you will:
       Checking if /opt/oracle/mgmt_agent directory exists
       Checking if 'mgmt_agent' user exists
       Checking Java version
-              JAVA_HOME is not set or not readable to root
+              Trying /usr/bin/java
               Trying default path /usr/bin/java
               Java version: 1.8.0_282 found at /usr/bin/java
       Checking gateway version
