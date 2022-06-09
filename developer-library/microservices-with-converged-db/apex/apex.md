@@ -190,7 +190,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
     ![Full Width 4](images/full-width-4-1.png)
 
 6. We'll use PL/SQL Dynamic Content to show a SQL query result as an HTML snippet code in the region. Select each region created at the steps before, and on the right pane, set:
-* **Identification** / **Type**: **PL/SQL Dynamic Content**
+ **Identification** / **Type**: **PL/SQL Dynamic Content**
 
     ![Dynamic Content](images/dynamic-content-1.png)
 * with the information provided in the next step, i.e.:
@@ -206,24 +206,24 @@ In this task you will create a new APEX app for analytics purpouse based on an e
         * **Title**: **Top ZipCode Deliveries**
         * **Accent**: **Accent1**
         * **PL/SQL Code**: 
-    ```
-    <copy>
-       DECLARE
-        CURSOR zip_cur
+        ```
+        <copy>
+        DECLARE
+         CURSOR zip_cur
         IS
             select count(DISTINCT (TO_CHAR( date_, 'MM/DD' ) || ' ord:' || orderid)) ord_n_zip, deliveryzip from order_history group by deliveryzip order by ord_n_zip desc ;
         topZip   zip_cur%ROWTYPE;
   
-    BEGIN
-        OPEN zip_cur;
-        Htp.p('<div class="zip-container">');
-        FETCH zip_cur INTO topZip;
-        Htp.p('<h1>' || topZip.deliveryzip || '</h1>');
-        CLOSE zip_cur;
-        Htp.p('</div>');
-    END;
-    </copy>
-    ```
+        BEGIN
+          OPEN zip_cur;
+          Htp.p('<div class="zip-container">');
+          FETCH zip_cur INTO topZip;
+          Htp.p('<h1>' || topZip.deliveryzip || '</h1>');
+          CLOSE zip_cur;
+          Htp.p('</div>');
+        END;
+        </copy>
+        ```
     * Second Region **New**
         * **Title**: **Top Dish**
         * **Accent**: **Accent4**
