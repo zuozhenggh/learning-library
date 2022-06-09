@@ -199,7 +199,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
     * **Source** / **PL/SQL Code**  
     ![PL/SQL code](images/plsql-code-1.png)
     
-    customize each reagion.
+    customize each region.
     
 * Specific sets for each region named **New** from left to right:
     * First Region **New**
@@ -337,7 +337,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
         
         </copy>
         ```
-    * Under **Column Mapping**, set **Label** as **DELIVERYZIP** and **Value** as **ORD_N_ZIP** :
+    * Under **Column Mapping**, set **Label** as **DELIVERYZIP** and **Value** as **ORD**\_**N**\_**ZIP** :
 
         ![Select Series 1 SQL ](images/series1-sql-zip-1.png)
 
@@ -371,7 +371,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
         
         </copy>
         ```
-    * Under **Column Mapping**, set **Label** as **ITEM_NAME** and **Value** as **dish_num** :
+    * Under **Column Mapping**, set **Label** as **ITEM_NAME** and **Value** as **dish**\_**num** :
 
         ![Select Series1 SQL ](images/dish-num-1.png)
 
@@ -403,7 +403,7 @@ In this task you will create a new APEX app for analytics purpouse based on an e
         
         </copy>
         ```
-    * Under **Column Mapping**, set **Label** as **ORDER_HOUR** and **Value** as **AVG_ORDER** :
+    * Under **Column Mapping**, set **Label** as **ORDER_HOUR** and **Value** as **AVG**\_**ORDER** :
 
         ![Select Series1 SQL ](images/ord-hours-1.png)
 
@@ -459,8 +459,8 @@ Search for and join the `oracle-db-microservices` channel.
 
 
 ## Acknowledgements
-* **Author** - Paul Parkinson, Developer Evangelist
-               Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata
+* **Author** - Paul Parkinson, Developer Evangelist;
+               Richard Exley, Consulting Member of Technical Staff, Oracle MAA and Exadata;
                Corrado De Bari, Developer Evangelist
 * **Adapted for Cloud by** - Nenad Jovicic, Enterprise Strategist, North America Technology Enterprise Architect Solution Engineering Team
 * **Documentation** - Lisa Jamen, User Assistance Developer - Helidon
