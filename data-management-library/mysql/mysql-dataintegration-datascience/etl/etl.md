@@ -1,6 +1,6 @@
 # Design and Run your ETL Pipeline
 
-![DI Pipeline](images/pipeline_banner.jpeg)
+![DI Pipeline](images/pipeline-banner.jpeg)
 
 ## Introduction
 
@@ -30,7 +30,7 @@ In this section, you will:
 
 1. Click **Create Data Flow**.
 
-   ![](images/dataflow_create_button.png)
+   ![Data Flow create button](images/dataflow-create-button.png)
 
 2. Set the **Name**, **Project** and **Description** in the New Data Flow Panel:
 
@@ -45,19 +45,19 @@ In this section, you will:
       ```
       - Click **Create**
 
-   ![](images/dataflow_select_project_new.png)
+   ![Data Flow select project](images/dataflow-select-project-new.png)
 
    It should look like this:
 
-   ![](images/dataflow_properties.png)
+   ![Data Flow properties](images/dataflow-properties.png)
 
 3. From the **Operators** panel, drag and drop the **Source** icon into the canvas.
 
-   ![](images/dataflow_source_dnd.png)
+   ![Data Flow source](images/dataflow-source-dnd.png)
 
 4. Click **right mouse bottom** on top of **Source_1** and select **Details**.
 
-   ![](images/dataflow_details.png)
+   ![Data Flow details](images/dataflow-details.png)
 
 5. Set the **Identifier** as `FISH_SURVEY` in the **Details** tab from the Source **Properties** panel. Then go to **Data Asset** and click **Select**.
 
@@ -66,39 +66,39 @@ In this section, you will:
       <copy>FISH_SURVEY</copy>
       ```
 
-   ![](images/dataflow_source_id.png)
+   ![Data Flow source ID](images/dataflow-source-id.png)
 
 6. From the **dropdown**, select `bucket-study` and click **Select**.
 
-   ![](images/dataflow_source_data_asset_bucket.png)
+   ![Data Flow source data asset bucket](images/dataflow-source-data-asset-bucket.png)
 
 7. **Select** `Default Connection` in the Connection section. In the **Schema** section, select the **Compartment** that you have used to create for this workshop, `root`. Then click **Select** and pick the name of the bucket `bucket-study`. And finally, select the **Data Entity**.
 
-   ![](images/dataflow_source_data_entity.png)
+   ![Data Flow source data entity](images/dataflow-source-data-entity.png)
 
 8. Browse by **Name**:
 
-   ![](images/dataflow_source_data_entity_browse.png)
+   ![Data Flow source data entity browser](images/dataflow-source-data-entity-browse.png)
 
 9. **Select** `mds-di-ds-reef_life_survey_fish.csv` file.
 
-   ![](images/dataflow_source_data_entity_file.png)
+   ![Data Flow source data entity file](images/dataflow-source-data-entity-file.png)
 
 10. And click **Select**.
 
-   ![](images/dataflow_source_data_entity_file_select.png)
+   ![Data Flow source data entity file select](images/dataflow-source-data-entity-file-select.png)
 
 11. On the dropdown for **File Type**, pick `CSV`.
 
-   ![](images/dataflow_source_data_entity_file_type.png)
+   ![Data Flow source data entity file type](images/dataflow-source-data-entity-file-type.png)
 
 12. Then click **Select**.
 
-   ![](images/dataflow_source_data_entity_file_type_csv.png)
+   ![Data Flow source data entity file type csv](images/dataflow-source-data-entity-file-type-csv.png)
 
 13. At this point, your source has access to the **Attributes**, where you can see the different fields of your dataset.
 
-   ![](images/dataflow_source_data_entity_attributes.png)
+   ![Data Flow source data entity attributes](images/dataflow-source-data-entity-attributes.png)
 
    **Confirm** you can see **Attributes** and **Data**.
 
@@ -106,7 +106,7 @@ In this section, you will:
 
 14. Drag and Drop the **Target** icon into the canvas.
 
-   ![](images/dataflow_target_dnd.png)
+   ![Data Flow target](images/dataflow-target-dnd.png)
 
 15. Set the **Identifier** as `MySQL_DB` in the **Target**, and leave **Integration Strategy** as `Insert`:
 
@@ -115,47 +115,47 @@ In this section, you will:
       <copy>MySQL_DB</copy>
       ```
 
-   ![](images/dataflow_target_id.png)
+   ![Data Flow target ID](images/dataflow-target-id.png)
 
 16. This time, pick the `mysql-database` **Data Asset**. Also select **Connection** as `Default Connection`.
 
-   ![](images/dataflow_target_data_asset_mysql.png)
+   ![Data Flow target MySQL](images/dataflow-target-data-asset-mysql.png)
 
 17. For the **Schema**, select `nature`.
 
-   ![](images/dataflow_target_data_asset_schema_nature.png)
+   ![Data Flow target schema](images/dataflow-target-data-asset-schema-nature.png)
 
 18. For **Data Entity**, we select the table `fish`.
 
-   ![](images/dataflow_target_data_asset_data_entity.png)
+   ![Data Flow target data entity](images/dataflow-target-data-asset-data-entity.png)
 
-   ![](images/dataflow_target_data_asset_data_entity_fish.png)
+   ![Data Flow target data entity fish](images/dataflow-target-data-asset-data-entity-fish.png)
 
 19. At this point, we can see the fields of the table under the **Attributes** tab.
 
-   ![](images/dataflow_target_attributes.png)
+   ![Data Flow target data attributes](images/dataflow-target-attributes.png)
 
 20. Time to **wire Source and Target**. Draw the link between `FISH_SURVEY` and `MYSQL_DB`. Starting from the circle in `FISH_SURVEY` source box and finishing over `MYSQL_DB` target box.
 
-   ![](images/dataflow_source_to_target.png)
+   ![Data Flow source to target](images/dataflow-source-to-target.png)
 
 21. The **final result** should look like the following.
 
-   ![](images/dataflow_source_to_target_linked.png)
+   ![Data Flow source to target linked](images/dataflow-source-to-target-linked.png)
 
 22. **Make sure** `MYSQL_DB` target is selected (green border) and click on the **Map** tab on the **Properties** panel. 
 **Drag and drop** the fields with NO `Auto` in the mapping column (from left to right). **Do it until they are all mapped**. 
 You can **expand / shrink** the Properties canvas.
 
-   ![](images/dataflow_source_to_target_map.png)
+   ![Data Flow source to target map](images/dataflow-source-to-target-map.png)
 
 23. Make sure the yellow indicator of `Not Mapped` contains **0**, meaning there is no left fields unmapped.
 
-   ![](images/dataflow_source_to_target_map_completed.png)
+   ![Data Flow source to target map completed](images/dataflow-source-to-target-map-completed.png)
 
 24. The **final step** is to **validate** the Data flow. Click **Validate**, check there are `O Total Warnings or/and  O Total Errors` and click **Save and Close**.
 
-   ![](images/dataflow_validate.png)
+   ![Data Flow source to target validate](images/dataflow-validate.png)
 
 ---
 
@@ -163,7 +163,7 @@ You can **expand / shrink** the Properties canvas.
 
 1. Go back to **Home** and Click **Create Integration Task**.
 
-   ![](images/integrationtask_create_button.png)
+   ![Integration task create](images/integrationtask-create-button.png)
 
 2. Set the **Name** and the rest of the info as follows:
 
@@ -178,11 +178,11 @@ You can **expand / shrink** the Properties canvas.
       - Project or Folder: `My First Project`. Be sure you have selected this Project or Folder, otherwise, you will have an error.
       - Data Flow: `CSV to MySQL`
 
-   ![](images/integrationtask_fields.png)
+   ![Integration task fields](images/integrationtask-fields.png)
 
 3. Wait for the **Validation** to be **Successful** on the Data Flow and click **Create and Close**.
 
-   ![](images/integrationtask_save.png)
+   ![Integration task save](images/integrationtask-save.png)
 
 ---
 
@@ -190,23 +190,23 @@ You can **expand / shrink** the Properties canvas.
 
 1. Go to **Projects** on the home screen.
 
-   ![](images/di_select_projects.png)
+   ![DI projects](images/di-select-projects.png)
 
 2. Click on **My First Project**.
 
-   ![](images/di_select_projects_my_first_project.png)
+   ![DI projects My First Project](images/di-select-projects-my-first-project.png)
 
 3. On the Details menu (left), click on **Tasks**.
 
-   ![](images/di_project_tasks_menu.png)
+   ![DI projects tasks menu](images/di-project-tasks-menu.png)
 
 4. Select **IntegrationTaskMySQL**, and click **Publish to Application**.
 
-   ![](images/di_project_tasks_publish_integration.png)
+   ![DI projects tasks publish integration](images/di-project-tasks-publish-integration.png)
 
 5. **Select** (if not selected by default) your **Default Application**. Click **Publish**.
 
-   ![](images/di_project_tasks_publish_integration_to_default_app.png)
+   ![DI projects tasks publish integration to app](images/di-project-tasks-publish-integration-to-default-app.png)
 
 ---
 
@@ -214,27 +214,27 @@ You can **expand / shrink** the Properties canvas.
 
 1. Go back to the **Home** screen and click **Applications**.
 
-   ![](images/di_application_menu.png)
+   ![DI application menu](images/di-application-menu.png)
 
 2. Select **Default Application**, and you will see your task **IntegrationTaskMySQL**.
 
-   ![](images/di_application_integration_dots.png)
+   ![DI application integration menu](images/di-application-integration-dots.png)
 
 3. Click on the **Context Menu** (three dots) and click **Run**.
 
-   ![](images/di_application_integration_run.png)
+   ![DI application integration run](images/di-application-integration-run.png)
 
 4. Wait few seconds and the **Status** will change from `Not Started` to `Queued`, and after to `Running`. 
 
-   ![](images/di_application_integration_not_started.png)
+   ![DI application integration not started](images/di-application-integration-not-started.png)
 
-   ![](images/di_application_integration_queued.png)
+   ![DI application integration queued](images/di-application-integration-queued.png)
 
-   ![](images/di_application_integration_running.png)
+   ![DI application integration running](images/di-application-integration-running.png)
 
 5. Feel free to click **Refresh** from time to time until you see `Success` on the Status.
 
-   ![](images/di_application_integration_success.png)
+   ![DI application integration success](images/di-application-integration-success.png)
 
 ---
 
