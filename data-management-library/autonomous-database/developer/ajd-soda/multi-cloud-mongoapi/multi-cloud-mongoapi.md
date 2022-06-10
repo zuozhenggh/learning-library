@@ -36,6 +36,11 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 2. Click **Build a Database**. Select the **Free option**, choose a Cloud Provider and Region. Create the **New Cluster** using the default settings. Name it **Cluster0**.
 
+    - Cluster Name:
+    ```
+    <copy>Cluster0</copy>
+    ```
+
     ![MongoDB Free Option](./images/task1/mongodb-free-option.png)
     ![MongoDB CloudProvider](./images/task1/mongodb-cloud-provider.png)
     
@@ -54,9 +59,15 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![MongoDB Network IP Address](./images/task1/mongodb-network-ip-address.png)
 
 5. Create a Database User: 
-    - Username: <copy>mongoUser</copy>
-    - Password: <copy>DBlearnPTS#22_</copy>
-    
+    - Username: 
+    ```
+    <copy>mongoUser</copy>
+    ```
+    - Password: 
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+
     To add or edit users, **click Security > Database Access** on the left side menu.
 
     ![MongoDB User](./images/task1/mongodb-user.png)
@@ -88,6 +99,15 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
     ![MongoDB Load Sample Two](./images/task1/mongodb-load-sample-two.png)
 
 8. Click **Create Database**, and name it **SimpleDatabase**, and the collection **SimpleCollection**. This will be used for our Python application development in the next lab.
+
+    - Database Name:
+    ```
+    <copy>SimpleDatabase</copy>
+    ```
+    - Collection Name:
+    ```
+    <copy>SimpleCollection</copy>
+    ```
 
     ![MongoDB Create Database](./images/task1/mongodb-create-database.png)
     ![MongoDB Simple DB](./images/task1/mongodb-simple-db.png)
@@ -364,8 +384,14 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 
 2. **Log In** to Companies using the following credentials:
 
-    - Username: demo
-    - Password: DBlearnPTS#22_
+    - Username:
+    ```
+    <copy>demo</copy>
+    ```
+    - Password:
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
 
     ![Log In Companies](./images/task4/log-in-companies.png)
 
@@ -383,7 +409,7 @@ One of the objectives of this workshop is to show the integration of Oracle Auto
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
 * **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, May 2022
+* **Last Updated By/Date** - Priscila Iruela, June 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

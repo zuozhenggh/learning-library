@@ -130,7 +130,6 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
 
 6. We will **export** the URL using the following command:
 
-
     ````
     <copy>
     export ATP_URL="[URL_AFTER_@_AND_]_UNTIL_SEMICOLON_27017]" 
@@ -167,12 +166,191 @@ Now, we will change it to specifies IPs and VNs, using our Public IP Address.
     ![stop  mongoapi-app](./images/task2/mongoapi-stopping.png)
 
 
+## Task 3: Create a new MongoCollection through Database Actions
+
+
+1. On Oracle Cloud Infrastructure Console, click **Database Actions** next to the big green box. Allow pop-ups from cloud.oracle.com. 
+
+    ![DB Actions](./images/task3/db-actions.png)
+
+
+2. Click **Sign In**. Login using DEMO user credentials.
+
+    - Username:
+    ```
+    <copy>demo</copy>
+    ```
+    - Password:
+    ```
+    <copy>DBlearnPTS#22_</copy>
+    ```
+    
+    ![Sign In DEMO](./images/task3/sign-in-demo.png)
+    
+3. Click **Development** > **JSON**.
+
+    ![DB Actions JSON](./images/task3/db-actions-json.png)
+
+
+4. We are going to create a New Collection to insert data using MongoDB Compatible functionality. **Click on New Collection button** on the left side of the screen.
+
+    ![New Collection](./images/task3/new-collection-json.png)
+
+5. Type the **name of the new Collection**: MongoCollection.
+    ```
+    <copy>MongoCollection</copy>
+    ```
+    
+    ![New MongoCollection JSON](./images/task3/mongo-collection-json.png)
+
+6. You can see the basic fields of a JSON document. **Click MongoDB Compatible** and pay attention of the new `_id` field that has been created on the JSON document. And click **Create**.
+
+    ![New MongoCollection Compatible](./images/task3/mongo-collection-json-compatible.png)
+
+    > Note: Collections created from SODA do not work with MongoDB API because they don't have this `_id` field created by default, you need to select the **Compatible MongoAPI** check.
+
+7. Now your new **MongoCollection** has been created.
+    
+    ![New MongoCollection Created](./images/task3/mongo-collection-created.png)
+
+
+## Task 4: Insert Data in the new MongoCollection using insert-mongoapi-app.py
+
+1. Access to **cloud shell** again. If you are not connected to **opc@devm**, **run** again the **ssh connections** using the **Public IP.** Replace <Public_IP> with your own one, removing < and > too. We copied the Public IP when we provisioned the compute instance few tasks back. Execute the following commands:
+
+    ````
+    <copy>
+    ssh -i <private-key-file-name>.key opc@<Public_IP>
+    </copy>
+    ````
+
+    ![ssh Connection](./images/task4/ssh.png)
+
+2. Lets have a look at **insert-mongoapi-app.py**. In this file, we have the Python application code. Run the following command to see the code:
+
+    ````
+    <copy>
+    cat insert-mongoapi-app.py
+    </copy>
+    ````
+
+    ![cat insert-mongoapi-app](./images/task4/cat-insert-mongoapi-app.png)
+
+3. **Verify** all connection **variables are correct**. This time we are using Oracle variables that we have used in previous labs and those will be use for connection variables that we will use. Following this method, you don't need to edit them.
+
+    - For the Oracle Autonomous JSON database connection: We are using **demo** user and the **password** that we have recommended during the workshop **DBlearnPTS#22_**. The name of the Oracle Databases is **demo** too. And the new Oracle JSON Collection **MongoCollection**.
+
+    > Note: If you have change the following variables to a different value, please run this commands providing the variable that you have changed. **Remember, we are using the Oracle connections under the MongoDB variables for nor editing the parameters. If you prefer, you can eddit them.  Following this method, it is cleaner for the application point of view.**
+    >
+    ````
+    export MONGO_USER="demo"
+    export MONGO_PASSWORD="DBlearnPTS#22_"
+    export MONGO_CLUSTER="Cluster0"
+    export MONGO_DB="demo"
+    export MONGO_COLLECTION="MongoCollection"
+    export ATP_URL="[URL_AFTER_@_AND_]_UNTIL_SEMICOLON_27017]" 
+    ````
+
+    > Note: Remember that we have exported **ATP_URL** on Task number 2 of this lab, so we don't need to export it again.
+
+4. **After checking if all variables are correct**. **Run** mongoapi-app application using the following command:
+
+    ````
+    <copy>
+    nohup python3 insert-mongoapi-app.py > insert-mongoapi-app.log 2>&1 & echo $! > insert-mongoapi-app.pid
+    </copy>
+    ````
+    We are executing the insert-mongoapi-app.py with **nohup function** for keep using the terminal for the following steps.
+    
+    At the same time, with this command, we are **creating a insert-mongoapi-app.log** where you can check how the python app is behaving.
+    
+    Additionally we are **creating a file, insert-mongoapi-app.pid,** to be capable of killing the python app to keep creating the third application for today’s content.
+
+    ![insert-mongoapi-app Execution](./images/task4/insert-mongoapi-app-execution.png)
+
+5. Lets see what **insert-mongoapi-app.py is doing**, use the following command:
+
+    ````
+    <copy>
+    cat insert-mongoapi-app.log
+    </copy>
+    ````
+
+    ![insert-mongoapi-app log](./images/task4/insert-mongoapi-app-log.png)
+
+    If you followed the steps correctly, you should see this output in the cloud shell terminal. 
+
+    **Your micro-service nsert-mongoapi-app.py is being executed** so we can start inserting the documents.
+
+6. **Copy** the following commands to perform **POST request with CURL client**. Make sure you press Enter after each one. First and Second POST:
+
+    ````
+    <copy>
+    curl --request POST \
+            --url http://localhost:5000/oracle/mongo/ \
+            --header 'content-type: application/json' \
+            --data '{
+        "company":"Company Nine",
+        "address": {
+            "street": "25 Severo Ochoa",
+            "city": "Málaga",
+            "country": "Spain"
+        },
+        "industry":"Technology",
+        "employees":25550
+    }'
+    curl --request POST \
+            --url http://localhost:5000/oracle/mongo/ \
+            --header 'content-type: application/json' \
+            --data '{
+        "company":"Company Ten",
+        "address": {
+            "street": "3 Victor Emanouil",
+            "city": "Alexandria",
+            "country": "Egypt"
+        },
+        "industry":"Banking",
+        "employees":150000
+    }'
+    </copy>
+    ````
+
+    ![POST company nine and ten curl](./images/task4/curl-company-nine-ten.png)
+
+7. Use the **web browser** on your laptop to navigate to your micro-service to list JSON documents inserted into Oracle Autonomous Database using MongoAPI capability.
+
+    http://[DEVM public-ip address]:5000/oracle/mongo/
+
+     ![Microservice Company MongoAPI capability MongoCollection](./images/task4/microservice-mongoapi-mongocollection.png)
+    
+    > This micro-service has 1 URL. We already had used previosly the Oracle one and the Mongo one. In this case we are using a new one / oracle/mongo. Here you have the others URLS too:
+    >
+        - http://[DEVM public-ip address]:5000/oracle/mongo/ -> for Oracle Autonomous Database using MongoAPI
+
+
+8. We can check that the **Two New Companies** (Nice and Ten) are being stored on our **Autonomous JSON Database**, on **MongoCollection** that we created in Task 3 of this Lab. Go to Database Actions again and refresh the browser.
+
+    ![MongoDB Companies Added Database Actions](./images/task4/database-actions-nine-ten.png)
+
+
+9. Go to **cloud shell terminal.** We will **stop insert-mongoapi-app.py** running the following command. 
+
+    ````
+    <copy>
+    kill $(cat insert-mongoapi-app.pid)
+    </copy>
+    ````
+
+    ![kill insert-mongoapi-app](./images/task4/insert-mongoapi-app-kill.png)
+
+
 *Congratulations! Well done!*
+
 
 ## Acknowledgements
 * **Author** - Valentin Leonard Tabacaru, Database Product Management and Priscila Iruela, Technology Product Strategy Director
 * **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, May 2022
+* **Last Updated By/Date** - Priscila Iruela, June 2022
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
