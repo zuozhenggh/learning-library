@@ -26,7 +26,7 @@ In this lab, you will:
 * You have signed up for an account with Oracle Cloud Infrastructure and have received your sign-in credentials.
 * You are using an Oracle Linux image on your on-premises host machine to install Management Gateway.
 * You are using an Oracle Linux image or Windows OS on your another on-premises host machine to install Management Agent.
-* Access to the cloud environment and resources configured in the previous labs
+* Access to the cloud environment and resources configured in the previous labs.
 * The hosts, the one running Management Gateway and the one running Management Agent software, must be in same network.
 
 ## Task 1: Prepare gateway software and response file for Management Gateway installation
@@ -85,12 +85,6 @@ In this lab, you will:
 
   To save the file, type CTRL+x. Before exiting, nano will ask you if you wish to save the file: Type y to save and exit, type n to abandon your changes and exit.
 
-<!-- 9. Save the response file with .rsp extension and move it to /tmp directory. Moving the response file to /tmp directory helps to associate correct permissions to response file.
-    ```
-    <copy>
-    sudo mv <install-key-file-name> /tmp/gateway.rsp
-    </copy>
-    ```    -->
 
 
 ## Task 2: Install Management Gateway
@@ -151,7 +145,7 @@ In this lab, you will:
     The output will look similar to the following: 
 
     ```
-    <copy>
+    
 Executing configure
        Parsing input response file
        Validating install key
@@ -176,7 +170,7 @@ Creating Wallets
 Wallets created successfully
 Waiting for Gateway to start...
 Gateway Proxy started successfully
-    </copy>
+   
     ``` 
 
 4.  Delete the gateway.rsp file after successful configuration.
@@ -211,7 +205,7 @@ Gateway Proxy started successfully
 
     This IP address will be used as value for `ProxyHost` in Management Agent response file in Task 4.
   
-## Task 3: Verify the Management Gateway Installation 
+## Task 3: Verify the Management Gateway installation 
 
 ### Using OCI Console:
 
@@ -224,7 +218,6 @@ Gateway Proxy started successfully
   ![image of verification on running Management Gateway](/../images/view-management-gateway.png)
 
 ### Using Command Line Interface on Linux:
-
 
 1. Login to the host using a user with sudo privileges.
 
@@ -268,7 +261,7 @@ Gateway Proxy started successfully
 
 
 
-## Task 4:  Configure Management Agents After Management Gateway Installation
+## Task 4:  Configure Management Agents after Management Gateway installation
 
 After installing the Management Gateway, you need to configure each Management Agent to use the Management Gateway. From the Management Agents' side, the Management Gateway is configured like a normal proxy.
 
@@ -284,31 +277,6 @@ After installing the Management Gateway, you need to configure each Management A
   ![image of final response file](/../images/response-file-parameters.png)
 
 
-<!-- 2. Start another on-premises host and connect it to the same on-premises network as the Management Gateway.
-
-3. Create an `input.rsp` response file on your host. This will be used by the Management Agent installation script to read the agent parameters specific to your environment.
-
-
-
-   Copy and paste the contents of the response file downloaded in [Lab 2](?lab=setup-a-fleet) into the editor, and enter values for following parameters:
-    * AgentDisplayName: Any display name for the agent
-    * ProxyHost: The IP address of host that is running Management Gateway
-    * ProxyPort: 4479
-
-    If you are using Linux OS then save the response file at `/tmp/input.rsp`. For windows OS you can save input.rsp file anywhere.
-
-4. The response file is now ready. You can follow the instructions given in [Lab 5](?lab=set-up-of-management-agent-linux) to Install Management Agent on Linux OS and [Lab 6](?lab=set-up-of-management-agent-windows) to Install Management Agent on Windows OS, depending on you premises host.
-
-  You must perform the below given tasks following the labs:
-    * Install Management Agent according to the Operating System.
-    * Configure the Management Agent using the response file created in Step 3.
-    * Verify Management Agent installation using OCI Console.
-    * Configure Java Usage Tracker.
-    * Check that Management agent is tagged with fleet OCID
-    * Run Java application.
-
-5. Once you have finished installing Management Agent according to above mentioned labs and ran the `HelloWorld` java application. You should be able to see Managed Instance, Java Runtime and Application on Fleet page in 5-10 minutes. -->
-
 
 ## Task 5: Verify detection of Managed Instance
 1. In the Oracle Cloud Console, open the navigation menu, click **Observability & Management**, and then click on **Fleets** under **Java Management**.
@@ -323,14 +291,11 @@ After installing the Management Gateway, you need to configure each Management A
 
   ![image of managed instance after successful installation](/../images/successful-installation.png)
 
-<!-- 4. Click **Applications** under **Resources**. You should now see two applications. The first is from the javac compiler command and the second is from the HelloWorld application.
-
-  ![image of applications after successful installation](/../images/successful-installation-applications.png) -->
 
 
 You may now **proceed to the next lab.**
 
-## Troubleshoot Management Gateway Issues
+## Troubleshoot Management Gateway issues
 
 **For Task 1 Step 4**
 
