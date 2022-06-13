@@ -4,7 +4,7 @@
 
 In this lab, we will provision and setup the resources to execute microservices in your environment.
 
-Estimates Lab Time - 20 minutes
+Estimates Time: 20 minutes
 
 ### Objectives
 
@@ -49,7 +49,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
      ```
      <copy>
-     git clone -b 22.3.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+     git clone -b 22.6.2 --single-branch https://github.com/oracle/microservices-datadriven.git
      </copy>
      ```
 
@@ -139,6 +139,8 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
     ```
 
     > **Note:** Cloud Shell sessions have a maximum length of 24 hours, and time out after 20 minutes of inactivity.
+
+You may now proceed to the next lab.
 
 ## Learn More
 

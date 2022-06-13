@@ -85,7 +85,7 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 	```
 	<copy>
-	git clone -b 22.3.1 --single-branch https://github.com/oracle/microservices-datadriven.git
+	git clone -b 22.6.2 --single-branch https://github.com/oracle/microservices-datadriven.git
 	</copy>
 	```
     You should now see the directory `microservices-datadriven` in the directory that you created.
@@ -148,7 +148,9 @@ Cloud Shell is a small virtual machine running a "bash" shell which you access t
 
 	> **Note:** Notice the format of "ocid1.user" prefix.
 
-	Locate your menu bar in the Cloud Console and click the person icon at the far upper right. From the drop-down menu, select your user's name. Note, sometimes the name link is missing in which case select the **User Settings** link. Do not select the **Tenancy** link.
+	Locate your menu bar in the Cloud Console and click the person icon at the far upper right.
+
+	From the drop-down menu, select your user's name or My Profile. Note, sometimes the name link is missing in which case select the **User Settings** link. Do not select the **Tenancy** link.
 
 	![Obtain Oracle Cloud Infrastructure User OCID](images/get-user-ocid.png " ")
 
