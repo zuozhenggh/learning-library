@@ -257,14 +257,12 @@ Gateway Proxy started successfully
 
 ## Task 4:  Configure Management Agents after Management Gateway installation
 
-<!-- After installing the Management Gateway, you need to configure each Management Agent to use the Management Gateway. From the Management Agents' side, the Management Gateway is configured like a normal proxy. -->
 
 After installing the Management Gateway, you will need to configure each Management Agent to use the Management Gateway **during the initial agent installation process**.
 
 
 * A fleet, `fleet_1`, has already been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the downloaded install key file.
-<!-- 
-* You should follow [Lab 5](?lab=set-up-of-management-agent-linux) to Install and configure Management Agent on Linux OS and [Lab 6](?lab=set-up-of-management-agent-windows) to Install and configure Management Agent on Windows OS, depending on you on-premises hosts. -->
+
 
 * To prepare agent software and response file for Management Agent installation, follow [Task 1 of Lab 5](?lab=set-up-of-management-agent-linux) for Linux OS and [Task 1 of Lab 6](?lab=set-up-of-management-agent-windows) for Windows OS.
 
