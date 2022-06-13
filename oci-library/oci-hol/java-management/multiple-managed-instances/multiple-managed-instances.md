@@ -6,7 +6,7 @@ The Management Gateway provides a single point of communication between the Mana
 Using the Management Gateway as the single point for traffic to and from the Oracle Cloud Infrastructure means that the enterprise firewall only needs to allow HTTPS communication from the host where the Management Gateway resides. This scenario allows installing Management Agent on the hosts which do not need to have direct access to the internet. Oracle recommends to configure the Management Gateway first and then the Management Agent on the other hosts.
 
 
-  ![image of gateway concepts](/../images/gateway_concepts_diagram.png =400x*)
+  ![image of gateway concepts](/../images/gateway-concepts-diagram.png =400x*)
   
 This lab walks you through the steps to install and configure Management Gateway on an on-premises host and have another on-premises host proxy through it to communicate with OCI network and JMS.
 
