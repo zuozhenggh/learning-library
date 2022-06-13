@@ -1,15 +1,15 @@
 # Self-Service Data Preparation, Data Enrichment & Data Modeling
 
 ## Introduction
-Analysts and Database Administrators spend a great deal of time assembling, and preparing data to perform analysis, therefore, ability to quickly access, leverage and make sense of the volumes and variety of data available today is critical to maintain competitive advantage in today's marketplace.  
+Analysts and Database Administrators spend a great deal of time assembling, and preparing data to perform analysis, therefore, the ability to quickly access, leverage, and make sense of the volumes and variety of data available today is critical to maintaining a competitive advantage in today's marketplace.  
 
 Oracle Analytics Server provides powerful visual data management capabilities enabling users to create new datasets dynamically and quickly.  
-This lab will introduce you to the key features of self service data management within Oracle Analytics Server.  
+This lab will introduce you to the key features of self-service data management within Oracle Analytics Server.  
 
 *Estimated Completion Time:* 45 minutes
 
 ### About Oracle Analytics Server
-Oracle Analytics Server features powerful, intuitive self service capabilities that enable analysts to identify and illustrate insights leveraging modern and innovative data discovery and data visualization techniques on an accurate and consistent data set.
+Oracle Analytics Server features powerful, intuitive self-service capabilities that enable analysts to identify and illustrate insights leveraging modern and innovative data discovery and data visualization techniques on an accurate and consistent data set.
 
 ### Objectives
 
@@ -20,7 +20,7 @@ In this lab, you will explore the following features and capabilities:
 
 ### Prerequisites
 This lab assumes you have:
-- A Free Tier, Paid or LiveLabs Oracle Cloud account
+- A Free Tier, Paid, or LiveLabs Oracle Cloud account
 - You have completed:
     - Lab: Prepare Setup (*Free-tier* and *Paid Tenants* only)
     - Lab: Environment Setup
@@ -31,7 +31,7 @@ This lab assumes you have:
 
 Analysts spend a great deal of time assembling, preparing, and enhancing data to perform analysis.  In this task, we will start with the basics of uploading a spreadsheet into Oracle Analytics Server.  Once successful, we will review data elements and explore some of the data transformation and enrichment capabilities that make for a smooth and seamless data preparation process.   
 
-1. From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), Click on *"Create"* at the upper right-hand corner.
+1. From the browser session you started in [Lab: Initialize Environment](?lab=init-start-oas), Click on *"Create"* in the upper right-hand corner.
 
     !["oashomescreen"](./images/oashomescreen.png)
 
@@ -49,7 +49,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     After creating a dataset, the dataset undergoes column-level profiling to produce a set of semantic recommendations to repair or enrich
     your data. These recommendations are based on the system automatically detecting a specific semantic type during the profile step.
-    After profiling the data, you can make modifications to the data and implement enrichment recommendations provided on the far-right hand    side of the palette. Keep in mind, the date elements and their semantic types will dictate the variety and number of recommendations you receive to include within your dataset.
+    After profiling the data, you can make modifications to the data and implement enrichment recommendations provided on the far-right hand  side of the palette. Keep in mind, that the date-specific elements and their semantic types will dictate the variety and number of recommendations you receive to include within your dataset.
 
     !["datasetprofileresults"](./images/datasetprofileresults.png )
 
@@ -66,17 +66,17 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     Modify data element identifier for ID and Employee data elements.
 
-    **Click** on the ID column.  Notice the ID properties box in the lower left corner.  Let’s modify the identifier.  Under the property 'Treat As' **Click**  on 'measure' and select attribute.
+    **Click** on the ID column.  Notice the ID properties box in the lower-left corner.  Let’s modify the identifier.  Under the property 'Treat As' **Click**  on 'measure' and select attribute.
 
     !["modifytreatas"](./images/modifytreatas.png )
 
-    Continue on and locate Employee Number, make the same modification.
+    Continue and locate Employee Number, and make the same modification.
 
     !["modifyemployeenumber"](./images/modifyemployeenumber.png )
 
     As you review the remaining columns, you may find additional data elements to modify.  
 
-5.  Continue to scroll to the right, until you reach the end. Note, the dataset includes social security number. **Click** on the
+5.  Continue to scroll to the right, until you reach the end. Note, that the dataset includes social security number. **Click** on the
     column labeled SSN. Social security number is a sensitive piece of data and Oracle Analytics Server recognized it and delivered 6 recommendations. You can choose to obfuscate, delete, or extract a portion of it all with one click of your mouse.
 
     **Select** 'Obfuscate First 5 digits of SSN'
@@ -86,9 +86,9 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
 6.  Even further right, beyond social security number, locate the 'zip code' column.  
 
-    Zip code has been identified as an attribute, however some of the zip code records look incomplete.
+    Zip code has been identified as an attribute, however, some of the zip code records look incomplete.
 
-    Notice, right above the column heading, each data element has an associated data quality insight card.
+    Notice, above the column heading, that each data element has an associated data quality insight card.
 
     The data quality insight card provides a visualization illustrating information about the data element as well as information regarding record distribution.  Additionally, it provides insight into the cleanliness of the records within each column.  
 
@@ -96,7 +96,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     **Click** on the zip code column and review the recommendations provided by Oracle Analytics Server.  
 
-     Let’s repair the zip code values selecting the "Repair Zip Code' recommendation.
+     Let’s repair the zip code values by selecting the "Repair Zip Code' recommendation.
 
     !["repairzipcode"](./images/repairzipcode.png )
 
@@ -105,9 +105,9 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
     !["repairedzipcode"](./images/repairedzipcode.png )
 
 
-7.  Additionally I see that Oracle Analytics Server recommended enriching my dataset providing many geoname options, including City and State.
+7.  Additionally I see that Oracle Analytics Server recommended enriching my dataset providing many geo-name options, including City and State.
 
-    Let’s enhance the dataset utilizing both the State and City recommendations for our analysis.
+    Let’s enhance the dataset by utilizing both the State and City recommendations for our analysis.
 
     From the recommendations panel, **Click** 'Enrich Zip Code with State, then 'Enrich Zip Code with City'.
 
@@ -115,7 +115,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     We've added two additional columns to our dataset.
 
-    Next we will rename each column label.  
+    Next, we will rename each column label.  
 
     Double **Click** Zip Code_City column label.
 
@@ -137,7 +137,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      The data quality bar indicates that 5% of the records are null values.
 
-     You can replace null or missing values by double clicking on 'Missing or Null' and typing in the replacement value.
+     You can replace null or missing values by double-clicking on 'Missing or Null' and typing in the replacement value.
 
      Double **Click** 'Missing or Null' and type 'Other'
 
@@ -147,7 +147,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     I would like to combine the columns "First Name" and "Last Name" into one column titled 'Employee Name'.  
 
-    We will concatenate the columns to merge them together.
+    We will concatenate the columns to merge them.
 
     Right **Click** on 'First Name' and select 'concatenate'
 
@@ -159,7 +159,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
     - Leave Merge Column entry as First Name
     - Modify ‘With’ to Last Name
     - Leave Delimiter as Space ( )
-    - Once complete, click “Add Step” in the upper right hand corner
+    - Once complete, click “Add Step” in the upper right-hand corner
 
     !["firstlastnameconcatenateattributes"](./images/firstlastnameconcatenateattributes.png )
 
@@ -173,7 +173,7 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     From the upper left, notice a  “ + “ icon in the script navigation panel.    
 
-    Review the items listed in the Script Navigation Panel.  The Script Navigation Panel has recorded and made note of each modification we have made to the dataset.  The modifications reside with the dataset and will be applied when the data source has been refreshed or appended.
+    Review the items listed in the Script Navigation Panel.  The Script Navigation Panel has recorded each modification we have made to the dataset.  The modifications reside with the dataset and will be applied when the data source has been refreshed or appended.
 
     !["scriptnavigationpanel"](./images/scriptnavigationpanel.png )
 
@@ -184,15 +184,15 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
      Enter your calculation simply by typing into the box or by utilizing the functions listed in the table on the right.  
 
-     I would like to calculate age utilizing current date and the birthday column.  I need to utilize the year function in order to create my calculation.
+     I would like to calculate age by utilizing today's date (current date) and the birthday column.  I need to utilize the year function to create my calculation.
 
-     In the box, begin typing Year, as you type, notice that Oracle Analytics Server provides choices matching my data entry.  **Select** Year when it is provided as an option.  
+     In the box, begin typing 'year". As you type, notice that Oracle Analytics Server provides choices matching the data entry.  **Select** "Year" when it is provided as an option.  
 
-     Notice that (dimension) appears beside Year. Let's utilize the current date function to specify year.  
+     Notice that (dimension) appears beside Year. Let's utilize the current date function to specify "year".  
 
      !["calculationdialoguebox"](./images/calculationdialoguebox.png)
 
-     Begin typing current. As you type, you should see options matching the entry  of current.  **Select** 'current_date' when it is provided as an option.  
+     Begin typing current. As you type, you should see options matching "current".  **Select** 'current_date' when it is provided as an option.  
 
      Make sure you move your cursor outside of the parenthesis.
 
@@ -219,16 +219,16 @@ Analysts spend a great deal of time assembling, preparing, and enhancing data to
 
     You may begin your analysis by selecting the appropriate data elements.
 
-    Take a look at the Birthdate, and Date Left data elements list in the data panel.  
+    Take a look at the "Birthdate" and "Date Left" data elements listed in the data panel.  
 
     Click on “Birthdate. Notice that Oracle Analytics has created a time dimension automatically for analysis.  
 
-    You may slice your data by a variety of time dimensions without having to write code, or transform your date elements.
+    You may slice your data by a variety of time dimensions without having to write code, or transform your date-specific elements.
 
      !["timedimensionhierarchy"](./images/timedimensionhierarchy.png )
 
 
-## Task 2: Self Service Data Modeling
+## Task 2: Self-service Data Modeling
 
 Oracle Analytics Server provides the ability to create new datasets quickly and easily adding tables from one or more connections
 to a data set for analysis. This exercise will explain how to bring data entities together from one or more sources, select different tables, modify columns and join them together and preview the dataset.
@@ -248,9 +248,9 @@ Datasets can be blended with other datasets, saved, and shared with others throu
      !["bicssampleappschema"](./images/bicssampleappschema.png )
 
 2.   We would like to analyze customer orders, products, revenue, and billing information.  I'm going to bring together the tables I need
-     in order to complete my analysis.
+     to complete my analysis.
 
-     Let's start by selecting the "*CLOUD_D_CUSTOMERS*" table.  You can double click it or drag it over to the palette.
+     Let's start by selecting the "*CLOUD_D_CUSTOMERS*" table.  You can double-click it or drag it over to the palette.
 
      Once selected, you will see the table represented in a diagram on the upper portion of the palette.  Below, you will see the data elements that reside in the table.
 
@@ -281,7 +281,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
 3.   We need to manually add joins for both *CLOUD_D_CUSTOMERS* and *CLOUD_TIME_SMALL* tables.
 
-     **Click** on *CLOUD_F_BILL_REV*.  *CUST_NUMBER* resides within the table.  Notice it is identified as a measure. In order to join *CLOUD_F_BILL_REV*
+     **Click** on *CLOUD_F_BILL_REV*.  *CUST_NUMBER* resides within the table.  Notice it is identified as a measure. To join *CLOUD_F_BILL_REV*
      to *CLOUD_D_CUSTOMERS* we need to modify the identifier.
 
      **Click** on the *# CUST_NUMBER* column name and modify the identifier
@@ -301,11 +301,11 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      !["billrevtotimesmalljoin"](./images/billrevtotimesmalljoin.png )
 
-     Let's save our dataset so we can complete our analysis.  **Click** on the disk icon in the upper right hand corner.  
+     Let's save our dataset so we can complete our analysis.  **Click** on the disk icon in the upper right-hand corner.  
      Name your dataset - my new dataset
 
 
-4.   Before we navigate to 'Create Workbook', take a look at the bottom of the palete, there tabs representing all of the tables you selected.  
+4.   Before we navigate to 'Create Workbook', take a look at the bottom of the palette, there tabs representing all of the tables you selected.  
 
      **Click**  on the tab labeled *CLOUD_D_CUSTOMERS*.
 
@@ -331,7 +331,7 @@ Datasets can be blended with other datasets, saved, and shared with others throu
 
      You are ready to begin your analysis.  
 
-     Note you have the ability to add other datasources to your analysis.  **Click** on the + to the right of the Search box.
+     Note you can add other data sources to your analysis.  **Click** on the + to the right of the Search box.
 
      !["adddatasetinworkbook"](./images/adddatasetinworkbook.png )
 
