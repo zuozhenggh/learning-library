@@ -2,16 +2,13 @@
 
 ## About this Workshop
 
-[](youtube:v0nYRueADbo)
-
 This workshop will help you understand the technical capabilities inside the Oracle converged database to support a scalable data and event-driven microservices architecture.
 
 ### About Product/Technology
 
 Microservices written in Javascript will be deployed within an Oracle Autonomous Transaction Processing database. REST and messaging are used for communication. A secure Javascript application, running in the browser, will showcase the microservice functionality.
 
-REXLEY TODO
-![Microservices Architecture](./images/architecture.png " ")
+![Microservices Architecture](./images/TwoTierArchitecture.png " ")
 
 Estimated Workshop Time: 30 mins
 
@@ -29,7 +26,6 @@ Estimated Workshop Time: 30 mins
 
 
 ## Want to Learn More?
-REXLEY TODO
 * [Multitenant Database–Oracle 19c](https://www.oracle.com/database/technologies/multitenant.html)
 * [Oracle Advanced Queuing](https://docs.oracle.com/en/database/oracle/oracle-database/19/adque/aq-introduction.html)
 * [Microservices Architecture with the Oracle Database](https://www.oracle.com/technetwork/database/availability/trn5515-microserviceswithoracle-5187372.pdf)
