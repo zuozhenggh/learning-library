@@ -231,19 +231,13 @@ Gateway Proxy started successfully
     ```  
     
 
-    For Oracle Linux 7: 
+    For Oracle Linux 7 or Oracle Linux 8: 
      ```
     <copy>
    sudo systemctl status mgmt_gateway
     </copy>
     ```
-    
-     For Oracle Linux 8: 
-     ```
-    <copy>
-   sudo systemctl status mgmt_gateway
-    </copy>
-    ```
+   
     If the Management Gateway is running, the output of the command should look like this.
 
     ![image of Management Gateway logs](/../images/management-gateway-status.png)
@@ -263,18 +257,24 @@ Gateway Proxy started successfully
 
 ## Task 4:  Configure Management Agents after Management Gateway installation
 
-After installing the Management Gateway, you need to configure each Management Agent to use the Management Gateway. From the Management Agents' side, the Management Gateway is configured like a normal proxy.
+
+After installing the Management Gateway, you will need to configure each Management Agent to use the Management Gateway **during the initial agent installation process**.
+
 
 * A fleet, `fleet_1`, has already been setup during [Lab 2](?lab=setup-a-fleet) and you should have access to the downloaded install key file.
 
-* You should follow [Lab 5](?lab=set-up-of-management-agent-linux) to Install and configure Management Agent on Linux OS and [Lab 6](?lab=set-up-of-management-agent-windows) to Install and configure Management Agent on Windows OS, depending on you on-premises hosts.
 
-* While preparing the response you must add value for these additional parameters to configure the proxy:
+* To prepare agent software and response file for Management Agent installation, follow [Task 1 of Lab 5](?lab=set-up-of-management-agent-linux) for Linux OS and [Task 1 of Lab 6](?lab=set-up-of-management-agent-windows) for Windows OS.
+
+* While preparing the response file you must add value for these additional parameters to configure the proxy:
     * **ProxyHost**: The IP address of host that is running Management Gateway
     * **ProxyPort**: 4479 
  
-  A sample response file is included for reference, after modifying AgentDisplayName and Proxy parameters accordingly.
+  A sample response file is included for reference.
   ![image of final response file](/../images/response-file-parameters.png)
+
+* Follow [Task 2 - 6 to  of Lab 5](?lab=set-up-of-management-agent-linux) to Install, configure and verify Management Agent installation on Linux OS and [Task 2 - 6 of Lab 6](?lab=set-up-of-management-agent-windows) for Windows OS.
+
 
 
 
