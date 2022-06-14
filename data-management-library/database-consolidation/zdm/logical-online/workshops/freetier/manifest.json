@@ -21,7 +21,7 @@
             "filename":"https://raw.githubusercontent.com/oracle/learning-library/master/common/labs/setup-compute/setup-19c-freetier.md"
         },
         {
-            "title": "Lab 3: Connect to source database and dreating migration user",
+            "title": "Lab 3: Connect to source database and creating migration user",
             "filename": "../../database-config/database-config.md"
         },
         {
