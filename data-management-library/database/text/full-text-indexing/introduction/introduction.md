@@ -16,11 +16,11 @@ Later workshops will explore the more advanced capabilities of the Oracle Text.
 
 ## Workshop Scenario
 
-We're going to create a simple table with a number column and a VARCHAR2 column.
+We're going to create a simple table called "user_data" with customer information. That includes a number column for record ID, a VARCHAR2 column for customer name, a number column for order amount and a VARCHAR2 column for note that sales rep took.
 
-We'll populate that table, then create a text index on it.
+We'll populate that table, then create a Text index on note column.
 
-We'll then work through various types of query using the Oracle Text CONTAINS operator.
+We'll then work through various types of queries using the Oracle Text CONTAINS operator. We'll also show some mixed queries with full text search on note column with additional constraint on other relational columns.
 
 Finally, we'll look at how to SYNC and OPTIMIZE Oracle Text indexes.
 
@@ -40,4 +40,5 @@ You may now proceed to the next lab.
 ## Acknowledgements
 
 * **Author** - Roger Ford, Principal Product Manager
+- **Contributors** - James Zheng
 * **Last Updated By/Date** - Roger Ford, March 2022

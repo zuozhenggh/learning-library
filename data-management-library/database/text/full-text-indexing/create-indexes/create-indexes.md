@@ -217,5 +217,5 @@ You may now continue to the next lab.
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
-- **Contributors** - Alexandra Czarlinska
+- **Contributors** - Alexandra Czarlinska, James Zheng
 - **Last Updated By/Date** - Roger Ford, March 2022

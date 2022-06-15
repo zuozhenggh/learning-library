@@ -184,5 +184,5 @@ There is much more to Oracle Text than we were able to cover here, so look out f
 ## Acknowledgements
 
 - **Author** - Roger Ford, Principal Product Manager
-- **Contributors** - Kamryn Vinson, Andres Quintana
+- **Contributors** - Kamryn Vinson, Andres Quintana, James Zheng
 - **Last Updated By/Date** - Roger Ford, March 2022
